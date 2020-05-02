@@ -1,8 +1,10 @@
+# Personal Projects
+
 ### CS-164 Online Textbook
 
 _HTML, CSS, JavaScript_
 
-* A textbook companion to the course CS-164 : Introduction to Computer Science
+* A text companion to the course CS-164 : Introduction to Computer Science
 	at Drexel University
 * Used to further explain concepts covered in lecture in writing
 * Currently covers most of the topics from the course
@@ -13,6 +15,18 @@ _HTML, CSS, JavaScript_
   * The progression of 0s and 1s to the structure of a basic computer
 * All material was written by me
 * <https://www.cs.drexel.edu/~src322/cs164/>
+
+---
+
+### Dev Website
+
+_Markdown, HTML, CSS_
+
+* My personal website
+* Content built in markdown then compiled using `pandoc` into HTML files
+* Hosted via GitHub pages
+* <charlierose.dev>
+* [GitHub Repository](https://github.com/charlierosec/dev-website)
 
 ---
 

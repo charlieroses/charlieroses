@@ -1,0 +1,22 @@
+@font-face {
+	font-family: 'ubuntuMono';
+	src: 
+		url('ubuntu-mono/UbuntuMono-R.ttf')
+		format('truetype');
+
+}
+
+
+body {
+	font-size: 18px;
+	font-family: 'ubuntuMono';
+	margin: 1rem auto;
+	max-width: 80ch;
+}
+
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
