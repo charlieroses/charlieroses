@@ -8,11 +8,11 @@ _HTML, CSS, JavaScript_
 	at Drexel University
 * Used to further explain concepts covered in lecture in writing
 * Currently covers most of the topics from the course
-  * Boolean Algebra
-  * Binary and Number Bases
-  * Machine Languages
-  * Verbose Languages
-  * The progression of 0s and 1s to the structure of a basic computer
+	* Boolean Algebra
+	* Binary and Number Bases
+	* Machine Languages
+	* Verbose Languages
+	* The progression of 0s and 1s to the structure of a basic computer
 * All material was written by me
 * <https://www.cs.drexel.edu/~src322/cs164/>
 
@@ -25,7 +25,7 @@ _Markdown, HTML, CSS_
 * My personal website
 * Content built in markdown then compiled using `pandoc` into HTML files
 * Hosted via GitHub pages
-* <charlierose.dev>
+* <https://charlierose.dev>
 * [GitHub Repository](https://github.com/charlierosec/dev-website)
 
 ---
@@ -36,12 +36,12 @@ _Python, HTML, CSS, JavaScript_
 
 * A website used to track my extensive Pokemon card collection
 * I am a dedicated Pokemon card collector and needed a way to organize my collection
-	and keep track of what I have an do not
+	and keep track of what I have
 * Contains 90+ comma separated value files with over 3000 data points
 * Python scripts to manage the files
 * JavaScript functions to parse CSV files for the webpage
 * Webpage built from scratch using HTML, CSS, and JavaScript
-* [pokemon.charlierose.dev]
+* <https://pokemon.charlierose.dev>
 * [GitHub Repository](https://github.com/charlierosec/pokemoncards)
 
 --- 
