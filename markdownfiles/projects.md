@@ -1,5 +1,3 @@
-# Personal Projects
-
 ### CS-164 Online Textbook
 
 _HTML, CSS, JavaScript_

@@ -1,6 +1,4 @@
-#Activism Work
-
-### oSTEM at Drexel University
+<h3 class="pr">oSTEM at Drexel University</h3>
 
 _Founding President and Advisor_
 
@@ -13,7 +11,7 @@ _September 2018 - Present_
 
 ---
 
-### College of Computing and Informatics
+<h3 class="po">College of Computing and Informatics</h3>
 
 _General LGBT+ Activism_
 
@@ -29,7 +27,7 @@ _September 2017 - Present_
 
 --- 
 
-### Council Rock High School South
+<h3 class="py">Council Rock High School South</h3>
 
 _Gender Inclusive Restroom Policies_
 

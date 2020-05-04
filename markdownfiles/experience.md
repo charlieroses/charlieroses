@@ -1,5 +1,3 @@
-# Professional Experience
-
 ### Head Teaching Assistant
 
 _Drexel University College of Computing and Informatics_
