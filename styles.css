@@ -38,7 +38,7 @@ body *::selection {
 }
 
 a {
-	color: var(--accent-p-purple);
+	color: var(--accent-p-blue);
 	text-decoration: none;
 }
 a:hover {
@@ -53,11 +53,9 @@ code {
 	padding: 2px;
 }
 
-/*
-h1, h2, h3, h4, h5 {
-	color: var(--accent-t-blue);
+h3 {
+	color: var(--accent-purple-dk);
 }
-*/
 
 hr {
 	border: 0;

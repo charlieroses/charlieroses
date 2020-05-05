@@ -2,7 +2,6 @@
 # Charlie Rose
 # A script to build my webpages for my personal site
 
-ACT_TEMPLATE=$(cat template_a.html)
 TEMPLATE=$(cat template.html)
 MD_SRC='./markdownfiles'
 
@@ -28,14 +27,8 @@ do
 	fi
 
 	CONTENT=$(pandoc --preserve-tabs ${IN_FILE})
-	
-	if [ "$OUT_FILE" = "./activism.html" ]
-	then
-		HTMLPAGE="${ACT_TEMPLATE}"
-	else
-		HTMLPAGE="${TEMPLATE}"
-	fi
-	
+
+	HTMLPAGE=${TEMPLATE}
 	HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
 	HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
 

@@ -1,4 +1,4 @@
-### Head Teaching Assistant
+<h3 class="pr">Head Teaching Assistant</h3>
 
 _Drexel University College of Computing and Informatics_
 
@@ -23,7 +23,7 @@ _January 2018 - Present_
 
 ---
 
-### Research Assistant
+<h3 class="po">Research Assistant</h3>
 
 _Drexel University College of Computing and Informatics_
 
@@ -43,7 +43,7 @@ _June 2019 - Sept 2019_
 
 --- 
 
-### Bootcamp and Online Teaching Assistant
+<h3 class="py">Bootcamp and Online Teaching Assistant</h3>
 
 _Pennsylvania Training and Technical Assistance Network (PaTTAN)_
 

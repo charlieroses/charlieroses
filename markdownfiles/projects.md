@@ -1,4 +1,4 @@
-### CS-164 Online Textbook
+<h3 class="pr">CS-164 Online Textbook</h3>
 
 _HTML, CSS, JavaScript_
 
@@ -16,7 +16,7 @@ _HTML, CSS, JavaScript_
 
 ---
 
-### Dev Website
+<h3 class="po">Dev Website</h3>
 
 _Markdown, HTML, CSS_
 
@@ -28,7 +28,7 @@ _Markdown, HTML, CSS_
 
 ---
 
-### Pokemon Card Website
+<h3 class="py">Pokemon Card Website</h3>
 
 _Python, HTML, CSS, JavaScript_
 
@@ -44,7 +44,7 @@ _Python, HTML, CSS, JavaScript_
 
 --- 
 
-### Animal Crossing : New Horizons Data Analysis
+<h3 class="pg">Animal Crossing : New Horizons Data Analysis</h3>
 
 _Python_
 
@@ -55,7 +55,7 @@ _Python_
 
 ---
 
-### Comfy
+<h3 class="pb">Comfy</h3>
 
 _HTML, CSS, Google Firebase, Google Maps APIs_
 
