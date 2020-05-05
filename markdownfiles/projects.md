@@ -22,6 +22,7 @@ _Markdown, HTML, CSS_
 
 * My personal website
 * Content built in markdown then compiled using `pandoc` into HTML files
+	using a bash script I wrote
 * Hosted via GitHub pages
 * <https://charlierose.dev>
 * [GitHub Repository](https://github.com/charlierosec/dev-website)
