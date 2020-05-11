@@ -6,6 +6,7 @@ _Philadelphia, PA_
 
 _January 2018 - Present_
 
+* Recipient of the Student Teaching Excellence Award in 2019
 * Lectures computer science to undergraduate and graduate students 
 	* Bash
 	* Boolean Algebra
