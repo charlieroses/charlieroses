@@ -65,7 +65,7 @@ _HTML, CSS, Google Firebase, Google Maps APIs_
 * A crowd sourced review app centered around accessibility
 * Promotes awareness of potiential triggers and obstacles for mental and 
 	physical disabilities in daily life
-* The user interface features colorblind friendly colors and dsylexic friendly
+* The user interface features colorblind friendly colors and dyslexic friendly
 	fonts
 * [DevPost for Comfy](https://devpost.com/software/comfy)
 

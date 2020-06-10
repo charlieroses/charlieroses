@@ -15,6 +15,11 @@ echo "Building HTML files from Markdown..."
 
 for IN_FILE in ${MD_SRC}/*
 do
+	if [ -d ${IN_FILE} ]
+	then
+		continue
+	fi
+
 	OUT_FILE=.${IN_FILE#${MD_SRC}}
 	OUT_FILE=${OUT_FILE%.md}.html
 
