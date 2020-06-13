@@ -16,32 +16,32 @@ HEADERS=( ["activism.html"]="Activism Work"
 
 echo "Building main HTML files from Markdown..."
 
-#for IN_FILE in ${MD_SRC}/*
-#do
-#	if [ -d ${IN_FILE} ]
-#	then
-#		continue
-#	fi
-#
-#	OUT_FILE=.${IN_FILE#${MD_SRC}}
-#	OUT_FILE=${OUT_FILE%.md}.html
-#
-#	echo "Building ${OUT_FILE} from ${IN_FILE}..."
-#	
-#	HEADER=${HEADERS[${OUT_FILE#./}]}
-#	if [ ! "$OUT_FILE" = "./index.html" ]
-#	then
-#		HEADER=" - $HEADER"
-#	fi
-#
-#	CONTENT=$(pandoc --preserve-tabs ${IN_FILE})
-#
-#	HTMLPAGE=${TEMPLATE}
-#	HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
-#	HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
-#
-#	echo "${HTMLPAGE}" > ${OUT_FILE}
-#done
+for IN_FILE in ${MD_SRC}/*
+do
+	if [ -d ${IN_FILE} ]
+	then
+		continue
+	fi
+
+	OUT_FILE=.${IN_FILE#${MD_SRC}}
+	OUT_FILE=${OUT_FILE%.md}.html
+
+	echo "Building ${OUT_FILE} from ${IN_FILE}..."
+	
+	HEADER=${HEADERS[${OUT_FILE#./}]}
+	if [ ! "$OUT_FILE" = "./index.html" ]
+	then
+		HEADER=" - $HEADER"
+	fi
+
+	CONTENT=$(pandoc --preserve-tabs ${IN_FILE})
+
+	HTMLPAGE=${TEMPLATE}
+	HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
+	HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
+
+	echo "${HTMLPAGE}" > ${OUT_FILE}
+done
 
 
 if [ ! -e "${BLOGPOST_SRC}" ]
