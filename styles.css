@@ -15,21 +15,14 @@
 	--accent-p-green:  #B2E5BB;
 	--accent-p-blue: #B0B8F4;
 	--accent-p-purple: #E7C4F0;
+	--accent-p-pink: #F2B8D9;
 }
-
-@font-face {
-	font-family: 'ubuntuMono';
-	src: 
-		url('ubuntu-mono/UbuntuMono-R.ttf')
-		format('truetype');
-}
-
 
 body {
 	background-color: var(--bg-grey-md);
 	color: var(--text-grey-lt);
-	font-size: 18px;
-	font-family: 'ubuntuMono';
+	font-size: 16px;
+	font-family: "Lucida Console", Monaco, monospace;
 	margin: 1rem auto;
 	max-width: 80ch;
 }
@@ -48,8 +41,7 @@ a:hover {
 
 code {
 	background-color: var(--bg-grey-dk);
-	font-family: "Courier New" monospace;
-	font-size: 16px;
+	font-family: "Courier New", Courier, monospace;
 	padding: 2px;
 }
 
@@ -61,6 +53,16 @@ hr {
 	border: 0;
 	border-bottom: 2px dashed;
 	color: var(--text-grey-dk);
+}
+
+.sourceCode {
+	background-color: var(--bg-grey-dk);
+	border-radius: 5px;
+	color: var(--harsh-white);
+	font-family: "Courier New", Courier, monospace;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	width: 80ch;
 }
 
 .pr {
@@ -80,6 +82,10 @@ hr {
 }
 .pp {
 	color: var(--accent-p-purple);
+}
+
+.pi {
+	color: var(--accent-p-pink);
 }
 
 .white {
