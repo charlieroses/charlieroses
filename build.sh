@@ -65,7 +65,7 @@ do
 		TITLE=`head -n 1 ${IN_FILE}`
 		TITLE=${TITLE#"# "}
 		
-		HEADER=${HEADERS[blog.html]}
+		HEADER=" - ${HEADERS[blog.html]}"
 
 		CONTENT=$(pandoc --preserve-tabs ${IN_FILE})
 
