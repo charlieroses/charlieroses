@@ -7,6 +7,8 @@ _Philadelphia, PA_
 _January 2018 - Present_
 
 * Recipient of the Student Teaching Excellence Award in 2019
+* Took over graduate course when the professor got COVID-19
+	* [Blogpost about the experience](blogposts/2020-06-16_570.html)
 * Lectures computer science to undergraduate and graduate students 
 	* Bash
 	* Boolean Algebra
