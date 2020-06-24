@@ -23,7 +23,7 @@ _Markdown, HTML, CSS_
 * My personal website
 * Content built in markdown then compiled using `pandoc` into HTML files
 	using a bash script I wrote
-* Hosted via GitHub pages
+* Hosted via GitHub Pages
 * <https://charlierose.dev>
 * [GitHub Repository](https://github.com/charlierosec/dev-website)
 
@@ -31,15 +31,16 @@ _Markdown, HTML, CSS_
 
 <h3 class="py">Pokemon Card Website</h3>
 
-_Python, HTML, CSS, JavaScript_
+_Bash, Awk, Python, HTML, CSS_
 
 * A website used to track my extensive Pokemon card collection
 * I am a dedicated Pokemon card collector and needed a way to organize my collection
 	and keep track of what I have
-* Contains 90+ comma separated value files with over 3000 data points
-* Python scripts to manage the files
-* JavaScript functions to parse CSV files for the webpage
-* Webpage built from scratch using HTML, CSS, and JavaScript
+* Created a relational database using 100+ comma separated value files with over 
+    3000 data points
+* Python and Awk scripts to manage the files
+* Webpage built from scratch using HTML generated from Bash and Awk scripts
+* Hosted via GitHub Pages
 * <https://pokemon.charlierose.dev>
 * [GitHub Repository](https://github.com/charlierosec/pokemoncards)
 
