@@ -66,7 +66,7 @@ _June 2019 - October 2019_
 
 ---
 
-### Head of Code
+<h3 class="pg">Head of Code</h3>
 
 _Private Contractor : NASA HUNCH Program_
 
