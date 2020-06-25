@@ -18,7 +18,7 @@ _HTML, CSS, JavaScript_
 
 <h3 class="po">Dev Website</h3>
 
-_Markdown, HTML, CSS_
+_Bash, HTML, CSS_
 
 * My personal website
 * Content built in markdown then compiled using `pandoc` into HTML files
@@ -43,6 +43,7 @@ _Bash, Awk, Python, HTML, CSS_
 * Hosted via GitHub Pages
 * <https://pokemon.charlierose.dev>
 * [GitHub Repository](https://github.com/charlierosec/pokemoncards)
+* [Blogpost about building the site](blogposts/2020-06-25_pokemon.html)
 
 --- 
 
