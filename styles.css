@@ -91,3 +91,7 @@ hr {
 .white {
 	color: var(--harsh-white);
 }
+
+.pokeblog {
+	width: 30%;
+}
