@@ -8,7 +8,7 @@ random positions and opportunities that were opening up. Almost all of them
 did not fit my major. The bulk was actually Social Media and Marketing positions
 that I do not want. One opportunity was the Philly Start Up Sprint. It's a two
 week long conference type experience that's meant to build the skills you would
-have recieved in a summer internship. I applied and got in. So for the next two 
+have received in a summer internship. I applied and got in. So for the next two 
 weeks, I'll be watching talks and learning about different topics. I figure I
 might as well write about the experience here.
 
@@ -20,7 +20,7 @@ of us, and making sure we all had the required documentation.
 
 One of the large aspects of this program is participating in a group project. 
 Today we got separated into our groups and had our first group exercise. My
-group got into a Zoom video confrencing room, did some quick introductions and
+group got into a Zoom video conferencing room, did some quick introductions and
 did the few exercises. The exercises were centered around getting Slack, Zoom, 
 and Google Drive set up. We then did a group Quizzo exercise and answered some
 random questions. We had fun and I think the group bonded well.
@@ -49,7 +49,7 @@ for the group project.
 
 The group project had three parts and we had an hour to do it. The first two
 parts related to formatting data and getting information in a spreadsheet. The
-third part was to create a two slide powerpoint explaining the Excel function,
+third part was to create a two slide PowerPoint explaining the Excel function,
 `vLookup`, to 3rd graders. Since I have the most teaching experience, I was
 delegated part 3. I ended up making a cute slideshow about tables and 
 [Minecraft](minecraft.net) touching upon the concepts of fetching data and computers 
@@ -71,21 +71,21 @@ really excited.
 <h3 class="py">Day 3</h3>
 
 Another day, another sprint. Today's focus was data visualization and storytelling.
-Before I get into todays content, my team is still in first place! We did awesome
+Before I get into today's content, my team is still in first place! We did awesome
 on our Day 2 assignments. They used my [Minecraft](minecraft.net) slides as an
 example on how well I explained the material, so I'm really happy about that. 
 
-So todays training and exercises were about data visualization, storytelling, and
+So today's training and exercises were about data visualization, storytelling, and
 delivering a good presentation. After delivering many lectures, I've learned a lot
 of this information already. The typical, clear data images, don't overcrowd slides
 with text. There was also a great section about the best way to format graphs and
 diagrams to make them easy to read.
 
-Todays tasks had three parts, once again to be completed in an hour. 
+Today's tasks had three parts, once again to be completed in an hour. 
 
 In the first part, we were given a spreadsheet of revenue and costs for our company,
 Pretzler, a pretzel flavored seltzer. Our company wasn't doing great, but we needed
-to pitch it to investors with a three slide powerpoint. I did mostly some themeing 
+to pitch it to investors with a three slide PowerPoint. I did mostly some thematic 
 elements there.
 
 In the second part, we were given five pretty, but ineffective graphics and had to
@@ -111,12 +111,12 @@ team members and the competitiveness and the projects.
 
 Today, we really didn't have a comprehensive theme. The projects had to do about
 writing emails and pitches. I was a lot more interested in the Q&A session today.
-The Q&A session was with Nick Bayer, the CEO of Saxbys, a coffee shop on campus.
+The Q&A session was with Nick Bayer, the CEO of Saxby's, a coffee shop on campus.
 While I haven't cared too much for the speakers yet, as they've really only talked
 about business and starting businesses and being entrepreneurs, I will admit, I
 liked this guy. One of the things I noticed, he kept talking about diversity and 
 how many female employees and BIPOC employees he had. Coming from a cisgender,
-heterosexual, white, male CEO, this immidiately set off alarms in my head. In the
+heterosexual, white, male CEO, this immediately set off alarms in my head. In the
 chat I asked something along the lines of "You keep mentioning these numbers, but
 what are you actually doing for your LGBTQ+, BIPOC, and female employees?" I didn't
 expect my question to get chosen, but it was. He ended up answering the question
@@ -131,3 +131,16 @@ Even though this program is centered around business, I'm really starting to enj
 the work I'm doing and the things I'm learning.
 
 <h3 class="pb">Day 5</h3>
+
+Today's the last day of the week. I'm definitely feeling a sense of burnout. Like
+yesterday, today was another day centered less around training and more around
+Q&A sessions about businesses and entrepreneurship. We did some quick activities
+where we looked at an absurd amount of resumes and made changes. We then also
+answered a few interview questions. It was a fun reminder that I'm gonna have to
+look for a job at some point and we got some tips on hunting.
+
+Next week looks like it has more trainings, so I'm excited for those. They've 
+been more interesting than a business person talking about starting their own
+business. Maybe I'm just too technical for that stuff. Anyway, somehow my team
+is still winning. Everyday we sit down in our Zoom room and just joke around. It's
+been fun. Here's to week 2.
