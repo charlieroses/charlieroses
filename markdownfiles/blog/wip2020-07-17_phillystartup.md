@@ -51,9 +51,10 @@ The group project had three parts and we had an hour to do it. The first two
 parts related to formatting data and getting information in a spreadsheet. The
 third part was to create a two slide powerpoint explaining the Excel function,
 `vLookup`, to 3rd graders. Since I have the most teaching experience, I was
-delegated part 3. I ended up making a cute slideshow about tables and Minecraft
-touching upon the concepts of fetching data and computers maintaining that 
-process. I wanna go back and complete parts A and B on my own for the experience.
+delegated part 3. I ended up making a cute slideshow about tables and 
+[Minecraft](minecraft.net) touching upon the concepts of fetching data and computers 
+maintaining that process. I wanna go back and complete parts A and B on my own for
+the experience.
 
 We had a Q&A session with Emily Foote, she does a lot of work in education and
 accessibility. These two topics are incredibly important to me, but sadly I missed
@@ -68,5 +69,49 @@ competitive and we're in first place based on participation and Quizzo. I'm
 really excited.
 
 <h3 class="py">Day 3</h3>
+
+Another day, another sprint. Today's focus was data visualization and storytelling.
+Before I get into todays content, my team is still in first place! We did awesome
+on our Day 2 assignments. They used my [Minecraft](minecraft.net) slides as an
+example on how well I explained the material, so I'm really happy about that. 
+
+So todays training and exercises were about data visualization, storytelling, and
+delivering a good presentation. After delivering many lectures, I've learned a lot
+of this information already. The typical, clear data images, don't overcrowd slides
+with text. There was also a great section about the best way to format graphs and
+diagrams to make them easy to read.
+
+Todays tasks had three parts, once again to be completed in an hour. 
+
+In the first part, we were given a spreadsheet of revenue and costs for our company,
+Pretzler, a pretzel flavored seltzer. Our company wasn't doing great, but we needed
+to pitch it to investors with a three slide powerpoint. I did mostly some themeing 
+elements there.
+
+In the second part, we were given five pretty, but ineffective graphics and had to
+give constructive criticism on all of them. Myself and another teammate worked on
+this one. We each wrote our own critiques separately, then combined our ideas for
+the submission.
+
+The last part was writing about a visualization from 
+[r/DataIsBeautiful](reddit.com/r/dataisbeautiful) on [Reddit](reddit.com). Two of
+my teammates worked on this part, so I didn't get a chance to work on it. I'll 
+probably do this part on my own too.
+
+In other news, I finally built a 
+[GitHub repository](https://github.com/charlierosec/PhillyStartupSprint2020) 
+to act as a portfolio of the work we're doing here. I'm really proud of the things
+I've written and the presentations I've created so far. I hope we get more into 
+tech things later, but I don't expect to.
+
 <h3 class="pg">Day 4</h3>
+
+Team Lombard Street sees our third day in a row on top! I'm really enjoying my
+team members and the competitiveness and the projects.
+
+Today, we really didn't have a comprehensive theme. The projects had to do about
+writing emails and pitches. I was a lot more interested in the Q&A session today.
+The Q&A session was with Nick Bayer, the CEO of Saxbys, a coffee shop on campus.
+While I haven't cared too much for the
+
 <h3 class="pb">Day 5</h3>
