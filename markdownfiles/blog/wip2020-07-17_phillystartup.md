@@ -112,6 +112,22 @@ team members and the competitiveness and the projects.
 Today, we really didn't have a comprehensive theme. The projects had to do about
 writing emails and pitches. I was a lot more interested in the Q&A session today.
 The Q&A session was with Nick Bayer, the CEO of Saxbys, a coffee shop on campus.
-While I haven't cared too much for the
+While I haven't cared too much for the speakers yet, as they've really only talked
+about business and starting businesses and being entrepreneurs, I will admit, I
+liked this guy. One of the things I noticed, he kept talking about diversity and 
+how many female employees and BIPOC employees he had. Coming from a cisgender,
+heterosexual, white, male CEO, this immidiately set off alarms in my head. In the
+chat I asked something along the lines of "You keep mentioning these numbers, but
+what are you actually doing for your LGBTQ+, BIPOC, and female employees?" I didn't
+expect my question to get chosen, but it was. He ended up answering the question
+really nicely. He talked about the different trainings he has and what he tries to
+do on the CEO level. One of the things he said really stood out to me. _"How can
+we be opening the door for other people, when the people opening the doors have
+these implicit biases"_. We had a good talk and I was really impressed with the 
+things he said about implicit biases, privilege, and the constant learning that
+comes with it all.
+
+Even though this program is centered around business, I'm really starting to enjoy
+the work I'm doing and the things I'm learning.
 
 <h3 class="pb">Day 5</h3>
