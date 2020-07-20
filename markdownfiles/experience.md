@@ -9,20 +9,21 @@ _January 2018 - Present_
 * Recipient of the Student Teaching Excellence Award in 2019
 * Took over graduate course when the professor got COVID-19
 	* [Blogpost about the experience](blogposts/2020-06-16_570.html)
-* Lectures computer science to undergraduate and graduate students 
+* Lectured computer science to undergraduate and graduate students 
 	* Bash
 	* Boolean Algebra
 	* Git
 	* Graphics
-* Writes exams
-* Writes and edits weekly lab assignments
-* Works alongside professors to add original content to courses
-* Tutors and assists students in weekly office and lab hours
-* Creates and updates online textbook 
+* Wrote many exams and hosted the accompanying review session for 100+
+	students
+* Wrote and editted weekly lab assignments
+* Worked alongside professors to add original content to courses
+* Tutored and assisted students in weekly office and lab hours
+* Created and updated online textbook 
 	* <https://www.cs.drexel.edu/~src322/cs164/>
-* Manages Slack channels for communication between professors, hundreds of 
+* Managed Slack channels for communication between professors, hundreds of 
 	students, and teaching assistants
-* Investigates plagiarism and academic dishonesty
+* Investigated plagiarism and academic dishonesty
 
 ---
 
