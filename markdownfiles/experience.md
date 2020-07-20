@@ -26,7 +26,28 @@ _January 2018 - Present_
 
 ---
 
-<h3 class="po">Research Assistant</h3>
+<h3 class="po">Summer Intern</h3>
+
+_Philly Startup Sprint_
+
+_July 2020_
+
+* Participated in a two week long online sprint to gain industry skills that 
+	would have been acquired in a summer internship that was lost to the 
+	global COVID-19 pandemic
+* Worked alongside a team of 7 students from different backgrounds and colleges
+	in a variety of group projects under a time limit
+	* Creating project pitches and presentations
+	* Data management in Google Sheets and Excel
+* Explored a variety of professions, career paths, and fields
+* Participated in daily group projects, Q&A sessions, and trainings
+* [Blogpost regarding the first week](blogposts/2020-07-17_phillystartup)
+* [GitHub portfolio of the work done](https://github.com/charlierosec/PhillyStartupSprint2020)
+
+
+---
+
+<h3 class="py">Research Assistant</h3>
 
 _Drexel University College of Computing and Informatics_
 
@@ -46,7 +67,7 @@ _June 2019 - Sept 2019_
 
 --- 
 
-<h3 class="py">Bootcamp and Online Teaching Assistant</h3>
+<h3 class="pg">Bootcamp and Online Teaching Assistant</h3>
 
 _Pennsylvania Training and Technical Assistance Network (PaTTAN)_
 
@@ -66,7 +87,7 @@ _June 2019 - October 2019_
 
 ---
 
-<h3 class="pg">Head of Code</h3>
+<h3 class="pb">Head of Code</h3>
 
 _Private Contractor : NASA HUNCH Program_
 
