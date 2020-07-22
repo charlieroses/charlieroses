@@ -39,6 +39,26 @@ project a million times more than the many speakers.
 
 <h3 class="po">Day 2</h3>
 
+Due to the later due date, I don't know how Lombard is doing today. I hope we're 
+still doing alright. Based on the amount of effort I put into graphic design
+yesterday, I hope we're still winning.
+
+Today is a great day for me! It's a technical day about Python. It was a really
+simple introduction to `numpy` and `pandas` and using Python as a way to show
+data manipulation. It was very quick. I spent the training answering questions in
+the chat and going over basic syntax and explanations. The presenters were doing
+a great job talking and I didn't want them to get overwhelmed with the chat. I 
+know I tend to do so in lecture.
+
+While I was really excited for Python and had an awesome time going through the
+training, the rest of the day was severely disappointing. The group activity was
+going to websites and playing around with the user interfaces. There was also a
+random part of the group project about talking with other groups to share points.
+Lombard street is probbly gonna be kicked off our top spot, so that's annoying. 
+I hate gross disgusting business tactics that have nothing to do with your ability
+or what you learned. The afternoon speaker talked about finances. I really
+dislike business and this really reminded me that. It's really a shame how that
+played out.
 
 
 <h3 class="py">Day 3</h3>
