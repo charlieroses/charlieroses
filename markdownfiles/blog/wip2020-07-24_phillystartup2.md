@@ -62,5 +62,22 @@ played out.
 
 
 <h3 class="py">Day 3</h3>
+
+Due to the shady redistribution of points yesterday, Lombard was bumped down to
+sixth place. I ended up speaking to the person in charge and he said the original
+project was supposed to be in Python, but he got bored and chose the point game
+instead. So that's horribly disappointing. Hopefully we can get our lead back.
+
+Today was horribly boring. It's another advertising day. Today we talked about
+targeted ads. I think the absolute worst quote from one of our speakers today
+was "Businesses exist to get customers" which I think is backwards and gross.
+I think businesses should exist to help people and not just extort them for
+money. This advertising and marketing game is getting into that gross aspect of
+using money to get more money that I'm not about. The group project was about
+spending money on ads and stuff. It was really boring. I feel like we're really
+drifting away from skills and just focusing on random money numbers and I hate
+it.
+
+
 <h3 class="pg">Day 4</h3>
 <h3 class="pb">Day 5</h3>
