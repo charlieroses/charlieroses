@@ -1,4 +1,4 @@
-# Philly Start Up Sprint [Week 2]
+#Philly Start Up Sprint [Week 2]
 
 <h3 class="pr">Day 1</h3>
 
@@ -23,11 +23,11 @@ advertise it.
 
 If you look through my 
 [GitHub repository](https://github.com/charlierosec/PhillyStartupSprint2020) in
-my Day06 directory, you can see the interations and concepts I went through when
+my Day06 directory, you can see the iterations and concepts I went through when
 creating the logo and posts. I played with colors and alignment and language with
 the logo. I ended up choosing the final logo with aspects of the Lyft pink and 
 the goPuff blue. I played with different angles in the concept art. I tried to 
-have thecolors in our Instagram post match those from the logo but with a darker, 
+have the colors in our Instagram post match those from the logo but with a darker, 
 nighttime mood. We chose Will Smith as a hypothetical ambassador. He and the goPuff 
 fish are driving a Lyft car through Philly at night, making those late night 
 snack deliveries.
@@ -54,7 +54,7 @@ While I was really excited for Python and had an awesome time going through the
 training, the rest of the day was severely disappointing. The group activity was
 going to websites and playing around with the user interfaces. There was also a
 random part of the group project about talking with other groups to share points.
-Lombard street is probbly gonna be kicked off our top spot, so that's annoying. 
+Lombard street is probably gonna be kicked off our top spot, so that's annoying. 
 I hate gross disgusting business tactics that have nothing to do with your ability
 or what you learned. The afternoon speaker talked about finances. I really
 dislike business and this really reminded me that. It's really a shame how that
@@ -80,4 +80,40 @@ it.
 
 
 <h3 class="pg">Day 4</h3>
+
+I honestly can't say anything interesting happened today. We talked with some
+people from [Campus Philly](https://campusphilly.org/) who talked to us about
+what Philadelphia has to offer. As someone who's lived in Philly for the past
+3 years, and lived outside of Philly for the other 18, I know my way around.
+It felt a little touristy for me. 
+
+Instead of a group project, we got out final prompt for our group project. It's
+a massive project about creating a product and a company surrounding that item.
+We had to prepare a slide deck with data visualizations, create a brand and 
+logo and marketing plan. We had to plan out hiring. For the most part, one guy
+in my group took the lead. He had an idea for a flashy Internet of Things (IOT)
+smart coffee table that links to your phone and stuff. I'm an old fashioned CS
+guy who wants nothing to do with all these smart home devices, so I was left to
+graphic design. I'm not complaining.
+
+
 <h3 class="pb">Day 5</h3>
+
+It's the last day of the program. This morning, we finished up our presentation
+and chose a presenter. The panel was about leaving Philadelphia to go work in a
+different city, so as someone planning to go to grad school in Philadelphia, it
+wasn't too interesting. Lombard Street did not win, somehow. They said out
+presentation looked the best, but we didn't move onto the final rounds. You win
+some you lose some.
+
+<h3 class="pp">Final Thoughts</h3>
+
+I am not a business major. I now know that as a fact. While I'm glad I participated
+and got the chance to learn some skills, I would never attend something like this
+in the future. I probably wouldn't have attended if I knew what I was getting into.
+I feel like they did present some good aspects of business, but also, they tried to
+gloss over some shady parts of business or make it look not shady. I'm not a fan of 
+that. Overall, it was not my style. I'm a technical CS major at heart and it's good
+to remember that. My largest takeaway was probably the way I applied CS problem 
+solving skills to business problems. I wasn't bad at anything they threw at me, it
+was just not interesting. Great job to kepler for putting this together. 
