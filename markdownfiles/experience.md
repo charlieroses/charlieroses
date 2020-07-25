@@ -43,6 +43,7 @@ _July 2020_
 * Explored a variety of professions, career paths, and fields
 * Participated in daily group projects, Q&A sessions, and trainings
 * [Blogpost regarding the first week](blogposts/2020-07-17_phillystartup)
+* [Blogpost regarding the second week](blogposts/2020-07-24_phillystartup2)
 * [GitHub portfolio of the work done](https://github.com/charlierosec/PhillyStartupSprint2020)
 
 
