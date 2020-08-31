@@ -3,40 +3,41 @@
 Recently, a lot has been happening in my life that has made me think a lot
 about diversity, my identity, and discrimination.
 
-Over the spring of 2019, I recieved an email regarding the 
-[Grace Hopper Celebration of Women in Computing](ghc.anitab.org). While I've
-always supporter of the women in tech initiative, the email was not geared
-towards supporters. It was an invitation directed at female students to
-celebrate their female identity at the conference with the college funding
-their travel. As a transgender man who is definitely not a woman, this email
-was incredibly insulting to me. After meeting with people withing the college,
-I learned the email was sent to all students with a "female" designation on
-their birth certificate, with no regards to their actual gender, which can also
-be designated in Drexel systems. This means, not only did transgender men
-recieve an email not meant for them, transgender women and many nonbinary
-individuals did not recieve this email that they could greatly benefit from.
-This made me realize how heteronormative[[1]](#def-1) and 
+Over the spring of 2019, I received an email regarding the
+[Grace Hopper Celebration of Women in Computing](https://www.ghc.anitab.org).
+While I've always been a supporter of the women in tech initiative, the email
+was not geared towards supporters. It was an invitation directed at female
+students to celebrate their female identity at the conference with the college
+funding their travel. As a transgender man who is definitely not a woman, this
+email was incredibly insulting to me. After meeting with people withing the
+college, I learned the email was sent to all students with a "female"
+designation on their birth certificate, with no regards to their actual gender,
+which can also be designated in Drexel systems. This means, not only did
+transgender men receive an email not meant for them, transgender women and many
+nonbinary individuals did not receive this email that they could greatly
+benefit from. This made me realize how heteronormative[[1]](#def-1) and
 cisnormative[[2]](#def-2) the Women in Computing Initiative is. The
 initiative unintentionally ignores the issues that transgender women face.
 
 Right after this issue with the college, I reached out to two student
 organizations on campus about it, and how to better include LGBTQ+ women and
 the specific issues they face into the women in tech initiatives. I reached out
-to the [Society of Women Engineers (SWE)](swe.org) and the [Women in Computing
-Society (WiCS)](drexelwics.hosting.acm.org). SWE was an incredibly resource,
-and we were able to work together and talk about the different initatives they
-have and how better to include LGBTQ+ people. I was very happy with their
-response. When contacting WiCS, they were more dismissive towards the issues I
-brought up. They focused on the Grace Hopper issue and were quick to not take
-any blame. They also stated that "all people are allowed to come to meetings",
-which is a good start, but doesn't address the individual issues that LGBTQ+
-women face. The conversation quickly ended and left a sour taste in my mouth.
+to the [Society of Women Engineers (SWE)](https://www.swe.org) and the
+[Women in Computing Society (WiCS)](https://www.drexelwics.hosting.acm.org).
+SWE was an incredible resource, and we were able to work together and talk
+about the different initiatives they have and how better to include LGBTQ+
+people. I was very happy with their response. When contacting WiCS, they were
+more dismissive towards the issues I brought up. They focused on the Grace
+Hopper issue and were quick to not take any blame. They also stated that "all
+people are allowed to come to meetings", which is a good start, but doesn't
+address the individual issues that LGBTQ+ women face. The conversation quickly
+ended and left a sour taste in my mouth.
 
 Flash forward to August of 2020, Drexel CCI posted a [list of 18 
-resources](drexel.edu/cci/news/2020/August/associations-for-women-in-computing/)
+resources](https://www.drexel.edu/cci/news/2020/August/associations-for-women-in-computing/)
 for women in computing. I read through the article to find that there was only
 one resource that prioritized LGBTQ+ people. In a moment of frustration, I
-shared the article on my personal instagram and vented about the lack of
+shared the article on my personal Instagram and vented about the lack of
 resources for LGBTQ+ people in STEM, citing the events that had happened a year
 ago with the Grace Hopper celebration and the response from WiCS. I woke up the
 next morning to many messages from Drexel CCI staff and WiCS representatives in
@@ -85,14 +86,14 @@ fancy statistics and numbers. I've noticed that people are more willing to pat
 themselves on the back for doing the bare minimum instead of admitting to their
 mistakes and being willing to learn and grow. I'm excited to plan out a proper
 diversity training. Hopefully I'll be able to get those ideas across. I'll
-probably write another blogpost once I plan out and host the training.
+probably write another blog post once I plan out and host the training.
 
 ---
 
-<a name="def-1">[1]</a> heteronormative (adj) : of, relating to, or based on
-the attitude that heterosexuality is the only normal and natural expression of
-sexuality
-[Merriam Webster full definition](merriam-webster.com/dictionary/heteronormative)
+<span id="def-1">[1]</span> heteronormative (adj) : of, relating to, or based
+on the attitude that heterosexuality is the only normal and natural expression
+of sexuality
+[Merriam Webster full definition](https://www.merriam-webster.com/dictionary/heteronormative)
 
-<a name="def-2">[2]</a> cisnormative (adj) : of, relating to, or based on the 
-attitube that cisgender is the only normal and natural expression of gender
+<span id="def-2">[2]</span> cisnormative (adj) : of, relating to, or based on
+the attitude that cisgender is the only normal and natural expression of gender
