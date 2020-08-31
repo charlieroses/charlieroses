@@ -15,8 +15,10 @@ designation on their birth certificate, with no regards to their actual gender,
 which can also be designated in Drexel systems. This means, not only did
 transgender men receive an email not meant for them, transgender women and many
 nonbinary individuals did not receive this email that they could greatly
-benefit from. This made me realize how heteronormative[[1]](#def-1) and
-cisnormative[[2]](#def-2) the Women in Computing Initiative is. The
+benefit from. This made me realize how
+heteronormative[[1]](blogposts/2020-08-30_diversity.html#def-1) and
+cisnormative[[2]](blogposts/2020-08-30_diversity.html#def-2)
+the Women in Computing Initiative is. The
 initiative unintentionally ignores the issues that transgender women face.
 
 Right after this issue with the college, I reached out to two student
