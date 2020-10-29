@@ -7,13 +7,16 @@ _Philadelphia, PA_
 _January 2018 - Present_
 
 * Recipient of the Student Teaching Excellence Award in 2019
+* Managed grading between 9 TAs for 15 assignments for 250+ students
 * Took over graduate course when the professor got COVID-19
 	* [Blogpost about the experience](blogposts/2020-06-16_570.html)
 * Lectured computer science to undergraduate and graduate students 
 	* Bash
 	* Boolean Algebra
+	* Binary and Number Bases
 	* Git
 	* Graphics
+	* Recursion
 * Wrote many exams and hosted the accompanying review session for 100+
 	students
 * Wrote and editted weekly lab assignments
@@ -45,7 +48,6 @@ _July 2020_
 * [Blogpost regarding the first week](blogposts/2020-07-17_phillystartup)
 * [Blogpost regarding the second week](blogposts/2020-07-24_phillystartup2)
 * [GitHub portfolio of the work done](https://github.com/charlierosec/PhillyStartupSprint2020)
-
 
 ---
 

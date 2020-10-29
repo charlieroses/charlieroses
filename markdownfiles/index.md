@@ -1,14 +1,21 @@
 <h3 class="pr">About Me</h3>
 
-My name is Charlie Rose and I am a third year computer science major at Drexel
-University with interests in systems programming and embedded systems. On a 
-higher level, I'd like to explore the combination of art, math, and computing.
-I am also a highly experienced teaching assistant with plans to get a masters 
-and PhD.
+**Charlie Rose**
 
-I have built this website as a way to showcase my skills, interests, and 
-passions in ways that a resume cannot and to give a further glimpse into the
-multifaceted person I am.
+Head Teaching Assistant
 
-If you would like my resume or to speak with me more, you can contact me at
-me@charlierose.dev
+Student Diversity Coordinator
+
+<h3 class="po">Education</h3>
+
+**Drexel University**
+
+BS Computer Science
+
+Concentrations in Systems/High Performance Computing and Theory/Computation
+
+Minor in Computer Engineering
+
+Pennoni Honors College
+
+_Anticipated Graduation June 2022_

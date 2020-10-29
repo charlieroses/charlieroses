@@ -55,6 +55,7 @@ _Python_
 * Collected data multiple times daily over the course of many weeks
 * Planning a quick paper describing my findings
 * [GitHub Repository](https://github.com/charlierosec/animalcrossingresearch)
+* On pause due to class priority over video games
 
 ---
 
@@ -70,4 +71,5 @@ _HTML, CSS, Google Firebase, Google Maps APIs_
 * The user interface features colorblind friendly colors and dyslexic friendly
 	fonts
 * [DevPost for Comfy](https://devpost.com/software/comfy)
+* [Panel About the Event](https://youtube.com/watch?v=tjkdmh-cfTw)
 
