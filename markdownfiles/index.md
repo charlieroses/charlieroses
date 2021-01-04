@@ -16,6 +16,4 @@ Concentrations in Systems/High Performance Computing and Theory/Computation
 
 Minor in Computer Engineering
 
-Pennoni Honors College
-
 _Anticipated Graduation June 2022_

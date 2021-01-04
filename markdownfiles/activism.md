@@ -11,6 +11,7 @@ _September 2017 - Present_
 * Works with administration to create a safer environment for LGBT+ individuals
 * Works with administration to use more inclusive language on campus
 * Mentors many LGBT+ students
+* Recieved the Alexander Van Rensselaer Service Award
 
 _Student Diversity Coordinator_
 
