@@ -2,6 +2,10 @@
 
 **Charlie Rose**
 
+Pronunciation:
+[**chaar**-lee](https://dictionary.cambridge.org/us/media/english/us_pron/u/usc/uscld/uscld03012.mp3)
+[rOHz](https://dictionary.cambridge.org/us/media/english/us_pron/r/ros/rose_/rose.mp3)
+
 [he/him](http://pronoun.is/he)
 or
 [they/them](http://pronoun.is/they/.../themselves)
