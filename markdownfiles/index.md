@@ -12,6 +12,8 @@ or
 
 Head Teaching Assistant
 
+Undergraduate Researcher (CO-OP)
+
 Student Diversity Coordinator
 
 <h3 class="po">Education</h3>

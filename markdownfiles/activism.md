@@ -38,15 +38,16 @@ _July 2020 - Present_
 
 <h3 class="py">oSTEM at Drexel University</h3>
 
-_Founding President and Advisor_
+_Founding President and Student Advisor_
 
-_September 2018 - May 2020_
+_September 2018 - May 2020, February 2021 - Present_
 
 * Founded the first LGBT+ in STEM inclusion club at Drexel University
 * Networked with other organizations and faculty to spread awareness
 * Organized executive board to plan events
 * Hosted events multiple times throughout an academic term
 * Folded due to the COVID-19 pandemic
+* Now working on assisting the new executive board in rebuilding the organization
 
 ---
 <h3 class="pg">Council Rock High School South</h3>

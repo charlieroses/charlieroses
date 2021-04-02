@@ -30,7 +30,20 @@ _January 2018 - Present_
 
 ---
 
-<h3 class="po">Summer Intern</h3>
+<h3 class="po">Undergraduate Researcher</h3>
+
+_Drexel University CO-OP_
+
+_April 2021 - Present_
+
+* Preparing work on my undergraduate thesis
+* Finalizing thesis topic regarding computer science education
+* Starting literature review
+* Getting IRB approval for research practices
+
+---
+
+<h3 class="py">Summer Intern</h3>
 
 _Philly Startup Sprint_
 
@@ -51,7 +64,7 @@ _July 2020_
 
 ---
 
-<h3 class="py">Research Assistant</h3>
+<h3 class="pg">Research Assistant</h3>
 
 _Drexel University College of Computing and Informatics_
 
@@ -71,7 +84,7 @@ _June 2019 - Sept 2019_
 
 --- 
 
-<h3 class="pg">Bootcamp and Online Teaching Assistant</h3>
+<h3 class="pb">Bootcamp and Online Teaching Assistant</h3>
 
 _Pennsylvania Training and Technical Assistance Network (PaTTAN)_
 
@@ -91,7 +104,7 @@ _June 2019 - October 2019_
 
 ---
 
-<h3 class="pb">Head of Code</h3>
+<h3 class="pp">Head of Code</h3>
 
 _Private Contractor : NASA HUNCH Program_
 

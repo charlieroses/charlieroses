@@ -1,4 +1,15 @@
-<h3 class="pr">CS-164 Online Textbook</h3>
+<h3 class="pr">Hardware and Operating Systems</h3>
+
+_Plan9, Raspberry Pi_
+
+_April 2021 - June 2021_
+
+* A research project regarding putting Plan9 on a Raspberry Pi and going from
+	there
+
+---
+
+<h3 class="po">CS-164 Online Textbook</h3>
 
 _HTML, CSS, JavaScript_
 
@@ -11,12 +22,11 @@ _HTML, CSS, JavaScript_
 	* Machine Languages
 	* Verbose Languages
 	* The progression of 0s and 1s to the structure of a basic computer
-* All material was written by me
 * <https://www.cs.drexel.edu/~src322/cs164/>
 
 ---
 
-<h3 class="po">Dev Website</h3>
+<h3 class="py">Dev Website</h3>
 
 _Bash, HTML, CSS_
 
@@ -29,7 +39,7 @@ _Bash, HTML, CSS_
 
 ---
 
-<h3 class="py">Pokemon Card Website</h3>
+<h3 class="pg">Pokemon Card Website</h3>
 
 _Bash, Awk, Python, HTML, CSS_
 
@@ -47,7 +57,7 @@ _Bash, Awk, Python, HTML, CSS_
 
 --- 
 
-<h3 class="pg">Animal Crossing : New Horizons Data Analysis</h3>
+<h3 class="pb">Animal Crossing : New Horizons Data Analysis</h3>
 
 _Python_
 
@@ -59,7 +69,7 @@ _Python_
 
 ---
 
-<h3 class="pb">Comfy</h3>
+<h3 class="pp">Comfy</h3>
 
 _HTML, CSS, Google Firebase, Google Maps APIs_
 
