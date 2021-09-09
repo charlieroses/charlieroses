@@ -15,7 +15,9 @@ Head Teaching Assistant
 
 Undergraduate Researcher (CO-OP)
 
-Student Diversity Coordinator
+Diversity Equity Inclusion Council Member
+
+Student Advisor of oSTEM at Drexel University
 
 <h3 class="po">Education</h3>
 

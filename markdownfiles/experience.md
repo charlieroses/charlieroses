@@ -7,26 +7,27 @@ _Philadelphia, PA_
 _January 2018 - Present_
 
 * Recipient of the Student Teaching Excellence Award in 2019
-* Managed grading between 9 TAs for 15 assignments for 250+ students
+* Manages and distributes grading amongst multiple TAs in a variety of courses
 * Took over graduate course when the professor got COVID-19
 	* [Blogpost about the experience](blogposts/2020-06-16_570.html)
-* Lectured computer science to undergraduate and graduate students 
+* Lectures computer science topics at both the undergraduate and graduate level
 	* Bash
 	* Boolean Algebra
 	* Binary and Number Bases
+	* C Programming Language
 	* Git
 	* Graphics
 	* Recursion
 * Wrote many exams and hosted the accompanying review session for 100+
 	students
-* Wrote and editted weekly lab assignments
+* Wrote and edited weekly lab assignments
 * Worked alongside professors to add original content to courses
-* Tutored and assisted students in weekly office and lab hours
 * Created and updated online textbook 
 	* <https://www.cs.drexel.edu/~src322/cs164/>
+* Tutored and assisted students in weekly office and lab hours
 * Managed Slack channels for communication between professors, hundreds of 
 	students, and teaching assistants
-* Investigated plagiarism and academic dishonesty
+* Investigates plagiarism and academic dishonesty
 
 ---
 
@@ -36,10 +37,11 @@ _Drexel University CO-OP_
 
 _April 2021 - Present_
 
-* Preparing work on my undergraduate thesis
-* Finalizing thesis topic regarding computer science education
-* Starting literature review
-* Getting IRB approval for research practices
+* Preparing work on my undergraduate senior thesis
+* Starting preliminary research on the [Plan9](www.addlink.com) operating system
+	for the Raspberry Pi4
+* See [Hardware and Operating Systems](projects.html#seniordesign) in 
+	the [Projects Tab](projects.html) for more specific information
 
 ---
 
@@ -84,7 +86,7 @@ _June 2019 - Sept 2019_
 
 --- 
 
-<h3 class="pb">Bootcamp and Online Teaching Assistant</h3>
+<h3 class="pb">Boot Camp and Online Teaching Assistant</h3>
 
 _Pennsylvania Training and Technical Assistance Network (PaTTAN)_
 
@@ -100,7 +102,7 @@ _June 2019 - October 2019_
 	* Networking
 	* Cyber security
 	* Graph theory
-* Created original course content and lectures on low level data and anaylsis
+* Created original course content and lectures on low level data and analysis
 
 ---
 

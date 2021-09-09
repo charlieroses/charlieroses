@@ -1,11 +1,17 @@
-<h3 class="pr">Hardware and Operating Systems</h3>
+<h3 class="pr" id="seniordesign">Hardware and Operating Systems</h3>
 
-_Plan9, Raspberry Pi_
+_Plan9, Raspberry Pi4_
 
-_April 2021 - June 2021_
+_April 2021 - Present_
 
-* A research project regarding putting Plan9 on a Raspberry Pi and going from
-	there
+* A research project that has now been adapted into my undergraduate senior
+	thesis
+* The thesis topic is based around the [Google Summer of Code Project](www.addlink.com)
+	titled _Raspberry Pi Work_
+* Plans to create missing hardware implementations for [Richard Miller's Port of Plan9 for the Raspberry Pi](www.addlink.com)
+* Completed small scale projects to get acclimated with the operating system and
+	prepare for the larger senior design project
+	* Fixed bug on SPI port drivers
 
 ---
 
@@ -76,7 +82,7 @@ _HTML, CSS, Google Firebase, Google Maps APIs_
 * Web app project for PhillyCodeFest 2018
 * Won the Google award for "Best User Interface"
 * A crowd sourced review app centered around accessibility
-* Promotes awareness of potiential triggers and obstacles for mental and 
+* Promotes awareness of potential triggers and obstacles for mental and 
 	physical disabilities in daily life
 * The user interface features colorblind friendly colors and dyslexic friendly
 	fonts
