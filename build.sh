@@ -76,6 +76,8 @@ do
 
 		HTMLPAGE=${TEMPLATE}
 		HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
+		HTMLPAGE="${HTMLPAGE/favicon.ico/../favicon.ico}"
+		HTMLPAGE="${HTMLPAGE/styles.css/../styles.css}"
 		HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
 
 		echo "${HTMLPAGE}" > ${OUT_FILE}
