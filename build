@@ -121,8 +121,7 @@ echo "Building README.md"
 CONTENT=$(cat "${MD_SRC}/index.md")
 CONTENT=${CONTENT%%"<h3 class=\"po\">"*}
 CONTENT=${CONTENT#*"</h3>"}
-
-echo "${CONTENT}" > README.md
+echo "${CONTENT}<https://charlierose.dev>" > README.md
 
 echo "Completed README.md"
 

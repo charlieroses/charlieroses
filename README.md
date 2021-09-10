@@ -19,4 +19,4 @@ Diversity Equity Inclusion Council Member
 
 Student Advisor of oSTEM at Drexel University
 
-
+<https://charlierose.dev>
