@@ -65,7 +65,7 @@ do
 		OUT_FILE=${BLOGPOST_SRC}/${IN_FILE#${BLOGMD_SRC}}
 		OUT_FILE=${OUT_FILE%.md}.html
 
-		echo "Building ${OUT_FILE} from ${IN_FILE}..."
+		echo "  Building ${OUT_FILE} from ${IN_FILE}..."
 
 		TITLE=$(head -n 1 "${BLOGMD_SRC}/${IN_FILE}")
 		TITLE=${TITLE#"# "}
@@ -74,6 +74,35 @@ do
 
 		CONTENT=$(pandoc --preserve-tabs "${BLOGMD_SRC}/${IN_FILE}")
 
+		# Fixing this horrid ugly footnote formatting
+		FN_DIV="<div class=\"footnotes\">"
+		FL_CURR="class=\"footnoteRef\" id=\"fnref[0-9]+\"><sup>[0-9]+</sup></a>"
+
+		if [ -n "$(grep "${FN_DIV}" <<< "${CONTENT}")" ]
+		then
+			OIFS=$IFS
+			IFS=$'\n'
+			for FL_C in $(grep -Eo "${FL_CURR}" <<< "${CONTENT}")
+			do
+				FL_N="${FL_C/<sup>/[}"
+				FL_N="${FL_N/<\/sup>/]}"
+				CONTENT=${CONTENT/${FL_C}/${FL_N}}
+			done
+			IFS=$OIFS
+
+			FN_DIV_C=${CONTENT##*${FN_DIV}}
+			FN_DIV_N=${FN_DIV_C}
+			FN_DIV_N=${FN_DIV_N/"<ol>"/}
+			FN_DIV_N=${FN_DIV_N/"<\/ol>"/}
+			FN_DIV_N=${FN_DIV_N//"<\/li>"/}
+			FN_DIV_N=${FN_DIV_N//"<p>"/}
+			FN_DIV_N="$(echo "${FN_DIV_N}" | sed -r 's/<li id=\"fn([0-9]*)\">/<p><span id=\"fn\1\">[\1]: <\/span>/g')"
+			FN_DIV_N=${FN_DIV_N//"↩"/" [^]"}
+
+			CONTENT=${CONTENT/"${FN_DIV_C}"/"${FN_DIV_N}"}
+		fi
+
+		# Fixing template links and inserting content
 		HTMLPAGE=${TEMPLATE}
 		HTMLPAGE="${HTMLPAGE/favicon.ico/../favicon.ico}"
 		HTMLPAGE="${HTMLPAGE/styles.css/../styles.css}"
