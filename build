@@ -116,4 +116,14 @@ echo "${HTMLPAGE}" > "${OUT_FILE}"
 
 echo "Completed main blog page"
 
+echo "Building README.md"
+
+CONTENT=$(cat "${MD_SRC}/index.md")
+CONTENT=${CONTENT%%"<h3 class=\"po\">"*}
+CONTENT=${CONTENT#*"</h3>"}
+
+echo "${CONTENT}" > README.md
+
+echo "Completed README.md"
+
 echo "Completed Script"
