@@ -22,7 +22,7 @@ creating a logo for the merger, and also an [Instagram](instagram.com) post to
 advertise it.
 
 If you look through my 
-[GitHub repository](https://github.com/charlierosec/PhillyStartupSprint2020) in
+[GitHub repository](https://github.com/charlieroses/PhillyStartupSprint2020) in
 my Day06 directory, you can see the iterations and concepts I went through when
 creating the logo and posts. I played with colors and alignment and language with
 the logo. I ended up choosing the final logo with aspects of the Lyft pink and 

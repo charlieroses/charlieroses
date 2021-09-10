@@ -99,7 +99,7 @@ my teammates worked on this part, so I didn't get a chance to work on it. I'll
 probably do this part on my own too.
 
 In other news, I finally built a 
-[GitHub repository](https://github.com/charlierosec/PhillyStartupSprint2020) 
+[GitHub repository](https://github.com/charlieroses/PhillyStartupSprint2020) 
 to act as a portfolio of the work we're doing here. I'm really proud of the things
 I've written and the presentations I've created so far. I hope we get more into 
 tech things later, but I don't expect to.

@@ -41,7 +41,7 @@ _Bash, HTML, CSS_
 	using a bash script I wrote
 * Hosted via GitHub Pages
 * <https://charlierose.dev>
-* [GitHub Repository](https://github.com/charlierosec/dev-website)
+* [GitHub Repository](https://github.com/charlieroses/dev-website)
 
 ---
 
@@ -58,7 +58,7 @@ _Bash, Awk, Python, HTML, CSS_
 * Webpage built from scratch using HTML generated from Bash and Awk scripts
 * Hosted via GitHub Pages
 * <https://pokemon.charlierose.dev>
-* [GitHub Repository](https://github.com/charlierosec/pokemoncards)
+* [GitHub Repository](https://github.com/charlieroses/pokemoncards)
 * [Blogpost about building the site](blogposts/2020-06-25_pokemon.html)
 
 --- 
@@ -70,7 +70,7 @@ _Python_
 * Analyzing the patterns of the Stalk Market in Animal Crossing : New Horizons
 * Collected data multiple times daily over the course of many weeks
 * Planning a quick paper describing my findings
-* [GitHub Repository](https://github.com/charlierosec/animalcrossingresearch)
+* [GitHub Repository](https://github.com/charlieroses/animalcrossingresearch)
 * On pause due to class priority over video games
 
 ---
