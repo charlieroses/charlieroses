@@ -15,8 +15,8 @@ designation on their birth certificate, with no regards to their actual gender,
 which can also be designated in Drexel systems. This means, not only did
 transgender men receive an email not meant for them, transgender women and many
 nonbinary individuals did not receive this email that they could greatly
-benefit from. This made me realize how heteronormative[[1]](#def-1) and
-cisnormative[[2]](#def-2) the Women in Computing Initiative is. The
+benefit from. This made me realize how heteronormative[^1] and
+cisnormative[^2] the Women in Computing Initiative is. The
 initiative unintentionally ignores the issues that transgender women face.
 
 Right after this issue with the college, I reached out to two student
@@ -88,12 +88,10 @@ mistakes and being willing to learn and grow. I'm excited to plan out a proper
 diversity training. Hopefully I'll be able to get those ideas across. I'll
 probably write another blog post once I plan out and host the training.
 
----
-
-<span id="def-1">[1]</span> heteronormative (adj) : of, relating to, or based
+[^1]: heteronormative (adj) : of, relating to, or based
 on the attitude that heterosexuality is the only normal and natural expression
 of sexuality
 [Merriam Webster full definition](https://www.merriam-webster.com/dictionary/heteronormative)
 
-<span id="def-2">[2]</span> cisnormative (adj) : of, relating to, or based on
+[^2]: cisnormative (adj) : of, relating to, or based on
 the attitude that cisgender is the only normal and natural expression of gender
