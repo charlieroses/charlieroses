@@ -57,8 +57,10 @@ echo "Building blog main page HTML file..."
 
 BLOG_CONTENT=" "
 
-for IN_FILE in $(ls ${BLOGMD_SRC} | sort -r)
+for IN_FILE in $(find "${BLOGMD_SRC}" -mindepth 1 -maxdepth 1 | sort -r)
 do
+	IN_FILE="${IN_FILE#"${BLOGMD_SRC}/"}"
+
 	# Only build the page if it's not in progress
 	if [ "${IN_FILE}" = "${IN_FILE%wip*}" ]
 	then
@@ -78,17 +80,14 @@ do
 		FN_DIV="<div class=\"footnotes\">"
 		FL_CURR="class=\"footnoteRef\" id=\"fnref[0-9]+\"><sup>[0-9]+</sup></a>"
 
-		if [ -n "$(grep "${FN_DIV}" <<< "${CONTENT}")" ]
+		if grep -q "${FN_DIV}" <<< "${CONTENT}"
 		then
-			OIFS=$IFS
-			IFS=$'\n'
-			for FL_C in $(grep -Eo "${FL_CURR}" <<< "${CONTENT}")
+			while IFS= read -r FL_C
 			do
 				FL_N="${FL_C/<sup>/[}"
 				FL_N="${FL_N/<\/sup>/]}"
-				CONTENT=${CONTENT/${FL_C}/${FL_N}}
-			done
-			IFS=$OIFS
+				CONTENT=${CONTENT/"${FL_C}"/"${FL_N}"}
+			done < <(grep -Eo "${FL_CURR}" <<< "$CONTENT")
 
 			FN_DIV_C=${CONTENT##*${FN_DIV}}
 			FN_DIV_N=${FN_DIV_C}
