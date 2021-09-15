@@ -1,4 +1,4 @@
-# CMD-IT/ACM Richard Tapia Celebration of Diversity in Computing Conference 2021
+# CMD-IT/ACM Richard Tapia Celebration of Diversity in Computing Conference 2021 \[Introduction\]
 
 One of the few benefits of the pandemic is the accessibility of conferences now.
 Almost all conferences are being hosted online, which makes it much easier for

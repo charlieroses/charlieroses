@@ -71,6 +71,7 @@ do
 
 		TITLE=$(head -n 1 "${BLOGMD_SRC}/${IN_FILE}")
 		TITLE=${TITLE#"# "}
+		TITLE=${TITLE//\\/}
 		
 		HEADER=" - ${HEADERS[blog.html]}"
 
