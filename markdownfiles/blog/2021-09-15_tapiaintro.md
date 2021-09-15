@@ -2,21 +2,42 @@
 
 One of the few benefits of the pandemic is the accessibility of conferences now.
 Almost all conferences are being hosted online, which makes it much easier for
-Drexel to fund students to attend since there's no travel. I am very lucky that
-Drexel has funded my ability to attend the
+Drexel to fund students to attend since there's no travel. It also makes it
+easier for me to find time to attend since there's no travel. I am very lucky
+that Drexel has funded my attendance of the
 [Richard Tapia Celebration of Diversity in Computing Conference](https://tapiaconference.cmd-it.org/)
 hosted by [CMD-IT](https://cmd-it.org/) and the [ACM](https://www.acm.org/).
 I'm super happy I get to attend this event because diversity in computing is a
 huge part of my life, and I also have been considering an ACM membership, as I
-plan to get my PhD in lower level computing. So as I have for past conferences,
+plan to get my PhD in lower level computing. So, as I have for past conferences,
 I'll write a post about my experiences. I've been enjoying the process of
 writing on my blog. I recently read through my [experience](2020-06-16_570.html)
 TAing a grad course over the pandemic. So I'm gonna continue doing what I'm
 doing. Also, the college is having a meeting afterwards between the attendees to
 discuss our experiences, so I need to take notes.
 
+I had originally planned on making this one large blogpost. After attending the
+conference on Wednesday, I've realized this is going to be a lot longer than
+previously expected. I'm gonna break this up into a series of posts and update
+the "Navigation" as I go.
 
-<h3 class="pr">Registration</h3>
+<h3 class="pr">Navigation</h3>
+
+**First Impressions**
+
+- [Registration](#reg)
+- [Community Data Collection](#cdc)
+
+Wednesday: 9/15
+
+Thursday: 9/16
+
+Friday: 9/17
+
+Final Thoughts
+
+
+<h3 class="po" id="reg">Registration</h3>
 
 So I haven't even started the event yet, and I'm a little disappointed. When
 registering, I was faced with the question no form can ever get right.
@@ -29,16 +50,21 @@ registering, I was faced with the question no form can ever get right.
 > - Gender Fluid
 > - Prefer not to answer
 
-I have an entire [separate blogpost]() about my opinions on this question and
-how to do it accurately, but its really disappointing to see how poorly this was
-done for a conference about diversity. So a quick run down of why this is bad.
-1) You could only pick one option. 2) It treats gender identity still as a
-category to fit into instead of something that exists and can be described with
-given gender labels. 3) The options are extremely limited. You can go read my
-[other blogpost]() for more information on how to do this right. It's clear
-there was an attempt to be more inclusive, however its very surface level.
-It looks like an attempt was made only to say they are inclusive, but everything
-else shows there isn't a deeper understanding of the community.
+I have an entire [separate blogpost](2021-09-12_identitydata.html) about my
+opinions on this question and how to do it accurately, but its really
+disappointing to see how poorly this was done for a conference about diversity.
+So a quick run down of why this is bad. 1) You could only pick one option. 2) It
+treats gender identity still as a category to fit into instead of something that
+exists and can be described with given gender labels. 3) The options are
+extremely limited. You can go read my
+[other blogpost](2021-09-12_identitydata.html) for more information on how to do
+this right. It's clear there was an attempt to be more inclusive, however it's
+very surface level. It looks like an attempt was made only to say they are
+inclusive, but everything else shows there isn't a deeper understanding of the
+community.
+
+
+<h3 class="py" id="cdc">Community Data Collection Survey</h3>
 
 Then after registration, there was a Community Data Collection survey done by
 the ACM to "better understand the diversity and inclusion of the ACM community."
@@ -57,13 +83,13 @@ shows that the list is incomplete and people can use more than one term to
 describe themselves. They included a box to self identify which makes up for the
 fact only three gender identities were listed. Even though this is better than
 the registration, there's so much more work to do. So I took this opportunity to
-make good use of the "Prefer to Self-Describe" box and wrote the following.
+make good use of the "Prefer to Self-Describe" box and wrote the following:
 
 > Transgender Man. Despite trying to understand the diversity and inclusion of
 > the ACM community, this question doesn't accurately capture the diversity of
 > gender identity. While you do include a Non-binary and self identify options,
 > which are great starts, the rest of this question is not accurate to the way
-> gender exists. Gender is a social and cultural constructs. Different cultures
+> gender exists. Gender is a social and cultural construct. Different cultures
 > place different roles on each gender. For example, before being colonized and
 > having their culture stripped from them, Native Americans and Indigenous
 > people had more than two genders. One of which being someone who is
@@ -97,127 +123,17 @@ make good use of the "Prefer to Self-Describe" box and wrote the following.
 
 So my "self described gender identity" ended up being a large paragraph about
 gender and facing discrimination. Hopefully it wasn't all for nothing. Hopefully
-someone reads my response and more resources become available to the community.
+someone reads my response and the form is revised in future years. Or even
+better, more resources become available for the community. I need to write a
+separate blogpost about how badly the underrepresentation of LGBTQ+ people in
+STEM is affecting the community and the resources available.
 
 In my response I did mention the lack of events at the Tapia Conference for
 LGBTQ+ people. Over the course of this five day conference, there are a total of
-118 events, excluding networking sessions, breaks, ceremonies, and poster
-presentations. There is one that mentions Gender Based Violence, but still does
-not specific whether it includes LGBTQ+ people. There are no events that mention
-LGBTQ+ people in the titles or descriptions. While I am disappointed, I'm gonna
-try and stay optimistic that the general "diversity" events will be inclusive.
+118 events, excluding networking sessions, breaks, ceremonies, career fairs, and
+poster presentations. There is one that mentions Gender Based Violence, but it
+still does not specific whether it includes LGBTQ+ people. There are no events
+that mention LGBTQ+ people in the titles or descriptions. While I am
+disappointed, I'm gonna try and stay optimistic that the general diversity
+events will be inclusive.
 
-
-### Mental Disorders Associated with Gender-Based Violence and Virtual Reality
-
-Tuesday 12:45am
-
-
-### Visual Impairments and Block Based Programming
-
-Tuesday 4:30pm
-
-
-### Wednesday Opening Remarks
-
-Wednesday Noon
-
-
-### Supporting Student Mental Health
-
-Wednesday 1:30pm
-
-
-### TAs For Inclusion
-
-Wednesday 1:30pm
-
-
-### Leveraging Relations for Success in Graduate School
-
-Wednesday 2:30pm
-
-
-### Accessibility and Disability - Classroom to Career
-
-Wednesday 2:30pm
-
-
-### Young People and Teachers in Low-Income Areas
-
-Wednesday 2:30pm
-
-
-### Designing an Accessible and Inclusive Online Course
-
-Wednesday 4:45pm
-
-
-### Assimilating to Belong in Computing
-
-Wednesday 4:45pm
-
-
-### Inclusive Leadership 101
-
-Wednesday 5:45pm
-
-
-### Thursday Opening Remarks
-
-Thursday Noon
-
-
-### Navigating Research, Teaching and Service
-
-Thursday 1:30pm
-
-
-### RISC-V Open Source Architecture Design
-
-Thursday 1:30pm
-
-
-### Leveraging Personal Growth for Professional Success
-
-Thursday 2:30pm
-
-
-### Undergraduate STEM Education and Project-Based Learning
-
-Thursday 3:45pm
-
-
-### Performing Confidence
-
-Thursday 3:45pm
-
-
-### Teaching and Learning Accessibility
-
-Thursday 5:30pm
-
-
-### 20 Years of Celebrating Diversity
-
-Thursday 6:30pm
-
-
-### Friday Opening Remarks
-
-Friday Noon
-
-
-### Accessibility Make Sense For Everyone
-
-Friday 2:30pm
-
-
-### Increasing Diversity in Computing
-
-Friday 2:30pm
-
-
-### Closing Ceremony
-
-Friday 5:15pm
