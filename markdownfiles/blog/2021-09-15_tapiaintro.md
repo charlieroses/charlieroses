@@ -25,10 +25,17 @@ the "Navigation" as I go.
 
 **First Impressions**
 
-- [Registration](#reg)
-- [Community Data Collection](#cdc)
+- [Registration](2021-09-15_tapiaintro.html#reg)
+- [Community Data Collection](2021-09-15_tapiaintro.html#cdc)
 
-Wednesday: 9/15
+[Wednesday: 9/15](2021-09-15_tapiawed.html)
+
+- [Opening Remarks](2021-09-15_tapiawed.html#or)
+- [TAs for Inclusion](2021-09-15_tapiawed.html#ta)
+- [Grad School and Relationships](2021-09-15_tapiawed.html#gr)
+- [Assimilating to Belong in Computing](2021-09-15_tapiawed.html#as)
+- [Closing Thoughts](2021-09-15_tapiawed.html#ct)
+
 
 Thursday: 9/16
 
