@@ -23,7 +23,7 @@ the "Navigation" as I go.
 
 <h3 class="pr">Navigation</h3>
 
-**First Impressions**
+<span class="pi">[First Impressions](2021-09-15_tapiaintro.html)</span>
 
 - [Registration](2021-09-15_tapiaintro.html#reg)
 - [Community Data Collection](2021-09-15_tapiaintro.html#cdc)
@@ -36,10 +36,18 @@ the "Navigation" as I go.
 - [Assimilating to Belong in Computing](2021-09-15_tapiawed.html#as)
 - [Closing Thoughts](2021-09-15_tapiawed.html#ct)
 
+[Thursday: 9/16](2021-09-16_tapiathurs.html)
 
-Thursday: 9/16
+- [Opening Remarks](2021-09-16_tapiathurs.html#or)
+- [Faculty and Student Mental Health](2021-09-16_tapiathurs.html#mh)
+- [Closing Thoughts](2021-09-16_tapiathurs.html#ct)
 
-Friday: 9/17
+[Friday: 9/17](2021-09-17_tapiafri.html)
+
+- [Opening Remarks](2021-09-17_tapiafri.html#or)
+- [Diversity Best Practices](2021-09-17_tapiafri.html#bp)
+- [Candid Conversations](2021-09-17_tapiafri.html#cc)
+- [Closing Thoughts](2021-09-17_tapiafri.html#ct)
 
 Final Thoughts
 
