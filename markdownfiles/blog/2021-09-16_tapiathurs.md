@@ -29,7 +29,13 @@
 - [Candid Conversations](2021-09-17_tapiafri.html#cc)
 - [Closing Thoughts](2021-09-17_tapiafri.html#ct)
 
-Final Thoughts
+[Final Thoughts](2021-09-18_tapiafinal.html)
+
+- [Looking Back](2021-09-18_tapiafinal.html#lb)
+- [Positives](2021-09-18_tapiafinal.html#p)
+- [Negatives](2021-09-18_tapiafinal.html#n)
+- [In Conclusion / What's Next](2021-09-18_tapiafinal.html#cw)
+
 
 
 
