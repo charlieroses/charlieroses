@@ -68,26 +68,26 @@ blockquote {
 	padding-left: 2ch;
 }
 
-.pr * {
+.pr, .pr * {
 	color: var(--accent-p-red);
 }
-.po * {
+.po, .po * {
 	color: var(--accent-p-orange);
 }
-.py * {
+.py, .py * {
 	color: var(--accent-p-yellow);
 }
-.pg * {
+.pg, .pg * {
 	color: var(--accent-p-green);
 }
-.pb * {
+.pb, .pb * {
 	color: var(--accent-p-blue);
 }
-.pp * {
+.pp, .pp * {
 	color: var(--accent-p-purple);
 }
 
-.pi * {
+.pi, .pi * {
 	color: var(--accent-p-pink);
 }
 
