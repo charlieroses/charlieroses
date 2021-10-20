@@ -116,16 +116,18 @@ do
 
 		echo "${HTMLPAGE}" > "${OUT_FILE}"
 
-		DATE=${IN_FILE%_*}
-		MONTH=${DATE%-*}
-		MONTH=${MONTH#*-}
-		DAY=${DATE##*-}
-		YEAR=${DATE%%-*}
-		PRETTYDATE="${MONTH}/${DAY}/${YEAR}"
+		if [[ "${IN_FILE%_*}" != "x" ]]
+		then
+			DATE=${IN_FILE%_*}
+			MONTH=${DATE%-*}
+			MONTH=${MONTH#*-}
+			DAY=${DATE##*-}
+			YEAR=${DATE%%-*}
+			PRETTYDATE="${MONTH}/${DAY}/${YEAR}"
 
-		ENTRY_LINK="<a href='${OUT_FILE#./}'>$PRETTYDATE : $TITLE</a>"
-		BLOG_CONTENT="${BLOG_CONTENT}<br>${ENTRY_LINK}"
-
+			ENTRY_LINK="<a href='${OUT_FILE#./}'>$PRETTYDATE : $TITLE</a>"
+			BLOG_CONTENT="${BLOG_CONTENT}<br>${ENTRY_LINK}"
+		fi
 	else
 		echo "Ignoring work in progress file ${IN_FILE}"
 	fi

@@ -7,7 +7,6 @@ accomplished anytime soon
 
 [/] : Blogposts
 	[/] : italian pronouns (main)
-	[ ] : tapia final thoughts (tapia)
 	[/] : senior design? (main)
 	[ ] : that government study on underrepresented in stem
 [ ] : Organize blog.html better with either years or months headers
