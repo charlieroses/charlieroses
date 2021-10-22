@@ -73,4 +73,4 @@ and a sincere thank you to Charlie Stuart._
 
 ---
 
-_Last Updated 10/19/2021_
+[PDF Version](pronouns1pager.pdf)
