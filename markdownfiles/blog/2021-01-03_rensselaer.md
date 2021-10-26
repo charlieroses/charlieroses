@@ -1,3 +1,5 @@
+Personal
+
 # Alexander Van Rensselaer Service Award
 
 _This award is presented to a student of worthy character who demonstrates service

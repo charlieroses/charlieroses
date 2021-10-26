@@ -1,3 +1,5 @@
+Technical
+
 # Thoughts on Maple
 
 I'm currently using Maple for the first time in a course at Drexel on

@@ -1,0 +1,66 @@
+:root {
+	--bg-grey-dk: #1B1B1E;
+	--bg-grey-md: #3B3B3E;
+	--bg-grey-lt: #585859;
+
+	--text-grey-dk: #807A7B;
+	--text-grey-lt: #CFC9CA;
+
+	--harsh-white: #FFFFFF;
+
+	/* Rainbow Pride Theme */
+	--accent-p-red: #F1A79F ;
+	--accent-p-orange: #EFC68B;
+	--accent-p-yellow: #DCD3A3;
+	--accent-p-green:  #B2E5BB;
+	--accent-p-blue: #B0B8F4;
+	--accent-p-purple: #E7C4F0;
+	--accent-p-pink: #FFBADB;
+}
+
+.space {
+	color: transparent;
+}
+
+.tab {
+	color: transparent;
+}
+
+.and, .or {
+	font-weight: bold;
+}
+
+.if, .fi, .then, .else {
+	color: var(--accent-p-yellow);
+	font-weight: bold;
+}
+
+.for, .rof, .while, .elihw, .do, .to, .done {
+	color: var(--accent-p-blue);
+	font-weight: bold;
+}
+
+.fun, .end {
+	color: var(--accent-p-red);
+	font-weight: bold;
+}
+
+.funname {
+	font-style: italic;
+}
+
+.string, .string>* {
+	color: var(--accent-p-purple) !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	text-decoration: none !important;
+}
+
+.comment, .comment>* {
+	color: var(--accent-p-green) !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	text-decoration: none !important;
+}
+
+

@@ -1,3 +1,5 @@
+LGBTQ+,Personal,Professional
+
 # Further Diversity for Women in STEM
 
 Recently, a lot has been happening in my life that has made me think a lot

@@ -40,8 +40,17 @@ a:hover {
 	text-decoration: underline;
 }
 
+.bloglink {
+	margin-left: 4ch;
+}
+
+.blogh {
+	margin-left: 1ch;
+}
+
 code {
 	background-color: var(--bg-grey-dk);
+	border-radius: 2px;
 	font-family: "Courier New", Courier, monospace;
 	padding: 2px;
 }
@@ -52,14 +61,22 @@ hr {
 	color: var(--text-grey-dk);
 }
 
-.sourceCode {
-	background-color: var(--bg-grey-dk);
-	border-radius: 5px;
-	color: var(--harsh-white);
-	font-family: "Courier New", Courier, monospace;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	width: 80ch;
+.hexcode-w {
+	border-radius: 2px;
+	color: #FFFFFF;
+	padding: 2px;
+}
+
+.hexcode-b {
+	border-radius: 2px;
+	color: #000000;
+	padding: 2px;
+
+}
+
+pre.eqn, pre.eqn>code {
+	background-color: transparent !important;
+	text-align: center;
 }
 
 blockquote {
@@ -95,6 +112,61 @@ blockquote {
 	color: var(--harsh-white);
 }
 
-.pokeblog {
-	width: 30%;
+.psuedo {
+	background-color: var(--bg-grey-dk);
+	border-radius: 5px;
+	color: var(--harsh-white);
+	font-family: "Courier New", Courier, monospace;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 1ch;
+	padding-right: 1ch;
+	width: 78ch;
 }
+
+.space {
+	color: transparent;
+}
+
+.tab {
+	color: transparent;
+}
+
+.and, .or {
+	font-weight: bold;
+}
+
+.if, .fi, .then, .else {
+	color: var(--accent-p-yellow);
+	font-weight: bold;
+}
+
+.for, .rof, .while, .elihw, .do, .to, .done {
+	color: var(--accent-p-blue);
+	font-weight: bold;
+}
+
+.fun, .end {
+	color: var(--accent-p-red);
+	font-weight: bold;
+}
+
+.funname {
+	font-style: italic;
+}
+
+.string, .string>* {
+	color: var(--accent-p-purple) !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	text-decoration: none !important;
+}
+
+.comment, .comment>* {
+	color: var(--accent-p-green) !important;
+	font-style: normal !important;
+	font-weight: normal !important;
+	text-decoration: none !important;
+}
+
+

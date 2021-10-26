@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../styles.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>CharlieRose.dev</title>
+</head>
+
+<body>
+  <header>
+	<h2>
+		Charlie Stuart  - Blog
+	</h2>
+	<nav>
+	  <a class="pr" href="../../index.html">[about me]</a>
+	  <a class="po" href="../../experience.html">[experience]</a>
+	  <a class="py" href="../../projects.html">[projects]</a>
+	  <a class="pg" href="../../activism.html">[activism]</a>
+	  <a class="pb" href="../../blog.html">[blog]</a>
+	  <a class="pp" href="https://www.linkedin.com/in/charlieroses">[LinkedIn]</a>
+	  <a class="pi" href="https://www.github.com/charlieroses">[GitHub]</a>
+	</nav>
+	<hr>
+  </header>
+
+  <section>
+	<h1 id="resizmple">Resizmple</h1>
+<p>The past few months I've been doing research on <a href="https://youtu.be/O7ZELOUIyvw">Richard Miller's port of Plan9 for the Raspberry Pi4</a> with the intention of writing my senior thesis about my work. I think it's mentioned in my Experience or Projects section, but I also haven't updated either of those in a moment.</p>
+<p>Recently, I was in the class I TA for. My students were quietly working on their assignment. It was 9am, so the other TA and I were exhausted, running on nothing but coffee and Monster energy drinks. We were making jokes about putting the iconic <a href="windowsxp.jpg">Windows XP</a> background on things that definitely should not have the Windows XP background. I mentioned it would be funny to put it on Plan9 as a way of bothering the professor we TA for and my research advisor, Dr. Stuart. When I got home from lab, instead of working on my research like a good student, I sat down and decided to see how viable my joke would be.</p>
+<p><a href="https://plan9.io/magic/man2html/1/rio">Rio</a> is the windowing system for Plan9. It normally does not support wallpapers. It typically has a plain gray background (<span class="hexcode-w" style="background-color: #777777;">#777777</span>, to be exact). After a quick Google search, I was able to find an implementation for a wallpaper by <a href="https://wiki.xxiivv.com/site/rio.html">Devine Lu Linvega</a>. After a little fiddling, I was able to create the following image, which I emailed over to my research advisor.</p>
+<center>
+<img src="Plan9XP.png">
+</center>
+<p>This earned me a quick 11pm &quot;Uh huh&quot; email. The next morning I got a second response, &quot;Wait, did you actually modify rio to support wallpapers or is that image modified?&quot; I gave Devine the credit they deserve, but mentioned I've got more plans for the wallpaper. Devine's implementation relys on the image already being the size of the window. If it's too small, it gets tiled. If it's too large, it gets cut off. Resizing the window only increases the tiling. I decided to take it upon myself to implement this functionality myself. As far as I'm aware, no one has done this for Plan9 yet.</p>
+<p>I originally used the <a href="https://plan9.io/magic/man2html/1/resample">resample</a> function to resize the image based on the dimensions of my monitor. A similar function didn't exist in C. So I took the time to learn the <a href="https://plan9.io/magic/man2html/6/image">Plan9 Image format</a> and wrote my own. I'm quite proud of how elegant the function turned out, so this blogpost is a tribute to it and the hours I poured into a whiteboard. I'll post the rest of the wallpaper implementation in about a week when I finish cleaning up other parts of the code.</p>
+<p>I didn't know the <a href="https://printingsourcebr.com/ufaqs/difference-between-resizing-and-resampling-an-image/">difference between resampling and resizing an image</a> at first, so I called my function <code>resizmple</code> as a joke while testing. The name has grown on me now and I can't imagine changing it.</p>
+<div class="psuedo"><span class="space">.</span>1 : <span class="fun">fun</span> <span class="funname">resizmple</span>(io, xo, yo, in, xn, yn, d)<br><span class="space">.</span>2 : <span class="tab">>---</span><span class="comment">// Decide <span class="and">and</span> calculate scalars xs <span class="and">and</span> ys</span><br><span class="space">.</span>3 : <br><span class="space">.</span>4 : <span class="tab">>---</span>ro := 0<br><span class="space">.</span>5 : <span class="tab">>---</span><span class="for">for</span> rn := 0 <span class="to">to</span> yn <span class="do">do</span><br><span class="space">.</span>6 : <span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> yn &gt; yo <span class="then">then</span><br><span class="space">.</span>7 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> (rn * yo) &gt; (ro * yn) <span class="then">then</span><br><span class="space">.</span>8 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>ro++<br><span class="space">.</span>9 : <span class="tab">>---</span><span class="tab">>---</span><span class="else">else</span><br>10 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> (rn * yo) &lt; (ro * yn) <span class="then">then</span><br>11 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>ro++<br>12 : <span class="tab">>---</span><span class="tab">>---</span><span class="fi">fi</span><br>13 : <br>14 : <span class="tab">>---</span><span class="tab">>---</span>co := 0<br>15 : <span class="tab">>---</span><span class="tab">>---</span><span class="for">for</span> cn := 0 <span class="to">to</span> xn <span class="do">do</span><br>16 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> xn &gt; xo <span class="then">then</span><br>17 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> (cn * xo) &gt; (co * xn) <span class="then">then</span><br>18 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>co++<br>19 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="else">else</span><br>20 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> (cn * xo) &lt; (co * xn) <span class="then">then</span><br>21 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>co++<br>22 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="fi">fi</span><br>23 : <br>24 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>po := ((ro * xo) + co) * d<br>25 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>pn := ((rn * xn) + cn) * d<br>26 : <br>27 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="for">for</span> i := 0 <span class="to">to</span> d <span class="do">do</span><br>28 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>in[pn + i] := io[po + i]<br>29 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="rof">rof</span><br>30 : <span class="tab">>---</span><br>31 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> xo &gt; xn <span class="then">then</span><br>32 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>co += xs<br>33 : <span class="tab">>---</span><span class="tab">>---</span><span class="rof">rof</span><br>34 : <br>35 : <span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> yo &gt; yn <span class="then">then</span><br>36 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>ro += ys<br>37 : <span class="tab">>---</span><span class="rof">rof</span><br>38 : <span class="end">end</span> <span class="funname">resizmple</span></div>
+<h2 id="resizmple-v1">Resizmple V1</h2>
+<p>I've taken enough Data Structures and Algorithms courses to know that it's important to have a solid foundation on how you'll store your data before you try writing an algorithm for it. I know the uncompressed Plan9 image format that I would be working with gives me <code>w * h</code> pixels, each represented by <code>d</code> bytes. I've got two main options for storing this data:</p>
+<ol style="list-style-type: decimal">
+<li>A simple array of length <code>w * h * d</code> that matches how the image data is actually stored
+<ul>
+<li>The index of pixel <code>p</code> at location <code>(c, r)</code> is referenced with <code>((r * w) + c) * d)</code></li>
+</ul></li>
+<li>A three dimensional array that simulates the images output
+<ul>
+<li>An outermost array of length <code>h</code></li>
+<li>It's subarrays represent each row and have length <code>w</code></li>
+<li>It's subarrays represent each pixel and have length <code>d</code></li>
+<li>The index of pixel <code>p</code> at location <code>(c, r)</code> is referenced with <code>i[r][c]</code></li>
+</ul></li>
+</ol>
+<p>While the second option appears more &quot;intuitive&quot;, its over complicating the problem and the way the memory is being handled. I decided I can handle a simple math problem if it means I don't have to play with pointers. This brings me to my two major design principles I refused to waiver on:</p>
+<ol style="list-style-type: decimal">
+<li>The images are represented through one dimensional arrays</li>
+<li>No fractional numbers</li>
+</ol>
+<p>The fractional numbers just aren't worth the effort. This is meant to be a joke project. I don't want to fight the intricacies of floating point numbers for a silly background image. I use integer division to find our scalar <code>xs</code>. If we're getting bigger, <code>xs = ceil(xn/xo)</code>. If we're getting smaller, <code>xs = ceil(xo/xn)</code> If we're getting smaller, the new image will take every <code>xs</code>th pixel from the old image:</p>
+<div class="imgtbl">
+<table>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td></td>
+<td>b</td>
+<td></td>
+<td>c</td>
+<td></td>
+<td>d</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="imgtbl">
+<table>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If we're getting bigger, each pixel in the old image will be duplicated <code>xs</code> times:</p>
+<div class="imgtbl">
+<table>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="imgtbl">
+<table>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td>a</td>
+<td>b</td>
+<td>b</td>
+<td>c</td>
+<td>c</td>
+<td>d</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This doesn't create the prettiest output. Decreasing the size of the image is lossy. Increasing the size of the image will create a blocky image. It's a small price to pay for Plan9XP. I'm not a computer vision or graphics manipulation person. I'm not going to write a resizing function based on color and eyes and behavior and stuff. I just want my silly joke to work.</p>
+<p>The reason I avoid software engineering at all costs is that the user exists and interacts with my code. Typically I try to avoid writing code where the user has options, but I think tiled wallpapers are hideous in every situation, so I gave the user can specify how the image is scaled.</p>
+<p>The image is not keeping the same dimensions - <code>x</code> and <code>y</code> are being scaled independently and have separate <code>xs</code> and <code>ys</code> scalars</p>
+<p>The image is keeping the same dimensions - The image is being scaled by <code>xs</code> - <code>yn := yo * xs</code> - <code>ys := xs</code> - The image is being scaled by <code>ys</code> - <code>xn := xo * ys</code> - <code>xs := ys</code> - The image is not being scaled, and will be tiled across the screen - <code>xs = ys = 1</code> - <code>xn := xo</code> - <code>yn := yo</code></p>
+<p>In addition to this, going back to my core design principles, I want everything done with integer values. So <code>xs</code> and ys<code>must be whole numbers. I need to independently handle the cases where</code>xn &gt; xo<code>,</code>xo &gt; xn<code>,</code>yn &gt; yo<code>, and</code>yo &gt; yn`. Depending on the orginal size of the image and the size of the window, these can be used in a variety of combinations with the above. I refuse to write 30 different loops for each combination. I want to write one general loop that can apply universally. Knowing that every single pixel in the new image needs to be filled, I get the following starting structure for my loop:</p>
+<div class="psuedo"><span class="space">.</span>1 : <span class="for">for</span> rn := 0 <span class="to">to</span> yn <span class="do">do</span><br><span class="space">.</span>2 : <span class="tab">>---</span><span class="for">for</span> cn := 0 <span class="to">to</span> xn <span class="do">do</span><br><span class="space">.</span>3 : <span class="tab">>---</span><span class="tab">>---</span>pn := ((rn * xn) + cn) * d<br><span class="space">.</span>4 : <span class="tab">>---</span><span class="tab">>---</span>po := ((ro * xo) + co) * d<br><span class="space">.</span>5 : <br><span class="space">.</span>6 : <span class="tab">>---</span><span class="tab">>---</span><span class="for">for</span> i := 0 <span class="to">to</span> d <span class="do">do</span><br><span class="space">.</span>7 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>in[pn + i] = io[po + i]<br><span class="space">.</span>8 : <span class="tab">>---</span><span class="tab">>---</span><span class="rof">rof</span><br><span class="space">.</span>9 : <span class="tab">>---</span><span class="rof">rof</span><br>10 : <span class="rof">rof</span></div>
+<p>The next task is to decide which pixel <code>po</code> at location <code>(co, ro)</code> gets selected from the old image <code>io</code> to be copied over to the new image <code>in</code>. One of the benefits of the way I'm choosing pixels is that the rows and columns are taken independently. The column being grabbed has no impact on the row being grabbed and vice versa. So for the remainder of the explanation, I'm going to focus on the <code>x</code> component only, since I know its concepts will apply to the <code>y</code> component too. I'm also going to ignore the depth of the image for the time being, since it has no affect on the pixel selection.</p>
+<p>The image getting larger is easy because <code>co</code> is just <code>cn * xs</code>:</p>
+<div class="psuedo">1 : <span class="for">for</span> cn := 0 <span class="to">to</span> xn <span class="do">do</span><br>2 : <span class="tab">>---</span><span class="if">if</span> xo &gt; xn <span class="then">then</span><br>3 : <span class="tab">>---</span><span class="tab">>---</span>co = cn * xs<br>4 : <span class="rof">rof</span></div>
+<p>Getting smaller isn't as easy because <code>xo</code> is now smaller than <code>xn</code>, meaning <code>co</code> is smaller than <code>cn</code> and cannot equal <code>cn * xs</code>. We would instead get that <code>co = floor(cn / xs)</code> which is using fractional numbers, which I don't want to do.</p>
+<p>Thinking about the rows and columns through a multiplication perspective won't work. Knowing that multiplication is just repeated addition and a loop is equivalent to a summation, then as <code>cn</code> increases by 1 each iteration, then <code>co</code> increases by <code>xs</code>.</p>
+<p>How does <code>co</code> increase when the image is getting smaller though? Pixels in the old image are repeated in the new image. This means as <code>cn</code> increments by 1 each iteration, <code>co</code> only increments by 1 every <code>xs</code>th iteration. I can adjust my function accordingly:</p>
+<div class="psuedo">1 : co = 0<br>2 : <span class="for">for</span> cn := 0 <span class="to">to</span> xn <span class="do">do</span><br>3 : <span class="tab">>---</span><span class="if">if</span> xo &gt; xn <span class="then">then</span><br>4 : <span class="tab">>---</span><span class="tab">>---</span>co += xs<br>5 : <span class="tab">>---</span><span class="else">else</span> <span class="if">if</span> (xn &gt; xo) <span class="and">and</span> (cn % xs == 0) <span class="then">then</span><br>6 : <span class="tab">>---</span><span class="tab">>---</span>co++<br>7 : <span class="tab">>---</span><span class="fi">fi</span><br>8 : <span class="rof">rof</span></div>
+<p>Then this works and does what I wanted. Then I apply it to the full <code>resizmple</code> function. Note that in practice, the scalars are calculated and decided based on a <code>config</code> file the user writes.</p>
+<div class="psuedo"><span class="space">.</span>1 : <span class="fun">fun</span> <span class="funname">resizmple</span>(io, xo, yo, in, xn, yn, d)<br><span class="space">.</span>2 : <span class="tab">>---</span><span class="comment">// Decide <span class="and">and</span> calculate scalars xs ys</span><br><span class="space">.</span>3 : <br><span class="space">.</span>4 : <span class="tab">>---</span>ro := 0<br><span class="space">.</span>5 : <span class="tab">>---</span><span class="for">for</span> rn := 0 <span class="to">to</span> yn <span class="do">do</span><br><span class="space">.</span>6 : <span class="tab">>---</span><span class="tab">>---</span>co := 0<br><span class="space">.</span>7 : <span class="tab">>---</span><span class="tab">>---</span><span class="for">for</span> cn := 0 <span class="to">to</span> xn <span class="do">do</span><br><span class="space">.</span>8 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>po := ((ro * xo) + co) * d<br><span class="space">.</span>9 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>pn := ((rn * xn) + cn) * d<br>10 : <br>11 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="for">for</span> i := 0 <span class="to">to</span> d <span class="do">do</span><br>12 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>in[pn + i] := io[po + i]<br>13 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="rof">rof</span><br>14 : <br>15 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> xo &gt; xn <span class="then">then</span><br>16 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>co += xs<br>17 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="else">else</span> <span class="if">if</span> (xn &gt; xo) <span class="and">and</span> (cn % xs == 0) <span class="then">then</span><br>18 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>co++<br>19 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="fi">fi</span><br>20 : <span class="tab">>---</span><span class="tab">>---</span><span class="rof">rof</span><br>21 : <br>22 : <span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> yo &gt; yn <span class="then">then</span><br>23 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>ro += ys<br>24 : <span class="tab">>---</span><span class="tab">>---</span><span class="else">else</span> <span class="if">if</span> (yn &gt; yo) <span class="and">and</span> (rn % ys  == 0) <span class="then">then</span><br>25 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>ro++<br>26 : <span class="tab">>---</span><span class="tab">>---</span><span class="fi">fi</span><br>27 : <span class="tab">>---</span><span class="rof">rof</span><br>28 : <span class="end">end</span> <span class="funname">resizmple</span></div>
+<p>I wasn't exactly thrilled with this solution. While I knew I wasn't entirely serious about this and didn't need the most robust scaling system, this was borderline nonfunctional. I could only scale by values 1/n or n/1. Given <code>xo = 6</code> and <code>xn = 9</code> then <code>xs = ceil(xn / xo) = 2</code>. So the image would double in size, then get cut off. I had other fish to fry, so rewriting <code>resizmple</code> would have to wait.</p>
+<h2 id="resizmple-v2">Resizmple V2</h2>
+<p>When I did get around to rewriting <code>resizmple</code> to support non-integer scale values, I didn't want to actually use <code>float</code>s in my algorithm. I was very happy with how my algorithm relied only on addition to calculate the rows and columns and had no intention of changing this. I knew the behavior I wanted to mimic, but I didn't know how to implement it. Given <code>xo := 13</code> and <code>xn := 5</code>, I wanted something like:</p>
+<div class="imgtbl">
+<table>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td></td>
+<td></td>
+<td>b</td>
+<td></td>
+<td></td>
+<td>c</td>
+<td></td>
+<td></td>
+<td>d</td>
+<td></td>
+<td></td>
+<td>e</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="imgtbl">
+<table>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Here, the value I increase <code>co</code> by is not constant. I'm still losing <code>xo - xn</code> columns of pixels in the compression, and that where I grabbed those columns wouldn't matter too much, but I cared more about rewriting my algorithm to handle scaling better. The biggest challenge would be calculating when I skip an extra column. To get a better idea, I decided to look at how this would be affected if I floored fractional numbers:</p>
+<pre class="eqn"><code>xo / xn = 13 / 5 = 2.2
+c0 = floor(cn * 2.2)</code></pre>
+<div class="imgtbl">
+<table>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td></td>
+<td>b</td>
+<td></td>
+<td></td>
+<td>c</td>
+<td></td>
+<td>d</td>
+<td></td>
+<td></td>
+<td>e</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="imgtbl">
+<table>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>I figured there has to be a way to do this using the modulo. So I made a few more tables trying to figure out how to incorporate a modulo:</p>
+<pre class="eqn"><code>xo / xn = v / 5
+c0 = floor(cn * (v/5))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>5</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>6</td>
+<td>7</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+</tr>
+</tbody>
+</table>
+<p>How much was co increased by?</p>
+<table>
+<thead>
+<tr class="header">
+<th>5</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>When was <code>co</code> extra increased?</p>
+<table>
+<thead>
+<tr class="header">
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>3 * (2/5)</td>
+<td>2 * (3/5)</td>
+<td>2 * (4/5)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>4 * (3/5)</td>
+<td>3 * (4/5)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>4 * (4/5)</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>6/5</td>
+<td>6/5</td>
+<td>8/5</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>12/5</td>
+<td>12/5</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>16/5</td>
+</tr>
+</tbody>
+</table>
+<p>From this I realized that I've figured it out, and ended up with:</p>
+<div class="psuedo">1 : xd := xo / xn<br>2 : xm := xo % xn<br>3 : xmi := 0<br>4 : <br>5 : co += xd<br>6 : <span class="if">if</span> (cn * xm) &gt; (xm * xmi ) <span class="then">then</span><br>7 : <span class="tab">>---</span>co++<br>8 : <span class="tab">>---</span>xmi++<br>9 : <span class="fi">fi</span></div>
+<p>Now what if we're getting larger?</p>
+<pre class="eqn"><code>cn = floor((xn / xo) * co)</code></pre>
+<div class="imgtbl">
+<table>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td>b</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="imgtbl">
+<table>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td>a</td>
+<td>b</td>
+<td>b</td>
+<td>b</td>
+<td>c</td>
+<td>c</td>
+<td>d</td>
+<td>d</td>
+<td>d</td>
+<td>e</td>
+<td>e</td>
+<td>e</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This technically works, but <code>co</code> is our unknown, and we can't take it out of the <code>floor</code>. If we took it out and only <code>floor</code>ed the division step, then we'd lose the non integer scale value I've been trying to hold onto. Looking at how many extra variables I had to add for getting smaller and then the problem in front of me, I was about to give up and use floats when I realized:</p>
+<pre class="eqn"><code>cn     xn
+--  =  --
+co     xo</code></pre>
+<p>It's just a ratio. <del>I wrote the explanation for V2 before V1, so in writing how I wrote V1, I'm kicking myself a lot for not recognizing this earlier.</del> We already know the scale is <code>xn/xo</code>. If <code>cn</code> is consistently increasing, then we need to increase <code>co</code> when this ratio doesn't hold anymore. This gives:</p>
+<pre class="eqn"><code>cn * xo = co * xn</code></pre>
+<p>When we're getting bigger and <code>xn &gt; xo</code> then the ratio &quot;breaks&quot; when <code>cn * xo &gt; co * xn</code>. Now we need to increase <code>co</code>. This ensures we grab many <code>co</code> for each <code>cn</code>. Then when getting smaller and <code>xo &gt; xn</code> then the ratio &quot;breaks&quot; when <code>cn * xo &lt; co * xn</code>. The key here is that <code>co</code> is already increasing by the integer division <code>xo/xn</code> each turn, so it has to remain &quot;further along&quot; than <code>cn</code>. Instead of that ugly modulus mess above, I now can apply this concept to both the <code>x</code> and <code>y</code> components and get my <code>resizmple</code> algorithm with no division!</p>
+<div class="psuedo"><span class="space">.</span>1 : <span class="fun">fun</span> <span class="funname">resizmple</span>(io, xo, yo, in, xn, yn, d)<br><span class="space">.</span>2 : <span class="tab">>---</span><span class="comment">// Decide <span class="and">and</span> calculate scalars xs <span class="and">and</span> ys</span><br><span class="space">.</span>3 : <br><span class="space">.</span>4 : <span class="tab">>---</span>ro := 0<br><span class="space">.</span>5 : <span class="tab">>---</span><span class="for">for</span> rn := 0 <span class="to">to</span> yn <span class="do">do</span><br><span class="space">.</span>6 : <span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> yn &gt; yo <span class="then">then</span><br><span class="space">.</span>7 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> (rn * yo) &gt; (ro * yn) <span class="then">then</span><br><span class="space">.</span>8 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>ro++<br><span class="space">.</span>9 : <span class="tab">>---</span><span class="tab">>---</span><span class="else">else</span><br>10 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> (rn * yo) &lt; (ro * yn) <span class="then">then</span><br>11 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>ro++<br>12 : <span class="tab">>---</span><span class="tab">>---</span><span class="fi">fi</span><br>13 : <br>14 : <span class="tab">>---</span><span class="tab">>---</span>co := 0<br>15 : <span class="tab">>---</span><span class="tab">>---</span><span class="for">for</span> cn := 0 <span class="to">to</span> xn <span class="do">do</span><br>16 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> xn &gt; xo <span class="then">then</span><br>17 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> (cn * xo) &gt; (co * xn) <span class="then">then</span><br>18 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>co++<br>19 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="else">else</span><br>20 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> (cn * xo) &lt; (co * xn) <span class="then">then</span><br>21 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>co++<br>22 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="fi">fi</span><br>23 : <br>24 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>po := ((ro * xo) + co) * d<br>25 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>pn := ((rn * xn) + cn) * d<br>26 : <br>27 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="for">for</span> i := 0 <span class="to">to</span> d <span class="do">do</span><br>28 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>in[pn] := io[po]<br>29 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="rof">rof</span><br>30 : <br>31 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> xo &gt; xn <span class="then">then</span><br>32 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>co += xs<br>33 : <span class="tab">>---</span><span class="tab">>---</span><span class="rof">rof</span><br>34 : <br>35 : <span class="tab">>---</span><span class="tab">>---</span><span class="if">if</span> yo &gt; yn <span class="then">then</span><br>36 : <span class="tab">>---</span><span class="tab">>---</span><span class="tab">>---</span>ro += ys<br>37 : <span class="tab">>---</span><span class="rof">rof</span><br>38 : <span class="end">end</span> <span class="funname">resizmple</span></div>
+<p>While the scalars appear to be calculated through division and flooring, it's not necessary. For a dimension <code>d</code>, the scalar <code>ds</code> between two values where <code>d1 &gt; d0</code> is calculated with:</p>
+<div class="psuedo">1 : <span class="for">for</span>( ds := 0; ds * d0 &lt; d1; ds++ )</div>
+<p>Overall, I'm very proud of my little solution. My advisor related it to <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm">Bresenham's Line Drawing Algorithm</a> in how Bresenham probably figured out his solution. He told me to write down my solution. I'm glad I did. It was fun to break it down and reinforce why it works. I also took the time to do a <em>bit</em> of reformatting on the site and wrote a syntax highlighter for psuedo code. Those are separate blogposts though. I've</p>
+  </section>
+
+</body>
+
+</html>

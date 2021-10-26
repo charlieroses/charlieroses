@@ -1,3 +1,5 @@
+Conferences/Events
+
 # Creating Change Conference 2021
 
 This past weekend, I was lucky to attend the virtual

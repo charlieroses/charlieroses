@@ -1,3 +1,0 @@
-# iSchool IDEA Consortium
-
-

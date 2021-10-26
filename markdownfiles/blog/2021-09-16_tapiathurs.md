@@ -1,40 +1,42 @@
+Conferences/Events
+
 # Tapia Celebration 2021 \[Thursday: 9/16\]
 
 <h3 class="pr">Navigation</h3>
 
-[First Impressions](2021-09-15_tapiaintro.html)
+[First Impressions](../20210915/tapiaintro.html)
 
-- [Registration](2021-09-15_tapiaintro.html#reg)
-- [Community Data Collection](2021-09-15_tapiaintro.html#cdc)
+- [Registration](../20210915/tapiaintro.html#reg)
+- [Community Data Collection](../20210915/tapiaintro.html#cdc)
 
-[Wednesday: 9/15](2021-09-15_tapiawed.html)
+[Wednesday: 9/15](../20210915/tapiawed.html)
 
-- [Opening Remarks](2021-09-15_tapiawed.html#or)
-- [TAs for Inclusion](2021-09-15_tapiawed.html#ta)
-- [Grad School and Relationships](2021-09-15_tapiawed.html#gr)
-- [Assimilating to Belong in Computing](2021-09-15_tapiawed.html#as)
-- [Closing Thoughts](2021-09-15_tapiawed.html#ct)
+- [Opening Remarks](../20210915/tapiawed.html#or)
+- [TAs for Inclusion](../20210915/tapiawed.html#ta)
+- [Grad School and Relationships](../20210915/tapiawed.html#gr)
+- [Assimilating to Belong in Computing](../20210915/tapiawed.html#as)
+- [Closing Thoughts](../20210915/tapiawed.html#ct)
 
 
-<span class="pi">[Thursday: 9/16](2021-09-16_tapiathurs.html)</span>
+<span class="pi">[Thursday: 9/16](../20210916/tapiathurs.html)</span>
 
-- [Opening Remarks](2021-09-16_tapiathurs.html#or)
-- [Faculty and Student Mental Health](2021-09-16_tapiathurs.html#mh)
-- [Closing Thoughts](2021-09-16_tapiathurs.html#ct)
+- [Opening Remarks](../20210916/tapiathurs.html#or)
+- [Faculty and Student Mental Health](../20210916/tapiathurs.html#mh)
+- [Closing Thoughts](../20210916/tapiathurs.html#ct)
 
-[Friday: 9/17](2021-09-17_tapiafri.html)
+[Friday: 9/17](../20210917/tapiafri.html)
 
-- [Opening Remarks](2021-09-17_tapiafri.html#or)
-- [Diversity Best Practices](2021-09-17_tapiafri.html#bp)
-- [Candid Conversations](2021-09-17_tapiafri.html#cc)
-- [Closing Thoughts](2021-09-17_tapiafri.html#ct)
+- [Opening Remarks](../20210917/tapiafri.html#or)
+- [Diversity Best Practices](../20210917/tapiafri.html#bp)
+- [Candid Conversations](../20210917/tapiafri.html#cc)
+- [Closing Thoughts](../20210917/tapiafri.html#ct)
 
-[Final Thoughts](2021-09-18_tapiafinal.html)
+[Final Thoughts](../20210918/tapiafinal.html)
 
-- [Looking Back](2021-09-18_tapiafinal.html#lb)
-- [Positives](2021-09-18_tapiafinal.html#p)
-- [Negatives](2021-09-18_tapiafinal.html#n)
-- [In Conclusion / What's Next](2021-09-18_tapiafinal.html#cw)
+- [Looking Back](../20210918/tapiafinal.html#lb)
+- [Positives](../20210918/tapiafinal.html#p)
+- [Negatives](../20210918/tapiafinal.html#n)
+- [In Conclusion / What's Next](../20210918/tapiafinal.html#cw)
 
 
 

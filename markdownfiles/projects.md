@@ -59,7 +59,7 @@ _Bash, Awk, Python, HTML, CSS_
 * Hosted via GitHub Pages
 * <https://pokemon.charlierose.dev>
 * [GitHub Repository](https://github.com/charlieroses/pokemoncards)
-* [Blogpost about building the site](blogposts/2020-06-25_pokemon.html)
+* [Blogpost about building the site](blogposts/20200625/pokemon.html)
 
 --- 
 

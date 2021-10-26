@@ -1,3 +1,5 @@
+Personal,LGBTQ+
+
 # A Rose By Any Other Name
 
 Oh look at me, being poetic with a blog post title. Typically I like to make my

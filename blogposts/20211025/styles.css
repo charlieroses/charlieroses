@@ -1,0 +1,35 @@
+:root {
+	--text-grey-dk: #807A7B;
+}
+
+img {
+	margin: 1rem auto;
+	max-width: 80ch;
+}
+
+
+table {
+	border: 2px dashed var(--text-grey-dk);
+	margin: 1rem auto;
+}
+
+th {
+	border: 2px dashed var(--text-grey-dk);
+}
+
+td {
+	padding-left: 2ch;
+	padding-right: 2ch;
+}
+
+.imgtbl table {
+	border: none;
+}
+
+.imgtbl th {
+	border: none;
+}
+
+.imgtbl td {
+	border: 2px dashed var(--text-grey-dk);
+}

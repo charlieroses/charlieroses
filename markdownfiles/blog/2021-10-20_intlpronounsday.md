@@ -1,3 +1,5 @@
+LGBTQ+,Professional
+
 # International Pronouns Day 2021
 
 The third Wednesday of every October is recognized as

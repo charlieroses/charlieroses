@@ -1,3 +1,5 @@
+Technical,LGBTQ+
+
 # How to Collect Information on Gender Identity
 
 One benefit of the COVID-19 pandemic was that many conferences shifted to

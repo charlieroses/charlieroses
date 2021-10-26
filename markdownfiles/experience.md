@@ -9,7 +9,7 @@ _January 2018 - Present_
 * Recipient of the Student Teaching Excellence Award in 2019
 * Manages and distributes grading amongst multiple TAs in a variety of courses
 * Took over graduate course when the professor got COVID-19
-	* [Blogpost about the experience](blogposts/2020-06-16_570.html)
+	* [Blogpost about the experience](blogposts/20200616/570.html)
 * Lectures computer science topics at both the undergraduate and graduate level
 	* Bash
 	* Boolean Algebra

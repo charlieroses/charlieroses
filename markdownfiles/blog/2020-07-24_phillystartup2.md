@@ -1,3 +1,5 @@
+Conferences/Events,Professional
+
 # Philly Start Up Sprint [Week 2]
 
 <h3 class="pr">Day 1</h3>

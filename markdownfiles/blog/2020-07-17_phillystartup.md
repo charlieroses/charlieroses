@@ -1,3 +1,5 @@
+Professional,Conferences/Events
+
 # Philly Start Up Sprint [Week 1]
 
 Due to the global pandemic, I had lost my planned spring/summer internship as
