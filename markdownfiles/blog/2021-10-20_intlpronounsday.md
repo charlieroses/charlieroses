@@ -33,12 +33,12 @@ These include:
 - Sending out a survey to faculty, staff, and student employees to collect
 	pronoun information for our websites and directories
 - Attached to the above survey, a one pager I helped develop about pronouns
-	- [Pronoun One-Pager Site View](x_pronouns1page.html)
+	- [Pronoun One-Pager Site View](pronouns1page.html)
 	- [Pronoun One-Pager PDF View](pronouns1pager.pdf)
 - A video I recorded with our communications team on social media about pronouns
 	- [On Youtube](https://youtu.be/2Z3lfhOcq_0)
 	- [On Instagram](https://www.instagram.com/p/CVQgu7VIACz/)
-- [An email](x_intlpndayemail.html) sent out to the entire student body about
+- [An email](intlpndayemail.html) sent out to the entire student body about
 	International Pronouns Day
 - Updating the CCI websites to use gender neutral language
 
