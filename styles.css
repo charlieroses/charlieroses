@@ -48,6 +48,16 @@ a:hover {
 	margin-left: 1ch;
 }
 
+textarea {
+	background-color: var(--bg-grey-dk);
+	border: none;
+	border-radius: 2px;
+	color: var(--text-grey-lt);
+	height: 100ch;
+	outline: none;
+	width: 100%;
+}
+
 code {
 	background-color: var(--bg-grey-dk);
 	border-radius: 2px;
