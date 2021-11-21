@@ -40,6 +40,18 @@ a:hover {
 	text-decoration: underline;
 }
 
+.figure {
+	text-align: center;
+}
+
+.figure>.caption {
+	font-style: italic;
+	font-size: 12px;
+	text-align: center;
+	max-width: 75%;
+	margin: 1rem auto;
+}
+
 .bloglink {
 	margin-left: 4ch;
 }
