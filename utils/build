@@ -13,12 +13,148 @@ BLOGPOST_SRC="./blogposts"
 BLOG_TEMPLATE="${TEMPLATE}"
 BLOG_TEMPLATE=${BLOG_TEMPLATE//.\//..\/..\/}
 
+COLORHEADINGS=( "pr" "po" "py" "pg" "pb" "pp" "pi" )
+CHL=7
+
 declare -A HEADERS
 HEADERS=( ["activism.html"]="Activism Work"
+		  ["a2.html"]="Activism Work"
 		  ["blog.html"]="Blog"
 		  ["experience.html"]="Professional Experience"
+		  ["e2.html"]="Professional Experience"
 		  ["index.html"]=" "
-		  ["projects.html"]="Personal Projects")
+		  ["projects.html"]="Personal Projects"
+		  ["p2.html"]="Personal Projects")
+
+function pagefromdir {
+	# $1 Dir Name
+	# $2 Specific files if necessary
+	# Builds the content for experience, projects, and activism
+	CONTENT=""
+
+	if [ "${1##*/}" = "projects" ]
+	then
+		ACTIVE_PROJS="$(grep -L Previous $(grep -L Frozen "$1"/*) | sort)"
+		PRV_PROJS="$(grep -l Previous "$1"/* | sort)"
+		FZN_PROJS="$(grep -l Frozen "$1"/* | sort)"
+		PRVFZN_PROJS="$(echo -e "$PRV_PROJS\n$FZN_PROJS" | sort)"
+
+		CONTENT="${CONTENT}<h2>Active Projects</h2><hr>"
+		CONTENT="${CONTENT}$(contentfromfiles "${ACTIVE_PROJS}")"
+
+		CONTENT="${CONTENT}<hr><h2>Previous and Frozen Projects</h2><hr>"
+		CONTENT="${CONTENT}$(contentfromfiles "${PRVFZN_PROJS}")"
+	else
+		FILES="$(ls -1 $1/*.txt | sort)"
+		CONTENT="${CONTENT}$(contentfromfiles "${FILES}")"
+	fi
+	echo "$CONTENT"
+}
+
+function contentfromfiles {
+	# $1 File names
+	# Builds the content for experience, projects, and activism
+	CONTENT=""
+	SUB=""
+	i=0
+	for TXT_FILE in $1
+	do
+		if grep -q "Multi:" < <(head -n 2 "$TXT_FILE")
+		then
+			j=0
+			s=3
+			e=0
+			len=$(head -n 2 "$TXT_FILE" | tail -n 1)
+			len="${len##*:}"
+			TITLE="$(head -n 1 "$TXT_FILE")"
+			ID=${TXT_FILE##*_}
+			ID=${ID%.txt}
+			SUB="<h3 id=\"${ID}\" class=\"${COLORHEADINGS[$i]}\">${TITLE}</h3>"
+			while [[ $j < $len ]]
+			do
+				e=$(head -n $((s+1)) $TXT_FILE | tail -n 1)
+				e=${e%%,*}
+				CHUNK="$(head -n "$((e-1))" "$TXT_FILE" | tail -n "+${s}" )"
+				SUB="${SUB}$(subcontent "$CHUNK")"
+				s=$e
+				j=$((j+1))
+			done
+		else
+			SUB="$(subcontent "0" $TXT_FILE ${COLORHEADINGS[$i]})"
+		fi
+		CONTENT="${CONTENT}<hr>${SUB}"
+		i=$(( i+1 ))
+		i=$(( i%CHL ))
+	done
+
+	echo "${CONTENT#<hr>}"
+}
+
+function subcontent {
+	# $1 file content if file name not provided
+	# $2 file name
+	# $3 (if provided) Title Color
+	# Parses a .txt file found in the experience, projects, and activism sections
+	CONTENT=""
+	FC=""
+
+	if [ -n "$2" ]
+	then
+		FC="$(cat $2)"
+		TITLE="$(echo "$FC" | head -n 1)"
+		ID=${2##*_}
+		ID=${ID%.txt}
+		CONTENT="${CONTENT}<h3 id=\"${ID}\""
+	
+		if [ -n $3 ]
+		then
+			CONTENT="${CONTENT} class=\"$3\""
+		fi
+		CONTENT="${CONTENT}>${TITLE}</h3>"
+	else
+		FC="$1"
+		TITLE="$(echo "$FC" | head -n 1)"
+		CONTENT="${CONTENT}<p><b>${TITLE}</b></p>"
+	fi
+
+	TYPE="$(echo  "$FC" | head -n 2 | tail -n 1)"
+	OTHER="$(echo "$FC" | head -n 3 | tail -n 1)"
+	START="$(echo "$FC" | head -n 4 | tail -n 1)"
+	END="$(echo   "$FC" | head -n 5 | tail -n 1)"
+	LOC="$(echo   "$FC" | head -n 6 | tail -n 1)"
+	DESC="$(echo  "$FC" | tail -n +7 )"
+
+	if grep -q "Event" <<< "${TYPE}"
+	then
+		CONTENT="${CONTENT}<p><em>${START} @ ${LOC}</em></p>"
+	else
+		if [ -n "${LOC}" ] && [[ "$(expr match "${LOC}" "null")" != 4 ]]
+		then
+			CONTENT="${CONTENT}<p><em>${LOC}</em></p>"
+		fi
+
+		if grep -q "Ongoing" <<< "${TYPE}"
+		then
+			CONTENT="${CONTENT}<p><em>Since ${START}</em></p>"
+		elif grep -q "Previous" <<< "${TYPE}"
+		then
+			CONTENT="${CONTENT}<p><em>${START} - ${END}</em></p>"
+		elif grep -q "Frozen" <<< "${TYPE}"
+		then
+			CONTENT="${CONTENT}<p><em>${START} - ${END}</em></p>"
+		fi
+	fi
+
+	if [ -n "${OTHER}" ] && [[ "$(expr match "${OTHER}" "null")" != 4 ]]
+	then
+		CONTENT="${CONTENT}<p><em>${OTHER}</em></p>"
+	fi
+
+	CONTENT="${CONTENT}$(echo "${DESC}" | pandoc -p)"
+
+	echo "$CONTENT"
+}
+
 
 
 
@@ -29,7 +165,7 @@ for f in $BUILDFILES
 do
 	if [ "$f" -nt "$LASTBUILD" ]
 	then
-		echo "WARNING: $f has been changed since last build"
+		echo -e "\033[01;33mWARNING\033[00m: $f has been changed since last build"
 		echo "Continue? [y/n]"
 		read CONT
 
@@ -47,13 +183,15 @@ done
 
 for IN_FILE in "${MD_SRC}"/*
 do
-	if [ -d "${IN_FILE}" ]
+	# Skip the blog
+	if [ "${IN_FILE}" = "${BLOGMD_SRC}" ]
 	then
 		continue
 	fi
 
 	OUT_FILE=.${IN_FILE#${MD_SRC}}
 	OUT_FILE=${OUT_FILE%.md}.html
+
 	
 	# Don't build the file if
 	#	The markdown is older than the HTML file
@@ -72,7 +210,13 @@ do
 		HEADER=" - $HEADER"
 	fi
 
-	CONTENT=$(pandoc --preserve-tabs "${IN_FILE}")
+	CONTENT=""
+	if [ -d "${IN_FILE}" ]
+	then
+		CONTENT="${CONTENT}$(pagefromdir "${IN_FILE}")"
+	else
+		CONTENT="${CONTENT}$(pandoc --preserve-tabs "${IN_FILE}")"
+	fi
 
 	HTMLPAGE=${TEMPLATE}
 	HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
@@ -95,109 +239,109 @@ then
 	echo "Built blogpost directory"
 fi
 
-echo "Building blog HTML files from Markdown..."
-
-BLOG_CONTENT=" "
-
-for IN_FILE in $(find "${BLOGMD_SRC}" -mindepth 1 -maxdepth 1 | sort -r)
-do
-	IN_FILE="${IN_FILE#"${BLOGMD_SRC}/"}"
-
-	# Don't build wip pages
-	if [[ "${IN_FILE}" != "${IN_FILE%wip*}" ]]
-	then
-		echo "Ignored ${IN_FILE}: WIP file"
-		continue
-	fi
-
-	DATE=${IN_FILE%_*}
-	DIRDATE=${DATE//-/}
-	DIRDATE=${DIRDATE%x}
-	MONTH=${DATE%-*}
-	MONTH=${MONTH#*-}
-	DAY=${DATE##*-}
-	
-	if [[ "$YEAR" != "${DATE%%-*}" ]]
-	then
-		BLOG_CONTENT="${BLOG_CONTENT}<h3 class='blogh'>${DATE%%-*}</h3>"
-	fi
-	
-	YEAR=${DATE%%-*}
-	PRETTYDATE="${MONTH}/${DAY}/${YEAR}"
-
-	METADATA=$(head -n 3 "${BLOGMD_SRC}/${IN_FILE}")
-
-	TITLE=$(echo "$METADATA" | tail -n 1)
-	TITLE=${TITLE#"# "}
-	TITLE=${TITLE//\\/}
-
-	OUT_FILE=${BLOGPOST_SRC}/${DIRDATE}/${IN_FILE##*_}
-	OUT_FILE=${OUT_FILE%.md}.html
-
-	if [ ! -e "${BLOGPOST_SRC}/${DIRDATE}" ]
-	then
-		mkdir "${BLOGPOST_SRC}/${DIRDATE}"
-		echo "Made ${BLOGPOST_SRC}/${DIRDATE} directory for blogposts"
-	fi
-
-	if [[ "${DATE}" = "${DATE%x}" ]]
-	then
-		ENTRY_LINK="<a class='bloglink' href='${OUT_FILE#./}'>$PRETTYDATE : $TITLE</a>"
-		BLOG_CONTENT="${BLOG_CONTENT}${ENTRY_LINK}<br>"
-	fi
-
-	# Don't rebuild if
-	#	the template is older than the last build
-	#	AND the build script is older than the last build
-	#	AND the markdown file is older than the HTML file
-	if [ "${BLOGMD_SRC}/${IN_FILE}" -ot "${OUT_FILE}" ] && [ -e $BUILDCHNG ] && [ -e $TMPLTCHNG ]
-	then
-		continue
-	fi
-
-	DATA=$(tail -n +3 "${BLOGMD_SRC}/${IN_FILE}")
-	DATA=${DATA#${METADATA}}
-
-	CSSCSV=$(echo "$METADATA" | tail -n 2 | head -n 1)
-	CSSPAGES=""
-	for THISCSS in $CSSCSV
-	do
-		CSSPAGES="${CSSPAGES}<link rel=\"stylesheet\" type=\"text/css\" href=\"${THISCSS}\">"
-	done
-
-	HEADER=" - ${HEADERS[blog.html]}"
-
-	CONTENT=$(echo "${DATA}" | pandoc -p )
-	echo " Coverted to HTML with pandoc"
-	CONTENT=$(./utils/mdtohtml "${CONTENT}")
-	echo " Adding Charlie customization"
-
-	# Fixing template links and inserting content
-	HTMLPAGE=${BLOG_TEMPLATE}
-	HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
-	HTMLPAGE="${HTMLPAGE/<!-- XTRACSS -->/${CSSPAGES}}"
-	HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
-
-	
-	# Build HTML page
-	echo "${HTMLPAGE}" > "${OUT_FILE}"
-
-	echo "  Built ${OUT_FILE} from ${IN_FILE}"
-done
-
-echo "Built all blog HTML files from Markdown"
-
-OUT_FILE="blog.html"
-
-HEADER=" - ${HEADERS[blog.html]}"
-
-HTMLPAGE=${TEMPLATE}
-HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
-HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${BLOG_CONTENT}}"
-
-echo "${HTMLPAGE}" > "${OUT_FILE}"
-
-echo "Built main blog page"
+#echo "Building blog HTML files from Markdown..."
+#
+#BLOG_CONTENT=" "
+#
+#for IN_FILE in $(find "${BLOGMD_SRC}" -mindepth 1 -maxdepth 1 | sort -r)
+#do
+#	IN_FILE="${IN_FILE#"${BLOGMD_SRC}/"}"
+#
+#	# Don't build wip pages
+#	if [[ "${IN_FILE}" != "${IN_FILE%wip*}" ]]
+#	then
+#		echo "Ignored ${IN_FILE}: WIP file"
+#		continue
+#	fi
+#
+#	DATE=${IN_FILE%_*}
+#	DIRDATE=${DATE//-/}
+#	DIRDATE=${DIRDATE%x}
+#	MONTH=${DATE%-*}
+#	MONTH=${MONTH#*-}
+#	DAY=${DATE##*-}
+#	
+#	if [[ "$YEAR" != "${DATE%%-*}" ]]
+#	then
+#		BLOG_CONTENT="${BLOG_CONTENT}<h3 class='blogh'>${DATE%%-*}</h3>"
+#	fi
+#	
+#	YEAR=${DATE%%-*}
+#	PRETTYDATE="${MONTH}/${DAY}/${YEAR}"
+#
+#	METADATA=$(head -n 3 "${BLOGMD_SRC}/${IN_FILE}")
+#
+#	TITLE=$(echo "$METADATA" | tail -n 1)
+#	TITLE=${TITLE#"# "}
+#	TITLE=${TITLE//\\/}
+#
+#	OUT_FILE=${BLOGPOST_SRC}/${DIRDATE}/${IN_FILE##*_}
+#	OUT_FILE=${OUT_FILE%.md}.html
+#
+#	if [ ! -e "${BLOGPOST_SRC}/${DIRDATE}" ]
+#	then
+#		mkdir "${BLOGPOST_SRC}/${DIRDATE}"
+#		echo "Made ${BLOGPOST_SRC}/${DIRDATE} directory for blogposts"
+#	fi
+#
+#	if [[ "${DATE}" = "${DATE%x}" ]]
+#	then
+#		ENTRY_LINK="<a class='bloglink' href='${OUT_FILE#./}'>$PRETTYDATE : $TITLE</a>"
+#		BLOG_CONTENT="${BLOG_CONTENT}${ENTRY_LINK}<br>"
+#	fi
+#
+#	# Don't rebuild if
+#	#	the template is older than the last build
+#	#	AND the build script is older than the last build
+#	#	AND the markdown file is older than the HTML file
+#	if [ "${BLOGMD_SRC}/${IN_FILE}" -ot "${OUT_FILE}" ] && [ -e $BUILDCHNG ] && [ -e $TMPLTCHNG ]
+#	then
+#		continue
+#	fi
+#
+#	DATA=$(tail -n +3 "${BLOGMD_SRC}/${IN_FILE}")
+#	DATA=${DATA#${METADATA}}
+#
+#	CSSCSV=$(echo "$METADATA" | tail -n 2 | head -n 1)
+#	CSSPAGES=""
+#	for THISCSS in $CSSCSV
+#	do
+#		CSSPAGES="${CSSPAGES}<link rel=\"stylesheet\" type=\"text/css\" href=\"${THISCSS}\">"
+#	done
+#
+#	HEADER=" - ${HEADERS[blog.html]}"
+#
+#	CONTENT=$(echo "${DATA}" | pandoc -p )
+#	echo " Coverted to HTML with pandoc"
+#	CONTENT=$(./utils/mdtohtml "${CONTENT}")
+#	echo " Adding Charlie customization"
+#
+#	# Fixing template links and inserting content
+#	HTMLPAGE=${BLOG_TEMPLATE}
+#	HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
+#	HTMLPAGE="${HTMLPAGE/<!-- XTRACSS -->/${CSSPAGES}}"
+#	HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
+#
+#	
+#	# Build HTML page
+#	echo "${HTMLPAGE}" > "${OUT_FILE}"
+#
+#	echo "  Built ${OUT_FILE} from ${IN_FILE}"
+#done
+#
+#echo "Built all blog HTML files from Markdown"
+#
+#OUT_FILE="blog.html"
+#
+#HEADER=" - ${HEADERS[blog.html]}"
+#
+#HTMLPAGE=${TEMPLATE}
+#HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
+#HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${BLOG_CONTENT}}"
+#
+#echo "${HTMLPAGE}" > "${OUT_FILE}"
+#
+#echo "Built main blog page"
 
 CONTENT=$(cat "${MD_SRC}/index.md")
 CONTENT=${CONTENT%%"<h3 class=\"po\">"*}

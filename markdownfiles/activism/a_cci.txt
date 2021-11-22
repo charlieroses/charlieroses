@@ -1,0 +1,96 @@
+Drexel University College of Computing and Informatics (CCI)
+Ongoing
+null O
+October 2020
+null E
+null L
+
+In 2020 I was honored to receive the Alexander Van Rensselaer Service Award for
+my LGBTQ+ activism work at Drexel University.
+
+This work started the moment I arrived at Drexel in the fall of my freshmen
+year. My teaching assistant for my introductory computer science course learned
+my legal name. He used it to refer to me instead "Charlie", my actual name,
+because he found it funny how uncomfortable I was. After much hesitation, I
+reported the incident to the professor. That winter, I was hired as a teaching
+assistant. As a result of the incident, all teaching assistants were required to
+attend a workshop on respecting marginalized groups, specifically talking about
+the impact teaching assistants have on freshmen. This training had no
+information about the LGBTQ+ community in STEM. These events mark the start of
+my activism career at Drexel. I've included a timeline of major events along
+with resources, photos, and articles where applicable. It's a sort of scrapbook
+of my work.
+
+- **September 2018** : Unofficially founded
+	[oSTEM at Drexel University](#ostem) under the Center for the Advancement of
+	STEM Learning and Teaching Excellence (CASTLE) until getting officially
+	recognized as a self governed student organization in Fall 2019.
+- **November 2018** : Attended the
+	[2018 President's Award Ceremony](https://drexel.edu/hr/about/events/presawards/about/pastwinners/2018Winners/)
+	alongside CASTLE to accept the Award for Diversity & Inclusive Community
+	with them.
+	[[Photo]](files/presidentsawards2018.jpg)
+- **May 2019** : Met with CCI Administration regarding the exclusivity of the
+	Grace Hopper Celebration communications. Only students assigned female at
+	birth were invited to attend the conference free of cost. This included
+	transgender men and nonbinary students while also excluding transgender
+	women from this opportunity. The issue was resolved. Now communication is
+	sent to all students, regardless of gender. Female identifying students are
+	encouraged to attend for their own support. Non-female identifying students
+	are encouraged to attend to listen and learn in order to better support
+	their peers.
+- **October 2020** : Collaborated with the Society of Women Engineers in their
+	annual _Lives and Lessons of the Underrepresented in STEM Conference_ on
+	behalf of oSTEM. I helped organize the event, was a panelist in the
+	academia panel, and hosted an activity about identity. Photos:
+	[[1]](files/swell2019_A.jpeg)
+	[[2]](files/swell2019_B.jpeg)
+	[[3]](files/swell2019_C.jpeg)
+- **February 2020** : Publicly voiced the discrimination I face as an LGBTQ+
+	student to the Dean of CCI at a _Donuts with the Dean_ event. The concerns
+	addressed include the inaccessibility and safety of restrooms on campus,
+	consistent dismissal of my identity by students, faculty, and staff, and the
+	way the Dean ostracized me in the restroom. Previously the gender-neutral
+	restrooms had been closed for many months due to plumbing issues. Within a
+	week after the event, the bathroom was available for use again.
+	[[College Wide Email from 2/12/2020]]
+- **October 2020** : Collaborated with the Women in Computing Society (WiCS)
+	student organization to host two events. The first was a basic transgender
+	allyship workshop
+	[[Slides]](files/wics2020training.pdf).
+	The second, I was a panelist in an event about the importance of sharing
+	uncensored stories about being an LGBTQ+ individual
+- **May 2021** : Invited to be a panelist for the Office of Equality and
+	Diversity's (OED) event titled _Honoring Pride Month: A Frank Conversation
+	About Gender and Sexuality_.
+	[[DrexelNOW Article]](https://drexel.edu/now/archive/2021/May/Drexel-Celebrates-Pride-Month-2021/)
+	[[Blogpost]](blogposts/20210602/oedpanel.html)
+- **November 2021** : Spoke at Drexel University's Transgender Day of Remembrance Services
+	[[Blogpost]](blogposts/20211119/tdor.html)
+
+In October 2020, I became one of three undergraduate students on the inaugural
+[Diversity Equity and Inclusion Council](https://drexel.edu/cci/about/diversity-equity-and-inclusion-council/)
+In this role I:
+
+- Meet twice monthly with the council to discuss events, initiatives, and
+	college wide communications
+- Meet at least once monthly with Council Chair outside of council meetings to 
+	enact additional initiatives
+- Lead the initiative to include sanitary trash receptacles in the stalls of the
+	men's restroom. These plan to be installed in Fall 2021
+- Lead the initiative to include staff and faculty pronouns on the
+	[College Directory](https://drexel.edu/cci/about/directory/)
+	- Planning started in Summer of 2020
+	- Data collection started October 2021 on
+		[International Pronouns Day](https://pronounsday.org/)
+	- Educational materials I created were also released both internally to all
+		faculty and staff, and externally to the public
+		[[Video]](https://youtu.be/2Z3lfhOcq_0)
+		[[On-Site One-Pager]](blogposts/20211020/pronouns1page.html)
+		[[PDF One-Pager]](blogposts/20211020/pronouns1pager.pdf)
+	- The directory was updated in mid November 2021
+	- [[Blogpost]](blogposts/20211020/intlpronounsday.html) about the initiative
+- Organized and hosted a LGBTQ+ trivia event (Queerzzo) during the month of June
+	to celebrate National LGBTQ+ Pride Month
+	[[Playable Kahoot]](https://create.kahoot.it/share/queerzo-by-ostem-and-cci-dei-council/f2e5ddcf-5d0a-4398-960a-d0109444d51b)
+	[[PDF Notes]](files/ostemdeiqueerzzonotes.pdf)
