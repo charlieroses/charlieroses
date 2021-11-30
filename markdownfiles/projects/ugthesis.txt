@@ -1,0 +1,33 @@
+Unnamed Undergraduate Thesis
+Ongoing
+Plan9, Raspberry Pi4, Rasbian
+April 2020
+null E
+null L
+
+In 2012, Richard Miller wrote a port of Plan9 for the Raspberry Pi. The Pi has
+become an increasingly popular platform for Plan9. I spent the spring and summer
+doing miscellaneous minor projects to get comfortable with the operating system.
+This work transitioned into my undergraduate senior thesis in the fall. I
+currently have my thesis proposal scheduled for early December 2021 and then my
+thesis defense in late May 2022.
+
+Most recently, I've implemented interactive scaling wallpaper for `rio`, the
+windowing system for Plan9. I used the wallpaper support provided by
+[Devine Lu Linvega](https://wiki.xxiivv.com/site/rio.html) as a starting point,
+then added scaling based on the window size and interaction with the `wctl`
+files to change the wallpaper while running. The code still needs to be cleaned
+up and I'd like to write proper documentation for it before posting it anywhere
+for others to use.
+
+I've now transitioned this work to my undergraduate thesis. The Pi port of Plan9
+does not support the use of the
+[Raspberry Pi 7" Touch Display](https://www.raspberrypi.com/products/raspberry-pi-touch-display/).
+The primary goal of my work is to get the screen working as a monitor. Once this
+is implemented, I'll be looking into the unique way the mouse and all three
+buttons are used in Plan9 in order to find the best way to implement the touch
+screen. While adding this functionality, I'll also be exploring the techniques
+used to write the operating system and implementing these values when writing my
+additions.
+
+

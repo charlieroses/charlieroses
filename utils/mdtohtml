@@ -117,6 +117,38 @@ fi
 CONTENT=$(echo "$CONTENT" | sed "s/HC#\([[:digit:]].[[:digit:]].[[:digit:]].\)#/<span class=\"hexcode-w\" style=\"background-color: #\1;\">#\1<\/span>/g")
 CONTENT=$(echo "$CONTENT" | sed "s/HC#\([[a-f]].[[a-f]].[[a-f]].\)#/<span class=\"hexcode-b\" style=\"background-color: #\1;\">#\1<\/span>/g")
 
+################################################################################
+#                                 To-Do Lists                                  #
+################################################################################
+
+TD_DIV="<pre class=\"todo\">"
+HTML_TAB="<span class=\"tab\">>---</span>"
+
+if grep -q "${TD_DIV}" <<< "${CONTENT}"
+then
+	while IFS= read -r TD_C
+	do
+		DIV="${CONTENT##*${TD_C%%</code>*}}"
+		DIV="${DIV%%</code>*}"
+		DIV="${TD_C##*${TD_DIV}}$DIV"
+		DIV="${DIV##*<code>}"
+		DIV="${DIV%%</code>*}"
+
+		OLD_DIV="${TD_DIV}<code>${DIV}</code></pre>"
+
+		DIV=$(echo "$DIV" | sed "s/\[X\]/<span class=\"pg\">[X]<\/span>/g" )
+		DIV=$(echo "$DIV" | sed "s/\[\/\]/<span class=\"py\">[\/]<\/span>/g" )
+		DIV=$(echo "$DIV" | sed "s/$/<br>/g" )
+		
+		DIV=${DIV//$'\t'/${HTML_TAB}}
+		DIV=${DIV//"\n"/"<br>"}
+		DIV="<div class=\"todo\"><p>${DIV}</p></div>"
+		DIV="$(echo ${DIV} | pandoc )"
+		CONTENT=${CONTENT/"$OLD_DIV"/"$DIV"}
+	done < <(grep -E "${TD_DIV}" <<< "${CONTENT}")
+fi
+
+
 echo "$CONTENT"
 
 
