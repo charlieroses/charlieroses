@@ -1,5 +1,3 @@
-### About Me
-
 **Charlie Rose Stuart**
 
 Pronunciation:
