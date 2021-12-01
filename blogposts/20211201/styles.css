@@ -1,0 +1,36 @@
+.ag {
+	color: #028305 ;
+	text-shadow: 0 0 1px;
+}
+
+.as {
+	color: #70709A;
+	text-shadow: 0 0 1px;
+}
+
+.ay {
+	color: #B0B04F;
+	text-shadow: 0 0 1px;
+}
+
+table {
+	background-color: #0F0F23;
+	border-radius: 5px;
+	margin: 1rem auto;
+	padding-left: 2ch;
+	padding-right: 2ch;
+	padding-top: 1ch;
+	padding-bottom: 1ch;
+}
+
+td {
+	padding-left: 2ch;
+}
+
+th {
+	border: 2px dashed var(--text-grey-dk);
+	padding-left: 1ch;
+	padding-right: 1ch;
+	margin-left: 1ch;
+	margin-right: 1ch;
+}
