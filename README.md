@@ -1,15 +1,18 @@
 
 **Charlie Rose Stuart**
 
-| Pronunciation:
+
+ Pronunciation:
   [**chaar**-lee](https://dictionary.cambridge.org/us/media/english/us_pron/u/usc/uscld/uscld03012.mp3)
   [rOHz](https://dictionary.cambridge.org/us/media/english/us_pron/r/ros/rose_/rose.mp3)
   [stoo-urt](https://www.youtube.com/watch?v=TiZLArcwcGA)
-| Pronouns:
+
+ Pronouns:
   [he/him](http://pronoun.is/he)
   ◆
   [they/them](http://pronoun.is/they/.../themselves)
-| English (Fluent) ◆ Italian (Conversational)
+
+ English (Fluent) ◆ Italian (Conversational)
 
 [Head Teaching Assistant](https://charlierose.dev/experience/index.html#headta)
 ◆
