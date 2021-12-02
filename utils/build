@@ -366,9 +366,8 @@ echo "${HTMLPAGE}" > "${OUT_FILE}"
 
 echo "Built main blog page"
 
-CONTENT=$(cat "${MD_SRC}/index.md")
-CONTENT=${CONTENT%%"<h3 class=\"po\">"*}
-CONTENT=${CONTENT#*"</h3>"}
+CONTENT=$(tail -n +2 "${MD_SRC}/index.md")
+CONTENT=${CONTENT%%###*}
 echo "${CONTENT}<https://charlierose.dev>" > README.md
 
 echo "Built README.md"

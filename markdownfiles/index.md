@@ -8,13 +8,14 @@
   [stoo-urt](https://www.youtube.com/watch?v=TiZLArcwcGA)
 | Pronouns:
   [he/him](http://pronoun.is/he)
-  or
+  ◆
   [they/them](http://pronoun.is/they/.../themselves)
+| English (Fluent) ◆ Italian (Conversational)
 
 [Head Teaching Assistant](https://charlierose.dev/experience/index.html#headta)
-|
+◆
 [Diversity Equity Inclusion Council Member](https://charlierose.dev/activism.html#cci)
-|
+◆
 [Student Advisor of oSTEM at Drexel University](https://charlierose.dev/activism.html#ostem)
 
 ### Education {.po}
