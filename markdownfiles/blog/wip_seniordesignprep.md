@@ -1,3 +1,0 @@
-# Transistioning to Senior Design
-
-
