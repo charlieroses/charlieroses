@@ -96,7 +96,7 @@ then implement it. Overall, they said they were impressed.
 
 The experience was fun, but surprisingly manageable. I spent so long stressing
 about the proposal, but once I got going, I didn't stop. You can find my
-[[slide deck here]](../../experience/files/proposal.pdf).
+[[slide deck here]](../../projects/files/proposal.pdf).
 I designed the slides based on the acme editor. I used Google Docs to write the
 slides since it was 4am. I'm working on making a proper acme beamer template for
 future presentations. I'm almost done that and I'll get that posted over the
