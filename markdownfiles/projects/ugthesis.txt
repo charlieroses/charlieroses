@@ -37,3 +37,11 @@ of my initial research and literature review for about an hour.
 I did the slides based on the Plan 9 editor, acme, in Google Docs. I really like
 how they came out, so I'm working on making a proper beamer template for them.
 I'm almost finished and I'll post it when I'm done.
+
+- Rio Work
+	- [Image Resizing Blogpost](../blogposts/20211025/resizmple.html)
+- Thesis Proposal
+	- [Thesis Proposal Blogpost](../blogposts/20211212/thesisproposal.html)
+	- Slide Deck [[Google Slides PDF]](files/proposal.pdf)
+		[[Beamer PDF]](files/proposalT.pdf)
+	- [Acme Beamer Template Blogpost](../blogposts/20211231/acmebeamer.html)
