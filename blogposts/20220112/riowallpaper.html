@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../styles.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>CharlieRose.dev</title>
+</head>
+
+<body>
+  <header>
+	<h2>
+		Charlie Stuart  - Blog
+	</h2>
+	<nav>
+	  <a class="pr" href="../../index.html">[about me]</a>
+	  <a class="po" href="../../experience/">[experience]</a>
+	  <a class="py" href="../../projects/">[projects]</a>
+	  <a class="pg" href="../../activism.html">[activism]</a>
+	  <a class="pb" href="../../blog.html">[blog]</a>
+	  <a class="pp" href="https://www.linkedin.com/in/charlieroses">[LinkedIn]</a>
+	  <a class="pi" href="https://www.github.com/charlieroses">[GitHub]</a>
+	</nav>
+	<hr>
+  </header>
+
+  <section>
+	<h1 id="interactive-wallpapers-in-rio">Interactive Wallpapers in Rio</h1>
+<p>This appears to be my first post in the New Year. It's a little <a href="https://youtu.be/Jne9t8sHpUc">ironic</a> that the post is about finishing a project. Monday night, I posted the source code on <a href="https://github.com/charlieroses/rio-wallpaper">GitHub</a>.</p>
+<p>Back in October or November, I was in lab with another TA and making jokes about <a href="https://knowyourmeme.com/memes/it-runs-doom">running Doom</a>. I said I wanted to do a similar concept where I put the Windows XP hills background in places it does not belong. Given my research with Plan 9, I decided to start there, not really expecting to get more than a laugh out of it.</p>
+<p>I came across <a href="https://wiki.xxiivv.com/site/rio.html">Devine Lu Linvega's</a> wallpaper implementation and used it to quickly put together &quot;Plan9 XP&quot;:</p>
+<div class="figure">
+<img src="Plan9XP.png" />
+
+</div>
+<p>I wasn't thrilled with the fact I had to manually set the image size and the implementation wasn't very elegant, so I took the time to add a bit of functionality. Based on the size of the image and the size of the screen, the image is <a href="../20211025/resizmple.html">resized</a> and centered on the screen. Then, the image and scaling is chosen though commands to the <code>/dev/wctl</code> file:</p>
+<pre><code>echo wallpaper -f /usr/glenda/lib/wallpaper -x 1 -y 1 &gt; /dev/wctl</code></pre>
+<p>I ended up &quot;finishing&quot; the project in late November in order to prioritize work on my <a href="../20211212/thesisproposal.html">thesis proposal</a>. The project was functionally enough to take a break, but still very buggy and not something I was proud enough to share. I spent the my winter break between classes ironing out those bugs and creating something presentable.</p>
+<p>While doing some research for my proposal, I came across the following <a href="https://marc.info/?l=9fans&amp;m=111558908224071">quote by Rob Pike</a> from 2003 on the Plan9 color scheme and design:</p>
+<blockquote>
+<p>the clean appearance of the screen comes mostly from laziness, but the color scheme is (obviously) deliberate. the intent was to build on an observation by edward tufte that the human system likes nature and nature is full of pale colors, so something you're going to look at all day might best serve if it were also in relaxing shades. renee french helped me with the specifics of the color scheme (she's a professional illustrator and my color vision is suspect), once i'd figured out how i wanted it to look. there are still some features of the color system that i put in that i think no one has ever noticed. that's a good thing, in my opinion; the colors should fade away, if you'll pardon the expression.</p>
+<p>having used other systems with different approaches to color screens, most especially windows XP (extra pukey), i think tufte was right.</p>
+<p>-rob</p>
+</blockquote>
+<p>On one hand, I'd like to formally apologize to Rob Pike, Renee French, and Edward Tufte for creating the exact opposite of their vision. On the other hand, I'm quite proud of how nicely the &quot;extra pukey&quot; hills background fits with the Plan9 pastels. I did keep the <span class="hexcode-w" style="background-color: #777777;">#777777</span> background for centering the image on the screen (which also had to be done manually) and can be seen below.</p>
+<table>
+<tr>
+<td>
+<div class="figure">
+<img src="rio_x0y0.png" alt="No scaling, image centered -x 0 -y 0" />
+<p class="caption">No scaling, image centered <code>-x 0 -y 0</code></p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="figure">
+<img src="rio_x0y1.png" alt="Scaled by y component -x 0 -y 1" />
+<p class="caption">Scaled by y component <code>-x 0 -y 1</code></p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="figure">
+<img src="rio_x1y0.png" alt="Scaled by x component -x 1 -y 0" />
+<p class="caption">Scaled by x component <code>-x 1 -y 0</code></p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="figure">
+<img src="rio_x1y1.png" alt="Scaled by both components -x 1 - y 1" />
+<p class="caption">Scaled by both components <code>-x 1 - y 1</code></p>
+</div>
+</td>
+</tr>
+</table>
+<p>There is currently one bug I've almost tackled. When you move windows, the window is &quot;erased&quot; and redrawn. When the window is erased, the <span class="hexcode-w" style="background-color: #777777;">#777777</span> wallpaper stays instead of the background image set. I've got a few ideas on how to approach this, but I need to prioritize <em>actual</em> research, especially since refreshing the wallpaper with a <code>/dev/wctl</code> command is a temporary fix.</p>
+<table>
+<tr>
+<td>
+<div class="figure">
+<img src="rio_bug.png" alt="The Bug" />
+<p class="caption">The Bug</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="figure">
+<img src="rio_refresh.png" alt="The wallpaper refreshed" />
+<p class="caption">The wallpaper refreshed</p>
+</div>
+</td>
+</tr>
+</table>
+<p>The source code is posted on <a href="https://github.com/charlieroses/rio-wallpaper">GitHub</a>. Depending on how/when I approach fixing that refresh bug, I might reach out to the 9front folks or make a Reddit post about it. Until then, I'm really happy with this and I'm gonna call it finished for now. It's a good way to start the new year.</p>
+  </section>
+
+</body>
+
+</html>
