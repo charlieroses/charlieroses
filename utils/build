@@ -13,7 +13,7 @@ BLOGPOST_SRC="./blogposts"
 BLOG_TEMPLATE="${TEMPLATE}"
 BLOG_TEMPLATE=${BLOG_TEMPLATE//.\//..\/..\/}
 
-CARRAY=( "pr" "po" "py" "pg" "pb" "pp" "pi" )
+CARRAY=( "pp" "pb" "pg" "py" "po" "pr" "pi" )
 CHL=${#CARRAY[@]}
 
 SHEADERS=( "NONE" )
@@ -106,7 +106,12 @@ function subcontent {
 			CONTENT="${CONTENT}<p><em>Since ${START}</em></p>"
 		elif grep -q "Previous" <<< "${TYPE}"
 		then
-			CONTENT="${CONTENT}<p><em>${START} - ${END}</em></p>"
+			if grep -q "OneDay" <<< "${TYPE}"
+			then
+				CONTENT="${CONTENT}<p><em>${START}</em></p>"
+			else
+				CONTENT="${CONTENT}<p><em>${START} - ${END}</em></p>"
+			fi
 		elif grep -q "Frozen" <<< "${TYPE}"
 		then
 			CONTENT="${CONTENT}<p><em>${START} - ${END}</em></p>"

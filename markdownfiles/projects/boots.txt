@@ -44,7 +44,13 @@ adapting them for the boots.
 ```todo
 [X] Create pattens of boot panels [[Patterns]](files/BootPatterns.jpg)
 [X] Cut ~~and dye~~ fabric [[Panels]](files/BootPanels.jpg)
-[/] Embroider all six panels (this may take longer than expected) [[A]](files/EmbroideryA.png)
+[/] Embroider all six panels (this may take longer than expected)
+	[X] Left Outer [[A]](files/Boots_LOA.png) [[B]](files/Boots_LOB.png)
+	[ ] Left Inner 
+	[ ] Left Toe (May leave blank)
+	[ ] Right Outer
+	[\] Right Inner [[A]](files/Boots_RIA.png)
+	[ ] Right Toe (May leave blank)
 [/] "Take apart" the boots [[A]](files/BootTakedown.jpg)
 	[/] Replace ankle straps
 	[ ] Replace laces
