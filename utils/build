@@ -52,7 +52,7 @@ function contentfromfiles {
 			SUB="$(subcontent "0" $TXT_FILE ${CARRAY[$i]})"
 		fi
 		TITLE="$(head -n 1 ${TXT_FILE})"
-		NAV="${NAV}<br><a href=\"${TXT_FILE%.txt}\" class=\"${CARRAY[$i]}\">${TITLE}</a>"
+		NAV="${NAV}<br><a href=\"${TXT_FILE%.txt}\" class=\"${CARRAY[$i]}\">[${TITLE}]</a>"
 		CONTENT="${CONTENT}<hr>${SUB}"
 		i=$(( i+1 ))
 		i=$(( i%CHL ))
