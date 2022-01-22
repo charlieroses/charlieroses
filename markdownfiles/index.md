@@ -21,7 +21,14 @@
 ◆
 [Student Advisor of oSTEM at Drexel University](https://charlierose.dev/activism.html#ostem)
 
-### Education {.po}
+### QWERHacks {.po}
+
+If you're here from my QWERHacks 2022 workshop, you can find my slides and a
+recording of my workshop
+[here](blogposts/20220122/qwerhacks.html).
+
+
+### Education {.py}
 
 **BS Computer Science - Drexel University**
 
@@ -39,4 +46,5 @@ Honors and Awards:
 	[[B]](files/homecoming2020_wings.jpg)
 - Student Teaching Excellence Award (2019)
 - Homecoming Court (2019)
+
 
