@@ -5,6 +5,15 @@ accomplished anytime soon
 [/] : In Progress
 [X] : Done
 
+
+[ ] : Activism Page
+	[ ] : All links broken
+	[ ] : Build same way as experience and projects but without "categories"
+	[ ] : get rid of stupid a_ names and use a priority file
+	[ ] : colors broken in ostem
+	[ ] : donuts with the dean email clean up
+		[ ] : auto build but don't include in nav/priority
+		[ ] : fix links in cci.md
 [/] : Blogposts
 	[/] : italian pronouns (main)
 	[/] : senior design? (main)

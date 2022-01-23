@@ -2,26 +2,43 @@ img {
 	max-width: 70ch;
 }
 
-.qr {
-	color: #EA9999;
+.qr, .qr>a {
+	color: #EA9999; !important
 }
 
-.qo {
-	color: #F9CB9C;
+.qo, .qo>a {
+	color: #F9CB9C; !important
 }
 
-.qy {
-	color: #F7DB83;
+.qy, .qy>a {
+	color: #F7DB83; !important
 }
 
-.qg {
+.qg, .qg>a {
+	color: #B6D7A8; !important
+}
+
+.qb, .qb>a {
+	color: #A4C2F4; !important
+}
+
+.qp, .qp>a {
+	color: #B4A7D6; !important
+}
+
+b {
+	color: #FFFFFF;
+}
+
+th {
 	color: #B6D7A8;
+	font-weight: bold;
+	width: 30ch;
 }
 
-.qb {
-	color: #A4C2F4;
-}
-
-.qp {
-	color: #B4A7D6;
+td {
+	color: #FFFFFF;
+	width: 7ch;
+	padding: 2ch;
+	text-align: center;
 }
