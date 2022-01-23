@@ -1,0 +1,192 @@
+#!/bin/bash
+# Charlie Rose
+# A script to build my webpages for my personal site
+
+MD_SRC='./markdownfiles'
+TEMPLATE=$(cat ./utils/template.html)
+HTMLPAGE=${TEMPLATE//.\//..\/}
+CARRAY=( "pp" "pb" "pg" "py" "po" "pr" "pi" )
+CHL=${#CARRAY[@]}
+
+function contentfromfiles {
+	# $1 File names
+	# Builds the content for experience, projects, and activism
+	NAV=""
+	CONTENT=""
+	SUB=""
+	i=0
+	for TXT_FILE in $1
+	do
+		SUB="$(subcontent $TXT_FILE ${CARRAY[$i]})"
+		TITLE="$(head -n 1 ${TXT_FILE})"
+		NAV="${NAV}<br><a href=\"${TXT_FILE%.txt}\" class=\"${CARRAY[$i]}\">[${TITLE}]</a>"
+		CONTENT="${CONTENT}<hr>${SUB}"
+		i=$(( i+1 ))
+		i=$(( i%CHL ))
+	done
+
+	echo "${NAV#<br>}${CONTENT}"
+}
+
+function subcontent {
+	# $1 file name
+	# $2 (if provided) Title Color
+	# Parses a .txt file found in the experience, projects, and activism sections
+	CONTENT=""
+	FC=""
+
+	FC="$(cat $1)"
+	TITLE="$(echo "$FC" | head -n 1)"
+	ID=${1##*/}
+	ID=${ID%.txt}
+	CONTENT="${CONTENT}<h3 id=\"${ID}\""
+
+	if [ -n $2 ]
+	then
+		CONTENT="${CONTENT} class=\"$2\""
+	fi
+	CONTENT="${CONTENT}>${TITLE}</h3>"
+
+	TYPE="$(echo  "$FC" | head -n 2 | tail -n 1)"
+	OTHER="$(echo "$FC" | head -n 3 | tail -n 1)"
+	START="$(echo "$FC" | head -n 4 | tail -n 1)"
+	END="$(echo   "$FC" | head -n 5 | tail -n 1)"
+	LOC="$(echo   "$FC" | head -n 6 | tail -n 1)"
+	DESC="$(echo  "$FC" | tail -n +7 )"
+
+	if grep -q "Events" <<< "${TYPE}"
+	then
+		CONTENT="${CONTENT}<p><em>${START} @ ${LOC}</em></p>"
+	else
+		if [ -n "${LOC}" ] && [[ "$(expr match "${LOC}" "null")" != 4 ]]
+		then
+			CONTENT="${CONTENT}<p><em>${LOC}</em></p>"
+		fi
+
+		if grep -q "Ongoing" <<< "${TYPE}"
+		then
+			CONTENT="${CONTENT}<p><em>Since ${START}</em></p>"
+		elif grep -q "Previous" <<< "${TYPE}"
+		then
+			if grep -q "OneDay" <<< "${TYPE}"
+			then
+				CONTENT="${CONTENT}<p><em>${START}</em></p>"
+			else
+				CONTENT="${CONTENT}<p><em>${START} - ${END}</em></p>"
+			fi
+		elif grep -q "Frozen" <<< "${TYPE}"
+		then
+			CONTENT="${CONTENT}<p><em>${START} - ${END}</em></p>"
+		fi
+	fi
+
+	if [ -n "${OTHER}" ] && [[ "$(expr match "${OTHER}" "null")" != 4 ]]
+	then
+		CONTENT="${CONTENT}<p><em>${OTHER}</em></p>"
+	fi
+
+	DESC="$(echo "${DESC}" | pandoc -p)"
+	DESC="$(./utils/mdtohtml "${DESC}")"
+	if [ -n $2 ]
+	then
+		DESC="${DESC//"<a"/"<a class=\"$2\""}"
+	fi
+	CONTENT="${CONTENT}${DESC}"
+
+	echo "$CONTENT"
+}
+
+################################################################################
+
+DIR="$1"
+DIR_LC=$(echo "${DIR}" | awk '{print tolower($0)}')
+INDEX="$2"
+INDEX_LC="$(echo "${INDEX}" | awk '{print tolower($0)}')"
+SHEADERS="$2 $3"
+OTHER_MD="${MD_SRC}/${DIR_LC}/*.md"
+
+echo "Building ${DIR} section"
+
+if [ ! -e "${DIR_LC}" ]
+then
+	mkdir "${DIR_LC}"
+	echo -e "\tBuilt ${DIR_LC} directory"
+fi
+
+CSSPAGE="<link rel=\"stylesheet\" type=\"text/css\" href=\"./${DIR_LC}.css\">"
+HTMLPAGE="${HTMLPAGE/<!-- XTRACSS -->/${CSSPAGE}}"
+HEADER="- ${DIR}"
+
+for file in ${OTHER_MD}
+do
+	if [[ "${file}" = "${OTHER_MD}" ]]
+	then
+		continue
+	fi
+
+	echo -e "\tBuilding supplementary markdown file ${file}"
+	utils/build_page "${file}" "${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
+done
+
+
+HEADER="- SH ${DIR}"
+CONTENT="<a class=\"${CARRAY[0]}\" href=\"index.html\">[${INDEX_LC}]</a> "
+
+c=0
+for SUBHEAD in $3
+do
+	c=$(( c + 1 ))
+	c=$(( c%CHL ))
+	LC=$(echo "${SUBHEAD}" | awk '{print tolower($0)}')
+	CONTENT="${CONTENT}<a class=\"${CARRAY[$c]}\" href=\"$LC.html\">[$LC]</a> "
+done
+
+HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT} 2CONTENT2}"
+
+for SUBHEAD in $SHEADERS
+do
+	LC=$(echo "${SUBHEAD}" | awk '{print tolower($0)}')
+	echo -e "\tBuilding ${LC}.html"
+	PROJS=""
+	for file in $(cat ${MD_SRC}/${DIR_LC}/priority)
+	do
+		if [[ "${SUBHEAD}" = "All" ]]
+		then
+			PROJS="${PROJS} ${MD_SRC}/${DIR_LC}/${file}.txt"
+			continue
+		fi
+
+		TYPE="$(cat  "${MD_SRC}/${DIR_LC}/${file}.txt" | head -n 2 | tail -n 1)"
+		if grep -q "${SUBHEAD}" <<< "${TYPE}"
+		then
+			PROJS="${PROJS} ${MD_SRC}/${DIR_LC}/${file}.txt"
+		fi
+	done
+
+	NAV=""
+	CONTENT=""
+	SUB=""
+	i=0
+	for TXT_FILE in ${PROJS}
+	do
+		echo -e "\t\tAdding ${TXT_FILE}"
+		SUB="$(subcontent $TXT_FILE ${CARRAY[$i]})"
+		TITLE="$(head -n 1 ${TXT_FILE})"
+		ID=${TXT_FILE##*/}
+		ID=${ID%.txt}
+		NAV="${NAV}<br><a href=\"#${ID}\" class=\"${CARRAY[$i]}\">[${TITLE}]</a>"
+		CONTENT="${CONTENT}<hr>${SUB}"
+		i=$(( i+1 ))
+		i=$(( i%CHL ))
+	done
+
+	SUB="${NAV#<br>}${CONTENT}"
+	SUBPAGE="${HTMLPAGE}"
+	SUBPAGE="${SUBPAGE/<!-- HEADING -->/${HEADER/SH/${SUBHEAD}}}"
+	SUBPAGE="${SUBPAGE/2CONTENT2/<hr>${SUB}}"
+	echo "${SUBPAGE}" > "${DIR_LC}/${LC}.html"
+done
+
+mv "${DIR_LC}/${INDEX_LC}.html" "${DIR_LC}/index.html"
+
+echo -e "\t${INDEX_LC}.html is now the index of ${DIR_LC}"

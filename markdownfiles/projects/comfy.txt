@@ -1,5 +1,5 @@
 Comfy
-Event,Previous
+Events,Previous
 HTML, CSS, Google Firebase, Google Maps APIs
 April 14th and 15th, 2018
 null E

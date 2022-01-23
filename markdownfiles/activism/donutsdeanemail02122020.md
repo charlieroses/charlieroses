@@ -41,3 +41,4 @@ Yi Deng
 _Email sent to the Drexel CCI Student Body on 2/12/2021_
 
 [MailChimp Link](https://mailchi.mp/804e74ed59f7/message-from-the-dean)
+

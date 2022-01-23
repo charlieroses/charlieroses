@@ -1,0 +1,5 @@
+#!/bin/bash
+# Charlie Rose
+# Building the experience section of my site
+
+utils/build_category "Experience" "Ongoing" "Teaching Research"

@@ -16,181 +16,6 @@ BLOG_TEMPLATE=${BLOG_TEMPLATE//.\//..\/..\/}
 CARRAY=( "pp" "pb" "pg" "py" "po" "pr" "pi" )
 CHL=${#CARRAY[@]}
 
-SHEADERS=( "NONE" )
-SHL=${#SHEADERS[@]}
-
-function contentfromfiles {
-	# $1 File names
-	# Builds the content for experience, projects, and activism
-	NAV=""
-	CONTENT=""
-	SUB=""
-	i=0
-	for TXT_FILE in $1
-	do
-		if grep -q "Multi:" < <(head -n 2 "$TXT_FILE")
-		then
-			j=0
-			s=3
-			e=0
-			len=$(head -n 2 "$TXT_FILE" | tail -n 1)
-			len="${len##*:}"
-			TITLE="$(head -n 1 "$TXT_FILE")"
-			ID=${TXT_FILE##*_}
-			ID=${ID%.txt}
-			SUB="<h3 id=\"${ID}\" class=\"${CARRAY[$i]}\">${TITLE}</h3>"
-			while [[ $j < $len ]]
-			do
-				e=$(head -n $((s+1)) $TXT_FILE | tail -n 1)
-				e=${e%%,*}
-				CHUNK="$(head -n "$((e-1))" "$TXT_FILE" | tail -n "+${s}" )"
-				SUB="${SUB}$(subcontent "$CHUNK")"
-				s=$e
-				j=$((j+1))
-			done
-		else
-			SUB="$(subcontent "0" $TXT_FILE ${CARRAY[$i]})"
-		fi
-		TITLE="$(head -n 1 ${TXT_FILE})"
-		NAV="${NAV}<br><a href=\"${TXT_FILE%.txt}\" class=\"${CARRAY[$i]}\">[${TITLE}]</a>"
-		CONTENT="${CONTENT}<hr>${SUB}"
-		i=$(( i+1 ))
-		i=$(( i%CHL ))
-	done
-
-	echo "${NAV#<br>}${CONTENT}"
-}
-
-function subcontent {
-	# $1 file content if file name not provided
-	# $2 file name
-	# $3 (if provided) Title Color
-	# Parses a .txt file found in the experience, projects, and activism sections
-	CONTENT=""
-	FC=""
-
-	if [ -n "$2" ]
-	then
-		FC="$(cat $2)"
-		TITLE="$(echo "$FC" | head -n 1)"
-		ID=${2##*/}
-		ID=${ID%.txt}
-		CONTENT="${CONTENT}<h3 id=\"${ID}\""
-	
-		if [ -n $3 ]
-		then
-			CONTENT="${CONTENT} class=\"$3\""
-		fi
-		CONTENT="${CONTENT}>${TITLE}</h3>"
-	else
-		FC="$1"
-		TITLE="$(echo "$FC" | head -n 1)"
-		CONTENT="${CONTENT}<p><b>${TITLE}</b></p>"
-	fi
-
-	TYPE="$(echo  "$FC" | head -n 2 | tail -n 1)"
-	OTHER="$(echo "$FC" | head -n 3 | tail -n 1)"
-	START="$(echo "$FC" | head -n 4 | tail -n 1)"
-	END="$(echo   "$FC" | head -n 5 | tail -n 1)"
-	LOC="$(echo   "$FC" | head -n 6 | tail -n 1)"
-	DESC="$(echo  "$FC" | tail -n +7 )"
-
-	if grep -q "Event" <<< "${TYPE}"
-	then
-		CONTENT="${CONTENT}<p><em>${START} @ ${LOC}</em></p>"
-	else
-		if [ -n "${LOC}" ] && [[ "$(expr match "${LOC}" "null")" != 4 ]]
-		then
-			CONTENT="${CONTENT}<p><em>${LOC}</em></p>"
-		fi
-
-		if grep -q "Ongoing" <<< "${TYPE}"
-		then
-			CONTENT="${CONTENT}<p><em>Since ${START}</em></p>"
-		elif grep -q "Previous" <<< "${TYPE}"
-		then
-			if grep -q "OneDay" <<< "${TYPE}"
-			then
-				CONTENT="${CONTENT}<p><em>${START}</em></p>"
-			else
-				CONTENT="${CONTENT}<p><em>${START} - ${END}</em></p>"
-			fi
-		elif grep -q "Frozen" <<< "${TYPE}"
-		then
-			CONTENT="${CONTENT}<p><em>${START} - ${END}</em></p>"
-		fi
-	fi
-
-	if [ -n "${OTHER}" ] && [[ "$(expr match "${OTHER}" "null")" != 4 ]]
-	then
-		CONTENT="${CONTENT}<p><em>${OTHER}</em></p>"
-	fi
-
-	DESC="$(echo "${DESC}" | pandoc -p)"
-	DESC="$(./utils/mdtohtml "${DESC}")"
-	if [ -n $3 ]
-	then
-		DESC="${DESC//"<a"/"<a class=\"$3\""}"
-	fi
-	CONTENT="${CONTENT}${DESC}"
-
-	echo "$CONTENT"
-}
-
-function build_dir_fancy {
-	DIR="$1"
-	DIR_LC=$(echo "${DIR}" | awk '{print tolower($0)}')
-
-	if [ ! -e "${DIR_LC}" ]
-	then
-		mkdir "${DIR_LC}"
-		echo "Built ${DIR_LC} directory"
-	fi
-
-	HTMLPAGE=${TEMPLATE//.\//..\/}
-	CSSPAGE="<link rel=\"stylesheet\" type=\"text/css\" href=\"./${DIR_LC}.css\">"
-	HTMLPAGE="${HTMLPAGE/<!-- XTRACSS -->/${CSSPAGE}}"
-	HEADER="- SH ${DIR}"
-	CONTENT=""
-
-	for (( i=0; i<${SHL}; i++ ))
-	do
-		c=$(( i%CHL ))
-		LC=$(echo "${SHEADERS[$i]}" | awk '{print tolower($0)}')
-		CONTENT="${CONTENT}<a class=\"${CARRAY[$c]}\" "
-		if [[ "${LC}" = "ongoing" ]]
-		then
-			CONTENT="${CONTENT}href=\"index.html\">"
-		else
-			CONTENT="${CONTENT}href=\"$LC.html\">"
-		fi
-		CONTENT="${CONTENT}[$LC]</a> "
-	done
-	HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT} 2CONTENT2}"
-
-	for (( i=0; i<${SHL}; i++ ))
-	do
-		LC=$(echo "${SHEADERS[$i]}" | awk '{print tolower($0)}')
-		PROJS=""
-		for file in $(cat ${MD_SRC}/${DIR_LC}/priority)
-		do
-			if grep -q "${SHEADERS[$i]}" "${MD_SRC}/${DIR_LC}/${file}.txt"
-			then
-				PROJS="${PROJS} ${MD_SRC}/${DIR_LC}/${file}.txt"
-			fi
-		done
-		SUB="$(contentfromfiles "${PROJS}")"
-		SUBPAGE="${HTMLPAGE}"
-		SUBPAGE="${SUBPAGE/<!-- HEADING -->/${HEADER/SH/${SHEADERS[$i]}}}"
-		SUBPAGE="${SUBPAGE/2CONTENT2/<hr>${SUB}}"
-		echo "${SUBPAGE}" > "${DIR_LC}/${LC}.html"
-	done
-
-	mv "${DIR_LC}/ongoing.html" "${DIR_LC}/index.html"
-}
-
-
-
 echo "Last Build: $(cat $LASTBUILD)"
 
 # See if the build change was intentional
@@ -214,55 +39,32 @@ do
 	fi
 done
 
-for IN_FILE in "${MD_SRC}"/*
+for IN_FILE in "${MD_SRC}"/*.md
 do
-	# Skip the directories
-	if [ -d "${IN_FILE}" ]
-	then
-		continue
-	fi
-
 	OUT_FILE=.${IN_FILE#${MD_SRC}}
 	OUT_FILE=${OUT_FILE%.md}.html
 
-	
 	# Don't build the file if
 	#	The markdown is older than the HTML file
 	#	AND the build script hasn't been changed
 	#	AND the template hasn't been changed
-	if [ "${IN_FILE}" -ot "${OUT_FILE}" ] && [ -e $BUILDCHNG ] && [ -e $TMPLTCHNG ]
+	if [ "${IN_FILE}" -ot "${OUT_FILE}" ] && [ -z $BUILDCHNG ] && [ -z $TMPLTCHNG ]
 	then
 		echo "Ignored ${IN_FILE}": No recent changes
 		continue
 	fi
 
-	CONTENT="$(pandoc --preserve-tabs "${IN_FILE}")"
-
-	HTMLPAGE=${TEMPLATE}
-	HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/ }"
-	HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
-
-	echo "${HTMLPAGE}" > "${OUT_FILE}"
-	
-	echo "Built ${OUT_FILE} from ${IN_FILE}..."
+	echo "Building ${OUT_FILE} from ${IN_FILE}..."
+	utils/build_page "${IN_FILE}" "${TEMPLATE}"
 done
 
 echo "Completed main HTML files from Markdown"
 
-SHEADERS=( "Ongoing" "Non-Technical" "Previous" )
-SHL=${#SHEADERS[@]}
-build_dir_fancy "Projects"
+utils/build_experience
 
-SHEADERS=( "Ongoing" "Teaching" "Research" )
-SHL=${#SHEADERS[@]}
-build_dir_fancy "Experience"
+utils/build_projects
 
-FILES="$(ls -1 ${MD_SRC}/activism/*.txt | sort)"
-CONTENT="$(contentfromfiles "${FILES}")"
-HTMLPAGE=${TEMPLATE}
-HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/ - Activism}"
-HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
-echo "${HTMLPAGE}" > "activism.html"
+utils/build_activism
 
 ###
 ### Build the Blog
