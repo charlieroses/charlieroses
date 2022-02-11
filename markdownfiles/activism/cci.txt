@@ -64,9 +64,9 @@ of my work.
 	Diversity's (OED) event titled _Honoring Pride Month: A Frank Conversation
 	About Gender and Sexuality_.
 	[[DrexelNOW Article]](https://drexel.edu/now/archive/2021/May/Drexel-Celebrates-Pride-Month-2021/)
-	[[Blogpost]](blogposts/20210602/oedpanel.html)
+	[[Blogpost]](../blogposts/20210602/oedpanel.html)
 - **November 2021** : Spoke at Drexel University's Transgender Day of Remembrance Services
-	[[Blogpost]](blogposts/20211119/tdor.html)
+	[[Blogpost]](../blogposts/20211119/tdor.html)
 
 In October 2020, I became one of three undergraduate students on the inaugural
 [Diversity Equity and Inclusion Council](https://drexel.edu/cci/about/diversity-equity-and-inclusion-council/)
@@ -86,10 +86,10 @@ In this role I:
 	- Educational materials I created were also released both internally to all
 		faculty and staff, and externally to the public
 		[[Video]](https://youtu.be/2Z3lfhOcq_0)
-		[[On-Site One-Pager]](blogposts/20211020/pronouns1page.html)
-		[[PDF One-Pager]](blogposts/20211020/pronouns1pager.pdf)
+		[[On-Site One-Pager]](../blogposts/20211020/pronouns1page.html)
+		[[PDF One-Pager]](../blogposts/20211020/pronouns1pager.pdf)
 	- The directory was updated in mid November 2021
-	- [[Blogpost]](blogposts/20211020/intlpronounsday.html) about the initiative
+	- [[Blogpost]](../blogposts/20211020/intlpronounsday.html) about the initiative
 - Organized and hosted a LGBTQ+ trivia event (Queerzzo) during the month of June
 	to celebrate National LGBTQ+ Pride Month
 	[[Playable Kahoot]](https://create.kahoot.it/share/queerzo-by-ostem-and-cci-dei-council/f2e5ddcf-5d0a-4398-960a-d0109444d51b)

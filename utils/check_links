@@ -1,0 +1,78 @@
+#!/bin/bash
+# Charlie Rose
+# A script to make sure links on my site aren't broken
+
+FILE=${1##*/}
+DIR=${1%${FILE}}
+BROKEN="0"
+
+if [[ -z "${DIR}" ]]
+then
+	DIR="./"
+fi
+
+if [[ ! -f "${DIR}${FILE}" ]]
+then
+	echo -e "\033[01;31mERROR:\033[0m ${DIR}${FILE} Not a File"
+	exit
+fi
+
+echo "Checking links in ${DIR}${FILE}"
+
+WD=$(pwd)
+cd ${DIR}
+
+for HREF in $(grep -o "href=\"[^\"]*\"" "${FILE}")
+do
+	LINK="${HREF%\"}"
+	LINK="${LINK##*\"}"
+	ID="${LINK##*#}"
+	LINK="${LINK%#${ID}}"
+
+#	echo -e "\t ${HREF} ${LINK} ${ID}"
+
+	if [[ "${LINK}" = "http"* ]] ||
+	   [[ "${LINK}" = "www"*  ]]
+	then
+		continue
+	fi
+
+	if [[ "${LINK: -1:1}" = "/" ]]
+	then
+		LINK="${LINK}index.html"
+	fi
+
+	if [[ -z "${LINK}" ]]
+	then
+		if [[ "${HREF}" = *"#"* ]] &&
+		   ! grep -q "id=\"${ID}\"" "${FILE}"
+		then
+			echo -e "\t\033[01;31m${ID} does not exist in ${FILE}\033[0m"
+			BROKEN=$((BROKEN + 1))
+		fi
+		continue
+	fi
+
+	if [[ ! -e "${LINK}" ]]
+	then
+		echo -e "\t\033[01;31m${DIR}${LINK} does not exist\033[0m"
+		BROKEN=$((BROKEN + 1))
+		continue
+	fi
+
+	if [[ "${HREF}" = *"#"* ]] &&
+	   ! grep -q "id=\"${ID}\"" "${LINK}"
+	then
+		echo -e "\t\033[01;31m${ID} does not exist in ${DIR}${LINK}\033[0m"
+		BROKEN=$((BROKEN + 1))
+		continue
+	fi
+done
+
+cd ${WD}
+
+if [[ ${BROKEN} = "0" ]]
+then
+		echo -e "\t\033[01;32mNo broken links\033[0m"
+fi
+

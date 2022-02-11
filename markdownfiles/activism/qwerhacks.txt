@@ -19,5 +19,5 @@ _Accidental Activism in Academia_ and was focused around my journey in starting
 my activism work and how to do it intentionally.
 
 The slides, a workshop recording, and more information can be found
-[here](blogposts/20220122/qwerhacks.html).
+[here](../blogposts/20220122/qwerhacks.html).
 

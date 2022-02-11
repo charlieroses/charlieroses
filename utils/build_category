@@ -152,7 +152,10 @@ do
 	do
 		if [[ "${SUBHEAD}" = "All" ]]
 		then
-			PROJS="${PROJS} ${MD_SRC}/${DIR_LC}/${file}.txt"
+			if ! grep -q "NOTALL" "${MD_SRC}/${DIR_LC}/${file}.txt"
+			then
+				PROJS="${PROJS} ${MD_SRC}/${DIR_LC}/${file}.txt"
+			fi
 			continue
 		fi
 
@@ -190,3 +193,8 @@ done
 mv "${DIR_LC}/${INDEX_LC}.html" "${DIR_LC}/index.html"
 
 echo -e "\t${INDEX_LC}.html is now the index of ${DIR_LC}"
+
+for FILE in ${DIR_LC}/*.html
+do
+	utils/check_links ${FILE}
+done

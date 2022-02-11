@@ -1,0 +1,118 @@
+#!/bin/bash
+# Charlie Rose
+# Building the Blog for my site
+
+MD_SRC='./markdownfiles'
+BLOGMD_SRC="${MD_SRC}/blog"
+BLOGPOST_SRC="./blogposts"
+TEMPLATE=$(cat ./utils/template.html)
+BLOG_TEMPLATE="${TEMPLATE}"
+BLOG_TEMPLATE=${BLOG_TEMPLATE//.\//..\/..\/}
+BLOG_TEMPLATE="${BLOG_TEMPLATE/<!-- HEADING -->/ - Blog}"
+
+if [ ! -e "${BLOGPOST_SRC}" ]
+then
+	mkdir ${BLOGPOST_SRC}
+	echo "Built blogpost directory"
+fi
+
+echo "Building blog HTML files from Markdown"
+
+BLOG_CONTENT=" "
+
+for IN_FILE in $(find "${BLOGMD_SRC}" -mindepth 1 -maxdepth 1 | sort -r)
+do
+	IN_FILE="${IN_FILE#"${BLOGMD_SRC}/"}"
+
+	# Don't build wip pages
+	if [[ "${IN_FILE}" != "${IN_FILE%wip*}" ]]
+	then
+		echo "Ignored ${IN_FILE}: WIP file"
+		continue
+	fi
+
+	DATE=${IN_FILE%_*}
+	DIRDATE=${DATE//-/}
+	DIRDATE=${DIRDATE%x}
+	MONTH=${DATE%-*}
+	MONTH=${MONTH#*-}
+	DAY=${DATE##*-}
+
+	if [[ "$YEAR" != "${DATE%%-*}" ]]
+	then
+		BLOG_CONTENT="${BLOG_CONTENT}<h3 class='blogh'>${DATE%%-*}</h3>"
+	fi
+
+	YEAR=${DATE%%-*}
+	PRETTYDATE="${MONTH}/${DAY}/${YEAR}"
+
+	METADATA=$(head -n 3 "${BLOGMD_SRC}/${IN_FILE}")
+
+	TITLE=$(echo "$METADATA" | tail -n 1)
+	TITLE=${TITLE#"# "}
+	TITLE=${TITLE//\\/}
+
+	OUT_FILE=${BLOGPOST_SRC}/${DIRDATE}/${IN_FILE##*_}
+	OUT_FILE=${OUT_FILE%.md}.html
+
+	if [ ! -e "${BLOGPOST_SRC}/${DIRDATE}" ]
+	then
+		mkdir "${BLOGPOST_SRC}/${DIRDATE}"
+		echo "Made ${BLOGPOST_SRC}/${DIRDATE} directory for blogposts"
+	fi
+
+	if [[ "${DATE}" = "${DATE%x}" ]]
+	then
+		ENTRY_LINK="<a class='bloglink' href='${OUT_FILE#./}'>$PRETTYDATE : $TITLE</a>"
+		BLOG_CONTENT="${BLOG_CONTENT}${ENTRY_LINK}<br>"
+	fi
+
+	# Don't rebuild if
+	#	the template is older than the last build
+	#	AND the build script is older than the last build
+	#	AND the markdown file is older than the HTML file
+	if [ "${BLOGMD_SRC}/${IN_FILE}" -ot "${OUT_FILE}" ] && [ -e $BUILDCHNG ] && [ -e $TMPLTCHNG ]
+	then
+		continue
+	fi
+
+	DATA=$(tail -n +3 "${BLOGMD_SRC}/${IN_FILE}")
+	DATA=${DATA#${METADATA}}
+
+	CSSCSV=$(echo "$METADATA" | tail -n 2 | head -n 1)
+	CSSPAGES=""
+	for THISCSS in $CSSCSV
+	do
+		CSSPAGES="${CSSPAGES}<link rel=\"stylesheet\" type=\"text/css\" href=\"${THISCSS}\">"
+	done
+
+	CONTENT=$(echo "${DATA}" | pandoc -p )
+	echo " Coverted to HTML with pandoc"
+	CONTENT=$(./utils/mdtohtml "${CONTENT}")
+	echo " Adding Charlie customization"
+
+	# Fixing template links and inserting content
+	HTMLPAGE=${BLOG_TEMPLATE}
+	HTMLPAGE="${HTMLPAGE/<!-- XTRACSS -->/${CSSPAGES}}"
+	HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
+
+	
+	# Build HTML page
+	echo "${HTMLPAGE}" > "${OUT_FILE}"
+
+	echo "  Built ${OUT_FILE} from ${IN_FILE}"
+done
+
+echo "Built all blog HTML files from Markdown"
+
+OUT_FILE="blog.html"
+
+HTMLPAGE=${TEMPLATE}
+HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${BLOG_CONTENT}}"
+
+echo "${HTMLPAGE}" > "${OUT_FILE}"
+
+echo "Built main blog page"
+
+
+
