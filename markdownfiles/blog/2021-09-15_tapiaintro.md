@@ -13,7 +13,7 @@ I'm super happy I get to attend this event because diversity in computing is a
 huge part of my life, and I also have been considering an ACM membership, as I
 plan to get my PhD in lower level computing. So, as I have for past conferences,
 I'll write a post about my experiences. I've been enjoying the process of
-writing on my blog. I recently read through my [experience](2020-06-16_570.html)
+writing on my blog. I recently read through my [experience](../20200616/570.html)
 TAing a grad course over the pandemic. So I'm gonna continue doing what I'm
 doing. Also, the college is having a meeting afterwards between the attendees to
 discuss our experiences, so I need to take notes.
@@ -72,14 +72,14 @@ registering, I was faced with the question no form can ever get right.
 > - Gender Fluid
 > - Prefer not to answer
 
-I have an entire [separate blogpost](2021-09-12_identitydata.html) about my
+I have an entire [separate blogpost](../20210912/identitydata.html) about my
 opinions on this question and how to do it accurately, but its really
 disappointing to see how poorly this was done for a conference about diversity.
 So a quick run down of why this is bad. 1) You could only pick one option. 2) It
 treats gender identity still as a category to fit into instead of something that
 exists and can be described with given gender labels. 3) The options are
 extremely limited. You can go read my
-[other blogpost](2021-09-12_identitydata.html) for more information on how to do
+[other blogpost](../20210912/identitydata.html) for more information on how to do
 this right. It's clear there was an attempt to be more inclusive, however it's
 very surface level. It looks like an attempt was made only to say they are
 inclusive, but everything else shows there isn't a deeper understanding of the

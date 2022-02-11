@@ -130,7 +130,7 @@ count all the LGBTQ+ people I knew in the college on one hand and it was super
 isolating. So I went and researched to see if there were any initiatives that
 existed to build a stronger LGBTQ+ community in STEM. I came across
 <span class="qo">[Out in STEM (oSTEM)](https://ostem.org/)</span> and
-<span class="qo">[started a chapter at Drexel](../../activism.html#ostem)</span>
+<span class="qo">[started a chapter at Drexel](../../activism/previous.html#ostem_fp)</span>
 
 #### Donuts With The Dean {.qo}
 
@@ -144,7 +144,7 @@ restroom in public. I was genuinely terrified to use the men's room. It wasn't
 until my friend convinced me to start using the men's room with him. He would go
 with me in the men's room and act as a layer of safety and protection. Later
 that year, my friend graduated and
-<span class="qo">[CCI](../../activism.html#cci)</span>
+<span class="qo">[CCI](../../activism/#cci)</span>
 moved to our new building.
 In the move, we got a gender neutral restroom and I no longer had to fear using
 the men's room alone. This quickly changed when our gender neutral restroom has

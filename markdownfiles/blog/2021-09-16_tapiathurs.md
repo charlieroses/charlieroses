@@ -49,7 +49,7 @@ ACM Diversity Chair. She had a really good opening paragraph about the impact
 of the pandemic. She talked about how it created larger gaps in wealth and
 access. It was a good way to start the day. Since the ACM Diversity Chair,
 she may be the person I should reach out to about the
-[Community Data Collection](2021-09-15_tapiaintro.html#cdc) form I had a lot
+[Community Data Collection](../20210915/tapiaintro.html#cdc) form I had a lot
 of opinions on.
 
 The next speaker I had seen at other events. She and I have had good

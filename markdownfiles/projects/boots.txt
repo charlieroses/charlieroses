@@ -25,9 +25,9 @@ too thick to embroider as is. My plan is to create a "cover" then sew it on top
 of the boot. I'll make a proper write up when I'm done.
 
 **Doc Martens:**
-[[Before]](DocMartensBefore.jpeg)
-[[In Progress]](DocMartensDyeDiff.jpeg)
-[[Dyed]](DocMartensDyed.jpeg)
+[[Before]](files/DocMartensBefore.jpeg)
+[[In Progress]](files/DocMartensDyeDiff.jpeg)
+[[Dyed]](files/DocMartensDyed.jpeg)
 
 **Sketch Plans:** These were originally for the Docs, but change of plans. I'm
 adapting them for the boots.

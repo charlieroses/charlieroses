@@ -32,7 +32,9 @@ do
 #	echo -e "\t ${HREF} ${LINK} ${ID}"
 
 	if [[ "${LINK}" = "http"* ]] ||
-	   [[ "${LINK}" = "www"*  ]]
+	   [[ "${LINK}" = "www"*  ]] ||
+	   [[ "${LINK}" = *".com"  ]] ||
+	   [[ "${LINK}" = *".net"  ]]
 	then
 		continue
 	fi

@@ -34,7 +34,7 @@ and abuse. I decided a long while ago that when I legally changed my name to
 Charlie, I would also change my last name to Rose.
 
 Last July, as mentioned in a
-[previous blogpost](blogposts/2021-07-04_oneyear.html), I was disowned for being
+[previous blogpost](../20210704/oneyear.html), I was disowned for being
 trans. It was in this moment that I realized I couldn't hold myself back for the
 sake of my biological parents anymore, and I had to do what I needed for myself.
 I started HRT, started planning surgery, and in May of 2021, I submitted my

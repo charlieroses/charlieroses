@@ -183,6 +183,16 @@ echo -e "${CONTENT}<https://charlierose.dev>" > README.md
 
 echo "Built README.md"
 
+for FILE in ./*.html
+do
+	utils/check_links ${FILE}
+done
+
+for FILE in blogposts/*/*.html
+do
+	utils/check_links ${FILE}
+done
+
 LB=$(date)
 echo "Built $LB" > "$LASTBUILD"
 echo "Built $LB"
