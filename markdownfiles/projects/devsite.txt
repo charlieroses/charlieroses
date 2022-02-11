@@ -15,6 +15,9 @@ This started as a very basic site to expand my resume. I've now turned it into
 more of a portfolio. As I've needed more, the site's turned into a little
 challenge for me in how much I can replicate flashy responsive websites using
 only Bash and static HTML.
-[[Code]](https://github.com/charlieroses/dev-website)
+
+- [[Code]](https://github.com/charlieroses/dev-website)
+- [[Start of Site Blogpost]](../blogposts/20200613/webintro.html)
+- [[Broken Link Blogpost]](../blogposts/20220210/brokenlinks.html)
 
 

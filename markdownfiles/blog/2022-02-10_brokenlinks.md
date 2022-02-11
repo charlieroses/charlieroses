@@ -1,0 +1,52 @@
+Technical, Side Projects
+
+# Broken Links on the Site
+
+I tend not to write blogposts about the little scripts I write to organize my
+website. They tend to be fairly basic bash scripts and I don't find them
+exceptionally interesting or special. Though, the script I just wrote is too
+funny to ignore. ~~It's also quite embarrassing, but I'm choosing to laugh at
+this instead of be hurt by it~~
+
+I've built just about the entire "framework" for my site here. You can find it
+on [GitHub](https://github.com/charlieroses/charlieroses) or read more about it
+[here](../../projects/#devsite). I frequently update these scripts as I add more
+pages to my site and want to create new functionality. I try to write scripts
+that don't require much upkeep so that I don't have to rewrite the scripts
+every time I add to my site. I'm slowly getting closer to "self sufficient" and
+most of the time when I add content, I don't need to rewrite the entire
+"framework". One of the things I did today was start to compartmentalize the
+[build script](https://github.com/charlieroses/charlieroses/blob/main/utils/build)
+into multiple smaller
+[build scripts](https://github.com/charlieroses/charlieroses/tree/main/utils) so
+I don't need to rebuild the entire site if I only change one page in one
+section. This got fairly time consuming as I add more content.
+
+The other absurd, inefficient, and inaccurate time sink was checking my links.
+I basically would go through every page I was going to add, then clicked on
+every link to make sure they all worked. This was absurdly time consuming and
+wildly inaccurate. Then, when I fixed things in my scripts or changed structure,
+I didn't go and check every link again, and everything broke. On one hand, it's
+incredibly embarrassing I went through all of the work of trying to click on
+every link to check if they worked instead of finding a better solution. On the
+other hand, it's also hilarious how quickly I was able to figure out how to not
+do that.
+
+Today, I wrote a [bash script](https://github.com/charlieroses/charlieroses/blob/main/utils/check_links)
+to check if the links on the certain page redirect to a page that exists on my
+site. When I ran the script on all the files in my site, I had another
+hilariously embarrassing situation. I got to see exactly how many broken links
+there were on my site. I guess it's embarrassing that I didn't realize how
+broken my site way. I guess it's embarrassing that I thought that clicking on
+links repeatedly was a smart solution and that I wouldn't miss the absurd amount
+of broken links that existed. At this point, I just find it flat out hilarious.
+It's one of those, "you live and learn" situations.
+
+Anyway, the script took me all of an hour to actually write and fixes so many
+issues. All it does is cycle through the links I have on the site and check if
+the files actually exist. It's so simple, I find it hilarious how much effort I
+put into this before. As a side note, if you happened to stumble across my site
+and noticed every single link ever was broken, I hope that you didn't think too
+poorly of me.
+
+
