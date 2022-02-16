@@ -71,10 +71,10 @@ do
 	#	the template is older than the last build
 	#	AND the build script is older than the last build
 	#	AND the markdown file is older than the HTML file
-	if [ "${BLOGMD_SRC}/${IN_FILE}" -ot "${OUT_FILE}" ] && [ -e $BUILDCHNG ] && [ -e $TMPLTCHNG ]
-	then
-		continue
-	fi
+#	if [ "${BLOGMD_SRC}/${IN_FILE}" -ot "${OUT_FILE}" ]
+#	then
+#		continue
+#	fi
 
 	DATA=$(tail -n +3 "${BLOGMD_SRC}/${IN_FILE}")
 	DATA=${DATA#${METADATA}}
@@ -99,6 +99,8 @@ do
 	
 	# Build HTML page
 	echo "${HTMLPAGE}" > "${OUT_FILE}"
+	
+	utils/check_links "${OUT_FILE}"
 
 	echo "  Built ${OUT_FILE} from ${IN_FILE}"
 done

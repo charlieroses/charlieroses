@@ -48,7 +48,7 @@ and was in the hospital for the remainder of the term.
                   CS-277: Algorithms and Analysis
 **Summer 2021**   CS-283: Systems Programming
 **Fall 2021**     CS-164: Introduction To Computer Science
-**Winter 2021**   CS-164: Introduction To Computer Science
+**Winter 2022**   CS-164: Introduction To Computer Science
                   CS-260: Data Structures and Algorithms
 ---------------   ------------------------------------------------------
 </div>

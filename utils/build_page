@@ -15,4 +15,4 @@ HTMLPAGE=${TEMPLATE}
 HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/ }"
 HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
 
-echo "${HTMLPAGE}" > "${OUT_FILE}"
+echo -e "${HTMLPAGE}" > "${OUT_FILE}"
