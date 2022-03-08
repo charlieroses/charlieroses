@@ -50,6 +50,8 @@ and was in the hospital for the remainder of the term.
 **Fall 2021**     CS-164: Introduction To Computer Science
 **Winter 2022**   CS-164: Introduction To Computer Science
                   CS-260: Data Structures and Algorithms
+**Spring 2022**   CS-171: Computer Programming I (Tentative)
+                  CS-277: Algorithms and Analysis (Tentative)
 ---------------   ------------------------------------------------------
 </div>
 
