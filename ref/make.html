@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="colors.css">
+  <link rel="stylesheet" type="text/css" href="syntax.css">
+</head>
+<body>
+	<div class="content" id="top">
+
+	<a href="index.html">Back to Navigation</a></div><hr><div class="content"><h1 id="crash-course-on-makefiles">Crash Course on Makefiles</h1>
+<p>This is a basic crash course on making basic makefiles and reading them and understanding them and writing them. This is not a comprehensive &quot;everything to know about <code>make</code>&quot; tutorial. It's meant for beginners who are required to submit a makefile with their assignment but have no idea what that means.</p>
+<p>I really like Kurt's <a href="https://www.cs.drexel.edu/~kschmidt/CS265/Lectures/Make/make.pdf">slides on make</a></p>
+<ul>
+<li><a href="#anatomy-of-a-target">Anatomy of a Target</a>
+<ul>
+<li><a href="#phony-targets">PHONY Targets</a></li>
+<li><a href="#variables">Variables</a></li>
+</ul></li>
+<li><a href="#running-a-makefile">Running a Makefile</a></li>
+<li><a href="#more-complicated-makefiles">More Complicated Makefiles</a></li>
+</ul>
+</div><hr><div class="content">
+<h2 id="anatomy-of-a-target">Anatomy of a Target</h2>
+<p>We use makefiles to make files. It's a very appropriately named utility.</p>
+<p>A makefile is primarily comprised of <strong>targets</strong> that named after the file they create. A target has the following structure:</p>
+<pre class="make"><code>target: dependencies
+	command
+	command
+	command</code></pre>
+<p>As said before the <strong>target</strong> is the name of the file being created. A target that isn't the name of a file is typically labelled as <code>.PHONY</code>.</p>
+<p>The <strong>dependencies</strong> are a list of files that are required to exist for the target to run. If the files don't exist, the makefile stops execution.</p>
+<p>The <strong>commands</strong> are the commands that will run assuming the dependencies exist. If a command errors, then the entire makefile stops execution. You can prepend a command with a <code>-</code> to have <code>make</code> ignore errors. Commands <em>need</em> to be prepended by <em>tabs, not spaces</em>. I like to turn on <a href="vimtricks.html#whitespace">whitespace in vim</a> for this reason.</p>
+<p>Here's a basic target to compile C. This alone is a valid makefile.</p>
+<pre class="make"><code>main: main.c
+	gcc main.c -o main</code></pre>
+<h3 id="phony-targets">PHONY Targets</h3>
+<p>It's pretty common to see a target named <code>clean</code> in a makefile. This target doesn't create a file named &quot;clean&quot;, its used to remove all the files the makefile created. We can label it as <code>.PHONY</code> as a reminder that it's not going to make a file named clean. Expanding on the above makefile:</p>
+<pre class="make"><code>.PHONY = clean
+
+main: main.c
+	gcc main.c -o main
+
+foo.txt:
+	touch foo.txt
+
+clean:
+	-rm foo.txt
+	-rm main</code></pre>
+<p>I added a bit more for explanations sake. I added a target to create an empty file <code>foo.txt</code>. Then the clean target removes both the <code>foo.txt</code> file and the <code>main</code> executable. It doesn't matter if <code>foo.txt</code> exists or not before the target is called. Since there's a <code>-</code>, even if <code>foo.txt</code> doesn't exist, the makefile will continue.</p>
+<h3 id="variables">Variables</h3>
+<p>You can also use variables in make. So further expanding that above makefile:</p>
+<pre class="make"><code>.PHONY = clean
+TARGET = main
+
+$(TARGET): $(TARGET).c
+	gcc $(TARGET).c -o $(TARGET)
+
+foo.txt:
+	touch foo.txt
+
+clean:
+	-rm foo.txt
+	-rm $(TARGET)</code></pre>
+</div><hr><div class="content">
+<h2 id="running-a-makefile">Running a Makefile</h2>
+<p>When running makefiles, you've got a few options.</p>
+<p>To run the first target in the file (in our case, our <code>main</code> compilation) just use:</p>
+<pre><code>$ make</code></pre>
+<p>To run a specific target, no matter where it is in the file, you can run:</p>
+<pre><code>$ make foo.txt</code></pre>
+<p>Let's say we're working on a basic C file that isn't named <code>main.c</code> but we want to use our makefile on it. We can edit the <code>TARGET</code> variable too with:</p>
+<pre><code>$ make TARGET=foo</code></pre>
+<p>It's important to note that a target will only run if:</p>
+<ol style="list-style-type: decimal">
+<li>The file doesn't already exist</li>
+<li>The file does exist, but is &quot;older&quot; than its dependencies (they were editted more recently than it was created)</li>
+</ol>
+</div><hr><div class="content">
+<h2 id="more-complicated-makefiles">More Complicated Makefiles</h2>
+<p>The reason makefiles are so wonderful is because we can recursively build dependencies if they don't exist.</p>
+<p>Let's say I'm working on a C project and I have the following set up:</p>
+<ul>
+<li><code>foo.c</code> : Some function definitions</li>
+<li><code>foo.h</code> : The function prototypes for <code>foo.c</code></li>
+<li><code>main.c</code> : The main source code that uses the functions in <code>foo.c</code> and <code>#include&quot;foo.h&quot;</code></li>
+</ul>
+<p><code>main.c</code> depends on two things (that isn't itself). It needs the header file to exist, it also needs <code>foo.c</code> to be compiled into <code>foo.o</code> to use it's functions. I can write the following makefile:</p>
+<pre class="make"><code>.PHONY = clean
+
+main : main.c foo.h foo.o
+	gcc -o main main.c foo.o
+
+foo.o : foo.c
+	gcc -c foo.c
+
+clean:
+	-rm main
+	-rm *.o</code></pre>
+<p>You may think, &quot;oh to compile <code>main</code>, I first run <code>make foo.o</code> then I can run <code>make</code> since <code>main</code> depends on <code>foo.o</code>&quot;. Technically that's correct, but life can be easier!</p>
+<p>By typing <code>make</code> alone, we run <code>make main</code>. It will only run if it's dependencies exist. Assuming we're starting with a clean slate, <code>main.c</code> and <code>foo.h</code> will exist, but <code>foo.o</code> will not. Before stopping excution, the makefile will check to see if a target exists under that name. If it doesn't exist, the makefile fails. If it does exist, it will be recursively run.</p>
+<p>So in this case, when running <code>make</code>, the following happens</p>
+<ul>
+<li><code>main</code> is the first target
+<ul>
+<li>Does the file <code>main.c</code> exist? <span class="check">&#10004;</span> Continue</li>
+<li>Does the file <code>foo.h</code> exist? <span class="check">&#10004;</span> Continue</li>
+<li>Does the file <code>foo.o</code> exist? <span class="cross">&cross;</span> Check for target
+<ul>
+<li>Does <code>foo.o</code> have a target? <span class="check">&#10004;</span> Run target</li>
+<li>Does the file <code>foo.c</code> exist? <span class="check">&#10004;</span> Continue</li>
+<li>Run <code>gcc</code> command to compile <code>foo.c</code></li>
+<li><code>foo.o</code> now exists <span class="check">&#10004;</span></li>
+</ul></li>
+<li>Run the <code>gcc</code> command to compile <code>main.c</code></li>
+</ul></li>
+<li>Makefile successful!</li>
+</ul>
+<p>This is just a quick overview, there's plenty more to know. about using <code>make</code> efficiently. This should be enough to get you functional.</p>
+
+	</div>
+	<hr>
+	<div class="content" id="bottom">
+		<a href="#top">Back to Top</a>
+	</div>
+</body>
+</html>

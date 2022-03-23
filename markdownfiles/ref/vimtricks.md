@@ -8,6 +8,12 @@ a terminal.
 So here's a list of the most common complaints I get about `vim` and their
 "fixes". Plus a few more tricks I appreciate at the end.
 
+Also, for newbies, don't try to learn everything at once. Just use `vim` without
+any features until you're comfortable with the `i` insert `ESC` then `:w` save
+`:q` workflow. Then once you're comfy, go learn something new and ad features.
+Redo the `vimtutor` every so often to learn more keystrokes. Start basic and
+build.
+
 ---
 
 ### "There's no line numbers"
@@ -49,6 +55,7 @@ If the text is too dark, start with:
 set bg=dark
 ```
 
+<div id="whitespace">
 Then if you want to toggle specific colors of specific syntax categories, use
 `:hi`. I like to turn my whitespace on so I can see tabs and spaces. I make them
 a dark gray that blends in with my background nice. Easy to ignore, but easy to
@@ -59,6 +66,7 @@ set listchars=tab:>-,trail:.
 set list
 hi SpecialKey ctermfg=240
 ```
+</div>
 
 ---
 

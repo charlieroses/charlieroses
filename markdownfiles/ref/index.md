@@ -19,6 +19,8 @@ assume.
 
 ### Misc
 
+[Makefiles 101](make.html)
+
 [Vim Tricks](vimtricks.html)
 
 ---
@@ -53,3 +55,6 @@ At Drexel University
 [Tutorial on sed](https://www.grymoire.com/Unix/Sed.html) : Bruce Barnett
 
 [UNIX Slightly Longer Reference Guide (still for newbies)](https://www.cs.drexel.edu/~kschmidt/Ref/unix_reference.html) - Kurt Schmidt
+
+[Unicode Library](https://www.compart.com/en/unicode/) : Compart
+

@@ -22,6 +22,9 @@ then
 	CONTENT="<a href=\"index.html\">Back to Navigation</a></div><hr><div class=\"content\">${CONTENT}"
 fi
 
+CONTENT="$(echo "${CONTENT}" | sed 's|:check:|<span class=\"check\">\&#10004;</span>|g')"
+CONTENT="$(echo "${CONTENT}" | sed 's|:cross:|<span class=\"cross\">\&cross;</span>|g')"
+
 HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
 echo "${HTMLPAGE}" > "${OUTFILE}"
 

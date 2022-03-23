@@ -54,3 +54,11 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+
+.cross {
+	color: #B85450;
+}
+
+.check {
+	color: #82B366;
+}
