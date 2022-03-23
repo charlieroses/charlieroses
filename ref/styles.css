@@ -1,0 +1,56 @@
+/*############################### GENERAL CSS ################################*/
+/* Generic CSS for the site like background color and stuff that isn't too    */
+/* bulky                                                                      */
+/* I'm making my site look like a piece of looseleaf this is the dumbest      */
+/* thing ever but I'm obsessed                                                */
+
+html {
+	background-color: #DDD;
+}
+
+body {
+	margin: 1rem auto;
+	width: 99%;
+}
+
+div.content {
+	border-left: 4px solid #FF000055;
+	margin: 1rem auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	max-width: 80%;
+	padding-left: 5ch;
+	padding-right: 5ch;
+	padding-top: 1ch;
+	padding-bottom: 1ch;
+}
+
+hr {
+	border: 2px solid #0000FF55;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+div.figure {
+	margin: auto;
+	text-align: center;
+	width: 100%;
+}
+
+div.figure>.caption {
+	display: none;
+}
+
+a {
+	background-color: #FFFF0055;
+	border-radius: 2px;
+	color: #000;
+	text-decoration: none;
+	padding: 2px;
+}
+
+a:hover {
+	text-decoration: underline;
+}

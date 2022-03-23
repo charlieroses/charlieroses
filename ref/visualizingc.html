@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="colors.css">
+  <link rel="stylesheet" type="text/css" href="syntax.css">
+</head>
+<body>
+	<div class="content" id="top">
+		<a href="index.html">Back to Navigation</a>
+	</div>
+	<hr>
+	<div class="content">
+
+	<h1 id="visualizing-c">Visualizing C</h1>
+<p>At the time I'm writing this, I'm TAing a data structures course in C. Not to be a massive nerd, but data structures in C is so much fun. I was taught data structures in Python and it's just not the same. The benefit of using C is when we draw our data structures, the syntax falls so perfectly into place. I have many students that refuse to draw their data structures before writing code, so I'm writing this in hopes that they understand what they're drawing better. Hopefully people beyond my students can benefit from this. Also it is worth noting that this is what <em>I</em> do when I draw things out. It doesn't mean it's the only way to do things. It's just how I like to draw things out and the way I teach my students</p>
+<p>The goal is to make boxes and arrows to visualize our memory to make pointers less scary and to make us better programmers.</p>
+<ul>
+<li><a href="#the-basics">The Basics</a></li>
+<li><a href="#data-structures">Data Structures</a></li>
+</ul>
+</div><hr><div class="content">
+<h2 id="the-basics">The Basics</h2>
+<p><span id="intexample">Single</span> boxes are going to be our basic data types like <code>int</code>, <code>long</code>, <code>float</code>, <code>char</code>, etc. Given the code:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> a, b, c;
+<span class="dt">char</span> s;
+
+a = <span class="dv">10</span>;
+b = a;
+c = a + b;
+s = <span class="ch">&#39;a&#39;</span>;</code></pre></div>
+<p>We'd get something that looks like this:</p>
+<div class="figure">
+<img src="imgs/intabc_chars.png" alt="Example 1" />
+<p class="caption">Example 1</p>
+</div>
+<p>This is pretty basic. Now lets do the same with two strings. Ones gonna be put on the stack (memory that only exists within the bounds of a function), the other on the heap (memory that exists everywhere). The code would look like this to start:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">char</span> *strA;
+<span class="dt">char</span> strB[<span class="dv">5</span>];</code></pre></div>
+<p>Which would give us the corresponding image:</p>
+<div class="figure">
+<img src="imgs/strsA.png" alt="Example 2 Part A" />
+<p class="caption">Example 2 Part A</p>
+</div>
+<p>First, remember that strings are just arrays of <code>char</code>s. Second, remember that arrays are just multiple pieces of memory next to each other all referenced through the same variable. In this case <code>strB</code> get's 5 boxes next to each other since 5 <code>char</code>s will be in the string.</p>
+<p><span id="pointernumber">Meanwhile,</span> <code>strA</code> is just a pointer (note the <code>*</code>) so it gets a box too, but only one box. Pointers reference another memory location. Later, we'll draw pointers as arrows, but really they are just a big hexadecimal number that references a location in memory. However, when trying to visualize memory, a hex number isn't very useful. Since we haven't yet given <code>strA</code> any memory to look at yet, I just gave it a dot to show it's a pointer with no memory to point to.</p>
+<p>Moving on, let's fill these variables.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">char</span> *strA;
+<span class="dt">char</span> strB[<span class="dv">5</span>];
+
+strA = malloc( <span class="kw">sizeof</span>(<span class="dt">char</span>) * <span class="dv">5</span> );
+
+strcpy( strA, <span class="st">&quot;ciao&quot;</span> );
+strcpy( strB, <span class="st">&quot;ciao&quot;</span> );</code></pre></div>
+<div class="figure">
+<img src="imgs/strsB.png" alt="Example 2 Part B" />
+<p class="caption">Example 2 Part B</p>
+</div>
+<p>I've <code>malloc</code>ed some memory for <code>strA</code> which allocates a chunk of memory on the heap for me, and returns a pointer to that memory. In my diagram, I've drawn this as new boxes drawn next to each other with the arrow pointing to the first box of memory. There are 5 boxes because I allocated enough room for 5 <code>char</code>s. Technically, the <code>sizeof(char)</code> is equal to 1 byte, so I don't need it there, but I like to include it when I'm teaching C to first timers because it reduces issues for <code>malloc</code>ing other types of arrays.</p>
+<p>I tend not to draw the blue dotted line in my diagrams because I've been doing C for a while, but I drew a blue line to separate the stack and the heap memory. While both <code>strA</code> and <code>strB</code> have the same values (the word &quot;ciao&quot;) and take up the same amount of memory (5 characters), they're in different places in memory and at the end of this function, the memory <code>strA</code> will still exist. <code>strB</code> will not. This is shown better in the <span id="stackheap">snippet below</span>:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">char</span> *fooA() {
+	<span class="dt">char</span> *strA;
+	<span class="dt">char</span> strB[<span class="dv">5</span>];
+
+	strA = malloc( <span class="kw">sizeof</span>(<span class="dt">char</span>) * <span class="dv">5</span> );
+
+	strcpy( strA, <span class="st">&quot;ciao&quot;</span> );
+	strcpy( strB, <span class="st">&quot;ciao&quot;</span> );
+
+	<span class="cf">return</span> strA;
+}
+
+<span class="dt">char</span> *fooB() {
+	<span class="dt">char</span> *strA;
+	<span class="dt">char</span> strB[<span class="dv">5</span>];
+
+	strA = malloc( <span class="kw">sizeof</span>(<span class="dt">char</span>) * <span class="dv">5</span> );
+
+	strcpy( strA, <span class="st">&quot;ciao&quot;</span> );
+	strcpy( strB, <span class="st">&quot;ciao&quot;</span> );
+
+	<span class="cf">return</span> strB;
+}
+
+<span class="dt">void</span> main() {
+	<span class="dt">char</span> *strC;
+
+	strC = fooA();
+	printf(<span class="st">&quot;%s</span><span class="sc">\n</span><span class="st">&quot;</span>, strC); <span class="co">// &quot;ciao&quot; will print!</span>
+	<span class="co">// While the specific pointer strA does not exist anymore, the memory</span>
+	<span class="co">// it referenced does</span>
+
+	strC = fooB();
+	printf(<span class="st">&quot;%s</span><span class="sc">\n</span><span class="st">&quot;</span>, strC); <span class="co">// &quot;ciao&quot; will not print :(</span>
+	<span class="co">// Both the pointer strB and the memory it referenced were on the stack and</span>
+	<span class="co">// no longer exist</span>
+}</code></pre></div>
+<p>How do we clean up this <code>malloc</code>ed memory though? With a <code>free</code>:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">char</span> *strA;
+<span class="dt">char</span> strB[<span class="dv">5</span>];
+
+strA = malloc( <span class="kw">sizeof</span>(<span class="dt">char</span>) * <span class="dv">5</span> );
+
+strcpy( strA, <span class="st">&quot;ciao&quot;</span> );
+strcpy( strB, <span class="st">&quot;ciao&quot;</span> );
+
+free( strA );</code></pre></div>
+<p>Which then &quot;deletes&quot; the memory pointed to by <code>strA</code> and the pointer is now <code>NULL</code>. This gives us the following diagram:</p>
+<div class="figure">
+<img src="imgs/strsC.png" alt="Example 2 Part C" />
+<p class="caption">Example 2 Part C</p>
+</div>
+<p>One final thing to cover is a <span id="structintro"><code>struct</code></span>. This is going to be drawn similar to an array with boxes next to each other, but instead of being referenced through indices, we use members.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">typedef</span> <span class="kw">struct</span> S {
+	<span class="dt">int</span> l;
+	<span class="dt">char</span> *str;
+} S;
+
+<span class="dt">void</span> main() {
+	<span class="kw">struct</span> S stA;
+	<span class="kw">struct</span> S *stB;
+	<span class="kw">struct</span> S *stC;
+
+	stA.l = <span class="dv">6</span>;
+	stA.str = malloc( stA.l );
+	strcpy( stA.str, <span class="st">&quot;hello&quot;</span> );
+
+	stB = malloc( <span class="kw">sizeof</span>(<span class="kw">struct</span> S) );
+	stB-&gt;l = <span class="dv">12</span>;
+	stB-&gt;str = malloc( stB-&gt;l );
+	strcpy( stB.str, <span class="st">&quot;hello there&quot;</span> );
+
+	stC = stB;
+
+	printf(<span class="st">&quot;A String: %s</span><span class="sc">\n</span><span class="st">&quot;</span>, stA.str);  <span class="co">// hello</span>
+	printf(<span class="st">&quot;B String: %s</span><span class="sc">\n</span><span class="st">&quot;</span>, stB-&gt;str); <span class="co">// hello there</span>
+	printf(<span class="st">&quot;C String: %s</span><span class="sc">\n</span><span class="st">&quot;</span>, stC-&gt;str); <span class="co">// hello there</span>
+
+	<span class="co">// Diagram is memory at this point</span>
+
+	free( stA.str );
+	free( stB-&gt;str );
+	free( stB );
+}</code></pre></div>
+<div class="figure">
+<img src="imgs/structsB.png" alt="Example 3" />
+<p class="caption">Example 3</p>
+</div>
+<p>I mentioned in the snippet, but note that the diagram is the memory before it's all <code>free</code>d. One of the many benefits of drawing everything out is it's easy to tell what memory needs to be <code>free</code>d.</p>
+<p>Looking at the snippet, <code>stA</code> is on the stack along with pointers <code>stB</code> and <code>stC</code>. While <code>stA</code> is on the stack, it's string component needs to be <code>malloc</code>ed which puts the string memory on the heap. Only <code>stA.str</code> needs to be <code>free</code>d, not <code>stA</code>.</p>
+<p>Pointer <code>stB</code> has it's <code>struct</code> data <code>malloc</code>ed, putting the data on the heap. It's string still needs to be <code>malloc</code>ed in its own statement.</p>
+<p>It's important to note, both strings &quot;hello&quot; and &quot;hello there&quot; will exist at the end of the function. The struct pointed to by <code>stB</code> will also exist at the end of the function. The struct <code>stA</code> will not.</p>
+<p>I also introduced <code>stC</code> which does not get <code>malloc</code>ed. This means it does not get it's own set of boxes. It has to share boxes with another pointer. When I do <code>stC = stB;</code> I am telling <code>stB</code> to &quot;share&quot; with <code>stC</code>. This <strong>does not</strong> make <code>stC</code> point to <code>stB</code>. This line has <code>stC</code> point to the same memory that <code>stB</code> points to. As mentioned <a href="#pointernumber">before</a>, pointers are just numbers. This is similar to the <a href="#intexample">above example</a> where when doing <code>b = a;</code> didn't create an arrow from <code>b</code> to <code>a</code>, but just copied the number.</p>
+<p>Since <code>stC</code> and <code>stB</code> are pointing to the same memory, when I print out all the strings, <code>stC</code> and <code>stB</code> will print the same thing. This means that I can change the string &quot;hello there&quot; through <code>stB</code> or <code>stC</code>. This is easier to see in the following snippet:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">stB-&gt;str[<span class="dv">6</span>] = <span class="ch">&#39;w&#39;</span>;
+
+printf(<span class="st">&quot;%s %s</span><span class="sc">\n</span><span class="st">&quot;</span>, stB-&gt;str, stC-&gt;str); <span class="co">// hello where hello where</span>
+
+stC-&gt;str[<span class="dv">9</span>] = <span class="ch">&#39;n&#39;</span>;
+stC-&gt;str[<span class="dv">10</span>] = &#39;\<span class="dv">0</span>&#39;;
+
+printf(<span class="st">&quot;%s %s</span><span class="sc">\n</span><span class="st">&quot;</span>, stB-&gt;str, stC-&gt;str); <span class="co">// hello when hello when</span></code></pre></div>
+<p>I'll also mention, you may notice the syntax change between <code>stA</code> and <code>stB</code>. I cover this <a href="#structsyntax">later</a> in the &quot;putting it all together&quot; data structure section with more context.</p>
+<p>Before moving forward, I will mention that I draw structs a variety of different ways depending on the application. Here's a few different options I use.</p>
+<div class="figure">
+<img src="imgs/structsA.png" alt="Structs" />
+<p class="caption">Structs</p>
+</div>
+<h3 id="recap">Recap</h3>
+<p>Before moving onto larger code that combines all these features, let's recap the basics.</p>
+<p><strong>Primitives :</strong> Single box (<code>int</code>, <code>float</code>, <code>char</code>, etc)</p>
+<p><strong>Arrays :</strong> Many boxes right next to each other, referenced by index</p>
+<p><strong>Structs :</strong> Boxes next to each other, referenced by members</p>
+<p><strong>Pointers :</strong> Dots in a single box and arrows to another box</p>
+<p><code>malloc</code> <strong>:</strong> Creates new box(es) and an arrow pointing to them</p>
+<p><code>free</code> <strong>:</strong> Removes box(es) and the arrows pointing to them. The &quot;opposite&quot; or &quot;undo&quot; of <code>malloc</code></p>
+</div><hr><div class="content">
+<h2 id="data-structures">Data Structures</h2>
+<p>Now that we understand the basics, let's use these tools to make a complex implementation of a simple data structure. We're going to create a dynamically allocated queue implemented over an array. For the sake of application, we'll say our queue is a line of people making reservations at a restaurant. So each &quot;thing&quot; in the queue needs to have a name and a number of people in the party.</p>
+<p>This is a variation on the first assignment we gave in the data structures class. They had to do a dynamically allocated list implemented over an array. I don't want to duplicate the assignment obviously. We provided the students with the <code>struct</code>s needed. It was up to them to implement all the functions. I'll provide the <code>struct</code>s here too.</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">typedef</span> <span class="kw">struct</span> Queue {
+	<span class="dt">int</span> size;
+	<span class="dt">int</span> alloc;
+	QEntry **data;
+	QEntry *tail;
+} Queue;
+
+typdef <span class="kw">struct</span> QEntry {
+	<span class="dt">int</span> party;
+	<span class="dt">int</span> l;
+	<span class="dt">char</span> *name;
+} QEntry;</code></pre></div>
+<p>Many students got stuck with how these <code>struct</code>s translate into a Queue of people, so I ended up drawing a diagram similar to this about a million times. First, let's just draw the basic <code>struct</code>s on their own so we can see what we're dealing with. I've drawn the <span class="dpurple"><code>Queue</code></span> with a <span class="dpurple">purple</span> outline and the <span class="dblue"><code>QEntry</code></span> with a <span class="blue">blue</span> outline just so they're easier to find later. Here, I listed the full types and names of each member of the struct. These will get shortened to single letters in the larger diagram.</p>
+<div class="figure">
+<img src="imgs/qstructs,png" alt="Queue structs" />
+<p class="caption">Queue structs</p>
+</div>
+<p>We can see here that even though <code>data</code> is a <code>QEntry**</code> it's still only one dot, not two. This means that <code>data</code> will point to another dot, which will then point to some <code>QEntry</code> data.</p>
+<p>How we use and draw these is up to the problem at hand. It's safe to assume that <code>data</code> is going to be the array of &quot;people&quot; in the queue. It's also pretty easy to tell that <code>size</code> is going to be the number of &quot;people&quot; currently in the queue and <code>alloc</code> is the number of people we can put in the queue in total. However, <code>tail</code> is a pointer. We know a tail pointer in a queue points to where the end is, but should it be <code>malloc</code>ed?</p>
+<p>Let's build the data structure based on our knowledge of queues.</p>
+<div class="figure">
+<img src="imgs/qblank.png" alt="Queue Structure" />
+<p class="caption">Queue Structure</p>
+</div>
+<p>In this drawing, I've decided to <code>alloc</code>ate 4 spaces in the queue for 4 potential &quot;people&quot;. Only 3 people are currently in &quot;line&quot;, meaning the <code>size</code> of the queue is 3.</p>
+<p>This drawing matches shows me exactly what I need to <code>malloc</code>.</p>
+<ul>
+<li>I need 1 <code>malloc</code> for the <code>Queue</code>.</li>
+<li>I need 1 <code>malloc</code> for the <code>data</code>. In this <code>malloc</code>, I need to make sure I have enough space for <code>alloc</code> pointers to <code>QEntry</code>s.</li>
+<li>I need a <code>malloc</code> for every <code>QEntry</code> that exists. In this case, there are 3 <code>malloc</code>s. In the general case, you'd need the amount of <code>size</code>.</li>
+<li>For every <code>QEntry</code>, I also need a <code>malloc</code> for each <code>name</code>. This needs to give me enough <code>char</code>s to fit all the letters in the person's name in addition to the null terminator <code>\0</code></li>
+</ul>
+<p>This gives me a total of 8 <code>malloc</code>s and like my drawing shows, there are 8 blocks of memory. The <code>Queue</code> pointer is on the stack.</p>
+<p>This also shows I do not need to <code>malloc</code> the <code>tail</code> pointer, since it points to an already existing block of memory.</p>
+<p>I only have one variable on the stack, <code>myQ</code>. How do I reference all this data through this single pointer?</p>
+<div class="figure">
+<img src="imgs/qred.png" alt="Queue Structure" />
+<p class="caption">Queue Structure</p>
+</div>
+<p>Let's start at the top. We have <code>myQ</code> without anything else around it. This alone gives us access to the pointer to the full data structure. Since <code>myQ</code> is on the stack, it will not exist at the end of the function. Though, as we saw <a href="#stackheap">before</a> we can pass this pointer around between functions and the <code>malloc</code>ed heap memory will still exist.</p>
+<div class="figure">
+<img src="imgs/qorange.png" alt="Queue Structure" />
+<p class="caption">Queue Structure</p>
+</div>
+<p>Now we start playing <span id="structsyntax">chutes and ladders</span>. We use a <code>*</code> to &quot;travel down&quot; an arrow. <a href="#structintro">Above</a> we saw the members of <code>struct</code>s on the stack being referenced with the dot (<code>.</code>) notation. We also saw members of <code>struct</code>s on the heap being referenced with the arrow (<code>-&gt;</code>) notation.</p>
+<p>The most important thing here is <code>aStruct-&gt;aMember == (*aStruct).aMember</code>.</p>
+<p>At this &quot;layer&quot;, we can print out the <code>size</code> and <code>alloc</code> of the <code>Queue</code>. We have access to the <code>tail</code> and <code>data</code> pointers, but we haven't &quot;travelled&quot; far enough yet to see what they point to.</p>
+<p><em>It's also worth noting, while not relevant to this example, while a <code>*</code> will allow us to &quot;travel down a chute&quot;, a <code>&amp;</code> will allow us to &quot;travel up a ladder&quot;.</em></p>
+<div class="figure">
+<img src="imgs/qyellow.png" alt="Queue Structure" />
+<p class="caption">Queue Structure</p>
+</div>
+<p>We're going to travel down another chute to access elements of the <code>data</code> array. At this layer, once again, we haven't &quot;travelled far enough&quot; to gain access to any of the &quot;people&quot; information, but there's something more important to note here.</p>
+<p>We know we &quot;travel down&quot; using the <code>*</code> syntax, but when we access array indices, we use <code>arr[i]</code>. Remember when I said <a href="#pointernumber">before</a> that pointers are numbers? These numbers can be added to and subtracted from. Similar how with structs, the arrow notation is shorthand for the pointer and dot notation, the bracket notation in arrays is shorthand for pointer arithmetic.</p>
+<p>This is shown above in the context of the data structure, but without all the extra stuff, <code>arr[i] == *(arr + i)</code></p>
+<p>Pointer arithmetic is confusing the first time you see it, but it's fundamental in understanding why arrays work. All the elements in an array can be accessed through one variable and an index. If this variable (<code>arr</code>) is a pointer and has a hex value of (hypothetically) <code>0x1a2b</code>, then we expect the first element of the array to be at the memory location <code>0x1a2b</code>. The second element of the array (index 1) needs to be the next &quot;box&quot; of memory. Given an array of <code>char</code>s, the <code>sizeof(char)</code> is 1 byte. This means <code>arr + 1 = 0x1a2b + 0x0008 = 0x1a33</code> which is the address we can expect to find the next <code>char</code>. We then use the <code>*</code> to &quot;travel&quot; to this new address. This is a lot to unpack when learning C.</p>
+<p>TL;DR: <code>arr[i] == *(arr + i)</code> and <code>aStruct-&gt;aMember == (*aStruct).aMember</code> and we use the <code>*</code> to travel down a pointer.</p>
+<div class="figure">
+<img src="imgs/qgreen.png" alt="Queue Structure" />
+<p class="caption">Queue Structure</p>
+</div>
+<p>At this &quot;layer&quot; we know everything we need to know about pointers to keep going. Just to refresh ourselves, we use the arrow notation <code>-&gt;</code> to travel to the <code>QEntry</code> and access its members. I also included the pointer arithmetic with all the <code>*</code> to show that we have travelled down 3 arrows and there are 3 <code>*</code>s in that clunky syntax.</p>
+<p>Here, we can finally access our specific restaurant guest name and party info.</p>
+<div class="figure">
+<img src="imgs/qblue.png" alt="Queue Structure" />
+<p class="caption">Queue Structure</p>
+</div>
+<p>Finally, if we want to access the specific characters of the reservations' names, we can index the string. This information is not relevant to the problem at hand.</p>
+<div class="figure">
+<img src="imgs/qlayers.png" alt="Queue Structure" />
+<p class="caption">Queue Structure</p>
+</div>
+<p>I'm including this last image just to show the syntax and &quot;layers&quot; without the arrows showing the &quot;trail&quot; we took to get there. It's a bit cleaner.</p>
+<p>This is all I have for this reference. This might as well be an entire lecture on its own. TL;DR: draw your data structures before you write code.</p>
+
+	</div>
+	<hr>
+	<div class="content" id="bottom">
+		<a href="#top">Back to Top</a>
+	</div>
+</body>
+</html>

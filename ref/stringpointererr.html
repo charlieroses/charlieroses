@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="colors.css">
+  <link rel="stylesheet" type="text/css" href="syntax.css">
+</head>
+<body>
+	<div class="content" id="top">
+
+	<a href="index.html">Back to Navigation</a></div><hr><div class="content"><h1 id="that-one-string-pointer-error">That One String Pointer Error</h1>
+<p>I've explained this error a million times to a million students and I'm sure I'll explain it a million more. I've managed to explain it everytime with the same images and explanations I wrote the first time around. This is my attempt to clean that explanation up so I can copy and paste it in the future.</p>
+</div><hr><div class="content">
+<p>Let's say you're reading a file of words and numbers and it looks something like this:</p>
+<pre><code>apple 5
+banana 6
+blueberry 9
+grape 5</code></pre>
+<p>And you want to store all these <del>fruits</del> words and their lengths in separate <code>struct</code>s that you have stored in an array for future use. The output you WANT is:</p>
+<pre><code>[ apple : 5 ]
+[ banana : 6 ]
+[ blueberry : 9 ]
+[ grape : 5 ]</code></pre>
+<p>But the output you GET is:</p>
+<pre><code>[ grape : 5 ]
+[ grape : 6 ]
+[ grape : 9 ]
+[ grape : 5 ]</code></pre>
+<p>Oh no! It looks like that last string duplicated to be every string! How did this happen?</p>
+<p>I'm willing to bet you've got some code that looks something like this:</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="pp">#include</span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#include</span><span class="im">&lt;stdlib.h&gt;</span>
+
+<span class="kw">typedef</span> <span class="kw">struct</span> Fruit {
+	<span class="dt">char</span> *word;
+	<span class="dt">int</span> len;
+} Fruit;
+
+<span class="dt">void</span> main() {
+	FILE *fp;
+	<span class="dt">char</span> buf[<span class="dv">10</span>];
+	<span class="dt">int</span> n, i;
+	<span class="kw">struct</span> Fruit input[<span class="dv">4</span>];
+
+	fp = fopen( <span class="st">&quot;fruitfile.txt&quot;</span>, <span class="st">&quot;r&quot;</span> );
+
+	i = <span class="dv">0</span>;
+	<span class="cf">while</span>( fscanf(fp, <span class="st">&quot;%s %d&quot;</span>, buf, &amp;n) != EOF ) {
+		input[i].word = buf;
+		input[i].len = n;
+		i++;
+	}
+
+	fclose( fp );
+
+	<span class="cf">for</span>( i = <span class="dv">0</span>; i &lt; <span class="dv">4</span>; i++ )
+		printf(<span class="st">&quot;[ %s : %d ]</span><span class="sc">\n</span><span class="st">&quot;</span>, input[i].word, input[i].len);
+}</code></pre></div>
+<p><em>Note: Only one line of this code actually matters regarding the error</em></p>
+<p>So let's <a href="visualizingc.html">draw it out</a>. We've got two main variables <code>word</code> and <code>n</code> and a big data structure <code>input</code>. This looks something like:</p>
+<div class="figure">
+<img src="imgs/stringerrA.png" alt="Empty Data" />
+<p class="caption">Empty Data</p>
+</div>
+<p>Every iteration of the <code>while</code> loop, <code>buf</code> and <code>n</code> are filled with the values from the file. These change each iteration of the loop. We then use the next lines <code>input[i].word = buf</code> and <code>input[i].len</code> to store those values into our data structure. The result after the first iteration looks like this:</p>
+<div class="figure">
+<img src="imgs/stringerrB.png" alt="apple input" />
+<p class="caption">apple input</p>
+</div>
+<p>So now we iterate again. We fill <code>buf</code> and <code>n</code> with our new values, then store those in our data structure. After <code>banana</code> our data looks like this:</p>
+<div class="figure">
+<img src="imgs/stringerrC.png" alt="banana input" />
+<p class="caption">banana input</p>
+</div>
+<p>Here we can start to see where the source of our error is. We changes the values of <code>n</code> and <code>buf</code>. Since <code>n</code> is an <code>int</code>, the value just gets &quot;copied&quot; over to the data structure. Since <code>buf</code> is a pointer to a string, the pointer gets &quot;copied&quot; to the data structure, not the actual string. At the end of the <code>while</code> loop, everything points to <code>buf</code> which stores the last input.</p>
+<p>Here are those last two iterations:</p>
+<div class="figure">
+<img src="imgs/stringerrD.png" alt="blueberry input" />
+<p class="caption">blueberry input</p>
+</div>
+<div class="figure">
+<img src="imgs/stringerrE.png" alt="grape input" />
+<p class="caption">grape input</p>
+</div>
+<p>How do we fix this? How do we store the actual characters into the data structure and not just copy the pointer?</p>
+<p>Easy, we just need to <code>malloc</code> the necessary data and use <code>strcpy</code></p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// Copies pointer</span>
+input[i].word = buf;
+
+<span class="co">// Copies character data</span>
+input[i].word = malloc( n );
+strcpy( input[i].word, buf );</code></pre></div>
+<p>This would give us the following structure. Even with one iteration, we can see that we'll avoid all the pointers pointing to the same place.</p>
+<div class="figure">
+<img src="imgs/stringerrF.png" alt="With strcpy" />
+<p class="caption">With strcpy</p>
+</div>
+
+	</div>
+	<hr>
+	<div class="content" id="bottom">
+		<a href="#top">Back to Top</a>
+	</div>
+</body>
+</html>
