@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="colors.css">
+  <link rel="stylesheet" type="text/css" href="syntax.css">
+</head>
+<body>
+	<div class="content" id="top">
+
+	<a href="index.html">Back to Navigation</a></div><hr><div class="content"><h1 id="stop-complaining-about-vim">Stop Complaining About Vim</h1>
+<p>I've noticed many of my students try to find any way possible to avoid using a terminal based plain text editor. They always seem to find these complex work arounds that end up being a lot more complicated than just learning how to use a terminal.</p>
+<p>So here's a list of the most common complaints I get about <code>vim</code> and their &quot;fixes&quot;. Plus a few more tricks I appreciate at the end.</p>
+</div><hr><div class="content">
+<h3 id="theres-no-line-numbers">&quot;There's no line numbers&quot;</h3>
+<p>In your <code>.vimrc</code> add:</p>
+<pre><code>set number</code></pre>
+</div><hr><div class="content">
+<h3 id="i-cant-use-my-mouse">&quot;I can't use my mouse&quot;</h3>
+<p>In your <code>.vimrc</code> add:</p>
+<pre><code>set mouse=a</code></pre>
+</div><hr><div class="content">
+<h3 id="i-can-only-open-one-file-at-a-time">&quot;I can only open one file at a time&quot;</h3>
+<pre><code>:vsplit filename</code></pre>
+<p>Then <code>Ctrl-w-w</code> to switch between windows and <code>:resize</code> and <code>:verical resize</code> to change the size.</p>
+</div><hr><div class="content">
+<h3 id="i-dont-like-the-colors">&quot;I don't like the colors&quot;</h3>
+<p>If the text is too dark, start with:</p>
+<pre><code>set bg=dark</code></pre>
+<p>Then if you want to toggle specific colors of specific syntax categories, use <code>:hi</code>. I like to turn my whitespace on so I can see tabs and spaces. I make them a dark gray that blends in with my background nice. Easy to ignore, but easy to spot inconsistencies.</p>
+<pre><code>set listchars=tab:&gt;-,trail:.
+set list
+hi SpecialKey ctermfg=240</code></pre>
+</div><hr><div class="content">
+<h3 id="find-and-replace">Find and Replace</h3>
+<p>To &quot;comment&quot; lines 10 through 100 (replace the front of the line (<code>^</code>) with a hash):</p>
+<pre><code>:10,100s/^/#/</code></pre>
+<p>To &quot;uncomment&quot; lines 10 through 100 (replace hashes at the start of a line with nothing):</p>
+<pre><code>:10,100s/^#//</code></pre>
+<p>Here's a quick &quot;find and replace&quot; tutorial in <code>vim</code> (it's basically just baby <code>sed</code>). This isn't exhaustive.</p>
+<pre><code>:s/find/replace/options</code></pre>
+<p><code>find</code> and <code>replace</code> are straight forward. These are the pattens you want to find and replace. You can use regex and sed patterns and such. You can also replace the <code>/</code> with another character if you have a lot of slashes in your patterns.</p>
+<p>You can prepend the <code>s</code> with:</p>
+<ul>
+<li><code>%</code> : All lines in the file</li>
+<li><code>s,e</code> : Where <code>s</code> is the starting line number and <code>e</code> is the ending line number. This range is inclusive</li>
+<li><code>.</code> : The current line</li>
+<li><code>$</code> : The last line</li>
+<li><code>+-</code> : Plus or minus a certain number of lines based on the preceeding number</li>
+</ul>
+<p>So <code>:.,+5s/^/#/</code> comments the current line and the next 5. No prepend will only affect the current line.</p>
+<p>Then you've got the following available <code>options</code>:</p>
+<ul>
+<li><code>g</code> : Replace all occurances in the line. By default, only the first occurance of each line is changed</li>
+<li><code>c</code> : Asks for confirmation before replacing each match</li>
+<li><code>i</code> : Ignore case</li>
+</ul>
+</div><hr><div class="content">
+<h3 id="spellcheck">Spellcheck</h3>
+<pre><code>:setlocal spell! spelllang=en_us,es</code></pre>
+<p>In my <code>.vimrc</code> I have it set that <code>F6</code> toggles spellcheck on and off:</p>
+<pre><code>map &lt;F6&gt; :setlocal spell! spelllang=en_us,es&lt;CR&gt;</code></pre>
+</div><hr><div class="content">
+<h3 id="man-pages">Man Pages</h3>
+<p>If you add these lines to your <code>.vimrc</code>:</p>
+<pre><code>runtime! ftplugin/man.vim
+let g:ft_man_open_mode = &quot;vert&quot;</code></pre>
+<p>You enable the <code>man</code> page plugins. Then you can use <code>:Man</code> to open <code>man</code> pages in splitscreen. You can also use <code>!man</code> for a similar effect without the plugin, but I prefer seeing my code and the manual side by side.</p>
+
+	</div>
+	<hr>
+	<div class="content" id="bottom">
+		<a href="#top">Back to Top</a>
+	</div>
+</body>
+</html>
