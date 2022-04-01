@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computer Science</title>
+	<link rel="stylesheet" href="../structure.css">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="../colors.css">
+	<link rel="stylesheet" href="../syntax.css">
+	<link rel="stylesheet" href="languages.css">
+	<script src="languages.js"></script>
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	<br>
+		<a href="index.html"><b>Introduction</b></a>
+		<a href="https://charlierose.dev"><b>My Site</b></a>
+		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
+		<a href="answers.html"><b>Practice Problem Answers</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> Binary</a>
+		<a href="binary/convertBin.html"><b>2.1 :</b> Converting Between Bases</a>
+		<a href="binary/negativebin.html"><b>2.2 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.3 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.4 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="languages/markup.html">Previous Section</a> : Markup Languages : 6.2
+		</div>
+		<div class="next">
+			6.4 : Tranquility : <a href="languages/tranq.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>Programming Languages</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>So there's a million programming languages out there, with a million different concepts and a million different syntaxes. Obviously, I can't go over all of them. I'm gonna go over a few different types of programming approaches, and and more general things that are important in all languages. For a more in depth tutorial on Tranquility, check out the <a href="labs/tranqtut/tranq.html">tutorial</a> from Lab 6.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="program-flow">Program Flow</h2>
+<p>The most important thing to know in program flow, is the progression of code. As with the CARDIAC, the computer follows the code line by line until it is told not to. Typically by a loop or an if statement.</p>
+<p><strong>If statements</strong> tell the computer to run a section of code, if a statment is true. This is seen with the CARDIAC command TAC. The basic idea of an if statement is that only the if or the else runs. Both do not run. The boolean expression cannot be both true and false. Just like with TAC, the program will not jump and do the statement directly following it.</p>
+<pre><code>if ( a boolean statment) {
+sprint(&quot;Do these statments if the boolean expression is true&quot;)
+}
+else {
+sprint(&quot;Do these statments if the boolean expression is false&quot;)
+}</code></pre>
+<p><strong>Loops</strong> are control statements that repeat code. We could rewrite the same code multiple times in a row, but that gets tedious, especially when we want to run code upwards of thousands of times. So we can write a loop that runs code multiple times until a certain condition is met. The syntax in Tranquiliy, the programming language we will use in this class, is as following.</p>
+<pre><code>loop {
+until ( a boolean statement)
+sprint(&quot;Do these statements until the boolean statement is true&quot;)
+}</code></pre>
+<p><strong>Functions</strong> are blocks that we use to organize our code. We can use these blocks repeatedly without copying and pasting code. Similar to functions in math, we can put values in and get a new value out. The values we put into a function are called the parameters. Just as in functions in math, you can only get one value out of a function. The output value is called the <code>return</code> value and requires a <code>return</code> statement to be outputted. The <code>return</code> statement will end the function and cease it's running whether there are statements after it or not. The Tranquility syntax for functions is as follows.</p>
+<pre><code>fun functionName( optional list of parameters ) {
+sprint(&quot;Perform these statements&quot;)
+return value # This is also optional
+}</code></pre>
+<p>Functions are special in that there are two parts. There is the block of code that is the function itself, and then the call to that function. Calling a function will execute the code within the function and, if there's a return statement, will return the value in place of the function. When calling the function, you will provide the values for the parameters. Different languages have different syntax for calling functions. In Tranquility, you use the following.</p>
+<pre><code>functionName( values for parameters )</code></pre>
+<p>Now, sometimes, we want to reference a function without actually calling it. We do this a lot with buttons. We attach functions to buttons to call later, when the button is pressed. The syntax for that in Tranquility would be the following. As you can see, we call the function but without the parentheses and parameters. This allows us to pass a reference to a function without calling it.</p>
+<pre><code>button(&quot;This is a button&quot;, functionName )</code></pre>
+<p>There is a lot more to programming than these few topics. Overall, this is more than enough for this class. All the assignments in this class can be accomplished using the aforementioned topics.</p>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="languages/markup.html">Previous Section</a> : Markup Languages : 6.2
+		</div>
+		<div class="next">
+			6.4 : Tranquility : <a href="languages/tranq.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

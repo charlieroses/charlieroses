@@ -1,0 +1,266 @@
+<html>
+<head>
+<title>CARDIAC</title>
+<script>
+var pc, ir, acc;
+var acce, ire, pce, opcodee, operande;
+var mode;
+var deck, input, output;
+var inlist, incard;
+var intvar;
+
+function init()
+{
+	pc = 0;
+	mode = 0;
+	acce = document.getElementById('acc');
+	ire = document.getElementById('ir');
+	pce = document.getElementById('pc');
+	deck = document.getElementById('deck');
+	input = document.getElementById('input');
+	output = document.getElementById('output');
+	opcodee = document.getElementById('opcode');
+	operande = document.getElementById('operand');
+}
+
+function memelem(addr)
+{
+	return document.getElementById('mem' + addr);
+}
+
+function drawmem()
+{
+	var r,c;
+
+	document.writeln('<hr><center><h2>Memory</h2><table><tbody>');
+	for(r = 0; r < 10; ++r) {
+		document.writeln('<tr>');
+		for(c = 0; c < 10; ++c) {
+			document.writeln('<td>'+c+r+': '+'<input type="text" id="mem'+c+r+'" size=4 tabindex="'+c*10+r+1+'"></td>');
+		}
+		document.writeln('</tr>');
+	}
+	document.writeln('</tbody></table></center><hr>');
+	memelem('00').value='001';
+	memelem('99').value='8--';
+}
+
+function ndig(val, n)
+{
+	var ns;
+
+	if(val < 0) {
+		ns = '00000' + -val;
+		return '-'+ns.substr(ns.length-n);
+	}
+	else {
+		ns = '00000' + val;
+		return ns.substr(ns.length-n);
+	}
+}
+
+function doreset()
+{
+	memelem(ndig(pc, 2)).style.backgroundColor = '#FFFFFF';
+	pc = 0;
+	memelem('00').style.backgroundColor='#99FFCC';
+	ire.value = '';
+	acc = 0;
+	acce.value = '0000';
+	pce.value = '00';
+	output.value = '';
+	opcodee.value = '';
+	operande.value = '';
+}
+
+function doload()
+{
+	input.value = deck.value;
+	inlist = deck.value.split('\n');
+	incard = 0;
+}
+
+function doclearmem()
+{
+	var i;
+
+	memelem('00').value = '001';
+	memelem('99').value = '8--';
+	for(i = 1; i < 99; ++i)
+		memelem(ndig(i, 2)).value = '';
+}
+
+function fetch(addr)
+{
+	return Number(memelem(ndig(addr, 2)).value);
+}
+
+function store(addr, val)
+{
+	memelem(ndig(addr, 2)).value = ndig(val, 3);
+}
+
+function ladybug()
+{
+	memelem(ndig(pc, 2)).style.backgroundColor='#FFFFFF';
+	pc = Number(pce.value);
+	memelem(ndig(pc, 2)).style.backgroundColor='#99FFCC';
+}
+
+function dostep()
+{
+	var op, addr;
+
+	memelem(ndig(pc, 2)).style.backgroundColor='#FFFFFF';
+	pc = Number(pce.value);
+	ir = memelem(ndig(pc, 2)).value;
+	ire.value = ir;
+	++pc;
+	op = Math.floor(ir / 100);
+	addr = ir % 100;
+	switch(op) {
+		case 0:	// INP - Input
+			opcodee.value = 'INP';
+			operande.value = addr;
+			if(incard >= inlist.length || inlist[incard] == '') {
+				mode = 0;
+				pc = 0;
+			}
+			else {
+				store(addr, Number(inlist[incard]));
+				incard++;
+				input.value = '';
+				for(i = incard; i < inlist.length; ++i)
+					input.value += inlist[i]+'\n';
+			}
+			break;
+		case 1:	// CLA - Clear and add (load)
+			opcodee.value = 'CLA';
+			operande.value = addr;
+			acc = fetch(addr);
+			acce.value = ndig(acc, 4);
+			break;
+		case 2:	// ADD - Add
+			opcodee.value = 'ADD';
+			operande.value = addr;
+			acc += fetch(addr);
+			acce.value = ndig(acc, 4);
+			break;
+		case 3:	// TAC - Test accumulator
+			opcodee.value = 'TAC';
+			operande.value = addr;
+			if(acc < 0)
+				pc = addr;
+			break;
+		case 4:	// SFT - Shift
+			opcodee.value = 'SFT';
+			operande.value = addr;
+			lc = Math.floor(addr / 10);
+			rc = addr % 10;
+			for(i = 0; i < lc; ++i)
+				acc = (acc * 10) % 10000;
+			for(i = 0; i < rc; ++i)
+				acc = Math.floor(acc / 10);
+			acce.value = ndig(acc, 4);
+			break;
+		case 5:	// OUT - Output
+			opcodee.value = 'OUT';
+			operande.value = addr;
+			output.value += ndig(fetch(addr), 3)+'\n';
+			break;
+		case 6:	// STO - Store
+			opcodee.value = 'STO';
+			operande.value = addr;
+			store(addr, acc);
+			break;
+		case 7:	// SUB - Subtract
+			opcodee.value = 'SUB';
+			operande.value = addr;
+			acc -= fetch(addr);
+			acce.value = ndig(acc, 4);;
+			break;
+		case 8:	// JMP - Jump
+			opcodee.value = 'JMP';
+			operande.value = addr;
+			store(99, pc+800);
+			pc = addr;
+			break;
+		case 9:	// HRS - Halt and reset
+			opcodee.value = 'HRS';
+			operande.value = addr;
+			mode = 0;
+			pc = addr;
+			break;
+	}
+	pce.value = ndig(pc, 2);
+	memelem(ndig(pc, 2)).style.backgroundColor='#99FFCC';
+}
+
+function dorstep()
+{
+	if(mode == 0)
+		clearInterval(intvar);
+	else
+		dostep();
+}
+
+function doslow()
+{
+	mode = 1;
+	intvar = setInterval(dorstep, 100);
+}
+
+function dorun()
+{
+	mode = 1;
+	while(mode)
+		dostep();
+}
+
+</script>
+</head>
+<body bgcolor="#C0C899">
+<center>
+<img src="cardlogo.jpg" alt="CARDIAC">
+</center>
+<!-- <h1>Cardiac</h1> -->
+<script>drawmem();</script>
+<center>
+<table>
+<thead>
+<th>Deck</th><th></th><th>Reader</th><th>CPU</th><th>Output</th>
+</thead>
+<tbody>
+<tr>
+<td><textarea id="deck" cols=5 rows=10></textarea></td>
+<td><input type="button" value="Load" onclick="doload();">
+<td><textarea id="input" cols=5 rows=10 readonly></textarea></td>
+<td>
+<center>
+PC: <input type="text" id="pc" size=2 onkeyup="ladybug();">
+<hr>
+<b>Instruction Decoder</b><br>
+Instruction Register: <input type="text" id="ir" size=3 readonly><br>
+Opcode: <input type="text" id="opcode" size=3 readonly>
+Operand: <input type="text" id="operand" size=2 readonly>
+<hr>
+Accumulator: <input type="text" id="acc" size=5 readonly>
+<hr>
+<input type="button" value="Reset" onclick="doreset();">
+<input type="button" value="Clear Mem" onclick="doclearmem();">
+<br>
+<input type="button" value="Step" onclick="dostep();">
+<input type="button" value="Slow" onclick="doslow();">
+<input type="button" value="Run" onclick="dorun();">
+<input type="button" value="Halt" onclick="mode = 0;">
+</center>
+</td>
+<td><textarea id="output" cols=5 rows=10 readonly></textarea></td>
+</tr>
+</tbody>
+</table>
+</center>
+<hr>
+<script>init();doreset();</script>
+</body>
+</html>

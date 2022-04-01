@@ -1,0 +1,25 @@
+#b2t {
+	width: 100px;
+	height: 50px;
+}
+
+bp {
+	color: #072a7c;
+	font-weight: 550;
+}
+
+.container {
+	width: 100%;
+}
+.container > * {
+	display: inline-block;
+	margin: 5px;
+	vertical-align: top;
+}
+
+.container2 > * {
+	margin: 5px;
+	vertical-align: middle;
+	display: block;
+}
+

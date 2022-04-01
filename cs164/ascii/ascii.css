@@ -1,0 +1,55 @@
+td {
+	width: 100px;
+	height: 50px;
+}
+th {
+	width: 100px;
+	height: 50px;
+}
+.ascii {
+	width: 100px;
+	height: 50px;
+}
+.asciiMid {
+	width: 50px;
+	height: 50px;
+	background-color: rgb(130,130,130);
+}
+.asciiMidT {
+	width: 50px;
+	height: 50px;
+}
+
+
+#entityButton {
+	background-color: #3456a3;
+	color: #FFFFFF;
+	height: 25px;
+	width: 250px;
+}
+#entityIn {
+	height: 50px;
+	font-size: 20px;
+	resize: none;
+	padding: auto;
+	text-align: center;
+	width: 250px;
+}
+#entityOut {
+	background-color: #EEEEEE;
+	height: 250px;
+	font-size: 100px;
+	text-align: center;
+	width: 250px;
+}
+
+
+.horizDiv {
+	width: 100%;
+}
+.horizDiv > * {
+	display: inline-block;
+	margin: 5px;
+	vertical-align: top;
+}
+

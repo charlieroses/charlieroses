@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computer Science</title>
+	<link rel="stylesheet" href="../structure.css">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="binary.css">
+	<script src="binary.js"></script>
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	<br>
+		<a href="index.html"><b>Introduction</b></a>
+		<a href="https://charlierose.dev"><b>About Me</b></a>
+		<a href="answers.html"><b>Practice Problem Answers</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> Binary</a>
+		<a href="binary/convertBin.html"><b>2.1 :</b> Converting Between Bases</a>
+		<a href="binary/negativebin.html"><b>2.2 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.3 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.4 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="binary/convertBin.html">Previous Section</a> : Converting Between Bases : 2.1
+		</div>
+		<div class="next">
+			2.3 : Fractional Binary : <a href="binary/fracBinary.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>Negative Numbers</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>Since binary only uses 0's and 1's, there are no + and - signs to define a positive and a negative number. There are multiple different ways to express a negative binary number.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="sign-magnitude">Sign Magnitude</h2>
+<p><strong>Most Significant Bit (MSB):</strong> The leftmost bit in a number. Eg: <strong>1</strong>0011001</p>
+<p>The MSB is the most significant bit when representing a sign magnitude negative number. If the MSB is a 0, the number is positive. If the MSB is 1, the number is negative. From there, the following bits are calculated the same way that any binary number is calulated</p>
+<center>
+<table>
+<tr>
+<th class="smt">
+<b>Byte</b>
+</th>
+<th class="smt">
+<b>Sign</b>
+</th>
+<th class="smt">
+<b>Value</b>
+</th>
+</tr>
+<tr>
+<td class="smt">
+10001111
+</th>
+<td class="smt">
+Negative
+</th>
+<td class="smt">
+-15
+</th>
+</tr>
+<tr>
+<td class="smt">
+00110011
+</th>
+<td class="smt">
+Positive
+</th>
+<td class="smt">
++52
+</th>
+</tr>
+<tr>
+<td class="smt">
+10011101
+</th>
+<td class="smt">
+Negative
+</th>
+<td class="smt">
+-29
+</th>
+</tr>
+<tr>
+<td class="smt">
+00010000
+</th>
+<td class="smt">
+Positive
+</th>
+<td class="smt">
++16
+</th>
+</tr>
+</table>
+</center>
+<p>A minor setback to the sign magnitude method is that we have now limited the range of the 8 bit value. Since the MSB is now taken to show sign, only 7 bits remain for magnitude. Normally an 8 bit value would have the range of 0 to 255. The range of a signed 8 bit number is now -127 to 127. Now, when we're just defining numbers, this does not cause any problems. However, when we get to adding and subtracting values, this will cause an overflow error. We'll cross thats bridge when we get to it.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="ones-complement">One's Complement</h2>
+<p>One's complement is the least used negative representation system. When doing one's complement, the positive value is exactly the same as sign magnitude. For example 00001010<sub>2</sub> is still +10<sub>10</sub>. The difference is when representing negative numbers. When representing negative numbers, you invert all the bits. The 1's become 0's and the 0's become 1's. Below is the process for making 10<sub>10</sub> negative.</p>
+<p><code> <tab5>Convert Bases: 10<sub>10</sub> = 00001010<sub>2</sub></tab5> <br> <tab5>Invert Bits: 00001010 &gt; 11110101</tab5> <br> <tab5>-10<sub>10</sub> = 11110101<sub>2</sub></tab5> </code></p>
+<p>Just as sign magnitude had overflow errors with range, so does one's complement. In fact, one's complement has the same exact range issue. Remember, normally an 8 bit value would have the range of 0 to 255. Now, the range of a signed 8 bit number is -127 to 127. One's complement also presents other errors when doing addition and subtraction. We tend not to use One's Complement as much.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="twos-complement">Two's Complement</h2>
+<p>Two's complement is much more widely used than one's complement. It makes addition and subtraction much easier. We'll get to addition and subtraction and more fun values soon. Right now, let's focus on defining numbers. Just as the other methods, the positive number stays the same. 00001010<sub>2</sub> is still +10<sub>10</sub>. The process for negating the number starts the same as one's complement. We first invert the bits. Then we add one. The process is shown below.</p>
+<p><code> <tab5>Convert Bases: 53<sub>10</sub> = 00110101<sub>2</sub></tab5> <br> <tab5>Invert Bits: 00110101 &gt; 11001010</tab5> <br> <tab5>Add One: 11001010 + 1 &gt; 11001011</tab5> <br> <tab5>10<sub>10</sub> = 11110101<sub>2</sub></tab5> </code></p>
+<p>Once again we come across the same range issue. An unsigned 8 bit number has a range of 0 to 255. A signed two's complement number has a range of -128 to 127. Unlike one's complement and sign magnitude, two's complement does not have addition and subtraction problems. This makes two's complement the most desirable form for operating on.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="practice-problems">Practice Problems</h2>
+<p>What is the base-10 value of 10011001 using only sign-magnitude?</p>
+<textarea id="smq1">
+</textarea>
+<br>
+<button onclick="smq1Submit()">
+Submit
+</button>
+<p id="smq1Out">
+</p>
+<p>What is the one's complement value of -64 in 8 bits?</p>
+<textarea id="ocq1">
+</textarea>
+<br>
+<button onclick="ocq1Submit()">
+Submit
+</button>
+<p id="ocq1Out">
+</p>
+<p>What is the two's complement value of -122 in 8 bits?</p>
+<textarea id="tcq1">
+</textarea>
+<br>
+<button onclick="tcq1Submit()">
+Submit
+</button>
+<p id="tcq1Out">
+</p>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="binary/convertBin.html">Previous Section</a> : Converting Between Bases : 2.1
+		</div>
+		<div class="next">
+			2.3 : Fractional Binary : <a href="binary/fracBinary.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

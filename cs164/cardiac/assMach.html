@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computer Science</title>
+	<link rel="stylesheet" href="../structure.css">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="../colors.css">
+	<link rel="stylesheet" href="../syntax.css">
+	<link rel="stylesheet" href="cardiac.css">
+
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	<br>
+		<a href="index.html"><b>Introduction</b></a>
+		<a href="https://charlierose.dev"><b>My Site</b></a>
+		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
+		<a href="answers.html"><b>Practice Problem Answers</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> Binary</a>
+		<a href="binary/convertBin.html"><b>2.1 :</b> Converting Between Bases</a>
+		<a href="binary/negativebin.html"><b>2.2 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.3 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.4 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="cardiac/program.html">Previous Section</a> : Programming the CARDIAC : 5.2
+		</div>
+		<div class="next">
+			Chapter 6 : Languages : <a href="languages/">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>Assembly and Machine Language</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>We finally have all the tools we need to program the CARDIAC. Let's bring everything we know together and do some computing. When we write code, we don't just magically pull numbers out of thin air. Whenever you write a program, it is very important to plan out what you're gonna do. Assembly Code is sorta like the &quot;planning&quot; machine code. Machine Code is the hard numbers, nothing else. Assembly code uses words and alongside machine code, make the code very clear and easy to debug. Let's write a program that adds a bunch of numbers until a negative number is entered.</p>
+<p>So when writing assembly code, there are 3 main columns; the memory location's name, the operation and then what the operation applies to. Below is an example.</p>
+<pre><code>crntVal DATA   000
+sum     DATA   000
+
+start   INP    crntVal
+        CLA    crntVal
+        TAC    output
+        ADD    sum
+        STO    sum
+        JMP    start
+end     OUT    sum
+        HRS</code></pre>
+<p>Let's read along the code and understand what's going on. You'll learn so much more about logic and computing and programming just by reading and understanding code. There's this idea that you can solve any programming problem by copying and pasting the question into Google, following the first link to StackExchange, then copying and pasting the first answer into your document. This is what we call bad coding techniques. Anyway, let's read through. First I made two data points called crntVal, or Current Value, and sum, the sum of the numbers. When I start my program, I want these values to be empty or 0. The first column has crntVal and sum. These are the names for the DATA points that contain 000. Then we move to the start point. In the start point, there is the INP operation. This will input the top card in our deck into the memory location being referenced. The memory location being referenced is crntVal. Since there is nothing else to do, we move onto the next line. This line doesn't have an explicit memory point name. Since this is never referenced, it doesn't need a name. This line says we clear the accumulator and add crntVal. Now the accumulator has whatever value was in crntVal which was also the top card in our deck. As we move onto the next line, we test the accumulator and check if it's negative. If negative, we jump to memory location end where we output the sum and HRS, ending the program. If the accumulator is positive, we do nothing and continue on in our program. The next line is to ADD whatever is in the sum memory location. This just added the whatever number was at the top of our deck to a running sum. Now lets save the running sum. Right now its in the accumulator which contains an ever changin value. We want something more permanent. The next line uses the STO operation to store the value in the accumulator into the sum location. Finally we move onto the JMP operation which jumps to the start again.</p>
+<p>Now that we know what our code does, let's convert this into something the CARDIAC can use. Instead of names for the memory point, we're going to use the actual numbers for the memory point. When working with the CARDIAC, typically you use memory point 00-02 for bootstrapping a deck, memory points 03-09 for any variables or data points to use and 10-99 for the lines of code. So when doing machine code, instead of three columns, there's only 2. One column is the memory location, the other is the operation. Below I converted the assembly code from above into machine code.</p>
+<pre><code>03   000
+04   000
+
+10   003
+11   103
+12   316
+13   204
+14   604
+15   810
+16   504
+17   900</code></pre>
+<p>See how above, the first digit of the 3 digit operation is the opcode that relates to the operation we were doing. The second two digits relate to the memory point they're referencing. This code does the exact same thign as the assembly code above. Assembly code is for people to understand. Machine code is for computers to understand. To run this, I'd put each of these commands in their corresponding memory points. I'd set my PC, to 10 since that is where I want my program to begin. Then fill my deck with numbers I want to add. Finally you step through the program.</p>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="cardiac/program.html">Previous Section</a> : Programming the CARDIAC : 5.2
+		</div>
+		<div class="next">
+			Chapter 6 : Languages : <a href="languages/">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

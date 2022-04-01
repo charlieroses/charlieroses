@@ -1,0 +1,53 @@
+:root {
+	--bg-dk	:	#222222;
+	--bg-ta	:	#444444;
+
+	--pc	:	#BB3333;
+
+	--text	:	#FFFFFF;
+	--t-ta	:	#EEEEEE;
+
+}
+
+hr {
+	background-color: #111111;
+	border: none;
+	height: 2px;
+}
+
+img {
+	border-radius: 5px;
+	width: 25%;
+}
+
+body {
+	background-color: var(--bg-dk);
+	color: var(--text);
+}
+
+textarea, input[type=text] {
+	background-color: var(--bg-ta);
+	border: none;
+	border-radius: 3px;
+	color: var(--t-ta);
+}
+
+th {
+	color: var(--pc);
+}
+
+h2 {
+	color: var(--pc);
+}
+
+b {
+	color: var(--pc);
+}
+
+input[type=button] {
+	background-color: var(--pc);
+	border: none;
+	border-radius: 3px;
+	color: var(--t-ta);
+	font-size: 100%;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computer Science</title>
+	<link rel="stylesheet" href="../structure.css">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="binary.css">
+	<script src="binary.js"></script>
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	<br>
+		<a href="index.html"><b>Introduction</b></a>
+		<a href="https://charlierose.dev"><b>About Me</b></a>
+		<a href="answers.html"><b>Practice Problem Answers</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> Binary</a>
+		<a href="binary/convertBin.html"><b>2.1 :</b> Converting Between Bases</a>
+		<a href="binary/negativebin.html"><b>2.2 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.3 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.4 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="binary/">Previous Section</a> : Binary : Chapter 2
+		</div>
+		<div class="next">
+			2.2 : Negative Numbers : <a href="binary/negativebin.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>Converting Between Bases</h1>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="binary-to-base-10">Binary to Base-10</h2>
+<p>The first thing we need to know about binary is the set up of the numbers. A binary value is composed of <strong>bits</strong>. Bits are the 0's and 1's that compose the value. 00000000 is an 8 bit number as it is composed of 8 0's. A <strong>byte</strong> is composed of 8 bits. 00000000 is one byte of memory. How does this translate to our base 10 decimals though? I like to set up the following table to separate and dissect the number.</p>
+<center>
+<table>
+<tr>
+<th class="b2t">
+<b>Bit</b>
+</th>
+<td class="b2t">
+1
+</td>
+<td class="b2t">
+0
+</td>
+<td class="b2t">
+0
+</td>
+<td class="b2t">
+1
+</td>
+<td class="b2t">
+1
+</td>
+<td class="b2t">
+1
+</td>
+<td class="b2t">
+0
+</td>
+<td class="b2t">
+1
+</td>
+</tr>
+<tr>
+<th class="b2t">
+<b>Power</b>
+</th>
+<td class="b2t">
+2<sup>7</sup>
+</td>
+<td class="b2t">
+2<sup>6</sup>
+</td>
+<td class="b2t">
+2<sup>5</sup>
+</td>
+<td class="b2t">
+2<sup>4</sup>
+</td>
+<td class="b2t">
+2<sup>3</sup>
+</td>
+<td class="b2t">
+2<sup>2</sup>
+</td>
+<td class="b2t">
+2<sup>1</sup>
+</td>
+<td class="b2t">
+2<sup>0</sup>
+</td>
+</tr>
+<tr>
+<th class="b2t">
+<b>Value</b>
+</th>
+<td class="b2t">
+128
+</td>
+<td class="b2t">
+0
+</td>
+<td class="b2t">
+0
+</td>
+<td class="b2t">
+16
+</td>
+<td class="b2t">
+8
+</td>
+<td class="b2t">
+4
+</td>
+<td class="b2t">
+0
+</td>
+<td class="b2t">
+1
+</td>
+</tr>
+</table>
+</center>
+<p>So the first row is the <strong>Bits</strong>. I separated each bit into its own column. The second row is <strong>Power</strong>. Since binary is a base-2 system, instead of using powers of 10 for each place value, we use powers of 2. The &quot;one's place&quot; is 2<sup>0</sup>. Instead of the &quot;ten's place&quot; being next, we have the &quot;two's place&quot; which is equal to 2<sup>1</sup>. This continues down the line. The <strong>Value</strong> is the Bit x Power. Now that we've defined our rows in our table, let's convert <strong>10011101</strong> to a decimal form so the common man can read this. This value is equal to <strong>(1 x 2<sup>7</sup>)</strong> + <strong>(0 x 2<sup>6</sup>)</strong> + <strong>(0 x 2<sup>5</sup>)</strong> + <strong>(1 x 2<sup>4</sup>)</strong> + <strong>(1 x 2<sup>3</sup>)</strong> + <strong>(1 x 2<sup>2</sup>)</strong> + <strong>(0 x 2<sup>1</sup>)</strong> + <strong>(1 x 2<sup>0</sup>)</strong>. This long equation can be simplified to just <strong>128</strong> + <strong>16</strong> + <strong>8</strong> + <strong>4</strong> + <strong>1</strong>. Which in base-10 is equal to <strong>157</strong>. This means 10011101<sub>2</sub> = 157<sub>10</sub>.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="convert-to-binary">Convert to Binary</h2>
+<p>There are two different processes for converting to binary. I will be going over both.</p>
+<h3 id="process-1">Process 1</h3>
+<p>Now that we know to convert binary to base-10, let's convert a base-10 number to an 8 bit binary number. This process is a little bit harder, however, with practice, it can be done! To convert from base-10 to binary, we're going to need to use an operation you probably haven't used before. This is called the <strong>modulus</strong> operation. As addition is represented by '+', modulus is represented by '%'. This returns the remainder after division.</p>
+<p><code> <tab5>21 / 7 = 3.0 = 3 + <b>0</b>/7</tab5> <br> <tab5>21 % 7 = <b>0</b></tab5> <br> <tab5>22 / 7 = 3.14285 = 3 + <b>1</b>/7</tab5> <br> <tab5>22 % 7 = <b>1</b></tab5> </code></p>
+<p>We use modulus and division to switch to a different number base. Let's use the base-10 number, <strong>111</strong>. Since we're using 8 bits, the first power is 2<sup>7</sup>. So we first divide by this.</p>
+<p><code> <tab5>111 / 128 = <b>0</b>.86718</tab5> </code></p>
+<p>Aside from the fractional value, we got a <strong>0</strong>. This means there is a 0 in the 2<sup>7</sup> bit. Now we take the modulus to find the remainder. This way we know what transfers down to the next division.</p>
+<p><code> <tab5>111 % 128 = <b>111</b></tab5> </code></p>
+<p>Now the value we divide 2<sup>6</sup> from is <strong>111</strong>. We continue doing these operations until we get to 2<sup>0</sup> or we get a modulus value of 0. I did the rest below.</p>
+<p><code> <tab5>111 / 128 = <u>0</u>.86718</tab5> <br> <tab5>111 % 128 = 111</tab5> <br> <tab5>111 / 64 = <u>1</u>.73437</tab5> <br> <tab5>111 % 64 = 47</tab5> <br> <tab5>47 / 32 = <u>1</u>.46875</tab5> <br> <tab5>47 % 32 = 15</tab5> <br> <tab5>15 / 16 = <u>0</u>.9375</tab5> <br> <tab5>15 % 16 = 15</tab5> <br> <tab5>15 / 8 = <u>1</u>.875</tab5> <br> <tab5>15 % 8 = 7</tab5> <br> <tab5>7 / 4 = <u>1</u>.75</tab5> <br> <tab5>7 % 4 = 3</tab5> <br> <tab5>3 / 2 = <u>1</u>.5</tab5> <br> <tab5>3 % 2 = 1</tab5> <br> <tab5>1 / 1 = <u>1</u>.0</tab5> <br> <tab5>1 % 1 = 0</tab5> <br> </code></p>
+<p>This means the base-10 value 111 is equal to the 8 bit number 01101111.</p>
+<h3 id="process-2">Process 2</h3>
+<p>The way above requires you to know the powers of 2 to use the method. There is also another way to do it without knowing the powers and just using only the number 2. The way we'll do this is by using repeated division of 2. This method is the opposite of the above. Above, we divided by the largest power then passed the remainder onto the next step. The integer was the bit. Now we're going to divide the number by 2, then pass the integer onto the next step. The remainder will become our bit. This time in the opposite direction. Let's do the number 111<sub>10</sub> again.</p>
+<p><code> <tab5>111 / 2 = 55.5</tab5> <br> <tab5>111 % 2 = <u>1</u></tab5> <br> <tab5>55 / 2 = 27.5</tab5> <br> <tab5>55 % 2 = <u>1</u></tab5> <br> <tab5>27 / 2 = 13.5</tab5> <br> <tab5>27 % 2 = <u>1</u></tab5> <br> <tab5>13 / 2 = 6.5</tab5> <br> <tab5>13 % 2 = <u>1</u></tab5> <br> <tab5>6 / 2 = 3</tab5> <br> <tab5>6 % 2 = <u>0</u></tab5> <br> <tab5>3 / 2 = 1.5</tab5> <br> <tab5>3 % 2 = <u>1</u></tab5> <br> <tab5>1 / 2 = 0.5</tab5> <br> <tab5>1 % 2 = <u>1</u></tab5> <br> </code></p>
+<p>Since we're moving in the opposite direction, we place bits the other way. After the first step where we first divided by 2, we got the bit for 2<sup>0</sup>. It's a little weird to think about where the bit goes. Think about it like this, when you divide by 2<sup>1</sup>, the remainder would be 2<sup>0</sup>. This is because it's the place value directly to the right. This means, once again, 111<sub>10</sub> = 1101111<sub>2</sub>. This time, we have only 7 bits instead of 8. Since the 8th bit is a 0, it's not necessary to put it in. Both approaches are completely valid and correct.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="practice-problems">Practice Problems</h2>
+<p>What is the number 10110011 in base-10?</p>
+<textarea id="b2q1">
+</textarea>
+<br>
+<button onclick="b2q1Submit()">
+Submit
+</button>
+<p id="b2q1Out">
+</p>
+<p>What is the number 137 in base-2?</p>
+<textarea id="b2q2">
+</textarea>
+<br>
+<button onclick="b1q2Submit()">
+Submit
+</button>
+<p id="b2q2Out">
+</p>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="binary/">Previous Section</a> : Binary : Chapter 2
+		</div>
+		<div class="next">
+			2.2 : Negative Numbers : <a href="binary/negativebin.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

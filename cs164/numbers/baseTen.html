@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computer Science</title>
+	<link rel="stylesheet" href="../structure.css">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="../colors.css">
+	<link rel="stylesheet" href="../syntax.css">
+	<link rel="stylesheet" href="numbers.css">
+
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	<br>
+		<a href="index.html"><b>Introduction</b></a>
+		<a href="https://charlierose.dev"><b>My Site</b></a>
+		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
+		<a href="answers.html"><b>Practice Problem Answers</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> Binary</a>
+		<a href="binary/convertBin.html"><b>2.1 :</b> Converting Between Bases</a>
+		<a href="binary/negativebin.html"><b>2.2 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.3 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.4 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="numbers/">Previous Section</a> : Number Bases : Chapter 1
+		</div>
+		<div class="next">
+			1.2 : Base-2 : <a href="numbers/baseTwo.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>Base-10</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>Base-10 is the number system we all know and love. We've been doing math with base-10 our entire lives. We know how to add, subtract, multiply, divide and can do algebra with this number system. So I'd say we know it very well. So the goal is to understand all number systems as well as we understand base-10. Let's dissect base-10 and learn the intricacies and trasnlate that to other number bases.</p>
+<p>Consider the number <strong>314</strong>. This is a basic 3 digit number that will be rather easy to dissect. To dissect numbers, I like to set up a table like the following.</p>
+<center>
+<table>
+<tr>
+<th class="b10t">
+<b>Digit</b>
+</th>
+<td class="b10t">
+3
+</td>
+<td class="b10t">
+1
+</td>
+<td class="b10t">
+4
+</td>
+</tr>
+<tr>
+<th class="b10t">
+<b>Power</b>
+</th>
+<td class="b10t">
+10<sup>2</sup>
+</td>
+<td class="b10t">
+10<sup>1</sup>
+</td>
+<td class="b10t">
+10<sup>0</sup>
+</td>
+</tr>
+<tr>
+<th class="b10t">
+<b>Value</b>
+</th>
+<td class="b10t">
+300
+</td>
+<td class="b10t">
+10
+</td>
+<td class="b10t">
+4
+</td>
+</tr>
+</table>
+</center>
+<p>First lets read our table. The <strong>Digit</strong> is what shows up in the place value. 3 is the digit in the 100's place of 314. The digit can be any value from 0-9. The <strong>Power</strong> is the place. 10<sup>0</sup> is the 1s place. 10<sup>1</sup> is the 10s place. 10<sup>2</sup> is the 100s place. So on and so forth. Instead of calling this the 1s, 10s, and 100s places, I called them the powers. This will make sense as we move onto other number systems. As you can see the powers increase by one for each place value. The <strong>Value</strong> is the actual value of what the digit. This can be calculated by multiplying the digit by the power.</p>
+<p>So the number <strong>314</strong> dissected is equal to <strong>300</strong> + <strong>10</strong> + <strong>4</strong>. This is equal to <strong>(3 x 10<sup>2</sup>)</strong> + <strong>(1 x 10<sup>1</sup>)</strong> + <strong>(4 x 10<sup>0</sup>)</strong>. This form will allow us to understand every number system.</p>
+<p>Let's generalize this information. Let's say we have Base-B. Base-B can have digits 0 through B-1. Each digit corresponds to a power. In a whole number, the right most power is B<sup>0</sup>. As you move leftward the power to which B is raised increases. If we have a three digit number, xyz, it is equal to (x * B<sup>2</sup>) + (y * B<sup>1</sup>) + (z * B<sup>0</sup>). This generalized formula is the first step to converting any number system into Base-10 numbers we can understand.</p>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="numbers/">Previous Section</a> : Number Bases : Chapter 1
+		</div>
+		<div class="next">
+			1.2 : Base-2 : <a href="numbers/baseTwo.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

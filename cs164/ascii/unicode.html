@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computer Science</title>
+	<link rel="stylesheet" href="../structure.css">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="ascii.css">
+	<script src="ascii.js"></script>
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	<br>
+		<a href="index.html"><b>Introduction</b></a>
+		<a href="https://charlierose.dev"><b>About Me</b></a>
+		<a href="answers.html"><b>Practice Problem Answers</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> Binary</a>
+		<a href="binary/convertBin.html"><b>2.1 :</b> Converting Between Bases</a>
+		<a href="binary/negativebin.html"><b>2.2 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.3 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.4 :</b> Addition and Subtration</a>
+		<a href="binary/float.html"><b>2.5 :</b> Floating Point</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/parsetrees.html"><b>6.4 :</b> Parse Trees</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="ascii/ascii.html">Previous Section</a> : ASCII : 3.1
+		</div>
+		<div class="next">
+			Chapter 4 : Boolean Algebra : <a href="booleanalgebra/">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>Unicode</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>The Universal Coded Character Set, or Unicode for short, is an extension of ASCII. The first 128 codepoints are the same as ASCII. The next 1,113,984 codepoints are literally anything else. What do I mean by &quot;literally anything else&quot;? What are these over 1 million codepoints?</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="the-literally-anything-else">The &quot;Literally Anything Else&quot;</h2>
+<p>I feel rude calling this section &quot;literally anything else&quot;. It makes it seem pointless, even though there are many important codepoints in Unicode. This includes accents on letters and special characters for non-Latin alphabets. From a communication standpoint, this is very important. Unicode added mathematic symbols and greek letters. Now we can better express mathematic expresssions. It's important to recognize that computers could compute these expressions. Now, we can type these formulas. I use Unicode in future sections with boolean algebra. Below, I included tables with a few characters that are important.</p>
+<center>
+<div class="horizDiv">
+<div>
+<table>
+<tr>
+<th colspan="3">
+<b>Mathematic Characters</b>
+</th>
+</tr>
+<tr>
+<th>
+Name
+</th>
+<th>
+UTF-16 Code
+</th>
+<th>
+Character
+</th>
+</tr>
+<tr>
+<td>
+Plus Sign
+</td>
+<td>
+0x002B
+</td>
+<td>
++
+</td>
+</tr>
+<tr>
+<td>
+Multiplication
+</td>
+<td>
+0x00D7
+</td>
+<td>
+×
+</td>
+</tr>
+<tr>
+<td>
+Division
+</td>
+<td>
+0x00F7
+</td>
+<td>
+÷
+</td>
+</tr>
+<tr>
+<td>
+Equals Sign
+</td>
+<td>
+0x003D
+</td>
+<td>
+=
+</td>
+</tr>
+</table>
+</div>
+<!-- ############ NEW TABLE ############# -->
+<div>
+<table>
+<tr>
+<th colspan="3">
+<b>Accented Characters</b>
+</th>
+</tr>
+<tr>
+<th>
+Name
+</th>
+<th>
+UTF-16 Code
+</th>
+<th>
+Character
+</th>
+</tr>
+<tr>
+<td>
+a acute
+</td>
+<td>
+0x00E0
+</td>
+<td>
+á
+</td>
+</tr>
+<tr>
+<td>
+E grave
+</td>
+<td>
+0x00C8
+</td>
+<td>
+È
+</td>
+</tr>
+<tr>
+<td>
+c cedilla
+</td>
+<td>
+0x00E7
+</td>
+<td>
+ç
+</td>
+</tr>
+<tr>
+<td>
+n tilde
+</td>
+<td>
+0x00F1
+</td>
+<td>
+ñ
+</td>
+</tr>
+</table>
+</div>
+<!-- ############ NEW TABLE ############# -->
+<div>
+<table>
+<tr>
+<th colspan="3">
+<b>Boolean Characters</b>
+</th>
+</tr>
+<tr>
+<th>
+Name
+</th>
+<th>
+UTF-16 Code
+</th>
+<th>
+Character
+</th>
+</tr>
+<tr>
+<td>
+Not
+</td>
+<td>
+0x00AC
+</td>
+<td>
+¬
+</td>
+</tr>
+<tr>
+<td>
+And
+</td>
+<td>
+0x2227
+</td>
+<td>
+∧
+</td>
+</tr>
+<tr>
+<td>
+Or
+</td>
+<td>
+0x2228
+</td>
+<td>
+∨
+</td>
+</tr>
+<tr>
+<td>
+Xor
+</td>
+<td>
+0x22BB
+</td>
+<td>
+⊻
+</td>
+</tr>
+</table>
+</div>
+</div>
+</center>
+<p>Clearly unicode contains many important characters. That doesn't mean <em>ALL</em> unicode characters are important. With over a million codepoints, there is a whole lot of unimportant and useless. Just because something is useless, doesn't mean that it's not fun. Now, I'm not a trekkie (sorry), but unicode includes the klingon alphabet, or as named by Marc Okrand in <em>The Klingon Dictionary</em>, pIqaD. If you don't have the proper fonts downloaded in your browser, the Klingon letters won't display properly. Hopefully, since you're probably a computer science major, you're a massive nerd. Hopefully, being a massive nerd, you're prepared for this situation. Along with the highly important Klingon language, unicode also contains chess pieces. Don't worry, there are white and black chess pieces. Long story short, unicode is very inclusive.</p>
+<center>
+<div class="horizDiv">
+<div>
+<table>
+<tr>
+<th colspan="3">
+<b>pIqaD</b>
+</th>
+</tr>
+<tr>
+<th>
+Name
+</th>
+<th>
+UTF-16 Code
+</th>
+<th>
+Character
+</th>
+</tr>
+<tr>
+<td>
+A
+</td>
+<td>
+0xF8D0
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+B
+</td>
+<td>
+0xF8D1
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+CH
+</td>
+<td>
+0xF8D2
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+D
+</td>
+<td>
+0xF8D3
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+</div>
+<!-- ############ NEW TABLE ############# -->
+<div>
+<table>
+<tr>
+<th colspan="3">
+<b>Chess</b>
+</th>
+</tr>
+<tr>
+<th>
+Name
+</th>
+<th>
+UTF-16 Code
+</th>
+<th>
+Character
+</th>
+</tr>
+<tr>
+<td>
+Black King
+</td>
+<td>
+0x265A
+</td>
+<td>
+♚
+</td>
+</tr>
+<tr>
+<td>
+White King
+</td>
+<td>
+0x2654
+</td>
+<td>
+♔
+</td>
+</tr>
+<tr>
+<td>
+Black Pawn
+</td>
+<td>
+0x265F
+</td>
+<td>
+♟
+</td>
+</tr>
+<tr>
+<td>
+White Pawn
+</td>
+<td>
+0x2659
+</td>
+<td>
+♙
+</td>
+</tr>
+</table>
+</div>
+</div>
+</center>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="utf-encoding">UTF Encoding</h2>
+<p>So if you were paying attention to the table, you noticed that one of the columns is &quot;UTF-16 Code&quot;. If you were really paying attention, you noticed I didn't explain what that was. Well now, I'm gonna explain that to you! Aren't I a sweetheart. Anyway. Encodings. So unicode is composed of a whole lotta codepoints. We need some way of numbering and ordering them. UTF stands for Unicode Transformation Format. The following number is the number of bits. UTF-8 would be 8 bits, UTF-16 would be 16 bits, etc. etc. As the unicode library grows, you would need more bits to hold each value.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="in-html">In HTML</h2>
+<p>If you are on a computer, I want you to look down at your keyboard. Count how many characters you can type. I counted 26 capital letters, 26 lowercase letters, 10 numbers, and 32 symbols on my laptop. That's 94 symbols I can type out. Now, that sure is a problem if I wanna print out the other 1,114,018 codepoints. One solution is a very large keyboard. Now, that's not exactly practical.<br />
+Now this entire textbook I've written is in HTML. How did I display the character above in the table? HTML has unicode compatibility. The format is: &amp; # NUMBER ; or &amp; KEYWORD ; So Δ is &amp; # 9 1 6 ; or &amp; Delta ; There actually wouldn't be any spaces. I only did that to avoid HTML. Below is a link to a whole bunch of HTML entities. I also made a little tool for you to try them out on your own.</p>
+<p><a href="https://www.freeformatter.com/html-entities.html">FreeFormatter</a></p>
+<h3 id="html-entity-tester">HTML Entity Tester</h3>
+<center>
+<p>To Use:</p>
+<p>Enter a #Number or Keyword for an HTML entity. Make sure to include the '#' for numbers.</p>
+<table>
+<tr>
+<td id="entityOut">
+Δ
+</td>
+</tr>
+<tr>
+<td style="width: 0px; height: 0px; background-color: rgba(0,0,0,0)">
+<textarea id="entityIn">
+</textarea>
+</td>
+</tr>
+<tr>
+<td style="width: 0px; height: 0px; background-color: rgba(0,0,0,0)">
+<button id="entityButton" onclick="makeEntity()">
+Display
+</button>
+</td>
+</tr>
+</table>
+</center>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="more-unicode">More Unicode</h2>
+<p>So since there are over 1 million unicode codepoints, I'm not going to write them all out. However! Other people have already done that for me! Here are a few websites that I used for reference.</p>
+<p><a href="https://www.compart.com/en/unicode/">Compart : Unicode Library</a></p>
+<p><a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters">Wikipedia : List of Unicode Characters</a></p>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="ascii/ascii.html">Previous Section</a> : ASCII : 3.1
+		</div>
+		<div class="next">
+			Chapter 4 : Boolean Algebra : <a href="booleanalgebra/">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

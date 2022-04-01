@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computer Science</title>
+	<link rel="stylesheet" href="../structure.css">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="../colors.css">
+	<link rel="stylesheet" href="../syntax.css">
+	<link rel="stylesheet" href="languages.css">
+	<script src="languages.js"></script>
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	<br>
+		<a href="index.html"><b>Introduction</b></a>
+		<a href="https://charlierose.dev"><b>My Site</b></a>
+		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
+		<a href="answers.html"><b>Practice Problem Answers</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> Binary</a>
+		<a href="binary/convertBin.html"><b>2.1 :</b> Converting Between Bases</a>
+		<a href="binary/negativebin.html"><b>2.2 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.3 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.4 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="languages/langInfo.html">Previous Section</a> : Processing Language : 6.1
+		</div>
+		<div class="next">
+			6.3 : Programming Languages : <a href="languages/program.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>Markup Languages</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>Markup languages are my personal favorite. In the simplest description possible, they are used to produce a pretty output. I'm gonna quickly go over two common markup languages: HTML and Tex. Both of these are probably worth your time to learn. I'm not going to go in depth on them, but I'll definitely go over the main ideas.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="html">HTML</h2>
+<p><strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage, or HTML is the main language used for web development. In CS-164, it's the language you'll be using on tux to create your websites. In fact, I've written this site in HTML on tux. You can view the code by right clicking the page and clicking &quot;View Page Source&quot;.</p>
+<p>Now the basis of HTML is tags. Each element has an opening tag and a closing tag. These tags are nested inside each other to create the document. All HTML documents start with a &lt;html&gt; tag and end with a &lt;/html&gt; tag. Inside there is a &lt;head&gt; and a &lt;body&gt;. Inside the &lt;body&gt;, we have elements like headers &lt;h3&gt; or paragraphs &lt;p&gt;. Now what does this all mean? So the analogy I use is a person. The &lt;html&gt; tag defines the document, this is defining that this is a human. Then we have the &lt;head&gt; and &lt;body&gt; tags. People also have heads and bodies. Inside the &lt;head&gt; tag goes things you'd typically not see. The &lt;title&gt; of the website. Maybe some JavaScript with functions. I consider this the brain. Nobody can see your thinking inside your brain. That doesn't mean it's not important. Inside the &lt;body&gt; goes elements you see. That's where the images &lt;img&gt;, headers &lt;h1&gt;, and paragraphs &lt;p&gt; go. These are the arms and legs and parts of my human body you see. The JavaScript brain can tell these elements to have different functions. Then CSS is the clothing, the style.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="css">CSS</h2>
+<p>What is CSS? I'm glad you asked. CSS is <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heet. Like I said before, CSS is the clothing and style of HTML. See how my website has nice blues and greys. It's all because of CSS. My fancy side bar of links. It's CSS. CSS gives HTML personality. There are a few ways to use CSS. You can use inline styling, attach a CSS stylesheet, or use the &lt;style&gt; tag in the &lt;head&gt; tag to add style.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="html-editor">HTML Editor</h2>
+<p>Below, I made a basic HTML editor. In the textarea on the left, type in your HTML code, then press the &quot;View&quot; button and see what you've created! This only works on HTML and CSS. No JavaScript. Was it necessary to create this? No. Was I procrastinating other work? Clearly.</p>
+<button id="tryitout" onclick="interpretHTML()">
+View
+</button>
+<iframe name="embed" src="langSec/embeddedEdit.html">
+</iframe>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="tex">Tex</h2>
+<p>Tex is a markup language used mainly for creating PDFs. Each Tex or LaTeX document begins with a egin{document} and ends with a nd{document}. While HTML has &lt;tags&gt;, Tex has these control sequences. These start with \ and signifify different tokens and actions within tex. Throw a Tex document into a compiler, and you get out a beautiful PDF. I highly suggest taking the time to learn Tex or LaTeX or whatever flavor you prefer. I use this to write all my essays for every class. It looks more professional and you have much more control than you would in Microsoft Word or some other word processor.</p>
+<p>I included a reference sheet below, from Brown University. If you have issues viewing the file below, you can follow this link. <a href="languages/TeXRefCard.v1.5.pdf">TeX Reference Card</a></p>
+<embed id="texcard" src="languages/TeXRefCard.v1.5.pdf" type="application/pdf">
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="languages/langInfo.html">Previous Section</a> : Processing Language : 6.1
+		</div>
+		<div class="next">
+			6.3 : Programming Languages : <a href="languages/program.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

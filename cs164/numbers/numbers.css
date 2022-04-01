@@ -1,0 +1,51 @@
+.b10t {
+	width: 100px;
+	height: 50px;
+}
+
+.b16c {
+	width: 95px;
+	height: 30px;
+}
+
+.b16vt {
+	width: 95px;
+	height: 30px;
+}
+
+.b2t {
+	width: 100px;
+	height: 50px;
+}
+
+
+red {
+	color: rgb(255,0,0);
+}
+green {
+	color: rgb(0,255,0);
+}
+blue {
+	color: rgb(0,0,255);
+}
+
+#rgbcircles {
+	width: 250px;
+	height: 250px;
+}
+
+#colorBox {
+	width: 215px;
+	height: 215px;
+	background-color: rgb(255,255,255);
+}
+#colorBoxSub {
+	width: 215px;
+}
+#redtext, #greentext, #bluetext {
+	height: 25px;
+	width: 70px;
+	resize: none;
+}
+
+

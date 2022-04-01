@@ -1,0 +1,83 @@
+/*########################### SYNTAX HIGHLIGHTING ############################*/
+/* All the styling I need for various syntax highlighting in whatever code    */
+/* may appear here                                                            */
+/* I'm mostly trying to match the color set up I have in vim I guess          */
+
+
+/*--------------------------------- GENERAL ----------------------------------*/
+code {
+	background-color: #1B1B1E;
+	border-radius: 2px;
+	color: #FFFFFF;
+	font-family: "Courier New", Courier, monospace;
+	padding: 2px;
+}
+
+pre {
+	background-color: #1B1B1E;
+	border-radius: 5px;
+	color: #FFFFFF;
+	font-family: "Courier New", Courier, monospace;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 100%;
+}
+
+/*------------------------------------ C -------------------------------------*/
+
+code.c {
+	background-color: transparent !important;
+}
+
+/* Chars */
+code.c>.ch {
+	color: #FACCB8;
+}
+
+/* ???? */
+code.c>.cf {
+	color: #FAF60E;
+}
+
+/* Comments */
+code.c>.co {
+	color: #05F3F7;
+}
+
+/* Types */
+code.c>.dt {
+	color: #85FC9C;
+}
+
+/* Values? */
+code.c>.dv {
+	color: #FA01D3;
+}
+
+/* */
+code.c>.im {
+	color: #FA01D3;
+}
+
+/* Keyword */
+code.c>.kw {
+	color: #FAF60E;
+}
+
+/* */
+code.c>.pp {
+	color: #3699ED;
+}
+
+/* String chars */
+code.c>.sc {
+	color: #FACCB8;
+}
+
+/* Strings */
+code.c>.st {
+	color: #FA01D3;
+}
+
+

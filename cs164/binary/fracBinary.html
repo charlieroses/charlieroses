@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Computer Science</title>
+	<link rel="stylesheet" href="../structure.css">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="binary.css">
+	<script src="binary.js"></script>
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	<br>
+		<a href="index.html"><b>Introduction</b></a>
+		<a href="https://charlierose.dev"><b>About Me</b></a>
+		<a href="answers.html"><b>Practice Problem Answers</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> Binary</a>
+		<a href="binary/convertBin.html"><b>2.1 :</b> Converting Between Bases</a>
+		<a href="binary/negativebin.html"><b>2.2 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.3 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.4 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="binary/negativebin.html">Previous Section</a> : Negative Numbers : 2.2
+		</div>
+		<div class="next">
+			2.4 : Addition and Subtration : <a href="binary/addSubBin.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>Fractional Binary</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>Fractional Binary works just like the rest of binary. However, when we use powers, we're using negative powers. It's much easier to demonstrate below than to explain. We'll set up our table the exact same as we did before with an 8 bit number. However, this time, we're going to add a decimal point. This means we will have 4 integer bits and 4 fractional bits. Let's consider the number <strong>1101.1011<sub>2</sub></strong>.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="binary-to-base-10">Binary to Base-10</h2>
+<center>
+<table>
+<tr>
+<th class="fb2t">
+<b>Bit</b>
+</th>
+<td class="fb2t">
+1
+</td>
+<td class="fb2t">
+1
+</td>
+<td class="fb2t">
+0
+</td>
+<td class="fb2t">
+1
+</td>
+<td class="fb2t">
+<b>.</b>
+</td>
+<td class="fb2t">
+1
+</td>
+<td class="fb2t">
+0
+</td>
+<td class="fb2t">
+1
+</td>
+<td class="fb2t">
+1
+</td>
+</tr>
+<tr>
+<th class="fb2t">
+<b>Power</b>
+</th>
+<td class="fb2t">
+2<sup>3</sup>
+</td>
+<td class="fb2t">
+2<sup>2</sup>
+</td>
+<td class="fb2t">
+2<sup>1</sup>
+</td>
+<td class="fb2t">
+2<sup>0</sup>
+</td>
+<td class="fb2t">
+<b>.</b>
+</td>
+<td class="fb2t">
+2<sup>-1</sup>
+</td>
+<td class="fb2t">
+2<sup>-2</sup>
+</td>
+<td class="fb2t">
+2<sup>-3</sup>
+</td>
+<td class="fb2t">
+2<sup>-4</sup>
+</td>
+</tr>
+<tr>
+<th class="fb2t">
+<b>Fractional Value</b>
+</th>
+<td class="fb2t">
+8
+</td>
+<td class="fb2t">
+4
+</td>
+<td class="fb2t">
+0
+</td>
+<td class="fb2t">
+1
+</td>
+<td class="fb2t">
+<b>.</b>
+</td>
+<td class="fb2t">
+1/2
+</td>
+<td class="fb2t">
+0
+</td>
+<td class="fb2t">
+1/8
+</td>
+<td class="fb2t">
+1/16
+</td>
+</tr>
+<tr>
+<th class="fb2t">
+<b>Decimal Value</b>
+</th>
+<td class="fb2t">
+8
+</td>
+<td class="fb2t">
+4
+</td>
+<td class="fb2t">
+0
+</td>
+<td class="fb2t">
+1
+</td>
+<td class="fb2t">
+<b>.</b>
+</td>
+<td class="fb2t">
+0.5
+</td>
+<td class="fb2t">
+0
+</td>
+<td class="fb2t">
+0.125
+</td>
+<td class="fb2t">
+0.0625
+</td>
+</tr>
+</table>
+</center>
+<p>I broke the Value row down into two other rows. <strong>Fractional Value</strong> and <strong>Decimal Value</strong>. The fractional value is the Power multiplied by the Bit. The decimal value is the same thing in decimal form. It's important to see the fraction form because it's much easier to see the powers of two. The decimal form makes it easier to add. So the value is <strong>8 + 4 + 1 + 0.5 + 0.125 + 0.0625</strong>. <strong>1101.1011<sub>2</sub></strong> = <strong>13.6875<sub>10</sub></strong>.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="base-10-to-fractional-binary">Base-10 to Fractional Binary</h2>
+<p>Converting the bits before the Radix (decimal point) is exactly the same as before with the alternating modulus/division method. Converting the bits after the radix is very different however. First you double the value, then if it greater than 1, you append a bit that is a 1. If the bit is greater than 1, you then subtract 1. Otherwise you append a 0. The loop continues until 0 is reached. Follow below through the method. We'll convert <strong>0.2<sub>10</sub></strong> to fractional binary.</p>
+<p><code> <tab5>Double Value: 0.2 * 2 = 0.4</tab5> <br> <tab5>Check Quantity: 0.4 &lt; 1 : Append <b>0</b></tab5> <br> <tab5>Double Value: 0.4 * 2 = 0.8</tab5> <br> <tab5>Check Quantity: 0.8 &lt; 1 : Append <b>0</b></tab5> <br> <tab5>Double Value: 0.8 * 2 = 1.6</tab5> <br> <tab5>Check Quantity: 1.6 &gt; 1 : Append <b>1</b></tab5> <br> <tab5>Subtract 1: 1.6 - 1 = 0.6</tab5> <br> <tab5>Double Value: 0.6 * 2 = 1.2</tab5> <br> <tab5>Check Quantity: 1.2 &gt; 1 : Append <b>1</b></tab5> <br> <tab5>Subtract 1: 1.2 - 1 = 0.2</tab5> <br> <tab5>Double Value: 0.2 * 2 = 0.4</tab5> <br> <tab5>Check Quantity: 0.4 &lt; 1 : Append <b>0</b></tab5> <br> <tab5>Double Value: 0.4 * 2 = 0.8</tab5> <br> <tab5>Check Quantity: 0.8 &lt; 1 : Append <b>0</b></tab5> <br> </code></p>
+<p>Of course this particular number is never ending. Exactly like 1/3 is 0.3333333... In this case <strong>0.2<sub>10</sub></strong> is equal to <strong>0.00110011...<sub>2</sub></strong>.</p>
+</div>
+	<hr>	
+<div class="content">
+<h2 id="practice-problems">Practice Problems</h2>
+<p>Whats is the value of 1000.0011 in base-10?</p>
+<textarea id="fq1">
+</textarea>
+<br>
+<button onclick="fq1Submit()">
+Submit
+</button>
+<p id="fq1Out">
+</p>
+<p>What is the value 0.5625<sub>10</sub> in base-2?</p>
+<textarea id="fq2">
+</textarea>
+<br>
+<button onclick="fq2Submit()">
+Submit
+</button>
+<p id="fq2Out">
+</p>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="binary/negativebin.html">Previous Section</a> : Negative Numbers : 2.2
+		</div>
+		<div class="next">
+			2.4 : Addition and Subtration : <a href="binary/addSubBin.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>
