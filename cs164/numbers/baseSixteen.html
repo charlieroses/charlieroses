@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Computer Science</title>
-	<link rel="stylesheet" href="../structure.css">
-	<link rel="stylesheet" href="../styles.css">
-	<link rel="stylesheet" href="../colors.css">
-	<link rel="stylesheet" href="../syntax.css">
-	<link rel="stylesheet" href="numbers.css">
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="colors.css">
+	<link rel="stylesheet" href="syntax.css">
+	<link rel="stylesheet" href="numbers/numbers.css">
 
 </head>
 <body>
 <div id="sidebar">
 	<div class="content">
-	<br>
-		<a href="index.html"><b>Introduction</b></a>
+		<br>
+		<a href="introduction"><b>Introduction</b></a>
+		<br>
 		<a href="https://charlierose.dev"><b>My Site</b></a>
+		<br>
 		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
-		<a href="answers.html"><b>Practice Problem Answers</b></a>
+		<br>
+		<a href="answers"><b>Practice Problem Answers</b></a>
 	</div>
 	<hr>
 	<div class="content">
@@ -90,7 +94,7 @@
 	</div>
 	<hr>
 	<div class="content">
-		<h1>Base-16</h1>
+		<h1>1.3 : Base-16</h1>
 	</div>
 	<hr>
 	<div class="content">
@@ -337,9 +341,9 @@ F
 <p>We can also look at how binary relates to hexadecimal. If we look up at the table, you'll notice that each hexadecimal digit can be represented as a full 4 bit binary number. Four bits in binary make 16 different number values ranging 0 to 15. Hexadecimal uses different digits ranging 0-15. This isn't a coincidence. 16<sup>1</sup> is 2<sup>4</sup>. It's no coincidence that 1 base-16 digit is equal to 4 base-2 digits. So how can we use this knowledge in practice? Let's say we have the number 1111000011110000. That's a rather large number that not even I want to do the math for. Let's split this up.</p>
 <p><code> <tab5>1111000011110000 <br> <br> <tab5>1111 0000 1111 0000 : Split into groups of 4 <br> <br> <tab5>15 0 15 0 : Translate groups of 4 into Base-10 <br> <br> <tab5>F 0 F 0 : Translate into base-16 <br> <br> <tab5>F0F0 : Put back together </code></p>
 <p>There! Easy as can be! Instead of trying to translate a massive 16 bit number, we just split it into 4 bit numbers!</p>
-</div>
-	<hr>	
-<div class="content">
+	</div>
+	<hr>
+	<div class="content">
 <h2 id="color-codes">Color Codes</h2>
 <p>A very common use of hexadecimal numbers is for use of color codes. There are many different ways to define color. The two main ways are to use a hexadecimal value or an rgb value.</p>
 <center>
@@ -534,9 +538,9 @@ Submit
 <p id="colorOutput">
 </p>
 </center>
-</div>
-	<hr>	
-<div class="content">
+	</div>
+	<hr>
+	<div class="content">
 <h2 id="practice-problems">Practice Problems</h2>
 <p>What is the number D5 in base-10?</p>
 <textarea id="b16q1">
@@ -556,6 +560,12 @@ Submit
 </button>
 <p id="b16q2Out">
 </p>
+	</div>
+	<hr>
+	<div class="content">
+		<center>
+		<a href="numbers/baseSixteen.html\#top">Back To Top</a>
+		</center>
 	</div>
 	<hr>
 	<div class="content">

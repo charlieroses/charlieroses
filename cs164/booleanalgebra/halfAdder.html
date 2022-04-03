@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Introduction to Computer Science</title>
-	<base href="/cs164/">
+	<base href="/home/charlie/Documents/CS164Notes/cs164/">
 	<link rel="stylesheet" href="structure.css">
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="colors.css">
@@ -88,10 +88,10 @@
 		<br>
 		<div class="navigation" id="top">
 		<div class="prev">
-			<a href="booleanalgebra/nand.html">Previous Section</a> : Nand : 4.2.5
+			<a href="booleanalgebra/boolExpr.html">Previous Section</a> : Complex Expressions : 4.3
 		</div>
 		<div class="next">
-			4.3 : Complex Expressions : <a href="booleanalgebra/boolExpr.html">Next Section</a>
+			4.5 : Full Adder : <a href="booleanalgebra/fullAdder.html">Next Section</a>
 		</div>
 		</div>
 		<br>
@@ -99,112 +99,21 @@
 	</div>
 	<hr>
 	<div class="content">
-		<h1>4.2.6 : Xor</h1>
+		<h1>4.4 : Half Adder</h1>
 	</div>
 	<hr>
 	<div class="content">
-<p>The last main boolean operator is XOR. XOR is eXclusive OR. As we know, the OR operator renders true as long as at least one value is true. The XOR operator only renders true as long as only one value is true. This mean if both values are true, the XOR is false. The Digital Logic Workbench refers to XOR as EOR. The name isn't as important as what happens though. It is very important to know the different between OR and XOR.</p>
-<center>
-<code> Notation: x ⊕ y </code>
-<div class="container">
-<table>
-<tr>
-<th id="b2t">
-<b>x</b>
-</th>
-<th id="b2t">
-<b>y</b>
-</th>
-<th id="b2t">
-<b>x ⊕ y</b>
-</th>
-</tr>
-<tr>
-<td id="b2t">
-0
-</th>
-<td id="b2t">
-0
-</th>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</th>
-</tr>
-<tr>
-<td id="b2t">
-0
-</th>
-<td id="b2t">
-1
-</th>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</th>
-</tr>
-<tr>
-<td id="b2t">
-1
-</th>
-<td id="b2t">
-0
-</th>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</th>
-</tr>
-<tr>
-<td id="b2t">
-1
-</th>
-<td id="b2t">
-1
-</th>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</th>
-</tr>
-</table>
-<div class="container2">
-<img src="boolSec/imgs/xor.png" style="width: 312px; height: 127px">
-<div class="simcir">
-<p>{ &quot;width&quot;:312, &quot;height&quot;:108, &quot;showToolbox&quot;:false, &quot;devices&quot;:[ {&quot;type&quot;:&quot;Toggle&quot;,&quot;id&quot;:&quot;dev0&quot;,&quot;x&quot;:108,&quot;y&quot;:12,&quot;label&quot;:&quot;X&quot;}, {&quot;type&quot;:&quot;Toggle&quot;,&quot;id&quot;:&quot;dev1&quot;,&quot;x&quot;:108,&quot;y&quot;:60,&quot;label&quot;:&quot;Y&quot;}, {&quot;type&quot;:&quot;DC&quot;,&quot;id&quot;:&quot;dev2&quot;,&quot;x&quot;:52,&quot;y&quot;:36,&quot;label&quot;:&quot;DC&quot;}, {&quot;type&quot;:&quot;EOR&quot;,&quot;id&quot;:&quot;dev3&quot;,&quot;x&quot;:164,&quot;y&quot;:36,&quot;label&quot;:&quot;EOR&quot;}, {&quot;type&quot;:&quot;LED&quot;,&quot;id&quot;:&quot;dev4&quot;,&quot;x&quot;:220,&quot;y&quot;:36,&quot;label&quot;:&quot;LED&quot;}], &quot;connectors&quot;:[ {&quot;from&quot;:&quot;dev0.in0&quot;,&quot;to&quot;:&quot;dev2.out0&quot;}, {&quot;from&quot;:&quot;dev1.in0&quot;,&quot;to&quot;:&quot;dev2.out0&quot;}, {&quot;from&quot;:&quot;dev3.in0&quot;,&quot;to&quot;:&quot;dev0.out0&quot;}, {&quot;from&quot;:&quot;dev3.in1&quot;,&quot;to&quot;:&quot;dev1.out0&quot;}, {&quot;from&quot;:&quot;dev4.in0&quot;,&quot;to&quot;:&quot;dev3.out0&quot;}] }</p>
-</div>
-</div>
-</div>
-</center>
-<p>In set theory, XOR is the same thing as the symmetric difference, or disjunctive union of two sets. The disjunctive union (∆) of two sets are the values that are in one set, but not the other.</p>
-<center>
-<img src="booleanalgebra/imgs/xorvenn.png" />
-</center>
-	</div>
-	<hr>
-	<div class="content">
-<h2 id="practice-problems">Practice Problems</h2>
-<p>Will (x ⊕ x) ever be true?</p>
-<textarea id="xorq1">
-</textarea>
-<br>
-<button onclick="xorq1Submit()">
-Submit
-</button>
-<p id="xorq1Out">
-</p>
-	</div>
-	<hr>
-	<div class="content">
-		<center>
-		<a href="booleanalgebra/xor.html\#top">Back To Top</a>
-		</center>
+
 	</div>
 	<hr>
 	<div class="content">
 		<br>
 		<div class="navigation" id="bottom">
 		<div class="prev">
-			<a href="booleanalgebra/nand.html">Previous Section</a> : Nand : 4.2.5
+			<a href="booleanalgebra/boolExpr.html">Previous Section</a> : Complex Expressions : 4.3
 		</div>
 		<div class="next">
-			4.3 : Complex Expressions : <a href="booleanalgebra/boolExpr.html">Next Section</a>
+			4.5 : Full Adder : <a href="booleanalgebra/fullAdder.html">Next Section</a>
 		</div>
 		</div>
 		<br>

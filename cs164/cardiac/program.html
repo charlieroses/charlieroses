@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Computer Science</title>
-	<link rel="stylesheet" href="../structure.css">
-	<link rel="stylesheet" href="../styles.css">
-	<link rel="stylesheet" href="../colors.css">
-	<link rel="stylesheet" href="../syntax.css">
-	<link rel="stylesheet" href="cardiac.css">
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="colors.css">
+	<link rel="stylesheet" href="syntax.css">
+	<link rel="stylesheet" href="cardiac/cardiac.css">
 
 </head>
 <body>
 <div id="sidebar">
 	<div class="content">
-	<br>
-		<a href="index.html"><b>Introduction</b></a>
+		<br>
+		<a href="introduction"><b>Introduction</b></a>
+		<br>
 		<a href="https://charlierose.dev"><b>My Site</b></a>
+		<br>
 		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
-		<a href="answers.html"><b>Practice Problem Answers</b></a>
+		<br>
+		<a href="answers"><b>Practice Problem Answers</b></a>
 	</div>
 	<hr>
 	<div class="content">
@@ -90,7 +94,7 @@
 	</div>
 	<hr>
 	<div class="content">
-		<h1>Programming the CARDIAC</h1>
+		<h1>5.2 : Programming the CARDIAC</h1>
 	</div>
 	<hr>
 	<div class="content">
@@ -246,6 +250,12 @@ Halt and Reset: Ends the Program
 </center>
 <p>Notice how when I described each operation, I mentioned how the memory relates to the operation. The first digit corresponds to the opcode. The second two being to the memory point it references. Let's say we have the number <strong>103</strong> and in memory point 03 we have the number 002. The opcode <strong>1</strong> means we have to clear the accumulator. Then we add whatever is in memory point <strong>03</strong>. This means 002 is now what is in the accumulator. If we use the command <strong>800</strong>, it means we jump (<strong>8</strong>) to memory point <strong>00</strong>.</p>
 <p>If you notice, there are two commands that do not relate to the memory, SFT (4) and HRS (9). Since HRS halts and resets the program, you do not need to reference a memory point. SFT on the other hand is a little more difficult. The first digit in SFT is 4. Right now we have 4--. The second digit shifts the digits in the accumulator over to the left n amount of places. If 1234 was stored in the accumulator, and we called 42-, it would shift the places to now 3400. We have now lost the values 1 and 2. We cannot retrieve them. They are lost. The third digit in the SFT operation shifts the accumulator to the right n amount of digits. So if we have 422, 1234 first becomes 3400. The accumulator shifts the other way and becomes 0034. Like I said before, when the accumulator shifts, you lose the digits.</p>
+	</div>
+	<hr>
+	<div class="content">
+		<center>
+		<a href="cardiac/program.html\#top">Back To Top</a>
+		</center>
 	</div>
 	<hr>
 	<div class="content">

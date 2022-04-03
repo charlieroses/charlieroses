@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Computer Science</title>
-	<link rel="stylesheet" href="../structure.css">
-	<link rel="stylesheet" href="../styles.css">
-	<link rel="stylesheet" href="binary.css">
-	<script src="binary.js"></script>
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="colors.css">
+	<link rel="stylesheet" href="syntax.css">
+	<link rel="stylesheet" href="binary/binary.css">
+	<script src="binary/binary.js"></script>
 </head>
 <body>
 <div id="sidebar">
 	<div class="content">
-	<br>
-		<a href="index.html"><b>Introduction</b></a>
-		<a href="https://charlierose.dev"><b>About Me</b></a>
-		<a href="answers.html"><b>Practice Problem Answers</b></a>
+		<br>
+		<a href="introduction"><b>Introduction</b></a>
+		<br>
+		<a href="https://charlierose.dev"><b>My Site</b></a>
+		<br>
+		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
+		<br>
+		<a href="answers"><b>Practice Problem Answers</b></a>
 	</div>
 	<hr>
 	<div class="content">
@@ -87,7 +94,7 @@
 	</div>
 	<hr>
 	<div class="content">
-		<h1>Converting Between Bases</h1>
+		<h1>2.1 : Converting Between Bases</h1>
 	</div>
 	<hr>
 	<div class="content">
@@ -185,9 +192,9 @@
 </table>
 </center>
 <p>So the first row is the <strong>Bits</strong>. I separated each bit into its own column. The second row is <strong>Power</strong>. Since binary is a base-2 system, instead of using powers of 10 for each place value, we use powers of 2. The &quot;one's place&quot; is 2<sup>0</sup>. Instead of the &quot;ten's place&quot; being next, we have the &quot;two's place&quot; which is equal to 2<sup>1</sup>. This continues down the line. The <strong>Value</strong> is the Bit x Power. Now that we've defined our rows in our table, let's convert <strong>10011101</strong> to a decimal form so the common man can read this. This value is equal to <strong>(1 x 2<sup>7</sup>)</strong> + <strong>(0 x 2<sup>6</sup>)</strong> + <strong>(0 x 2<sup>5</sup>)</strong> + <strong>(1 x 2<sup>4</sup>)</strong> + <strong>(1 x 2<sup>3</sup>)</strong> + <strong>(1 x 2<sup>2</sup>)</strong> + <strong>(0 x 2<sup>1</sup>)</strong> + <strong>(1 x 2<sup>0</sup>)</strong>. This long equation can be simplified to just <strong>128</strong> + <strong>16</strong> + <strong>8</strong> + <strong>4</strong> + <strong>1</strong>. Which in base-10 is equal to <strong>157</strong>. This means 10011101<sub>2</sub> = 157<sub>10</sub>.</p>
-</div>
-	<hr>	
-<div class="content">
+	</div>
+	<hr>
+	<div class="content">
 <h2 id="convert-to-binary">Convert to Binary</h2>
 <p>There are two different processes for converting to binary. I will be going over both.</p>
 <h3 id="process-1">Process 1</h3>
@@ -204,9 +211,9 @@
 <p>The way above requires you to know the powers of 2 to use the method. There is also another way to do it without knowing the powers and just using only the number 2. The way we'll do this is by using repeated division of 2. This method is the opposite of the above. Above, we divided by the largest power then passed the remainder onto the next step. The integer was the bit. Now we're going to divide the number by 2, then pass the integer onto the next step. The remainder will become our bit. This time in the opposite direction. Let's do the number 111<sub>10</sub> again.</p>
 <p><code> <tab5>111 / 2 = 55.5</tab5> <br> <tab5>111 % 2 = <u>1</u></tab5> <br> <tab5>55 / 2 = 27.5</tab5> <br> <tab5>55 % 2 = <u>1</u></tab5> <br> <tab5>27 / 2 = 13.5</tab5> <br> <tab5>27 % 2 = <u>1</u></tab5> <br> <tab5>13 / 2 = 6.5</tab5> <br> <tab5>13 % 2 = <u>1</u></tab5> <br> <tab5>6 / 2 = 3</tab5> <br> <tab5>6 % 2 = <u>0</u></tab5> <br> <tab5>3 / 2 = 1.5</tab5> <br> <tab5>3 % 2 = <u>1</u></tab5> <br> <tab5>1 / 2 = 0.5</tab5> <br> <tab5>1 % 2 = <u>1</u></tab5> <br> </code></p>
 <p>Since we're moving in the opposite direction, we place bits the other way. After the first step where we first divided by 2, we got the bit for 2<sup>0</sup>. It's a little weird to think about where the bit goes. Think about it like this, when you divide by 2<sup>1</sup>, the remainder would be 2<sup>0</sup>. This is because it's the place value directly to the right. This means, once again, 111<sub>10</sub> = 1101111<sub>2</sub>. This time, we have only 7 bits instead of 8. Since the 8th bit is a 0, it's not necessary to put it in. Both approaches are completely valid and correct.</p>
-</div>
-	<hr>	
-<div class="content">
+	</div>
+	<hr>
+	<div class="content">
 <h2 id="practice-problems">Practice Problems</h2>
 <p>What is the number 10110011 in base-10?</p>
 <textarea id="b2q1">
@@ -226,6 +233,12 @@ Submit
 </button>
 <p id="b2q2Out">
 </p>
+	</div>
+	<hr>
+	<div class="content">
+		<center>
+		<a href="binary/convertBin.html\#top">Back To Top</a>
+		</center>
 	</div>
 	<hr>
 	<div class="content">

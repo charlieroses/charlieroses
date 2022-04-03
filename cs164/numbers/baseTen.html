@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Computer Science</title>
-	<link rel="stylesheet" href="../structure.css">
-	<link rel="stylesheet" href="../styles.css">
-	<link rel="stylesheet" href="../colors.css">
-	<link rel="stylesheet" href="../syntax.css">
-	<link rel="stylesheet" href="numbers.css">
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="colors.css">
+	<link rel="stylesheet" href="syntax.css">
+	<link rel="stylesheet" href="numbers/numbers.css">
 
 </head>
 <body>
 <div id="sidebar">
 	<div class="content">
-	<br>
-		<a href="index.html"><b>Introduction</b></a>
+		<br>
+		<a href="introduction"><b>Introduction</b></a>
+		<br>
 		<a href="https://charlierose.dev"><b>My Site</b></a>
+		<br>
 		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
-		<a href="answers.html"><b>Practice Problem Answers</b></a>
+		<br>
+		<a href="answers"><b>Practice Problem Answers</b></a>
 	</div>
 	<hr>
 	<div class="content">
@@ -90,7 +94,7 @@
 	</div>
 	<hr>
 	<div class="content">
-		<h1>Base-10</h1>
+		<h1>1.1 : Base-10</h1>
 	</div>
 	<hr>
 	<div class="content">
@@ -145,6 +149,12 @@
 <p>First lets read our table. The <strong>Digit</strong> is what shows up in the place value. 3 is the digit in the 100's place of 314. The digit can be any value from 0-9. The <strong>Power</strong> is the place. 10<sup>0</sup> is the 1s place. 10<sup>1</sup> is the 10s place. 10<sup>2</sup> is the 100s place. So on and so forth. Instead of calling this the 1s, 10s, and 100s places, I called them the powers. This will make sense as we move onto other number systems. As you can see the powers increase by one for each place value. The <strong>Value</strong> is the actual value of what the digit. This can be calculated by multiplying the digit by the power.</p>
 <p>So the number <strong>314</strong> dissected is equal to <strong>300</strong> + <strong>10</strong> + <strong>4</strong>. This is equal to <strong>(3 x 10<sup>2</sup>)</strong> + <strong>(1 x 10<sup>1</sup>)</strong> + <strong>(4 x 10<sup>0</sup>)</strong>. This form will allow us to understand every number system.</p>
 <p>Let's generalize this information. Let's say we have Base-B. Base-B can have digits 0 through B-1. Each digit corresponds to a power. In a whole number, the right most power is B<sup>0</sup>. As you move leftward the power to which B is raised increases. If we have a three digit number, xyz, it is equal to (x * B<sup>2</sup>) + (y * B<sup>1</sup>) + (z * B<sup>0</sup>). This generalized formula is the first step to converting any number system into Base-10 numbers we can understand.</p>
+	</div>
+	<hr>
+	<div class="content">
+		<center>
+		<a href="numbers/baseTen.html\#top">Back To Top</a>
+		</center>
 	</div>
 	<hr>
 	<div class="content">
