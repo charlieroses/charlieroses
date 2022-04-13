@@ -1,0 +1,81 @@
+#!/bin/bash
+# Charlie Rose
+# A script to make sure links on my site aren't broken
+
+BASEREF="$(pwd)/cs164/"
+FILE="$1"
+BROKEN="0"
+
+if [[ ! -f "${FILE}" ]]
+then
+	echo -e "\033[01;31mERROR:\033[0m ${FILE} Not a File"
+	exit
+fi
+
+echo "Checking links in ${FILE}"
+
+
+for HREF in $(grep -oE "(href|src)=\"[^\"]*\"" "${FILE}")
+do
+	LINK="${HREF%\"}"
+	LINK="${LINK##*\"}"
+	ID="${LINK##*#}"
+	LINK="${LINK%#${ID}}"
+
+#	echo -e "\t ${HREF} ${LINK} ${ID}"
+
+	if [[ "${LINK}" = "http"* ]] ||
+	   [[ "${LINK}" = "www"*  ]] ||
+	   [[ "${LINK}" = *".com"  ]] ||
+	   [[ "${LINK}" = *".net"  ]]
+	then
+		continue
+	fi
+
+	if [[ "${LINK}" = "/cs164/" ]] ||
+	   [[ "${LINK}" = "${BASEREF}" ]]
+	then
+		continue
+	fi
+
+
+	if [[ "${LINK: -1:1}" = "/" ]]
+	then
+		LINK="${LINK}index.html"
+	fi
+
+	if [[ -z "${LINK}" ]]
+	then
+		if [[ "${HREF}" = *"#"* ]] &&
+		   ! grep -q "id=\"${ID}\"" "${FILE}"
+		then
+			echo -e "\t\033[01;31m${ID} does not exist in ${FILE}\033[0m"
+			BROKEN=$((BROKEN + 1))
+		fi
+		continue
+	fi
+
+	if [[ ! -e "${BASEREF}${LINK}" ]] &&
+	   [[ ! -e "${BASEREF}${LINK}.html" ]]
+	then
+		echo -e "\t\033[01;31m${LINK} does not exist\033[0m"
+		BROKEN=$((BROKEN + 1))
+		continue
+	fi
+
+	if [[ "${HREF}" = *"#"* ]] &&
+	   ! grep -q "id=\"${ID}\"" "${BASEREF}${LINK}" &&
+	   ! grep -q "id=\"${ID}\"" "${BASEREF}${LINK}.html"
+	then
+		echo -e "\t\033[01;31m${ID} does not exist in ${LINK}\033[0m"
+		BROKEN=$((BROKEN + 1))
+		continue
+	fi
+done
+
+
+if [[ ${BROKEN} = "0" ]]
+then
+		echo -e "\t\033[01;32mNo broken links\033[0m"
+fi
+

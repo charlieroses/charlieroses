@@ -1,0 +1,6 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<script type="text/javascript" src="booleanalgebra/simcir.js"></script>
+<link rel="stylesheet" type="text/css" href="booleanalgebra/simcir.css" />
+<script type="text/javascript" src="booleanalgebra/simcir-basicset.js"></script>
+<link rel="stylesheet" type="text/css" href="booleanalgebra/simcir-basicset.css" />
+<script type="text/javascript" src="booleanalgebra/simcir-library.js"></script>

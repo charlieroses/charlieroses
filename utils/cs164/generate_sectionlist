@@ -1,0 +1,32 @@
+#!/bin/bash
+
+PARENT="$1"
+SECTIONS_FILE="utils/cs164/sections.tsv"
+SUB="0"
+
+echo -e "\t\t<h2 id=\"sections\">Sections</h2>"
+echo -e "\t\t<ul class=\"sections\">"
+
+while IFS= read -r LINE
+do
+	SEC="$(echo "${LINE}" | cut -f1)"
+	TITLE="$(echo "${LINE}" | cut -f2)"
+	DIR="$(echo "${LINE}" | cut -f3)"
+	FILE="$(echo "${LINE}" | cut -f4)"
+
+	if [[ "${SUB}" = "0" ]] &&
+	   [[ "${SEC}" =~ [0-9]*\.[0-9]*\.[0-9]* ]]
+	then
+		echo -e "\t\t<ul class=\"subsections\">"
+		SUB="1"
+	elif [[ "${SUB}" = "1" ]] &&
+	     [[ ! "${SEC}" =~ [0-9]*\.[0-9]*\.[0-9]* ]]
+	then
+		echo -e "\t\t</ul>"
+		SUB="0"
+	fi
+
+	echo -e "\t\t\t<li><b>${SEC} :</b> <a href=\"${DIR}/${FILE}\">${TITLE}</a></li>"
+done <<< $(grep "^${PARENT}\." "${SECTIONS_FILE}")
+
+echo -e "\t\t</ul>"

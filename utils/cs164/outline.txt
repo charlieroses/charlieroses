@@ -1,0 +1,51 @@
+Making an outline because Charlie's a dipshit who forgets
+
+Order of Lectures
+	Operating Systems
+	Graphics
+	Artificial Intelligence
+	Cryptography
+	Theory
+
+Set Up of "chapters" lmao
+	Chapter 7 : Operating Systems : osSec
+		7.1 : Introductions??? An OSverview
+			- The idea of a central computer that people shared
+			  how that idea plays into current OS
+			- Early OS history
+			- The actual connection between hardware and software
+		7.2 : Components???
+			- Resource Managaer
+			- Service Provider
+			- Virtual Machine
+		7.3 : Types of OS???
+			- Batch OS
+			- Timesharing OS
+			- Distributed OS
+			- Virtual Machine OS
+
+		7.4 : Structure
+			- Triangle of Ones trend
+			- Monolithic structure
+			- Layered Design
+			- Microkernels
+
+		7.5 : Applications (not of but to?)
+			- Bootstrapping
+			- Sys Calls
+			- Software 
+			- Database
+
+
+	Chapter 8 : Graphics : graphSec
+		8.1 : Colors
+		8.2 : Image Formats
+		Bresenhams Line Drawing
+		Ray Tracing
+
+	Chapter 9 : AI : aiSec
+
+	Chapter 10 : Crypto : cryptSec
+
+	Chapter 11 : Theory : theoSec
+		

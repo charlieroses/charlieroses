@@ -1,0 +1,106 @@
+#!/bin/bash
+
+function usage {
+	echo -e "utils/build_cs164 [hft]"
+	echo -e "\t-h help"
+	echo -e "\t-f force build all pages"
+	echo -e "\t-t local testing mode"
+}
+
+MARKDOWN_SRC="markdownfiles/cs164"
+DESTINATION="cs164/"
+SECTIONS_FILE="utils/cs164/sections.tsv"
+TEMPLATE="$(cat utils/cs164/template.html)"
+SIDEBAR="$(awk -f utils/cs164/generate_sidebar.awk "${SECTIONS_FILE}")"
+
+FARG=""
+TARG=""
+while getopts "hft" opt
+do
+	case "${opt}" in
+		h)
+			usage
+			exit 1
+			;;
+		f)
+			FARG="1"
+			;;
+		t)
+			TARG="$(pwd)"
+	esac
+done
+
+while IFS= read -r LINE
+do
+	SEC="$(echo "${LINE}" | cut -f1)"
+	TITLE="$(echo "${LINE}" | cut -f2)"
+	DIR="$(echo "${LINE}" | cut -f3)"
+	FILE="$(echo "${LINE}" | cut -f4)"
+
+	INFILE="${MARKDOWN_SRC}/${DIR}/${FILE}.md"
+	OUTFILE="${DESTINATION}/${DIR}/${FILE}.html"
+
+	# Don't try to build files that don't exist
+	if [[ ! -e "${INFILE}" ]]
+	then
+		continue
+	fi
+
+	# For time saving, don't build things we don't need to
+	if [[ -z "${FARG}" ]] &&
+	   [[ "${OUTFILE}" -nt "${INFILE}" ]]
+	then
+		continue
+	fi
+
+	echo "Building ${OUTFILE}"
+
+	HTML="${TEMPLATE}"
+	CONTENT=""
+
+	if [[ -n "${TARG}" ]]
+	then
+		HTML="${HTML/"/cs164/"/"${TARG}/cs164/"}"
+	fi
+
+	NAV="$(utils/cs164/generate_navigation "${SEC}")"
+
+	LINKS=""
+	if [[ -e "${DESTINATION}/${DIR}/${DIR}.css" ]]
+	then
+		LINKS="${LINKS}\t<link rel=\"stylesheet\" href=\"${DIR}/${DIR}.css\">\n"
+	fi
+	if [[ -e "${DESTINATION}/${DIR}/${DIR}.js" ]]
+	then
+		LINKS="${LINKS}\t<script src=\"${DIR}/${DIR}.js\"></script>"
+	fi
+	if [[ -e "utils/cs164/${DIR}_links.txt" ]]
+	then
+		LINKS="${LINKS}$(cat utils/cs164/${DIR}_links.txt)"
+	fi
+
+	CONTENT="$(pandoc -p "${INFILE}")"
+	CONTENT="$(echo "${CONTENT}" | sed "s#<hr />#\t</div>\n\t<hr>\n\t<div class=\"content\">#g")"
+	TITLE="${SEC} : ${TITLE}"
+	if [[ "${SEC}" != *"."* ]]
+	then
+		TITLE="Chapter ${TITLE}"
+	fi
+	CONTENT="\t\t<h1>${TITLE}</h1>\n\t</div>\n\t<hr>\n\t<div class=\"content\">\n${CONTENT}"
+	if [[ "${FILE}" = "index" ]]
+	then
+		SECLIST="$(utils/cs164/generate_sectionlist "${SEC}")"
+		CONTENT="${CONTENT/"<!-- SECTION LIST -->"/"${SECLIST}"}"
+	fi
+
+	HTML="${HTML//"<!-- FILES -->"/"${LINKS}"}"
+	HTML="${HTML//"<!-- SIDEBAR -->"/"${SIDEBAR}"}"
+	HTML="${HTML//"<!-- NAVIGATION -->"/"${NAV}"}"
+	HTML="${HTML//"<!-- CONTENT -->"/"${CONTENT}"}"
+	HTML="${HTML//"#top"/"${DIR}/${FILE}.html#top"}"
+
+	echo -e "${HTML}" > "${OUTFILE}"
+done <<< "$(tail -n +2 ${SECTIONS_FILE})"
+
+
+cp cs164/introduction.html cs164/index.html

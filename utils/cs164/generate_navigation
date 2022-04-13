@@ -1,0 +1,72 @@
+#!/bin/bash
+
+function makelink {
+	REC="$1"
+	NOP="$2"
+	LNK=""
+
+	if [[ ! -z "${REC}" ]]
+	then
+		SEC="$(echo -e "${REC}" | cut -f 1)"
+		TTL="$(echo -e "${REC}" | cut -f 2)"
+		DIR="$(echo -e "${REC}" | cut -f 3)"
+		FLE="$(echo -e "${REC}" | cut -f 4)"
+		REF=""
+
+		if [[ "${SEC}" = "0"* ]] &&
+		   [[ "${NOP}" = "n" ]]
+		then
+			echo -e "\t\t\t${TTL} : <a href=\"${FLE}\">Next Section</a>"
+			return
+		fi
+
+		if [[ "${SEC}" = "0"* ]] &&
+		   [[ "${NOP}" = "p" ]]
+		then
+			echo -e "\t\t\t<a href=\"${FLE}\">Previous Section</a> : ${TTL}"
+			return
+		fi
+
+		if [[ "${SEC}" = *"."* ]]
+		then
+			REF="${DIR}/${FLE}.html"
+		else
+			SEC="Chapter ${SEC}"
+			REF="${DIR}/"
+		fi
+	
+		if [[ "${NOP}" = "n" ]]
+		then
+			echo -e "\t\t\t${SEC} : ${TTL} : <a href=\"${REF}\">Next Section</a>"
+		else
+			echo -e "\t\t\t<a href=\"${REF}\">Previous Section</a> : ${TTL} : ${SEC}"
+		fi
+	fi
+}
+
+if [[ $# < 1 ]]
+then
+	echo "No Args"
+	exit 1
+fi
+
+
+SECFILE="utils/cs164/sections.tsv"
+SECTIONS="$(cat utils/cs164/sections.tsv | tail -n +2 )"
+CURR_SEC="$1"
+
+
+CURR_REC="$(grep "^${CURR_SEC}[^.]" "${SECFILE}")"
+PREV_REC="${SECTIONS%%"${CURR_REC}"*}"
+PREV_REC="$(echo -e "${PREV_REC}" | tail -n 2 | head -n 1 )"
+NEXT_REC="${SECTIONS##*"${CURR_REC}"}"
+NEXT_REC="$(echo -e "${NEXT_REC}" | head -n 2 | tail -n 1 )"
+
+
+echo -e "\t\t<div class=\"prev\">"
+makelink "${PREV_REC}" "p"
+echo -e "\t\t</div>"
+echo -e "\t\t<div class=\"next\">"
+makelink "${NEXT_REC}" "n"
+echo -e "\t\t</div>"
+
