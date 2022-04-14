@@ -30,21 +30,6 @@ echo "${HTMLPAGE}" > "${OUTFILE}"
 
 if [[ "${INFILE}" = "${MDSRC}index.md" ]]
 then
-	for HREF in $(echo "${HTMLPAGE}" | grep -o "href=\"[^\"]*\"")
-	do
-		LINK="${HREF%\"}"
-		LINK="${LINK##*\"}"
-
-		if [[ "${LINK}" = "#"* ]]
-		then
-			continue
-		fi
-
-		NEWHREF="href=\"ref/${LINK}\""
-
-		HTMLPAGE="${HTMLPAGE//${HREF}/${NEWHREF}}"
-	done
-
 	echo "${HTMLPAGE}" > "ref.html"
 fi
 
