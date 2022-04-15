@@ -13,13 +13,21 @@
 <body>
 <div id="sidebar">
 	<div class="content">
-		<br>
+	</div>
+	<hr>
+	<div class="content">
 		<a href="introduction"><b>Introduction</b></a>
-		<br>
+	</div>
+	<hr>
+	<div class="content">
 		<a href="https://charlierose.dev"><b>My Site</b></a>
-		<br>
+	</div>
+	<hr>
+	<div class="content">
 		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
-		<br>
+	</div>
+	<hr>
+	<div class="content">
 		<a href="answers"><b>Practice Problem Answers</b></a>
 	</div>
 	<hr>
@@ -28,6 +36,7 @@
 		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
 		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
 		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
 	</div>
 	<hr>
 	<div class="content">
@@ -104,7 +113,7 @@
 <h2 id="state-machines-and-diagrams">State Machines and Diagrams</h2>
 <p>One of the things that we work with in CS-164 is the concept of state machines. This is something we use to very basically explain the way a program functions, what the variables we have mean, and how they affect the way the program will run.</p>
 <h3 id="with-one-variable">With One Variable</h3>
-<p>We create a state machine in typically the <a href="labs/fsmlab.html">seventh lab</a>. The state machine in this lab relies on one variable and a user input to determine how a program will run and react to the user input. In this state machine, there are three button user inputs. Based on which button is pressed in which state, you move to a different state. While there are three states and three buttons, each state is not directly tied to a specific button. I'm going to further disect what this state machine is doing and how we describe that behavior since the actual lab mainly deals with the coding part.</p>
+<p>We create a state machine in typically the <a href="https://www.cs.drexel.edu/~src322/cs164/labs/fsmlab.html">seventh lab</a>. The state machine in this lab relies on one variable and a user input to determine how a program will run and react to the user input. In this state machine, there are three button user inputs. Based on which button is pressed in which state, you move to a different state. While there are three states and three buttons, each state is not directly tied to a specific button. I'm going to further disect what this state machine is doing and how we describe that behavior since the actual lab mainly deals with the coding part.</p>
 <p>In this state machine, we have one variable named <code>state</code> to define what state we are currently in. This variable has an integer range from 0-2 inclusively. This means there are three states that our program can be in. These three states have no analogy as to what's going on. There is no &quot;good&quot; state to be in and no &quot;bad&quot; state to be in. The code can have side affects based on what state we are currently in. For example, the light will turn red when we move from state 2 to state 0 via the O button. However, this red can be achieved through a variety of different pathways. Obviously, this description of behavior gets unwieldy quickly. To describe the behavior, we can use two different types of state diagrams.</p>
 <div class="container">
 <div>
@@ -171,7 +180,7 @@ W
 </div>
 <div>
 <center>
-<b>Graphical Bubble Approach</b> <br> <img src="labs/fsm.png">
+<b>Graphical Bubble Approach</b> <br> <img src="https://www.cs.drexel.edu/~src322/cs164/labs/fsm.png">
 </center>
 </div>
 </div>
@@ -452,7 +461,7 @@ F
 	<hr>
 	<div class="content">
 		<center>
-		<a href="languages/state.html\#top">Back To Top</a>
+		<a href="languages/state.html#top">Back To Top</a>
 		</center>
 	</div>
 	<hr>

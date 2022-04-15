@@ -6,11 +6,15 @@ BEGIN {
 
 NR > 1 {
 	if( $1 ~ "0.*" ) {
+		print "\t</div>"
+		print "\t<hr>"
+		print "\t<div class=\"content\">"
+
 		if( $3 = "LINK" ) {
-			printf("\t\t<br>\n\t\t<a href=\"%s\"><b>%s</b></a>\n", $4, $2 )
+			printf("\t\t<a href=\"%s\"><b>%s</b></a>\n", $4, $2 )
 		}
 		else {
-			printf("\t\t<br>\n\t\t<a href=\"%s/%s.html\"><b>%s</b></a>\n", $3, $4, $2 )
+			printf("\t\t<a href=\"%s/%s.html\"><b>%s</b></a>\n", $3, $4, $2 )
 		}
 	}
 	else {

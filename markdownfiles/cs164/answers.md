@@ -1,4 +1,4 @@
-# Answers
+# Practice Problem Answers
 
 All the answers to the practice problems throughout the textbook and
 sections.
@@ -16,6 +16,7 @@ sections.
 -   213
 -   FFEFD5
 
+---
 
 ### Chapter 2 : Binary
 
@@ -40,6 +41,7 @@ sections.
 -   1101
 -   0111
 
+---
 
 ### Chapter 4 : Boolean Algebra
 

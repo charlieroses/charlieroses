@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Introduction to Computer Science</title>
-	<base href="/home/charlie/Documents/CS164Notes/cs164/">
+	<base href="/cs164/">
 	<link rel="stylesheet" href="structure.css">
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="colors.css">
@@ -18,13 +18,21 @@
 <body>
 <div id="sidebar">
 	<div class="content">
-		<br>
+	</div>
+	<hr>
+	<div class="content">
 		<a href="introduction"><b>Introduction</b></a>
-		<br>
+	</div>
+	<hr>
+	<div class="content">
 		<a href="https://charlierose.dev"><b>My Site</b></a>
-		<br>
+	</div>
+	<hr>
+	<div class="content">
 		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
-		<br>
+	</div>
+	<hr>
+	<div class="content">
 		<a href="answers"><b>Practice Problem Answers</b></a>
 	</div>
 	<hr>
@@ -33,6 +41,7 @@
 		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
 		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
 		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
 	</div>
 	<hr>
 	<div class="content">
@@ -103,7 +112,153 @@
 	</div>
 	<hr>
 	<div class="content">
-
+<p>So we're gonna start by adding two 1 bit numbers. I'm gonna first set this up like a truth table. Remember, this is NOT a truth table. (No pun intended) We are adding these bits.</p>
+<center>
+<table>
+<tr>
+<th>
+<b>x</b>
+</th>
+<th id="hamt">
+<b>+</b>
+</th>
+<th>
+<b>y</b>
+</th>
+<th id="hamt">
+<b>=</b>
+</th>
+<th>
+<b>Carry</b>
+</th>
+<th>
+<b>Sum</b>
+</th>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
++
+</td>
+<td>
+0
+</td>
+<td>
+=
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<td>
+0
+</td>
+<td>
++
+</td>
+<td>
+1
+</td>
+<td>
+=
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
++
+</td>
+<td>
+0
+</td>
+<td>
+=
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
++
+</td>
+<td>
+1
+</td>
+<td>
+=
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+</tr>
+</table>
+</center>
+<p>Let's analyze the work we just did. First to notice, we added bits. 0 + 0 = 00. 0 + 1 = 01. 1 + 0 = 01. 1 + 1 = 10. This is all quite clearly listed above. Remember the reason we use 00, 01, 10, and 11 as our values for X and Y in that exact order. It's like in elementary school, when you have certain meats and cheeses you can make a sandwich from. You can only choose one meat and one cheese to make a sandwich, what are all the combinations to make a sandwich, This order of numbers exhausts all the possiblities of &quot;binary sandwiches&quot; we can create. Also, these are the binary representations of the numbers 0, 1, 2 and 3. This puts order into our sandwiches.<br />
+Past that tangent, we've added the 1-bit values to create a two bit value. The first bit is the sum, the second is the carry. Let's analyze these columns. Since we're going to solve this problem with boolean algebra, let's look at this from a boolean algebra perspective. If we compare X, Y, and Carry, what boolean operator is this? What about the Sum column? If we compare X, Y, and Sum what boolean opoerator creates this outcome? Try not to peek down below.</p>
+<p>If you answered the questions above correctly, you found that the two main operators used are XOR and AND. Now if we apply XOR to both X and Y, then apply AND to both X and Y, we have added two bits together and formed a <strong>Half Adder</strong>. The half adder is a basic buiding block to build a full adder and then a CPU. Down below I put circuits for the half adder. Notice how X and Y are connected to both XOR and AND. Have fun adding bits.</p>
+<center>
+<div class="container">
+<div class="simcir">
+<p>{ &quot;width&quot;:264, &quot;height&quot;:112, &quot;showToolbox&quot;:false, &quot;devices&quot;:[ {&quot;type&quot;:&quot;DC&quot;,&quot;id&quot;:&quot;dev0&quot;,&quot;x&quot;:16,&quot;y&quot;:40,&quot;label&quot;:&quot;DC&quot;}, {&quot;type&quot;:&quot;EOR&quot;,&quot;id&quot;:&quot;dev2&quot;,&quot;x&quot;:144,&quot;y&quot;:64,&quot;label&quot;:&quot;XOR&quot;}, {&quot;type&quot;:&quot;AND&quot;,&quot;id&quot;:&quot;dev1&quot;,&quot;x&quot;:144,&quot;y&quot;:16,&quot;label&quot;:&quot;AND&quot;}, {&quot;type&quot;:&quot;Toggle&quot;,&quot;id&quot;:&quot;dev3&quot;,&quot;x&quot;:64,&quot;y&quot;:16,&quot;label&quot;:&quot;X&quot;,&quot;state&quot;:{&quot;on&quot;:false}}, {&quot;type&quot;:&quot;Toggle&quot;,&quot;id&quot;:&quot;dev4&quot;,&quot;x&quot;:64,&quot;y&quot;:64,&quot;label&quot;:&quot;Y&quot;,&quot;state&quot;:{&quot;on&quot;:false}}, {&quot;type&quot;:&quot;LED&quot;,&quot;id&quot;:&quot;dev5&quot;,&quot;x&quot;:200,&quot;y&quot;:64,&quot;label&quot;:&quot;Sum&quot;}, {&quot;type&quot;:&quot;LED&quot;,&quot;id&quot;:&quot;dev6&quot;,&quot;x&quot;:200,&quot;y&quot;:16,&quot;label&quot;:&quot;Carry&quot;}], &quot;connectors&quot;:[ {&quot;from&quot;:&quot;dev1.in0&quot;,&quot;to&quot;:&quot;dev3.out0&quot;}, {&quot;from&quot;:&quot;dev1.in1&quot;,&quot;to&quot;:&quot;dev4.out0&quot;}, {&quot;from&quot;:&quot;dev2.in0&quot;,&quot;to&quot;:&quot;dev3.out0&quot;}, {&quot;from&quot;:&quot;dev2.in1&quot;,&quot;to&quot;:&quot;dev4.out0&quot;}, {&quot;from&quot;:&quot;dev3.in0&quot;,&quot;to&quot;:&quot;dev0.out0&quot;}, {&quot;from&quot;:&quot;dev4.in0&quot;,&quot;to&quot;:&quot;dev0.out0&quot;}, {&quot;from&quot;:&quot;dev5.in0&quot;,&quot;to&quot;:&quot;dev2.out0&quot;}, {&quot;from&quot;:&quot;dev6.in0&quot;,&quot;to&quot;:&quot;dev1.out0&quot;}] }</p>
+</div>
+<div class="simcir">
+<p>{ &quot;width&quot;:264, &quot;height&quot;:112, &quot;showToolbox&quot;:false, &quot;devices&quot;:[ {&quot;type&quot;:&quot;DC&quot;,&quot;id&quot;:&quot;dev0&quot;,&quot;x&quot;:16,&quot;y&quot;:40,&quot;label&quot;:&quot;DC&quot;}, {&quot;type&quot;:&quot;LED&quot;,&quot;id&quot;:&quot;dev1&quot;,&quot;x&quot;:192,&quot;y&quot;:16,&quot;label&quot;:&quot;Sum&quot;}, {&quot;type&quot;:&quot;LED&quot;,&quot;id&quot;:&quot;dev2&quot;,&quot;x&quot;:192,&quot;y&quot;:64,&quot;label&quot;:&quot;Carry&quot;}, {&quot;type&quot;:&quot;HalfAdder&quot;,&quot;id&quot;:&quot;dev3&quot;,&quot;x&quot;:112,&quot;y&quot;:40,&quot;label&quot;:&quot;HalfAdder&quot;}, {&quot;type&quot;:&quot;Toggle&quot;,&quot;id&quot;:&quot;dev4&quot;,&quot;x&quot;:64,&quot;y&quot;:64,&quot;label&quot;:&quot;Y&quot;,&quot;state&quot;:{&quot;on&quot;:false}}, {&quot;type&quot;:&quot;Toggle&quot;,&quot;id&quot;:&quot;dev5&quot;,&quot;x&quot;:64,&quot;y&quot;:16,&quot;label&quot;:&quot;X&quot;,&quot;state&quot;:{&quot;on&quot;:false}}], &quot;connectors&quot;:[ {&quot;from&quot;:&quot;dev1.in0&quot;,&quot;to&quot;:&quot;dev3.out0&quot;}, {&quot;from&quot;:&quot;dev2.in0&quot;,&quot;to&quot;:&quot;dev3.out1&quot;}, {&quot;from&quot;:&quot;dev3.in0&quot;,&quot;to&quot;:&quot;dev5.out0&quot;}, {&quot;from&quot;:&quot;dev3.in1&quot;,&quot;to&quot;:&quot;dev4.out0&quot;}, {&quot;from&quot;:&quot;dev4.in0&quot;,&quot;to&quot;:&quot;dev0.out0&quot;}, {&quot;from&quot;:&quot;dev5.in0&quot;,&quot;to&quot;:&quot;dev0.out0&quot;}] }</p>
+</div>
+</div>
+<br> <img src="booleanalgebra/imgs/halfadder.png">
+</center>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="practice-problems">Practice Problems</h2>
+<p>Enter the boolean operator that gives the same output as the CARRY column.</p>
+<textarea id="aq1">
+</textarea>
+<br>
+<button onclick="aq1Submit()">
+Submit
+</button>
+<p id="aq1Out">
+</p>
+<p>Enter the boolean operator that gives the same output as the SUM column.</p>
+<textarea id="aq2">
+</textarea>
+<br>
+<button onclick="aq2Submit()">
+Submit
+</button>
+<p id="aq2Out">
+</p>
+	</div>
+	<hr>
+	<div class="content">
+		<center>
+		<a href="booleanalgebra/halfAdder.html#top">Back To Top</a>
+		</center>
 	</div>
 	<hr>
 	<div class="content">

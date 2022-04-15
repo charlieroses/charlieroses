@@ -1,0 +1,35 @@
+#!/bin/bash
+
+MD_SRC="markdownfiles/cs164/numbers/ct.md"
+TABLE_SRC="markdownfiles/cs164/numbers/ct.tsv"
+DEST="cs164/numbers/colors.html"
+SECTIONS_FILE="utils/cs164/sections.tsv"
+
+HTML="$(cat utils/cs164/template.html)"
+CONTENT=""
+
+SIDEBAR="$(awk -f utils/cs164/generate_sidebar.awk "${SECTIONS_FILE}")"
+
+INFO="$(grep colors "${SECTIONS_FILE}")"
+SEC="$(echo "${INFO}" | cut -f1)"
+TITLE="$(echo "${INFO}" | cut -f2)"
+echo "${SEC}"
+TITLE="${SEC} : ${TITLE}"
+#NAV="$(utils/cs164/generate_navigation "${SEC}")"
+
+LINKS="\t<link rel=\"stylesheet\" href=\"numbers/numbers.css\">\n"
+
+TABLE="$(awk -f utils/cs164/generate_htmlcolortable.awk "${TABLE_SRC}")"
+
+CONTENT="$(pandoc -p "${MD_SRC}")"
+CONTENT="$(echo "${CONTENT}" | sed "s#<hr />#\t</div>\n\t<hr>\n\t<div class=\"content\">#g")"
+CONTENT="${CONTENT}\n${TABLE}"
+
+
+HTML="${HTML//"<!-- FILES -->"/"${LINKS}"}"
+HTML="${HTML//"<!-- SIDEBAR -->"/"${SIDEBAR}"}"
+HTML="${HTML//"<!-- NAVIGATION -->"/"${NAV}"}"
+HTML="${HTML//"<!-- CONTENT -->"/"${CONTENT}"}"
+HTML="${HTML//"#top"/"numbers/colors.html#top"}"
+
+echo -e "${HTML}" > "${DEST}"

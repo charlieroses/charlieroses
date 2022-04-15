@@ -81,12 +81,17 @@ do
 
 	CONTENT="$(pandoc -p "${INFILE}")"
 	CONTENT="$(echo "${CONTENT}" | sed "s#<hr />#\t</div>\n\t<hr>\n\t<div class=\"content\">#g")"
-	TITLE="${SEC} : ${TITLE}"
-	if [[ "${SEC}" != *"."* ]]
+	if [[ "${SEC}" != "0" ]]
 	then
-		TITLE="Chapter ${TITLE}"
+		TITLE="${SEC} : ${TITLE}"
+
+		if [[ "${SEC}" != *"."* ]]
+		then
+			TITLE="Chapter ${TITLE}"
+		fi
+		CONTENT="\t\t<h1>${TITLE}</h1>\n\t</div>\n\t<hr>\n\t<div class=\"content\">\n${CONTENT}"
 	fi
-	CONTENT="\t\t<h1>${TITLE}</h1>\n\t</div>\n\t<hr>\n\t<div class=\"content\">\n${CONTENT}"
+
 	if [[ "${FILE}" = "index" ]]
 	then
 		SECLIST="$(utils/cs164/generate_sectionlist "${SEC}")"
