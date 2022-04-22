@@ -35,6 +35,8 @@ At Drexel University
 
 [CS-303: Algorithmic Number Theory & Cryptography](cs303.pdf) : Char, Winter 2021
 
+[CS-440: Theory of Computation](cs440.pdf) : Nowak, Spring 2022 (Currently Taking)
+
 [CS-457: Data Structures and Algorithms I](cs457.pdf) : Gkatzelis, Fall 2021-2022
 
 [CS-536: Computer Graphics](cs536.pdf) : Breen, Fall 2021-2022
