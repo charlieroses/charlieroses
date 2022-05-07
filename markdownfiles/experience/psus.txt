@@ -1,5 +1,5 @@
 Summer Intern
-Previous
+Previous, Other
 null O
 July 13th
 July 24th, 2020
@@ -21,6 +21,6 @@ college, Penn State. We were given time limits to create pitches, presentations,
 and complete various projects.
 [[Portfolio]](https://github.com/charlieroses/PhillyStartupSprint2020)
 
-[[Blogpost : Week 1]](blogposts/20200717/phillystartup)
-[[Blogpost : Week 2]](blogposts/20200724/phillystartup2)
+[[Blogpost : Week 1]](../blogposts/20200717/phillystartup.html)
+[[Blogpost : Week 2]](../blogposts/20200724/phillystartup2.html)
 

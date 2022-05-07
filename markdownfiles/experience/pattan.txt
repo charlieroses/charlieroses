@@ -1,5 +1,5 @@
 Boot Camp and Online Teaching Assistant
-Previous
+Previous, Teaching
 null O
 June 2019
 October 2019
@@ -57,5 +57,5 @@ created the following course materials for the online Schoology Course.
 	- [Weight Java Example](files/weight.java)
 	- [Population Java Example](files/population.java)
 - [Data Collection Slides](files/datacollection.pdf)
-- [Data Management and Manipulation](files/datamanagementandmanipulations.pdf)
+- [Data Management and Manipulation](files/datamanagementandmanipulation.pdf)
 
