@@ -2,4 +2,4 @@
 # Charlie Rose
 # Building the activism section of my site
 
-utils/build_category "Activism" "All" "Ongoing Previous Events Resources"
+utils/build_categorywithsub "Activism" "All" "Ongoing Previous Events Resources"

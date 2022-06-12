@@ -30,9 +30,7 @@ recording of my workshop
 
 ### Education {.py}
 
-**BS Computer Science - Drexel University**
-
-_Anticipated Graduation June 2022_
+**BS Computer Science - Drexel University Class of 2022**
 
 | Systems and High Performance Computing Concentration
 | Theory and Computation Concentration

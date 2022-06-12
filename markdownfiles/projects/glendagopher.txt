@@ -16,7 +16,7 @@ would just be a paperclip glued to paper. Then my friend suggested I also make
 and the
 [Go Gopher](https://go.dev/blog/gopher)
 in honor of
-[my research on Plan 9](index.html#ugthesis).
+[my research on Plan 9](../research/index.html#ugthesis).
 I also adore all of
 [Renee French](https://www.instagram.com/reneefrench/)'s
 art, so I'm happy to make a pair of earrings featuring her characters.

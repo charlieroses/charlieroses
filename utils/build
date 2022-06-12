@@ -60,7 +60,9 @@ done
 
 echo "Completed main HTML files from Markdown"
 
-utils/build_experience
+utils/build_teaching
+
+utils/build_research
 
 utils/build_projects
 

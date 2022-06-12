@@ -1,51 +1,57 @@
 Making an outline because Charlie's a dipshit who forgets
 
-Order of Lectures
-	Operating Systems
-	Graphics
-	Artificial Intelligence
-	Cryptography
-	Theory
+okay nevermind this outline is a lot more important than originally planned
 
-Set Up of "chapters" lmao
-	Chapter 7 : Operating Systems : osSec
-		7.1 : Introductions??? An OSverview
-			- The idea of a central computer that people shared
-			  how that idea plays into current OS
-			- Early OS history
-			- The actual connection between hardware and software
-		7.2 : Components???
-			- Resource Managaer
-			- Service Provider
-			- Virtual Machine
-		7.3 : Types of OS???
-			- Batch OS
-			- Timesharing OS
-			- Distributed OS
-			- Virtual Machine OS
-
-		7.4 : Structure
-			- Triangle of Ones trend
-			- Monolithic structure
-			- Layered Design
-			- Microkernels
-
-		7.5 : Applications (not of but to?)
-			- Bootstrapping
-			- Sys Calls
-			- Software 
-			- Database
+e v e r y t h i n g needs a face lift fr fr
 
 
-	Chapter 8 : Graphics : graphSec
-		8.1 : Colors
-		8.2 : Image Formats
-		Bresenhams Line Drawing
-		Ray Tracing
+Overarching goal
+	- a "love letter" to cs164
+	- show people why I love CS and make them passionate about CS
+	- teach CS but also a story book feel at times
 
-	Chapter 9 : AI : aiSec
 
-	Chapter 10 : Crypto : cryptSec
+Boolean Algebra
+	- Transistors to gates
+	- simplification rules to  expressions
+Chapter 7 : Operating Systems : osSec
+	7.1 : Introductions??? An OSverview
+		- The idea of a central computer that people shared
+		  how that idea plays into current OS
+		- Early OS history
+		- The actual connection between hardware and software
+	7.2 : Components???
+		- Resource Managaer
+		- Service Provider
+		- Virtual Machine
+	7.3 : Types of OS???
+		- Batch OS
+		- Timesharing OS
+		- Distributed OS
+		- Virtual Machine OS
 
-	Chapter 11 : Theory : theoSec
+	7.4 : Structure
+		- Triangle of Ones trend
+		- Monolithic structure
+		- Layered Design
+		- Microkernels
+
+	7.5 : Applications (not of but to?)
+		- Bootstrapping
+		- Sys Calls
+		- Software 
+		- Database
+
+
+Chapter 8 : Graphics : graphSec
+	8.1 : Colors
+	8.2 : Image Formats
+	Bresenhams Line Drawing
+	Ray Tracing
+
+Chapter 9 : AI : aiSec
+
+Chapter 10 : Crypto : cryptSec
+
+Chapter 11 : Theory : theoSec
 		

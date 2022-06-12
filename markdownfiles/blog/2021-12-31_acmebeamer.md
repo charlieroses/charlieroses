@@ -5,7 +5,7 @@ styles.css
 One of my few goals this break between classes was to work on some research
 adjacent projects. The projects that are vaguely related to my research, but
 don't actually progress it. One of these off shoot project was taking my
-[[slides]](../../projects/files/proposal.pdf)
+[[slides]](../../research/files/proposal.pdf)
 from my
 [thesis proposal](../20211212/thesisproposal.html)
 and rewriting them in beamer. More specifically, writing a beamer theme so that
@@ -61,9 +61,9 @@ I have the template posted on
 [GitHub](https://github.com/charlieroses/acmebeamertemplate).
 I'll see how much time I have before classes get the above "bugs" fixed,
 
-[[Thesis Proposal Slides in Google Slides]](../../projects/files/proposal.pdf)
+[[Thesis Proposal Slides in Google Slides]](../../research/files/proposal.pdf)
 
-[[Thesis Proposal Slides in Beamer]](../../projects/files/proposalT.pdf)
+[[Thesis Proposal Slides in Beamer]](../../research/files/proposalT.pdf)
 
 <center>
 ![An image of the acme editor <a href="https://commons.wikimedia.org/w/index.php?curid=2069950">From Wikipedia</a> under the <a href="http://opensource.org/licenses/LPL-1.02" title="Lucent Public License">LPL</a>](Acme.png)
