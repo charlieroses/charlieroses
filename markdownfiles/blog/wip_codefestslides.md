@@ -8,7 +8,7 @@ This year the event is taking a hybrid format and will be hosted April 4th
 through April 9th. I don't think I'll have time to compete this year, but I
 might. It may be fun to go back after
 [my team won in 2018](../../projects/previous.html#comfy). I will be at the
-event at the [oSTEM](ongoing.html#ostem) table.
+event at the [oSTEM](previous.html#ostem) table.
 
 Leading up to the hackathon, many student organizations and sponsors were
 invited to host workshops. I hosted a workshop on behalf of oSTEM about building
@@ -18,7 +18,7 @@ that prevented me from posting my slides and breakdown.
 
 [[Slides (PDF)]](codefestslides.pdf)
 
-[Workshop Recording]()
+[Workshop Recording](https://youtu.be/CD-tzniM3N8)
 
 ---
 
