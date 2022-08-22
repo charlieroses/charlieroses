@@ -18,10 +18,6 @@
 
  src322 (AT) drexel.edu
 
-[Head Teaching Assistant](https://charlierose.dev/experience/index.html#headta)
-◆
-[Diversity Equity Inclusion Council Member](https://charlierose.dev/activism.html#cci)
-◆
-[Student Advisor of oSTEM at Drexel University](https://charlierose.dev/activism.html#ostem)
+[CCI Diversity, Equity, and Inclusion Council Coordinator](https://charlierose.dev/activism/#ccidei_coord)
 
 <https://charlierose.dev>

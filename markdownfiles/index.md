@@ -15,30 +15,35 @@
 | English (Fluent) ◆ Italian (Conversational)
 | src322 (AT) drexel.edu
 
-[Head Teaching Assistant](https://charlierose.dev/experience/index.html#headta)
-◆
-[Diversity Equity Inclusion Council Member](https://charlierose.dev/activism.html#cci)
-◆
-[Student Advisor of oSTEM at Drexel University](https://charlierose.dev/activism.html#ostem)
+[CCI Diversity, Equity, and Inclusion Council Coordinator](https://charlierose.dev/activism/#ccidei_coord)
 
 ### QWERHacks {.po}
 
 If you're here from my QWERHacks 2022 workshop, you can find my slides and a
-recording of my workshop
+breakdown of my workshop
 [here](blogposts/20220122/qwerhacks.html).
 
 
 ### Education {.py}
 
-**BS Computer Science - Drexel University Class of 2022**
+**B.S. Computer Science - Drexel University Class of 2022**
 
 | Systems and High Performance Computing Concentration
 | Theory and Computation Concentration
-| Undergraduate Thesis titled [Screen Implementations for Plan 9 on the Raspberry Pi 4](https://charlierose.dev/projects/#ugthesis) proposed. Will be completed in June 2022
+| Undergraduate Thesis titled [_Screen Implementations for Plan 9 on the Raspberry Pi 4_](research/#ugthesis)
+
+Positions Held:
+
+- [CCI Diversity, Equity, and Inclusion Council Member](activism/#ccidei_member)
+- [Head Teaching Assistant](teaching/#headta)
+- [oSTEM Founding President](activism/#ostem_fp) and [Student Advisor](activism/#ostem)
+
 
 Honors and Awards:
 
-- Alexander Van Rensselaer Service Award (2020)
+- Department of Computer Science Distinguished Service Award for Outstanding Leadership (2022)
+	[[A]](files/csaward.jpg)
+- [Alexander Van Rensselaer Service Award (2020)](blogposts/20210103/rensselaer.html)
 - Homecoming Court and Royal Dragon Runner Up (2020)
 	[[A]](files/homecoming2020_fry.jpg)
 	[[B]](files/homecoming2020_wings.jpg)
