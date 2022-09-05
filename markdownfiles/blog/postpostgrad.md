@@ -1,3 +1,69 @@
 # The Massive Post-Post-Graduation Site Update
 
-In June, 
+Here I am, as timely as ever, writing my "I graduated!" blogpost.
+Well, I did it!
+On June 9th, 2022, I walked across the stage at the CCI Commencement in the
+morning, then celebrated at the University wide commencement at Citizens Bank
+Park.
+I'm still working on collecting all the photos from the day, but I do have a
+few.
+
+<center>
+<img src="../../files/gradpic.jpg">
+<img src="../../activism/files/selfmademancap.png">
+</center>
+
+I do want to take the time to appreciate my "Self Made Man" cap since I worked
+quite hard on it and it does have some sentimental value.
+Wikipedia says "'Self-made man' is a classic phrase coined on February 2, 1842
+by Henry Clay in the United States Senate, _to describe individuals whose
+success lay within the individuals themselves, not with outside conditions_".
+I can't say that any success is individual.
+I am endlessly thankful for my countless incredible colleagues and friends that
+helped me achieve all I did.
+I'm lucky to call many of them my family now.
+I did deal with quite the absurd amount of "outside conditions" that did affect
+me, but never stopped me from having an exemplary undergraduate career.
+A lot of my "outside conditions" I faced were as a result of my identity as a
+transgender man.
+So the term "self made man" now serves as a bit of a double entendre.
+As a trans man, I've had to make my own masculinity from an "analyzing my
+identity" perspective with a little dash of "I inject testosterone" sort of way.
+Hence, the trans flag as a background.
+I also want to take the time to acknowledge how long it took for my to freehand
+paint the
+[Computer Modern](https://tug.org/FontCatalogue/computermodern/)
+font.
+I'm proud of this cap.
+
+Since June, I've been trying to update my site to reflect this massive
+accomplishment.
+I probably could've completed this task by the end of June if graduation were as
+simple as walking across a stage.
+Turns out, closing a chapter of your life and starting a new one takes a much
+more time and effort than a commencement ceremony.
+Since June, I've graduated, started working part-time and remotely as a
+[CCI DEI Council Coordinator](../../activism/#ccidei_coord),
+started to (and currently continue to) manage many medical concerns, and decided
+to move to Berkeley, CA with my twin.
+Then, in August, I actually moved to Berkeley, CA with my twin which included an
+eight day long road trip from Philadelphia to Pittsburgh to Columbus to Chicago
+to Lincoln to Denver to Salt Lake City to Reno to Berkeley.
+This was then followed with a month long road trip to IKEA to IKEA to IKEA to...
+Now, we're finally getting ourselves situated.
+We have a mostly functional, mostly unpacked apartment with a partially figured
+out chore chart and semi-consistent planned grocery trips.
+I'm still working out some health things, but that hasn't stopped me from
+working part-time remotely or applying for a more local position for the future.
+Some may say that I've been "busy".
+
+One of my many to-dos has been making my first ever CV.
+It's been a really fun process to go through my college career and write down
+everything I've accomplished.
+I has already been working on updating my website, but as I read through years
+of emails and social media and reflected on my time at Drexel, I realized how
+much I missed.
+Turns out, I have quite a bit more updating to do.
+In the meantime as I work on finishing those updates, this has been my nice
+celebratory blogpost.
+Hopefully, this isn't the last.
