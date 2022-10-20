@@ -2,11 +2,11 @@
 <html>
 <head>
 	<title>Introduction to Computer Science</title>
-	<base href="/cs164/">
+	<base href="/home/charlie/Documents/charlieroses/cs164/">
 	<link rel="stylesheet" href="structure.css">
 	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="tables.css">
 	<link rel="stylesheet" href="colors.css">
-	<link rel="stylesheet" href="syntax.css">
 	<link rel="stylesheet" href="booleanalgebra/booleanalgebra.css">
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 <script type="text/javascript" src="booleanalgebra/simcir.js"></script>
@@ -108,164 +108,153 @@
 	</div>
 	<hr>
 	<div class="content">
+		<span style="color:#FF0000"><b>Warning: CSS May Be Broken.</b>
+		My apologies for any issues this may cause.
+		I wrote bad code a very long time ago and it's taking a while to update
+		it.
+		</span>
+	</div>
+	<hr>
+	<div class="content">
 		<h1>4.3 : Complex Expressions</h1>
 	</div>
 	<hr>
 	<div class="content">
-<p>Now that we know our basic operators, we can form much larger expressions. We use larger expressions to do more math and create processors like the ones in your computer. But how do we evaluate these expressions? We break each expression into smaller expressions and use a truth table.</p>
+<p>Now that we know our basic operators, we can form much larger expressions. We use larger expressions to do more math and create processors like the ones in your computer. But how do we evaluate these expressions?</p>
 <center>
-<code>(P v Q)' ^ (R ^ (P' v Q))</code> <br> <br>
+<code>(P ∨ Q)' ∧ (R ∧ (P' ∨ Q))</code>
+</center>
+<p>We have two options. In both options, we're going to build a truth table, but we're going to do it in different ways.</p>
+<h3 id="option-a">Option A</h3>
+<p>We can plug and chug. For each row of the truth table, we can plug in values for <code>P</code>, <code>Q</code>, and <code>R</code> and simplify.</p>
+<center>
 <table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
 <tr>
 <th>
-<b>P</b>
 </th>
 <th>
-<b>Q</b>
-</th>
-<th>
-<b>R</b>
-</th>
-<th>
-<b>P v Q</b>
-</th>
-<th>
-<b>(P v Q)'</b>
-</th>
-<th>
-<b>P'</b>
-</th>
-<th>
-<b>P' v Q</b>
-</th>
-<th>
-<b>R ^ (P' v Q)</b>
-</th>
-<th>
-<b>(P v Q)' ^ (R ^ (P' v Q))</b>
 </th>
 </tr>
+</thead>
+<tbody>
 <tr>
+<th>
+</th>
 <td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td style="background-color: rgb(140,140,140)">
-0
+<code>(P ∨ Q)' ∧ (R ∧ (P' ∨ Q))</code>
 </td>
 </tr>
 <tr>
+<th>
+</th>
 <td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td style="background-color: rgb(140,140,140)">
-1
+<code>(0 ∨ 0)' ∧ (0 ∧ (0' ∨ 0))</code>
 </td>
 </tr>
 <tr>
+<th>
+</th>
 <td>
-0
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td style="background-color: rgb(140,140,140)">
-0
+<code>(0)' ∧ (0 ∧ (1 ∨ 0))</code>
 </td>
 </tr>
 <tr>
+<th>
+</th>
 <td>
-0
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-0
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td>
-1
-</td>
-<td style="background-color: rgb(140,140,140)">
-0
+<code>1 ∧ (0 ∧ (1))</code>
 </td>
 </tr>
 <tr>
+<th>
+</th>
 <td>
-1
+<code>1 ∧ 0</code>
 </td>
+</tr>
+<tr>
+<th>
+</th>
 <td>
+<code>0</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Then repeat for each row of the truth table</p>
+<h3 id="option-b">Option B</h3>
+<p>We break each expression into smaller expressions and add columns to our truth table. In the above expression, we cannot evaluate <code>(P ∨ Q)'</code> without first evalulating <code>P ∨ Q</code>. To make these operations easier, we add a column for <code>P ∨ Q</code> to our truth table and find it's value for each row. Now, when we add <code>(P ∨ Q)'</code>, instead of needed to repeform the OR calculation, we can just NOT the previous column. We continue doing this for all of the parts of the expression and build our way up:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+<col span="2">
+<col span="1" class="gray">
+<col span="4">
+<col span="1" class="gray">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th colspan="3">
+Inputs
+</th>
+<th colspan="5">
+Intermediate Steps
+</th>
+<th>
+Output
+</th>
+</tr>
+<tr>
+<th>
+</th>
+<th>
+P
+</th>
+<th>
+Q
+</th>
+<th>
+R
+</th>
+<th>
+P ∨ Q
+</th>
+<th>
+(P ∨ Q)'
+</th>
+<th>
+P'
+</th>
+<th>
+P' ∨ Q
+</th>
+<th>
+R ∧ (P' ∨ Q)
+</th>
+<th>
+(P ∨ Q)' ∧ (R ∧ (P' ∨ Q))
+</th>
+</tr>
+</thead>
+<tbody class="lined">
+<tr>
+<th>
+</th>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
 0
 </td>
 <td>
@@ -275,22 +264,61 @@
 1
 </td>
 <td>
-0
+1
+</td>
+<td>
+1
 </td>
 <td>
 0
 </td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td style="background-color: rgb(140,140,140)">
+<td class="lowlighttable">
 0
 </td>
 </tr>
 <tr>
+<th>
+</th>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td class="lowlighttable">
+1
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+1
+</td>
+<td class="lowlighttable">
+0
+</td>
 <td>
 1
 </td>
@@ -306,21 +334,20 @@
 <td>
 0
 </td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td>
-0
-</td>
-<td style="background-color: rgb(140,140,140)">
+<td class="lowlighttable">
 0
 </td>
 </tr>
 <tr>
-<td>
+<th>
+</th>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+1
+</td>
+<td class="lowlighttable">
 1
 </td>
 <td>
@@ -333,30 +360,26 @@
 1
 </td>
 <td>
-0
-</td>
-<td>
-0
+1
 </td>
 <td>
 1
 </td>
-<td>
-0
-</td>
-<td style="background-color: rgb(140,140,140)">
+<td class="lowlighttable">
 0
 </td>
 </tr>
 <tr>
-<td>
+<th>
+</th>
+<td class="lowlighttable">
 1
 </td>
-<td>
-1
+<td class="lowlighttable">
+0
 </td>
-<td>
-1
+<td class="lowlighttable">
+0
 </td>
 <td>
 1
@@ -368,27 +391,1018 @@
 0
 </td>
 <td>
-1
+0
 </td>
 <td>
-1
+0
 </td>
-<td style="background-color: rgb(140,140,140)">
+<td class="lowlighttable">
 0
 </td>
 </tr>
+<tr>
+<th>
+</th>
+<td class="lowlighttable">
+1
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td class="lowlighttable">
+1
+</td>
+<td class="lowlighttable">
+1
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td class="lowlighttable">
+1
+</td>
+<td class="lowlighttable">
+1
+</td>
+<td class="lowlighttable">
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+</tbody>
 </table>
 </center>
 	</div>
 	<hr>
 	<div class="content">
-<h2 id="de-morgans-law">De Morgan's Law</h2>
-<p>Augustus De Morgan was a British mathematician and logician. De Morgan's laws are named for him. It is through De Morgan's laws that it is possible for NOR and NAND to be universal gates. The laws are the following.</p>
+<h2 id="simplifying-expressions">Simplifying Expressions</h2>
+<p>When we have these really long boolean expressions, they can get a little unwieldy. There are ways to simplify boolean expressions, similar to the ways we simplify algebraic expressions with the associative, commutative, and distributive properties. <em>Note: I switched up my notation between sections. Sorry not sorry</em></p>
 <center>
-<code> (P ∨ Q)' == P' ∧ Q' <br> <br> (P ∧ Q)' == P' ∨ Q' </code>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+AND
+</th>
+<th>
+OR
+</th>
+</tr>
+</thead>
+<tbody class="lined">
+<tr>
+<th>
+Identity
+</th>
+<td>
+<code>1a ≡ a</code>
+</td>
+<td>
+<code>0 + a ≡ a</code>
+</td>
+</tr>
+<tr>
+<th>
+Null Elements
+</th>
+<td>
+<code>0a ≡ 0</code>
+</td>
+<td>
+<code>1 + a ≡ 1</code>
+</td>
+</tr>
+<tr>
+<th>
+Complement
+</th>
+<td>
+<code>aa' ≡ 0</code>
+</td>
+<td>
+<code>a + a' ≡ 1</code>
+</td>
+</tr>
+<tr>
+<th>
+Indempotent
+</th>
+<td>
+<code>aa ≡ a</code>
+</td>
+<td>
+<code>a + a ≡ a</code>
+</td>
+</tr>
+<tr>
+<th>
+Commutative
+</th>
+<td>
+<code>ab ≡ ba</code>
+</td>
+<td>
+<code>a + b ≡ b + a</code>
+</td>
+</tr>
+<tr>
+<th>
+Associative
+</th>
+<td>
+<code>(ab)c ≡ a(bc)</code>
+</td>
+<td>
+<code>(a + b) + c ≡ a + (b + c)</code>
+</td>
+</tr>
+<tr>
+<th>
+Distributive
+</th>
+<td>
+<code>a(b + c) ≡ ab + ac</code>
+</td>
+<td>
+<code>a + (bc) ≡ (a + b)(a + c)</code>
+</td>
+</tr>
+<tr>
+<th>
+Absorption
+</th>
+<td>
+<code>a(a + b) ≡ a</code>
+</td>
+<td>
+<code>a + ab ≡ a</code>
+</td>
+</tr>
+<tr>
+<th>
+De Morgan's Law
+</th>
+<td>
+<code>(ab)' ≡ a' + b'</code>
+</td>
+<td>
+<code>(a + b)' ≡ a'b'</code>
+</td>
+</tr>
+<tr>
+<th>
+Involution
+</th>
+<td colspan="2">
+<code>(a')' ≡ a</code>
+</td>
+</tr>
+</tbody>
+</table>
 </center>
-<p>De Morgans law is the act of distributing a negation. The negation is distributed to each of the inner terms, then the operation is flipped. The AND is turned into an OR, the OR is turned into an AND. This is why NAND and NOR are universal gates.</p>
-<p>Above we see a NAND turned into a NOT val OR NOT val expression. A NOR is turned into a NOT val AND NOT val expression. Since we can create a negation by putting the same value into a NOR or NAND gate twice, we can do (x NAND x) NAND (y NAND y) (x' ∧ y')' to get (x ∨ y). The same applies to NOR. We can do (x NOR x) NOR (y NOR y) (x' ∨ y')' to get (x ∧ y).</p>
+<p>This may look extremely overwhelming at first, but I promise, it's not that bad. A lot of these are more intuitive than you'd think. Let's look at the truth tables for the identities:</p>
+<center>
+<div class="container">
+<table>
+<colgroup>
+<col span="1" class="red">
+<col span="1">
+<col span="1" class="gray">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+a
+</th>
+<th>
+1
+</th>
+<th>
+1a
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col span="1" class="red">
+<col span="1">
+<col span="1" class="gray">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+a
+</th>
+<th>
+1
+</th>
+<th>
+0 + a
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+<p>As you can see, after both operations, our output is the same as our <code>a</code> input. Go through the truth tables for the rest of these properties. They're pretty neat.</p>
+<p>Let's actually apply these rules and see them in action. Remember our really nasty boolean expression at the top? Let's see if we can make it a little less nasty with some simplification rules. First, let's fix that notation up:</p>
+<center>
+<code>(P ∨ Q)' ∧ (R ∧ (P' ∨ Q)) --&gt; (P + Q)'(R(P' + Q))</code>
+</center>
+<p>Much better, let's see what we can do here:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+De Morgan's Law
+</th>
+<td>
+<code><span class="hi">(P + Q)'</span>(R(P' + Q))</code>
+</td>
+<td>
+<code><span class="hi">(P'Q')</span>(R(P' + Q))</code>
+</td>
+</tr>
+<tr>
+<th>
+Distributive AND
+</th>
+<td>
+<code>(P'Q')<span class="hi">(R(P' + Q))</span></code>
+</td>
+<td>
+<code>(P'Q')<span class="hi">(RP' + RQ)</span></code>
+</td>
+</tr>
+<tr>
+<th>
+Distributive AND
+</th>
+<td>
+<code><span class="hi">(P'Q')(RP' + RQ)</span></code>
+</td>
+<td>
+<code><span class="hi">P'Q'RP' + P'Q'RQ</span></code>
+</td>
+</tr>
+<tr>
+<th>
+Commutative AND
+</th>
+<td>
+<code><span class="hi">P'Q'RP'</span> + P'Q'RQ</code>
+</td>
+<td>
+<code><span class="hi">P'P'Q'R</span> + P'Q'RQ</code>
+</td>
+</tr>
+<tr>
+<th>
+Indempotent AND
+</th>
+<td>
+<code><span class="hi">P'P'</span>Q'R + P'Q'RQ</code>
+</td>
+<td>
+<code><span class="hi">P'</span>Q'R + P'Q'RQ</code>
+</td>
+</tr>
+<tr>
+<th>
+Commutative AND
+</th>
+<td>
+<code>P'Q'R + <span class="hi">P'Q'RQ</span></code>
+</td>
+<td>
+<code>P'Q'R + <span class="hi">P'Q'QR</span></code>
+</td>
+</tr>
+<tr>
+<th>
+Complement AND
+</th>
+<td>
+<code>P'Q'R + P'<span class="hi">Q'Q</span>R</code>
+</td>
+<td>
+<code>P'Q'R + P'<span class="hi">0</span>R</code>
+</td>
+</tr>
+<tr>
+<th>
+Null Elements AND
+</th>
+<td>
+<code>P'Q'R + <span class="hi">P'0R</span></code>
+</td>
+<td>
+<code>P'Q'R + <span class="hi">0</span></code>
+</td>
+</tr>
+<tr>
+<th>
+Identity OR
+</th>
+<td>
+<code><span class="hi">P'Q'R + 0</span></code>
+</td>
+<td>
+<code><span class="hi">P'Q'R</span></code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Well that's <em>much</em> easier to read, but how can we be sure that <code>P'Q'R</code> is actually equivalent to <code>(P + Q)'(R(P' + Q))</code>? With a truth table of course!</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+<col span="2">
+<col span="1" class="gray">
+<col span="1" class="gray">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+P
+</th>
+<th>
+Q
+</th>
+<th>
+R
+</th>
+<th>
+(P + Q)'(R(P' + Q))
+</th>
+<th>
+P'Q'R
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td class="lowlighttable">
+1
+</td>
+<td class="lowlighttable">
+1
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="sum-of-min-terms">Sum of Min Terms</h2>
+<p>You may find yourself thinking &quot;Hmmm, I know how to turn an expression into a truth table, but what if I have a truth table? How do I get an expression from it?&quot; Well I'm glad you <del>let me create hypothetical questions for you</del> asked Let's look at this completely random truth table:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+<col span="1">
+<col span="1" class="gray">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+x
+</th>
+<th>
+y
+</th>
+<th>
+o
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td class="lowlighttable">
+1
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+1
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>You may recognize this as XOR, but as we covered before, XOR is a derived gate, its a logic gate created by combining our basic AND, OR, and NOT operators. How can we use this truth table to figure out how to compute <code>o</code> with only AND, OR, and NOT gates? We'll use a <strong>sum of min-terms</strong>. A sum of min-terms is fairly self explanatory once you understand what it is. We're going to find all the smallest (minimum) terms needed to create the expression and use an OR (<code>+</code>) to combine them. So how do we actually do this?</p>
+<p>First, identify your true rows:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+<col span="1">
+<col span="1" class="gray">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+x
+</th>
+<th>
+y
+</th>
+<th>
+o
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<span class="hi">0</span>
+</td>
+<td>
+<span class="hi">1</span>
+</td>
+<td>
+<span class="hi">1</span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<span class="hi">1</span>
+</td>
+<td>
+<span class="hi">0</span>
+</td>
+<td>
+<span class="hi">1</span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>We'll notice <code>o</code> is true in two situations: when <code>x=0,y=1</code> and when <code>x=1,y=0</code>. Let's look at <code>x=0,y=1</code> first. I want to write an expression that is true for <em>only</em> this one case and false for all other combinations.</p>
+<p>What boolean operator is true in only one row?</p>
+<p>If you thought <span class="hide">AND</span>, you're correct.</p>
+<p><code>x AND y</code> is only true when <code>x=1,y=1</code>. However, we want an expression that's true only when <code>x=0,y=1</code>. To get this, we'll simply apply a NOT to <code>x</code> to get:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+<col span="1">
+<col span="1" class="gray">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+x
+</th>
+<th>
+y
+</th>
+<th>
+x'y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<span class="hi">0</span>
+</td>
+<td>
+<span class="hi">1</span>
+</td>
+<td>
+<span class="hi">1</span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Now we've isolated one of the true rows. We can apply this same concept to our <code>x=1,y=0</code> row to get <code>xy'</code>. This gives us two min-terms: <code>x'y</code> and <code>xy'</code>. We can now use an OR to combine these to get the resulting sum of min-terms <code>x'y + xy'</code>. Don't believe me? Let's look at the truth table:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+<col span="1">
+<col span="1" class="gray">
+<col span="1">
+<col span="1" class="gray">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+x
+</th>
+<th>
+y
+</th>
+<th>
+x'y
+</th>
+<th>
+xy'
+</th>
+<th>
+o = x'y + xy'
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td class="lowlighttable">
+0
+</td>
+<td class="lowlighttable">
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+1
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td class="lowlighttable">
+1
+</td>
+<td class="lowlighttable">
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td class="lowlighttable">
+1
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td class="lowlighttable">
+1
+</td>
+<td class="lowlighttable">
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td class="lowlighttable">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>And there we go! We got the exact same thing we started with! This works for boolean expressions with more variables too. Later, you'll see the full adder which takes in three inputs. Once you've read that section, try to make a sum of min-terms for its truth table. Come back here to verify your answer:</p>
+<p>Carry: <span class="hide"><code>x'yc + xy'c + xyc' + xyc</code></span></p>
+<p>Sum: <span class="hide"><code>x'y'c + x'yc' + xy'c' + xyc</code></span></p>
 	</div>
 	<hr>
 	<div class="content">

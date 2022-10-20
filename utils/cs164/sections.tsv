@@ -1,43 +1,43 @@
-Number	Title	Directory	File
-0	Introduction		introduction
-0	My Site	LINK	https://charlierose.dev
-0	Other Notes and Reference	LINK	https://charlierose.dev/ref/
-0	Practice Problem Answers		answers
-1	Number Bases	numbers	index
-1.1	Base-10	numbers	baseTen
-1.2	Base-2	numbers	baseTwo
-1.3	Base-16	numbers	baseSixteen
-1.4	HTML Colors	numbers	colors
-2	Binary	binary	index
-2.1	Converting Between Bases	binary	convertBin
-2.2	Negative Numbers	binary	negativebin
-2.3	Fractional Binary	binary	fracBinary
-2.4	Addition and Subtration	binary	addSubBin
-3	Character Sets	ascii	index
-3.1	ASCII	ascii	ascii
-3.2	Unicode	ascii	unicode
-4	Boolean Algebra	booleanalgebra	index
-4.1	An Overview	booleanalgebra	boolEng
-4.2	Basic Operators	booleanalgebra	ttIntro
-4.2.1	Not	booleanalgebra	not
-4.2.2	Or	booleanalgebra	or
-4.2.3	And	booleanalgebra	and
-4.2.4	Nor	booleanalgebra	nor
-4.2.5	Nand	booleanalgebra	nand
-4.2.6	Xor	booleanalgebra	xor
-4.3	Complex Expressions	booleanalgebra	boolExpr
-4.4	Half Adder	booleanalgebra	halfAdder
-4.5	Full Adder	booleanalgebra	fullAdder
-4.6	Arithmetic Logic Unit	booleanalgebra	alu
-4.7	Digital Logic Workbench	booleanalgebra	circuit
-4.8	Minecraft	booleanalgebra	minecraft
-5	The CARDIAC	cardiac	index
-5.1	The Hardware	cardiac	hardware
-5.2	Programming the CARDIAC	cardiac	program
-5.3	Assembly and Machine Language	cardiac	assMach
-6	Languages	languages	index
-6.1	Processing Language	languages	langInfo
-6.2	Markup Languages	languages	markup
-6.3	Programming Languages	languages	program
-6.4	Tranquility	languages	tranq
-6.5	State and State Machines	languages	state
+Number	Title	Directory	File	Updated?
+0	Introduction		introduction	
+0	My Site	LINK	https://charlierose.dev	
+0	Other Notes and Reference	LINK	https://charlierose.dev/ref/	
+0	Practice Problem Answers		answers	
+1	Number Bases	numbers	index	
+1.1	Base-10	numbers	baseTen	
+1.2	Base-2	numbers	baseTwo	
+1.3	Base-16	numbers	baseSixteen	
+1.4	HTML Colors	numbers	colors	
+2	Binary	binary	index	
+2.1	Converting Between Bases	binary	convertBin	
+2.2	Negative Numbers	binary	negativebin	
+2.3	Fractional Binary	binary	fracBinary	
+2.4	Addition and Subtration	binary	addSubBin	
+3	Character Sets	ascii	index	
+3.1	ASCII	ascii	ascii	
+3.2	Unicode	ascii	unicode	
+4	Boolean Algebra	booleanalgebra	index	
+4.1	An Overview	booleanalgebra	boolEng	
+4.2	Basic Operators	booleanalgebra	ttIntro	
+4.2.1	Not	booleanalgebra	not	
+4.2.2	Or	booleanalgebra	or	
+4.2.3	And	booleanalgebra	and	
+4.2.4	Nor	booleanalgebra	nor	
+4.2.5	Nand	booleanalgebra	nand	
+4.2.6	Xor	booleanalgebra	xor	
+4.3	Complex Expressions	booleanalgebra	boolExpr	X
+4.4	Half Adder	booleanalgebra	halfAdder	
+4.5	Full Adder	booleanalgebra	fullAdder	
+4.6	Arithmetic Logic Unit	booleanalgebra	alu	
+4.7	Digital Logic Workbench	booleanalgebra	circuit	
+4.8	Minecraft	booleanalgebra	minecraft	
+5	The CARDIAC	cardiac	index	
+5.1	The Hardware	cardiac	hardware	
+5.2	Programming the CARDIAC	cardiac	program	
+5.3	Assembly and Machine Language	cardiac	assMach	
+6	Languages	languages	index	
+6.1	Processing Language	languages	langInfo	
+6.2	Markup Languages	languages	markup	
+6.3	Programming Languages	languages	program	
+6.4	Tranquility	languages	tranq	
+6.5	State and State Machines	languages	state	

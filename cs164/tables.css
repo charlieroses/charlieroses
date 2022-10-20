@@ -1,0 +1,56 @@
+/*############################### TABULAR CSS ################################*/
+/* Generic CSS for all the truth tables and such                              */
+
+table {
+	background-color: #EEEEEE;
+	border-collapse: collapse;
+	border-radius: 5px;
+}
+
+thead {
+	border-bottom: 4px solid #0000FF55;
+}
+
+tbody tr {
+	border-top: 3px solid #0000FF33;
+}
+
+
+colgroup .gray {
+	border-right: 3px solid #00000033;
+}
+
+colgroup .red {
+	border-right: 5px solid #FF000055;
+}
+
+th {
+	text-align: center;
+	padding-left: 1ch;
+	padding-right: 1ch;
+	padding-top: 0.5ch;
+	padding-bottom: 0.5ch;
+	white-space: nowrap;
+	height: 1.5ch;
+}
+td {
+	text-align: center;
+	padding-left: 1ch;
+	padding-right: 1ch;
+	padding-top: 0.5ch;
+	padding-bottom: 0.5ch;
+	white-space: nowrap;
+}
+/*
+td.lowlighttable {
+	background-color: rgb(140,140,140);
+}
+td.highlighttable {
+	background-color: rgb(190,190,190);
+}
+*/
+td code {
+	background-color: transparent;
+}
+
+

@@ -67,13 +67,42 @@ tab5 {
 	padding-left: 5em;
 }
 
-td {
-	text-align: center;
-	background-color: rgb(160,160,160);
+
+code {
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	padding: 1px;
+	padding-left: 4px;
+	padding-right: 4px;
+	font-size: 120%;
 }
-th {
-	text-align: center;
-	background-color: #3456a3;
+pre {
+	background-color: rgb(215, 215, 215);
+	border-radius: 5px;
+	padding: 5px;
+}
+pre > code {
+	background-color: transparent; !important
+	padding: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 
+.hide {
+	background-color: #000000;
+}
+.hide code {
+	background-color: transparent;
+}
+.hide:hover {
+	background-color: transparent;
+}
+
+.hi {
+	background-color: #FFFF0055;
+}
+
+del {
+	text-decoration-color: #FF0000;
+}

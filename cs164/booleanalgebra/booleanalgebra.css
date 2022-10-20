@@ -20,17 +20,3 @@
 }
 
 
-td {
-	text-align: center;
-	background-color: rgb(160,160,160);
-		width: 100px;
-	height: 50px;
-}
-
-th {
-	text-align: center;
-	background-color: #3456a3;
-	width: 100px;
-	height: 50px;
-}
-
