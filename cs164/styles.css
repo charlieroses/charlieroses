@@ -106,3 +106,10 @@ pre > code {
 del {
 	text-decoration-color: #FF0000;
 }
+
+.sidebyside > * {
+	display: inline-block;
+	margin: 25px;
+	vertical-align: middle;
+}
+

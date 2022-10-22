@@ -1,0 +1,1812 @@
+Just making this super fast so that I can reference this page in the
+Tranquility man pages.
+
+This is a list snagged from [W3 Schools](https://www.w3schools.com/html) with
+140 colors that every modern browser should recognize by name.
+
+---
+
+<center>
+<div class="sidebyside">
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<th></th>
+<th colspan="3">Alphabetical</th>
+</thead>
+<tbody>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F0F8FF "></td>
+<td class="name">AliceBlue</td>
+<td class="hex">#F0F8FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FAEBD7 "></td>
+<td class="name">AntiqueWhite</td>
+<td class="hex">#FAEBD7</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00FFFF "></td>
+<td class="name">Aqua</td>
+<td class="hex">#00FFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #7FFFD4 "></td>
+<td class="name">Aquamarine</td>
+<td class="hex">#7FFFD4</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F0FFFF "></td>
+<td class="name">Azure</td>
+<td class="hex">#F0FFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F5F5DC "></td>
+<td class="name">Beige</td>
+<td class="hex">#F5F5DC</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFE4C4 "></td>
+<td class="name">Bisque</td>
+<td class="hex">#FFE4C4</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #000000 "></td>
+<td class="name">Black</td>
+<td class="hex">#000000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFEBCD "></td>
+<td class="name">BlanchedAlmond</td>
+<td class="hex">#FFEBCD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #0000FF "></td>
+<td class="name">Blue</td>
+<td class="hex">#0000FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #8A2BE2 "></td>
+<td class="name">BlueViolet</td>
+<td class="hex">#8A2BE2</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #A52A2A "></td>
+<td class="name">Brown</td>
+<td class="hex">#A52A2A</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DEB887 "></td>
+<td class="name">BurlyWood</td>
+<td class="hex">#DEB887</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #5F9EA0 "></td>
+<td class="name">CadetBlue</td>
+<td class="hex">#5F9EA0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #7FFF00 "></td>
+<td class="name">Chartreuse</td>
+<td class="hex">#7FFF00</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #D2691E "></td>
+<td class="name">Chocolate</td>
+<td class="hex">#D2691E</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF7F50 "></td>
+<td class="name">Coral</td>
+<td class="hex">#FF7F50</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #6495ED "></td>
+<td class="name">CornflowerBlue</td>
+<td class="hex">#6495ED</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFF8DC "></td>
+<td class="name">Cornsilk</td>
+<td class="hex">#FFF8DC</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DC143C "></td>
+<td class="name">Crimson</td>
+<td class="hex">#DC143C</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00FFFF "></td>
+<td class="name">Cyan</td>
+<td class="hex">#00FFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00008B "></td>
+<td class="name">DarkBlue</td>
+<td class="hex">#00008B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #008B8B "></td>
+<td class="name">DarkCyan</td>
+<td class="hex">#008B8B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #B8860B "></td>
+<td class="name">DarkGoldenRod</td>
+<td class="hex">#B8860B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #A9A9A9 "></td>
+<td class="name">DarkGray</td>
+<td class="hex">#A9A9A9</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #A9A9A9 "></td>
+<td class="name">DarkGrey</td>
+<td class="hex">#A9A9A9</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #006400 "></td>
+<td class="name">DarkGreen</td>
+<td class="hex">#006400</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #BDB76B "></td>
+<td class="name">DarkKhaki</td>
+<td class="hex">#BDB76B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #8B008B "></td>
+<td class="name">DarkMagenta</td>
+<td class="hex">#8B008B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #556B2F "></td>
+<td class="name">DarkOliveGreen</td>
+<td class="hex">#556B2F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF8C00 "></td>
+<td class="name">DarkOrange</td>
+<td class="hex">#FF8C00</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #9932CC "></td>
+<td class="name">DarkOrchid</td>
+<td class="hex">#9932CC</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #8B0000 "></td>
+<td class="name">DarkRed</td>
+<td class="hex">#8B0000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #E9967A "></td>
+<td class="name">DarkSalmon</td>
+<td class="hex">#E9967A</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #8FBC8F "></td>
+<td class="name">DarkSeaGreen</td>
+<td class="hex">#8FBC8F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #483D8B "></td>
+<td class="name">DarkSlateBlue</td>
+<td class="hex">#483D8B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #2F4F4F "></td>
+<td class="name">DarkSlateGray</td>
+<td class="hex">#2F4F4F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #2F4F4F "></td>
+<td class="name">DarkSlateGrey</td>
+<td class="hex">#2F4F4F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00CED1 "></td>
+<td class="name">DarkTurquoise</td>
+<td class="hex">#00CED1</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #9400D3 "></td>
+<td class="name">DarkViolet</td>
+<td class="hex">#9400D3</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF1493 "></td>
+<td class="name">DeepPink</td>
+<td class="hex">#FF1493</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00BFFF "></td>
+<td class="name">DeepSkyBlue</td>
+<td class="hex">#00BFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #696969 "></td>
+<td class="name">DimGray</td>
+<td class="hex">#696969</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #696969 "></td>
+<td class="name">DimGrey</td>
+<td class="hex">#696969</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #1E90FF "></td>
+<td class="name">DodgerBlue</td>
+<td class="hex">#1E90FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #B22222 "></td>
+<td class="name">FireBrick</td>
+<td class="hex">#B22222</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFAF0 "></td>
+<td class="name">FloralWhite</td>
+<td class="hex">#FFFAF0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #228B22 "></td>
+<td class="name">ForestGreen</td>
+<td class="hex">#228B22</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF00FF "></td>
+<td class="name">Fuchsia</td>
+<td class="hex">#FF00FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DCDCDC "></td>
+<td class="name">Gainsboro</td>
+<td class="hex">#DCDCDC</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F8F8FF "></td>
+<td class="name">GhostWhite</td>
+<td class="hex">#F8F8FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFD700 "></td>
+<td class="name">Gold</td>
+<td class="hex">#FFD700</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DAA520 "></td>
+<td class="name">GoldenRod</td>
+<td class="hex">#DAA520</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #808080 "></td>
+<td class="name">Gray</td>
+<td class="hex">#808080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #808080 "></td>
+<td class="name">Grey</td>
+<td class="hex">#808080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #008000 "></td>
+<td class="name">Green</td>
+<td class="hex">#008000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #ADFF2F "></td>
+<td class="name">GreenYellow</td>
+<td class="hex">#ADFF2F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F0FFF0 "></td>
+<td class="name">HoneyDew</td>
+<td class="hex">#F0FFF0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF69B4 "></td>
+<td class="name">HotPink</td>
+<td class="hex">#FF69B4</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #CD5C5C "></td>
+<td class="name">IndianRed</td>
+<td class="hex">#CD5C5C</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #4B0082 "></td>
+<td class="name">Indigo</td>
+<td class="hex">#4B0082</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFFF0 "></td>
+<td class="name">Ivory</td>
+<td class="hex">#FFFFF0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F0E68C "></td>
+<td class="name">Khaki</td>
+<td class="hex">#F0E68C</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #E6E6FA "></td>
+<td class="name">Lavender</td>
+<td class="hex">#E6E6FA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFF0F5 "></td>
+<td class="name">LavenderBlush</td>
+<td class="hex">#FFF0F5</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #7CFC00 "></td>
+<td class="name">LawnGreen</td>
+<td class="hex">#7CFC00</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFACD "></td>
+<td class="name">LemonChiffon</td>
+<td class="hex">#FFFACD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #ADD8E6 "></td>
+<td class="name">LightBlue</td>
+<td class="hex">#ADD8E6</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F08080 "></td>
+<td class="name">LightCoral</td>
+<td class="hex">#F08080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #E0FFFF "></td>
+<td class="name">LightCyan</td>
+<td class="hex">#E0FFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FAFAD2 "></td>
+<td class="name">LightGoldenRodYellow</td>
+<td class="hex">#FAFAD2</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #D3D3D3 "></td>
+<td class="name">LightGray</td>
+<td class="hex">#D3D3D3</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #D3D3D3 "></td>
+<td class="name">LightGrey</td>
+<td class="hex">#D3D3D3</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #90EE90 "></td>
+<td class="name">LightGreen</td>
+<td class="hex">#90EE90</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFB6C1 "></td>
+<td class="name">LightPink</td>
+<td class="hex">#FFB6C1</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFA07A "></td>
+<td class="name">LightSalmon</td>
+<td class="hex">#FFA07A</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #20B2AA "></td>
+<td class="name">LightSeaGreen</td>
+<td class="hex">#20B2AA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #87CEFA "></td>
+<td class="name">LightSkyBlue</td>
+<td class="hex">#87CEFA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #778899 "></td>
+<td class="name">LightSlateGray</td>
+<td class="hex">#778899</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #778899 "></td>
+<td class="name">LightSlateGrey</td>
+<td class="hex">#778899</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #B0C4DE "></td>
+<td class="name">LightSteelBlue</td>
+<td class="hex">#B0C4DE</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFFE0 "></td>
+<td class="name">LightYellow</td>
+<td class="hex">#FFFFE0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00FF00 "></td>
+<td class="name">Lime</td>
+<td class="hex">#00FF00</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #32CD32 "></td>
+<td class="name">LimeGreen</td>
+<td class="hex">#32CD32</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FAF0E6 "></td>
+<td class="name">Linen</td>
+<td class="hex">#FAF0E6</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF00FF "></td>
+<td class="name">Magenta</td>
+<td class="hex">#FF00FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #800000 "></td>
+<td class="name">Maroon</td>
+<td class="hex">#800000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #66CDAA "></td>
+<td class="name">MediumAquaMarine</td>
+<td class="hex">#66CDAA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #0000CD "></td>
+<td class="name">MediumBlue</td>
+<td class="hex">#0000CD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #BA55D3 "></td>
+<td class="name">MediumOrchid</td>
+<td class="hex">#BA55D3</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #9370DB "></td>
+<td class="name">MediumPurple</td>
+<td class="hex">#9370DB</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #3CB371 "></td>
+<td class="name">MediumSeaGreen</td>
+<td class="hex">#3CB371</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #7B68EE "></td>
+<td class="name">MediumSlateBlue</td>
+<td class="hex">#7B68EE</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00FA9A "></td>
+<td class="name">MediumSpringGreen</td>
+<td class="hex">#00FA9A</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #48D1CC "></td>
+<td class="name">MediumTurquoise</td>
+<td class="hex">#48D1CC</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #C71585 "></td>
+<td class="name">MediumVioletRed</td>
+<td class="hex">#C71585</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #191970 "></td>
+<td class="name">MidnightBlue</td>
+<td class="hex">#191970</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F5FFFA "></td>
+<td class="name">MintCream</td>
+<td class="hex">#F5FFFA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFE4E1 "></td>
+<td class="name">MistyRose</td>
+<td class="hex">#FFE4E1</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFE4B5 "></td>
+<td class="name">Moccasin</td>
+<td class="hex">#FFE4B5</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFDEAD "></td>
+<td class="name">NavajoWhite</td>
+<td class="hex">#FFDEAD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #000080 "></td>
+<td class="name">Navy</td>
+<td class="hex">#000080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FDF5E6 "></td>
+<td class="name">OldLace</td>
+<td class="hex">#FDF5E6</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #808000 "></td>
+<td class="name">Olive</td>
+<td class="hex">#808000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #6B8E23 "></td>
+<td class="name">OliveDrab</td>
+<td class="hex">#6B8E23</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFA500 "></td>
+<td class="name">Orange</td>
+<td class="hex">#FFA500</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF4500 "></td>
+<td class="name">OrangeRed</td>
+<td class="hex">#FF4500</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DA70D6 "></td>
+<td class="name">Orchid</td>
+<td class="hex">#DA70D6</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #EEE8AA "></td>
+<td class="name">PaleGoldenRod</td>
+<td class="hex">#EEE8AA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #98FB98 "></td>
+<td class="name">PaleGreen</td>
+<td class="hex">#98FB98</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #AFEEEE "></td>
+<td class="name">PaleTurquoise</td>
+<td class="hex">#AFEEEE</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DB7093 "></td>
+<td class="name">PaleVioletRed</td>
+<td class="hex">#DB7093</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFEFD5 "></td>
+<td class="name">PapayaWhip</td>
+<td class="hex">#FFEFD5</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFDAB9 "></td>
+<td class="name">PeachPuff</td>
+<td class="hex">#FFDAB9</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #CD853F "></td>
+<td class="name">Peru</td>
+<td class="hex">#CD853F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFC0CB "></td>
+<td class="name">Pink</td>
+<td class="hex">#FFC0CB</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DDA0DD "></td>
+<td class="name">Plum</td>
+<td class="hex">#DDA0DD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #B0E0E6 "></td>
+<td class="name">PowderBlue</td>
+<td class="hex">#B0E0E6</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #800080 "></td>
+<td class="name">Purple</td>
+<td class="hex">#800080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #663399 "></td>
+<td class="name">RebeccaPurple</td>
+<td class="hex">#663399</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF0000 "></td>
+<td class="name">Red</td>
+<td class="hex">#FF0000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #BC8F8F "></td>
+<td class="name">RosyBrown</td>
+<td class="hex">#BC8F8F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #4169E1 "></td>
+<td class="name">RoyalBlue</td>
+<td class="hex">#4169E1</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #8B4513 "></td>
+<td class="name">SaddleBrown</td>
+<td class="hex">#8B4513</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FA8072 "></td>
+<td class="name">Salmon</td>
+<td class="hex">#FA8072</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F4A460 "></td>
+<td class="name">SandyBrown</td>
+<td class="hex">#F4A460</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #2E8B57 "></td>
+<td class="name">SeaGreen</td>
+<td class="hex">#2E8B57</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFF5EE "></td>
+<td class="name">SeaShell</td>
+<td class="hex">#FFF5EE</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #A0522D "></td>
+<td class="name">Sienna</td>
+<td class="hex">#A0522D</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #C0C0C0 "></td>
+<td class="name">Silver</td>
+<td class="hex">#C0C0C0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #87CEEB "></td>
+<td class="name">SkyBlue</td>
+<td class="hex">#87CEEB</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #6A5ACD "></td>
+<td class="name">SlateBlue</td>
+<td class="hex">#6A5ACD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #708090 "></td>
+<td class="name">SlateGray</td>
+<td class="hex">#708090</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #708090 "></td>
+<td class="name">SlateGrey</td>
+<td class="hex">#708090</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFAFA "></td>
+<td class="name">Snow</td>
+<td class="hex">#FFFAFA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00FF7F "></td>
+<td class="name">SpringGreen</td>
+<td class="hex">#00FF7F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #4682B4 "></td>
+<td class="name">SteelBlue</td>
+<td class="hex">#4682B4</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #D2B48C "></td>
+<td class="name">Tan</td>
+<td class="hex">#D2B48C</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #008080 "></td>
+<td class="name">Teal</td>
+<td class="hex">#008080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #D8BFD8 "></td>
+<td class="name">Thistle</td>
+<td class="hex">#D8BFD8</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF6347 "></td>
+<td class="name">Tomato</td>
+<td class="hex">#FF6347</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #40E0D0 "></td>
+<td class="name">Turquoise</td>
+<td class="hex">#40E0D0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #EE82EE "></td>
+<td class="name">Violet</td>
+<td class="hex">#EE82EE</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F5DEB3 "></td>
+<td class="name">Wheat</td>
+<td class="hex">#F5DEB3</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFFFF "></td>
+<td class="name">White</td>
+<td class="hex">#FFFFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F5F5F5 "></td>
+<td class="name">WhiteSmoke</td>
+<td class="hex">#F5F5F5</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFF00 "></td>
+<td class="name">Yellow</td>
+<td class="hex">#FFFF00</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #9ACD32 "></td>
+<td class="name">YellowGreen</td>
+<td class="hex">#9ACD32</td>
+</tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<th></th>
+<th colspan="3">By Color</th>
+</thead>
+<tbody>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF4500 "></td>
+<td class="name">OrangeRed</td>
+<td class="hex">#FF4500</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF6347 "></td>
+<td class="name">Tomato</td>
+<td class="hex">#FF6347</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF0000 "></td>
+<td class="name">Red</td>
+<td class="hex">#FF0000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DC143C "></td>
+<td class="name">Crimson</td>
+<td class="hex">#DC143C</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #B22222 "></td>
+<td class="name">FireBrick</td>
+<td class="hex">#B22222</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #A52A2A "></td>
+<td class="name">Brown</td>
+<td class="hex">#A52A2A</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #8B0000 "></td>
+<td class="name">DarkRed</td>
+<td class="hex">#8B0000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #800000 "></td>
+<td class="name">Maroon</td>
+<td class="hex">#800000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #CD5C5C "></td>
+<td class="name">IndianRed</td>
+<td class="hex">#CD5C5C</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F08080 "></td>
+<td class="name">LightCoral</td>
+<td class="hex">#F08080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FA8072 "></td>
+<td class="name">Salmon</td>
+<td class="hex">#FA8072</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DB7093 "></td>
+<td class="name">PaleVioletRed</td>
+<td class="hex">#DB7093</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #C71585 "></td>
+<td class="name">MediumVioletRed</td>
+<td class="hex">#C71585</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF1493 "></td>
+<td class="name">DeepPink</td>
+<td class="hex">#FF1493</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF69B4 "></td>
+<td class="name">HotPink</td>
+<td class="hex">#FF69B4</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFB6C1 "></td>
+<td class="name">LightPink</td>
+<td class="hex">#FFB6C1</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFC0CB "></td>
+<td class="name">Pink</td>
+<td class="hex">#FFC0CB</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #E6E6FA "></td>
+<td class="name">Lavender</td>
+<td class="hex">#E6E6FA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #D8BFD8 "></td>
+<td class="name">Thistle</td>
+<td class="hex">#D8BFD8</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DDA0DD "></td>
+<td class="name">Plum</td>
+<td class="hex">#DDA0DD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #EE82EE "></td>
+<td class="name">Violet</td>
+<td class="hex">#EE82EE</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF00FF "></td>
+<td class="name">Magenta</td>
+<td class="hex">#FF00FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF00FF "></td>
+<td class="name">Fuchsia</td>
+<td class="hex">#FF00FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DA70D6 "></td>
+<td class="name">Orchid</td>
+<td class="hex">#DA70D6</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #BA55D3 "></td>
+<td class="name">MediumOrchid</td>
+<td class="hex">#BA55D3</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #8B008B "></td>
+<td class="name">DarkMagenta</td>
+<td class="hex">#8B008B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #800080 "></td>
+<td class="name">Purple</td>
+<td class="hex">#800080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #9400D3 "></td>
+<td class="name">DarkViolet</td>
+<td class="hex">#9400D3</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #9932CC "></td>
+<td class="name">DarkOrchid</td>
+<td class="hex">#9932CC</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #9370DB "></td>
+<td class="name">MediumPurple</td>
+<td class="hex">#9370DB</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #8A2BE2 "></td>
+<td class="name">BlueViolet</td>
+<td class="hex">#8A2BE2</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #663399 "></td>
+<td class="name">RebeccaPurple</td>
+<td class="hex">#663399</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #4B0082 "></td>
+<td class="name">Indigo</td>
+<td class="hex">#4B0082</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #191970 "></td>
+<td class="name">MidnightBlue</td>
+<td class="hex">#191970</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #483D8B "></td>
+<td class="name">DarkSlateBlue</td>
+<td class="hex">#483D8B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #6A5ACD "></td>
+<td class="name">SlateBlue</td>
+<td class="hex">#6A5ACD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #7B68EE "></td>
+<td class="name">MediumSlateBlue</td>
+<td class="hex">#7B68EE</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #4682B4 "></td>
+<td class="name">SteelBlue</td>
+<td class="hex">#4682B4</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #6495ED "></td>
+<td class="name">CornflowerBlue</td>
+<td class="hex">#6495ED</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #87CEFA "></td>
+<td class="name">LightSkyBlue</td>
+<td class="hex">#87CEFA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #ADD8E6 "></td>
+<td class="name">LightBlue</td>
+<td class="hex">#ADD8E6</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #B0C4DE "></td>
+<td class="name">LightSteelBlue</td>
+<td class="hex">#B0C4DE</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #B0E0E6 "></td>
+<td class="name">PowderBlue</td>
+<td class="hex">#B0E0E6</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #E0FFFF "></td>
+<td class="name">LightCyan</td>
+<td class="hex">#E0FFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00FFFF "></td>
+<td class="name">Aqua</td>
+<td class="hex">#00FFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00FFFF "></td>
+<td class="name">Cyan</td>
+<td class="hex">#00FFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #87CEEB "></td>
+<td class="name">SkyBlue</td>
+<td class="hex">#87CEEB</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00BFFF "></td>
+<td class="name">DeepSkyBlue</td>
+<td class="hex">#00BFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #1E90FF "></td>
+<td class="name">DodgerBlue</td>
+<td class="hex">#1E90FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #4169E1 "></td>
+<td class="name">RoyalBlue</td>
+<td class="hex">#4169E1</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #0000FF "></td>
+<td class="name">Blue</td>
+<td class="hex">#0000FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #0000CD "></td>
+<td class="name">MediumBlue</td>
+<td class="hex">#0000CD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00008B "></td>
+<td class="name">DarkBlue</td>
+<td class="hex">#00008B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #000080 "></td>
+<td class="name">Navy</td>
+<td class="hex">#000080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #5F9EA0 "></td>
+<td class="name">CadetBlue</td>
+<td class="hex">#5F9EA0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #008080 "></td>
+<td class="name">Teal</td>
+<td class="hex">#008080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #008B8B "></td>
+<td class="name">DarkCyan</td>
+<td class="hex">#008B8B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #20B2AA "></td>
+<td class="name">LightSeaGreen</td>
+<td class="hex">#20B2AA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00CED1 "></td>
+<td class="name">DarkTurquoise</td>
+<td class="hex">#00CED1</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #48D1CC "></td>
+<td class="name">MediumTurquoise</td>
+<td class="hex">#48D1CC</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #40E0D0 "></td>
+<td class="name">Turquoise</td>
+<td class="hex">#40E0D0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #AFEEEE "></td>
+<td class="name">PaleTurquoise</td>
+<td class="hex">#AFEEEE</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #7FFFD4 "></td>
+<td class="name">Aquamarine</td>
+<td class="hex">#7FFFD4</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #66CDAA "></td>
+<td class="name">MediumAquaMarine</td>
+<td class="hex">#66CDAA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #3CB371 "></td>
+<td class="name">MediumSeaGreen</td>
+<td class="hex">#3CB371</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #2E8B57 "></td>
+<td class="name">SeaGreen</td>
+<td class="hex">#2E8B57</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #8FBC8F "></td>
+<td class="name">DarkSeaGreen</td>
+<td class="hex">#8FBC8F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00FA9A "></td>
+<td class="name">MediumSpringGreen</td>
+<td class="hex">#00FA9A</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00FF7F "></td>
+<td class="name">SpringGreen</td>
+<td class="hex">#00FF7F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #00FF00 "></td>
+<td class="name">Lime</td>
+<td class="hex">#00FF00</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #98FB98 "></td>
+<td class="name">PaleGreen</td>
+<td class="hex">#98FB98</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #90EE90 "></td>
+<td class="name">LightGreen</td>
+<td class="hex">#90EE90</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #32CD32 "></td>
+<td class="name">LimeGreen</td>
+<td class="hex">#32CD32</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #228B22 "></td>
+<td class="name">ForestGreen</td>
+<td class="hex">#228B22</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #008000 "></td>
+<td class="name">Green</td>
+<td class="hex">#008000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #006400 "></td>
+<td class="name">DarkGreen</td>
+<td class="hex">#006400</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #556B2F "></td>
+<td class="name">DarkOliveGreen</td>
+<td class="hex">#556B2F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #6B8E23 "></td>
+<td class="name">OliveDrab</td>
+<td class="hex">#6B8E23</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #808000 "></td>
+<td class="name">Olive</td>
+<td class="hex">#808000</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #9ACD32 "></td>
+<td class="name">YellowGreen</td>
+<td class="hex">#9ACD32</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #7CFC00 "></td>
+<td class="name">LawnGreen</td>
+<td class="hex">#7CFC00</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #7FFF00 "></td>
+<td class="name">Chartreuse</td>
+<td class="hex">#7FFF00</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #ADFF2F "></td>
+<td class="name">GreenYellow</td>
+<td class="hex">#ADFF2F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFF00 "></td>
+<td class="name">Yellow</td>
+<td class="hex">#FFFF00</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFD700 "></td>
+<td class="name">Gold</td>
+<td class="hex">#FFD700</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DAA520 "></td>
+<td class="name">GoldenRod</td>
+<td class="hex">#DAA520</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #B8860B "></td>
+<td class="name">DarkGoldenRod</td>
+<td class="hex">#B8860B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF8C00 "></td>
+<td class="name">DarkOrange</td>
+<td class="hex">#FF8C00</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFA500 "></td>
+<td class="name">Orange</td>
+<td class="hex">#FFA500</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FF7F50 "></td>
+<td class="name">Coral</td>
+<td class="hex">#FF7F50</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #D2691E "></td>
+<td class="name">Chocolate</td>
+<td class="hex">#D2691E</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #CD853F "></td>
+<td class="name">Peru</td>
+<td class="hex">#CD853F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #A0522D "></td>
+<td class="name">Sienna</td>
+<td class="hex">#A0522D</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #8B4513 "></td>
+<td class="name">SaddleBrown</td>
+<td class="hex">#8B4513</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #BC8F8F "></td>
+<td class="name">RosyBrown</td>
+<td class="hex">#BC8F8F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #E9967A "></td>
+<td class="name">DarkSalmon</td>
+<td class="hex">#E9967A</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFA07A "></td>
+<td class="name">LightSalmon</td>
+<td class="hex">#FFA07A</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F4A460 "></td>
+<td class="name">SandyBrown</td>
+<td class="hex">#F4A460</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #D2B48C "></td>
+<td class="name">Tan</td>
+<td class="hex">#D2B48C</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DEB887 "></td>
+<td class="name">BurlyWood</td>
+<td class="hex">#DEB887</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #BDB76B "></td>
+<td class="name">DarkKhaki</td>
+<td class="hex">#BDB76B</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F0E68C "></td>
+<td class="name">Khaki</td>
+<td class="hex">#F0E68C</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #EEE8AA "></td>
+<td class="name">PaleGoldenRod</td>
+<td class="hex">#EEE8AA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFDEAD "></td>
+<td class="name">NavajoWhite</td>
+<td class="hex">#FFDEAD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFDAB9 "></td>
+<td class="name">PeachPuff</td>
+<td class="hex">#FFDAB9</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFE4B5 "></td>
+<td class="name">Moccasin</td>
+<td class="hex">#FFE4B5</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F5DEB3 "></td>
+<td class="name">Wheat</td>
+<td class="hex">#F5DEB3</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFE4C4 "></td>
+<td class="name">Bisque</td>
+<td class="hex">#FFE4C4</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFEBCD "></td>
+<td class="name">BlanchedAlmond</td>
+<td class="hex">#FFEBCD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFE4E1 "></td>
+<td class="name">MistyRose</td>
+<td class="hex">#FFE4E1</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FAEBD7 "></td>
+<td class="name">AntiqueWhite</td>
+<td class="hex">#FAEBD7</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFEFD5 "></td>
+<td class="name">PapayaWhip</td>
+<td class="hex">#FFEFD5</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFACD "></td>
+<td class="name">LemonChiffon</td>
+<td class="hex">#FFFACD</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FAFAD2 "></td>
+<td class="name">LightGoldenRodYellow</td>
+<td class="hex">#FAFAD2</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFFE0 "></td>
+<td class="name">LightYellow</td>
+<td class="hex">#FFFFE0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F5F5DC "></td>
+<td class="name">Beige</td>
+<td class="hex">#F5F5DC</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFF8DC "></td>
+<td class="name">Cornsilk</td>
+<td class="hex">#FFF8DC</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FAF0E6 "></td>
+<td class="name">Linen</td>
+<td class="hex">#FAF0E6</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FDF5E6 "></td>
+<td class="name">OldLace</td>
+<td class="hex">#FDF5E6</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFAF0 "></td>
+<td class="name">FloralWhite</td>
+<td class="hex">#FFFAF0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFFF0 "></td>
+<td class="name">Ivory</td>
+<td class="hex">#FFFFF0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFF5EE "></td>
+<td class="name">SeaShell</td>
+<td class="hex">#FFF5EE</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFF0F5 "></td>
+<td class="name">LavenderBlush</td>
+<td class="hex">#FFF0F5</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F0FFFF "></td>
+<td class="name">Azure</td>
+<td class="hex">#F0FFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F0F8FF "></td>
+<td class="name">AliceBlue</td>
+<td class="hex">#F0F8FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F0FFF0 "></td>
+<td class="name">HoneyDew</td>
+<td class="hex">#F0FFF0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F8F8FF "></td>
+<td class="name">GhostWhite</td>
+<td class="hex">#F8F8FF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F5FFFA "></td>
+<td class="name">MintCream</td>
+<td class="hex">#F5FFFA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFAFA "></td>
+<td class="name">Snow</td>
+<td class="hex">#FFFAFA</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #778899 "></td>
+<td class="name">LightSlateGray</td>
+<td class="hex">#778899</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #778899 "></td>
+<td class="name">LightSlateGrey</td>
+<td class="hex">#778899</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #708090 "></td>
+<td class="name">SlateGray</td>
+<td class="hex">#708090</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #708090 "></td>
+<td class="name">SlateGrey</td>
+<td class="hex">#708090</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #2F4F4F "></td>
+<td class="name">DarkSlateGray</td>
+<td class="hex">#2F4F4F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #2F4F4F "></td>
+<td class="name">DarkSlateGrey</td>
+<td class="hex">#2F4F4F</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #FFFFFF "></td>
+<td class="name">White</td>
+<td class="hex">#FFFFFF</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #F5F5F5 "></td>
+<td class="name">WhiteSmoke</td>
+<td class="hex">#F5F5F5</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #DCDCDC "></td>
+<td class="name">Gainsboro</td>
+<td class="hex">#DCDCDC</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #D3D3D3 "></td>
+<td class="name">LightGray</td>
+<td class="hex">#D3D3D3</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #D3D3D3 "></td>
+<td class="name">LightGrey</td>
+<td class="hex">#D3D3D3</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #C0C0C0 "></td>
+<td class="name">Silver</td>
+<td class="hex">#C0C0C0</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #A9A9A9 "></td>
+<td class="name">DarkGray</td>
+<td class="hex">#A9A9A9</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #A9A9A9 "></td>
+<td class="name">DarkGrey</td>
+<td class="hex">#A9A9A9</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #808080 "></td>
+<td class="name">Gray</td>
+<td class="hex">#808080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #808080 "></td>
+<td class="name">Grey</td>
+<td class="hex">#808080</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #696969 "></td>
+<td class="name">DimGray</td>
+<td class="hex">#696969</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #696969 "></td>
+<td class="name">DimGrey</td>
+<td class="hex">#696969</td>
+</tr>
+<tr>
+<th></th>
+<td class="swatch" style="background-color: #000000 "></td>
+<td class="name">Black</td>
+<td class="hex">#000000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+

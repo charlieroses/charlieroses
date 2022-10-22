@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="tables.css">
 	<link rel="stylesheet" href="colors.css">
 	<link rel="stylesheet" href="numbers/numbers.css">
-
+	<script src="numbers/numbers.js"></script>
 </head>
 <body>
 <div id="sidebar">
@@ -115,411 +115,658 @@
 	</div>
 	<hr>
 	<div class="content">
-<p>Now we can move onto hexadecimal or base-16. Converting to and from is the same process. The main difference in hexadecimal is how we represent the digits. In base-10 we use digits 0-9. In binary we use 0 and 1. In hexadecimal, we use 0-F. The values of the digits is 0 through B-1. Our base is 16 so the digits would be 0 to 15. However, 15 is a two digit number. Since base-16 uses digits that we dont have single digit numbers for (eg 10-15), we use letters. The table below has the digits and their corresponding values.</p>
+<h2 id="hexademical-and-base-10">Hexademical and Base 10</h2>
+<p>Now we can move onto base-16, which is more commonly called hexadecimal. Converting from is the same process. The biggest difference in hexadecimal is how we represent the digits. We know that in a number base <code>B</code>, each digit is a value between <code>0</code> and <code>B-1</code>. In base-10 we use digits 0-9. In binary we use 0 and 1. In hexadecimal, <code>B-1=15</code>. This proposes a new issue. The numbers 10-15 are two digits. We can't use two digits as one digit. To address this, we use letters as digits. A represents 10, B represents 11, etc. The table below has the digits and their corresponding values.</p>
 <center>
 <table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
 <tr>
-<th class="b16vt">
-<b>Binary</b>
+<th>
 </th>
-<th class="b16vt">
-<b>Decimal</b>
-</th>
-<th class="b16vt">
-<b>Hexadecimal</b>
-</th>
-</tr>
-<tr>
-<td class="b16vt">
-0000
+<td>
 </td>
-<td class="b16vt">
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+Decimal
+</th>
+<td>
 0
 </td>
-<td class="b16vt">
-0
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-0001
-</td>
-<td class="b16vt">
+<td>
 1
 </td>
-<td class="b16vt">
-1
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-0010
-</td>
-<td class="b16vt">
+<td>
 2
 </td>
-<td class="b16vt">
-2
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-0011
-</td>
-<td class="b16vt">
+<td>
 3
 </td>
-<td class="b16vt">
-3
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-0100
-</td>
-<td class="b16vt">
+<td>
 4
 </td>
-<td class="b16vt">
-4
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-0101
-</td>
-<td class="b16vt">
+<td>
 5
 </td>
-<td class="b16vt">
-5
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-0110
-</td>
-<td class="b16vt">
+<td>
 6
 </td>
-<td class="b16vt">
-6
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-0111
-</td>
-<td class="b16vt">
+<td>
 7
 </td>
-<td class="b16vt">
-7
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-1000
-</td>
-<td class="b16vt">
+<td>
 8
 </td>
-<td class="b16vt">
-8
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-1001
-</td>
-<td class="b16vt">
+<td>
 9
 </td>
-<td class="b16vt">
-9
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-1010
-</td>
-<td class="b16vt">
+<td>
 10
 </td>
-<td class="b16vt">
-A
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-1011
-</td>
-<td class="b16vt">
+<td>
 11
 </td>
-<td class="b16vt">
-B
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-1100
-</td>
-<td class="b16vt">
+<td>
 12
 </td>
-<td class="b16vt">
-C
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-1101
-</td>
-<td class="b16vt">
+<td>
 13
 </td>
-<td class="b16vt">
-D
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-1110
-</td>
-<td class="b16vt">
+<td>
 14
 </td>
-<td class="b16vt">
-E
-</td>
-</tr>
-<tr>
-<td class="b16vt">
-1111
-</td>
-<td class="b16vt">
+<td>
 15
 </td>
-<td class="b16vt">
+</tr>
+<tr>
+<th>
+Hexadecimal
+</th>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+4
+</td>
+<td>
+5
+</td>
+<td>
+6
+</td>
+<td>
+7
+</td>
+<td>
+8
+</td>
+<td>
+9
+</td>
+<td>
+A
+</td>
+<td>
+B
+</td>
+<td>
+C
+</td>
+<td>
+D
+</td>
+<td>
+E
+</td>
+<td>
 F
 </td>
 </tr>
+</tbody>
 </table>
 </center>
-<p>Now we can see how a hexadecimal number translates to a base-10 number. Let's consider the hexadecimal number <strong>3F4</strong></p>
+<p>Now that we know how to represent a hexademical number, it's much easier to see how to get the base-10 magnitude of a hexadecimal number. Let's consider the hexadecimal number <strong>3F4</strong></p>
 <center>
 <table>
-<tr>
-<th class="b10t">
-<b>Digit</b>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<th>
 </th>
-<td class="b10t">
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</thead>
+<tbody>
+<tr>
+<th>
+Digit
+</th>
+<td>
 3
 </td>
-<td class="b10t">
+<td>
 F
 </td>
-<td class="b10t">
+<td>
 4
 </td>
 </tr>
 <tr>
-<th class="b10t">
-<b>Power</b>
+<th>
+Power
 </th>
-<td class="b10t">
+<td>
 16<sup>2</sup>
 </td>
-<td class="b10t">
+<td>
 16<sup>1</sup>
 </td>
-<td class="b10t">
+<td>
 16<sup>0</sup>
 </td>
 </tr>
 <tr>
-<th class="b10t">
-<b>Value</b>
+<th>
+Value
 </th>
-<td class="b10t">
+<td>
+(3 * 16<sup>2</sup>)
+</td>
+<td>
+(15 * 16<sup>1</sup>)
+</td>
+<td>
+(4 * 16<sup>0</sup>)
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
 768
 </td>
-<td class="b10t">
+<td>
 240
 </td>
-<td class="b10t">
+<td>
 4
 </td>
 </tr>
+</tbody>
 </table>
 </center>
-<p>Once again the Value is equal to the Digit multiplied by the Power. So <strong>3F4</strong> is equal to <strong>(3 * 16<sup>2</sup>)</strong> + <strong>(15 * 16<sup>1</sup>)</strong> + <strong>(4 * 16<sup>0</sup>)</strong>. We multiply 15 by 16<sup>1</sup> because 15 corresponds to F on the table. Finally we add all the values. 768 + 240 + 4 = 1022. <strong>3F4<sub>16</sub></strong> = <strong>1022<sub>10</sub></strong>. As you can see, only 3 digits in hexadecimal gave us a value that would need 4 digits in base-10. Try this on your own.</p>
-<p>We can also look at how binary relates to hexadecimal. If we look up at the table, you'll notice that each hexadecimal digit can be represented as a full 4 bit binary number. Four bits in binary make 16 different number values ranging 0 to 15. Hexadecimal uses different digits ranging 0-15. This isn't a coincidence. 16<sup>1</sup> is 2<sup>4</sup>. It's no coincidence that 1 base-16 digit is equal to 4 base-2 digits. So how can we use this knowledge in practice? Let's say we have the number 1111000011110000. That's a rather large number that not even I want to do the math for. Let's split this up.</p>
-<p><code> <tab5>1111000011110000 <br> <br> <tab5>1111 0000 1111 0000 : Split into groups of 4 <br> <br> <tab5>15 0 15 0 : Translate groups of 4 into Base-10 <br> <br> <tab5>F 0 F 0 : Translate into base-16 <br> <br> <tab5>F0F0 : Put back together </code></p>
-<p>There! Easy as can be! Instead of trying to translate a massive 16 bit number, we just split it into 4 bit numbers!</p>
+<p>The computation is performed exactly the same as before. The Value is equal to the Digit multiplied by the Power meaning that <strong>3F4</strong> is equal to <strong>(3 * 16<sup>2</sup>)</strong> + <strong>(15 * 16<sup>1</sup>)</strong> + <strong>(4 * 16<sup>0</sup>)</strong>. We multiply 15 by 16<sup>1</sup> because 15 corresponds to F on the table. When we add all the values, we find that 768 + 240 + 4 = 1022 showing that <strong>3F4<sub>16</sub></strong> = <strong>1022<sub>10</sub></strong>. As you can see, only 3 digits in hexadecimal gave us a value that would need 4 digits in base-10.</p>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="hexadecimal-and-binary">Hexadecimal and Binary</h2>
+<p>We've been covering how to convert numbers in any base to base-10. What if we want to convert a hexadecimal number to binary or vice-versa? Would we have to convert the number to base-10 and then convert the resulting base-10 number? For many number bases, perhaps, but we have a bit of an advantage with hexadecimal and binary.</p>
+<p>Let's think about the numbers we're dealing with here. We have 2, 10, and 16. Let's play that one game from Sesame Street, <a href="">one of these things is not like the others, one of these things is not the same</a>. Which number is the odd one out? Believe it or not, it's 10. 16 is a power of 2; <code>2<sup>4</sup> = 16</code>. We can also write this as <code>2<sup>4</sup> = 16<sup>1</sup></code>. You may ask, why is this relevant? Well if we look at how we build number bases, each digit is an increasing power. Since <code>16<sup>1</sup> = 2<sup>4</sup></code>, we can say that one hexadecimal digit is equivalent to four binary bits. Look at the following table to see which bits correlate to which hexadecimal digits. <em>Spoiler Alert: The binary numbers are equal to 0-15.</em></p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+Binary
+</th>
+<td>
+0000
+</td>
+<td>
+0001
+</td>
+<td>
+0010
+</td>
+<td>
+0011
+</td>
+<td>
+0100
+</td>
+<td>
+0101
+</td>
+<td>
+0110
+</td>
+<td>
+0111
+</td>
+<td>
+1000
+</td>
+<td>
+1001
+</td>
+<td>
+1010
+</td>
+<td>
+1011
+</td>
+<td>
+1100
+</td>
+<td>
+1101
+</td>
+<td>
+1110
+</td>
+<td>
+1111
+</td>
+</tr>
+<tr>
+<th>
+Hexadecimal
+</th>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+4
+</td>
+<td>
+5
+</td>
+<td>
+6
+</td>
+<td>
+7
+</td>
+<td>
+8
+</td>
+<td>
+9
+</td>
+<td>
+A
+</td>
+<td>
+B
+</td>
+<td>
+C
+</td>
+<td>
+D
+</td>
+<td>
+E
+</td>
+<td>
+F
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>So how can we use this knowledge in practice? Let's say we have the number 1111000011110000. That's a rather large number that not even I want to do the math for. The conversion is a lot easier than you'd expect.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>1111000011110000<sub>2</sub></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>1111<sub>2</sub> 0000<sub>2</sub> 1111<sub>2</sub> 0000<sub>2</sub></code>
+</td>
+<td style="text-align: left">
+Break into groups of four
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>F<sub>16</sub> 0<sub>16</sub> F<sub>16</sub> 0<sub>16</sub></code>
+</td>
+<td style="text-align: left">
+Covert groups of four to base-16
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>F0F0<sub>16</sub></code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>There! Easy as can be! Instead of trying to convert a massive 16 bit number, we just split it into multiple 4 bit numbers, convert them individually, then put it back together.</p>
+<p>We can apply this to base-4 too. See how <code>2<sup>2</sup> = 4<sup>1</sup></code> meaning that two binary digits is equal to one base-4 digit. This can be further expanded one when we realize that <code>2<sup>4</sup> = 4<sup>2</sup> = 16<sup>1</sup></code>. We already saw that four binary digits are equivalent to one hexadecimal digit. Now we also see that four binary digits are equivalent to two base-4 digits. Taking it another step further, we can see that two base-4 digits are equivalent to one hexadecimal digit. In all these bases, we can use the same split-convert-reconstruct method to convert quickly between bases.</p>
+<p>This also works for numbers that aren't powers of two. The same process can be done on base-3 and base-9 (<code>3<sup>2</sup> = 9<sup>1</sup></code>). It would also work for base-7 and base-49 (<code>7<sup>2</sup> = 49<sup>1</sup></code>) <em>(base-49 would require uppercase and lowercase letters to be used as digits)</em>.</p>
 	</div>
 	<hr>
 	<div class="content">
 <h2 id="color-codes">Color Codes</h2>
-<p>A very common use of hexadecimal numbers is for use of color codes. There are many different ways to define color. The two main ways are to use a hexadecimal value or an rgb value.</p>
+<p>A very common use of hexadecimal numbers is to represent colors. There are many different ways to define color. The way you'll see the most in this class is through RGB values. RGB values are primarily represented in base-10 and hexadecimal.</p>
 <center>
 <p>
 <red>r</red><green>g</green><blue>b</blue>(<red>255</red>,<green>255</green>,<blue>255</blue>) <br> <br> #<red>FF</red><green>FF</green><blue>FF</blue>
 </p>
 </center>
-<p>I used the colors to highlight themselves. So there are the three base colors red, green, and blue. In order to mix these colors in values of 0-255. Hexadecimal applies the same way. FF is the hexadecimal representation of the number 255. Hex color codes are just hexadecimal representations of an rgb color code. Below is a simple chart showing how the colors mix. Obviously there are many more than these 7 colors. Take note how the secondary colors are Cyan, Magenta and Yellow: the colors your printer uses.</p>
+<p>In RGB, there are the three base colors: red, green, and blue. We mix different amounts of these primary colors to make all the other colors. To define an amount of a color, we use a value in <code>[0<sub>10</sub>, 255<sub>10</sub>]</code>. <code>255<sub>10</sub></code> may seem like a wierd number to use as the cap, but it's not random because <code>[0<sub>10</sub>, 255<sub>10</sub>] = [0<sub>16</sub>, FF<sub>16</sub>]</code>.</p>
+<p>Below is a simple chart showing how the colors mix. Obviously there are many more than these 7 colors. Take note how the secondary colors are Cyan, Magenta and Yellow: the colors your printer uses.</p>
 <div class="figure">
 <img src="numbers/rgbcircles.png" id="rgbcircles" />
 
 </div>
-<p>Since there are 256 values for each of the three colors (including 0), we can make 256*256*256 different colors. That's 16,777,216 different colors! Obviously there are so many colors to make and I don't have room to display each of the over 16 million colors. I went through and did the basic ROY G BIV rainbow below.</p>
+<p>Since there are 256 values for each of the three colors (including 0), we can make 256*256*256 different colors. That's 16,777,216 different colors! Obviously there are so many colors to make and I don't have room to display each of the over 16 million colors. I went through and did the basic ROY G BIV rainbow below. The <a href="numbers/colors.html">next section</a> has a list of all the colors with names recognized by web browsers.</p>
 <center>
 <table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
 <tr>
-<th class="b16c">
-<b>RGB</b>
+<th>
 </th>
-<th class="b16c">
-<b>Hexadecimal</b>
+<th>
+RGB
 </th>
-<th class="b16c">
-<b>Name</b>
+<th>
+Hexadecimal
 </th>
-<th class="b16c">
-<b>Color</b>
+<th>
+Name
+</th>
+<th>
+Color
 </th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td class="b16c">
+<th>
+</th>
+<td>
 0,0,0
 </td>
-<td class="b16c">
+<td>
 #000000
 </td>
-<td class="b16c">
+<td>
 Black
 </td>
-<td class="b16c" style="background-color: #000000">
+<td style="background-color: #000000">
 </td>
 </tr>
 <tr>
-<td class="b16c">
+<th>
+</th>
+<td>
 255,0,0
 </td>
-<td class="b16c">
+<td>
 #FF0000
 </td>
-<td class="b16c">
+<td>
 Red
 </td>
-<td class="b16c" style="background-color: #FF0000">
+<td style="background-color: #FF0000">
 </td>
 </tr>
 <tr>
-<td class="b16c">
+<th>
+</th>
+<td>
 255,165,0
 </td>
-<td class="b16c">
+<td>
 #FFA500
 </td>
-<td class="b16c">
+<td>
 Orange
 </td>
-<td class="b16c" style="background-color: #FFA500">
+<td style="background-color: #FFA500">
 </td>
 </tr>
 <tr>
-<td class="b16c">
+<th>
+</th>
+<td>
 255,255,0
 </td>
-<td class="b16c">
+<td>
 #FFFF00
 </td>
-<td class="b16c">
+<td>
 Yellow
 </td>
-<td class="b16c" style="background-color: #FFFF00">
+<td style="background-color: #FFFF00">
 </td>
 </tr>
 <tr>
-<td class="b16c">
+<th>
+</th>
+<td>
 0,128,0
 </td>
-<td class="b16c">
+<td>
 #008000
 </td>
-<td class="b16c">
+<td>
 Green
 </td>
-<td class="b16c" style="background-color: #008000">
+<td style="background-color: #008000">
 </td>
 </tr>
 <tr>
-<td class="b16c">
+<th>
+</th>
+<td>
 0,0,255
 </td>
-<td class="b16c">
+<td>
 #0000FF
 </td>
-<td class="b16c">
+<td>
 Blue
 </td>
-<td class="b16c" style="background-color: #0000FF">
+<td style="background-color: #0000FF">
 </td>
 </tr>
 <tr>
-<td class="b16c">
+<th>
+</th>
+<td>
 75,0,130
 </td>
-<td class="b16c">
+<td>
 #4B0082
 </td>
-<td class="b16c">
+<td>
 Indigo
 </td>
-<td class="b16c" style="background-color: #4B0082">
+<td style="background-color: #4B0082">
 </td>
 </tr>
 <tr>
-<td class="b16c">
+<th>
+</th>
+<td>
 238,130,238
 </td>
-<td class="b16c">
+<td>
 #EE82EE
 </td>
-<td class="b16c">
+<td>
 Violet
 </td>
-<td class="b16c" style="background-color: #EE82EE">
+<td style="background-color: #EE82EE">
 </td>
 </tr>
 <tr>
-<td class="b16c">
+<th>
+</th>
+<td>
 255,255,255
 </td>
-<td class="b16c">
+<td>
 #FFFFFF
 </td>
-<td class="b16c">
+<td>
 White
 </td>
-<td class="b16c" style="background-color: #FFFFFF">
+<td style="background-color: #FFFFFF">
 </td>
 </tr>
+</tbody>
 </table>
 </center>
 <p>Just for fun, I added an RGB Color changer. Just enter different values into the boxes to change the color. Try and see if you can match the colors from this website.</p>
 <center>
 <table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</thead>
+<tbody>
 <tr>
-<td id="colorBox">
+<th>
+</th>
+<td id="colorBox" colspan="3">
 </td>
 </tr>
-</table>
-<br>
-<table>
 <tr>
+<th>
+</th>
 <td>
 Red
 </td>
@@ -531,6 +778,8 @@ Blue
 </td>
 </tr>
 <tr>
+<th>
+</th>
 <td>
 <textarea id="redtext">
 255
@@ -547,6 +796,7 @@ Blue
 </textarea>
 </td>
 </tr>
+</tbody>
 </table>
 <br>
 <button id="colorBoxSub" onclick="changeColor()">

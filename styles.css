@@ -56,7 +56,6 @@ hr {
 	color: var(--text-grey-dk);
 }
 
-
 pre.eqn, pre.eqn>code {
 	background-color: transparent !important;
 	text-align: center;

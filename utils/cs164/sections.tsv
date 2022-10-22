@@ -4,10 +4,10 @@ Number	Title	Directory	File	Updated?
 0	Other Notes and Reference	LINK	https://charlierose.dev/ref/	
 0	Practice Problem Answers		answers	
 1	Number Bases	numbers	index	
-1.1	Base-10	numbers	baseTen	
-1.2	Base-2	numbers	baseTwo	
-1.3	Base-16	numbers	baseSixteen	
-1.4	HTML Colors	numbers	colors	
+1.1	Base-10	numbers	baseTen	X
+1.2	Base-2	numbers	baseTwo	X
+1.3	Base-16	numbers	baseSixteen	X
+1.4	HTML Colors	numbers	colors	X
 2	Binary	binary	index	
 2.1	Converting Between Bases	binary	convertBin	
 2.2	Negative Numbers	binary	negativebin	
