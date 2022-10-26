@@ -1,4 +1,4 @@
-.TH IMG 3tranq 2022-04-09 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.TH IMG 3 2022-10-25 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
 .SH NAME
 makeimg, setimg \- create and set an HTML image
 .SH SYNOPSIS
