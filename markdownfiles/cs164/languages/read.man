@@ -1,0 +1,96 @@
+.TH READ 3tranq 2022-04-06 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+iread, sread \- Pop up a dialog prompting the user for input
+.SH SYNOPSIS
+.nf
+.PP
+.BI "iread( " p " )"
+.BI "sread( " s ", " p " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBiread()\fP brings up a pop-up dialog asking the user to enter an integer,
+using the string referenced by \fIp\fP as the message in the dialog.
+.PP
+\fBsread()\fP pops up a dialog prompting the user for a string as input, using
+the second argument \fIp\fP as the message in the dialog.
+The string entered by the user is copied into the memory starting at the address
+passed as the first argument \fIs\fP.
+The null terminator is also copied over.
+.PP
+If \fIp\fP is not provided in either function, the dialog box does not contain a
+prompt.
+.SH RETURN VALUE
+\fBiread()\fP returns the numeric value of the integer entered by the user.
+Note that Tranquility only has support for integers and will truncate fractional
+numbers.
+.PP
+\fBsread()\fP has no return value.
+.SH NOTES
+The syntax of \fBiread()\fP allows it to be used without being assigned to a
+variable without errors.
+If not set to a variable or present in an arithmetic equation then the data
+entered will be lost.
+.SH EXAMPLES
+The following example sets n to be 5 times the value entered by the user.
+.PP
+.EX
+fun init() {
+	var n
+
+	n : 5 * iread("Enter an integer:")
+	iprint(.n)
+}
+.EE
+.PP
+The following example takes in a 10 letter input from the user without a prompt
+.PP
+.EX
+fun init() {
+	var str
+
+	str : alloc( 11 )
+	sread( .str )
+}
+.EE
+.SH BUGS
+The code will crash if .BR iread() is the first line of code and it's return
+value is not set to a variable.
+.SH AUTHORS
+.PP
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.br
+Carson Ford, Fall 21-22
+.br
+Ryan Abraham, Fall 21-22
+.PP
+Sherry Liu, Winter 21-22
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+.BR tranqc(1),
+.BR iprint(3),
+.BR sprint(3),
+.BR i2s(3),
+.BR alloc(3)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

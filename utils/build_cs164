@@ -43,6 +43,10 @@ do
 	# Don't try to build files that don't exist
 	if [[ ! -e "${INFILE}" ]]
 	then
+		if [[ -e "${INFILE%md}man" ]]
+		then
+			utils/cs164/build_manpage "${INFILE%md}man" "${TARG}"
+		fi
 		continue
 	fi
 

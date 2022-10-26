@@ -1,0 +1,98 @@
+.TH BUTTON 3 2022-10-25 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+button, buttonlabel \- Create a button on the HTML page
+.SH SYNOPSIS
+.nf
+.PP
+.BI "button( " label ", " fun  " )"
+.BI "buttonlabel( " b ", " label " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBbutton()\fP creates a button on the HTML page with text specified by the
+\fIlabel\fP argument.
+When pressed, the function passed in as \fIfun\fP will execute.
+The function should not include parentheses or arguments.
+Only the name of the function should be passed in as a reference.
+.PP
+Like other Tranquility functions that create HTML elements, \fBbutton()\fP opens
+a new browser window when called if one had not previously existed.
+.PP
+\fBbuttonlabel()\fP updates the text displayed on the button \fIb\fP with the
+string specified by the \fIlabel\fP argument.
+\fIb\fP should be an identifier for a button that was returned by a call to
+\fBbutton()\fP.
+.PP
+Buttons will be placed on the HTML page, left to right, top to bottom in order
+of being called.
+.SH RETURN VALUE
+\fBbutton()\fP returns a unique identifier to the newly created button.
+.PP
+\fBbuttonlabel()\fP has no return value.
+.SH ERRORS
+Using parentheses for the \fIfun\fP argument when calling \fBbutton()\fP
+produces a variety of unexpected behaviors.
+.SH EXAMPLES
+The following example changes the label on the button randomly after each click.
+.PP
+.EX
+var b
+fun change() {
+	var r
+	r : random( 3 )
+
+	if( .r == 0 ) {
+		buttonlabel( .b, "Zero" )
+	}
+	else if( .r == 1 ) {
+		buttonlabel( .b, "One" )
+	}
+	else {
+		buttonlabel( .b, "Two" )
+	}
+}
+fun init(){
+	b : button( "Unclicked", change )
+}
+.EE
+.SH AUTHORS
+.PP
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.br
+Amalia Sorribes, Fall 21-22
+.br
+Donovan Dolan, Fall 21-22
+.br
+Evan Yan, Fall 21-22
+.br
+Kevin Lin, Fall 21-22
+.br
+Nicolo Agbayani, Fall 21-22
+.br
+Nicholas Ingravallo, Fall 21-22
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+.BR tranqc (1),
+.BR html (3)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

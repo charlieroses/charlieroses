@@ -1,0 +1,65 @@
+#main {
+	font-family:'Lucida Console', monospace;
+	overflow-x: hidden;
+	margin-left: 30ch;
+	margin-right: 5ch;
+}
+
+.navigation > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.navigation > .left {
+	margin-left: 31ch;
+	left: 0;
+	position: absolute;
+}
+
+.navigation > .middle {
+	width: 100%;
+	text-align: center;
+}
+
+.navigation > .right {
+	margin-right: 5ch;
+	right: 0;
+	position: absolute;
+}
+
+
+p {
+	margin-top: 0; !important
+	margin-bottom: 0; !important
+	vertical-align: top; !important
+}
+
+pre {
+	background-color: transparent; !important
+	margin-top: 0; !important
+	margin-bottom: 0; !important
+	vertical-align: top; !important
+}
+
+tt {
+	font-size: 18px;
+}
+
+code {
+	font-size: 18px;
+}
+
+table {
+	margin-top: 0; !important
+	margin-bottom: 0; !important
+	vertical-align: top; !important
+}
+
+#main hr {
+	border: 0;
+}
+
+#main a {
+	background-color: transparent; !important
+	text-decoration-line: underline; !important
+}

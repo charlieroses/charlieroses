@@ -5,7 +5,7 @@ BEGIN {
 }
 
 NR > 1 {
-	if( $1 ~ "0.*" ) {
+	if( $1 ~ "^0.*" ) {
 		print "\t</div>"
 		print "\t<hr>"
 		print "\t<div class=\"content\">"

@@ -1,0 +1,87 @@
+.TH IMG 3tranq 2022-04-09 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+makeimg, setimg \- create and set an HTML image
+.SH SYNOPSIS
+.nf
+.PP
+.BI "makeimg( )"
+.BI "setimg( " n ", " src " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBmakeimg()\fP creates a new img tag with no src on the HTML pop up page.
+It returns an integer identifier that can be used to refrence the image and set
+its source.
+.PP
+Like other Tranquility functions that create HTML elements, \fBmakeimg()\fP
+opens a new browser window when called.
+.PP
+\fBsetimg()\fP sets the source property of an image.
+The first argument \fIn\fP should be the return value of an earlier call to
+\fBmakeimg()\fP.
+The second argument \fIsrc\fP should be a string specifying the image source.
+.PP
+Images will be placed on the HTML page, left to right, top to bottom in order of
+being called.
+.SH RETURN VALUE
+\fBmakeimg()\fP returns an integer image identifier.
+.PP
+\fBsetimg()\fP does not have a return value.
+.SH NOTES
+.PP
+The image specified by \fIsrc\fP must be publicly visible either through a
+reliable web URL or an image saved in a public_html directory on tux.
+.SH EXAMPLE
+.PP
+.EX
+fun init () {
+	var imgA, imgB
+	var labelA, labelB
+
+	imgA : makeimg()
+	labelA : makelabel()
+	imgB : makeimg()
+	labelB : makelabel()
+
+	setimg( .imgA, "dog.png" )
+	setlabel( .labelA, "This is a picture of a dog" )
+	setimg( .imgB, "cat.png" )
+	setlabel( .labelB, "This is a picture of a cat" )
+}
+.EE
+.SH AUTHORS
+.br
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.br
+Abigail Hatcher, Fall 21-22
+.br
+Alex Zavalny, Fall 21-22
+.br
+Hezekiah Dombach, Fall 21-22
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME brian.l.stuart@drexel.edu
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME cstuart11@protonmail.com
+.SH SEE ALSO
+.BR html (3),
+.BR makelabel (3),
+.BR tranqc (1)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

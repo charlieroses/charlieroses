@@ -1,0 +1,80 @@
+.TH LABEL 3 2022-10-25 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+makelabel, setlabel \- create and set HTML text
+.SH SYNOPSIS
+.nf
+.PP
+.BI "makelabel( " s " )"
+.BI "setlabel( " n ", " s " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBmakelabel()\fP creates a new label tag with the text specified by string
+\fIs\fP on the HTML pop up page.
+It returns an integer identifier that can be used to refrence the label and
+change the text displayed.
+.PP
+Like other Tranquility functions that create HTML elements, \fBmakelabel()\fP
+opens a new browser window when called if one had not already existed.
+.PP
+\fBsetlabel()\fP changes the text in the label identified by the first argument
+\fIn\fP to the string \fIs\fP specified by the second argument.
+\fIn\fP should be an integer identifier returned by an earlier call to
+\fBmakelabel()\fP
+.PP
+Labels will be placed on the HTML page, left to right, top to bottom in order of
+being called.
+.SH RETURN VALUE
+\fBmakelabel()\fP returns an integer label identifier.
+.PP
+\fBsetlabel()\fP does not have a return value.
+.SH EXAMPLE
+.PP
+.EX
+fun init () {
+	var imgA, imgB
+	var labelA, labelB
+
+	imgA : makeimg()
+	labelA : makelabel()
+	imgB : makeimg()
+	labelB : makelabel()
+
+	setimg( .imgA, "dog.png" )
+	setlabel( .labelA, "This is a picture of a dog" )
+	setimg( .imgB, "cat.png" )
+	setlabel( .labelB, "This is a picture of a cat" )
+}
+.EE
+.SH AUTHORS
+.PP
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.br
+Nathan Xaysena, Fall 21-22
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+.BR html (3),
+.BR makeimg (3),
+.BR tranqc (1)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

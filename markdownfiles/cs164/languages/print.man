@@ -1,0 +1,98 @@
+.TH PRINT 3 2022-10-25 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+iprint, sprint \- output of integers, characters, and strings
+.SH SYNOPSIS
+.nf
+.PP
+.BI "iprint( " n " )"
+.BI "sprint( " s " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBiprint()\fP writes the integer pointed to by \fIn\fP in decimal to the
+standard output window.
+Note that Tranquility only has support for integers and will truncate fractional
+numbers.
+.PP
+\fBsprint()\fP writes the string starting at the address \fIs\fP to the standard
+output window
+.PP
+.SH RETURN VALUE
+\fBiprint()\fP and \fBsprint()\fP do not have return values
+.SH ERRORS
+The \fBtranqc(1)\fP compiler will produce an "Argument list syntax error" if
+fractional values with a decimal point are used in \fBiprint(3)\fP.
+.SH EXAMPLE
+Hello world from page 1 of the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.PP
+.EX
+fun init() {
+	sprint("Hello World")
+}
+.EE
+.PP
+The following example from page 3 of the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+prints a table of squares from 0 to 9 to standard out.
+.PP
+.EX
+fun sq( n ) {
+	return .n * .n
+}
+
+fun init() {
+	var i
+
+	sprint("Table of squares:\en")
+	i : 1
+	loop {
+		until .i > 10
+		iprint( .i )
+		sprint(" squared equals ")
+		iprint( sq(.i) )
+		nl()
+		i : .i + 1
+	}
+}
+.EE
+.SH AUTHORS
+.br
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.br
+Alex Jacobs, Fall 21-22
+.br
+Cole Zucosky, Fall 21-22
+.br
+Mahima Chacko, Fall 21-22
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+.BR iread (3),
+.BR sread (3),
+.BR i2s (3)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

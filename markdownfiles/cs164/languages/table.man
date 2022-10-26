@@ -1,0 +1,128 @@
+.TH TABLE 3 2022-10-25 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+maketable, setcell, setcellcolor \- create an HTML table
+.SH SYNOPSIS
+.nf
+.PP
+.BI "maketable( " r ", " c ", " f " )"
+.BI "setcell( " t ", " r ", " c ", " s " )"
+.BI "setcellcolor( " t ", " r ", " c ", " color " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBmaketable()\fP creates a table with \fIr\fP rows and \fIc\fP columns and
+returns an integer table identifier.
+The function specified by optional argument \fIf\fP will execute each time a
+user clicks on a cell.
+\fIf\fP will have the row and column of the clicked cell passed to it as
+arguments.
+.PP
+\fBsetcell()\fP sets the contents of the cell at row \fIr\fP and column \fIc\fP
+in the table specified by \fIt\fP to the string specified by \fIs\fP.
+\fIr\fP and \fIc\fP are indexed at 0.
+The table specified by \fIt\fP should be a value returned by an earlier call to
+\fBmaketable()\fP.
+.PP
+\fBsetcellcolor()\fP sets the background color of the cell at row \fIr\fP and
+column \fIc\fP in the table specified by \fIt\fP to the value specified by the
+\fIcolor\fP string argument.
+\fIr\fP and \fIc\fP are indexed at 0.
+The table specified by \fIt\fP should be a value returned by an earlier call to
+\fBmaketable()\fP.
+.PP
+The \fIcolor\fP string should take a color in a CSS readable form.
+.TP
+This includes:
+.br
+RGB values ("rgb( R, G, B)")
+.br
+Hexadecimal values ("#RRGGBB")
+.br
+Color Names ("Red")
+.PP
+A full list of the 140 browser recognizable color names can be found at
+.UR https://charlierose.dev/cs164/numbers/colors.html
+.UE
+.SH RETURN VALUE
+\fBmaketable()\fP returns an integer table identifier.
+.PP
+\fBsetcell()\fP and \fBsetcellcolor()\fP do not have return values.
+.SH EXAMPLE
+A tic tac toe example:
+.PP
+.EX
+var table, xos
+
+fun makemove( r, c ) {
+	if( .(xos + (.i * 3) + .j) == 0 ) {
+		setcell( .table, .i, .j, "X" )
+		setcellcolor( .table, .i, .j, "blue" )
+		.(xos + (.i * 3) + .j ) : 1
+	}
+	else if( .(xos + (.i * 3) + .j) == 1 ) {
+		setcell( .table, .i, .j, "O" )
+		setcellcolor( .table, .i, .j, "yellow" )
+		.(xos + (.i * 3) + .j ) : 2
+	}
+	else {
+		setcell( .table, .i, .j, " " )
+		setcellcolor( .table, .i, .j, "white" )
+		.(xos + (.i * 3) + .j ) : 0
+	}
+}
+
+fun init() {
+	var i, j
+
+	table : maketable( 3, 3, makemove )
+	xos : alloc( 9 )
+
+	i : 0
+	loop {
+		until .i == 3
+		j : 0
+		loop {
+			until .j == 3
+
+			setcell( .table, .i, .j, " " )
+			setcellcolor( .table, .i, .j, "white" )
+			.(xos + (.i * 3) + .j ) : 0
+		}
+	}
+}
+.EE
+.SH AUTHORS
+.PP
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.br
+Irvin Fenochio, Fall 21-22
+.br
+M M Farhan Salaheen Hossain, Fall 21-22
+.br
+Shivang Patel, Winter 21-22
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+.BR tranqc (1),
+.BR html (3)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

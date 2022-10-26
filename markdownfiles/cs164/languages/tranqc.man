@@ -1,0 +1,58 @@
+.TH TRANQC 1 2022-10-25 "Tranquility Compiler" "Tranquility Programmer's Manual"
+.SH NAME
+tranqc \- The Tranquility Compiler
+.SH SYNOPSIS
+.nf
+.PP
+\fBtranqc\fP [-ahv] SOURCE
+.fi
+.PP
+.SH DESCRIPTION
+.PP
+\fBtranqc\fP compiles Tranquility (.t) files into machine code.
+A new file named SOURCE.json will be created in the current directory.
+This file contains a representation of the tvm machine code for this program in
+a form suitable for the program that simulates the Tranquility Virtual Machine
+(tvm).
+.SH OPTIONS
+.TP
+\fB-a\fP
+Directly creates the HTML file in your \fBpublic_html\fR directory and embeds
+the JSON tvm machine code into the HTML file. This streamlines the development
+process at the expense of seeing how all the pieces fit together.
+.TP
+\fB-h\fP
+Displays the usage of \fBtranqc\fP
+.TP
+\fB-v\fP
+Print out the compiler's internal representation of the program
+.SH FILES
+.TP
+\fC~bls96/cs164/bin/tranqc\fR
+.SH AUTHORS
+.PP
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.br
+Brandon Gorski, Fall 21-22
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

@@ -1,0 +1,138 @@
+.TH ALLOC 3 2022-10-25 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+alloc, free \- Allocate blocks of memory
+.SH SYNOPSIS
+.nf
+.PP
+.BI "alloc( " n " )"
+.BI "free( " p " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBalloc()\fP allocates a block of memory with \fIn\fP locations and returns the
+address of the first location.
+.PP
+A block of memory refers to a series of neighboring memory locations and the
+return value of this function is the first memory address in the block.
+.PP
+\fBfree()\fP (Currently unimplemented) returns previously allocated memory
+blocks to the free list.
+The argument \fIp\fP should be the memory address returned by an earlier call to
+\fBalloc()\fP.
+.SH RETURN VALUE
+\fBalloc()\fP returns the address of the first location of the block of memory
+allocated.
+.PP
+\fBfree()\fP has no return value.
+.SH BUGS
+\fBfree()\fP has not yet been implemented.
+.SH NOTES
+.PP
+If you are struggling with understanding this function, consider thinking of var
+as creating an individual variable and \fBalloc()\fP as creating a group of
+variables.
+This group will consist of several locations next to each other in memory.
+This is called a block of memory.
+You can assign a value to every member of this group by adding an "index" onto
+the first address.
+.PP
+.EX
+var block
+
+block : alloc(16)
+(.block) : 'a'       # sets the value of the first location of the block
+(.block + 6) : 'f'   # sets the value of the sixth location of the block
+.EE
+.PP
+A null byte (0) can be used to mark the termination of the block.
+This "null terminator" is necessary for strings.
+.SH EXAMPLES
+The following example from page 7 of the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+creates a table of factorials.
+.PP
+.EX
+fun fact(n) {
+	if .n == 0 {
+		return 1
+	}
+	else {
+		return .n * fact(.n - 1)
+	}
+}
+
+fun genfacts(n) {
+	var i, ftab
+
+	ftab : alloc(.n)
+	i : 0
+	loop {
+		until .i >= .n
+		(.ftab + .i) : fact(.i)
+		i : .i + 1
+	}
+	return .ftab
+}
+
+fun filltable() {
+	var i, ftab, istr
+
+	html("<center>\\n")
+	html("<table border=1><tr><th>n</th><th>n!</th></tr>\\n")
+	ftab : genfacts(13)
+	istr : alloc(12)
+	i : 0
+	loop {
+		until .i > 12
+		html("<tr><td>")
+		i2s(.istr, .i)
+		html(.istr)
+		html("</td><td>")
+		i2s(.istr, .(.ftab + .i))
+		html(.istr)
+		html("</td></tr>\\n")
+		i : .i + 1
+	}
+	html("</table></center>\\n")
+}
+
+fun init () {
+	html("<center>")
+	button("Make Table", filltable)
+	html("<p>Factorials</p>\\n</center>\\n")
+}
+.EE
+.SH AUTHORS
+.PP
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.br
+Michael Hadad, Fall 21-22
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+.BR tranqc (1),
+.BR i2s (3),
+.BR sread (3)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

@@ -32,4 +32,17 @@ life. (You also have the help of TAs and the Professor)
 
 [Tranquility Manual](https://www.cs.drexel.edu/~bls96/tranquility.pdf)
 
+In addition to the PDF manual, we've decided to write `man` pages for
+Tranquility.
+Just like how the C library functions have `man` pages, so do the Tranquility
+built-in functions.
+The following sections are the `man` pages exactly how you'd see them if they
+were pulled up on tux.
 
+A very special thank you to the Fall 21-22 and Winter 21-22 students who
+participated in the extra credit for Project 2 and wrote a `man` page.
+You all saved me quite a bit of work and taught me a few things I didn't know
+about the behavior of some of these functions.
+This little project was a lot of fun to work on and I really appreciate y'alls
+contributions.
+You all have been credited as authors on each page.

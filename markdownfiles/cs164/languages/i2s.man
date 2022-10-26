@@ -1,0 +1,111 @@
+.TH I2S 3 2022-10-25 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+i2s \- Produce the base-10 string represenation of an integer
+.SH SYNOPSIS
+.nf
+.PP
+.BI "i2s( " str ", " n " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBi2s()\fP produces a string that contains the decimal (base-10) representation
+of the integer value \fIn\fP passed as the second argument.
+The first argument \fIstr\fP should be the address of a block of memory large
+enough to contain the resulting string and its null terminator.
+.PP
+\fBi2s()\fP is necessary to display variable values on the HTML pop up window
+with the \fBhtml(3)\fP, \fBlabel(3)\fP, and \fBtable(3)\fP functions.
+.SH RETURN VALUE
+\fBi2s()\fP does not have a return value.
+.SH EXAMPLE
+The following example from page 7 of the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+creates a table of factorials.
+.PP
+.EX
+fun fact(n) {
+	if .n == 0 {
+
+	}
+	else {
+		return .n * fact(.n - 1)
+	}
+}
+
+fun genfacts(n) {
+	var i, ftab
+
+	ftab : alloc(.n)
+	i : 0
+	loop {
+		until .i >= .n
+		(.ftab + .i) : fact(.i)
+		i : .i + 1
+	}
+	return .ftab
+}
+
+fun filltable() {
+	var i, ftab, istr
+
+	html("<center>\n")
+	html("<table border=1><tr><th>n</th><th>n!</th></tr>\n")
+	ftab : genfacts(13)
+	istr : alloc(12)
+	i : 0
+	loop {
+		until .i > 12
+		html("<tr><td>")
+		i2s(.istr, .i)
+		html(.istr)
+		html("</td><td>")
+		i2s(.istr, .(.ftab + .i))
+		html(.istr)
+		html("</td></tr>\n")
+		i : .i + 1
+	}
+	html("</table></center>\n")
+}
+
+fun init () {
+	html("<center>")
+	button("Make Table", filltable)
+	html("<p>Factorials</p>\n</center>\n")
+}
+.EE
+.SH AUTHORS
+.PP
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.br
+Lam Nguyen, Fall 21-22
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+.BR tranqc (1),
+.BR html (3),
+.BR makelabel (3),
+.BR setlabel (3),
+.BR setcell (3)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

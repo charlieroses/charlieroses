@@ -1,0 +1,74 @@
+.TH RANDOM 3 2022-10-25 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+random \- Generates a random number
+.SH SYNOPSIS
+.nf
+.PP
+.BI "random( " n " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBrandom()\fP generates a random number.
+If \fIn\fP is positive, it generates a number in the range [0, \fIn\fP) where
+the range includes 0 and excludes \fIn.\fP
+If \fIn\fP is negative, the range is [\fIn\fP, 0) where \fIn\fP is included and
+0 is excluded.
+If \fIn\fP is not supplied, a random positive 16 bit number is generated in the
+inclusive range [0, 65,535].
+.SH RETURN VALUE
+\fBrandom()\fP returns the generated random number.
+.SH EXAMPLES
+The following example changes the label on the button randomly after each click.
+.PP
+.EX
+var b
+
+fun change() {
+	var r
+	r : random( 3 )
+
+	if( .r == 0 ) {
+		buttonlabel( .b, "Zero" )
+	}
+	else if( .r == 1 ) {
+		buttonlabel( .b, "One" )
+	}
+	else {
+		buttonlabel( .b, "Two" )
+	}
+}
+
+fun init(){
+	b : button( "Unclicked", change )
+}
+.EE
+.SH AUTHORS
+.br
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.br
+Ryan Brosius, Fall 21-22
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+.BR tranqc(1)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

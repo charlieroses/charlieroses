@@ -1,0 +1,99 @@
+.TH TIMER 3 2022-10-25 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+timer, stoptimer \- Create a timer that executes a function
+.SH SYNOPSIS
+.nf
+.PP
+.BI "timer( " ms ", " fun  " )"
+.BI "stoptimer( " n " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBtimer()\fP creates a timer that will fire \fIms\fP milliseconds after it is
+created.
+When it fires, the function passed in as \fIfun\fP will execute.
+The function should not include parentheses or arguments.
+Only the name of the function should be passed in as a reference.
+\fBtimer()\fP returns an integer identifier that can be used to cancel the
+timer.
+.PP
+\fBstoptimer()\fP cancels a previously created timer that has not yet fired.
+The argument \fIn\fP should be the value returned by a earlier call to
+\fBtimer()\fP.
+.SH RETURN VALUE
+\fBtimer()\fP returns a unique identifier to the newly created timer.
+.PP
+\fBstoptimer()\fP has no return value.
+.SH ERRORS
+Using parentheses for the \fIfun\fP argument when calling \fBtimer()\fP produces
+a variety of unexpected behaviors.
+.SH EXAMPLES
+.PP
+The following example from page 10 of the Tranquility Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+implements a simple stopwatch.
+.PP
+.EX
+var tim, lab, labstr, sec
+
+fun init() {
+	labstr : alloc(10)
+	secs : 0
+	html("<center\n")
+	lab : makelabel("0")
+	html("<br>\n")
+	button("Start", swstart)
+	button("Stop", swstop)
+	button("Reset", swreset)
+}
+
+fun swstart() {
+	tim : timer(1000, timestep)
+}
+
+fun swstop() {
+	stoptimer(.tim)
+}
+
+fun swreset() {
+	secs : 0
+	setlabel(.lab, "0")
+}
+
+fun timestep() {
+	time : timer(1000, timestep)
+	secs : .secs + 1
+	i2s(.labstr, .secs)
+	setlabel(.lab, .labstr)
+}
+.EE
+.SH AUTHORS
+.PP
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+.BR tranqc (1)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE

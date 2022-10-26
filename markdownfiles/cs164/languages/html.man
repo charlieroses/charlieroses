@@ -1,0 +1,112 @@
+.TH HTML 3 2022-10-25 "Tranquility Built In Functions" "Tranquility Programmer's Manual"
+.SH NAME
+html \- Produce HTML code for Tranquility
+.SH SYNOPSIS
+.nf
+.PP
+.BI "html( " s " )"
+.fi
+.PP
+.SH DESCRIPTION
+\fBhtml()\fP sends the HTML code in the argument string \fIs\fP to the HTML
+window for Tranquility.
+.PP
+Like other Tranquility functions that create HTML elements, \fBhtml()\fP opens a
+new browser window when called if one did not previously exist.
+.PP
+Elements in \fIs\fP will be placed on the HTML page, left to right, top to
+bottom in order of being called.
+.SH RETURN VALUE
+\fBhtml()\fP has no return value.
+.SH EXAMPLES
+The following example from page 7 of the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+creates a table of factorials.
+.PP
+.EX
+fun fact(n) {
+	if .n == 0 {
+		return 1
+	}
+	else {
+		return .n * fact(.n - 1)
+	}
+}
+
+fun genfacts(n) {
+	var i, ftab
+
+	ftab : alloc(.n)
+	i : 0
+	loop {
+		until .i >= .n
+		(.ftab + .i) : fact(.i)
+		i : .i + 1
+	}
+	return .ftab
+}
+
+fun filltable() {
+	var i, ftab, istr
+
+	html("<center>\n")
+	html("<table border=1><tr><th>n</th><th>n!</th></tr>\n")
+	ftab : genfacts(13)
+	istr : alloc(12)
+	i : 0
+	loop {
+		until .i > 12
+		html("<tr><td>")
+		i2s(.istr, .i)
+		html(.istr)
+		html("</td><td>")
+		i2s(.istr, .(.ftab + .i))
+		html(.istr)
+		html("</td></tr>\n")
+		i : .i + 1
+	}
+	html("</table></center>\n")
+}
+
+fun init () {
+	html("<center>")
+	button("Make Table", filltable)
+	html("<p>Factorials</p>\n</center>\n")
+}
+.EE
+
+.SH AUTHORS
+.PP
+Charlie Stuart
+.MT cstuart11@protonmail.com
+.ME
+.SH REPORTING BUGS
+.PP
+First, check the Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+.TP
+If the problem persists see Dr. Stuart or Charlie Stuart
+.br
+Dr. Stuart:
+.MT brian.l.stuart@drexel.edu
+.ME
+.br
+Charlie Stuart:
+.MT cstuart11@protonmail.com
+.ME
+.SH SEE ALSO
+.BR tranqc (1),
+.BR button (3),
+.BR makeimg (3),
+.BR makelabel (3),
+.BR maketable (3)
+.PP
+Tranquility Programmer's Manual
+.br
+.UR https://www.cs.drexel.edu/~bls96/tranquility.pdf
+.UE
+
