@@ -1,0 +1,24 @@
+pre.sourceCode {
+	background-color: #1B1B1E;
+	border-radius: 5px;
+	color: #FFFFFF;
+	font-family: "Courier New", Courier, monospace;
+	padding: 1ch;
+	width: 78ch;
+}
+
+.va {
+	color: #B0B8F4;
+}
+
+.st {
+	color: #FB89EA;
+}
+
+.bu {
+	color: #DCD3A3;
+}
+
+td {
+	width: 17ch;
+}

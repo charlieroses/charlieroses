@@ -1,0 +1,102 @@
+a
+{
+	color: #0e3793;
+}
+
+body
+{
+	background-color: rgb(200,200,200);
+	font-size: 120%;
+}
+
+code {
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	padding: 1px;
+	padding-left: 4px;
+	padding-right: 4px;
+	font-size: 120%;
+}
+
+pre {
+	background-color: rgb(175, 175, 175);
+	border-radius: 5px;
+	padding: 5px;
+}
+
+pre > code {
+	background-color: transparent; !important
+	padding: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+h1
+{
+	color: #072a7c;
+}
+
+h2
+{
+	color: #072a7c;
+}
+
+
+h3
+{
+	color: #072a7c;
+}
+
+.mainInfo
+{
+   overflow-x: hidden;
+   margin-left: 300px;
+   margin-right: 50px;
+}
+
+.prevnextcontent > *
+{
+   display: inline-block;
+   vertical-align: middle;
+}
+
+.prevnextcontent > .leftprev
+{
+   margin-left: 300px;
+   left: 0;
+   position: absolute;
+}
+
+.prevnextcontent > .rightnext
+{
+   margin-right: 50px;
+   right: 0;
+   position: absolute;
+}
+
+.sideBar
+{
+   display: block;
+   position: fixed;
+   left: 0;
+   width: 250px;
+   border-right: 1px solid;
+   overflow-y: scroll;
+   padding-left: 1%;
+   padding-right: 1%;
+   height: 100%;
+   background-color: #B4B4B4;
+   z-index: 2;
+   top: 0;
+}
+.sideBar > a
+{
+   background-color: #B4B4B4;
+   display: block;
+   text-decoration: none;
+}
+.sideBar > a:hover
+{
+   background-color: #CCCCCC;
+   display: block;
+}

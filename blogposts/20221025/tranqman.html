@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../../styles.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <title>CharlieRose.dev</title>
+</head>
+<body>
+  <header id="top">
+	<h2>
+		Charlie Stuart  - Blog
+	</h2>
+	<nav>
+	  <a class="pr" href="../../index.html">[~]</a>
+	  <a class="po" href="../../teaching/">[teaching]</a>
+	  <a class="py" href="../../research/">[research]</a>
+	  <a class="pg" href="../../projects/">[projects]</a>
+	  <a class="pb" href="../../activism/">[activism]</a>
+	  <a class="pp" href="../../blog.html">[blog]</a>
+	  <a class="pi" href="https://www.github.com/charlieroses">[GitHub]</a>
+	  <br>
+	  <a class="pr" href="../../cs164/">[cs164]</a>
+	  <a class="po" href="https://charlieroses.github.io/pokemoncards/">[pokemon]</a>
+	  <a class="py" href="../../ref/">[reference]</a>
+	</nav>
+	<hr>
+  </header>
+
+  <section>
+	<h1 id="tranquility-man-pages">Tranquility Man Pages</h1>
+<p>I took a quick break from applying for graduate school to deal with mold in my apartment. This break was further extended when we realized that in Drexel time, it's week 6. This means the <a href="../..//cs164/">CS-164</a> students start learning <a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">Tranquility</a>.</p>
+<p>Tranquility is a nifty little language that <a href="https://www.cs.drexel.edu/~bls96/">BLS</a> wrote and I helped design to teach basic programming concepts in CS-164. We didn't want to teach everyone a language they could mindlessly slap on their resume (if you're only using a language for 4 weeks in one class, you probably don't know it well enough to put it on a resume). The next course in the freshman sequence is <a href="https://catalog.drexel.edu/search/?P=CS%20171">CS-171: Computer Programming I</a> which is Python 101, so it's not even our job to teach everyone programming. The goal is to teach programming well enough to connect the higher-level languages they'll see later to the assembly and machine code they learned with the CARDIAC. Thus, Tranquility was born. It also comes with the added anti-plagiarism perk where it's very hard to Google solutions in a language no one uses.</p>
+<p>Last year, in the Fall term of the 21-22 academic year, we thought it would be cool to have man pages for Tranquility. I think it was because I managed to write syntax highlighting for Tranquility (I'll do a blog post about this later). The biggest issue we had was that we simply didn't have the time. We decided to enlist the help of our students to 1) save us a little work and 2) at the end of the day, the documentation is for them. It makes sense to get their input on the documentation so that it's written in a way they understand. For <a href="../../cs164/labs/man_fa21.html">extra credit</a> on their second project, they could write a man page for their favorite built-in Tranquility function or the compiler.</p>
+<p>Today (literally like an hour ago) I finally finished compiling all their work into the most miserable <code>groff</code> documents and created the first ever Tranquility man pages!</p>
+<p>This project was a lot of fun. It's also really cool using <code>man</code>, a command I use frequently, and the content that comes up is stuff I wrote. A million &quot;thank you&quot;s to the students who did the extra credit and wrote a page. Their collaboration made the project even more fun to work on. It did save me quite a bit of work and it also gave me a much-needed student perspective when writing the pages. I did credit each student as an author for the page they contributed to.</p>
+<p>For the Drexel people who want the man pages on tux, add the following lines to your <code>.bashrc</code>.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="va">MANPATH=</span><span class="st">&quot;</span><span class="va">${MANPATH}</span><span class="st">:/home/bls96/cs164/man&quot;</span>
+<span class="bu">export</span> <span class="va">MANPATH</span></code></pre></div>
+<p>Make sure to log out and back into tux (or run <code>source .bashrc</code>) to refresh everything.</p>
+<p>For those of you outside of Drexel, I've also compiled all the pages to HTML with <code>groff</code> and posted them on my <a href="../../cs164/">CS-164 site</a>.</p>
+<center>
+<table>
+<tr>
+<td>
+<a href="../../cs164/languages/tranqc.html">tranqc(1)</a>
+</td>
+<td>
+<a href="../../cs164/languages/alloc.html">alloc(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/button.html">button(3)</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../../cs164/languages/button.html">buttonlabel(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/alloc.html">free(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/html.html">html(3)</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../../cs164/languages/i2s.html">i2s(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/print.html">iprint(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/read.html">iread(3)</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../../cs164/languages/img.html">makeimg(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/label.html">makelabel(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/table.html">maketable(3)</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../../cs164/languages/random.html">random(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/table.html">setcell(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/table.html">setcellcolor(3)</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../../cs164/languages/img.html">setimg(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/label.html">setlabel(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/print.html">sprint(3)</a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../../cs164/languages/read.html">sread(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/timer.html">stoptimer(3)</a>
+</td>
+<td>
+<a href="../../cs164/languages/timer.html">timer(3)</a>
+</td>
+</tr>
+</table>
+</center>
+
+<hr>
+
+<a href="#top">Back to Top</a>
+
+  </section>
+</body>
+</html>
