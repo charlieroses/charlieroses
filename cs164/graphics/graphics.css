@@ -1,0 +1,32 @@
+td {
+	font-family: "Lucida Console", Monaco, monospace;
+	text-align: center;
+}
+
+#bresenhamgrid {
+	background-color: transparent;
+	border-collapse: collapse;
+}
+
+#bresenhamgrid tr {
+	border-color: transparent;
+}
+
+.grid {
+	height: 2ch;
+	width: 2ch;
+	padding: 0;
+	border: 4px solid #888888;
+	background-color: #EEEEEE;
+	font-size: 120%;
+}
+
+.unit {
+	border-color: transparent;
+}
+
+textarea {
+	width: 2ch;
+	height: 1.5ch;
+	font-size: 120%;
+}

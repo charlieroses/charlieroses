@@ -1,0 +1,65 @@
+# Bresenham's Line Drawing Algorithm
+
+
+Okay I should probably actually fill in the actual material for this section at
+some point, but I had this idea for a thing and it's really cute.
+
+```
+plotLine(x0,y0, x1,y1)
+	dx = x1-x0
+	dy = y1-y0
+	y = y0
+	e = 0
+	for x from x0 to x1
+		plot(x,y)
+		e = e + dy
+		if 2*e &gt; dx
+			y = y+1
+			e = e - dx
+```
+
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>
+<button id="generate" onclick="generate()">Generate</button>
+<button id="verify" onclick="verify()">Verify</button>
+<button id="solution" onclick="solution()">See Solution</button>
+<button id="clear" onclick="cleargrid()">Clear</button>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>(x0, y0): (<textarea id="x0"></textarea>, <textarea id="y0"></textarea>)</td>
+</tr>
+<tr>
+<td></td>
+<td>(x1, y1): (<textarea id="x1"></textarea>, <textarea id="y1"></textarea>)</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<center>
+<table id="bresenhamgrid">
+</table>
+</center>
+</td>
+</tr>
+</table>
+</center>
+
+</body>
+<script>
+init();
+</script>
