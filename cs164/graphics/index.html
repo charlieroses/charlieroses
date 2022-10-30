@@ -5,7 +5,10 @@
 	<base href="/cs164/">
 	<link rel="stylesheet" href="structure.css">
 	<link rel="stylesheet" href="styles.css">
-	<link rel="stylesheet" href="languages/man.css">
+	<link rel="stylesheet" href="tables.css">
+	<link rel="stylesheet" href="colors.css">
+	<link rel="stylesheet" href="graphics/graphics.css">
+	<script src="graphics/graphics.js"></script>
 </head>
 <body>
 <div id="sidebar">
@@ -102,171 +105,55 @@
 	</div>
 </div>
 <div id="main">
-	<div class="navigation" id="top">
-		<div class="left">
-			TIMER(3)
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="languages/state.html">Previous Section</a> : State and State Machines : 6.5
 		</div>
-		<div class="middle">
-			Tranquility Programmer's Manual
+		<div class="next">
+			8.1 : Bresenham's : <a href="graphics/bresenham.html">Next Section</a>
 		</div>
-		<div class="right">
-			TIMER(3)
 		</div>
-	</div><br>
-<p class="h2">NAME
-
-<a name="NAME"></a>
-</p>
-
-
-<p style="margin-left:7ch; margin-top: 1em">timer,
-stoptimer - Create a timer that executes a function</p>
-
-<p class="h2">SYNOPSIS
-<a name="SYNOPSIS"></a>
-</p>
-
-
-<p style="margin-left:7ch; margin-top: 1em"><b>timer(</b>
-<i>ms</i><b>,</b> <i>fun</i> <b>) <br>
-stoptimer(</b> <i>n</i> <b>)</b></p>
-
-<p class="h2">DESCRIPTION
-<a name="DESCRIPTION"></a>
-</p>
-
-
-<p style="margin-left:7ch; margin-top: 1em"><b>timer()</b>
-creates a timer that will fire <i>ms</i> milliseconds after
-it is created. When it fires, the function passed in as
-<i>fun</i> will execute. The function should not include
-parentheses or arguments. Only the name of the function
-should be passed in as a reference. <b>timer()</b> returns
-an integer identifier that can be used to cancel the
-timer.</p>
-
-
-<p style="margin-left:7ch; margin-top: 1em"><b>stoptimer()</b>
-cancels a previously created timer that has not yet fired.
-The argument <i>n</i> should be the value returned by a
-earlier call to <b>timer()</b>.</p>
-
-<p class="h2">RETURN VALUE
-<a name="RETURN VALUE"></a>
-</p>
-
-
-<p style="margin-left:7ch; margin-top: 1em"><b>timer()</b>
-returns a unique identifier to the newly created timer.</p>
-
-
-<p style="margin-left:7ch; margin-top: 1em"><b>stoptimer()</b>
-has no return value.</p>
-
-<p class="h2">ERRORS
-<a name="ERRORS"></a>
-</p>
-
-
-<p style="margin-left:7ch; margin-top: 1em">Using
-parentheses for the <i>fun</i> argument when calling
-<b>timer()</b> produces a variety of unexpected
-behaviors.</p>
-
-<p class="h2">EXAMPLES
-<a name="EXAMPLES"></a>
-</p>
-
-
-<p style="margin-left:7ch; margin-top: 1em">The following
-example from page 10 of the Tranquility Manual <br>
-
-<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
-implements a simple stopwatch.</p>
-<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">var tim, lab, labstr, sec
-
-fun init() {
-     labstr : alloc(10)
-     secs : 0
-     html(&quot;&lt;center0)
-     lab : makelabel(&quot;0&quot;)
-     html(&quot;&lt;br&gt;0)
-     button(&quot;Start&quot;, swstart)
-     button(&quot;Stop&quot;, swstop)
-     button(&quot;Reset&quot;, swreset)
-}
-
-fun swstart() {
-     tim : timer(1000, timestep)
-}
-
-fun swstop() {
-     stoptimer(.tim)
-}
-
-fun swreset() {
-     secs : 0
-     setlabel(.lab, &quot;0&quot;)
-}
-
-
-fun timestep() {
-     time : timer(1000, timestep)
-     secs : .secs + 1
-     i2s(.labstr, .secs)
-     setlabel(.lab, .labstr)
-}</pre>
-
-
-<p class="h2">AUTHORS
-<a name="AUTHORS"></a>
-</p>
-
-
-<p style="margin-left:7ch; margin-top: 1em">Charlie Stuart
-<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a></p>
-
-<p class="h2">REPORTING BUGS
-<a name="REPORTING BUGS"></a>
-</p>
-
-
-<p style="margin-left:7ch; margin-top: 1em">First, check
-the Tranquility Programmer&rsquo;s Manual <br>
-
-<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
-<br>
-If the problem persists see Dr. Stuart or Charlie Stuart</p>
-
-<p style="margin-left:14ch;">Dr. Stuart:
-<a href="mailto:brian.l.stuart@drexel.edu">brian.l.stuart@drexel.edu</a>
-<br>
-Charlie Stuart:
-<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a></p>
-
-<p class="h2">SEE ALSO
-<a name="SEE ALSO"></a>
-</p>
-
-
-
-<p style="margin-left:7ch; margin-top: 1em"><b>tranqc</b>(1)</p>
-
-<p style="margin-left:7ch; margin-top: 1em">Tranquility
-Programmer&rsquo;s Manual <br>
-
-<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a></p>
-<hr>	<div class="navigation" id="bottom">
-		<div class="left">
-			Tranquility Built In Functions
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<span style="color:#FF0000"><b>Warning: CSS May Be Broken.</b>
+		My apologies for any issues this may cause.
+		I wrote bad code a very long time ago and it's taking a while to update
+		it.
+		</span>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>Chapter 8 : Graphics</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>This section literally only exists because I thought about the Bresenham's tool and had to make it. I'll fill the rest in once I finish updating the old material</p>
+	</div>
+	<hr>
+	<div class="content">
+		<center>
+		<a href="graphics/index.html#top">Back To Top</a>
+		</center>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="languages/state.html">Previous Section</a> : State and State Machines : 6.5
 		</div>
-		<div class="middle">
-			2022-10-25
+		<div class="next">
+			8.1 : Bresenham's : <a href="graphics/bresenham.html">Next Section</a>
 		</div>
-		<div class="right">
-			TIMER(3)
+		</div>
+		<br>
+		<br>
 	</div>
 </div>
 </body>
 </html>
-

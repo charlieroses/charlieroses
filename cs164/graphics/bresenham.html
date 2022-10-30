@@ -97,6 +97,10 @@
 		<a href="languages/table.html"><b>6.4.11 :</b> TABLE (3)</a>
 		<a href="languages/timer.html"><b>6.4.12 :</b> TIMER (3)</a>
 		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="graphics/"><b>Chapter 8 :</b> Graphics</a>
 		<a href="graphics/bresenham.html"><b>8.1 :</b> Bresenham's</a>
 	</div>
 </div>
@@ -105,7 +109,7 @@
 		<br>
 		<div class="navigation" id="top">
 		<div class="prev">
-			<a href="languages/state.html">Previous Section</a> : State and State Machines : 6.5
+			<a href="graphics/">Previous Section</a> : Graphics : Chapter 8
 		</div>
 		<div class="next">
 		</div>
@@ -127,7 +131,6 @@
 	</div>
 	<hr>
 	<div class="content">
-<h1 id="bresenhams-line-drawing-algorithm">Bresenham's Line Drawing Algorithm</h1>
 <p>Okay I should probably actually fill in the actual material for this section at some point, but I had this idea for a thing and it's really cute.</p>
 <pre><code>plotLine(x0,y0, x1,y1)
 	dx = x1-x0
@@ -140,6 +143,7 @@
 		if 2*e &amp;gt; dx
 			y = y+1
 			e = e - dx</code></pre>
+<p>Basically, the textareas give you the values for <code>(x0, y0)</code> and <code>(x1, y1)</code>. These can be randomly generated or you can enter your own values. Click on each cell to select it. Click again to deselect it.</p>
 <center>
 <table>
 <colgroup>
@@ -151,6 +155,8 @@
 </th>
 <th>
 </th>
+<th>
+</th>
 </tr>
 </thead>
 <tbody>
@@ -158,25 +164,23 @@
 <td>
 </td>
 <td>
-<button id="generate" onclick="generate()">
-Generate
-</button>
-<button id="verify" onclick="verify()">
-Verify
-</button>
-<button id="solution" onclick="solution()">
-See Solution
-</button>
-<button id="clear" onclick="cleargrid()">
-Clear
-</button>
+</td>
+<td>
+(x0, y0)
+</td>
+<td>
+(x1, y1)
+</td>
+<td>
 </td>
 </tr>
 <tr>
 <td>
 </td>
 <td>
-(x0, y0): (
+</td>
+<td>
+(
 <textarea id="x0">
 </textarea>
 ,
@@ -184,12 +188,8 @@ Clear
 </textarea>
 )
 </td>
-</tr>
-<tr>
 <td>
-</td>
-<td>
-(x1, y1): (
+(
 <textarea id="x1">
 </textarea>
 ,
@@ -197,15 +197,41 @@ Clear
 </textarea>
 )
 </td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td colspan="4">
+<center>
+<table id="bresenhamgrid">
+</table>
+</center>
+</td>
 </tr>
 <tr>
 <td>
 </td>
 <td>
-<center>
-<table id="bresenhamgrid">
-</table>
-</center>
+<button id="clear" onclick="cleargrid()">
+Reset Grid
+</button>
+</td>
+<td>
+<button id="generate" onclick="generate()">
+Random Points
+</button>
+</td>
+<td>
+<button id="verify" onclick="verify()">
+Check Answers
+</button>
+</td>
+<td>
+<button id="solution" onclick="solution()">
+See Solution
+</button>
 </td>
 </tr>
 </table>
@@ -226,7 +252,7 @@ init();
 		<br>
 		<div class="navigation" id="bottom">
 		<div class="prev">
-			<a href="languages/state.html">Previous Section</a> : State and State Machines : 6.5
+			<a href="graphics/">Previous Section</a> : Graphics : Chapter 8
 		</div>
 		<div class="next">
 		</div>

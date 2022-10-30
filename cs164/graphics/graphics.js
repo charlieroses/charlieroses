@@ -35,7 +35,6 @@ function init() {
 }
 
 function generate() {
-	console.log("generate");
 	document.getElementById("x0").value = Math.floor(Math.random() * 10);
 	document.getElementById("y0").value = Math.floor(Math.random() * 10);
 	document.getElementById("x1").value = Math.floor(Math.random() * 10);
@@ -52,8 +51,11 @@ function verify() {
 
 	for( i = 0; i < 10; i++ ) {
 		for( j = 0; j < 10; j++) {
-			s = 0;
 			c = document.getElementById("x" + i + "y" + j).style.backgroundColor;
+			if ( c == "rgb(238, 238, 238)" )
+				continue;
+
+			s = 0;
 			for( k = 0; k < pLen; k++ ) {
 				x = k * 2;
 				y = x + 1;
@@ -63,20 +65,11 @@ function verify() {
 				}
 			}
 
-			console.log( i + " " + j + " " + s + " " + c );
-
-			if ( c == "rgb(238, 238, 238)" ) { // grey (not part of their solution)
-				if ( s == 1 ) { // should be part of solution
-					document.getElementById("x" + i + "y" + j).innerHTML = "<span class=\"cross\">&cross;</span>";
-				}
+			if( s == 1 ) {
+				document.getElementById("x" + i + "y" + j).innerHTML = "<span class=\"check\">&check;</span>";
 			}
-			else { // green or yellow (part of their solution)
-				if( s == 1 ) { // should be part of the solution
-					document.getElementById("x" + i + "y" + j).innerHTML = "<span class=\"check\">&check;</span>";
-				}
-				else { // shouldn't be
-					document.getElementById("x" + i + "y" + j).innerHTML = "<span class=\"cross\">&cross;</span>";
-				}
+			else {
+				document.getElementById("x" + i + "y" + j).innerHTML = "<span class=\"cross\">&cross;</span>";
 			}
 		}
 	}
@@ -134,9 +127,6 @@ function generatepoints( ) {
 	dy = y1t - y0t;
 	t = 0;
 
-	console.log("dx: " + dx);
-	console.log("dy: " + dy);
-
 	if( dy > dx ) {
 		t = x0t;
 		x0t = y0t;
@@ -149,11 +139,6 @@ function generatepoints( ) {
 		dy = t;
 		t = 1;
 	}
-
-	console.log("(x0, y0) (x1, y1)");
-	console.log("(" + x0 + ", " + y0 + ") (" + x1 + ", " + y1+ ")");
-	console.log("(x0t, y0t) (x1t, y1t)");
-	console.log("(" + x0t + ", " + y0t + ") (" + x1t + ", " + y1t+ ")");
 
 	y = y0t;
 	e = 0;

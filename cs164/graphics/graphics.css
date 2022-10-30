@@ -15,10 +15,15 @@ td {
 .grid {
 	height: 2ch;
 	width: 2ch;
+	max-height: 2ch;
+	max-width: 2ch;
+	min-height: 2ch;
+	min-width: 2ch;
 	padding: 0;
 	border: 4px solid #888888;
 	background-color: #EEEEEE;
-	font-size: 120%;
+	font-size: 140%;
+	font-weight: bold;
 }
 
 .unit {
@@ -30,3 +35,4 @@ textarea {
 	height: 1.5ch;
 	font-size: 120%;
 }
+

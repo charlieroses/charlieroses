@@ -54,9 +54,13 @@ div.figure>.caption {
 
 button {
 	background-color: #3456a3;
+	border-color: transparent;
+	border-radius: 5px;
 	color: #FFFFFF;
-	width: 175px;
+	font-size: 100%;
+	padding: 1ch;
 }
+
 textarea {
 	height: 35px;
 	width: 175px;
