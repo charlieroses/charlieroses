@@ -1,0 +1,215 @@
+h1, h2, h3 {
+	color: #E7B636;
+}
+
+h2, h3 {
+	text-align: center;
+}
+
+body {
+	background-color: #4A433B;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	margin: 1rem auto;
+	max-width: 100ch;
+}
+
+a {
+	color: #E7B636;
+	text-decoration: none;
+}
+
+hr {
+	border: 1px solid;
+	color: #6A635B; 
+}
+
+/* General Table */
+
+table {
+	margin: 1rem auto;
+}
+
+
+td {
+	background-color: #BAB3AB;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+td a {
+	color: #975606;
+}
+
+td img {
+      width: 12pt;
+}
+
+th {
+    background-color: #8A837B;
+    border-radius: 2px;
+    padding: 5px; 
+}
+ 
+#menutable img {
+	width: 24pt;
+}
+#menutable .titlediv {
+	display: block;
+	padding-left: 1ch;
+	vertical-align: middle;
+}
+#menutable .content {
+	display: flex;
+	align-items: center;
+	justify-content: left;
+}
+
+#set_title_img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+}
+
+
+/* All this here is for the set tables formatting */
+
+.artist {
+	text-align: left; 
+}
+
+.complete {
+	background-color: #A76606;
+}
+
+.complete a {
+	color: #DAD3CB;
+}
+
+.Dark {
+    background-color: #033538;
+    text-align: center; 
+}
+
+.DarkSteel {
+    background-image: linear-gradient(to right, #033538, #636E77);
+    text-align: center; 
+}
+
+
+.deck {
+	text-align: center;
+}
+
+.dex {
+    text-align: right; 
+}
+
+.Dragon {
+    background-color: #C6A114;
+    text-align: center; 
+}
+
+.Electric {
+    background-color: #EEBE01;
+    text-align: center; 
+}
+
+.ElectricGrass {
+    background-image: linear-gradient(to right, #EEBE01, #00963F);
+    text-align: center; 
+}
+
+.Fairy {
+    background-color: #D01D4F;
+    text-align: center; 
+}
+
+.FairyWater {
+    background-image: linear-gradient(to right, #D01D4F, #0295D2);
+    text-align: center; 
+}
+
+.Fire {
+    background-color: #E71416;
+    text-align: center; 
+}
+
+.Fighting {
+    background-color: #B7401E;
+    text-align: center; 
+}
+
+.Grass {
+    background-color: #00963F;
+    text-align: center; 
+}
+
+.GrassDark {
+    background-image: linear-gradient(to right, #00963F, #033538);
+    text-align: center; 
+}
+
+
+.GrassFire {
+    background-image: linear-gradient(to right, #00963F, #E71416);
+    text-align: center; 
+}
+
+
+.holofoil {
+    text-align: left; 
+}
+
+.Item {
+    color: #025FA9; 
+}
+
+.name {
+    text-align: left; 
+}
+
+.Normal {
+    background-color: #E2E7EE;
+    text-align: center; 
+}
+
+.Poison {
+    background-color: #7D52A1;
+    text-align: center; 
+}
+
+.rarity {
+    text-align: center; 
+}
+
+.set {
+	text-align: center;
+}
+
+.setnum {
+    text-align: center; 
+}
+
+.Steel {
+    background-color: #636E77;
+    text-align: center; 
+}
+
+.Stadium {
+    color: #4FAC3F;
+}
+
+.Supporter {
+    color: #CF4226; 
+}
+
+.Water {
+    background-color: #0295D2;
+    text-align: center;
+}
+
+.xtrainfo {
+    text-align: left; 
+}
+
