@@ -52,4 +52,33 @@ blue {
 	resize: none;
 }
 
+table textarea {
+	height: 1.75ch;
+	font-size: 120%;
+	text-align: center;
+	vertical-align: center;
+}
+table span {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 120%;
+}
 
+#base10num {
+	width: 6ch;
+}
+
+#numbits {
+	width: 3ch;
+}
+
+#binaryanswer {
+	width: 17ch;
+}
+
+#decanswer {
+	width: 6ch;
+}
+
+#binarynum {
+	width: 17ch;
+}

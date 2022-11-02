@@ -40,11 +40,10 @@
 	</div>
 	<hr>
 	<div class="content">
-		<a href="binary/"><b>Chapter 2 :</b> Binary</a>
-		<a href="binary/convertBin.html"><b>2.1 :</b> Converting Between Bases</a>
-		<a href="binary/negativebin.html"><b>2.2 :</b> Negative Numbers</a>
-		<a href="binary/fracBinary.html"><b>2.3 :</b> Fractional Binary</a>
-		<a href="binary/addSubBin.html"><b>2.4 :</b> Addition and Subtration</a>
+		<a href="binary/"><b>Chapter 2 :</b> More on Binary</a>
+		<a href="binary/negativebin.html"><b>2.1 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.2 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.3 :</b> Addition and Subtration</a>
 	</div>
 	<hr>
 	<div class="content">
@@ -132,8 +131,13 @@
 	</div>
 	<hr>
 	<div class="content">
-<p>Base-2 is also called Binary. Binary is the most basic thing computers read. We all recognize binary as long strings of 1's and 0's. To the untrained eye, lines of 1's and 0's can look overwhelming. However, when we break them down into numbers, we can understand what the binary reads. Instead of digits to hold place values, binary has bits. Each bit can hold a 1 or 0. When we put 8 bits together in a line, it's called a byte. Just a little trivia you'll never need to know: four bits are called a nibble. Because it's not quite a byte.</p>
-<p>Anyway! Let's start with an eight bit number, a byte. Let's consider a random 8 bit number, <strong>10011101</strong>.</p>
+<p>Base-2 is also called Binary. Binary is the way computers store information. At first glance, binary looks like an extremely long incomprehensible line of 0s and 1s. It's nearly impossible to believe that these seemingly random numbers could mean anything, much less the reason computers can do everything they do.</p>
+<p>Before we learn how to interpret binary, let's go over some of the words we'll use when we talk about binary. In base-10, we have digits that are used in each place value. In binary, we call these <strong>bits</strong>, short for <strong>b</strong>inary <strong>d</strong>igit. When we put eight of these next to each other, we call it a <strong>byte</strong>. When we put four of these together, it's called a nibble <em>(because it's not a full bite)</em>.</p>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="binary-to-base-10">Binary to Base-10</h2>
+<p>Let's start with an eight bit number, one byte of information. Let's consider a random 8 bit number, <strong>10011101</strong>.</p>
 <center>
 <table>
 <colgroup>
@@ -255,16 +259,907 @@ Value
 	</div>
 	<hr>
 	<div class="content">
-<h2 id="practice-problems">Practice Problems</h2>
-<p>What is the number 10110011<sub>2</sub> in base-10?</p>
-<textarea id="b2q1">
+<h2 id="base-10-to-binary">Base-10 to Binary</h2>
+<p>There are two different processes for converting to binary. I'll be going over both. One isn't better or worse than the other. You won't be forced to use one over the other. It's good to know how both work, but use whichever you understand more.</p>
+<h3 id="introducing-modulo">Introducing Modulo</h3>
+<p>Before jumping right into it, you'll need to know about an operator you likely haven't seen before in &quot;regular math&quot;. This operator is called <strong>modulo</strong>. It returns the remainder after division. While <code>/</code> is used to represent division, <code>%</code> is used to represent modulo.</p>
+<p>In this table, I took the value, <code>x</code> and divided it by 3, then also moduloed it by 3 so you can see how they interact. When dividing, I chopped off any fractional values. This is called <strong>truncating</strong>, or <strong>flooring</strong>, or &quot;rounding to the lower whole number&quot;.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+x
+</th>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+4
+</td>
+<td>
+5
+</td>
+<td>
+6
+</td>
+<td>
+7
+</td>
+<td>
+8
+</td>
+<td>
+9
+</td>
+<td>
+10
+</td>
+</tr>
+<tr>
+<th>
+x / 3
+</th>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td>
+2
+</td>
+<td>
+3
+</td>
+<td>
+3
+</td>
+</tr>
+<tr>
+<th>
+x % 3
+</th>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+2
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>There are a lot more really cool things you can do with modular arithmetic (the kind of math that uses modulo). It's part of what allows cryptography (which we'll talk more about later) to be so secure. Right now, all that matters is that we understand that modulo provides the remainder after division.</p>
+<h3 id="process-a">Process A</h3>
+<p>Let's use the base-10 number <strong>104<sub>10</sub></strong> and find out how we'd represent it as an 8 bit binary nuumber. Since we're using 8 bits, the first power is 2<sup>7</sup> (128). We're going to separately divide and modulo our starting value by 2<sup>7</sup>. Again, I'll be dropping all fractional components when dividing. The division will give us what value belongs in the 2<sup>7</sup> place value. The modulo will give us what value will be used next.</p>
+<center>
+<div class="sidebyside">
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+</td>
+<td>
+<code>204 / 2<sup>7</sup></code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code>204 / 128</code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code><strong>1</strong></code>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+</td>
+<td>
+<code>204 % 2<sup>7</sup></code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code>204 % 128</code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code><strong>76</strong></code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+<p>The next bit is the 2<sup>6</sup> (64) place. Again, we perform division and a modulo, this time on 76:</p>
+<center>
+<div class="sidebyside">
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+</td>
+<td>
+<code>76 / 2<sup>6</sup></code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code>76 / 64</code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code><strong>1</strong></code>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+</td>
+<td>
+<code>76 % 2<sup>6</sup></code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code>76 % 64</code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code><strong>12</strong></code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+<p>The process continues for each place value. I finished it below:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+<code>2<sup>7</sup></code>
+</th>
+<td>
+<code>204 % 128 = 76</code>
+</td>
+<td>
+</td>
+<td>
+<code>204 / 128 = <strong>1</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>2<sup>6</sup></code>
+</th>
+<td>
+<code>76 % 64 = 12</code>
+</td>
+<td>
+</td>
+<td>
+<code>76 / 64 = <strong>1</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>2<sup>5</sup></code>
+</th>
+<td>
+<code>12 % 32 = 12</code>
+</td>
+<td>
+</td>
+<td>
+<code>12 / 32 = <strong>0</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>2<sup>4</sup></code>
+</th>
+<td>
+<code>12 % 16 = 12</code>
+</td>
+<td>
+</td>
+<td>
+<code>12 / 16 = <strong>0</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>2<sup>3</sup></code>
+</th>
+<td>
+<code>12 % 8 = 4</code>
+</td>
+<td>
+</td>
+<td>
+<code>12 / 8 = <strong>1</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>2<sup>2</sup></code>
+</th>
+<td>
+<code>4 % 4 = 0</code>
+</td>
+<td>
+</td>
+<td>
+<code>4 / 4 = <strong>1</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>2<sup>1</sup></code>
+</th>
+<td>
+<code>0 % 2 = 0</code>
+</td>
+<td>
+</td>
+<td>
+<code>0 / 2 = <strong>0</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>2<sup>0</sup></code>
+</th>
+<td>
+<code>0 % 1 = 0</code>
+</td>
+<td>
+</td>
+<td>
+<code>0 / 1 = <strong>0</strong></code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>When we put each bit in its respective place value, we see that <code>204<sub>10</sub> = 11001100<sub>2</sub></code></p>
+<p>Though, how can we be sure we got the right answer? We could Google it and see what the internet tells us, but that's not a good idea. It'll get very exhausting very quickly if you rely on the internet for all your validation. Besides, you can't use the internet on exams, so you'll have to learn how to rely on yourself.</p>
+<p>So how do we check our work? Do the same thing in reverse!</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</thead>
+<tbody>
+<tr>
+<th>
+Bit
+</th>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+1
+</td>
+<td>
+1
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+<tr>
+<th>
+Power
+</th>
+<td>
+2<sup>7</sup>
+</td>
+<td>
+2<sup>6</sup>
+</td>
+<td>
+2<sup>5</sup>
+</td>
+<td>
+2<sup>4</sup>
+</td>
+<td>
+2<sup>3</sup>
+</td>
+<td>
+2<sup>2</sup>
+</td>
+<td>
+2<sup>1</sup>
+</td>
+<td>
+2<sup>0</sup>
+</td>
+</tr>
+<tr>
+<th>
+Value
+</th>
+<td>
+128
+</td>
+<td>
+64
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+<td>
+8
+</td>
+<td>
+4
+</td>
+<td>
+0
+</td>
+<td>
+0
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Here we are! <code>128 + 64 + 0 + 0 + 8 + 4 + 0 + 0 = 204</code> which means we did our math correctly!</p>
+<h3 id="process-b">Process B</h3>
+<p>In the previous method, we moved left to right filling bits into place values. This time, we're going to go the opposite direction and fill bits into place values from right to left. Instead of starting with a large power of 2 and working our way down, we're going to repeatedly divide and modulo by 2 until we reach 0.</p>
+<p>Let's use 204<sub>10</sub> as an example again. We're going to separately divide and modulo our starting value by 2. As always, I'll be dropping all fractional components when dividing. This time around, the modulo will give us what value belongs in the 2<sup>i-1</sup> place value and the division will give us what value to use next.</p>
+<center>
+<div class="sidebyside">
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+</td>
+<td>
+<code>204 / 2</code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code><strong>102</strong></code>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+</td>
+<td>
+<code>204 % 2</code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code><strong>0</strong></code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+<p>To keep track of how many divisions we've performed, I'm going to create an iteration variable named <code>i</code>. An iteration is something that happens over an over again. Since this was our first division/modulo, <code>i=1</code>. Based on the modulo done in the first step, the bit in the <code>2<sup>i-1</sup> = 2<sup>1-1</sup> = 2<sup>0</sup></code> place value is 0. In our next step, we're going to use the result of our division, 102.</p>
+<center>
+<div class="sidebyside">
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+</td>
+<td>
+<code>102 / 2</code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code><strong>51</strong></code>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+</td>
+<td>
+<code>102 % 2</code>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<code><strong>0</strong></code>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</center>
+<p>Our second iteration (<code>i=2</code>) gave us the bit for the <code>2<sup>i-1</sup> = 2<sup>2-1</sup> = 2<sup>1</sup></code> place value. It's 0 again. Just as before, rinse and repeat. I finished the conversion below.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+<code>i = 1</code>
+</th>
+<td>
+<code>204 / 2 = 102</code>
+</td>
+<td>
+</td>
+<td>
+<code>204 % 2 = <strong>0</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>i = 2</code>
+</th>
+<td>
+<code>102 / 2 = 51</code>
+</td>
+<td>
+</td>
+<td>
+<code>102 % 2 = <strong>0</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>i = 3</code>
+</th>
+<td>
+<code>51 / 2 = 25</code>
+</td>
+<td>
+</td>
+<td>
+<code>51 % 2 = <strong>1</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>i = 4</code>
+</th>
+<td>
+<code>25 / 2 = 12</code>
+</td>
+<td>
+</td>
+<td>
+<code>25 % 2 = <strong>1</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>i = 5</code>
+</th>
+<td>
+<code>12 / 2 = 6</code>
+</td>
+<td>
+</td>
+<td>
+<code>12 % 2 = <strong>0</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>i = 6</code>
+</th>
+<td>
+<code>6 / 2 = 3</code>
+</td>
+<td>
+</td>
+<td>
+<code>6 % 2 = <strong>0</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>i = 7</code>
+</th>
+<td>
+<code>3 / 2 = 1</code>
+</td>
+<td>
+</td>
+<td>
+<code>3 % 2 = <strong>1</strong></code>
+</td>
+</tr>
+<tr>
+<th>
+<code>i = 8</code>
+</th>
+<td>
+<code>1 / 2 = 0</code>
+</td>
+<td>
+</td>
+<td>
+<code>1 % 2 = <strong>1</strong></code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Just as before, if we put each bit in it's respective 2<sup>i-1</sup> place, we get <code>204<sub>10</sub> = 11001100<sub>2</sub></code>.</p>
+<p>Again, it's always good to check your work, but I've already shown you how to do that above, so I'm not gonna do it again, but you should do it on your own.</p>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="practice">Practice</h2>
+<p>Below I've made two little tools to help you practice converting between bases. With each, the largest number you'll get is a 16 bit binary number. You can change the values in all the text boxes. Feel free to enter your own numbers.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+Decimal to Binary
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+</td>
+<td>
+What is
+<textarea id="base10num">
 </textarea>
-<br>
-<button onclick="b2q1Submit()">
-Submit
+represented as a binary number in
+<textarea id="numbits">
+</textarea>
+bits?
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<textarea id="binaryanswer">
+</textarea>
+<span id="decbincorrect"> </span>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<button onclick="decbincheck()">
+Check Answer
 </button>
-<p id="b2q1Out">
-</p>
+<button onclick="decbingenerate()">
+Reset
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<br><br><br>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+Binary to Decimal
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+</td>
+<td>
+What is
+<textarea id="binarynum">
+</textarea>
+represented as a decimal (base 10) number?
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<textarea id="decanswer">
+</textarea>
+<span id="bindeccorrect"> </span>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<button onclick="bindeccheck()">
+Check Answer
+</button>
+<button onclick="bindecgenerate()">
+Reset
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<script>
+decbingenerate();
+bindecgenerate();
+</script>
 	</div>
 	<hr>
 	<div class="content">

@@ -1,15 +1,3 @@
-function b2q1Submit()
-{
-	if(document.getElementById("b2q1").value == 179)
-	{
-	    document.getElementById("b2q1Out").innerHTML = "Correct!";
-	}
-	else
-	{
-	    document.getElementById("b2q1Out").innerHTML = "Good try but not right! Try looking again at the table.";
-	}
-}
-
 function b1q2Submit()
 {
 	if(document.getElementById("b2q2").value == 10001001)
@@ -98,4 +86,95 @@ function changeColor()
 	    document.getElementById("colorOutput").innerHTML = " ";
 	    document.getElementById("colorBox").style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
 	}
+}
+
+function decbingenerate() {
+	var dec, bits;
+
+	bits = 1 + Math.floor(Math.random() * 15);
+	dec = Math.floor(Math.random() * Math.pow(2, bits));
+
+	document.getElementById("numbits").value = bits;
+	document.getElementById("base10num").value = dec;
+	document.getElementById("binaryanswer").value = "";
+	document.getElementById("binaryanswer").style.backgroundColor = "#FFFFFF";
+	document.getElementById("decbincorrect").innerHTML = "&nbsp;";
+
+}
+
+function decbincheck() {
+	var dec, bits, binary;
+	var i, deccheck;
+
+	binary = document.getElementById("binaryanswer").value;
+	bits = Number(document.getElementById("numbits").value);
+	dec = Number(document.getElementById("base10num").value);
+
+	if ( binary.length != bits ) {
+		document.getElementById("binaryanswer").style.backgroundColor = "#FF000055";
+		document.getElementById("decbincorrect").innerHTML = "&cross;";
+		document.getElementById("decbincorrect").setAttribute("class", "cross");
+		return;
+	}
+
+	deccheck = 0;
+	for( i = 0; i < bits; i++ ) {
+		if ( binary[i] == '1' ) {
+			deccheck += Math.pow(2, (bits - i - 1));
+		}
+	}
+
+	if( deccheck == dec ) {
+		document.getElementById("binaryanswer").style.backgroundColor = "#00FF0055";
+		document.getElementById("decbincorrect").innerHTML = "&check;";
+		document.getElementById("decbincorrect").setAttribute("class", "check");
+	}
+	else {
+		document.getElementById("binaryanswer").style.backgroundColor = "#FF000055";
+		document.getElementById("decbincorrect").innerHTML = "&cross;";
+		document.getElementById("decbincorrect").setAttribute("class", "cross");
+	}
+}
+
+function bindecgenerate() {
+	var bits;
+	var i;
+
+	bits = 1 + Math.floor(Math.random() * 15);
+	
+	document.getElementById("binarynum").value = "";
+
+	for( i = 0; i < bits; i++)
+		document.getElementById("binarynum").value += Math.floor(Math.random() * 2);
+
+	document.getElementById("decanswer").value = "";
+	document.getElementById("decanswer").style.backgroundColor = "#FFFFFF";
+	document.getElementById("bindeccorrect").innerHTML = "&nbsp;";
+}
+
+function bindeccheck() {
+	var binary, dec;
+	var i, deccheck;
+
+	binary = document.getElementById("binarynum").value;
+	dec = Number(document.getElementById("decanswer").value);
+
+	deccheck = 0;
+	for( i = 0; i < binary.length; i++ ) {
+		if ( binary[i] == '1' ) {
+			deccheck += Math.pow(2, (binary.length - i - 1));
+		}
+	}
+
+	if( deccheck == dec ) {
+		document.getElementById("decanswer").style.backgroundColor = "#00FF0055";
+		document.getElementById("bindeccorrect").innerHTML = "&check;";
+		document.getElementById("bindeccorrect").setAttribute("class", "check");
+	}
+	else {
+		document.getElementById("decanswer").style.backgroundColor = "#FF000055";
+		document.getElementById("bindeccorrect").innerHTML = "&cross;";
+		document.getElementById("bindeccorrect").setAttribute("class", "cross");
+	}
+
 }

@@ -41,12 +41,19 @@ do
 	OUTFILE="${DESTINATION}/${DIR}/${FILE}.html"
 
 	# Don't try to build files that don't exist
-	if [[ ! -e "${INFILE}" ]]
+	if [[ -e "${INFILE%md}man" ]]
 	then
-		if [[ -e "${INFILE%md}man" ]]
+		INFILE="${INFILE%md}man"
+
+		if [[ -n "${FARG}" ]] ||
+		   [[ "${INFILE}" -nt "${OUTFILE}" ]]
 		then
-			utils/cs164/build_manpage "${INFILE%md}man" "${TARG}"
+			utils/cs164/build_manpage "${INFILE}" "${TARG}"
 		fi
+
+		continue
+	elif [[ ! -e "${INFILE}" ]]
+	then
 		continue
 	fi
 
