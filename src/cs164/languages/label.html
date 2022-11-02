@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="languages/man.css">
+</head>
+<body>
+
+<div id="main">
+	<div class="navigation" id="top">
+		<div class="left">
+			LABEL(3)
+		</div>
+		<div class="middle">
+			Tranquility Programmer's Manual
+		</div>
+		<div class="right">
+			LABEL(3)
+		</div>
+	</div><br>
+<p class="h2">NAME
+
+<a name="NAME"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">makelabel,
+setlabel - create and set HTML text</p>
+
+<p class="h2">SYNOPSIS
+<a name="SYNOPSIS"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>makelabel(</b>
+<i>s</i> <b>) <br>
+setlabel(</b> <i>n</i><b>,</b> <i>s</i> <b>)</b></p>
+
+<p class="h2">DESCRIPTION
+<a name="DESCRIPTION"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>makelabel()</b>
+creates a new label tag with the text specified by string
+<i>s</i> on the HTML pop up page. It returns an integer
+identifier that can be used to refrence the label and change
+the text displayed.</p>
+
+<p style="margin-left:7ch; margin-top: 1em">Like other
+Tranquility functions that create HTML elements,
+<b>makelabel()</b> opens a new browser window when called if
+one had not already existed.</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>setlabel()</b>
+changes the text in the label identified by the first
+argument <i>n</i> to the string <i>s</i> specified by the
+second argument. <i>n</i> should be an integer identifier
+returned by an earlier call to <b>makelabel()</b></p>
+
+<p style="margin-left:7ch; margin-top: 1em">Labels will be
+placed on the HTML page, left to right, top to bottom in
+order of being called.</p>
+
+<p class="h2">RETURN VALUE
+<a name="RETURN VALUE"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>makelabel()</b>
+returns an integer label identifier.</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>setlabel()</b>
+does not have a return value.</p>
+
+<p class="h2">EXAMPLE
+<a name="EXAMPLE"></a>
+</p>
+
+<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">fun init () {
+     var imgA, imgB
+     var labelA, labelB
+
+     imgA : makeimg()
+     labelA : makelabel()
+     imgB : makeimg()
+     labelB : makelabel()
+
+
+     setimg( .imgA, &quot;dog.png&quot; )
+     setlabel( .labelA, &quot;This is a picture of a dog&quot; )
+     setimg( .imgB, &quot;cat.png&quot; )
+     setlabel( .labelB, &quot;This is a picture of a cat&quot; )
+}</pre>
+
+
+<p class="h2">AUTHORS
+<a name="AUTHORS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">Charlie Stuart
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a>
+<br>
+Nathan Xaysena, Fall 21-22</p>
+
+<p class="h2">REPORTING BUGS
+<a name="REPORTING BUGS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">First, check
+the Tranquility Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
+<br>
+If the problem persists see Dr. Stuart or Charlie Stuart</p>
+
+<p style="margin-left:14ch;">Dr. Stuart:
+<a href="mailto:brian.l.stuart@drexel.edu">brian.l.stuart@drexel.edu</a>
+<br>
+Charlie Stuart:
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a></p>
+
+<p class="h2">SEE ALSO
+<a name="SEE ALSO"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>html</b>(3),
+<b>makeimg</b>(3), <b>tranqc</b>(1)</p>
+
+<p style="margin-left:7ch; margin-top: 1em">Tranquility
+Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a></p>
+<hr>	<div class="navigation" id="bottom">
+		<div class="left">
+			Tranquility Built In Functions
+		</div>
+		<div class="middle">
+			2022-10-25
+		</div>
+		<div class="right">
+			LABEL(3)
+	</div>
+</div>
+</body>
+</html>
+

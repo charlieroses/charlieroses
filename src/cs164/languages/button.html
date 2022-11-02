@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="languages/man.css">
+</head>
+<body>
+
+<div id="main">
+	<div class="navigation" id="top">
+		<div class="left">
+			BUTTON(3)
+		</div>
+		<div class="middle">
+			Tranquility Programmer's Manual
+		</div>
+		<div class="right">
+			BUTTON(3)
+		</div>
+	</div><br>
+<p class="h2">NAME
+
+<a name="NAME"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">button,
+buttonlabel - Create a button on the HTML page</p>
+
+<p class="h2">SYNOPSIS
+<a name="SYNOPSIS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>button(</b>
+<i>label</i><b>,</b> <i>fun</i> <b>) <br>
+buttonlabel(</b> <i>b</i><b>,</b> <i>label</i> <b>)</b></p>
+
+<p class="h2">DESCRIPTION
+<a name="DESCRIPTION"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>button()</b>
+creates a button on the HTML page with text specified by the
+<i>label</i> argument. When pressed, the function passed in
+as <i>fun</i> will execute. The function should not include
+parentheses or arguments. Only the name of the function
+should be passed in as a reference.</p>
+
+<p style="margin-left:7ch; margin-top: 1em">Like other
+Tranquility functions that create HTML elements,
+<b>button()</b> opens a new browser window when called if
+one had not previously existed.</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>buttonlabel()</b>
+updates the text displayed on the button <i>b</i> with the
+string specified by the <i>label</i> argument. <i>b</i>
+should be an identifier for a button that was returned by a
+call to <b>button()</b>.</p>
+
+<p style="margin-left:7ch; margin-top: 1em">Buttons will be
+placed on the HTML page, left to right, top to bottom in
+order of being called.</p>
+
+<p class="h2">RETURN VALUE
+<a name="RETURN VALUE"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>button()</b>
+returns a unique identifier to the newly created button.</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>buttonlabel()</b>
+has no return value.</p>
+
+<p class="h2">ERRORS
+<a name="ERRORS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">Using
+parentheses for the <i>fun</i> argument when calling
+<b>button()</b> produces a variety of unexpected
+behaviors.</p>
+
+<p class="h2">EXAMPLES
+<a name="EXAMPLES"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">The following
+example changes the label on the button randomly after each
+click.</p>
+<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">var b
+fun change() {
+     var r
+     r : random( 3 )
+
+
+     if( .r == 0 ) {
+          buttonlabel( .b, &quot;Zero&quot; )
+     }
+     else if( .r == 1 ) {
+          buttonlabel( .b, &quot;One&quot; )
+     }
+     else {
+          buttonlabel( .b, &quot;Two&quot; )
+     }
+}
+fun init(){
+     b : button( &quot;Unclicked&quot;, change )
+}</pre>
+
+
+<p class="h2">AUTHORS
+<a name="AUTHORS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">Charlie Stuart
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a>
+<br>
+Amalia Sorribes, Fall 21-22 <br>
+Donovan Dolan, Fall 21-22 <br>
+Evan Yan, Fall 21-22 <br>
+Kevin Lin, Fall 21-22 <br>
+Nicolo Agbayani, Fall 21-22 <br>
+Nicholas Ingravallo, Fall 21-22</p>
+
+<p class="h2">REPORTING BUGS
+<a name="REPORTING BUGS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">First, check
+the Tranquility Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
+<br>
+If the problem persists see Dr. Stuart or Charlie Stuart</p>
+
+<p style="margin-left:14ch;">Dr. Stuart:
+<a href="mailto:brian.l.stuart@drexel.edu">brian.l.stuart@drexel.edu</a>
+<br>
+Charlie Stuart:
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a></p>
+
+<p class="h2">SEE ALSO
+<a name="SEE ALSO"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>tranqc</b>(1),
+<b>html</b>(3)</p>
+
+<p style="margin-left:7ch; margin-top: 1em">Tranquility
+Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a></p>
+<hr>	<div class="navigation" id="bottom">
+		<div class="left">
+			Tranquility Built In Functions
+		</div>
+		<div class="middle">
+			2022-10-25
+		</div>
+		<div class="right">
+			BUTTON(3)
+	</div>
+</div>
+</body>
+</html>
+

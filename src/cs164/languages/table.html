@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="languages/man.css">
+</head>
+<body>
+
+<div id="main">
+	<div class="navigation" id="top">
+		<div class="left">
+			TABLE(3)
+		</div>
+		<div class="middle">
+			Tranquility Programmer's Manual
+		</div>
+		<div class="right">
+			TABLE(3)
+		</div>
+	</div><br>
+<p class="h2">NAME
+
+<a name="NAME"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">maketable,
+setcell, setcellcolor - create an HTML table</p>
+
+<p class="h2">SYNOPSIS
+<a name="SYNOPSIS"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>maketable(</b>
+<i>r</i><b>,</b> <i>c</i><b>,</b> <i>f</i> <b>) <br>
+setcell(</b> <i>t</i><b>,</b> <i>r</i><b>,</b>
+<i>c</i><b>,</b> <i>s</i> <b>) <br>
+setcellcolor(</b> <i>t</i><b>,</b> <i>r</i><b>,</b>
+<i>c</i><b>,</b> <i>color</i> <b>)</b></p>
+
+<p class="h2">DESCRIPTION
+<a name="DESCRIPTION"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>maketable()</b>
+creates a table with <i>r</i> rows and <i>c</i> columns and
+returns an integer table identifier. The function specified
+by optional argument <i>f</i> will execute each time a user
+clicks on a cell. <i>f</i> will have the row and column of
+the clicked cell passed to it as arguments.</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>setcell()</b>
+sets the contents of the cell at row <i>r</i> and column
+<i>c</i> in the table specified by <i>t</i> to the string
+specified by <i>s</i>. <i>r</i> and <i>c</i> are indexed at
+0. The table specified by <i>t</i> should be a value
+returned by an earlier call to <b>maketable()</b>.</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>setcellcolor()</b>
+sets the background color of the cell at row <i>r</i> and
+column <i>c</i> in the table specified by <i>t</i> to the
+value specified by the <i>color</i> string argument.
+<i>r</i> and <i>c</i> are indexed at 0. The table specified
+by <i>t</i> should be a value returned by an earlier call to
+<b>maketable()</b>.</p>
+
+<p style="margin-left:7ch; margin-top: 1em">The
+<i>color</i> string should take a color in a CSS readable
+form. <br>
+This includes:</p>
+
+<p style="margin-left:14ch;">RGB values (&quot;rgb( R, G,
+B)&quot;) <br>
+Hexadecimal values (&quot;#RRGGBB&quot;) <br>
+Color Names (&quot;Red&quot;)</p>
+
+<p style="margin-left:7ch; margin-top: 1em">A full list of
+the 140 browser recognizable color names can be found at
+<a href="https://charlierose.dev/cs164/numbers/colors.html">https://charlierose.dev/cs164/numbers/colors.html</a></p>
+
+<p class="h2">RETURN VALUE
+<a name="RETURN VALUE"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>maketable()</b>
+returns an integer table identifier.</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>setcell()</b>
+and <b>setcellcolor()</b> do not have return values.</p>
+
+<p class="h2">EXAMPLE
+<a name="EXAMPLE"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">A tic tac toe
+example:</p>
+<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">var table, xos
+
+fun makemove( r, c ) {
+     if( .(xos + (.i * 3) + .j) == 0 ) {
+          setcell( .table, .i, .j, &quot;X&quot; )
+          setcellcolor( .table, .i, .j, &quot;blue&quot; )
+          .(xos + (.i * 3) + .j ) : 1
+     }
+     else if( .(xos + (.i * 3) + .j) == 1 ) {
+          setcell( .table, .i, .j, &quot;O&quot; )
+          setcellcolor( .table, .i, .j, &quot;yellow&quot; )
+          .(xos + (.i * 3) + .j ) : 2
+     }
+     else {
+          setcell( .table, .i, .j, &quot; &quot; )
+          setcellcolor( .table, .i, .j, &quot;white&quot; )
+          .(xos + (.i * 3) + .j ) : 0
+     }
+}
+
+fun init() {
+     var i, j
+
+     table : maketable( 3, 3, makemove )
+     xos : alloc( 9 )
+
+     i : 0
+     loop {
+          until .i == 3
+          j : 0
+          loop {
+               until .j == 3
+
+
+               setcell( .table, .i, .j, &quot; &quot; )
+               setcellcolor( .table, .i, .j, &quot;white&quot; )
+               .(xos + (.i * 3) + .j ) : 0
+          }
+     }
+}</pre>
+
+
+<p class="h2">AUTHORS
+<a name="AUTHORS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">Charlie Stuart
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a>
+<br>
+Irvin Fenochio, Fall 21-22 <br>
+M M Farhan Salaheen Hossain, Fall 21-22 <br>
+Shivang Patel, Winter 21-22</p>
+
+<p class="h2">REPORTING BUGS
+<a name="REPORTING BUGS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">First, check
+the Tranquility Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
+<br>
+If the problem persists see Dr. Stuart or Charlie Stuart</p>
+
+<p style="margin-left:14ch;">Dr. Stuart:
+<a href="mailto:brian.l.stuart@drexel.edu">brian.l.stuart@drexel.edu</a>
+<br>
+Charlie Stuart:
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a></p>
+
+<p class="h2">SEE ALSO
+<a name="SEE ALSO"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>tranqc</b>(1),
+<b>html</b>(3)</p>
+
+<p style="margin-left:7ch; margin-top: 1em">Tranquility
+Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a></p>
+<hr>	<div class="navigation" id="bottom">
+		<div class="left">
+			Tranquility Built In Functions
+		</div>
+		<div class="middle">
+			2022-10-25
+		</div>
+		<div class="right">
+			TABLE(3)
+	</div>
+</div>
+</body>
+</html>
+

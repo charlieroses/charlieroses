@@ -51,8 +51,8 @@ then
 fi
 
 
-SECFILE="utils/cs164/sections.tsv"
-SECTIONS="$(cat utils/cs164/sections.tsv | tail -n +2 )"
+SECFILE="src/cs164/sections.tsv"
+SECTIONS="$(cat src/cs164/sections.tsv | tail -n +2 )"
 CURR_SEC="$1"
 
 

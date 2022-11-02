@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="languages/man.css">
+</head>
+<body>
+
+<div id="main">
+	<div class="navigation" id="top">
+		<div class="left">
+			READ(3tranq)
+		</div>
+		<div class="middle">
+			Tranquility Programmer's Manual
+		</div>
+		<div class="right">
+			READ(3tranq)
+		</div>
+	</div><br>
+<p class="h2">NAME
+
+<a name="NAME"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">iread, sread -
+Pop up a dialog prompting the user for input</p>
+
+<p class="h2">SYNOPSIS
+<a name="SYNOPSIS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>iread(</b>
+<i>p</i> <b>) <br>
+sread(</b> <i>s</i><b>,</b> <i>p</i> <b>)</b></p>
+
+<p class="h2">DESCRIPTION
+<a name="DESCRIPTION"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>iread()</b>
+brings up a pop-up dialog asking the user to enter an
+integer, using the string referenced by <i>p</i> as the
+message in the dialog.</p>
+
+<p style="margin-left:7ch; margin-top: 1em"><b>sread()</b>
+pops up a dialog prompting the user for a string as input,
+using the second argument <i>p</i> as the message in the
+dialog. The string entered by the user is copied into the
+memory starting at the address passed as the first argument
+<i>s</i>. The null terminator is also copied over.</p>
+
+<p style="margin-left:7ch; margin-top: 1em">If <i>p</i> is
+not provided in either function, the dialog box does not
+contain a prompt.</p>
+
+<p class="h2">RETURN VALUE
+<a name="RETURN VALUE"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>iread()</b>
+returns the numeric value of the integer entered by the
+user. Note that Tranquility only has support for integers
+and will truncate fractional numbers.</p>
+
+<p style="margin-left:7ch; margin-top: 1em"><b>sread()</b>
+has no return value.</p>
+
+<p class="h2">NOTES
+<a name="NOTES"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">The syntax of
+<b>iread()</b> allows it to be used without being assigned
+to a variable without errors. If not set to a variable or
+present in an arithmetic equation then the data entered will
+be lost.</p>
+
+<p class="h2">EXAMPLES
+<a name="EXAMPLES"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">The following
+example sets n to be 5 times the value entered by the
+user.</p>
+<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">fun init() {
+     var n
+
+
+     n : 5 * iread(&quot;Enter an integer:&quot;)
+     iprint(.n)
+}</pre>
+
+
+<p style="margin-left:7ch; margin-top: 1em">The following
+example takes in a 10 letter input from the user without a
+prompt</p>
+<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">fun init() {
+     var str
+
+     str : alloc( 11 )
+     sread( .str )
+}</pre>
+
+<p class="h2">BUGS
+<a name="BUGS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">The code will
+crash if .BR iread() is the first line of code and
+it&rsquo;s return value is not set to a variable.</p>
+
+<p class="h2">AUTHORS
+<a name="AUTHORS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">Charlie Stuart
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a>
+<br>
+Carson Ford, Fall 21-22 <br>
+Ryan Abraham, Fall 21-22</p>
+
+<p style="margin-left:7ch; margin-top: 1em">Sherry Liu,
+Winter 21-22</p>
+
+<p class="h2">REPORTING BUGS
+<a name="REPORTING BUGS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">First, check
+the Tranquility Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
+<br>
+If the problem persists see Dr. Stuart or Charlie Stuart</p>
+
+<p style="margin-left:14ch;">Dr. Stuart:
+<a href="mailto:brian.l.stuart@drexel.edu">brian.l.stuart@drexel.edu</a>
+<br>
+Charlie Stuart:
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a></p>
+
+<p class="h2">SEE ALSO
+<a name="SEE ALSO"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>tranqc(1),
+iprint(3), sprint(3), i2s(3), alloc(3)</b></p>
+
+<p style="margin-left:7ch; margin-top: 1em">Tranquility
+Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a></p>
+<hr>	<div class="navigation" id="bottom">
+		<div class="left">
+			Tranquility Built In Functions
+		</div>
+		<div class="middle">
+			2022-04-06
+		</div>
+		<div class="right">
+			READ(3tranq)
+	</div>
+</div>
+</body>
+</html>
+

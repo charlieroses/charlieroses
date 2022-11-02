@@ -1,17 +1,18 @@
 #!/bin/bash
 
 function usage {
-	echo -e "utils/build_cs164 [hft]"
+	echo -e "src/utils/cs164/build [hft]"
 	echo -e "\t-h help"
 	echo -e "\t-f force build all pages"
 	echo -e "\t-t local testing mode"
 }
 
-MARKDOWN_SRC="markdownfiles/cs164"
+MARKDOWN_SRC="src/cs164/"
 DESTINATION="cs164/"
-SECTIONS_FILE="utils/cs164/sections.tsv"
-TEMPLATE="$(cat utils/cs164/template.html)"
-SIDEBAR="$(awk -f utils/cs164/generate_sidebar.awk "${SECTIONS_FILE}")"
+SECTIONS_FILE="src/cs164/sections.tsv"
+UTILS="src/utils/cs164"
+TEMPLATE="$(cat "${UTILS}/template.html")"
+SIDEBAR="$(awk -f "${UTILS}/generate_sidebar.awk" "${SECTIONS_FILE}")"
 
 FARG=""
 TARG=""
@@ -48,7 +49,7 @@ do
 		if [[ -n "${FARG}" ]] ||
 		   [[ "${INFILE}" -nt "${OUTFILE}" ]]
 		then
-			utils/cs164/build_manpage "${INFILE}" "${TARG}"
+			"${UTILS}/build_manpage" "${INFILE}" "${TARG}"
 		fi
 
 		continue
@@ -74,7 +75,7 @@ do
 		HTML="${HTML/"/cs164/"/"${TARG}/cs164/"}"
 	fi
 
-	NAV="$(utils/cs164/generate_navigation "${SEC}")"
+	NAV="$("${UTILS}/generate_navigation" "${SEC}")"
 
 	LINKS=""
 	if [[ -e "${DESTINATION}/${DIR}/${DIR}.css" ]]
@@ -85,9 +86,9 @@ do
 	then
 		LINKS="${LINKS}\t<script src=\"${DIR}/${DIR}.js\"></script>"
 	fi
-	if [[ -e "utils/cs164/${DIR}_links.txt" ]]
+	if [[ -e "${UTILS}/${DIR}_links.txt" ]]
 	then
-		LINKS="${LINKS}$(cat utils/cs164/${DIR}_links.txt)"
+		LINKS="${LINKS}$(cat "${UTILS}/${DIR}_links.txt")"
 	fi
 
 	CONTENT="$(pandoc -p "${INFILE}")"
@@ -105,7 +106,7 @@ do
 
 	if [[ "${FILE}" = "index" ]]
 	then
-		SECLIST="$(utils/cs164/generate_sectionlist "${SEC}")"
+		SECLIST="$("${UTILS}/generate_sectionlist" "${SEC}")"
 		CONTENT="${CONTENT/"<!-- SECTION LIST -->"/"${SECLIST}"}"
 	fi
 

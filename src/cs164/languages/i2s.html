@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="languages/man.css">
+</head>
+<body>
+
+<div id="main">
+	<div class="navigation" id="top">
+		<div class="left">
+			I2S(3)
+		</div>
+		<div class="middle">
+			Tranquility Programmer's Manual
+		</div>
+		<div class="right">
+			I2S(3)
+		</div>
+	</div><br>
+<p class="h2">NAME
+
+<a name="NAME"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">i2s - Produce
+the base-10 string represenation of an integer</p>
+
+<p class="h2">SYNOPSIS
+<a name="SYNOPSIS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>i2s(</b>
+<i>str</i><b>,</b> <i>n</i> <b>)</b></p>
+
+<p class="h2">DESCRIPTION
+<a name="DESCRIPTION"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>i2s()</b>
+produces a string that contains the decimal (base-10)
+representation of the integer value <i>n</i> passed as the
+second argument. The first argument <i>str</i> should be the
+address of a block of memory large enough to contain the
+resulting string and its null terminator.</p>
+
+<p style="margin-left:7ch; margin-top: 1em"><b>i2s()</b> is
+necessary to display variable values on the HTML pop up
+window with the <b>html(3)</b>, <b>label(3)</b>, and
+<b>table(3)</b> functions.</p>
+
+<p class="h2">RETURN VALUE
+<a name="RETURN VALUE"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>i2s()</b>
+does not have a return value.</p>
+
+<p class="h2">EXAMPLE
+<a name="EXAMPLE"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">The following
+example from page 7 of the Tranquility Programmer&rsquo;s
+Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
+creates a table of factorials.</p>
+<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">fun fact(n) {
+     if .n == 0 {
+
+     }
+     else {
+          return .n * fact(.n - 1)
+     }
+}
+
+fun genfacts(n) {
+     var i, ftab
+
+     ftab : alloc(.n)
+     i : 0
+     loop {
+          until .i &gt;= .n
+          (.ftab + .i) : fact(.i)
+          i : .i + 1
+     }
+     return .ftab
+}
+
+fun filltable() {
+     var i, ftab, istr
+
+     html(&quot;&lt;center&gt;0)
+     html(&quot;&lt;table border=1&gt;&lt;tr&gt;&lt;th&gt;n&lt;/th&gt;&lt;th&gt;n!&lt;/th&gt;&lt;/tr&gt;0)
+     ftab : genfacts(13)
+     istr : alloc(12)
+     i : 0
+     loop {
+          until .i &gt; 12
+          html(&quot;&lt;tr&gt;&lt;td&gt;&quot;)
+          i2s(.istr, .i)
+          html(.istr)
+          html(&quot;&lt;/td&gt;&lt;td&gt;&quot;)
+          i2s(.istr, .(.ftab + .i))
+          html(.istr)
+          html(&quot;&lt;/td&gt;&lt;/tr&gt;0)
+          i : .i + 1
+     }
+     html(&quot;&lt;/table&gt;&lt;/center&gt;0)
+}
+
+
+fun init () {
+     html(&quot;&lt;center&gt;&quot;)
+     button(&quot;Make Table&quot;, filltable)
+     html(&quot;&lt;p&gt;Factorials&lt;/p&gt;0/center&gt;0)
+}</pre>
+
+
+<p class="h2">AUTHORS
+<a name="AUTHORS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">Charlie Stuart
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a>
+<br>
+Lam Nguyen, Fall 21-22</p>
+
+<p class="h2">REPORTING BUGS
+<a name="REPORTING BUGS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">First, check
+the Tranquility Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
+<br>
+If the problem persists see Dr. Stuart or Charlie Stuart</p>
+
+<p style="margin-left:14ch;">Dr. Stuart:
+<a href="mailto:brian.l.stuart@drexel.edu">brian.l.stuart@drexel.edu</a>
+<br>
+Charlie Stuart:
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a></p>
+
+<p class="h2">SEE ALSO
+<a name="SEE ALSO"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>tranqc</b>(1),
+<b>html</b>(3), <b>makelabel</b>(3), <b>setlabel</b>(3),
+<b>setcell</b>(3)</p>
+
+<p style="margin-left:7ch; margin-top: 1em">Tranquility
+Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a></p>
+<hr>	<div class="navigation" id="bottom">
+		<div class="left">
+			Tranquility Built In Functions
+		</div>
+		<div class="middle">
+			2022-10-25
+		</div>
+		<div class="right">
+			I2S(3)
+	</div>
+</div>
+</body>
+</html>
+

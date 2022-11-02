@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="languages/man.css">
+</head>
+<body>
+
+<div id="main">
+	<div class="navigation" id="top">
+		<div class="left">
+			PRINT(3)
+		</div>
+		<div class="middle">
+			Tranquility Programmer's Manual
+		</div>
+		<div class="right">
+			PRINT(3)
+		</div>
+	</div><br>
+<p class="h2">NAME
+
+<a name="NAME"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">iprint, sprint
+- output of integers, characters, and strings</p>
+
+<p class="h2">SYNOPSIS
+<a name="SYNOPSIS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>iprint(</b>
+<i>n</i> <b>) <br>
+sprint(</b> <i>s</i> <b>)</b></p>
+
+<p class="h2">DESCRIPTION
+<a name="DESCRIPTION"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>iprint()</b>
+writes the integer pointed to by <i>n</i> in decimal to the
+standard output window. Note that Tranquility only has
+support for integers and will truncate fractional
+numbers.</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>sprint()</b>
+writes the string starting at the address <i>s</i> to the
+standard output window</p>
+
+<p class="h2">RETURN VALUE
+<a name="RETURN VALUE"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>iprint()</b>
+and <b>sprint()</b> do not have return values</p>
+
+<p class="h2">ERRORS
+<a name="ERRORS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">The
+<b>tranqc(1)</b> compiler will produce an &quot;Argument
+list syntax error&quot; if fractional values with a decimal
+point are used in <b>iprint(3)</b>.</p>
+
+<p class="h2">EXAMPLE
+<a name="EXAMPLE"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">Hello world
+from page 1 of the Tranquility Programmer&rsquo;s Manual
+<br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a></p>
+
+
+<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">fun init() {
+     sprint(&quot;Hello World&quot;)
+}</pre>
+
+
+<p style="margin-left:7ch; margin-top: 1em">The following
+example from page 3 of the Tranquility Programmer&rsquo;s
+Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
+prints a table of squares from 0 to 9 to standard out.</p>
+<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">fun sq( n ) {
+     return .n * .n
+}
+
+fun init() {
+     var i
+
+
+     sprint(&quot;Table of squares:&bsol;n&quot;)
+     i : 1
+     loop {
+          until .i &gt; 10
+          iprint( .i )
+          sprint(&quot; squared equals &quot;)
+          iprint( sq(.i) )
+          nl()
+          i : .i + 1
+     }
+}</pre>
+
+
+<p class="h2">AUTHORS
+<a name="AUTHORS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">Charlie Stuart
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a>
+<br>
+Alex Jacobs, Fall 21-22 <br>
+Cole Zucosky, Fall 21-22 <br>
+Mahima Chacko, Fall 21-22</p>
+
+<p class="h2">REPORTING BUGS
+<a name="REPORTING BUGS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">First, check
+the Tranquility Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
+<br>
+If the problem persists see Dr. Stuart or Charlie Stuart</p>
+
+<p style="margin-left:14ch;">Dr. Stuart:
+<a href="mailto:brian.l.stuart@drexel.edu">brian.l.stuart@drexel.edu</a>
+<br>
+Charlie Stuart:
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a></p>
+
+<p class="h2">SEE ALSO
+<a name="SEE ALSO"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>iread</b>(3),
+<b>sread</b>(3), <b>i2s</b>(3)</p>
+
+<p style="margin-left:7ch; margin-top: 1em">Tranquility
+Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a></p>
+<hr>	<div class="navigation" id="bottom">
+		<div class="left">
+			Tranquility Built In Functions
+		</div>
+		<div class="middle">
+			2022-10-25
+		</div>
+		<div class="right">
+			PRINT(3)
+	</div>
+</div>
+</body>
+</html>
+

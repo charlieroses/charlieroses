@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="languages/man.css">
+</head>
+<body>
+
+<div id="main">
+	<div class="navigation" id="top">
+		<div class="left">
+			ALLOC(3)
+		</div>
+		<div class="middle">
+			Tranquility Programmer's Manual
+		</div>
+		<div class="right">
+			ALLOC(3)
+		</div>
+	</div><br>
+<p class="h2">NAME
+
+<a name="NAME"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">alloc, free -
+Allocate blocks of memory</p>
+
+<p class="h2">SYNOPSIS
+<a name="SYNOPSIS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>alloc(</b>
+<i>n</i> <b>) <br>
+free(</b> <i>p</i> <b>)</b></p>
+
+<p class="h2">DESCRIPTION
+<a name="DESCRIPTION"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>alloc()</b>
+allocates a block of memory with <i>n</i> locations and
+returns the address of the first location.</p>
+
+<p style="margin-left:7ch; margin-top: 1em">A block of
+memory refers to a series of neighboring memory locations
+and the return value of this function is the first memory
+address in the block.</p>
+
+<p style="margin-left:7ch; margin-top: 1em"><b>free()</b>
+(Currently unimplemented) returns previously allocated
+memory blocks to the free list. The argument <i>p</i> should
+be the memory address returned by an earlier call to
+<b>alloc()</b>.</p>
+
+<p class="h2">RETURN VALUE
+<a name="RETURN VALUE"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>alloc()</b>
+returns the address of the first location of the block of
+memory allocated.</p>
+
+<p style="margin-left:7ch; margin-top: 1em"><b>free()</b>
+has no return value.</p>
+
+<p class="h2">BUGS
+<a name="BUGS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>free()</b>
+has not yet been implemented.</p>
+
+<p class="h2">NOTES
+<a name="NOTES"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">If you are
+struggling with understanding this function, consider
+thinking of var as creating an individual variable and
+<b>alloc()</b> as creating a group of variables. This group
+will consist of several locations next to each other in
+memory. This is called a block of memory. You can assign a
+value to every member of this group by adding an
+&quot;index&quot; onto the first address.</p>
+<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">var block
+
+
+block : alloc(16)
+(.block) : &rsquo;a&rsquo;       # sets the value of the first location of the block
+(.block + 6) : &rsquo;f&rsquo;   # sets the value of the sixth location of the block</pre>
+
+
+<p style="margin-left:7ch; margin-top: 1em">A null byte (0)
+can be used to mark the termination of the block. This
+&quot;null terminator&quot; is necessary for strings.</p>
+
+<p class="h2">EXAMPLES
+<a name="EXAMPLES"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">The following
+example from page 7 of the Tranquility Programmer&rsquo;s
+Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
+creates a table of factorials.</p>
+<pre style="font-size:18px;margin-left:7ch; margin-top: 1em">fun fact(n) {
+     if .n == 0 {
+          return 1
+     }
+     else {
+          return .n * fact(.n - 1)
+     }
+}
+
+fun genfacts(n) {
+     var i, ftab
+
+     ftab : alloc(.n)
+     i : 0
+     loop {
+          until .i &gt;= .n
+          (.ftab + .i) : fact(.i)
+          i : .i + 1
+     }
+     return .ftab
+}
+
+fun filltable() {
+     var i, ftab, istr
+
+     html(&quot;&lt;center&gt;&bsol;n&quot;)
+     html(&quot;&lt;table border=1&gt;&lt;tr&gt;&lt;th&gt;n&lt;/th&gt;&lt;th&gt;n!&lt;/th&gt;&lt;/tr&gt;&bsol;n&quot;)
+     ftab : genfacts(13)
+     istr : alloc(12)
+     i : 0
+     loop {
+          until .i &gt; 12
+          html(&quot;&lt;tr&gt;&lt;td&gt;&quot;)
+          i2s(.istr, .i)
+          html(.istr)
+          html(&quot;&lt;/td&gt;&lt;td&gt;&quot;)
+          i2s(.istr, .(.ftab + .i))
+          html(.istr)
+          html(&quot;&lt;/td&gt;&lt;/tr&gt;&bsol;n&quot;)
+          i : .i + 1
+     }
+     html(&quot;&lt;/table&gt;&lt;/center&gt;&bsol;n&quot;)
+}
+
+
+fun init () {
+     html(&quot;&lt;center&gt;&quot;)
+     button(&quot;Make Table&quot;, filltable)
+     html(&quot;&lt;p&gt;Factorials&lt;/p&gt;&bsol;n&lt;/center&gt;&bsol;n&quot;)
+}</pre>
+
+
+<p class="h2">AUTHORS
+<a name="AUTHORS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">Charlie Stuart
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a>
+<br>
+Michael Hadad, Fall 21-22</p>
+
+<p class="h2">REPORTING BUGS
+<a name="REPORTING BUGS"></a>
+</p>
+
+
+<p style="margin-left:7ch; margin-top: 1em">First, check
+the Tranquility Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a>
+<br>
+If the problem persists see Dr. Stuart or Charlie Stuart</p>
+
+<p style="margin-left:14ch;">Dr. Stuart:
+<a href="mailto:brian.l.stuart@drexel.edu">brian.l.stuart@drexel.edu</a>
+<br>
+Charlie Stuart:
+<a href="mailto:cstuart11@protonmail.com">cstuart11@protonmail.com</a></p>
+
+<p class="h2">SEE ALSO
+<a name="SEE ALSO"></a>
+</p>
+
+
+
+<p style="margin-left:7ch; margin-top: 1em"><b>tranqc</b>(1),
+<b>i2s</b>(3), <b>sread</b>(3)</p>
+
+<p style="margin-left:7ch; margin-top: 1em">Tranquility
+Programmer&rsquo;s Manual <br>
+
+<a href="https://www.cs.drexel.edu/~bls96/tranquility.pdf">https://www.cs.drexel.edu/~bls96/tranquility.pdf</a></p>
+<hr>	<div class="navigation" id="bottom">
+		<div class="left">
+			Tranquility Built In Functions
+		</div>
+		<div class="middle">
+			2022-10-25
+		</div>
+		<div class="right">
+			ALLOC(3)
+	</div>
+</div>
+</body>
+</html>
+
