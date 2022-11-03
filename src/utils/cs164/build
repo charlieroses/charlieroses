@@ -12,7 +12,6 @@ DESTINATION="cs164/"
 SECTIONS_FILE="src/cs164/sections.tsv"
 UTILS="src/utils/cs164"
 TEMPLATE="$(cat "${UTILS}/template.html")"
-SIDEBAR="$(awk -f "${UTILS}/generate_sidebar.awk" "${SECTIONS_FILE}")"
 
 FARG=""
 TARG=""
@@ -109,6 +108,8 @@ do
 		SECLIST="$("${UTILS}/generate_sectionlist" "${SEC}")"
 		CONTENT="${CONTENT/"<!-- SECTION LIST -->"/"${SECLIST}"}"
 	fi
+
+	SIDEBAR="$("${UTILS}/generate_sidebar" "${SEC}")"
 
 	HTML="${HTML//"<!-- FILES -->"/"${LINKS}"}"
 	HTML="${HTML//"<!-- SIDEBAR -->"/"${SIDEBAR}"}"

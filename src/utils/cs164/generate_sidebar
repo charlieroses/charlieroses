@@ -1,0 +1,48 @@
+#!/bin/bash
+
+SUBSEC="$1"
+
+echo -e "<div id=\"sidebar\">"
+echo -e "\t<div class=\"content\">"
+
+while IFS=$'\t' read -r NUMBER TITLE DIRECTORY FILE UPDATED
+do
+	if [[ "${NUMBER}" =~ ^0.* ]]
+	then
+		echo -e "\t</div>"
+		echo -e "\t<hr>"
+		echo -e "\t<div class=\"content\">"
+
+		if [[ "${DIRECTORY}" == "LINK" ]]
+		then
+			echo -e "\t\t<a href=\"${FILE}\"><b>${TITLE}</b></a>"
+		else
+			echo -e "\t\t<a href=\"${DIRECTORY}/${FILE}.html\"><b>${TITLE}</b></a>"
+		fi
+		continue
+	fi
+
+	LINK="${DIRECTORY}/${FILE}.html"
+
+	if ! [[ "${NUMBER}" =~ .*\...* ]]
+	then
+		echo -e "\t</div>"
+		echo -e "\t<hr>"
+		echo -e "\t<div class=\"content\">"
+		NUMBER="Chapter ${NUMBER}"
+		LINK="${DIRECTORY}/"
+	fi
+	echo -e "\t\t<a href=\"${LINK}\"><b>${NUMBER} :</b> ${TITLE}</a>"
+
+	if [[ "${NUMBER}" == "${SUBSEC}" ]]
+	then
+		while IFS=$'\t' read -r SECTION TAB ID
+		do
+			echo -e "\t\t<a href=\"${LINK}#${ID}\">&nbsp;<b>&#8227;</b>&nbsp;${TAB}</a>"
+		done < <(grep "${SUBSEC}" "src/cs164/subsections.tsv")
+	fi
+
+done < "src/cs164/sections.tsv"
+
+echo -e "\t</div>"
+echo -e "</div>"

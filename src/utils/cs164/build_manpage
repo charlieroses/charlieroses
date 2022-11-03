@@ -4,8 +4,6 @@ MAN_SRC="$1"
 TEST="$2"
 DEST="${MAN_SRC%man}html"
 DEST="${DEST#src/}"
-SECTIONS_FILE="src/cs164/sections.tsv"
-
 
 INFO="$(head -n 1 "${MAN_SRC}")"
 NAME="$(echo "${INFO}" | cut -d' ' -f2 )"
@@ -14,7 +12,7 @@ DATE="$(echo "${INFO}" | cut -d' ' -f4 )"
 SOURCE="$(echo "${INFO}" | cut -d'"' -f2 )"
 MANUAL="$(echo "${INFO}" | cut -d'"' -f4 )"
 
-SIDEBAR="$(awk -f src/utils/cs164/generate_sidebar.awk "${SECTIONS_FILE}")"
+SIDEBAR="$(src/utils/cs164/generate_sidebar "0")"
 
 HTML="$(groff -mandoc -Thtml "${MAN_SRC}")"
 HTML="${HTML##*<h2>NAME}"

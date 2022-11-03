@@ -16,7 +16,7 @@ full bite)_.
 
 ---
 
-## Binary to Base-10
+## Binary to Decimal
 
 Let's start with an eight bit number, one byte of information.
 Let's consider a random 8 bit number, **10011101**.
@@ -96,7 +96,7 @@ on and so forth.
 
 ---
 
-## Base-10 to Binary
+## Decimal to Binary
 
 There are two different processes for converting to binary.
 I'll be going over both.

@@ -1,4 +1,4 @@
-## Hexademical and Base 10
+## Hexadecimal and Base 10
 
 Now we can move onto base-16, which is more commonly called hexadecimal.
 Converting from is the same process.
