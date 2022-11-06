@@ -37,8 +37,8 @@ do
 	DIR="$(echo "${LINE}" | cut -f3)"
 	FILE="$(echo "${LINE}" | cut -f4)"
 
-	INFILE="${MARKDOWN_SRC}/${DIR}/${FILE}.md"
-	OUTFILE="${DESTINATION}/${DIR}/${FILE}.html"
+	INFILE="${MARKDOWN_SRC}${DIR}/${FILE}.md"
+	OUTFILE="${DESTINATION}${DIR}/${FILE}.html"
 
 	# Don't try to build files that don't exist
 	if [[ -e "${INFILE%md}man" ]]

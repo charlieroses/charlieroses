@@ -5,7 +5,7 @@ SUBSEC="$1"
 echo -e "<div id=\"sidebar\">"
 echo -e "\t<div class=\"content\">"
 
-while IFS=$'\t' read -r NUMBER TITLE DIRECTORY FILE UPDATED
+tail -n +2 src/cs164/sections.tsv | while IFS=$'\t' read -r NUMBER TITLE DIRECTORY FILE UPDATED
 do
 	if [[ "${NUMBER}" =~ ^0.* ]]
 	then
@@ -16,6 +16,9 @@ do
 		if [[ "${DIRECTORY}" == "LINK" ]]
 		then
 			echo -e "\t\t<a href=\"${FILE}\"><b>${TITLE}</b></a>"
+		elif [[ -z "${FILE}" ]]
+		then
+			echo -e "\t\t<a href=\"${DIRECTORY}.html\"><b>${TITLE}</b></a>"
 		else
 			echo -e "\t\t<a href=\"${DIRECTORY}/${FILE}.html\"><b>${TITLE}</b></a>"
 		fi
@@ -41,8 +44,7 @@ do
 			echo -e "\t\t<a href=\"${LINK}#${ID}\">&nbsp;<b>&#8227;</b>&nbsp;${TAB}</a>"
 		done < <(grep "${SUBSEC}" "src/cs164/subsections.tsv")
 	fi
-
-done < "src/cs164/sections.tsv"
+done
 
 echo -e "\t</div>"
 echo -e "</div>"
