@@ -1,90 +1,253 @@
-function b2q1Submit()
-{
-	if(document.getElementById("b2q1").value == 179)
-	{
-	    document.getElementById("b2q1Out").innerHTML = "Correct!";
+const reps = [ "un", "sm", "oc", "tc" ];
+
+function randomBinary( bits, domid ) {
+	var i;
+
+	document.getElementById(domid).value = "";
+
+	for( i = 0; i < bits; i++)
+		document.getElementById(domid).value += Math.floor(Math.random() * 2);
+}
+
+function decabsvalue( binary, rep ) {
+	var dec, bin2, bits;
+	var i, carry;
+
+	bits = binary.length;
+
+	bin2 = [];
+	for( i = 0; i < bits; i++ )
+		bin2[i] = binary[i];
+
+
+	if(( binary[0] == '1' ) && ( rep != "un" )) {
+		if( rep == "sm" ) {
+			bin2[0] = '0';
+		}
+		else {
+			for( i = 0; i < bits; i++ ) {
+				if( binary[i] == '1' )
+					bin2[i] = '0';
+				else
+					bin2[i] = '1';
+			}
+
+			if( rep == "tc" ) {
+				carry = 1;
+				for( i = (bits - 1); carry && i >= 0; i-- ) {
+					if( bin2[i] == '0' ) {
+						bin2[i] = '1';
+						carry = 0;
+					}
+					else {
+						bin2[i] = '0';
+					}
+				}
+			}
+		}
 	}
-	else
-	{
-    	document.getElementById("b2q1Out").innerHTML = "Good try but not right! Try looking again at the table.";
+
+	dec = 0;
+	for( i = 0; i < bin2.length; i++ ) {
+		if ( bin2[i] == '1' ) {
+			dec += Math.pow(2, (bin2.length - i - 1));
+		}
+	}
+
+	return dec;
+}
+
+function decbincompare( dec, binary, rep ) {
+	var i;
+
+	if( isNaN(dec) )
+		return 0;
+
+	// Get those wierd, sign mag, ones comp two zeros
+	if(( dec == 0 ) && ( rep == "sm" )) {
+		if(( binary[0] != '0' ) && ( binary[0] != '1' ))
+			return 0;
+
+		for( i = 1; i < binary.length; i++ )
+			if( binary[i] != '0' )
+				return 0;
+
+		return 1;
+	}
+
+	if(( dec == 0 ) && ( rep == "oc" )) {
+		for( i = 1; i < binary.length; i++ )
+			if( binary[i] != binary[i-1] )
+				return 0;
+		return 1;
+	}
+
+	if( Math.abs(dec) != decabsvalue(binary, rep) )
+		return 0;
+
+	if(( rep != "un" ) && ( binary[0] == '1' ) && ( dec >= 0 ))
+		return 0;
+
+	if(( rep == "un" ) && ( binary[0] == '1' ) && ( dec < 0 ))
+		return 0;
+
+	if(( binary[0] == '0' ) && ( dec < 0 ))
+		return 0;
+
+	return 1;
+}
+
+function pnreset() {
+	// rep, binary, pos, neg, response
+	var bits, rep;
+
+	rep = Math.floor(Math.random() * 4);
+	document.getElementById("pnrep").value = reps[rep];
+
+	bits = 1 + Math.floor(Math.random() * 15);
+	randomBinary( bits, "pnbinary" );
+
+	document.getElementById("pnpos").style.backgroundColor = "#3456a3";
+	document.getElementById("pnneg").style.backgroundColor = "#3456a3";
+	document.getElementById("pnresponse").innerHTML = "<i>Waiting for input</i>";
+}
+
+function pncheck( ui ) {
+	var rep, binary, msb;
+
+	rep = document.getElementById("pnrep").value;
+	binary = document.getElementById("pnbinary").value;
+	msb = binary[0];
+
+	if( rep == "un" ) {
+		if( ui == 0 ) {
+			// correct
+			document.getElementById("pnpos").style.backgroundColor = "#00FF0055";
+			document.getElementById("pnresponse").innerHTML = "<span class=\"check\">&check; Correct</span>";
+		}
+		else {
+			// incorrect
+			document.getElementById("pnneg").style.backgroundColor = "#FF000055";
+			document.getElementById("pnresponse").innerHTML = "<span class=\"cross\">&cross; Incorrect</span>. All unsigned binary numbers are positive regardless of the MSB.";
+		}
+	}
+	else {
+		if (( ui == 0 ) && ( msb == "0" )) {
+			// correct positive
+			document.getElementById("pnpos").style.backgroundColor = "#00FF0055";
+			document.getElementById("pnresponse").innerHTML = "<span class=\"check\">&check; Correct</span>";
+		}
+		else if (( ui == 1 ) && ( msb == "1" )) {
+			// correct negative
+			document.getElementById("pnneg").style.backgroundColor = "#00FF0055";
+			document.getElementById("pnresponse").innerHTML = "<span class=\"check\">&check; Correct</span>";
+		}
+		else if ( ui == 0 ) {
+			// incorrect positive
+			document.getElementById("pnpos").style.backgroundColor = "#FF000055";
+			document.getElementById("pnresponse").innerHTML = "<span class=\"cross\">&cross; Incorrect</span>. An MSB of 1 indicates a negative number in all representations.";
+
+		}
+		else {
+			// incorrect negative
+			document.getElementById("pnneg").style.backgroundColor = "#FF000055";
+			document.getElementById("pnresponse").innerHTML = "<span class=\"cross\">&cross; Incorrect</span>. An MSB of 0 indicates a positive number in all representations.";
+		}
 	}
 }
 
-function b1q2Submit()
-{
-	if(document.getElementById("b2q2").value == 10001001)
-	{
-	    document.getElementById("b2q2Out").innerHTML = "Correct!";
+
+function bdreset() {
+	// rep, binary, dec, response
+	var bits, rep;
+
+	rep = Math.floor(Math.random() * 4);
+	document.getElementById("bdrep").value = reps[rep];
+
+	bits = 1 + Math.floor(Math.random() * 15);
+	randomBinary( bits, "bdbinary" );
+
+	document.getElementById("bddec").value = "";
+	document.getElementById("bddec").style.backgroundColor = "#FFFFFF";
+	document.getElementById("bdresponse").innerHTML = "<i>Waiting for input</i>";
+}
+
+function bdcheck() {
+	var rep, dec, binary;
+	var absdec;
+
+	rep = document.getElementById("bdrep").value;
+	binary = document.getElementById("bdbinary").value;
+	dec = Number(document.getElementById("bddec").value);
+
+	if( decbincompare( dec, binary, rep ) ) {
+		document.getElementById("bddec").style.backgroundColor = "#00FF0055";
+		document.getElementById("bdresponse").innerHTML = "<span class=\"check\">&check; Correct</span>";
 	}
-	else if(document.getElementById("b2q2").value == 137)
-	{
-	    document.getElementById("b2q2Out").innerHTML = "That is 137 in base-10. We want the value in base-2. Try again!";
-	}
-	else
-	{
-	    document.getElementById("b2q2Out").innerHTML = "Good try but not right! Try looking again at the alternating division/modulus operations above";
+	else {
+		document.getElementById("bddec").style.backgroundColor = "#FF000055";
+		document.getElementById("bdresponse").innerHTML = "<span class=\"cross\">&cross; Incorrect</span>";
 	}
 }
 
-function smq1Submit()
-{
-	if(document.getElementById("smq1").value == "-25")
-	{
-	    document.getElementById("smq1Out").innerHTML = "Correct!";
+function dbreset() {
+	// dec, bit, rep, binary, response
+	var bits, dec, rep;
+
+	rep = Math.floor(Math.random() * 4);
+	bits = 1 + Math.floor(Math.random() * 15);
+
+	switch( rep ) {
+		case 0: //un
+			dec = Math.floor(Math.random() * Math.pow(2, bits));
+			break;
+		case 1: //sm
+		case 2: //oc
+			dec = Math.floor(Math.random() * (Math.pow(2, bits)-1)) - (Math.pow(2, bits-1)-1);
+			break;
+		case 3: //tc
+			dec = Math.floor(Math.random() * (Math.pow(2, bits))) - Math.pow(2, bits-1);
+			break;
 	}
-	else if(document.getElementById("smq1").value == "25")
-	{
-	    document.getElementById("smq1Out").innerHTML = "Not quite. You have the magnitude of the value correct. Check the MSB.";
+
+	document.getElementById("dbrep").value = reps[rep];
+	document.getElementById("dbbit").value = bits;
+	document.getElementById("dbdec").value = dec;
+	document.getElementById("dbbinary").value = "";
+	document.getElementById("dbbinary").style.backgroundColor = "#FFFFFF";
+	document.getElementById("dbresponse").innerHTML = "<i>Waiting for input</i>";
+}
+
+function dbcheck() {
+	var rep, dec, binary, bits;
+
+	rep = document.getElementById("dbrep").value;
+	dec = Number(document.getElementById("dbdec").value);
+	bits = Number(document.getElementById("dbbit").value);
+	binary = document.getElementById("dbbinary").value;
+
+	if(( binary[0] == '+' ) || ( binary[0] == '-' )) {
+		document.getElementById("dbbinary").style.backgroundColor = "#FF000055";
+		document.getElementById("dbresponse").innerHTML = "<span class=\"cross\">&cross; Incorrect</span>. We don't use + or - when <br> representing numbers in binary";
+		return;
 	}
-	else
-	{
-	    document.getElementById("smq1Out").innerHTML = "Good try but not right! Try looking again at the table.";
+
+	if( binary.length != bits ) {
+		document.getElementById("dbbinary").style.backgroundColor = "#FF000055";
+		document.getElementById("dbresponse").innerHTML = "<span class=\"cross\">&cross; Incorrect</span>. Wrong number of bits";
+		return;
+	}
+
+	if( decbincompare( dec, binary, rep ) ) {
+		document.getElementById("dbbinary").style.backgroundColor = "#00FF0055";
+		document.getElementById("dbresponse").innerHTML = "<span class=\"check\">&check; Correct</span>";
+	}
+	else {
+		document.getElementById("dbbinary").style.backgroundColor = "#FF000055";
+		document.getElementById("dbresponse").innerHTML = "<span class=\"cross\">&cross; Incorrect</span>";
 	}
 }
 
-function ocq1Submit()
-{
-	if(document.getElementById("ocq1").value == "10111111")
-	{
-	    document.getElementById("ocq1Out").innerHTML = "Correct!";
-	}
-	else if(document.getElementById("ocq1").value == "01000000")
-	{
-	    document.getElementById("ocq1Out").innerHTML = "Not quite. You have converted 64 to binary correctly, however I want -64 in one's complement.";
-	}
-	else if(document.getElementById("ocq1").value == "11000000")
-	{
-	    document.getElementById("ocq1Out").innerHTML = "Not quite. If we were looking for sign magnitude, you would be correct. However, we want to do one's complement.";
-	}
-	else
-	{
-	    document.getElementById("ocq1Out").innerHTML = "Good try but not right! Try looking through the method above.";
-	}
-}
-
-function tcq1Submit()
-{
-	if(document.getElementById("tcq1").value == "10000110")
-	{
-	    document.getElementById("tcq1Out").innerHTML = "Correct!";
-	}
-	else if(document.getElementById("tcq1").value == "10000101")
-	{
-	    document.getElementById("tcq1Out").innerHTML = "Not quite. You have converted -122 to one's complement. However, we want two's complement. What is the difference between one's complement and two's complement?";
-	}
-	else if(document.getElementById("tcq1").value == "10000100")
-	{
-	    document.getElementById("tcq1Out").innerHTML = "Not quite. You converted the value to binary, inverted the bits and added one. Remember to carry the one over to the next place value.";
-	}
-	else if(document.getElementById("tcq1").value == "11111010")
-	{
-	    document.getElementById("tcq1Out").innerHTML = "Not quite. If we were doing sign magnitude, you would be correct. However, we want to do two's complement.";
-	}
-	else
-	{
-	    document.getElementById("tcq1Out").innerHTML = "Good try but not right! Try looking through the method above.";
-	}
-}
 
 function fq1Submit()
 {

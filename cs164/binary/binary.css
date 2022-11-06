@@ -28,4 +28,35 @@ blue {
    color: rgb(0,0,255);
 }
 
+table select {
+	height: 3ch;
+	font-size: 100%;
+	text-align: center;
+	vertical-align: center;
+}
 
+table textarea {
+	height: 1.75ch;
+	font-size: 120%;
+	text-align: center;
+	vertical-align: center;
+}
+
+table pre {
+	font-size: 120%;
+}
+
+.inputtd * {
+	vertical-align: middle;
+}
+
+#pnbinary { width: 17ch; }
+#bdbinary { width: 17ch; }
+#bddec { width: 7ch; height: 3ch; }
+#dbbinary { width: 17ch; height: 3ch; }
+#dbdec { width: 7ch; }
+#dbbit { width: 3ch; }
+
+#icarly td {
+	text-align: left;
+}
