@@ -3,13 +3,11 @@
 All the answers to the practice problems throughout the textbook and
 sections.
 
+<span style="color:#FF0000">I'm getting rid of these practice problems slowly but surely</span>
+
 ---
 
 ### Chapter 1 : Number Bases
-
-**1.2 : Base Two**
-
--   179
 
 **1.3 : Base Sixteen**
 
@@ -18,18 +16,6 @@ sections.
 
 ---
 
-### Chapter 2 : Binary
-
-**2.1 : Converting Between Bases**
-
--   179
--   10001001
-
-**2.2 : Negative Binary**
-
--   -25
--   10111111
--   10000110
 
 **2.3 : Fractional Binary**
 
