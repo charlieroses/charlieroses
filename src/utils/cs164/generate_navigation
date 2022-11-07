@@ -62,11 +62,15 @@ PREV_REC="$(echo -e "${PREV_REC}" | tail -n 2 | head -n 1 )"
 NEXT_REC="${SECTIONS##*"${CURR_REC}"}"
 NEXT_REC="$(echo -e "${NEXT_REC}" | head -n 2 | tail -n 1 )"
 
-
+echo -e "\t\t<br>"
+echo -e "\t\t<div class=\"navigation\" id=\"ID\">"
 echo -e "\t\t<div class=\"prev\">"
 makelink "${PREV_REC}" "p"
 echo -e "\t\t</div>"
 echo -e "\t\t<div class=\"next\">"
 makelink "${NEXT_REC}" "n"
 echo -e "\t\t</div>"
+echo -e "\t\t</div>"
+echo -e "\t\t<br>"
+echo -e "\t\t<br>"
 

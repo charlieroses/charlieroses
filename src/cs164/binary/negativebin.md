@@ -356,7 +356,7 @@ It won't work right if you don't use it right.
 Be an adult, don't put letters in the number boxes.
 
 <center>
-<table>
+<table id="positive-or-negative" class="practice">
 <colgroup><col span="1" class="red"></colgroup>
 <thead><tr><th></th><th>Positive or Negative</th></tr></thead>
 <tbody>
@@ -390,7 +390,7 @@ positive or negative?
 </tbody>
 </table>
 <br><br><br>
-<table>
+<table id="signed-binary-to-decimal" class="practice">
 <colgroup><col span="1" class="red"></colgroup>
 <thead><tr><th></th><th>Binary to Decimal</th></tr></thead>
 <tbody>
@@ -424,7 +424,7 @@ binary number
 </tbody>
 </table>
 <br><br><br>
-<table>
+<table id="decimal-to-signed-binary" class="practice">
 <colgroup><col span="1" class="red"></colgroup>
 <thead><tr><th></th><th>Decimal to Binary</th></tr></thead>
 <tbody>

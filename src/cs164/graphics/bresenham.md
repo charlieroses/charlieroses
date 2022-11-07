@@ -22,7 +22,7 @@ Click on each cell to select it.
 Click again to deselect it.
 
 <center>
-<table>
+<table id="bresenhams-line-drawing-algorithm" class="practice">
 <colgroup>
 <col span="1" class="red">
 </colgroup>

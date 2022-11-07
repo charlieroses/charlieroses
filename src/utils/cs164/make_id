@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "${1}" | tr [:upper:] [:lower:] | tr -dc "0-9a-z " | tr " " "-"
+

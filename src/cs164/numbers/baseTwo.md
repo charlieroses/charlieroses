@@ -524,7 +524,7 @@ You can change the values in all the text boxes.
 Feel free to enter your own numbers.
 
 <center>
-<table>
+<table id="decimal-to-binary" class="practice">
 <colgroup><col span="1" class="red"></colgroup>
 <thead><tr><th></th><th>Decimal to Binary</th></tr></thead>
 <tbody>
@@ -552,7 +552,7 @@ bits?
 </tbody>
 </table>
 <br><br><br>
-<table>
+<table id="binary-to-decimal" class="practice">
 <colgroup><col span="1" class="red"></colgroup>
 <thead><tr><th></th><th>Binary to Decimal</th></tr></thead>
 <tbody>

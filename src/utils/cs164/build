@@ -8,6 +8,7 @@ function usage {
 }
 
 MARKDOWN_SRC="src/cs164/"
+SRC="src/cs164/"
 DESTINATION="cs164/"
 SECTIONS_FILE="src/cs164/sections.tsv"
 UTILS="src/utils/cs164"
@@ -113,12 +114,37 @@ do
 
 	HTML="${HTML//"<!-- FILES -->"/"${LINKS}"}"
 	HTML="${HTML//"<!-- SIDEBAR -->"/"${SIDEBAR}"}"
-	HTML="${HTML//"<!-- NAVIGATION -->"/"${NAV}"}"
+	HTML="${HTML/"<!-- NAVIGATION -->"/"${NAV/"ID"/"top"}"}"
+	HTML="${HTML/"<!-- NAVIGATION -->"/"${NAV/"ID"/"bottom"}"}"
 	HTML="${HTML//"<!-- CONTENT -->"/"${CONTENT}"}"
 	HTML="${HTML//"#top"/"${DIR}/${FILE}.html#top"}"
 
 	echo -e "${HTML}" > "${OUTFILE}"
 done <<< "$(tail -n +2 ${SECTIONS_FILE})"
+
+if [[ -n "${FARG}" ]] ||
+   [[ "${SRC}/practice.md" -nt "${DESTINATION}/practice.html" ]] ||
+   [[ "${SRC}/practice.tsv" -nt "${DESTINATION}/practice.html" ]]
+then
+	echo "Building ${DESTINATION}practice.html"
+
+	SIDEBAR="$("${UTILS}/generate_sidebar")"
+	CONTENT="$("${UTILS}/build_practiceglossary")"
+	CONTENT="\t\t<h1>How To Use This Book</h1>\n\t</div>\n\t<hr>\n${CONTENT}"
+
+	HTML="${TEMPLATE}"
+
+	HTML="${HTML//"<!-- SIDEBAR -->"/"${SIDEBAR}"}"
+	HTML="${HTML//"<!-- CONTENT -->"/"${CONTENT}"}"
+	HTML="${HTML//"#top"/"practice.html#top"}"
+
+	if [[ -n "${TARG}" ]]
+	then
+		HTML="${HTML/"/cs164/"/"${TARG}/cs164/"}"
+	fi
+
+	echo -e "${HTML}" > "${DESTINATION}/practice.html"
+fi
 
 
 cp cs164/introduction.html cs164/index.html

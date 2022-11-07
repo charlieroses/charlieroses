@@ -1,0 +1,37 @@
+#!/bin/bash
+
+SRC="src/cs164"
+UTILS="src/utils/cs164"
+CURRSEC="0"
+
+echo -e "\t<div class=\"content\">"
+echo -e "\t\t<p>"
+cat "${SRC}/practice.md" | sed "s/^/\t\t/"
+echo -e "\t\t</p>"
+echo -e "\t</div>"
+echo -e "\t<hr>"
+echo -e "\t<div class=\"content\">"
+echo -e "\t\t<h2 id=\"practice-glossary\">Practice Glossary</h2>"
+
+tail -n +2 "${SRC}/practice.tsv" | while IFS=$'\t' read -r NAME SECNUM
+do
+	IFS=$'\t' read -r SECNUM TITLE DIR FILE UPDATE < <(grep "^\<${SECNUM}\>" "${SRC}/sections.tsv")
+
+	if [[ "${SECNUM}" != "${CURRSEC}" ]]
+	then
+		[[ "${CURRSEC}" != "0" ]] && echo -e "\t<br>"
+		CURRSEC="${SECNUM}"
+		echo -e "\t</div>"
+		echo -e "\t<hr>"
+		echo -e "\t<div class=\"content\">"
+		echo -e "\t\t<h3>Section ${SECNUM}: ${TITLE}</h3>"
+	fi
+
+	ID="$("${UTILS}/make_id" "${NAME}")"
+
+	echo -e "\t\t<a href=\"${DIR}/${FILE}.html#${ID}\">${NAME}</a><br>"
+done
+
+echo -e "\t<br>"
+echo -e "\t</div>"
+echo -e "\t<div class=\"content\">"
