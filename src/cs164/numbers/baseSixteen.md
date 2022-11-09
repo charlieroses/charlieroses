@@ -430,7 +430,7 @@ Just enter different values into the boxes to change the color.
 Try and see if you can match the colors from this website.
 
 <center>
-<table>
+<table id="rgb-color-box">
 <colgroup>
 <col span="1" class="red">
 </colgroup>
@@ -466,23 +466,8 @@ Try and see if you can match the colors from this website.
 
 ---
 
-## Practice Problems
+## Practice
 
-What is the number D5 in base-10?
-
-<textarea id="b16q1"></textarea>
-<br>
-<button onclick="b16q1Submit()">Submit</button>
-<p id="b16q1Out"></p>
-
-Go on google. What is the hexadecimal color code for the color 'Papaya Whip'?
-
-<textarea id="b16q2"></textarea>
-<br>
-<button onclick="b16q2Submit()">Submit</button>
-<p id="b16q2Out"></p>
-
-<!--
 <center>
 <table id="hexadecimal-to-decimal" class="practice">
 <colgroup><col span="1" class="red"></colgroup>
@@ -587,9 +572,15 @@ be represented in hex?
 </tr>
 <tr>
 <td></td>
-<td id="hqresponse" class="response"></td>
+<td id="bhresponse" class="response"></td>
 </tr>
 </tbody>
 </table>
 </center>
--->
+
+<script>
+hdreset();
+hbreset();
+hqreset();
+bhreset();
+</script>

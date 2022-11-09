@@ -1,6 +1,11 @@
 Name	Section
 Decimal to Binary	1.2
 Binary to Decimal	1.2
+RGB Color Box	1.3
+Hexadecimal to Decimal	1.3
+Hexadecimal to Binary	1.3
+Hexadecimal to Base-4	1.3
+Binary to Hexadecimal	1.3
 Positive or Negative	2.1
 Signed Binary to Decimal	2.1
 Decimal to Signed Binary	2.1

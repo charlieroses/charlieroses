@@ -82,9 +82,11 @@ do
 	then
 		LINKS="${LINKS}\t<link rel=\"stylesheet\" href=\"${DIR}/${DIR}.css\">\n"
 	fi
-	if [[ -e "${DESTINATION}/${DIR}/${DIR}.js" ]]
+	if [[ -e "${SRC}/${DIR}/${DIR}.js" ]]
 	then
 		LINKS="${LINKS}\t<script src=\"${DIR}/${DIR}.js\"></script>"
+		cat "${SRC}/practice.js" "${SRC}/${DIR}/${DIR}.js" > "${DESTINATION}/${DIR}/${DIR}.js"
+		echo "Built ${DESTINATION}/${DIR}/${DIR}.js"
 	fi
 	if [[ -e "${UTILS}/${DIR}_links.txt" ]]
 	then

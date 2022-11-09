@@ -45,6 +45,7 @@
 		<a href="numbers/baseSixteen.html#hexadecimal-and-base-10">&nbsp;<b>&#8227;</b>&nbsp;Hexadecimal and Base 10</a>
 		<a href="numbers/baseSixteen.html#hexadecimal-and-binary">&nbsp;<b>&#8227;</b>&nbsp;Hexadecimal and Binary</a>
 		<a href="numbers/baseSixteen.html#color-codes">&nbsp;<b>&#8227;</b>&nbsp;Color Codes</a>
+		<a href="numbers/baseSixteen.html#practice">&nbsp;<b>&#8227;</b>&nbsp;Practice</a>
 		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
 	</div>
 	<hr>
@@ -794,7 +795,7 @@ White
 </center>
 <p>Just for fun, I added an RGB Color changer. Just enter different values into the boxes to change the color. Try and see if you can match the colors from this website.</p>
 <center>
-<table>
+<table id="rgb-color-box">
 <colgroup>
 <col span="1" class="red">
 </colgroup>
@@ -859,136 +860,202 @@ Submit
 	</div>
 	<hr>
 	<div class="content">
-<h2 id="practice-problems">Practice Problems</h2>
-<p>What is the number D5 in base-10?</p>
-<textarea id="b16q1">
-</textarea>
-<br>
-<button onclick="b16q1Submit()">
-Submit
-</button>
-<p id="b16q1Out">
-</p>
-<p>Go on google. What is the hexadecimal color code for the color 'Papaya Whip'?</p>
-<textarea id="b16q2">
-</textarea>
-<br>
-<button onclick="b16q2Submit()">
-Submit
-</button>
-<p id="b16q2Out">
-</p>
-<!--
+<h2 id="practice">Practice</h2>
 <center>
 <table id="hexadecimal-to-decimal" class="practice">
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th>Hexadecimal to Decimal</th></tr></thead>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+Hexadecimal to Decimal
+</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td></td>
+<td>
+</td>
 <td>
 How would the hexadecimal value
-<textarea id="hdhex"></textarea>
+<textarea id="hdhex">
+</textarea>
 be represented in base-10?
 </td>
 </tr>
 <tr>
-<td></td>
+<td>
+</td>
 <td class="inputtd">
-<textarea id="hddec"></textarea>
-<button onclick="hdcheck()">Check Answer</button>
-<button onclick="hdreset()">Reset</button>
+<textarea id="hddec">
+</textarea>
+<button onclick="hdcheck()">
+Check Answer
+</button>
+<button onclick="hdreset()">
+Reset
+</button>
 </td>
 </tr>
 <tr>
-<td></td>
-<td id="hdresponse" class="response"></td>
+<td>
+</td>
+<td id="hdresponse" class="response">
+</td>
 </tr>
 </tbody>
 </table>
 <br><br><br>
 <table id="hexadecimal-to-binary" class="practice">
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th>Hexadecimal to Binary</th></tr></thead>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+Hexadecimal to Binary
+</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td></td>
+<td>
+</td>
 <td>
 How would the hexadecimal value
-<textarea id="hbhex"></textarea>
+<textarea id="hbhex">
+</textarea>
 be represented in binary?
 </td>
 </tr>
 <tr>
-<td></td>
+<td>
+</td>
 <td class="inputtd">
-<textarea id="hbbinary"></textarea>
-<button onclick="hbcheck()">Check Answer</button>
-<button onclick="hbreset()">Reset</button>
+<textarea id="hbbinary">
+</textarea>
+<button onclick="hbcheck()">
+Check Answer
+</button>
+<button onclick="hbreset()">
+Reset
+</button>
 </td>
 </tr>
 <tr>
-<td></td>
-<td id="hbresponse" class="response"></td>
+<td>
+</td>
+<td id="hbresponse" class="response">
+</td>
 </tr>
 </tbody>
 </table>
 <br><br><br>
 <table id="hexadecimal-to-base-4" class="practice">
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th>Hexadecimal to Base-4</th></tr></thead>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+Hexadecimal to Base-4
+</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td></td>
+<td>
+</td>
 <td>
 How would the hexadecimal value
-<textarea id="hqhex"></textarea>
+<textarea id="hqhex">
+</textarea>
 be represented in base-4?
 </td>
 </tr>
 <tr>
-<td></td>
+<td>
+</td>
 <td class="inputtd">
-<textarea id="hqquar"></textarea>
-<button onclick="hqcheck()">Check Answer</button>
-<button onclick="hqreset()">Reset</button>
+<textarea id="hqquar">
+</textarea>
+<button onclick="hqcheck()">
+Check Answer
+</button>
+<button onclick="hqreset()">
+Reset
+</button>
 </td>
 </tr>
 <tr>
-<td></td>
-<td id="hqresponse" class="response"></td>
+<td>
+</td>
+<td id="hqresponse" class="response">
+</td>
 </tr>
 </tbody>
 </table>
 <br><br><br>
 <table id="binary-to-hexadecimal" class="practice">
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th>Binary to Hexadecimal</th></tr></thead>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+Binary to Hexadecimal
+</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td></td>
+<td>
+</td>
 <td>
 How would the binary value
-<textarea id="bhbinary"></textarea>
+<textarea id="bhbinary">
+</textarea>
 be represented in hex?
 </td>
 </tr>
 <tr>
-<td></td>
+<td>
+</td>
 <td class="inputtd">
-<textarea id="bhhex"></textarea>
-<button onclick="bhcheck()">Check Answer</button>
-<button onclick="bhreset()">Reset</button>
+<textarea id="bhhex">
+</textarea>
+<button onclick="bhcheck()">
+Check Answer
+</button>
+<button onclick="bhreset()">
+Reset
+</button>
 </td>
 </tr>
 <tr>
-<td></td>
-<td id="hqresponse" class="response"></td>
+<td>
+</td>
+<td id="bhresponse" class="response">
+</td>
 </tr>
 </tbody>
 </table>
 </center>
--->
+<script>
+hdreset();
+hbreset();
+hqreset();
+bhreset();
+</script>
 	</div>
 	<hr>
 	<div class="content">

@@ -7,16 +7,6 @@ sections.
 
 ---
 
-### Chapter 1 : Number Bases
-
-**1.3 : Base Sixteen**
-
--   213
--   FFEFD5
-
----
-
-
 **2.3 : Fractional Binary**
 
 -   8.1875
