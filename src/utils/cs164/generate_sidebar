@@ -27,7 +27,7 @@ do
 		do
 			[[ -z "${ID}" ]] && ID="$("${UTILS}/make_id" "${TAB}" )"
 			echo -e "\t\t<a href=\"${LINK}#${ID}\">&nbsp;<b>&#8227;</b>&nbsp;${TAB}</a>"
-		done < <(grep "${NUMBER}" "src/cs164/subsections.tsv")
+		done < <(grep "^${NUMBER}" "src/cs164/subsections.tsv")
 
 		continue
 	fi
@@ -52,7 +52,7 @@ do
 		do
 			[[ -z "${ID}" ]] && ID="$("${UTILS}/make_id" "${TAB}" )"
 			echo -e "\t\t<a href=\"${LINK}#${ID}\">&nbsp;<b>&#8227;</b>&nbsp;${TAB}</a>"
-		done < <(grep "${SUBSEC}" "src/cs164/subsections.tsv")
+		done < <(grep "^${SUBSEC}" "src/cs164/subsections.tsv")
 	fi
 done
 
