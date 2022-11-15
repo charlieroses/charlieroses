@@ -146,6 +146,12 @@
 	<hr>
 	<div class="content">
 <p>RSA Encryption was introduced in 1977 by Ron Rivest, Adi Shamir and Leonard Adleman at MIT; hence the name &quot;RSA&quot;. On the lecture slides, it's also called Public Key Encryption (PKE) and PKC (Public Key Cryptography).</p>
+<p>Some links you may find helpful in this section</p>
+<ul>
+<li><a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a></li>
+<li><a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt_v2.html">RSA Encryption/Decryption Calculator</a></li>
+<li><a href="https://1513041.mediaspace.kaltura.com/media/CS475+Crypto+3/1_st8qnz7g">Dr. Stuart's Public Key Cryptography Lecture</a></li>
+</ul>
 	</div>
 	<hr>
 	<div class="content">
@@ -241,6 +247,8 @@
 </th>
 <th>
 </th>
+<th>
+</th>
 </tr>
 </thead>
 <tbody>
@@ -248,14 +256,10 @@
 <th>
 </th>
 <td colspan="2">
-<strong>Keys</strong>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td colspan="2">
 <code>e<sub>A</sub> = 2, d<sub>A</sub> = 1/2</code>
+</td>
+<td class="left">
+A set of matching keys
 </td>
 </tr>
 <tr>
@@ -264,12 +268,8 @@
 <td colspan="2">
 <code>e<sub>B</sub> = 5, d<sub>B</sub> = 1/5</code>
 </td>
-</tr>
-<tr>
-<th>
-</th>
-<td colspan="2">
-<strong>Encrypt with</strong> <code>e<sub>A</sub></code>
+<td class="left">
+A different set of matching keys
 </td>
 </tr>
 <tr>
@@ -278,6 +278,9 @@
 <td colspan="2">
 <code>E(m, k) = m<sup>k</sup></code>
 </td>
+<td class="left">
+Encryption function
+</td>
 </tr>
 <tr>
 <th>
@@ -285,12 +288,18 @@
 <td colspan="2">
 <code>E(m, e<sub>A</sub>) = m<sup>e<sub>A</sub></sup></code>
 </td>
+<td class="left">
+Encrypt with <code>e<sub>A</sub></code>
+</td>
 </tr>
 <tr>
 <th>
 </th>
 <td colspan="2">
 <code>E(m, e<sub>A</sub>) = m<sup>2</sup></code>
+</td>
+<td class="left">
+Plug in <code>e<sub>A</sub> = 2</code>
 </td>
 </tr>
 <tr>
@@ -312,6 +321,9 @@
 <td>
 <code>D(m, k) = m<sup>k</sup></code>
 </td>
+<td class="left">
+Decryption function
+</td>
 </tr>
 <tr>
 <th>
@@ -321,6 +333,9 @@
 </td>
 <td>
 <code>D(E(m, e<sub>A</sub>), d<sub>B</sub>) = E(m, e<sub>A</sub>)<sup>d<sub>B</sub></sup></code>
+</td>
+<td class="left">
+Plug in keys
 </td>
 </tr>
 <tr>
@@ -332,6 +347,9 @@
 <td>
 <code>D(E(m, e<sub>A</sub>), d<sub>B</sub>) = (m<sup>2</sup>)<sup>1/5</sup></code>
 </td>
+<td class="left">
+Plug in values
+</td>
 </tr>
 <tr>
 <th>
@@ -342,6 +360,9 @@
 <td>
 <code>D(E(m, e<sub>A</sub>), d<sub>B</sub>) = m<sup>2*(1/5)</sup></code>
 </td>
+<td class="left">
+Exponent properties
+</td>
 </tr>
 <tr>
 <th>
@@ -351,6 +372,9 @@
 </td>
 <td>
 <code>D(E(m, e<sub>A</sub>), d<sub>B</sub>) = m<sup>2/5</sup></code>
+</td>
+<td class="left">
+Simplify
 </td>
 </tr>
 </tbody>
@@ -503,7 +527,7 @@
 </center>
 <p>Now we can see, even though Dr. Stuart <em>could</em> encrypt with his public key, I would not be able to decrypt his message because I don't know his private key. I <em>could</em> decrypt with my public key, but that would require Dr. Stuart sending me a message with my private key, which he doesn't know.</p>
 <p>This leaves him with two options. He can encrypt his message with his private key, meaning I would decrypt with his public key. Or, he can encrypt with my public key, meaning I would decrypt with my private key. Both of these options will work, but which <em>should</em> he use if he wants to send me a message that only I can read?</p>
-<p>He should use my <span class="hide">public</span> key to encrypt the message.</p>
+<p>He should use <span class="hide">my public</span> key to encrypt the message.</p>
 <center>
 <img src="crypto/rsa_msgsent.png">
 </center>
@@ -866,100 +890,100 @@ Charlie <br> Dr. Stuart <br> Student
 <th>
 </th>
 <td>
-Dr. Stuart writes a message
-</td>
-<td>
 <code>m<sub>B</sub></code>
+</td>
+<td class="left">
+Dr. Stuart writes a message
 </td>
 </tr>
 <tr>
 <th>
 </th>
-<td>
-Dr. Stuart calculate the hash of his message
-</td>
 <td>
 <code>H(m<sub>B</sub>)</code>
 </td>
+<td class="left">
+Dr. Stuart calculate the hash of his message
+</td>
 </tr>
 <tr>
 <th>
 </th>
-<td>
-Dr. Stuart encrypts his message with my public key
-</td>
 <td>
 <code>E(m<sub>B</sub>, e<sub>C</sub>)</code>
 </td>
+<td class="left">
+Dr. Stuart encrypts his message with<br>my public key
+</td>
 </tr>
 <tr>
 <th>
 </th>
-<td>
-Dr. Stuart encrypts the hash of his message with his private key
-</td>
 <td>
 <code>E(H(m<sub>B</sub>), d<sub>B</sub>)</code>
 </td>
+<td class="left">
+Dr. Stuart encrypts the hash of his message<br>with his private key
+</td>
 </tr>
 <tr>
 <th>
 </th>
-<td>
-I receive a random encrypted message
-</td>
 <td>
 <code>E(m<sub>B</sub>, e<sub>C</sub>)</code>
 </td>
+<td class="left">
+I receive a random encrypted message
+</td>
 </tr>
 <tr>
 <th>
 </th>
-<td>
-I decrypt this message from anyone with my private key
-</td>
 <td>
 <code>D(E(m<sub>B</sub>, e<sub>C</sub>), d<sub>C</sub>) = m<sub>B</sub></code>
 </td>
+<td class="left">
+I decrypt this message from anyone with my<br>private key
+</td>
 </tr>
 <tr>
 <th>
 </th>
-<td>
-I calculate the hash of this message from anyone
-</td>
 <td>
 <code>H(D(E(m<sub>B</sub>, e<sub>C</sub>), d<sub>C</sub>)) = H(m<sub>B</sub>)</code>
 </td>
+<td class="left">
+I calculate the hash of this message from<br>anyone
+</td>
 </tr>
 <tr>
 <th>
 </th>
-<td>
-I receive a random encrypted message
-</td>
 <td>
 <code>E(H(m<sub>B</sub>), d<sub>B</sub>)</code>
 </td>
+<td class="left">
+I receive a random encrypted message
+</td>
 </tr>
 <tr>
 <th>
 </th>
-<td>
-I decrypt this message from Dr. Stuart with his public key
-</td>
 <td>
 <code>D(E(H(m<sub>B</sub>), d<sub>B</sub>)) = H(m<sub>B</sub>)</code>
 </td>
+<td class="left">
+I decrypt this message from Dr. Stuart with his<br>public key
+</td>
 </tr>
 <tr>
 <th>
 </th>
 <td>
-I verify that the first message from &quot;anyone&quot; came from Dr. Stuart
-</td>
-<td>
 <code>H(D(E(m<sub>B</sub>, e<sub>C</sub>), d<sub>C</sub>)) = D(E(H(m<sub>B</sub>), d<sub>B</sub>))</code><br> <code>H(m<sub>B</sub>) = H(m<sub>B</sub>)</code>
+</td>
+<td class="left">
+I verify that the first message from &quot;anyone&quot;<br>came from Dr. Stuart
 </td>
 </tbody>
 </table>

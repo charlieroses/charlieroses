@@ -3,6 +3,12 @@ Adleman at MIT; hence the name "RSA".
 On the lecture slides, it's also called Public Key Encryption (PKE) and PKC
 (Public Key Cryptography).
 
+Some links you may find helpful in this section
+
+- [RSA Key Generation Worksheet](https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html)
+- [RSA Encryption/Decryption Calculator](https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt_v2.html)
+- [Dr. Stuart's Public Key Cryptography Lecture](https://1513041.mediaspace.kaltura.com/media/CS475+Crypto+3/1_st8qnz7g)
+
 ---
 
 ## Key Generation
@@ -61,15 +67,28 @@ modulo.
 <center>
 <table>
 <colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th><th></th></tr></thead>
+<thead><tr><th></th><th></th><th></th><th></th></tr></thead>
 <tbody>
-<tr><th></th><td colspan=2>**Keys**</td></tr>
-<tr><th></th><td colspan=2><code>e~A~ = 2, d~A~ = 1/2</code></td></tr>
-<tr><th></th><td colspan=2><code>e~B~ = 5, d~B~ = 1/5</code></td></tr>
-<tr><th></th><td colspan=2>**Encrypt with** <code>e~A~</code></td></tr>
-<tr><th></th><td colspan=2><code>E(m, k) = m^k^</code></td></tr>
-<tr><th></th><td colspan=2><code>E(m, e~A~) = m^e~A~^</code></td></tr>
-<tr><th></th><td colspan=2><code>E(m, e~A~) = m^2^</code></td></tr>
+<tr><th></th>
+<td colspan=2><code>e~A~ = 2, d~A~ = 1/2</code></td>
+<td class="left">A set of matching keys</td>
+</tr>
+<tr><th></th>
+<td colspan=2><code>e~B~ = 5, d~B~ = 1/5</code></td>
+<td class="left">A different set of matching keys</td>
+</tr>
+<tr><th></th>
+<td colspan=2><code>E(m, k) = m^k^</code></td>
+<td class="left">Encryption function</td>
+</tr>
+<tr><th></th>
+<td colspan=2><code>E(m, e~A~) = m^e~A~^</code></td>
+<td class="left">Encrypt with <code>e~A~</code></td>
+</tr>
+<tr><th></th>
+<td colspan=2><code>E(m, e~A~) = m^2^</code></td>
+<td class="left">Plug in <code>e~A~ = 2</code></td>
+</tr>
 <tr><th></th>
 <td>**Decrypting with the**<br>**Right Key**</td>
 <td>**Decrypting with the**<br>**Wrong Key**</td>
@@ -77,22 +96,27 @@ modulo.
 <tr><th></th>
 <td><code>D(m, k) = m^k^</code></td>
 <td><code>D(m, k) = m^k^</code></td>
+<td class="left">Decryption function</td>
 </tr>
 <tr><th></th>
 <td><code>D(E(m, e~A~), d~A~) = E(m, e~A~)^d~A~^</code></td>
 <td><code>D(E(m, e~A~), d~B~) = E(m, e~A~)^d~B~^</code></td>
+<td class="left">Plug in keys</td>
 </tr>
 <tr><th></th>
 <td><code>D(E(m, e~A~), d~A~) = (m^2^)^1/2^</code></td>
 <td><code>D(E(m, e~A~), d~B~) = (m^2^)^1/5^</code></td>
+<td class="left">Plug in values</td>
 </tr>
 <tr><th></th>
 <td><code>D(E(m, e~A~), d~A~) = m^2\*(1/2)^</code></td>
 <td><code>D(E(m, e~A~), d~B~) = m^2\*(1/5)^</code></td>
+<td class="left">Exponent properties</td>
 </tr>
 <tr><th></th>
 <td><code>D(E(m, e~A~), d~A~) = m</code></td>
 <td><code>D(E(m, e~A~), d~B~) = m^2/5^</code></td>
+<td class="left">Simplify</td>
 </tr>
 </tbody>
 </table>
@@ -293,7 +317,7 @@ key.
 Both of these options will work, but which _should_ he use if he wants to send
 me a message that only I can read?
 
-He should use my <span class="hide">public</span> key to encrypt the message.
+He should use <span class="hide">my public</span> key to encrypt the message.
 
 <center>
 <img src="crypto/rsa_msgsent.png">
@@ -575,45 +599,45 @@ Let's go through it slowly and hopefully it'll be easier to digest.
 <thead><tr><th></th><th></th><th></th></tr></thead>
 <tbody>
 <tr><th></th>
-<td>Dr. Stuart writes a message</td>
 <td><code>m~B~</code></td>
+<td class="left">Dr. Stuart writes a message</td>
 </tr>
 <tr><th></th>
-<td>Dr. Stuart calculate the hash of his message</td>
 <td><code>H(m~B~)</code></td>
+<td class="left">Dr. Stuart calculate the hash of his message</td>
 </tr>
 <tr><th></th>
-<td>Dr. Stuart encrypts his message with my public key</td>
 <td><code>E(m~B~, e~C~)</code></td>
+<td class="left">Dr. Stuart encrypts his message with<br>my public key</td>
 </tr>
 <tr><th></th>
-<td>Dr. Stuart encrypts the hash of his message with his private key</td>
 <td><code>E(H(m~B~), d~B~)</code></td>
+<td class="left">Dr. Stuart encrypts the hash of his message<br>with his private key</td>
 </tr>
 <tr><th></th>
-<td>I receive a random encrypted message</td>
 <td><code>E(m~B~, e~C~)</code></td>
+<td class="left">I receive a random encrypted message</td>
 </tr>
 <tr><th></th>
-<td>I decrypt this message from anyone with my private key</td>
 <td><code>D(E(m~B~, e~C~), d~C~) = m~B~</code></td>
+<td class="left">I decrypt this message from anyone with my<br>private key</td>
 </tr>
 <tr><th></th>
-<td>I calculate the hash of this message from anyone</td>
 <td><code>H(D(E(m~B~, e~C~), d~C~)) = H(m~B~)</code></td>
+<td class="left">I calculate the hash of this message from<br>anyone</td>
 </tr>
 <tr><th></th>
-<td>I receive a random encrypted message</td>
 <td><code>E(H(m~B~), d~B~)</code></td>
+<td class="left">I receive a random encrypted message</td>
 </tr>
 <tr><th></th>
-<td>I decrypt this message from Dr. Stuart with his public key</td>
 <td><code>D(E(H(m~B~), d~B~)) = H(m~B~)</code></td>
+<td class="left">I decrypt this message from Dr. Stuart with his<br>public key</td>
 </tr>
 <tr><th></th>
-<td>I verify that the first message from "anyone" came from Dr. Stuart</td>
 <td><code>H(D(E(m~B~, e~C~), d~C~)) = D(E(H(m~B~), d~B~))</code><br>
 <code>H(m~B~) = H(m~B~)</code></td>
+<td class="left">I verify that the first message from "anyone"<br>came from Dr. Stuart</td>
 </tbody>
 </table>
 </center>
