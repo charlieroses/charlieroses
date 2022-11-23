@@ -111,7 +111,9 @@
 	<hr>
 	<div class="content">
 		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
-		<a href="crypto/rsa.html"><b>10.1 :</b> RSA Encryption</a>
+		<a href="crypto/math.html"><b>10.1 :</b> Math Background</a>
+		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
+		<a href="crypto/rsa.html"><b>10.3 :</b> RSA Encryption</a>
 	</div>
 </div>
 <div id="main">
@@ -144,1514 +146,1340 @@
 	<div class="content">
 <p>While there are many different character sets, the one we're gonna focus on is ASCII. ASCII stands for the <strong>A</strong>merican <strong>S</strong>tandard <strong>C</strong>ode for <strong>I</strong>nformation <strong>I</strong>nterchange. It's a character set which means it was created for computers to display information. As we know, computers can only store 0s and 1s. However, what if we want to display the text &quot;Hello&quot;? We cannot store the letters themselves in the computers code. ASCII is a 7 bit binary code for each letter. Typically the 7 bits are separated into a set of 3 and 4 with a space. This is only for readability purposes. These 7 bits allows strings of text to be stored within the computer to be displayed later. ASCII has 128 characters in the table. I have been very generous and listed them all below.</p>
 <center>
-<table style="width:100%;">
-<colgroup>
-<col width="7%" />
-<col width="6%" />
-<col width="9%" />
-<col width="2%" />
-<col width="6%" />
-<col width="6%" />
-<col width="8%" />
-<col width="2%" />
-<col width="7%" />
-<col width="6%" />
-<col width="8%" />
-<col width="2%" />
-<col width="7%" />
-<col width="6%" />
-<col width="8%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><p>Binary</p></td>
-<td><p>Decimal</p></td>
-<td><p>Character</p></td>
-<td></td>
-<td><p>Binary</p></td>
-<td><p>Decimal</p></td>
-<td><p>Character</p></td>
-<td></td>
-<td><p>Binary</p></td>
-<td><p>Decimal</p></td>
-<td><p>Character</p></td>
-<td></td>
-<td><p>Binary</p></td>
-<td><p>Decimal</p></td>
-<td><p>Character</p></td>
-</tr>
-<tr class="even">
-<td><p>000 0000</p></td>
-<td><p>0</p></td>
-<td><p>NUL (null)</p></td>
-<td></td>
-<td><p>010 000</p></td>
-<td><p>32</p></td>
-<td><p>Space</p></td>
-<td></td>
-<td><p>100 0000</p></td>
-<td><p>64</p></td>
-<td><p>@</p></td>
-<td></td>
-<td><p>110 0000</p></td>
-<td><p>96</p></td>
-<td><p>`</p></td>
-</tr>
-</tbody>
-</table>
 <table>
+<colgroup>
+<col span="1" class="red">
+<col span="2">
+<col span="1" class="gray">
+<col span="2">
+<col span="1" class="gray">
+<col span="2">
+<col span="1" class="gray">
+</colgroup>
+<thead>
 <tr>
-<th class="ascii">
-<b>Binary</b>
+<th>
 </th>
-<th class="ascii">
-<b>Decimal</b>
+<th>
+Binary
 </th>
-<th class="ascii">
-<b>Character</b>
+<th>
+Decimal
 </th>
-<th class="asciiMidT">
+<th>
+Character
 </th>
-<th class="ascii">
-<b>Binary</b>
+<th>
+Binary
 </th>
-<th class="ascii">
-<b>Decimal</b>
+<th>
+Decimal
 </th>
-<th class="ascii">
-<b>Character</b>
+<th>
+Character
 </th>
-<th class="asciiMidT">
+<th>
+Binary
 </th>
-<th class="ascii">
-<b>Binary</b>
+<th>
+Decimal
 </th>
-<th class="ascii">
-<b>Decimal</b>
+<th>
+Character
 </th>
-<th class="ascii">
-<b>Character</b>
+<th>
+Binary
 </th>
-<th class="asciiMidT">
+<th>
+Decimal
 </th>
-<th class="ascii">
-<b>Binary</b>
-</th>
-<th class="ascii">
-<b>Decimal</b>
-</th>
-<th class="ascii">
-<b>Character</b>
+<th>
+Character
 </th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 0000
 </td>
-<td class="ascii">
+<td>
 0
 </td>
-<td class="ascii">
+<td>
 NUL (null)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 0000
 </td>
-<td class="ascii">
+<td>
 32
 </td>
-<td class="ascii">
+<td>
 Space
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 0000
 </td>
-<td class="ascii">
+<td>
 64
 </td>
-<td class="ascii">
+<td>
 @
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 0000
 </td>
-<td class="ascii">
+<td>
 96
 </td>
-<td class="ascii">
+<td>
 `
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 0001
 </td>
-<td class="ascii">
+<td>
 1
 </td>
-<td class="ascii">
+<td>
 SOH (start of heading)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 0001
 </td>
-<td class="ascii">
+<td>
 33
 </td>
-<td class="ascii">
+<td>
 !
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 0001
 </td>
-<td class="ascii">
+<td>
 65
 </td>
-<td class="ascii">
+<td>
 A
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 0001
 </td>
-<td class="ascii">
+<td>
 97
 </td>
-<td class="ascii">
+<td>
 a
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 0010
 </td>
-<td class="ascii">
+<td>
 2
 </td>
-<td class="ascii">
+<td>
 STX (start of text)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 0010
 </td>
-<td class="ascii">
+<td>
 34
 </td>
-<td class="ascii">
+<td>
 &quot;
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 0010
 </td>
-<td class="ascii">
+<td>
 66
 </td>
-<td class="ascii">
+<td>
 B
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 0010
 </td>
-<td class="ascii">
+<td>
 98
 </td>
-<td class="ascii">
+<td>
 b
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 0011
 </td>
-<td class="ascii">
+<td>
 3
 </td>
-<td class="ascii">
+<td>
 ETX (end of text)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 0011
 </td>
-<td class="ascii">
+<td>
 35
 </td>
-<td class="ascii">
+<td>
 #
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 0011
 </td>
-<td class="ascii">
+<td>
 67
 </td>
-<td class="ascii">
+<td>
 C
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 1100001
 </td>
-<td class="ascii">
+<td>
 99
 </td>
-<td class="ascii">
+<td>
 c
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 0100
 </td>
-<td class="ascii">
+<td>
 4
 </td>
-<td class="ascii">
+<td>
 EOT (end of transmission)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 0100
 </td>
-<td class="ascii">
+<td>
 36
 </td>
-<td class="ascii">
+<td>
 $
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 0100
 </td>
-<td class="ascii">
+<td>
 68
 </td>
-<td class="ascii">
+<td>
 D
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 0100
 </td>
-<td class="ascii">
+<td>
 100
 </td>
-<td class="ascii">
+<td>
 d
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 0101
 </td>
-<td class="ascii">
+<td>
 5
 </td>
-<td class="ascii">
+<td>
 ENQ (enquiry)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 0101
 </td>
-<td class="ascii">
+<td>
 37
 </td>
-<td class="ascii">
+<td>
 %
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 0101
 </td>
-<td class="ascii">
+<td>
 69
 </td>
-<td class="ascii">
+<td>
 E
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 0101
 </td>
-<td class="ascii">
+<td>
 101
 </td>
-<td class="ascii">
+<td>
 e
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 0110
 </td>
-<td class="ascii">
+<td>
 6
 </td>
-<td class="ascii">
+<td>
 ACK (acknowledge)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 0110
 </td>
-<td class="ascii">
+<td>
 38
 </td>
-<td class="ascii">
+<td>
 &amp;
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 0110
 </td>
-<td class="ascii">
+<td>
 70
 </td>
-<td class="ascii">
+<td>
 F
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 0110
 </td>
-<td class="ascii">
+<td>
 102
 </td>
-<td class="ascii">
+<td>
 f
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 0111
 </td>
-<td class="ascii">
+<td>
 7
 </td>
-<td class="ascii">
+<td>
 BEL (bell)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 0111
 </td>
-<td class="ascii">
+<td>
 39
 </td>
-<td class="ascii">
+<td>
 '
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 0111
 </td>
-<td class="ascii">
+<td>
 71
 </td>
-<td class="ascii">
+<td>
 G
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 0111
 </td>
-<td class="ascii">
+<td>
 103
 </td>
-<td class="ascii">
+<td>
 g
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 1000
 </td>
-<td class="ascii">
+<td>
 8
 </td>
-<td class="ascii">
+<td>
 BS (backspace)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 1000
 </td>
-<td class="ascii">
+<td>
 40
 </td>
-<td class="ascii">
+<td>
 (
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 1000
 </td>
-<td class="ascii">
+<td>
 72
 </td>
-<td class="ascii">
+<td>
 H
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 1000
 </td>
-<td class="ascii">
+<td>
 104
 </td>
-<td class="ascii">
+<td>
 h
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 1001
 </td>
-<td class="ascii">
+<td>
 9
 </td>
-<td class="ascii">
+<td>
 TAB (horizontal tab)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 1001
 </td>
-<td class="ascii">
+<td>
 41
 </td>
-<td class="ascii">
+<td>
 )
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 1001
 </td>
-<td class="ascii">
+<td>
 73
 </td>
-<td class="ascii">
+<td>
 I
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 1001
 </td>
-<td class="ascii">
+<td>
 105
 </td>
-<td class="ascii">
+<td>
 i
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 1010
 </td>
-<td class="ascii">
+<td>
 10
 </td>
-<td class="ascii">
+<td>
 LF (new line)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 1010
 </td>
-<td class="ascii">
+<td>
 42
 </td>
-<td class="ascii">
+<td>
 *
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 1010
 </td>
-<td class="ascii">
+<td>
 74
 </td>
-<td class="ascii">
+<td>
 J
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 1010
 </td>
-<td class="ascii">
+<td>
 106
 </td>
-<td class="ascii">
+<td>
 j
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 1011
 </td>
-<td class="ascii">
+<td>
 11
 </td>
-<td class="ascii">
+<td>
 VT (vertical tab)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 1011
 </td>
-<td class="ascii">
+<td>
 43
 </td>
-<td class="ascii">
+<td>
 +
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 1011
 </td>
-<td class="ascii">
+<td>
 75
 </td>
-<td class="ascii">
+<td>
 K
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 1011
 </td>
-<td class="ascii">
+<td>
 107
 </td>
-<td class="ascii">
+<td>
 k
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 1100
 </td>
-<td class="ascii">
+<td>
 12
 </td>
-<td class="ascii">
+<td>
 FF (new page)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 1100
 </td>
-<td class="ascii">
+<td>
 44
 </td>
-<td class="ascii">
+<td>
 ,
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 1100
 </td>
-<td class="ascii">
+<td>
 76
 </td>
-<td class="ascii">
+<td>
 L
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 1100
 </td>
-<td class="ascii">
+<td>
 108
 </td>
-<td class="ascii">
+<td>
 l
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 1101
 </td>
-<td class="ascii">
+<td>
 13
 </td>
-<td class="ascii">
+<td>
 CR (carriage return)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 1101
 </td>
-<td class="ascii">
+<td>
 45
 </td>
-<td class="ascii">
+<td>
 -
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 1101
 </td>
-<td class="ascii">
+<td>
 77
 </td>
-<td class="ascii">
+<td>
 M
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 1101
 </td>
-<td class="ascii">
+<td>
 109
 </td>
-<td class="ascii">
+<td>
 m
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 1110
 </td>
-<td class="ascii">
+<td>
 14
 </td>
-<td class="ascii">
+<td>
 SO (shift out)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 1110
 </td>
-<td class="ascii">
+<td>
 46
 </td>
-<td class="ascii">
+<td>
 .
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 1110
 </td>
-<td class="ascii">
+<td>
 78
 </td>
-<td class="ascii">
+<td>
 N
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 1110
 </td>
-<td class="ascii">
+<td>
 110
 </td>
-<td class="ascii">
+<td>
 n
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 000 1111
 </td>
-<td class="ascii">
+<td>
 15
 </td>
-<td class="ascii">
+<td>
 SI (shift in)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 010 1111
 </td>
-<td class="ascii">
+<td>
 47
 </td>
-<td class="ascii">
+<td>
 /
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 100 1111
 </td>
-<td class="ascii">
+<td>
 79
 </td>
-<td class="ascii">
+<td>
 O
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 110 1111
 </td>
-<td class="ascii">
+<td>
 111
 </td>
-<td class="ascii">
+<td>
 0
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 0000
 </td>
-<td class="ascii">
+<td>
 16
 </td>
-<td class="ascii">
+<td>
 DLE (data link escape)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 0000
 </td>
-<td class="ascii">
+<td>
 48
 </td>
-<td class="ascii">
+<td>
 0
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 0000
 </td>
-<td class="ascii">
+<td>
 80
 </td>
-<td class="ascii">
+<td>
 P
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 0000
 </td>
-<td class="ascii">
+<td>
 112
 </td>
-<td class="ascii">
+<td>
 p
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 0001
 </td>
-<td class="ascii">
+<td>
 17
 </td>
-<td class="ascii">
+<td>
 DC1 (device control 1)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 0001
 </td>
-<td class="ascii">
+<td>
 49
 </td>
-<td class="ascii">
+<td>
 1
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 0001
 </td>
-<td class="ascii">
+<td>
 81
 </td>
-<td class="ascii">
+<td>
 Q
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 0001
 </td>
-<td class="ascii">
+<td>
 113
 </td>
-<td class="ascii">
+<td>
 q
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 0010
 </td>
-<td class="ascii">
+<td>
 18
 </td>
-<td class="ascii">
+<td>
 DC2 (device control 2)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 0010
 </td>
-<td class="ascii">
+<td>
 50
 </td>
-<td class="ascii">
+<td>
 2
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 0010
 </td>
-<td class="ascii">
+<td>
 82
 </td>
-<td class="ascii">
+<td>
 R
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 0010
 </td>
-<td class="ascii">
+<td>
 114
 </td>
-<td class="ascii">
+<td>
 r
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 0011
 </td>
-<td class="ascii">
+<td>
 19
 </td>
-<td class="ascii">
+<td>
 DC3 (device control 3)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 0011
 </td>
-<td class="ascii">
+<td>
 51
 </td>
-<td class="ascii">
+<td>
 3
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 0011
 </td>
-<td class="ascii">
+<td>
 83
 </td>
-<td class="ascii">
+<td>
 S
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 0011
 </td>
-<td class="ascii">
+<td>
 115
 </td>
-<td class="ascii">
+<td>
 s
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 0100
 </td>
-<td class="ascii">
+<td>
 20
 </td>
-<td class="ascii">
+<td>
 DC4 (device control 4)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 0100
 </td>
-<td class="ascii">
+<td>
 52
 </td>
-<td class="ascii">
+<td>
 4
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 0100
 </td>
-<td class="ascii">
+<td>
 84
 </td>
-<td class="ascii">
+<td>
 T
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 0100
 </td>
-<td class="ascii">
+<td>
 116
 </td>
-<td class="ascii">
+<td>
 t
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 0101
 </td>
-<td class="ascii">
+<td>
 21
 </td>
-<td class="ascii">
+<td>
 NAK (negative acknowledge)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 0101
 </td>
-<td class="ascii">
+<td>
 53
 </td>
-<td class="ascii">
+<td>
 5
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 0101
 </td>
-<td class="ascii">
+<td>
 85
 </td>
-<td class="ascii">
+<td>
 U
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 0101
 </td>
-<td class="ascii">
+<td>
 117
 </td>
-<td class="ascii">
+<td>
 u
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 0110
 </td>
-<td class="ascii">
+<td>
 22
 </td>
-<td class="ascii">
+<td>
 SYN (synchronous idle)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 0110
 </td>
-<td class="ascii">
+<td>
 54
 </td>
-<td class="ascii">
+<td>
 6
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 0110
 </td>
-<td class="ascii">
+<td>
 86
 </td>
-<td class="ascii">
+<td>
 V
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 0110
 </td>
-<td class="ascii">
+<td>
 118
 </td>
-<td class="ascii">
+<td>
 v
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 0111
 </td>
-<td class="ascii">
+<td>
 23
 </td>
-<td class="ascii">
+<td>
 ETB (end of trans. block)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 0111
 </td>
-<td class="ascii">
+<td>
 55
 </td>
-<td class="ascii">
+<td>
 7
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 0111
 </td>
-<td class="ascii">
+<td>
 87
 </td>
-<td class="ascii">
+<td>
 W
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 0111
 </td>
-<td class="ascii">
+<td>
 119
 </td>
-<td class="ascii">
+<td>
 w
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 1000
 </td>
-<td class="ascii">
+<td>
 24
 </td>
-<td class="ascii">
+<td>
 CAN (cancel)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 1000
 </td>
-<td class="ascii">
+<td>
 56
 </td>
-<td class="ascii">
+<td>
 8
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 1000
 </td>
-<td class="ascii">
+<td>
 88
 </td>
-<td class="ascii">
+<td>
 X
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 1000
 </td>
-<td class="ascii">
+<td>
 120
 </td>
-<td class="ascii">
+<td>
 x
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 1001
 </td>
-<td class="ascii">
+<td>
 25
 </td>
-<td class="ascii">
+<td>
 EM (end of medium)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 1001
 </td>
-<td class="ascii">
+<td>
 57
 </td>
-<td class="ascii">
+<td>
 9
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 1001
 </td>
-<td class="ascii">
+<td>
 89
 </td>
-<td class="ascii">
+<td>
 Y
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 1001
 </td>
-<td class="ascii">
+<td>
 121
 </td>
-<td class="ascii">
+<td>
 y
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 1010
 </td>
-<td class="ascii">
+<td>
 26
 </td>
-<td class="ascii">
+<td>
 SUB (substitute)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 1010
 </td>
-<td class="ascii">
+<td>
 58
 </td>
-<td class="ascii">
+<td>
 :
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 1010
 </td>
-<td class="ascii">
+<td>
 90
 </td>
-<td class="ascii">
+<td>
 Z
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 1010
 </td>
-<td class="ascii">
+<td>
 122
 </td>
-<td class="ascii">
+<td>
 z
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 1011
 </td>
-<td class="ascii">
+<td>
 27
 </td>
-<td class="ascii">
+<td>
 ESC (escape)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 1011
 </td>
-<td class="ascii">
+<td>
 59
 </td>
-<td class="ascii">
+<td>
 ;
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 1011
 </td>
-<td class="ascii">
+<td>
 91
 </td>
-<td class="ascii">
+<td>
 [
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 1011
 </td>
-<td class="ascii">
+<td>
 123
 </td>
-<td class="ascii">
+<td>
 {
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 1100
 </td>
-<td class="ascii">
+<td>
 28
 </td>
-<td class="ascii">
+<td>
 FS (file separator)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 1100
 </td>
-<td class="ascii">
+<td>
 60
 </td>
-<td class="ascii">
+<td>
 &lt;
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 1100
 </td>
-<td class="ascii">
+<td>
 92
 </td>
-<td class="ascii">
+<td>
 \
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 1100
 </td>
-<td class="ascii">
+<td>
 124
 </td>
-<td class="ascii">
+<td>
 |
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 1101
 </td>
-<td class="ascii">
+<td>
 29
 </td>
-<td class="ascii">
+<td>
 GS (group separator)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 1101
 </td>
-<td class="ascii">
+<td>
 61
 </td>
-<td class="ascii">
+<td>
 =
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 1101
 </td>
-<td class="ascii">
+<td>
 93
 </td>
-<td class="ascii">
+<td>
 ]
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 1101
 </td>
-<td class="ascii">
+<td>
 125
 </td>
-<td class="ascii">
+<td>
 }
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 1110
 </td>
-<td class="ascii">
+<td>
 30
 </td>
-<td class="ascii">
+<td>
 RS (record separator)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 1110
 </td>
-<td class="ascii">
+<td>
 62
 </td>
-<td class="ascii">
+<td>
 &gt;
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 1110
 </td>
-<td class="ascii">
+<td>
 94
 </td>
-<td class="ascii">
+<td>
 ^
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 1110
 </td>
-<td class="ascii">
+<td>
 126
 </td>
-<td class="ascii">
+<td>
 ~
 </td>
 </tr>
 <tr>
-<td class="ascii">
+<th>
+</th>
+<td>
 001 1111
 </td>
-<td class="ascii">
+<td>
 31
 </td>
-<td class="ascii">
+<td>
 US (unit separator)
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 011 1111
 </td>
-<td class="ascii">
+<td>
 63
 </td>
-<td class="ascii">
+<td>
 ?
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 101 1111
 </td>
-<td class="ascii">
+<td>
 95
 </td>
-<td class="ascii">
+<td>
 _
 </td>
-<td class="asciiMid">
-</td>
-<td class="ascii">
+<td>
 111 1111
 </td>
-<td class="ascii">
+<td>
 127
 </td>
-<td class="ascii">
+<td>
 DEL
 </td>
 </tr>
+</tbody>
 </table>
 </center>
 	</div>
