@@ -2,11 +2,12 @@
 # Charlie Rose
 # Building the Blog for my site
 
-MD_SRC='./markdownfiles'
-BLOGMD_SRC="${MD_SRC}/blog"
+SRC='./src'
+UTILS="${SRC}/utils"
+BLOGMD_SRC="${SRC}/blog"
 BLOGDIR="./blogposts"
-POSTLIST="./utils/blogposts.tsv"
-TEMPLATE=$(cat ./utils/template.html)
+POSTLIST="${BLOGMD_SRC}/blogposts.tsv"
+TEMPLATE=$(cat ${UTILS}/template.html)
 BLOG_TEMPLATE="${TEMPLATE}"
 BLOG_TEMPLATE=${BLOG_TEMPLATE//.\//..\/..\/}
 BLOG_TEMPLATE="${BLOG_TEMPLATE/<!-- HEADING -->/ - Blog}"
@@ -58,7 +59,7 @@ do
 
 	CONTENT="$(pandoc -p "${IN_FILE}")"
 	echo " Coverted to HTML with pandoc"
-	CONTENT="$(./utils/mdtohtml "${CONTENT}")"
+	CONTENT="$(${UTILS}/mdtohtml "${CONTENT}")"
 	echo " Adding Charlie customization"
 	CONTENT="${CONTENT}\n\n<hr>\n\n<a href=\"#top\">Back to Top</a>\n"
 
@@ -71,7 +72,7 @@ do
 	# Build HTML page
 	echo -e "${HTMLPAGE}" > "${OUT_FILE}"
 	
-	utils/check_links "${OUT_FILE}"
+	${UTILS}/check_links "${OUT_FILE}"
 
 	echo "  Built ${OUT_FILE} from ${IN_FILE}"
 
