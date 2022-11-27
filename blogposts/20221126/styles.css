@@ -1,0 +1,28 @@
+.streak {
+	color: #FA9601;
+}
+
+.xp {
+	color: #FFD300;
+}
+
+.legendary {
+	color: #7581EA;
+}
+
+#oldformat td {
+	text-align: center;
+	padding: 1ch;
+	width: 10ch;
+}
+
+#comparison td {
+	width: 40ch;
+	text-align: left;
+	vertical-align: top;
+}
+
+img {
+	height: 1.5ch;
+	width: auto;
+}
