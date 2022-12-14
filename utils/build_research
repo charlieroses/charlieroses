@@ -1,5 +1,0 @@
-#!/bin/bash
-# Charlie Rose
-# Building the research section of my site
-
-utils/build_category "Research" "ugthesis rethink hunch"

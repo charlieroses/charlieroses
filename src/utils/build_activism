@@ -1,0 +1,5 @@
+#!/bin/bash
+# Charlie Rose
+# Building the activism section of my site
+
+src/utils/build_category "Activism" "All" "Ongoing Previous Events Resources"

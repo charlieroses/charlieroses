@@ -1,0 +1,132 @@
+#!/bin/bash
+# Charlie Rose
+# A script to build my webpages for my personal site
+
+SRC="./src"
+UTILS="${SRC}/utils"
+TEMPLATE=$(cat "${UTILS}/template.html")
+HTMLPAGE=${TEMPLATE//.\//..\/}
+CARRAY=( "pp" "pb" "pg" "py" "po" "pr" "pi" )
+CHL=${#CARRAY[@]}
+
+DIR="$1"
+DIR_LC=$(echo "${DIR}" | awk '{print tolower($0)}')
+INDEX="$2"
+INDEX_LC="$(echo "${INDEX}" | awk '{print tolower($0)}')"
+SHEADERS="$2 $3"
+SHNAV=""
+
+echo "Building ${DIR} section"
+
+if [ ! -e "${DIR_LC}" ]
+then
+	mkdir "${DIR_LC}"
+	echo -e "\tBuilt ${DIR_LC} directory"
+fi
+
+CSSPAGE="<link rel=\"stylesheet\" type=\"text/css\" href=\"./${DIR_LC}.css\">"
+HTMLPAGE="${HTMLPAGE/<!-- XTRACSS -->/${CSSPAGE}}"
+HEADER="- ${DIR}"
+
+for file in "${SRC}/${DIR_LC}/o_"*".md"
+do
+	[[ "${file}" = *"o_*.md" ]] && continue
+	echo -e "\tBuilding supplementary markdown file ${file}"
+	"${UTILS}/build_page" "${file}" "${HTMLPAGE/<!-- HEADING -->/${HEADER}}"
+done
+
+if [[ -n "$3" ]]
+then
+	HEADER="- SH ${DIR}"
+	SHNAV="<a class=\"${CARRAY[0]}\" href=\"index.html\">[${INDEX_LC}]</a> "
+
+	c=0
+	for SUBHEAD in $3
+	do
+		c=$(( c + 1 ))
+		c=$(( c%CHL ))
+		LC=$(echo "${SUBHEAD}" | awk '{print tolower($0)}')
+		SHNAV="${SHNAV}<a class=\"${CARRAY[$c]}\" href=\"$LC.html\">[$LC]</a> "
+	done
+	SHNAV="${SHNAV}<hr>"
+fi
+
+for SUBHEAD in $SHEADERS
+do
+	LC=$(echo "${SUBHEAD}" | awk '{print tolower($0)}')
+	echo -e "\tBuilding ${LC}.html"
+	PROJS=""
+
+	if [[ "${SUBHEAD}" = "All" ]]
+	then
+		PROJS="$(tail -n +2 "${SRC}/${DIR_LC}.tsv" | grep -v "NOTALL")"
+	else
+		PROJS="$(tail -n +2 "${SRC}/${DIR_LC}.tsv" | grep "${SUBHEAD}")"
+	fi
+
+	NAV=""
+	CONTENT=""
+	SUB=""
+	i=0
+	while IFS= read LINE
+	do
+		ID="$(echo -e "${LINE}" | cut -d$'\t' -f1 )"
+		TAGS="$(echo -e "${LINE}" | cut -d$'\t' -f2 )"
+		START="$(echo -e "${LINE}" | cut -d$'\t' -f3 )"
+		END="$(echo -e "${LINE}" | cut -d$'\t' -f4 )"
+		LOCATION="$(echo -e "${LINE}" | cut -d$'\t' -f5 )"
+		OTHER="$(echo -e "${LINE}" | cut -d$'\t' -f6 )"
+		XTRAFILE="$(echo -e "${LINE}" | cut -d$'\t' -f7 )"
+		echo -e "\t\tAdding ${ID}"
+
+		TITLE="$(head -n 1 "${SRC}/${DIR_LC}/${ID}.md")"
+		TITLE="${TITLE#"# "}"
+
+		CONTENT="${CONTENT}<hr>\n<h3 id=\"${ID}\" class=\"${CARRAY[$i]}\">${TITLE}</h3>\n"
+
+		if [[ "${TAGS}" = *"Events"* ]]
+		then
+			CONTENT="${CONTENT}<p><em>${START} @ ${LOCATION}</em></p>\n"
+		else
+			[[ -n "${LOCATION}" ]] && CONTENT="${CONTENT}<p><em>${LOCATION}</em></p>\n"
+
+			if [[ "${TAGS}" = *"Ongoing"* ]]
+			then
+				CONTENT="${CONTENT}<p><em>Since ${START}</em></p>\n"
+			elif [[ "${TAGS}" = *"OneDay"* ]]
+			then
+				CONTENT="${CONTENT}<p><em>${START}</em></p>\n"
+			elif [[ "${TAGS}" = *"Previous"* ]] || [[ "${TAGS}" = *"Frozen"* ]]
+			then
+				CONTENT="${CONTENT}<p><em>${START} - ${END}</em></p>\n"
+			fi
+		fi
+		
+		[[ -n "${OTHER}" ]] && CONTENT="${CONTENT}<p><em>${OTHER}</em></p>\n"
+
+		DESC="$(tail -n +2 "${SRC}/${DIR_LC}/${ID}.md" | pandoc -p )"
+		DESC="$(./src/utils/mdtohtml "${DESC}")"
+		DESC="${DESC//"<a"/"<a class=\"${CARRAY[$i]}\""}"
+		CONTENT="${CONTENT}${DESC}\n"
+
+		NAV="${NAV}<br><a href=\"#${ID}\" class=\"${CARRAY[$i]}\">[${TITLE}]</a>\n"
+		i=$(( i+1 ))
+		i=$(( i%CHL ))
+	
+	done <<< "${PROJS}"
+
+	SUB="${SHNAV}${NAV#<br>}${CONTENT}"
+	SUBPAGE="${HTMLPAGE}"
+	SUBPAGE="${SUBPAGE/<!-- HEADING -->/${HEADER/SH/${SUBHEAD}}}"
+	SUBPAGE="${SUBPAGE/<!-- CONTENT -->/${SUB}}"
+	echo -e "${SUBPAGE}" > "${DIR_LC}/${LC}.html"
+done
+
+mv "${DIR_LC}/${INDEX_LC}.html" "${DIR_LC}/index.html"
+
+echo -e "\t${INDEX_LC}.html is now the index of ${DIR_LC}"
+
+for FILE in ${DIR_LC}/*.html
+do
+	"${UTILS}/check_links" ${FILE}
+done

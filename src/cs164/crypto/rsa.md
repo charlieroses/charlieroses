@@ -11,18 +11,7 @@ Some links you may find helpful in this section
 
 ---
 
-## Key Generation
-
-You won't be tested on how to generate keys, nor will it come up in lab.
-I don't know how long it will take me to write up "How it Works", so for right
-now, I'm gonna skip writing up key generation.
-This section may or may not be filled in by the time you see it.
-~~It's 3am I've been working on this for 6 hours. Not today~~
-
----
-
-## How it Works
-
+# How it Works
 
 Let's start with a set of generated keys:
 
@@ -58,7 +47,7 @@ _"Encryption and decryption are the same function.
 How can we encrypt and decrypt at the same time?"_
 When we generate <code>e</code> and <code>d</code>, they become inverses of each
 other.
-Since you most likely haven't been taught modular arithmatic yet, let's look at
+Since you most likely haven't been taught modular arithmetic yet, let's look at
 some inverses in math that we already know: fractions.
 Below, I've created two sets of keys, one for person A, one for person B.
 For the sake of simplicity, I've removed <code>n</code> the shared public
@@ -163,7 +152,7 @@ always private.
 
 ## Scenario
 
-My name is Charlie, I was the Head TA for CS-164 with Dr. Start for five years.
+My name is Charlie, I was the Head TA for CS-164 with Dr. Stuart for five years.
 Being the Head TA, Dr. Stuart sent me lots of emails about students and their
 grades.
 These emails need to be private due to
@@ -220,7 +209,7 @@ not have a hair care regimen.
 
 Dr. Stuart has recently met with a student (S) about their assignment.
 He decides that the student should get a 90% on their assignment and would like
-to send me a message to update the gradebook
+to send me a message to update the gradebook.
 Knowing that our messages are public, how should he send this message so that
 only I can read it?
 
@@ -326,7 +315,7 @@ He should use <span class="hide">my public</span> key to encrypt the message.
 Dr. Stuart sends <code>E(m, e~C~)</code>.
 Anyone can read this encrypted message, but that doesn't matter.
 Since only I know my private key, only I can compute
-<code>D(E(m, e~C~), d~C~)</code> to decrupt the message.
+<code>D(E(m, e~C~), d~C~)</code> to decrypt the message.
 
 If he had used his private key <code>d~B~</code> to encrypt the message, I could
 have decrypted it with his public key <code>e~B~</code>.
@@ -524,7 +513,7 @@ with his private key, not the actual message.
 This means all the student will see is <code>11</code> since
 <code>H(Give S a 90) = 11</code>.
 This is not enough information for the student (or anyone) to know what grade
-the student recieved or which student is being talked about.
+the student received or which student is being talked about.
 Dr. Stuart's message could have been about giving Joe a 80 on his assignment
 since <code>H(Give J a 80) = 11</code>.
 
@@ -648,6 +637,44 @@ sends another student a message.
 The process is the same.
 It all relies on everyone's <code>e</code> being public and everyone's
 <code>d</code> being private.
+
+
+---
+
+## Certificates
+
+It's time to grade!
+Let me check my email to see if Dr. Stuart has sent me any updates.
+I've recieved a message and a signature.
+I use my public key to decrypt the message and see it says `"Give S a 90"`.
+Hmmmm, let's check the signature to make sure this message came from Dr. Stuart.
+I use Dr. Stuart's public key to decrypt his message.
+And Dr. Stuart's public key is...
+Uhm...
+Well it's <code>e~B~</code>...
+And <code>e~B~</code> is equal to...
+Well, I'm sure Dr. Stuart told me once, but it appears I've fallen into the classic trap of not actually paying attention to him when he talks.
+I should really start listening to him more.
+It turns out that when professors talk, they say important things that I need to know later.
+
+<center>
+<img src="crypto/certificate_setup.png">
+</center>
+
+
+Well, what do I do now?
+I've completely forgotten Dr. Stuart's public key.
+How will I ever be able to decrypt his signature?
+I could ask Dr. Stuart for his public key again, but it would be really embarrassing to tell him I don't listen to him.
+
+To do this, we introduce a **Certifying Authority**.
+This is an authority that we both trust to authenticate each others public keys.
+We'll say our Certifying Authority is Associate Department Head of the Computer Science Department, Professor Adelaida Medlock.
+(I 
+
+
+
+
 
 
 ---

@@ -1,5 +1,0 @@
-#!/bin/bash
-# Charlie Rose
-# Building the experience section of my site
-
-utils/build_categorywithsub "Experience" "Ongoing" "Teaching Research Other"

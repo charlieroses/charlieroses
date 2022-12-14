@@ -1,0 +1,84 @@
+#!/bin/bash
+# Charlie Rose
+# A script to build my webpages for my personal site
+
+LASTBUILD="./src/utils/lastbuild.txt"
+BUILDFILES="./src/utils/build ./src/utils/template.html ./src/utils/mdtohtml"
+BUILDCHNG=""
+
+TEMPLATE=$(cat ./src/utils/template.html)
+SRC='./src'
+
+CARRAY=( "pp" "pb" "pg" "py" "po" "pr" "pi" )
+CHL=${#CARRAY[@]}
+
+echo "Last Build: $(cat $LASTBUILD)"
+
+# See if the build change was intentional
+for f in $BUILDFILES
+do
+	if [ "$f" -nt "$LASTBUILD" ]
+	then
+		echo -e "\033[01;33mWARNING\033[00m: $f has been changed since last build"
+		echo "Continue? [y/n]"
+		read CONT
+
+		if [ "$CONT" != "y" ]
+		then
+			echo "Aborted"
+			exit 1
+		fi
+
+		BUILDCHNG="true"
+	else
+		echo "$f has not been changed since last build"
+	fi
+done
+
+for IN_FILE in "${SRC}"/*.md
+do
+	OUT_FILE=.${IN_FILE#${SRC}}
+	OUT_FILE=${OUT_FILE%.md}.html
+
+	# Don't build the file if
+	#	The markdown is older than the HTML file
+	#	AND the build script hasn't been changed
+	#	AND the template hasn't been changed
+	if [ "${IN_FILE}" -ot "${OUT_FILE}" ] && [ -z $BUILDCHNG ] && [ -z $TMPLTCHNG ]
+	then
+		echo "Ignored ${IN_FILE}": No recent changes
+		continue
+	fi
+
+	echo "Building ${OUT_FILE} from ${IN_FILE}..."
+	src/utils/build_page "${IN_FILE}" "${TEMPLATE}"
+done
+
+echo "Completed main HTML files from Markdown"
+
+src/utils/build_teaching
+
+src/utils/build_research
+
+src/utils/build_projects
+
+src/utils/build_activism
+
+src/utils/build_blog
+
+CONTENT=$(tail -n +2 "${SRC}/index.md")
+CONTENT="${CONTENT%%###*}"
+CONTENT="${CONTENT//|/'\n'}"
+echo -e "${CONTENT}<https://charlierose.dev>" > README.md
+
+echo "Built README.md"
+
+for FILE in ./*.html
+do
+	src/utils/check_links ${FILE}
+done
+
+LB=$(date)
+echo "Built $LB" > "$LASTBUILD"
+echo "Built $LB"
+

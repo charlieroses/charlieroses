@@ -4,6 +4,7 @@ okay nevermind this outline is a lot more important than originally planned
 
 e v e r y t h i n g needs a face lift fr fr
 
+- TIMER NOTES on when it executes
 
 Overarching goal
 	- a "love letter" to cs164

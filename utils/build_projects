@@ -1,5 +1,0 @@
-#!/bin/bash
-# Charlie Rose
-# Building the projects section of my site
-
-utils/build_categorywithsub "Projects" "Ongoing" "Previous Non-Technical All"

@@ -1,0 +1,5 @@
+#!/bin/bash
+# Charlie Rose
+# Building the research section of my site
+
+src/utils/build_category "Research" "All"

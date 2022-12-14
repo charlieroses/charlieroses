@@ -1,0 +1,35 @@
+#!/bin/bash
+
+SRC="src/ref/"
+TEMPLATE="utils/ref/template.html"
+
+if [[ ! -e $1 ]]
+then
+	echo "File $1 does not exist"
+	exit 1
+fi
+
+INFILE="$1"
+OUTFILE="${INFILE%.md}.html"
+OUTFILE="ref/${OUTFILE##*${SRC}}"
+
+HTMLPAGE="$(cat ${TEMPLATE})"
+CONTENT="$(pandoc --preserve-tabs ${INFILE})"
+CONTENT="$(echo "${CONTENT}" | sed "s#<hr />#</div><hr><div class=\"content\">#g")"
+
+if [[ "${INFILE}" != "${SRC}index.md" ]]
+then
+	CONTENT="<a href=\"index.html\">Back to Navigation</a></div><hr><div class=\"content\">${CONTENT}"
+fi
+
+CONTENT="$(echo "${CONTENT}" | sed 's|:check:|<span class=\"check\">\&#10004;</span>|g')"
+CONTENT="$(echo "${CONTENT}" | sed 's|:cross:|<span class=\"cross\">\&cross;</span>|g')"
+
+HTMLPAGE="${HTMLPAGE/<!-- CONTENT -->/${CONTENT}}"
+echo "${HTMLPAGE}" > "${OUTFILE}"
+
+if [[ "${INFILE}" = "${MDSRC}index.md" ]]
+then
+	echo "${HTMLPAGE}" > "ref.html"
+fi
+

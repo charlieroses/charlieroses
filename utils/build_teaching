@@ -1,5 +1,0 @@
-#!/bin/bash
-# Charlie Rose
-# Building the teaching section of my site
-
-utils/build_category "Teaching" "headta pattan dragonsteach"

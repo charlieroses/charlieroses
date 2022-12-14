@@ -1,8 +1,0 @@
-Title (null T)
-Ongoing,Descriptor,Category (null D)
-Other Information (null O)
-Start Date (null S)
-End Date (null E)
-Location (null L)
-
-Description

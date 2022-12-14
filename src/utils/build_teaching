@@ -1,0 +1,5 @@
+#!/bin/bash
+# Charlie Rose
+# Building the teaching section of my site
+
+src/utils/build_category "Teaching" "All"
