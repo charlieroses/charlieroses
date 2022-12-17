@@ -19,5 +19,7 @@
  src322 (AT) drexel.edu
 
 [CCI Diversity, Equity, and Inclusion Council Coordinator](https://charlierose.dev/activism/#ccidei_coord)
+  ◆
+[The Coalition of Identity-Based Organizations](https://charlierose.dev/activism/#cibo)
 
 <https://charlierose.dev>
