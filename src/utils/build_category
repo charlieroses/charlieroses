@@ -82,7 +82,18 @@ do
 		TITLE="$(head -n 1 "${SRC}/${DIR_LC}/${ID}.md")"
 		TITLE="${TITLE#"# "}"
 
-		CONTENT="${CONTENT}<hr>\n<h3 id=\"${ID}\" class=\"${CARRAY[$i]}\">${TITLE}</h3>\n"
+		if [[ -n "${XTRAFILE}" ]]
+		then
+			if [[ -e "${SRC}/${DIR_LC}/FULL_${ID}.md" ]]
+			then
+				"${UTILS}/build_page" "${SRC}/${DIR_LC}/FULL_${ID}.md" "${HTMLPAGE/<!-- HEADING -->/"- ${DIR}"}"
+				mv "${DIR_LC}/FULL_${ID}.html" "${DIR_LC}/${ID}.html"
+			fi
+
+			CONTENT="${CONTENT}<hr>\n<h3 id=\"${ID}\" class=\"${CARRAY[$i]}\"><a href=\"${ID}.html\">${TITLE}</a></h3>\n"
+		else
+			CONTENT="${CONTENT}<hr>\n<h3 id=\"${ID}\" class=\"${CARRAY[$i]}\">${TITLE}</h3>\n"
+		fi
 
 		if [[ "${TAGS}" = *"Events"* ]]
 		then
@@ -108,6 +119,8 @@ do
 		DESC="$(./src/utils/mdtohtml "${DESC}")"
 		DESC="${DESC//"<a"/"<a class=\"${CARRAY[$i]}\""}"
 		CONTENT="${CONTENT}${DESC}\n"
+
+		[[ -n "${XTRAFILE}" ]] && CONTENT="${CONTENT}<h4 class=\"${CARRAY[$i]}\"><a href=\"${ID}.html\">Read More...</a></h4>\n"
 
 		NAV="${NAV}<br><a href=\"#${ID}\" class=\"${CARRAY[$i]}\">[${TITLE}]</a>\n"
 		i=$(( i+1 ))
