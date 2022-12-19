@@ -117,6 +117,10 @@ pre.eqn, pre.eqn>code {
 	color: var(--harsh-white);
 }
 
+.body {
+	color: var(--text-grey-lt);
+}
+
 /*                                   CODE                                     */
 code {
 	background-color: var(--bg-grey-dk);

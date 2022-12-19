@@ -131,7 +131,7 @@ do
 
 	BLOGLINK="${BLOGDIR#./}/${DIRDATE}/${NAME}.html"
 
-	ENTRY_LINK="\t<a class='bloglink ${CURRCOLOR}' href='${BLOGLINK}'>${PRETTYDATE} : <span class='white'>${TITLE}</span></a>"
+	ENTRY_LINK="\t<a class='bloglink ${CURRCOLOR}' href='${BLOGLINK}'>${PRETTYDATE} : <span class='body'>${TITLE}</span></a>"
 	NAV_CONTENT="${NAV_CONTENT}${ENTRY_LINK}<br>\n"
 
 done < <(tail -n +2 "${POSTLIST}")
