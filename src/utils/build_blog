@@ -2,6 +2,7 @@
 # Charlie Rose
 # Building the Blog for my site
 
+
 SRC='./src'
 UTILS="${SRC}/utils"
 BLOGMD_SRC="${SRC}/blog"
@@ -85,6 +86,12 @@ echo "Built all blog HTML files from Markdown"
 
 NAV_CONTENT=" "
 CURRYEAR=""
+CURRMONTH=""
+CURRCOLOR=""
+
+CARRAY=( "pp" "pb" "pg" "py" "po" "pr" "pi" )
+CHL=${#CARRAY[@]}
+C=0
 
 while IFS= read -r LINE
 do
@@ -113,11 +120,18 @@ do
 	then
 		NAV_CONTENT="${NAV_CONTENT}\t<h3 class='blogh'>${DATE%%-*}</h3>\n"
 		CURRYEAR="${YEAR}"
+		C="0"
+	fi
+	if [[ "${MONTH}" != "${CURRMONTH}" ]]
+	then
+		CURRCOLOR="${CARRAY[$C]}"
+		C="$(( ($C + 1) % $CHL ))"
+		CURRMONTH="${MONTH}"
 	fi
 
 	BLOGLINK="${BLOGDIR#./}/${DIRDATE}/${NAME}.html"
 
-	ENTRY_LINK="\t<a class='bloglink' href='${BLOGLINK}'>${PRETTYDATE} : ${TITLE}</a>"
+	ENTRY_LINK="\t<a class='bloglink ${CURRCOLOR}' href='${BLOGLINK}'>${PRETTYDATE} : ${TITLE}</a>"
 	NAV_CONTENT="${NAV_CONTENT}${ENTRY_LINK}<br>\n"
 
 done < <(tail -n +2 "${POSTLIST}")
