@@ -1,0 +1,48 @@
+section h1, section h2, section h3, section a {
+	color: #59D100;
+}
+
+.streak {
+	color: #FA9601;
+}
+
+.xp, .gold {
+	color: #FFD300;
+}
+
+.blue {
+	color: #1CB0F6;
+}
+
+.purple {
+	color: #CD81FF;
+}
+
+.galactic{
+	color: #5976FE;
+}
+
+.diamond {
+	color: #B2F9F9;
+}
+
+img {
+	height: 1.5ch;
+	width: auto;
+}
+
+#sidebyside > img {
+	display: inline-block;
+	width: 30ch;
+	height: auto;
+	margin-left: 1.5ch;
+	margin-right: 1.5ch;
+}
+
+ul {
+	list-style: none;
+}
+li {
+	margin-top: 1.5ch;
+	margin-bottom: 1.5ch;
+}
