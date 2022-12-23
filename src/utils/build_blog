@@ -45,6 +45,8 @@ do
 		continue
 	fi
 
+	[[ "$IN_FILE" -ot "${OUT_FILE}" ]] && continue
+
 	if [ ! -e "${BLOGDIR}/${DIRDATE}" ]
 	then
 		mkdir "${BLOGDIR}/${DIRDATE}"
@@ -89,7 +91,7 @@ CURRYEAR=""
 CURRMONTH=""
 CURRCOLOR=""
 
-CARRAY=( "pp" "pb" "pg" "py" "po" "pr" "pi" )
+CARRAY=( "pr" "po" "py" "pg" "pb" "pp" "pi" )
 CHL=${#CARRAY[@]}
 C=0
 
@@ -118,9 +120,8 @@ do
 
 	if [[ "${YEAR}" != "${CURRYEAR}" ]]
 	then
-		NAV_CONTENT="${NAV_CONTENT}\t<h3 class='blogh'>${DATE%%-*}</h3>\n"
+		[[ -n "${CURRYEAR}" ]] && NAV_CONTENT="\t<br>\n\t<h2 class='blogh'>${CURRYEAR}</h2>\n${NAV_CONTENT}"
 		CURRYEAR="${YEAR}"
-		C="0"
 	fi
 	if [[ "${MONTH}" != "${CURRMONTH}" ]]
 	then
@@ -132,9 +133,11 @@ do
 	BLOGLINK="${BLOGDIR#./}/${DIRDATE}/${NAME}.html"
 
 	ENTRY_LINK="\t<a class='bloglink ${CURRCOLOR}' href='${BLOGLINK}'>${PRETTYDATE} : <span class='body'>${TITLE}</span></a>"
-	NAV_CONTENT="${NAV_CONTENT}${ENTRY_LINK}<br>\n"
+	NAV_CONTENT="${ENTRY_LINK}<br>\n${NAV_CONTENT}"
 
-done < <(tail -n +2 "${POSTLIST}")
+done < <(tail -n +2 "${POSTLIST}" | sort)
+
+NAV_CONTENT="\t<h2 class='blogh'>${CURRYEAR}</h2>\n${NAV_CONTENT}"
 
 OUT_FILE="blog.html"
 
