@@ -2,6 +2,7 @@
 
 UTILS="src/utils/cs164"
 SUBSEC="$1"
+RSA=( "rsap" "rsag" "rsar" "rsah" )
 
 echo -e "<div id=\"sidebar\">"
 echo -e "\t<div class=\"content\">"
@@ -32,6 +33,7 @@ do
 		continue
 	fi
 
+	[[ "${FILE}" = "rsa" ]] && FILE=${RSA[$(( $RANDOM % 4 ))]}
 
 	LINK="${DIRECTORY}/${FILE}.html"
 

@@ -7,6 +7,8 @@ function usage {
 	echo -e "\t-t local testing mode"
 }
 
+RSAC=( "purple" "green" "rainbow" "halloween" )
+
 MARKDOWN_SRC="src/cs164/"
 SRC="src/cs164/"
 DESTINATION="cs164/"
@@ -119,9 +121,21 @@ do
 	HTML="${HTML/"<!-- NAVIGATION -->"/"${NAV/"ID"/"top"}"}"
 	HTML="${HTML/"<!-- NAVIGATION -->"/"${NAV/"ID"/"bottom"}"}"
 	HTML="${HTML//"<!-- CONTENT -->"/"${CONTENT}"}"
-	HTML="${HTML//"#top"/"${DIR}/${FILE}.html#top"}"
+	HTML="$(echo "${HTML}" | sed "s/#top/${DIR}\/${FILE}.html#top/g" )"
 
 	echo -e "${HTML}" > "${OUTFILE}"
+	
+	if [[ "${INFILE}" = *"rsa.md" ]]
+	then
+		for COLOR in "${RSAC[@]}"
+		do
+			echo "Building ${OUTFILE%.html}${COLOR:0:1}.html"
+			sed "s/COLORDIR/${COLOR}/g" "${OUTFILE}" > "${OUTFILE%.html}${COLOR:0:1}.html"
+		done
+		I="$(( $RANDOM % ${#RSAC[@]} ))"
+		sed -i "s/COLORDIR/${RSAC[$I]}/g" "${OUTFILE}"
+	fi
+
 done <<< "$(tail -n +2 ${SECTIONS_FILE})"
 
 if [[ -n "${FARG}" ]] ||
@@ -138,7 +152,7 @@ then
 
 	HTML="${HTML//"<!-- SIDEBAR -->"/"${SIDEBAR}"}"
 	HTML="${HTML//"<!-- CONTENT -->"/"${CONTENT}"}"
-	HTML="${HTML//"#top"/"practice.html#top"}"
+	HTML="$(echo "${HTML}" | sed "s/#top/practice.html#top/g" )"
 
 	if [[ -n "${TARG}" ]]
 	then

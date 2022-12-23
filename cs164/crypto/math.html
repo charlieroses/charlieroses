@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/home/charlie/Documents/charlieroses/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="tables.css">
+	<link rel="stylesheet" href="colors.css">
+	<link rel="stylesheet" href="crypto/crypto.css">
+
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	</div>
+	<hr>
+	<div class="content">
+		<a href="introduction.html"><b>Introduction</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="https://charlierose.dev"><b>My Site</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="practice.html"><b>When Using This Book</b></a>
+		<a href="practice.html#how-to-do-well-in-this-course">&nbsp;<b>&#8227;</b>&nbsp;How To Do Well In This Course</a>
+		<a href="practice.html#practice-glossary">&nbsp;<b>&#8227;</b>&nbsp;Practice Glossary</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="answers.html"><b>Practice Problem Answers (OLD)</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> More on Binary</a>
+		<a href="binary/negativebin.html"><b>2.1 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.2 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.3 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/tranqc.html"><b>6.4.1 :</b> TRANQC (1)</a>
+		<a href="languages/alloc.html"><b>6.4.2 :</b> ALLOC (3)</a>
+		<a href="languages/button.html"><b>6.4.3 :</b> BUTTON (3)</a>
+		<a href="languages/html.html"><b>6.4.4 :</b> HTML (3)</a>
+		<a href="languages/i2s.html"><b>6.4.5 :</b> I2S (3)</a>
+		<a href="languages/img.html"><b>6.4.6 :</b> IMG (3)</a>
+		<a href="languages/label.html"><b>6.4.7 :</b> LABEL(3)</a>
+		<a href="languages/print.html"><b>6.4.8 :</b> PRINT (3)</a>
+		<a href="languages/random.html"><b>6.4.9 :</b> RANDOM (3)</a>
+		<a href="languages/read.html"><b>6.4.10 :</b> READ (3)</a>
+		<a href="languages/table.html"><b>6.4.11 :</b> TABLE (3)</a>
+		<a href="languages/timer.html"><b>6.4.12 :</b> TIMER (3)</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="graphics/"><b>Chapter 8 :</b> Graphics</a>
+		<a href="graphics/bresenham.html"><b>8.1 :</b> Bresenham's</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
+		<a href="crypto/math.html"><b>10.1 :</b> Math Background</a>
+		<a href="crypto/math.html#modular-arithmetic">&nbsp;<b>&#8227;</b>&nbsp;Modular Arithmetic</a>
+		<a href="crypto/math.html#prime-numbers">&nbsp;<b>&#8227;</b>&nbsp;Prime Numbers</a>
+		<a href="crypto/math.html#phi">&nbsp;<b>&#8227;</b>&nbsp;Phi</a>
+		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
+		<a href="crypto/rsah.html"><b>10.3 :</b> RSA Encryption</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="crypto/">Previous Section</a> : Cryptography : Chapter 10
+		</div>
+		<div class="next">
+			10.2 : RSA Key Generation : <a href="crypto/rsa_keygen.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<span style="color:#FF0000"><b>Warning: CSS May Be Broken.</b>
+		My apologies for any issues this may cause.
+		I wrote bad code a very long time ago and it's taking a while to update
+		it.
+		</span>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>10.1 : Math Background</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>I'm not sure if you'll ever be tested on anything in this section. I'm including it not because I don't believe that you should only learn things that you know you will be tested on. A lot of this number theory is really cool and really easy to work through. It also provides a bit of context for the <a href="crypto/rsa_keygen.html">RSA Key Generation</a> we'll see later.</p>
+<p>I also have a super secret goal of getting you comfortable with breaking down new mathematical concepts. Just because something is new and overwhelming doesn't mean it has to be difficult.</p>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="modular-arithmetic">Modular Arithmetic</h2>
+<p>I already covered an intro to modulo in the <a href="numbers/baseTwo.html#intrducing-modulo">Base-2 section</a>, so I'm not gonna go over everything again.</p>
+<p>Earlier, when I first introduced modulo, we used the notation <code>x % m = r</code> to show how when <code>x = 7</code> and we divide it by <code>m = 3</code>, then the remainder <code>r = 1</code>. We use a more formal notation when using modular arithmetic. To translate to this more formal notation, we just shuffle variables around a bit and change some symbols</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>x % m = r</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>x ≡ r mod m</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Going back to the example I used before, <code>7 % 3 = 1</code> would be written as <code>7 ≡ 1 mod 3</code>.</p>
+<p>This notation makes modular arithmetic easier to explain. Think of it like a clock, 10 o'clock + 3 hours = 1 o'clock. In modular arithmetic, <code>10 + 3 ≡ 1 mod 12</code>.</p>
+<p>Obviously, there's so much more to know, but this is all that's needed right now.</p>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="prime-numbers">Prime Numbers</h2>
+<p>Prime numbers are super important in cryptography. They allow for a lot of really cool properties that make encryption and decryption work. Coprime/relatively prime : share no factors</p>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="phi">Phi</h2>
+<p>φ (phi) is one of the many things that Euler figured out. My dude really needed a hobby.</p>
+<p><code>φ(n)</code> is the number of values in the range <code>[1, n]</code> that are coprime with <code>n</code>. Below, I've used a table to show step by step how <code>φ(8)</code> can be computed:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+<code>i ∈ [1, n]</code>
+</th>
+<th>
+Factors of <code>i</code>
+</th>
+<th>
+Shared Factors with <code>n</code>
+</th>
+<th>
+Coprime with <code>n</code>?
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>1</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+yes
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>2</code>
+</td>
+<td>
+<code>1, 2</code>
+</td>
+<td>
+<code>1, 2</code>
+</td>
+<td>
+no
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>3</code>
+</td>
+<td>
+<code>1, 3</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+yes
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>4</code>
+</td>
+<td>
+<code>1, 2, 4</code>
+</td>
+<td>
+<code>1, 2, 4</code>
+</td>
+<td>
+no
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>5</code>
+</td>
+<td>
+<code>1, 5</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+yes
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>6</code>
+</td>
+<td>
+<code>1, 2, 3, 6</code>
+</td>
+<td>
+<code>1, 2</code>
+</td>
+<td>
+no
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>7</code>
+</td>
+<td>
+<code>1, 7</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+yes
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>8</code>
+</td>
+<td>
+<code>1, 2, 4, 8</code>
+</td>
+<td>
+<code>1, 2, 4, 8</code>
+</td>
+<td>
+no
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>As we can see, four numbers between 1 and 8 are coprime with 8, thus <code>φ(8) = 4</code>.</p>
+<p>Phi has some cool properties. Let's look at two easy ones.</p>
+<ol style="list-style-type: decimal">
+<li>If <code>n</code> is prime, then <code>φ(n) = n-1</code></li>
+<li>Given relatively prime numbers <code>a</code> and <code>b</code>, <code>φ(ab) = φ(a) * φ(b)</code></li>
+</ol>
+<p>You may think <em>&quot;Woah! Niether of these are easy! I have no idea what I'm looking at!&quot;</em>. Even though we don't have much experience with phi, we can still verify these properties the same way we calculated phi.</p>
+<h3 id="if-n-is-prime-then-φn-n-1">If <code>n</code> is prime, then <code>φ(n) = n-1</code></h3>
+<p>As we know, 5 is a prime number. Its only factors are <code>1</code> and <code>5</code>. Let's again use a table, this time to calculate <code>φ(5)</code>:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+<code>i ∈ [1, n]</code>
+</th>
+<th>
+Factors of <code>i</code>
+</th>
+<th>
+Shared Factors with <code>n</code>
+</th>
+<th>
+Coprime with <code>n</code>?
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>1</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+yes
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>2</code>
+</td>
+<td>
+<code>1, 2</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+yes
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>3</code>
+</td>
+<td>
+<code>1, 3</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+yes
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>4</code>
+</td>
+<td>
+<code>1, 2, 4</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+yes
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>5</code>
+</td>
+<td>
+<code>1, 5</code>
+</td>
+<td>
+<code>1, 5</code>
+</td>
+<td>
+no
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>As we can see, <code>φ(5) = 4</code>. This matches the property we're trying to prove where if <code>n</code> is prime, then <code>φ(n) = n - 1</code>.</p>
+<p>This also makes sense without the table performing the calculation. Phi is calculated based on how many numbers less than <code>n</code> are coprime to <code>n</code>. Two numbers are coprime if the only factor they share is 1. If a number is prime, its only factors are 1 and itself. Thus, if a number is prime, all numbers less than <code>n</code> must be coprime with <code>n</code> as they cannot share any factors with <code>n</code>.</p>
+<h3 id="given-relatively-prime-numbers-a-and-b-φab-φa-φb">Given relatively prime numbers <code>a</code> and <code>b</code>, <code>φ(ab) = φ(a) * φ(b)</code></h3>
+<p>Again, this looks like another super complicated property that can never make sense. This time, we have multiple values. How could we ever make a table for this?</p>
+<p>Let's verify that <code>φ(20) = φ(4) * φ(5)</code>. Notice that even though 4 isn't prime, it is coprime with 5. In this table, I've left out the &quot;Comprime with <code>n</code>?&quot; column. Instead, I've highlighted the &quot;1&quot;s that indicate a number is coprime with <code>n</code>.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+<code>i ∈ [1, n]</code>
+</th>
+<th>
+Factors of <code>i</code>
+</th>
+<th>
+Shared Factors with <code>4</code>
+</th>
+<th>
+Shared Factors with <code>5</code>
+</th>
+<th>
+Shared Factors with <code>20</code>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>1</code>
+</td>
+<td>
+<code>1</code>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>2</code>
+</td>
+<td>
+<code>1, 2</code>
+</td>
+<td>
+<code>1, 2</code>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+<td>
+<code>1, 2</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>3</code>
+</td>
+<td>
+<code>1, 3</code>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>4</code>
+</td>
+<td>
+<code>1, 2, 4</code>
+</td>
+<td>
+<code>1, 2, 4</code>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+<td>
+<code>1, 2, 4</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>5</code>
+</td>
+<td>
+<code>1, 5</code>
+</td>
+<td>
+</td>
+<td>
+<code>1, 5</code>
+</td>
+<td>
+<code>1, 5</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>6</code>
+</td>
+<td>
+<code>1, 2, 3, 6</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>1, 2</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>7</code>
+</td>
+<td>
+<code>1, 7</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>8</code>
+</td>
+<td>
+<code>1, 2, 4, 8</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>1, 2, 4</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>9</code>
+</td>
+<td>
+<code>1, 3, 9</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>10</code>
+</td>
+<td>
+<code>1, 2, 5, 10</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>1, 2, 5, 10</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>11</code>
+</td>
+<td>
+<code>1, 11</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>12</code>
+</td>
+<td>
+<code>1, 2, 3, 4, 6, 12</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>1, 2, 4</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>13</code>
+</td>
+<td>
+<code>1, 13</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>14</code>
+</td>
+<td>
+<code>1, 2, 7, 14</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>1, 2</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>15</code>
+</td>
+<td>
+<code>1, 3, 5, 15</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>1, 5</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>16</code>
+</td>
+<td>
+<code>1, 2, 4, 8, 16</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>1, 2, 4</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>17</code>
+</td>
+<td>
+<code>1, 17</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>18</code>
+</td>
+<td>
+<code>1, 2, 9, 18</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>1, 2</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>19</code>
+</td>
+<td>
+<code>1, 19</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<span class="hi"><code>1</code></span>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>20</code>
+</td>
+<td>
+<code>1, 2, 4, 5, 10, 20</code>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>1, 2, 4, 5, 10, 20</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Based on the highlighted &quot;1&quot;s in the table, we can verify our property.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>φ(ab) = φ(a) * φ(b)</code>
+</td>
+<td class="left">
+The original property
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>φ(20) = φ(4) * φ(5)</code>
+</td>
+<td class="left">
+Plug in values
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>8 = 2 * 4</code>
+</td>
+<td class="left">
+Plug in values from table
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>8 = 8</code>
+</td>
+<td class="left">
+Verified!
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Pretty nifty huh. Even though we're using Greek letters we've never seen before and properties we've never seen before in math we've never seen before, we can still work through problems to prove and verify things in ways we understand.</p>
+	</div>
+	<hr>
+	<div class="content">
+		<center>
+		<a href="crypto/math.html#top">Back To Top</a>
+		</center>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="crypto/">Previous Section</a> : Cryptography : Chapter 10
+		</div>
+		<div class="next">
+			10.2 : RSA Key Generation : <a href="crypto/rsa_keygen.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

@@ -119,8 +119,8 @@ Since these keys are inverses, they can encrypt and decrypt each others
 messages.
 If I don't use matching keys, I don't get the message I started with.
 
-You may also say _"A message is a bunch of letters! How can I raise a word to an
-exponent?"_
+You may also say <span id="msgascii">_"A message is a bunch of letters! How can I
+raise a word to an exponent?"_</span>
 Remember in [the ASCII section](ascii/ascii.html), we learned we can use binary
 to represent letters.
 Using ASCII, we represent each letter as a number and concatenate them (smush
@@ -186,7 +186,7 @@ For the remainder of this scenario, I'm intentionally leaving out <code>n</code>
 for simplicity's sake.
 
 <center>
-<img src="crypto/rsa_setup.png">
+<img src="crypto/COLORDIR/rsa_setup.png">
 </center>
 
 Above, I use the "speech bubble" to show that we've announced our public keys
@@ -200,9 +200,7 @@ I use the "thought cloud" to show that our private keys (<code>d~C~</code> and
 <code>d~B~</code>) are secret.
 No one can hear my thoughts, thus, no one can know my private key.
 
-To clear up some confusion, I am the figure on the left with the purple hair.
-This may not be obvious as my hair color changes very frequently, but purple was
-one of my favorites ~~(second to my orange/purple halloween hair)~~.
+To clear up some confusion, I am the figure on the left with the colorful hair.
 Dr. Stuart is the figure on the right.
 You can tell since he is wearing glasses (I have 20/20 vision) and clearly does
 not have a hair care regimen.
@@ -214,7 +212,7 @@ Knowing that our messages are public, how should he send this message so that
 only I can read it?
 
 <center>
-<img src="crypto/rsa_msg.png">
+<img src="crypto/COLORDIR/rsa_msg.png">
 </center>
 
 We know we have to encrypt the message in some way.
@@ -226,7 +224,7 @@ Before we think about what key he _should_ use, let's look at what keys he _can_
 use.
 
 <center>
-<img src="crypto/rsa_blsknow.png">
+<img src="crypto/COLORDIR/rsa_blsknow.png">
 </center>
 
 Dr. Stuart knows his public and private keys <code>(e~B~, d~B~)</code>, his
@@ -242,7 +240,7 @@ Which should he use?
 To figure this out, he should then think about what I know.
 
 <center>
-<img src="crypto/rsa_charlieknow.png">
+<img src="crypto/COLORDIR/rsa_charlieknow.png">
 </center>
 
 I know my public and private keys <code>(e~C~, d~C~)</code> and his public key
@@ -309,7 +307,7 @@ me a message that only I can read?
 He should use <span class="hide">my public</span> key to encrypt the message.
 
 <center>
-<img src="crypto/rsa_msgsent.png">
+<img src="crypto/COLORDIR/rsa_msgsent.png">
 </center>
 
 Dr. Stuart sends <code>E(m, e~C~)</code>.
@@ -349,7 +347,7 @@ They write their own message, <code>m~S~ = "Give S a 100"</code>, encrypt it,
 and send it to me.
 
 <center>
-<img src="crypto/rsasig_setup.png">
+<img src="crypto/COLORDIR/rsasig_setup.png">
 </center>
 
 I check my mailbox and I see I've got two encrypted messages, <code>E~1~</code>
@@ -439,7 +437,7 @@ The hash function must have some connection to the message.
 Instead, we decide to use <code>H(m) = length of the message</code>.
 
 <center>
-<img src="crypto/rsasig_hashsetup.png">
+<img src="crypto/COLORDIR/rsasig_hashsetup.png">
 </center>
 
 Dr. Stuart is going to compute the hash of his message.
@@ -502,7 +500,7 @@ key.
 I will then decrypt it with his public key.
 
 <center>
-<img src="crypto/rsasig_hashsent.png">
+<img src="crypto/COLORDIR/rsasig_hashsent.png">
 </center>
 
 Now you may think, "Wait, then the student will also be able to read the hashed
@@ -575,7 +573,7 @@ Only Dr. Stuart knows the message he wanted to send, which means only Dr. Stuart
 could calculate its hash and send it to me with his private key.
 
 <center>
-<img src="crypto/rsasig_calc.png">
+<img src="crypto/COLORDIR/rsasig_calc.png">
 </center>
 
 (I had to abandon my though cloud, the text wouldn't fit, but you get the gist)
@@ -657,25 +655,152 @@ Well, I'm sure Dr. Stuart told me once, but it appears I've fallen into the clas
 I should really start listening to him more.
 It turns out that when professors talk, they say important things that I need to know later.
 
-<center>
-<img src="crypto/certificate_setup.png">
-</center>
-
-
 Well, what do I do now?
 I've completely forgotten Dr. Stuart's public key.
 How will I ever be able to decrypt his signature?
-I could ask Dr. Stuart for his public key again, but it would be really embarrassing to tell him I don't listen to him.
+I could ask Dr. Stuart for his public key again, but it would be really embarrassing to admit that I don't listen to him.
+What now?
 
-To do this, we introduce a **Certifying Authority**.
+To handle this, we introduce a **Certifying Authority** or a **CA**.
 This is an authority that we both trust to authenticate each others public keys.
-We'll say our Certifying Authority is Associate Department Head of the Computer Science Department, Professor Adelaida Medlock.
-(I 
+We'll say our Certifying Authority is Associate Department Head of Undergraduate Affairs for the Computer Science Department, Professor Adelaida Medlock.
+I chose Professor Medlock for two reasons.
+1i) Her job specifically specifically deals with all things "undergraduate" and "computer science".
+Since Dr. Stuart is teaching CS-164, an undergraduate CS class and I ~~am~~ was an undergraduate student and teaching assistant, we can trust her authority in certifying our public keys.
+We can also trust her in authenticating our students' public keys.
+(Also if you're a freshman taking CS-164, it's always smart to know who your leadership is).
+2) The Computer Science Department Head, Professor Jeremy Johnson, has the same haircut as Dr. Stuart and that would be too confusing in my artistic renderings.
+Also, now, CA can stand for both "Certifying Authority" and "Certifying Adelaida", but not "Certifying Jeremy".
 
+Now that we have a mutually trusted CA, we can get to work.
+Let's give her a public and private key set <code>(e~A~, d~A~)</code>.
 
+<center>
+<img src="crypto/COLORDIR/certificate_setup.png">
+</center>
 
+I have received two messages from Dr. Stuart.
+I have his original message about the grade that he encrypted with my public key: <code>E(m~B~, e~C~)</code>.
+This message is easy to handle, there are no extra steps here.
+It is decrypted with my private key (<code>d~C~</code>).
+I also have the message that is his signature to verify his original message: <code>E(H(m~B~), d~B~)</code>.
+This message will be decrypted with Dr. Stuart's public key just as normal.
+However, I've forgotten what Dr. Stuart's public key is.
 
+In order to figure out Dr. Stuart's public key, I'm going to contact the CA.
+I will send her a message asking for his public key.
+I'll encrypt my message with her public key <code>e~A~</code>
+(this way only she can decrypt with her private key <code>d~A~</code>).
 
+<center>
+<img src="crypto/COLORDIR/certificate_request.png">
+</center>
+
+The CA is going to respond with two messages.
+First, she's going to send me a message with Dr. Stuart's public key.
+This will be encrypted with my public key.
+Second, she'll send me her signature, verifying the original message.
+
+<center>
+<img src="crypto/COLORDIR/certificate_response.png">
+</center>
+
+Now I can successfully decrypt the CA's messages, remember Dr. Stuart's public
+key, and decrypt his signature.
+
+While we have already completed the decryption process, let's take a closer look at what the CA has sent me.
+The CA sent me <code>E(e~B~, e~C~)</code> and <code>E(H(e~B~), d~A~)</code>.
+You'll notice that the message is Dr. Stuart's public key.
+Typically we use keys to encrypt messages.
+We don't normally use keys to encrypt keys.
+How does this work?
+
+We have two options here.
+We can treat <code>e~B~</code> as a message and encrypt it as such, or we can apply the computations directly.
+
+The encryption function is defined as <code>E(m, k) = m^k^ (mod N)</code>.
+As we mentioned [before](crypto/rsa.html#msgascii), a message is a string of
+letters which means it can't be raised to a numeric exponent.
+To handle this situation, we use the [ASCII](ascii/ascii.html) representation of
+the characters and concatenate them.
+Below, I'm using single quotation marks to denote the difference between a
+character and a numeric value.
+Let's pretend that Dr. Stuart's public key is <code>e~B~ = 1029</code> and we
+have `N=180919`.
+
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th>
+<td><code>e~B~ = 1029</code></td>
+<td></td>
+</tr>
+<tr><th></th>
+<td>`'1'=049 '0'=048 '2'=050 '9'=057`</td>
+<td class="left">Convert to ASCII Base-10 over 3 digits</td>
+</tr>
+<tr><th></th>
+<td>`m=049048 050057`</td>
+<td class="left">Concatenate to form numbers less than<br>`N` as our message to encrypt</td>
+</tr>
+</tbody>
+</table>
+</center>
+
+We now have a string of numbers that can be encrypted using our encryption
+function.
+Each number would be encrypted separately, then sent as a string.
+Since the modulo operation forces all encrypted messages to be shorter than `N`,
+sending multiple numbers at once allows for messages that are longer than `N`.
+
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th>
+<td><code>E(m, e~C~) = 049048^e~C~^ mod 180919</code></td>
+</tr>
+<tr><th></th>
+<td><code>E(m, e~C~) = 050057^e~C~^ mod 180919</code></td>
+</tr>
+</tbody>
+</table>
+</center>
+
+Another option is to directly encrypt the key; It's already a number, so why do
+extra work?
+
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th>
+<td><code>E(e~B~, e~C~) = 1029^e~C~^ mod 180919</code></td>
+</tr>
+</tbody>
+</table>
+</center>
+
+Since the CA's job is to send public keys, we can assume that every message we
+get from the CA will either be a public key or the CA's signature.
+This means that these _certificates_ can be treated differently than regular
+messages that I'd receive from Dr. Stuart or students.
+If I receive a message from Dr. Stuart or a student, I should decrypt their
+message and then convert the numeric values into ASCII.
+If I receive a certificate from the CA, I should decrypt their message, then
+leave the numeric answer as is.
+
+As you can see, in PKE, we can use keys in many ways.
+Public keys can encrypt and decrypt messages.
+Private keys can encrypt and decrypt messages.
+Keys can be sent as messages.
+Just as we can find the hash of a message, we can also find the hash of a key.
+The most important part of this process is that only the public key is shared
+while the private key remains private.
 
 ---
 
@@ -683,10 +808,17 @@ We'll say our Certifying Authority is Associate Department Head of the Computer 
 
 You're probably expecting to see some clicky JS thing I scrambled together so
 you can get the instant gratification of a "right" or "wrong" answer.
+Tough luck.
 Instead, here are some more "situations" for you to think about and muddle over.
 
 The student can decrypt <code>E(H(m~B~), d~B~)</code> and tries to fool me.
 The student decrypts the hash and sends me <code>E(H(m~B~), d~S~)</code>.
 Would I be fooled into thinking Dr. Stuart sent me the message "Give S a 100"
 instead of "Give S a 90"?
+Why or why not?
+
+I contact the CA asking for Dr. Stuart's public key.
+The angry student, pretending to be the CA, sends me a message stating that Dr. Stuart's public key is <code>e~S~</code>.
+They figure that if they pretend to be the CA, I will believe that Dr. Stuart's public key is <code>e~S~</code> and then I'll believe that any message that can be decrypted with <code>e~S~</code> must have come from Dr. Stuart.
+Would this plan work?
 Why or why not?

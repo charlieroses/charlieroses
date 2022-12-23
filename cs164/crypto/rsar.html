@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="tables.css">
+	<link rel="stylesheet" href="colors.css">
+	<link rel="stylesheet" href="crypto/crypto.css">
+
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	</div>
+	<hr>
+	<div class="content">
+		<a href="introduction.html"><b>Introduction</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="https://charlierose.dev"><b>My Site</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="practice.html"><b>When Using This Book</b></a>
+		<a href="practice.html#how-to-do-well-in-this-course">&nbsp;<b>&#8227;</b>&nbsp;How To Do Well In This Course</a>
+		<a href="practice.html#practice-glossary">&nbsp;<b>&#8227;</b>&nbsp;Practice Glossary</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="answers.html"><b>Practice Problem Answers (OLD)</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> More on Binary</a>
+		<a href="binary/negativebin.html"><b>2.1 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.2 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.3 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/tranqc.html"><b>6.4.1 :</b> TRANQC (1)</a>
+		<a href="languages/alloc.html"><b>6.4.2 :</b> ALLOC (3)</a>
+		<a href="languages/button.html"><b>6.4.3 :</b> BUTTON (3)</a>
+		<a href="languages/html.html"><b>6.4.4 :</b> HTML (3)</a>
+		<a href="languages/i2s.html"><b>6.4.5 :</b> I2S (3)</a>
+		<a href="languages/img.html"><b>6.4.6 :</b> IMG (3)</a>
+		<a href="languages/label.html"><b>6.4.7 :</b> LABEL(3)</a>
+		<a href="languages/print.html"><b>6.4.8 :</b> PRINT (3)</a>
+		<a href="languages/random.html"><b>6.4.9 :</b> RANDOM (3)</a>
+		<a href="languages/read.html"><b>6.4.10 :</b> READ (3)</a>
+		<a href="languages/table.html"><b>6.4.11 :</b> TABLE (3)</a>
+		<a href="languages/timer.html"><b>6.4.12 :</b> TIMER (3)</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="graphics/"><b>Chapter 8 :</b> Graphics</a>
+		<a href="graphics/bresenham.html"><b>8.1 :</b> Bresenham's</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
+		<a href="crypto/rsap.html"><b>10.1 :</b> RSA Encryption</a>
+		<a href="crypto/rsap.html#how-it-works">&nbsp;<b>&#8227;</b>&nbsp;How it Works</a>
+		<a href="crypto/rsap.html#scenario">&nbsp;<b>&#8227;</b>&nbsp;Scenario</a>
+		<a href="crypto/rsap.html#signatures">&nbsp;<b>&#8227;</b>&nbsp;Signatures</a>
+		<a href="crypto/rsap.html#certificates">&nbsp;<b>&#8227;</b>&nbsp;Certificates</a>
+		<a href="crypto/rsap.html#practice">&nbsp;<b>&#8227;</b>&nbsp;Practice</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="crypto/">Previous Section</a> : Cryptography : Chapter 10
+		</div>
+		<div class="next">
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<span style="color:#FF0000"><b>Warning: CSS May Be Broken.</b>
+		My apologies for any issues this may cause.
+		I wrote bad code a very long time ago and it's taking a while to update
+		it.
+		</span>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>10.1 : RSA Encryption</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>RSA Encryption was introduced in 1977 by Ron Rivest, Adi Shamir and Leonard Adleman at MIT; hence the name &quot;RSA&quot;. On the lecture slides, it's also called Public Key Encryption (PKE) and PKC (Public Key Cryptography).</p>
+<p>Some links you may find helpful in this section</p>
+<ul>
+<li><a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a></li>
+<li><a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt_v2.html">RSA Encryption/Decryption Calculator</a></li>
+<li><a href="https://1513041.mediaspace.kaltura.com/media/CS475+Crypto+3/1_st8qnz7g">Dr. Stuart's Public Key Cryptography Lecture</a></li>
+</ul>
+	</div>
+	<hr>
+	<div class="content">
+<h1 id="how-it-works">How it Works</h1>
+<p>Let's start with a set of generated keys:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>e</code>= A Public Key
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>d</code>= A Private Key
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>n</code>= Shared Public Modulo
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Given that we are using PKC, we use the following encryption and decryption functions to encrypt and decrypt our message <code>m</code>.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>E(m, k) = m<sup>k</sup> mod n</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>D(m, k) = m<sup>k</sup> mod n</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>When you look at these functions, you may have some hypothetical confusions.</p>
+<p><em>&quot;Encryption and decryption are the same function. How can we encrypt and decrypt at the same time?&quot;</em> When we generate <code>e</code> and <code>d</code>, they become inverses of each other. Since you most likely haven't been taught modular arithmetic yet, let's look at some inverses in math that we already know: fractions. Below, I've created two sets of keys, one for person A, one for person B. For the sake of simplicity, I've removed <code>n</code> the shared public modulo.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td colspan="2">
+<code>e<sub>A</sub> = 2, d<sub>A</sub> = 1/2</code>
+</td>
+<td class="left">
+A set of matching keys
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td colspan="2">
+<code>e<sub>B</sub> = 5, d<sub>B</sub> = 1/5</code>
+</td>
+<td class="left">
+A different set of matching keys
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td colspan="2">
+<code>E(m, k) = m<sup>k</sup></code>
+</td>
+<td class="left">
+Encryption function
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td colspan="2">
+<code>E(m, e<sub>A</sub>) = m<sup>e<sub>A</sub></sup></code>
+</td>
+<td class="left">
+Encrypt with <code>e<sub>A</sub></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td colspan="2">
+<code>E(m, e<sub>A</sub>) = m<sup>2</sup></code>
+</td>
+<td class="left">
+Plug in <code>e<sub>A</sub> = 2</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<strong>Decrypting with the</strong><br><strong>Right Key</strong>
+</td>
+<td>
+<strong>Decrypting with the</strong><br><strong>Wrong Key</strong>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>D(m, k) = m<sup>k</sup></code>
+</td>
+<td>
+<code>D(m, k) = m<sup>k</sup></code>
+</td>
+<td class="left">
+Decryption function
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>D(E(m, e<sub>A</sub>), d<sub>A</sub>) = E(m, e<sub>A</sub>)<sup>d<sub>A</sub></sup></code>
+</td>
+<td>
+<code>D(E(m, e<sub>A</sub>), d<sub>B</sub>) = E(m, e<sub>A</sub>)<sup>d<sub>B</sub></sup></code>
+</td>
+<td class="left">
+Plug in keys
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>D(E(m, e<sub>A</sub>), d<sub>A</sub>) = (m<sup>2</sup>)<sup>1/2</sup></code>
+</td>
+<td>
+<code>D(E(m, e<sub>A</sub>), d<sub>B</sub>) = (m<sup>2</sup>)<sup>1/5</sup></code>
+</td>
+<td class="left">
+Plug in values
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>D(E(m, e<sub>A</sub>), d<sub>A</sub>) = m<sup>2*(1/2)</sup></code>
+</td>
+<td>
+<code>D(E(m, e<sub>A</sub>), d<sub>B</sub>) = m<sup>2*(1/5)</sup></code>
+</td>
+<td class="left">
+Exponent properties
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>D(E(m, e<sub>A</sub>), d<sub>A</sub>) = m</code>
+</td>
+<td>
+<code>D(E(m, e<sub>A</sub>), d<sub>B</sub>) = m<sup>2/5</sup></code>
+</td>
+<td class="left">
+Simplify
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>As we can see, just by plugging and chugging, since <code>e<sub>A</sub></code> and <code>d<sub>A</sub></code> are inverses, they can be used together to encrypt and decrypt messages. The same applies to <code>e<sub>B</sub></code> and <code>d<sub>B</sub></code>. Since these keys are inverses, they can encrypt and decrypt each others messages. If I don't use matching keys, I don't get the message I started with.</p>
+<p>You may also say <span id="msgascii"><em>&quot;A message is a bunch of letters! How can I raise a word to an exponent?&quot;</em></span> Remember in <a href="ascii/ascii.html">the ASCII section</a>, we learned we can use binary to represent letters. Using ASCII, we represent each letter as a number and concatenate them (smush them together) to create one number that we raise to an exponent. If we get a very long message, we can concatenate groups of numbers and then encrypt each group separately. Since we apply a modulo to the resulting exponent, this forces our value to be within a certain range, which tells us how many letters would be concatenated into one numeric part of the message.</p>
+<p>Now that we've cleared up some hypothetical concerns about how these functions work, let's deal with new hypothetical concerns about how to use these functions. We have lots of numbers here: <code>e<sub>A</sub></code>, <code>d<sub>A</sub></code>, <code>e<sub>B</sub></code>, <code>d<sub>B</sub></code>, and <code>n</code>. We also have two functions (which are really the same thing, just with different notation so they're easier to tell apart): <code>E(m, k)</code> and <code>D(m, k)</code>. We know how to encrypt and decrypt messages, but how do we know what key to use? How do we know when to use each type of key?</p>
+<p>The answer is a lot simpler than you'd think. When we want to send a message that only one person can read, we encrypt it in a way such that only one person can decrypt it. PKE can only work if <code>e</code> is always public and <code>d</code> is always private.</p>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="scenario">Scenario</h2>
+<p>My name is Charlie, I was the Head TA for CS-164 with Dr. Stuart for five years. Being the Head TA, Dr. Stuart sent me lots of emails about students and their grades. These emails need to be private due to <a href="https://www2.ed.gov/policy/gen/guid/fpco/ferpa/index.html">FERPA</a> (fancy government policy making sure that your grades are private and won't be shared without your permission). Let's say we live in a world where emails are posted publicly; anyone can read them. This would make discussion about grades very difficult (and illegal). In order to navigate this terrifying situation, instead of finding a new method of communication, Dr. Stuart and I decide to use PKC to communicate over this insecure network.</p>
+<p>We start by each generating a set of keys for ourselves.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>e<sub>C</sub></code>= Charlie's Public Key
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>d<sub>C</sub></code>= Charlie's Private Key
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>e<sub>B</sub></code>= Dr. Stuart's Public Key
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>d<sub>B</sub></code>= Dr. Stuart's Private Key
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>n</code>= Shared Public Modulo
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>For the remainder of this scenario, I'm intentionally leaving out <code>n</code> for simplicity's sake.</p>
+<center>
+<img src="crypto/rainbow/rsa_setup.png">
+</center>
+<p>Above, I use the &quot;speech bubble&quot; to show that we've announced our public keys (<code>e<sub>C</sub></code> and <code>e<sub>B</sub></code>) to the world. If someone would like to know our public keys, they just have to stand close enough to hear it. I don't have to see them for them to know my public key. They don't have to see me to know my public key.</p>
+<p>I use the &quot;thought cloud&quot; to show that our private keys (<code>d<sub>C</sub></code> and <code>d<sub>B</sub></code>) are secret. No one can hear my thoughts, thus, no one can know my private key.</p>
+<p>To clear up some confusion, I am the figure on the left with the colorful hair. Dr. Stuart is the figure on the right. You can tell since he is wearing glasses (I have 20/20 vision) and clearly does not have a hair care regimen.</p>
+<p>Dr. Stuart has recently met with a student (S) about their assignment. He decides that the student should get a 90% on their assignment and would like to send me a message to update the gradebook. Knowing that our messages are public, how should he send this message so that only I can read it?</p>
+<center>
+<img src="crypto/rainbow/rsa_msg.png">
+</center>
+<p>We know we have to encrypt the message in some way. To use our encryption function, we need a message <code>m</code> and a key <code>k</code>. We already know what <code>m</code> is. What key should Dr. Stuart use to encrypt his message with? Before we think about what key he <em>should</em> use, let's look at what keys he <em>can</em> use.</p>
+<center>
+<img src="crypto/rainbow/rsa_blsknow.png">
+</center>
+<p>Dr. Stuart knows his public and private keys <code>(e<sub>B</sub>, d<sub>B</sub>)</code>, his message (that he hasn't sent yet) <code>m</code>, and my public key <code>e<sub>C</sub></code>. Dr. Stuart doesn't know what I'm thinking (and I'm sure he doesn't want to either), so he does not know my private key <code>d<sub>C</sub></code>.</p>
+<p>This means he has three keys he can encrypt his message with: <code>e<sub>B</sub></code>, <code>d<sub>B</sub></code>, and <code>e<sub>C</sub></code>. Which should he use?</p>
+<p>To figure this out, he should then think about what I know.</p>
+<center>
+<img src="crypto/rainbow/rsa_charlieknow.png">
+</center>
+<p>I know my public and private keys <code>(e<sub>C</sub>, d<sub>C</sub>)</code> and his public key <code>e<sub>B</sub></code>. Again, I don't know what Dr. Stuart is thinking (nor do I want to) so I don't know what message <code>m</code> he is trying to send and I don't know his private key <code>d<sub>B</sub></code>.</p>
+<p>This means I have three keys I can decrypt with: <code>e<sub>C</sub></code>, <code>d<sub>C</sub></code>, and <code>e<sub>B</sub></code>. Again, we have three keys. How does this narrow down our options?</p>
+<p>Remember, matching keys are needed to decrypt messages that have been encrypted. Let's look at what Dr. Stuart and I know in a different format. I've made a table. One column has the keys that Dr. Stuart knows. One column has the keys that I know. The rows are keys that match.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+<strong>Dr. Stuart can encrypt with</strong>
+</th>
+<th>
+<strong>Charlie can decrypt with</strong>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>e<sub>B</sub></code>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>d<sub>B</sub></code>
+</td>
+<td>
+<code>e<sub>B</sub></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>e<sub>C</sub></code>
+</td>
+<td>
+<code>d<sub>C</sub></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+</td>
+<td>
+<code>e<sub>C</sub></code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Now we can see, even though Dr. Stuart <em>could</em> encrypt with his public key, I would not be able to decrypt his message because I don't know his private key. I <em>could</em> decrypt with my public key, but that would require Dr. Stuart sending me a message with my private key, which he doesn't know.</p>
+<p>This leaves him with two options. He can encrypt his message with his private key, meaning I would decrypt with his public key. Or, he can encrypt with my public key, meaning I would decrypt with my private key. Both of these options will work, but which <em>should</em> he use if he wants to send me a message that only I can read?</p>
+<p>He should use <span class="hide">my public</span> key to encrypt the message.</p>
+<center>
+<img src="crypto/rainbow/rsa_msgsent.png">
+</center>
+<p>Dr. Stuart sends <code>E(m, e<sub>C</sub>)</code>. Anyone can read this encrypted message, but that doesn't matter. Since only I know my private key, only I can compute <code>D(E(m, e<sub>C</sub>), d<sub>C</sub>)</code> to decrypt the message.</p>
+<p>If he had used his private key <code>d<sub>B</sub></code> to encrypt the message, I could have decrypted it with his public key <code>e<sub>B</sub></code>. Unlike my private key, <em>everyone</em> knows Dr. Stuart's public key meaning that <em>everyone</em> can decrypt his message. This is not the best option for him to send me a secret message.</p>
+<p>And that's how basic Public Key Cryptography works. This next bit will expand on PKE by adding signatures to the mix.</p>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="signatures">Signatures</h2>
+<p>After their meeting with Dr. Stuart, student S was very angry. Despite not following the instructions on the lab, they felt they deserved a 100 on their assignment, not a 90. Dr. Stuart was so unreasonable, he might as well have failed them for the class! Does Dr. Stuart not realize that those 10 points on their lab would drop their final grade by 0.38%?!?! This is absurd!</p>
+<p>The student, outraged by facing the consequences of not reading the instructions, decides to take matters into their own hands. They know Dr. Stuart is planning on sending me a message about their grade. They also know that in order for this message to stay private, Dr. Stuart needs to use my public key to encrypt the message. This student generates their own RSA keys and sends me a message pretending to be Dr. Stuart. They write their own message, <code>m<sub>S</sub> = &quot;Give S a 100&quot;</code>, encrypt it, and send it to me.</p>
+<center>
+<img src="crypto/rainbow/rsasig_setup.png">
+</center>
+<p>I check my mailbox and I see I've got two encrypted messages, <code>E<sub>1</sub></code> and <code>E<sub>2</sub></code>. I decrypt both of them with my private key.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>D(E<sub>1</sub>, d<sub>C</sub>)</code>
+</td>
+<td>
+<code>D(E<sub>2</sub>, d<sub>C</sub>)</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>E<sub>1</sub><sup>d<sub>C</sub></sup></code>
+</td>
+<td>
+<code>E<sub>2</sub><sup>d<sub>C</sub></sup></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>(m<sub>1</sub><sup>e<sub>C</sub></sup>)<sup>d<sub>C</sub></sup></code>
+</td>
+<td>
+<code>(m<sub>2</sub><sup>e<sub>C</sub></sup>)<sup>d<sub>C</sub></sup></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>m<sub>1</sub><sup>e<sub>C</sub>d<sub>C</sub></sup></code>
+</td>
+<td>
+<code>m<sub>2</sub><sup>e<sub>C</sub>d<sub>C</sub></sup></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>m<sub>1</sub></code>
+</td>
+<td>
+<code>m<sub>2</sub></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>&quot;Give S a 100&quot;</code>
+</td>
+<td>
+<code>&quot;Give S a 90&quot;</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Oh no. I don't know which message came from Dr. Stuart. How am I supposed to know which grade to give S? Dr. Stuart and I could find some other way to communicate beyond email, but that would be just as absurd as a 10 point deduction.</p>
+<p>Dr. Stuart decides to put a signature on all his messages to me (more than just the classic &quot;BLS&quot;). We mutually agree upon a <strong>hash function</strong> to use to sign our messages.</p>
+<p>A hash function is a one-way function that creates a unique identifier that can be used to describe messages. Let's say I wanted to create a hash function to create unique identifiers for students in my class.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+H(Student) = First letter of their first name
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+H(Alice) = A
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+H(Joe) = J
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>As you can see, <code>H(Joe)</code> will always produce <code>J</code>. This is a different value from <code>H(Alice)</code> which will always produce <code>A</code>. If a student were to tell me their name and I asked for the first letter of their name to verify who it was, I would know if Joe was pretending to be Alice since <code>H(Alice) != J</code>.</p>
+<p>However, this is a very bad hash function. If I have a student in the class named &quot;Alex&quot;, then we have a collision. Both <code>H(Alice) = A</code> and <code>H(Alex) = A</code>. Even though this is a bad hash function, if a student were to come up to me and say <code>H(<em>me</em>) = A</code>, I would have no way of knowing if their name was Alex or Alice.</p>
+<p>Let's go back to our scenario. Dr. Stuart and I mutually decide upon a hash function to use to sign our messages. We can't use <code>H(m) = First letter of their first name</code> because our messages aren't about names. The hash function must have some connection to the message. Instead, we decide to use <code>H(m) = length of the message</code>.</p>
+<center>
+<img src="crypto/rainbow/rsasig_hashsetup.png">
+</center>
+<p>Dr. Stuart is going to compute the hash of his message. He then needs to send me this message in such a way that tells me which grade he wants to give the student. How should he send me this message? Let's again look at who knows what, now with our angry student included.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+Dr. Stuart can <br> encrypt with
+</th>
+<th>
+Student can <br> encrypt with
+</th>
+<th>
+Charlie can <br> decrypt with
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>e<sub>S</sub></code>
+</td>
+<td>
+<code>e<sub>S</sub></code>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>e<sub>B</sub></code>
+</td>
+<td>
+<code>e<sub>B</sub></code>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>e<sub>C</sub></code>
+</td>
+<td>
+<code>e<sub>C</sub></code>
+</td>
+<td>
+<code>d<sub>C</sub></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>d<sub>B</sub></code>
+</td>
+<td>
+</td>
+<td>
+<code>e<sub>B</sub></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+</td>
+<td>
+<code>d<sub>S</sub></code>
+</td>
+<td>
+<code>e<sub>S</sub></code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+</td>
+<td>
+</td>
+<td>
+<code>e<sub>C</sub></code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Dr. Stuart <em>could</em> use my public key for me to decrypt with my private key again, but the student also can use my public key. I wouldn't be able to tell them apart.</p>
+<p>For the signature, Dr. Stuart will encrypt the hashed message with his private key. I will then decrypt it with his public key.</p>
+<center>
+<img src="crypto/rainbow/rsasig_hashsent.png">
+</center>
+<p>Now you may think, &quot;Wait, then the student will also be able to read the hashed message. That's illegal!&quot; To which I say, you're right! However, you need to remember that Dr. Stuart is encrypting the hashed message with his private key, not the actual message. This means all the student will see is <code>11</code> since <code>H(Give S a 90) = 11</code>. This is not enough information for the student (or anyone) to know what grade the student received or which student is being talked about. Dr. Stuart's message could have been about giving Joe a 80 on his assignment since <code>H(Give J a 80) = 11</code>.</p>
+<p>Even though anyone can read the hash, how can I be sure Dr. Stuart sent it? Let's look at the four messages again. Who could have sent them? Who could have read them?</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+Message
+</th>
+<th>
+Encrypted <br> Message
+</th>
+<th>
+Who Can <br> Encrypt?
+</th>
+<th>
+Who Can <br> Decrypt?
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>&quot;Give S a 90&quot;</code>
+</td>
+<td>
+<code>E( m<sub>B</sub>, e<sub>C</sub> )</code>
+</td>
+<td>
+Charlie <br> Dr. Stuart <br> Student
+</td>
+<td>
+Charlie
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>&quot;11&quot;</code>
+</td>
+<td>
+<code>E( H(m<sub>B</sub>), d<sub>B</sub> )</code>
+</td>
+<td>
+Dr. Stuart
+</td>
+<td>
+Charlie <br> Dr. Stuart<br> Student
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>&quot;Give S a 100&quot;</code>
+</td>
+<td>
+<code>E( m<sub>S</sub>, e<sub>C</sub> )</code>
+</td>
+<td>
+Charlie <br> Dr. Stuart <br> Student
+</td>
+<td>
+Charlie
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>&quot;12&quot;</code>
+</td>
+<td>
+<code>E( H(m<sub>S</sub>), d<sub>S</sub> )</code>
+</td>
+<td>
+Student
+</td>
+<td>
+Charlie <br> Dr. Stuart <br> Student
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Now I can read through the four messages I have received: &quot;Give S a 90&quot;, &quot;Give S a 100&quot;, &quot;11&quot;, and &quot;12&quot;. I calculate the hash of each message: 11, 12, 2, and 2. Since I didn't receive a &quot;2&quot; message, I know that &quot;11&quot; and &quot;12&quot; must be the signatures that Dr. Stuart and the student sent. Only Dr. Stuart could have sent me the message &quot;11&quot; (since only he knows his private key). Only the student could have sent me the message &quot;12&quot; (since only they know their private key). Even though anyone could have sent me the message &quot;Give S a 90&quot;, I know it has to be from Dr. Stuart. Only Dr. Stuart knows the message he wanted to send, which means only Dr. Stuart could calculate its hash and send it to me with his private key.</p>
+<center>
+<img src="crypto/rainbow/rsasig_calc.png">
+</center>
+<p>(I had to abandon my though cloud, the text wouldn't fit, but you get the gist) There's still a lot of text there, a lot of math, and a lot of parentheses. Let's go through it slowly and hopefully it'll be easier to digest.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>m<sub>B</sub></code>
+</td>
+<td class="left">
+Dr. Stuart writes a message
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>H(m<sub>B</sub>)</code>
+</td>
+<td class="left">
+Dr. Stuart calculate the hash of his message
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>E(m<sub>B</sub>, e<sub>C</sub>)</code>
+</td>
+<td class="left">
+Dr. Stuart encrypts his message with<br>my public key
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>E(H(m<sub>B</sub>), d<sub>B</sub>)</code>
+</td>
+<td class="left">
+Dr. Stuart encrypts the hash of his message<br>with his private key
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>E(m<sub>B</sub>, e<sub>C</sub>)</code>
+</td>
+<td class="left">
+I receive a random encrypted message
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>D(E(m<sub>B</sub>, e<sub>C</sub>), d<sub>C</sub>) = m<sub>B</sub></code>
+</td>
+<td class="left">
+I decrypt this message from anyone with my<br>private key
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>H(D(E(m<sub>B</sub>, e<sub>C</sub>), d<sub>C</sub>)) = H(m<sub>B</sub>)</code>
+</td>
+<td class="left">
+I calculate the hash of this message from<br>anyone
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>E(H(m<sub>B</sub>), d<sub>B</sub>)</code>
+</td>
+<td class="left">
+I receive a random encrypted message
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>D(E(H(m<sub>B</sub>), d<sub>B</sub>)) = H(m<sub>B</sub>)</code>
+</td>
+<td class="left">
+I decrypt this message from Dr. Stuart with his<br>public key
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>H(D(E(m<sub>B</sub>, e<sub>C</sub>), d<sub>C</sub>)) = D(E(H(m<sub>B</sub>), d<sub>B</sub>))</code><br> <code>H(m<sub>B</sub>) = H(m<sub>B</sub>)</code>
+</td>
+<td class="left">
+I verify that the first message from &quot;anyone&quot;<br>came from Dr. Stuart
+</td>
+</tbody>
+</table>
+</center>
+<p>This process works for anyone. It doesn't matter if I send the message to Dr. Stuart or even if the student sends another student a message. The process is the same. It all relies on everyone's <code>e</code> being public and everyone's <code>d</code> being private.</p>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="certificates">Certificates</h2>
+<p>It's time to grade! Let me check my email to see if Dr. Stuart has sent me any updates. I've recieved a message and a signature. I use my public key to decrypt the message and see it says <code>&quot;Give S a 90&quot;</code>. Hmmmm, let's check the signature to make sure this message came from Dr. Stuart. I use Dr. Stuart's public key to decrypt his message. And Dr. Stuart's public key is... Uhm... Well it's <code>e<sub>B</sub></code>... And <code>e<sub>B</sub></code> is equal to... Well, I'm sure Dr. Stuart told me once, but it appears I've fallen into the classic trap of not actually paying attention to him when he talks. I should really start listening to him more. It turns out that when professors talk, they say important things that I need to know later.</p>
+<p>Well, what do I do now? I've completely forgotten Dr. Stuart's public key. How will I ever be able to decrypt his signature? I could ask Dr. Stuart for his public key again, but it would be really embarrassing to admit that I don't listen to him. What now?</p>
+<p>To handle this, we introduce a <strong>Certifying Authority</strong> or a <strong>CA</strong>. This is an authority that we both trust to authenticate each others public keys. We'll say our Certifying Authority is Associate Department Head of Undergraduate Affairs for the Computer Science Department, Professor Adelaida Medlock. I chose Professor Medlock for two reasons. 1i) Her job specifically specifically deals with all things &quot;undergraduate&quot; and &quot;computer science&quot;. Since Dr. Stuart is teaching CS-164, an undergraduate CS class and I <del>am</del> was an undergraduate student and teaching assistant, we can trust her authority in certifying our public keys. We can also trust her in authenticating our students' public keys. (Also if you're a freshman taking CS-164, it's always smart to know who your leadership is). 2) The Computer Science Department Head, Professor Jeremy Johnson, has the same haircut as Dr. Stuart and that would be too confusing in my artistic renderings. Also, now, CA can stand for both &quot;Certifying Authority&quot; and &quot;Certifying Adelaida&quot;, but not &quot;Certifying Jeremy&quot;.</p>
+<p>Now that we have a mutually trusted CA, we can get to work. Let's give her a public and private key set <code>(e<sub>A</sub>, d<sub>A</sub>)</code>.</p>
+<center>
+<img src="crypto/rainbow/certificate_setup.png">
+</center>
+<p>I have received two messages from Dr. Stuart. I have his original message about the grade that he encrypted with my public key: <code>E(m<sub>B</sub>, e<sub>C</sub>)</code>. This message is easy to handle, there are no extra steps here. It is decrypted with my private key (<code>d<sub>C</sub></code>). I also have the message that is his signature to verify his original message: <code>E(H(m<sub>B</sub>), d<sub>B</sub>)</code>. This message will be decrypted with Dr. Stuart's public key just as normal. However, I've forgotten what Dr. Stuart's public key is.</p>
+<p>In order to figure out Dr. Stuart's public key, I'm going to contact the CA. I will send her a message asking for his public key. I'll encrypt my message with her public key <code>e<sub>A</sub></code> (this way only she can decrypt with her private key <code>d<sub>A</sub></code>).</p>
+<center>
+<img src="crypto/rainbow/certificate_request.png">
+</center>
+<p>The CA is going to respond with two messages. First, she's going to send me a message with Dr. Stuart's public key. This will be encrypted with my public key. Second, she'll send me her signature, verifying the original message.</p>
+<center>
+<img src="crypto/rainbow/certificate_response.png">
+</center>
+<p>Now I can successfully decrypt the CA's messages, remember Dr. Stuart's public key, and decrypt his signature.</p>
+<p>While we have already completed the decryption process, let's take a closer look at what the CA has sent me. The CA sent me <code>E(e<sub>B</sub>, e<sub>C</sub>)</code> and <code>E(H(e<sub>B</sub>), d<sub>A</sub>)</code>. You'll notice that the message is Dr. Stuart's public key. Typically we use keys to encrypt messages. We don't normally use keys to encrypt keys. How does this work?</p>
+<p>We have two options here. We can treat <code>e<sub>B</sub></code> as a message and encrypt it as such, or we can apply the computations directly.</p>
+<p>The encryption function is defined as <code>E(m, k) = m<sup>k</sup> (mod N)</code>. As we mentioned <a href="crypto/rsa.html#msgascii">before</a>, a message is a string of letters which means it can't be raised to a numeric exponent. To handle this situation, we use the <a href="ascii/ascii.html">ASCII</a> representation of the characters and concatenate them. Below, I'm using single quotation marks to denote the difference between a character and a numeric value. Let's pretend that Dr. Stuart's public key is <code>e<sub>B</sub> = 1029</code> and we have <code>N=180919</code>.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>e<sub>B</sub> = 1029</code>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>'1'=049 '0'=048 '2'=050 '9'=057</code>
+</td>
+<td class="left">
+Convert to ASCII Base-10 over 3 digits
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>m=049048 050057</code>
+</td>
+<td class="left">
+Concatenate to form numbers less than<br><code>N</code> as our message to encrypt
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>We now have a string of numbers that can be encrypted using our encryption function. Each number would be encrypted separately, then sent as a string. Since the modulo operation forces all encrypted messages to be shorter than <code>N</code>, sending multiple numbers at once allows for messages that are longer than <code>N</code>.</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>E(m, e<sub>C</sub>) = 049048<sup>e<sub>C</sub></sup> mod 180919</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>E(m, e<sub>C</sub>) = 050057<sup>e<sub>C</sub></sup> mod 180919</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Another option is to directly encrypt the key; It's already a number, so why do extra work?</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>E(e<sub>B</sub>, e<sub>C</sub>) = 1029<sup>e<sub>C</sub></sup> mod 180919</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Since the CA's job is to send public keys, we can assume that every message we get from the CA will either be a public key or the CA's signature. This means that these <em>certificates</em> can be treated differently than regular messages that I'd receive from Dr. Stuart or students. If I receive a message from Dr. Stuart or a student, I should decrypt their message and then convert the numeric values into ASCII. If I receive a certificate from the CA, I should decrypt their message, then leave the numeric answer as is.</p>
+<p>As you can see, in PKE, we can use keys in many ways. Public keys can encrypt and decrypt messages. Private keys can encrypt and decrypt messages. Keys can be sent as messages. Just as we can find the hash of a message, we can also find the hash of a key. The most important part of this process is that only the public key is shared while the private key remains private.</p>
+	</div>
+	<hr>
+	<div class="content">
+<h2 id="practice">Practice</h2>
+<p>You're probably expecting to see some clicky JS thing I scrambled together so you can get the instant gratification of a &quot;right&quot; or &quot;wrong&quot; answer. Tough luck. Instead, here are some more &quot;situations&quot; for you to think about and muddle over.</p>
+<p>The student can decrypt <code>E(H(m<sub>B</sub>), d<sub>B</sub>)</code> and tries to fool me. The student decrypts the hash and sends me <code>E(H(m<sub>B</sub>), d<sub>S</sub>)</code>. Would I be fooled into thinking Dr. Stuart sent me the message &quot;Give S a 100&quot; instead of &quot;Give S a 90&quot;? Why or why not?</p>
+<p>I contact the CA asking for Dr. Stuart's public key. The angry student, pretending to be the CA, sends me a message stating that Dr. Stuart's public key is <code>e<sub>S</sub></code>. They figure that if they pretend to be the CA, I will believe that Dr. Stuart's public key is <code>e<sub>S</sub></code> and then I'll believe that any message that can be decrypted with <code>e<sub>S</sub></code> must have come from Dr. Stuart. Would this plan work? Why or why not?</p>
+	</div>
+	<hr>
+	<div class="content">
+		<center>
+		<a href="crypto/rsa.html#top">Back To Top</a>
+		</center>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="crypto/">Previous Section</a> : Cryptography : Chapter 10
+		</div>
+		<div class="next">
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

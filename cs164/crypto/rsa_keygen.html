@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/home/charlie/Documents/charlieroses/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="tables.css">
+	<link rel="stylesheet" href="colors.css">
+	<link rel="stylesheet" href="crypto/crypto.css">
+
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	</div>
+	<hr>
+	<div class="content">
+		<a href="introduction.html"><b>Introduction</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="https://charlierose.dev"><b>My Site</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="practice.html"><b>When Using This Book</b></a>
+		<a href="practice.html#how-to-do-well-in-this-course">&nbsp;<b>&#8227;</b>&nbsp;How To Do Well In This Course</a>
+		<a href="practice.html#practice-glossary">&nbsp;<b>&#8227;</b>&nbsp;Practice Glossary</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="answers.html"><b>Practice Problem Answers (OLD)</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> More on Binary</a>
+		<a href="binary/negativebin.html"><b>2.1 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.2 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.3 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/tranqc.html"><b>6.4.1 :</b> TRANQC (1)</a>
+		<a href="languages/alloc.html"><b>6.4.2 :</b> ALLOC (3)</a>
+		<a href="languages/button.html"><b>6.4.3 :</b> BUTTON (3)</a>
+		<a href="languages/html.html"><b>6.4.4 :</b> HTML (3)</a>
+		<a href="languages/i2s.html"><b>6.4.5 :</b> I2S (3)</a>
+		<a href="languages/img.html"><b>6.4.6 :</b> IMG (3)</a>
+		<a href="languages/label.html"><b>6.4.7 :</b> LABEL(3)</a>
+		<a href="languages/print.html"><b>6.4.8 :</b> PRINT (3)</a>
+		<a href="languages/random.html"><b>6.4.9 :</b> RANDOM (3)</a>
+		<a href="languages/read.html"><b>6.4.10 :</b> READ (3)</a>
+		<a href="languages/table.html"><b>6.4.11 :</b> TABLE (3)</a>
+		<a href="languages/timer.html"><b>6.4.12 :</b> TIMER (3)</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="graphics/"><b>Chapter 8 :</b> Graphics</a>
+		<a href="graphics/bresenham.html"><b>8.1 :</b> Bresenham's</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
+		<a href="crypto/math.html"><b>10.1 :</b> Math Background</a>
+		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
+		<a href="crypto/rsar.html"><b>10.3 :</b> RSA Encryption</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="crypto/math.html">Previous Section</a> : Math Background : 10.1
+		</div>
+		<div class="next">
+			10.3 : RSA Encryption : <a href="crypto/rsah.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+	<div class="content">
+		<span style="color:#FF0000"><b>Warning: CSS May Be Broken.</b>
+		My apologies for any issues this may cause.
+		I wrote bad code a very long time ago and it's taking a while to update
+		it.
+		</span>
+	</div>
+	<hr>
+	<div class="content">
+		<h1>10.2 : RSA Key Generation</h1>
+	</div>
+	<hr>
+	<div class="content">
+<p>RSA Encryption was introduced in 1977 by Ron Rivest, Adi Shamir and Leonard Adleman at MIT; hence the name &quot;RSA&quot;. On the lecture slides, it's also called Public Key Encryption (PKE) and PKC (Public Key Cryptography).</p>
+<p>Some links you may find helpful in this section</p>
+<ul>
+<li><a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a></li>
+<li><a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt_v2.html">RSA Encryption/Decryption Calculator</a></li>
+<li><a href="https://1513041.mediaspace.kaltura.com/media/CS475+Crypto+3/1_st8qnz7g">Dr. Stuart's Public Key Cryptography Lecture</a></li>
+</ul>
+	</div>
+	<hr>
+	<div class="content">
+<p>The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a> does most of this for you. The math relies on a lot of properties of prime numbers in modular arithmetic. The previous section (that I haven't written yet) covers it more. You can also read through my notes from when I took <a href="../ref/cs303.pdf">CS-303: Algorithmic Number Theory &amp; Cryptography</a> CS-303 was a lot of work, but I really enjoyed the class. When you actually got the chance to sit down and play with the material, the way the numbers just worked was really cool.</p>
+<h4 id="select-p-and-q">1. Select <code>p</code> and <code>q</code></h4>
+<p><code>p</code> and <code>q</code> must be two random prime numbers. The larger the number, the more secure. Think about how long it would take to check the primeness of a number.</p>
+<h4 id="compute-n">2. Compute <code>n</code></h4>
+<p><code>n = pq</code></p>
+<p>Since <code>p</code> and <code>q</code> are both prime, <code>n</code> only has four factors: <code>{1, p, q, n}</code>. Even though <code>n</code> will be made public, it's still very difficult to calculate the prime factorization of <code>n</code>.</p>
+<h4 id="compute-φn">3. Compute <code>φ(n)</code></h4>
+<p><code>φ(n) = (p - 1)(q - 1)</code></p>
+<p>It may be tempting to just accept this new seemingly random formula without question. I urge you to look a little deeper into where this formula came from.</p>
+<p>If we look back at the <a href="crypto/math.html#phi">the phi function</a>, we see that the <code>φ(n)</code> function calculates how many values less than <code>n</code> are coprime to <code>n</code>. Why are we using subtraction and multiplication here? Why aren't we using a loop to count the number of values?</p>
+<p>In the aforementioned <a href="crypto/math.html#phi">math section</a>, I also showed you the proof for two cool properties that φ has:</p>
+<ol style="list-style-type: decimal">
+<li>If <code>n</code> is prime, <code>&amp;phi(n) = n - 1</code></li>
+<li>If <code>a</code> and <code>b</code> are coprime, then <code>φ(ab) = φ(a) * φ(b)</code></li>
+</ol>
+<p>Since we chose <code>p</code> and <code>q</code> to be prime numbers, when we put this all together we get:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>n = pq</code>
+</td>
+<td class="left">
+Definition of <code>n</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>φ(n) = φ(pq)</code>
+</td>
+<td class="left">
+Substitute definition
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>φ(pq) = φ(p) * φ(q)</code>
+</td>
+<td class="left">
+Property of φ
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>φ(p) = p - 1</code>
+</td>
+<td class="left">
+Property of φ
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>φ(q) = q - 1</code>
+</td>
+<td class="left">
+Property of φ
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>φ(n) = (p - 1)(q - 1)</code>
+</td>
+<td class="left">
+Substitution
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<h4 id="choose-e-and-d">Choose <code>e</code> and <code>d</code></h4>
+<p><code>e</code> will be our public key and <code>d</code> will be our private key.</p>
+<p>Choose <code>e</code> such that it is relatively prime to <code>φ(n)</code></p>
+<p>We then calculate <code>d</code> such that it becomes the inverse of <code>e</code>. To do this, we use the following formula:</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>ed ≡ 1 mod φ(n)</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>Whoa! That's a lot of strange new notation! This form of equation is used primarily in modular arithmetic. Even though it's a new notation, it's actually a concept we've seen before. If you look back at the <a href="numbers/baseTwo.html#introducing-modulo">Base-2 section</a> where I first introduced modulo, we used the notation <code>x % m = r</code>. To translate this to the notation we see above, we just shuffle variables around a bit and change some symbols</p>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>x % m = r</code>
+</td>
+</tr>
+<tr>
+<th>
+</th>
+<td>
+<code>x ≡ r mod m</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+<p>We've already seen things like <code>7 % 2 = 1</code>. This would translate to <code>7 ≡ 1 mod 2</code>. Going the other way around, <code>ed ≡ 1 mod φ(n)</code> would translate to <code>ed % φ(n) = 1</code>.</p>
+<p>I'm not going to cover the actual generation of <code>d</code> based on this formula. I don't think it's worth explaining all of modular arithmetic and inverses to understand this one part.</p>
+<p>The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a> you use in lab generates possible <code>K</code> candidates which you choose to be factored into <code>e</code> and <code>d</code>. <code>K = (p - 1)(q - 1)i + 1</code> where <code>i</code> is a random number. This is a possible approach because the numbers we are using on the worksheet are very small. In practice, it's much harder to generate the factors of a large number.</p>
+<p>At first glance, the math for key generation appears to be very complicated and overwhelming, but if we look at it closely, even the unfamiliar math is much easier than it looks.</p>
+	</div>
+	<hr>
+	<div class="content">
+		<center>
+		<a href="crypto/rsa_keygen.html#top">Back To Top</a>
+		</center>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="crypto/math.html">Previous Section</a> : Math Background : 10.1
+		</div>
+		<div class="next">
+			10.3 : RSA Encryption : <a href="crypto/rsah.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

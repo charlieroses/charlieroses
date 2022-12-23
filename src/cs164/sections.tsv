@@ -56,6 +56,4 @@ Number	Title	Directory	File	Updated?
 8	Graphics	graphics	index	
 8.1	Bresenham's	graphics	bresenham	
 10	Cryptography	crypto	index	
-10.1	Math Background	crypto	math	
-10.2	RSA Key Generation	crypto	rsa_keygen	
-10.3	RSA Encryption	crypto	rsa	
+10.1	RSA Encryption	crypto	rsa	

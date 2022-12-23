@@ -1,5 +1,7 @@
 #!/bin/bash
 
+RSA=( "rsap" "rsag" "rsar" "rsah" )
+
 function makelink {
 	REC="$1"
 	NOP="$2"
@@ -12,6 +14,8 @@ function makelink {
 		DIR="$(echo -e "${REC}" | cut -f 3)"
 		FLE="$(echo -e "${REC}" | cut -f 4)"
 		REF=""
+
+		[[ "${FLE}" = "rsa" ]] && FLE=${RSA[$(( $RANDOM % 4 ))]}
 
 		if [[ "${SEC}" = "0"* ]] &&
 		   [[ "${NOP}" = "n" ]]
