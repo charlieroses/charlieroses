@@ -24,38 +24,49 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 851	Centiskorch	F	3	Reverse		048	Hasuno			12/09/2022
 90	Shellder	W	1			050	kawayoo			12/09/2022
 158	Totodile	W	1			055	Mizue			11/16/2021
+160	Feraligatr	W	3	Reverse		057	Anesaki Dynamic			12/24/2022
 183	Marill	W	1			058	sowsow			11/16/2021
 184	Azumarill	W	3			059	Sanosuke Sakuma			12/09/2022
 211	Qwilfish	W	1			060	HYOGONOSUKE			12/09/2022
 226	Mantine	W	1	Reverse		061	Saya Tsuruta			12/09/2022
 258	Mudkip	W	1			062	KIYOTAKA OSHIYAMA			11/23/2022
 259	Marshtomp	W	2			063	tetsuya koizumi			12/09/2022
+260	Swampert	W	3	Reverse		064	Masokazu Fukuda			12/24/2022
+366	Clamperl	W	1			065	Anesaki Dynamic			12/24/2022
 368	Gorebyss	W	3			067	Misa Tsutsui			11/16/2021
 516	Simipour	W	2			069	Shin Nagasawa			11/16/2021
 554	Darumaka	W	1		Galarian	071	Atsuko Nishida			9/29/2022
+555	Darmanitan	W	2		Galarian	072	SATOSHI NAKAI			12/24/2022
 658	Greninja V	W	5	Full	Full Art	073	5ban Graphics			11/23/2022
 692	Clauncher	W	1			074	Pani Kobayashi			12/09/2022
 771	Pyukumuku	W	1			077	Tomokasu Komiya			11/23/2022
+818	Inteleon VMax	W	5	Full	Full Art	079	5ban Graphics			12/24/2022
 833	Chewtle	W	1			080	Saya Tsuruta			10/05/2022
 846	Arrokuda	W	1			082	Miki Tanaka			12/09/2022
-873	Frosmoth	W	2			085	chibi			11/16/2021
+873	Frosmoth	W	2	Reverse		085	chibi			12/24/2021
 311	Plusle	El	1			089	Megumi Higuchi			9/28/2022
 312	Minun	El	1			090	HYOGONOSUKE			12/09/2022
 403	Shinx	El	1			091	Naoyo Kimura			11/23/2022
 404	Luxio	El	2			092	Tika Matsuno			12/09/2022
+479	Rotom	El	1			094	Sekio			12/24/2022
 602	Tynamo	El	1			095	Yuka Morii			12/09/2022
+603	Eelektrik	El	2			096	Shigenori Negishi			12/24/2022
 604	Eelektross	El	3			097	OKACHEKE			10/05/2022
 694	Helioptile	El	1			098	Mina Nakai			11/16/2021
+695	Heliolisk	El	2			099	Kagemaru Himeno			12/24/2022
 737	Charjabug	El	2			100	sowsow			10/05/2022
 738	Vikavolt	El	3			101	nagimiso			12/09/2022
 836	Bolthund V	El	5	Full	Full Art	103	Shin Nagasawa			12/09/2022
 848	Toxel	El	1			106	kodama			11/16/2021
 849	Toxtricity	El	3	Reverse		107	Ryuta Fuse			12/09/2022
+849	Toxtricity	El	3	Holo		107	Ryuta Fuse			12/24/2022
+877	Morpeko	El	1			109	Sanosuke Sakuma			12/24/2022
 40	Wigglytuff	P	2			111	Asako Ito			11/16/2021
 209	Snubbull	P	1			115	Kyoko Umemoto			12/09/2022
 210	Granbull	P	3	Reverse		116	Akira Komayama			12/09/2022
 222	Corsola	P	1		Galarian	117	Kouki Saitou			12/09/2022
 864	Cursola	P	3		Galarian	118	sui			12/09/2022
+517	Munna	P	1			121	miki kudo			12/24/2022
 561	Sigilyph	P	1			123	Yukiko Baba			11/16/2021
 769	Sandygast	P	1			125	KIYOTAKA OSHIYAMA			9/28/2022
 770	Palossand	P	3			126	Shibuzoh.			9/29/2022
@@ -75,6 +86,8 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 852	Clobbopus	Fg	1			152	Mizue			9/29/2022
 870	Falinks	Fg	1			155	Yuu Nishida			12/09/2022
 263	Zigzagoon	D	1		Galarian	159	Eri Yamaki			12/09/2022
+318	Carvanha	D	1			162	NC Empire			12/24/2022
+319	Sharpedo	D	2			163	Hasuno			12/24/2022
 453	Croagunk	D	1			165	Nagomi Nijo			12/09/2022
 569	Garbodor	D	2			169	sui			12/09/2022
 570	Zorua	D	1			170	nagimiso			12/09/2022
@@ -89,6 +102,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 52	Meowth	N	1			199	Kouki Saitou			11/16/2021
 113	Chansey	N	1			202	miki kudo			12/09/2022
 242	Blissey	N	3	Reverse		203	Mizue			12/09/2022
+206	Dunsparce	N	2			207	ryoma uratsuka			12/24/2022
 235	Smeargle	N	1			209	Mitsuhiro Arita			12/09/2022
 427	Buneary	N	1	Reverse		212	Yuu Nishida			12/09/2022
 428	Lopunny	N	2			213	AKIRA EGAWA			12/09/2022
@@ -105,9 +119,11 @@ T	Cook	Su	2			228	Sanosuke Sakuma			10/05/2022
 T	Cram-o-matic	I	2			229	Ryo Ueda			9/29/2022
 T	Cross Switcher	I	2			230	inose yukie			12/09/2022
 T	Crossceiver	I	2	Reverse		231	Studio Bora Inc.			11/16/2021
+T	Dancer	Su	2			232	Sanosuke Sakuma			12/24/2022
 T	Farewell Bell	I	2			234	AYUMI ODASHIMA			9/28/2022
 T	Judge	Su	2			235	Ryuta Fuse			12/09/2022
 T	Power Tablet	I	2			236	Toyste Beach			9/29/2022
+T	Quick Ball	I	2			237	Ryo Ueda			12/24/2022
 T	Schoolgirl	Su	2			239	kirisAki			11/23/2022
 T	Skaters' Park	S	2	Reverse		242	Oswaldo KATO			11/16/2021
 763	Tsareena V	G	5	Full	Full Art	246	PLANETA Mochizuki			12/09/2022

@@ -10,26 +10,30 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 588	Karrablast	G	1			015	sowsow			11/20/2022
 126	Magmar	F	1			019	Shinji Kanda			11/20/2022
 324	Torkoal	F	2			023	Kagemaru Himeno			11/20/2022
+390	Chimchar	F	1			024	Shin Nagasawa			12/24/2022
 120	Staryu	W	1			030	Yuka Morii			11/20/2022
 341	Corphish	W	1			032	Sekio			11/23/2022
 361	Snorunt	W	1			034	HYOGONOSUKE			10/05/2022
 393	Piplup	W	1			035	Atsushi Furusawa			11/20/2022
 394	Prinplup	W	2			036	Kagemaru Himeno			11/20/2022
 418	Buizel	W	1			038	Tika Matsuno			11/20/2022
+419	Floatzel	W	2			039	kodama			12/24/2022
 490	Manaphy	W	3			041	HYOGONOSUKE			9/28/2022
 613	Cubchoo	W	1			042	ryoma uratsuka			10/05/2022
 125	Electabuzz	El	1			046	OKACHEKE			11/20/2022
 404	Luxio	El	2			050	kurumitsu			11/23/2022
 405	Luxray	El	3	Reverse		051	Ayaka Yoshida			11/23/2022
+417	Pachirisu	El	2			052	HYOGONOSUKE			12/24/2022
 35	Clefairy	P	1			053	Yukiko Baba			11/20/2022
 36	Clefable	P	3			054	Mizue			11/20/2022
 121	Starmie	P	2			055	Akira Komayama			9/28/2022
 150	Mewtwo	P	3	Holo	Trick or Trade Promo	056	Anesaki Dynamic			10/30/2022
 343	Baltoy	P	1			058	Kyoko Umemoto			10/05/2022
-344	Claydol	P	2			059	Kazuma Koda			11/20/2022
+344	Claydol	P	2	Reverse		059	Kazuma Koda			12/24/2022
 355	Duskull	P	1		Trick or Trade Promo	060	SATOSHI NAKAI			10/31/2022
 356	Dusclops	P	2		Trick or Trade Promo	061	miki kudo			10/31/2022
 477	Dusknoir	P	3	Holo	Trick or Trade Promo	062	otumami			10/31/2022
+358	Chimecho	P	1			063	MAHOU			12/24/2022
 561	Sigilyph	P	2			066	Sumiyoushi Kizuki			11/23/2022
 778	Mimikyu V	P	5	Full	Full Art	068	Eske Yoshinob			11/20/2022
 868	Milcery	P	1			070	Misa Tsutsui			10/05/2022
@@ -42,6 +46,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 447	Riolu	Fg	1	Reverse		078	Teeziro			11/23/2022
 538	Throh	Fg	1			080	Teeziro			11/20/2022
 539	Sawk	Fg	1			081	Shinji Kanada			9/28/2022
+622	Golett	Fg	1			082	Eske Yoshinob			12/24/2022
 89	Muk	D	3			085	Scav			11/20/2022
 215	Sneasel	D	1			086	yuu			11/20/2022
 461	Weavile	D	2			087	Hasuno			11/20/2022
@@ -50,7 +55,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 859	Impidimp	D	1			092	Rianti Hidayat			11/20/2022
 476	Probopass	Sl	2			099	Pani Kobayashi			11/20/2022
 599	Klink	Sl	1			102	OKACHEKE			11/20/2022
-600	Klang	Sl	2			103	Hataya			11/20/2022
+600	Klang	Sl	2	Reverse		103	Hataya			12/24/2022
 443	Gible	Dr	1			107	sowsow			11/20/2022
 444	Gabite	Dr	2			108	hatachu			11/20/2022
 610	Axew	Dr	1			110	Saya Tsuruta			11/20/2022
@@ -61,12 +66,13 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 399	Bidoof	N	1			120	Oswaldo KATO			11/20/2022
 572	Minccino	N	1			124	Mina Nakai			11/20/2022
 573	Cinccino	N	2			125	Atsuko Nishida			11/20/2022
-641	Tornadus	N	3			126	Shigenori Negishi			11/23/2022
+641	Tornadus	N	3	Reverse		126	Shigenori Negishi			12/24/2022
 701	Hawlucha	N	1			127	Miki Tanaka			11/20/2022
 T	Acerola's Premonition	Su	2			129	Shiburingaru			11/20/2022
 T	Barry	Su	2			130	Ken Sugimori			11/20/2022
 T	Boss's Orders	Su	3	Holo		132	GIDORA			11/20/2022
 T	Cafe Master	Su	2	Reverse		133	Hasegawa Saki			11/20/2022
+T	Choice Belt	I	2			135	Studio Bora Inc.			12/24/2022
 T	Cleansing Gloves	I	2			136	Toyste Beach			11/20/2022
 T	Collapsed Stadium	S	2			137	Oswaldo KATO			10/05/2022
 T	Fresh Water Set	I	2	Reverse		139	AYUMI ODASHIMA			11/20/2022
@@ -77,3 +83,4 @@ T	Marnie's Pride	Su	2			145	saino nisaki			11/20/2022
 T	Pot Helmet	I	2			146	Toyste Beach			11/20/2022
 T	Team Yell's Cheer	Su	2			149	GOSSAN			11/20/2022
 T	Double Turbo Energy	NN	2			151				11/20/2022
+T	Cheren's Care	Su	5	Full	Rainbow	177	Ryuta Fuse			12/24/2022

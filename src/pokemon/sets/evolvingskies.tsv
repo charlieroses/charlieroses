@@ -13,6 +13,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 829	Gossifleur	G	1			015	Mizue			8/25/2021
 830	Eldegoss	G	3			016	Kouki Saitou			8/25/2021
 840	Applin	G	1			017	Miki Tanaka			8/25/2021
+494	Victini	F	3	Holo		020	Teeziro			12/24/2022
 667	Litleo	F	1			022	Misa Tsutsui			8/25/2021
 668	Pyroar	F	2			023	Hitoshi Ariga			8/25/2021
 54	Psyduck	W	1			024	OKACHEKE			8/25/2021
@@ -25,7 +26,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 319	Sharpedo	W	3			036	Kazuma Koda			8/25/2021
 349	Feebas	W	1			037	tetsuya koizumi			8/25/2021
 350	Milotic	W	3			038	sui			8/25/2021
-370	Luvdisc	W	1			039	Mizue		8/31/2021	
+370	Luvdisc	W	1			039	Mizue			8/31/2021
 535	Tympole	W	1			042	Mina Nakai			8/25/2021
 615	Cryogonal	W	1			043	Kagemaru Himeno			8/25/2021
 712	Bergmite	W	1			044	kirisAki			8/25/2021
@@ -50,6 +51,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 669	Flabebe	P	1			071	OKACHEKE			8/25/2021
 670	Floette	P	2			072	chibi			8/25/2021
 671	Florges	P	3	Holo		073	Kagemaru Himeno			8/25/2021
+671	Florges	P	3	Reverse		073	Kagemaru Himeno			12/24/2022
 710	Pumpkaboo	P	1		Trick or Trade Promo	076	Yuka Morii			10/31/2022
 711	Gourgeist	P	3	Reverse		077	Megumi Higuchi			8/4/2022
 711	Gourgeist	P	3	Holo	Trick or Trade Promo	077	Megumi Higuchi			10/31/2022
@@ -72,6 +74,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 571	Zoroark	D	3	Reverse		103	Souichirou Gunjima			8/25/2021
 827	Nickit	D	1			104	Hasegawa Saki			8/25/2021
 828	Thievul	D	3			105	Kyoko Umemoto			8/25/2021
+334	Altaria	Dr	3	Reverse		106	sui			12/24/2022
 371	Bagon	Dr	1			107	ryoma uratsuka			8/25/2021
 372	Shelgon	Dr	2			108	tetsuya koizumi			8/25/2021
 633	Deino	Dr	1			113	HYOGONOSUKE			8/25/2021
@@ -110,7 +113,7 @@ T	Full Face Guard	I	2	Reverse		148	AYUMI ODASHIMA			11/23/2022
 T	Gordie	Su	2			149	take			8/25/2021
 T	Lucky Ice Pop	I	2	Reverse		150	inose yukie			8/25/2021
 T	Moon & Sun Badge	I	2			151	Studio Bora inc.			8/25/2021
-T	Raihan	Su	2			152	take			8/25/2021
+T	Raihan	Su	2	Reverse		152	take			12/24/2022
 T	Scroll of the Flying Dragon	I	2	Reverse	Rapid Strike	153	5ban Graphics			8/25/2021
 T	Rescue Carrier	I	2			154	Ryo Ueda			8/25/2021
 T	Ribbon Badge	I	2			155	Studio Bora Inc.			8/25/2021

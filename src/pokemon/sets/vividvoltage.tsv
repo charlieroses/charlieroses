@@ -23,6 +23,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 181	Ampharos V	El	5			049	Ryuta Fuse			8/14/2022
 522	Blitzle	El	1	Reverse		053	Saya Tsuruta			8/14/2022
 523	Zebstrika	El	2			054	0313			5/11/2021
+596	Galvantula	El	2			056	Shigenori Negishi			12/24/2022
 602	Tynamo	El	1			057	sowsow			5/11/2021
 603	Eelektrik	El	2	Reverse		058	Masakazu Fukuda			8/14/2022
 871	Pincurchin	El	2			062	Kouki Saitou			5/11/2021
@@ -45,9 +46,11 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 639	Terrakion	Fg	3			092	NC Empire			8/14/2022
 744	Rockruff	Fg	1			094	Eri Yamaki			8/7/2021
 745	Lycanroc	Fg	3			095	Anesaki Dynamic			5/11/2021
+750	Mudsdale	Fg	3			097	tetsuya koizumi			12/24/2022
 852	Clobbopus	Fg	1			100	Misa Tsutsui			3/5/2021
 261	Poochyena	D	1			103	ryoma uratsuka			8/7/2021
 262	Mightyena	D	2			104	Aya Kusube			8/14/2022
+302	Sableye	D	2	Reverse		105	KEIICHIRO ITO			12/24/2022
 551	Sandile	D	1			107	Poni Kobayashi			8/14/2022
 553	Krookodile	D	3			109	Ryuta Fuse			8/14/2022
 568	Trubbish	D	1			110	Kyoko Umemoto			5/11/2021
@@ -58,17 +61,21 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 376	Metagross	Sl	3			118	kawayoo			3/5/2021
 530	Excadrill	Sl	2			122	Anesaki Dynamic			8/14/2022
 597	Ferroseed	Sl	1			123	HYOGONOSUKE			8/14/2022
+133	Eevee	N	1			130	Lee HyunJung			12/24/2022
 276	Tailow	N	1			133	Yuka Morii			5/11/2021
 277	Swellow	N	1			134	kodama			5/11/2021
 441	Chatot	N	1			139	0313			3/5/2021
 731	Pikipek	N	1			143	Yukiko Baba			8/7/2021
 732	Trumbeak	N	2			144	tetsuya koizumi			8/14/2022
 T	Bea	Su	2	Reverse		147	take			8/14/2022
+T	Beauty	Su	2			148	kirisAki			12/24/2022
 T	Circhester Bath	S	2			150	5ban Graphics			8/14/2022
 T	Drone Rotom	I	2			151	5ban Graphics			8/14/2022
 T	Hero's Medal	I	2			152	Toyste Beach			5/11/2021
 T	League Staff	Su	2			153	Emi Ando			5/11/2021
-T	Memory Capsule	I	2			155		3/5/2021		
-T	Nessa	Su	2			157		8/7/2021		
-T	Coating Energy	Sl	2			163		5/11/2021		
-T	Wash Energy	W	2			165		8/14/2022		
+T	Memory Capsule	I	2			155	sodaji			3/5/2021
+T	Nessa	Su	2			157	take			8/7/2021
+T	Rocky Helmet	I	2			159	Studio Bora Inc.			12/24/2022
+T	Coating Energy	Sl	2			163				5/11/2021
+T	Stone Energy	Fg	2			164				12/24/2022
+T	Wash Energy	W	2			165				8/14/2022
