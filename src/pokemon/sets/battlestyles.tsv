@@ -45,7 +45,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 326	Grumpig	P	2			056	Tomokazu Komiya			4/4/2021
 343	Baltoy	P	1			057	sui			3/19/2021
 344	Claydol	P	3			058	Shibuzoh.			3/22/2021
-358	Chimecho	P	1			059	Shibuzoh.			3/22/2021
+358	Chimecho	P	1	Reverse		059	Shibuzoh.			12/27/2022
 677	Espurr	P	1			060	Saya Tsuruta			3/19/2021
 678	Meowstic	P	3	Holo		061	Yuu Nishida			3/22/2021
 778	Mimikyu V	P	3	Full	Full Art	062	Eske Yoshinob			8/14/2022
@@ -117,6 +117,7 @@ T	Tower of Waters	S	2			138	5ban Graphics			3/22/2021
 T	Urn of Vitality	I	2			139	Toyste Beach			3/22/2021
 T	Rapid Strike Energy	Fg	2			140				3/19/2021
 T	Single Strike Energy	Fg	2			141				3/19/2021
+841	Flapple V	G	5	Full	Full Art	143	PLANETA Mochizuki			12/27/2022
 892	Urshifu VMax	Fg	5	Full	Full Art / Textured	170	KIYOTAKA OSHIYAMA			3/22/2021
 T	Bruno	Su	5	Full	Full Art / Textured / Rainbow	172	Ryuta Fusa			3/22/2021
 T	Level Ball	I	5	Full	Full Art / Textured / Golden	181	Ryo Ueda			3/19/2021

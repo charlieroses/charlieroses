@@ -35,7 +35,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 366	Clamperl	W	1			065	Anesaki Dynamic			12/24/2022
 368	Gorebyss	W	3			067	Misa Tsutsui			11/16/2021
 516	Simipour	W	2			069	Shin Nagasawa			11/16/2021
-554	Darumaka	W	1		Galarian	071	Atsuko Nishida			9/29/2022
+554	Darumaka	W	1	Reverse	Galarian	071	Atsuko Nishida			12/27/2022
 555	Darmanitan	W	2		Galarian	072	SATOSHI NAKAI			12/24/2022
 658	Greninja V	W	5	Full	Full Art	073	5ban Graphics			11/23/2022
 692	Clauncher	W	1			074	Pani Kobayashi			12/09/2022
@@ -62,6 +62,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 849	Toxtricity	El	3	Holo		107	Ryuta Fuse			12/24/2022
 877	Morpeko	El	1			109	Sanosuke Sakuma			12/24/2022
 40	Wigglytuff	P	2			111	Asako Ito			11/16/2021
+124	Jynx	P	1			112	Shigenori Negishi			12/27/2022
 209	Snubbull	P	1			115	Kyoko Umemoto			12/09/2022
 210	Granbull	P	3	Reverse		116	Akira Komayama			12/09/2022
 222	Corsola	P	1		Galarian	117	Kouki Saitou			12/09/2022
@@ -73,6 +74,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 876	Indeedee	P	1			127	sui			12/09/2022
 886	Drakloak	P	2			129	HYOGONOSUKE			12/09/2022
 56	Mankey	Fg	1			133	sowsow			12/09/2022
+57	Primeape	Fg	2			134	Yuya Oka			12/27/2022
 74	Geodude	Fg	1			135	OKACHEKE			12/09/2022
 95	Onix	Fg	1			138	KEIICHIRO ITO			10/05/2022
 472	Gliscor	Fg	2	Reverse		141	SATOSHI NAKAI			12/09/2022
@@ -125,5 +127,6 @@ T	Judge	Su	2			235	Ryuta Fuse			12/09/2022
 T	Power Tablet	I	2			236	Toyste Beach			9/29/2022
 T	Quick Ball	I	2			237	Ryo Ueda			12/24/2022
 T	Schoolgirl	Su	2			239	kirisAki			11/23/2022
+T	Shauna	Su	2			240	Yuu Nishida			12/27/2022
 T	Skaters' Park	S	2	Reverse		242	Oswaldo KATO			11/16/2021
 763	Tsareena V	G	5	Full	Full Art	246	PLANETA Mochizuki			12/09/2022
