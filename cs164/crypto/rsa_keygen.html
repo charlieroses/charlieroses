@@ -111,9 +111,12 @@
 	<hr>
 	<div class="content">
 		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
-		<a href="crypto/math.html"><b>10.1 :</b> Math Background</a>
+		<a href="crypto/math.html"><b>10.1 :</b> RSA Math Background</a>
 		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
-		<a href="crypto/rsar.html"><b>10.3 :</b> RSA Encryption</a>
+		<a href="crypto/rsa_keygen.html#modular-arithmetic">&nbsp;<b>&#8227;</b>&nbsp;Modular Arithmetic</a>
+		<a href="crypto/rsa_keygen.html#prime-numbers">&nbsp;<b>&#8227;</b>&nbsp;Prime Numbers</a>
+		<a href="crypto/rsa_keygen.html#phi">&nbsp;<b>&#8227;</b>&nbsp;Phi</a>
+		<a href="crypto/rsap.html"><b>10.3 :</b> RSA Encryption</a>
 	</div>
 </div>
 <div id="main">
@@ -121,23 +124,16 @@
 		<br>
 		<div class="navigation" id="top">
 		<div class="prev">
-			<a href="crypto/math.html">Previous Section</a> : Math Background : 10.1
+			<a href="crypto/math.html">Previous Section</a> : RSA Math Background : 10.1
 		</div>
 		<div class="next">
-			10.3 : RSA Encryption : <a href="crypto/rsah.html">Next Section</a>
+			10.3 : RSA Encryption : <a href="crypto/rsap.html">Next Section</a>
 		</div>
 		</div>
 		<br>
 		<br>
 	</div>
-	<hr>
-	<div class="content">
-		<span style="color:#FF0000"><b>Warning: CSS May Be Broken.</b>
-		My apologies for any issues this may cause.
-		I wrote bad code a very long time ago and it's taking a while to update
-		it.
-		</span>
-	</div>
+<!-- ERROR -->
 	<hr>
 	<div class="content">
 		<h1>10.2 : RSA Key Generation</h1>
@@ -154,14 +150,60 @@
 	</div>
 	<hr>
 	<div class="content">
-<p>The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a> does most of this for you. The math relies on a lot of properties of prime numbers in modular arithmetic. The previous section (that I haven't written yet) covers it more. You can also read through my notes from when I took <a href="../ref/cs303.pdf">CS-303: Algorithmic Number Theory &amp; Cryptography</a> CS-303 was a lot of work, but I really enjoyed the class. When you actually got the chance to sit down and play with the material, the way the numbers just worked was really cool.</p>
-<h4 id="select-p-and-q">1. Select <code>p</code> and <code>q</code></h4>
+<p>The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a> does most of this for you. The math relies on a lot of properties of prime numbers in modular arithmetic. The <a href="crypto/math.html">previous section</a> covers it a bit more. You can also read through my notes from when I took <a href="../ref/cs303.pdf">CS-303: Algorithmic Number Theory &amp; Cryptography</a> CS-303 was a lot of work, but I really enjoyed the class. When you actually got the chance to sit down and play with the material, the way the numbers just worked was really cool.</p>
+<h3 id="select-p-and-q">1. Select <code>p</code> and <code>q</code></h3>
 <p><code>p</code> and <code>q</code> must be two random prime numbers. The larger the number, the more secure. Think about how long it would take to check the primeness of a number.</p>
-<h4 id="compute-n">2. Compute <code>n</code></h4>
-<p><code>n = pq</code></p>
+<h3 id="compute-n">2. Compute <code>n</code></h3>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>n = pq</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
 <p>Since <code>p</code> and <code>q</code> are both prime, <code>n</code> only has four factors: <code>{1, p, q, n}</code>. Even though <code>n</code> will be made public, it's still very difficult to calculate the prime factorization of <code>n</code>.</p>
-<h4 id="compute-φn">3. Compute <code>φ(n)</code></h4>
-<p><code>φ(n) = (p - 1)(q - 1)</code></p>
+<h3 id="compute-φn">3. Compute <code>φ(n)</code></h3>
+<center>
+<table>
+<colgroup>
+<col span="1" class="red">
+</colgroup>
+<thead>
+<tr>
+<th>
+</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+</th>
+<td>
+<code>φ(n) = (p - 1)(q - 1)</code>
+</td>
+</tr>
+</tbody>
+</table>
+</center>
 <p>It may be tempting to just accept this new seemingly random formula without question. I urge you to look a little deeper into where this formula came from.</p>
 <p>If we look back at the <a href="crypto/math.html#phi">the phi function</a>, we see that the <code>φ(n)</code> function calculates how many values less than <code>n</code> are coprime to <code>n</code>. Why are we using subtraction and multiplication here? Why aren't we using a loop to count the number of values?</p>
 <p>In the aforementioned <a href="crypto/math.html#phi">math section</a>, I also showed you the proof for two cool properties that φ has:</p>
@@ -249,7 +291,7 @@ Substitution
 </tbody>
 </table>
 </center>
-<h4 id="choose-e-and-d">Choose <code>e</code> and <code>d</code></h4>
+<h3 id="choose-e-and-d">4. Choose <code>e</code> and <code>d</code></h3>
 <p><code>e</code> will be our public key and <code>d</code> will be our private key.</p>
 <p>Choose <code>e</code> such that it is relatively prime to <code>φ(n)</code></p>
 <p>We then calculate <code>d</code> such that it becomes the inverse of <code>e</code>. To do this, we use the following formula:</p>
@@ -325,10 +367,10 @@ Substitution
 		<br>
 		<div class="navigation" id="bottom">
 		<div class="prev">
-			<a href="crypto/math.html">Previous Section</a> : Math Background : 10.1
+			<a href="crypto/math.html">Previous Section</a> : RSA Math Background : 10.1
 		</div>
 		<div class="next">
-			10.3 : RSA Encryption : <a href="crypto/rsah.html">Next Section</a>
+			10.3 : RSA Encryption : <a href="crypto/rsap.html">Next Section</a>
 		</div>
 		</div>
 		<br>

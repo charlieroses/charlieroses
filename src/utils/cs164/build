@@ -15,6 +15,7 @@ DESTINATION="cs164/"
 SECTIONS_FILE="src/cs164/sections.tsv"
 UTILS="src/utils/cs164"
 TEMPLATE="$(cat "${UTILS}/template.html")"
+ERRORMSG="$(cat "${UTILS}/error.html")"
 
 FARG=""
 TARG=""
@@ -39,6 +40,7 @@ do
 	TITLE="$(echo "${LINE}" | cut -f2)"
 	DIR="$(echo "${LINE}" | cut -f3)"
 	FILE="$(echo "${LINE}" | cut -f4)"
+	UPDATE="$(echo "${LINE}" | cut -f5)"
 
 	INFILE="${MARKDOWN_SRC}${DIR}/${FILE}.md"
 	OUTFILE="${DESTINATION}${DIR}/${FILE}.html"
@@ -121,6 +123,7 @@ do
 	HTML="${HTML/"<!-- NAVIGATION -->"/"${NAV/"ID"/"top"}"}"
 	HTML="${HTML/"<!-- NAVIGATION -->"/"${NAV/"ID"/"bottom"}"}"
 	HTML="${HTML//"<!-- CONTENT -->"/"${CONTENT}"}"
+	[[ -z "${UPDATE}" ]] && HTML="${HTML//"<!-- ERROR -->"/"${ERRORMSG}"}"
 	HTML="$(echo "${HTML}" | sed "s/#top/${DIR}\/${FILE}.html#top/g" )"
 
 	echo -e "${HTML}" > "${OUTFILE}"
