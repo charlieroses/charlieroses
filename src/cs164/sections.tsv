@@ -40,20 +40,22 @@ Number	Title	Directory	File	Updated?
 6.2	Markup Languages	languages	markup	
 6.3	Programming Languages	languages	program	
 6.4	Tranquility	languages	tranq	
-6.4.1	TRANQC (1)	languages	tranqc	
-6.4.2	ALLOC (3)	languages	alloc	
-6.4.3	BUTTON (3)	languages	button	
-6.4.4	HTML (3)	languages	html	
-6.4.5	I2S (3)	languages	i2s	
-6.4.6	IMG (3)	languages	img	
-6.4.7	LABEL(3)	languages	label	
-6.4.8	PRINT (3)	languages	print	
-6.4.9	RANDOM (3)	languages	random	
-6.4.10	READ (3)	languages	read	
-6.4.11	TABLE (3)	languages	table	
-6.4.12	TIMER (3)	languages	timer	
+6.4.1	TRANQC (1)	languages	tranqc	X
+6.4.2	ALLOC (3)	languages	alloc	X
+6.4.3	BUTTON (3)	languages	button	X
+6.4.4	HTML (3)	languages	html	X
+6.4.5	I2S (3)	languages	i2s	X
+6.4.6	IMG (3)	languages	img	X
+6.4.7	LABEL(3)	languages	label	X
+6.4.8	PRINT (3)	languages	print	X
+6.4.9	RANDOM (3)	languages	random	X
+6.4.10	READ (3)	languages	read	X
+6.4.11	TABLE (3)	languages	table	x
+6.4.12	TIMER (3)	languages	timer	X
 6.5	State and State Machines	languages	state	
 8	Graphics	graphics	index	
 8.1	Bresenham's	graphics	bresenham	
 10	Cryptography	crypto	index	
-10.1	RSA Encryption	crypto	rsa	
+10.1	RSA Math Background	crypto	math	X
+10.2	RSA Key Generation	crypto	rsa_keygen	X
+10.3	RSA Encryption	crypto	rsa	X

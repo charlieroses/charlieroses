@@ -1,29 +1,63 @@
-I'm not sure if you'll ever be tested on anything in this section.
-I'm including it not because I don't believe that you should only learn things
-that you know you will be tested on.
-A lot of this number theory is really cool and really easy to work through.
-It also provides a bit of context for the
-[RSA Key Generation](crypto/rsa_keygen.html)
-we'll see later.
+I'm going to say a dangerous phrase here, so tread carefully.
+If you're a freshman in CS-164, you'll most likely never be tested on anything
+in this section.
 
-I also have a super secret goal of getting you comfortable with breaking down
-new mathematical concepts.
-Just because something is new and overwhelming doesn't mean it has to be
-difficult.
+Why is this phrase so dangerous?
+
+Students are busy.
+They've got a lot of classes, extra-curriculars, lives, etc.
+It can be tempting to only do the bare minimum required to get by in a class.
+This leads to students focusing on the material that will be graded, since it's
+the material that will have the "greatest impact" on them.
+Sadly, typically the material that matters the most can't be graded or tested.
+
+While you won't be tested on any of this math, I highly suggest taking the time
+to read this section.
+It provides a bit of context for the
+[RSA Key Generation](crypto/rsa_keygen.html) and _why_
+[RSA Encryption](crypto/rsa.html) works.
+
+This section obviously introduces a lot of new mathematical concepts with scary
+vocab words and fancy Greek letters.
+The goal of this section isn't to teach you how to generate RSA keys by hand.
+The goal is to show you how to break down this all down.
+
+Computer Science is an extremely math heavy field and it's also an incredibly
+new field.
+High school computer science curriculum is still being invented.
+The high school CS curriculum that exists, _especially_ AP CS, mostly covers
+programming.
+There's little to no content that covers the mathematical basis for the field.
+As you progress in future CS courses, you'll be presented with large formulas
+filled with unfamiliar variables.
+The goal of this section is to introduce new mathematical concepts and show how
+to connect them to things we've seeen before and how to break them down into
+something digestable and applicable.
+
+While this section won't show up on any CS-164 exam, I urge you to take your
+time to go through it.
+Being able to make yourself comfortable with unfamiliar concepts is an important
+skill.
+
 
 ---
 
 ## Modular Arithmetic
 
-I already covered an intro to modulo in the
-[Base-2 section](numbers/baseTwo.html#intrducing-modulo),
-so I'm not gonna go over everything again.
+I already covered an introduction to modulo in the
+[Base-2 section](numbers/baseTwo.html#intrducing-modulo).
+This little "mini-section" is a dip into modular arithmetic, specifically some
+of the basic points needed to understand parts of the
+[RSA Key Generation](crypto/rsa_keygen.html) and
+[RSA Encryption](crypto/rsa.html) in general.
 
-Earlier, when I first introduced modulo, we used the notation `x % m = r` to
-show how when `x = 7` and we divide it by `m = 3`, then the remainder `r = 1`.
-We use a more formal notation when using modular arithmetic.
-To translate to this more formal notation, we just shuffle variables around
-a bit and change some symbols
+In the previous section, we used modulo as an operator that provides us with the
+remainder after division.
+We used the notation `x % m = r` to show how when `x = 7` and we divide it by
+`m = 3`, we get the remainder `r = 1`.
+
+As we move onto talking about **modular arithmetic**, modulo is more than an
+operator and we need a new notation to reflect this:
 
 <center>
 <table>
@@ -39,28 +73,136 @@ a bit and change some symbols
 Going back to the example I used before, `7 % 3 = 1` would be written as
 <code>7 &equiv; 1 mod 3</code>.
 
-This notation makes modular arithmetic easier to explain.
-Think of it like a clock, 10 o'clock + 3 hours = 1 o'clock.
-In modular arithmetic, <code>10 + 3 &equiv; 1 mod 12</code>.
+Notice how the equivalence (&equiv;) is used instead of an equals sign (=).
+In modular arithmetic, we create **equivalence classes**.
+This may seem like a big scary word, but it describes a concept we already saw
+earlier when using modulo as just an operator.
 
-Obviously, there's so much more to know, but this is all that's needed right
-now.
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th>
+<td>`0 % 3 = 0`</td>
+<td>`1 % 3 = 1`</td>
+<td>`2 % 3 = 2`</td>
+</tr>
+<tr><th></th>
+<td>`3 % 3 = 0`</td>
+<td>`4 % 3 = 1`</td>
+<td>`5 % 3 = 2`</td>
+</tr>
+<tr><th></th>
+<td>`6 % 3 = 0`</td>
+<td>`7 % 3 = 1`</td>
+<td>`8 % 3 = 2`</td>
+</tr>
+<tr><th></th>
+<td><code>{ 0, 3, 6, ... } &equiv; 0 mod 3</code></td>
+<td><code>{ 1, 4, 7, ... } &equiv; 1 mod 3</code></td>
+<td><code>{ 2, 5, 8, ... } &equiv; 2 mod 3</code></td>
+</tr>
+</tbody>
+</table>
+</center>
+
+When we perform the operation `x % 3`, no matter what `x` is, we can only get
+one of three possible answers: 0, 1, or 2.
+We use the equivalent symbol to show that multiple values can produce the same
+answer.
+
+As you can see, we already know how to calculate the equivalence class of a
+value: it's just calculating it's just performing a modulo operation.
+What if we want to go the opposite direction.
+Let's say we have an equivalence class and we want to know what values it
+contains.
+How would we compute these values?
+
+If you look at the above table, you may not even need me to tell you the answer
+here.
+Notice how all the values that produce 0 are mulitples of 3.
+Look a little closer.
+Notice how all the values that produce 1 are multiples of 3 plus 1, with 2
+following the same pattern.
+We can easily translate this into a simple formula:
+
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th><td><code>x % m = r</code></td></tr>
+<tr><th></th><td><code>x &equiv; r mod m</code></td></tr>
+<tr><th></th><td><code>mi + r = x | i &isinv; &Zopf;</code></td></tr>
+</tbody>
+</table>
+</center>
+
+Don't get worried if this isn't the exact equation you were thinking of.
+I added a missing piece to the equation, `i`.
+There's not really a mathematical symbol that says "any value that's a multiple
+of `m`".
+Instead, I've introduced `i` and multiplied it by `m`.
+I've put a limit on `i` and said it must exist in (&isinv;) the set of integers,
+&Zopf;.
+In math, we've got a bunch of these letters that represent different types of
+numbers.
+Since <code>i &isinv; &Zopf; = { ..., -2, -1, 0, 1, 2, ... }</code> (the set of
+integers), when we multiply `m` by `i`, we will always produce a multiple of
+`m`.
+
+If you're still struggling with understanding equivalence classes, it's helpful
+to think of them like a clock.
+
+<center>
+<img src="crypto/clock.png" style="max-width: 40ch">
+</center>
+
+This also helps us visualize addition.
+If it's 10pm, in 3 hours it will be 1am, or in modular arithmetic,
+<code>10 + 3 &equiv; 1 mod 12</code>.
+We can also define addition and multiplication in a more formal sense:
+
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th><td><code>(a + b) mod m = ((a mod m) + (b mod m)) mod m</code></td></tr>
+<tr><th></th><td><code>(ab) mod m = ((a mod m) * (b mod m)) mod m</code></td></tr>
+</tbody>
+</table>
+</center>
+
+Test these out on your own.
+Plug in values for `a`, `b`, and `m` that you can verify by hand.
+Test out values for `a` and `b` that are larger than `m`, smaller than `m`, or
+equal to `m`.
 
 ---
 
 ## Prime Numbers
 
-Prime numbers are super important in cryptography.
-They allow for a lot of really cool properties that make encryption and
-decryption work.
-Coprime/relatively prime : share no factors
+You've most likely seen prime numbers before, just not in the context of
+cryptography, so this section is super short.
+
+A **prime number** is a number whose only factors are 1 and itself.
+Prime numbers include 1, 2, 3, 5, 7, 11, 13, etc.
+
+Two numbers are **coprime** or **relatively prime** if they share no common
+factors.
+Prime numbers are all coprime with each other.
+Numbers that are not prime can be coprime.
+Niether 8 nor 9 is prime, but they are coprime with each other.
 
 ---
 
 ## Phi
 
-&phi; (phi) is one of the many things that Euler figured out.
-My dude really needed a hobby.
+Euler, that one mathematician that figured out too many things ~~and probably
+needed a hobby~~ also figured out &phi; (phi). This is also called the totient
+function.
 
 <code>&phi;(n)</code> is the number of values in the range `[1, n]` that are
 coprime with `n`.
@@ -300,5 +442,211 @@ Pretty nifty huh.
 Even though we're using Greek letters we've never seen before and properties
 we've never seen before in math we've never seen before, we can still work
 through problems to prove and verify things in ways we understand.
+
+---
+
+## Modular Inverses
+
+It appears as though we just covered two very different concepts.
+We learned about modular arithmetic and equivalence classes, then we learned
+about prime numbers and this new &phi; function.
+Let's tie these concepts together.
+
+A **modular inverse** is also called a **multiplicative inverse**.
+In the domain of <code>&Zopf;~m~</code> (the set of integers `[0, m)`), `a` and
+`b` are inverses if <code>ab &equiv; 1 mod m</code>.
+We can also write the inverse of `a` as <code>a^-1^</code>.
+
+It is important to note that it is not guaranteed for `a` to have an inverse in
+<code>&Zopf;~m~</code>.
+Only if `a` and `m` are coprime, `a` has an inverse in <code>&Zopf;~m~</code>.
+This means if `m` is prime, then <code>a^-1^</code> exists for all
+<code>a > 0</code>.
+If `m` is not prime, only <code>&phi;(n)</code> elements have inverses in
+<code>&Zopf;~m~</code>.
+
+Before we move further, let's verify this by plugging in some values:
+
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th>
+<td colspan='2'>**When `m` is prime**</td>
+</tr>
+<tr><th></th>
+<td colspan='2'><code>m = 5, &Zopf;~5~ = { 0, 1, 2, 3, 4 }</code></td>
+</tr>
+<tr><th></th>
+<td><code>1 * 1 = 1 &equiv; 1 mod 5</code></td>
+<td class="left">When `a = 1`, <code>a^-1^ = 1</code></td>
+</tr>
+<tr><th></th>
+<td><code>2 * 3 = 6 &equiv; 1 mod 5</code></td>
+<td class="left">When `a = 2`, <code>a^-1^ = 3</code><br>When `a = 3`,
+<code>a^-1^ = 2</code></td>
+</tr>
+<tr><th></th>
+<td><code>4 * 4 = 16 &equiv; 1 mod 5</code></td>
+<td class="left">When `a = 4`, <code>a^-1^ = 4</code></td>
+</tr>
+<tr><th></th>
+<td colspan='2'>**When `m` is not prime**</td>
+</tr>
+<tr><th></th>
+<td colspan='2'><code>m = 4, &Zopf;~4~ = { 0, 1, 2, 3 }</code></td>
+</tr>
+<tr><th></th>
+<td><code>1 * 1 = 1 &equiv; 1 mod 4</code></td>
+<td class="left">When `a = 1`, <code>a^-1^ = 1</code></td>
+</tr>
+<tr><th></th>
+<td><code>2 * 1 = 2 &equiv; 2 mod 4</code>
+<br><code>2 * 2 = 4 &equiv; 0 mod 4</code>
+<br><code>2 * 3 = 6 &equiv; 2 mod 4</code>
+</td>
+<td class="left">When `a = 2`, <code>a^-1^</code> does not exist</td>
+</tr>
+<tr><th></th>
+<td><code>3 * 3 = 9 &equiv; 1 mod 4</code></td>
+<td class="left">When `a = 3`, <code>a^-1^ = 3</code></td>
+</tr>
+</tbody>
+</table>
+</center>
+
+As we can see, 5 is prime and all non-zero elements have inverses in
+<code>&Zopf;~5~</code>.
+Meanwhile, 4 is not prime, so only the number of elements that are coprime with
+4 have inverses in <code>&Zopf;~4~</code>.
+
+In order to calculate a modular inverse, you _could_ do what I did and test
+every single value in the domain, however, this gets pretty time consuming when
+we get to larger numbers.
+If only Euler wasn't such a slacker and thought of a theorem to calculate
+modular inverses.
+Oh, wait, he did!
+
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th>Euler's Theorem</th></tr></thead>
+<tbody>
+<tr><th></th><td>If `a` and `m` are coprime then <code>a^&phi;(m)^ = 1 mod m</code></td></tr>
+</tbody>
+</table>
+</center>
+
+Well thanks for the theorem buddy, but that doesn't help very much.
+For an inverse, I need to multiply two numbers together to get 1, you only gave
+me one.
+Since Euler couldn't even give us two numbers, we should make sure this theorem
+actually works.
+
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th><td>**When `m` is prime**</td></tr>
+<tr><th></th>
+<td><code>m = 5, &phi;(5) = 4<br>&Zopf;~5~ = { 0, 1, 2, 3, 4 }</code></td></tr>
+</tr>
+<tr><th></th>
+<td><code>1^4^ = 1 &equiv; 1 mod 5</code></td>
+</tr>
+<tr><th></th>
+<td><code>2^4^ = 16 &equiv; 1 mod 5</code></td>
+</tr>
+<tr><th></th>
+<td><code>3^4^ = 81 &equiv; 1 mod 5</code></td>
+</tr>
+<tr><th></th>
+<td><code>4^4^ = 256 &equiv; 1 mod 5</code></td>
+</tr>
+<tr><th></th><td>**When `m` is not prime**</td></tr>
+<tr><th></th>
+<td><code>m = 4, &phi;(4) = 2<br>&Zopf;~4~ = { 0, 1, 2, 3 }</code></td></tr>
+</tr>
+<tr><th></th>
+<td><code>1^2^ = 1 &equiv; 1 mod 4</code></td>
+</tr>
+<tr><th></th>
+<td><code>3^2^ = 9 &equiv; 1 mod 4</code></td>
+</tr>
+</tbody>
+</table>
+</center>
+
+Turns out Euler wasn't joking.
+His theorem is correct, but how can we use it to calculate inverses?
+
+Looking at our cases when `m = 4`, we see that <code>1^2^ &equiv; 1 mod 4</code>
+and <code>3^2^ &equiv; 1 mod 4</code>.
+This looks very similar to when I had calculated the inverses.
+We saw that <code>1 * 1 &equiv; 1 mod 4</code> and <code>3 * 3 &equiv; 1 mod 4</code>.
+It looks like Euler gave us two numbers after all, he just hid them in the exponents.
+
+Does this work for our cases when `m = 5` too?
+It's not as obvious and we need to apply our multiplication rules from above.
+
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th>
+<td><code>m = 5, &phi;(5) = 4<br>&Zopf;~5~ = { 0, 1, 2, 3, 4 }</code></td></tr>
+</tr>
+<tr><th></th>
+<td><code>a = 1, a^-1^ = 1<br>1 * 1^3^ = 1 * 1 &equiv; 1 mod 5</code></td>
+</tr>
+<tr><th></th>
+<td><code>a = 2, a^-1^ = 3<br>2 * 2^3^ &equiv; 1 mod 5
+<br>2 * 8  &equiv; 1 mod 5
+<br>8 &equiv; 3 mod 5
+<br>2 * 3 = 6 &equiv; 1 mod 5</code></td>
+</tr>
+<tr><th></th>
+<td><code>a = 3, a^-1^ = 2<br>3 * 3^3^ &equiv; 1 mod 5
+<br>3 * 27  &equiv; 1 mod 5
+<br>27 &equiv; 2 mod 5
+<br>3 * 2 = 6 &equiv; 1 mod 5</code></td>
+</tr>
+<tr><th></th>
+<td><code>a = 4, a^-1^ = 4<br>4 * 4^3^ &equiv; 1 mod 5
+<br>4 * 64  &equiv; 1 mod 5
+<br>64 &equiv; 4 mod 5
+<br>4 * 4 = 16 &equiv; 1 mod 5</code></td>
+</tr>
+</tbody>
+</table>
+</center>
+
+As simple as that, by testing a few small numbers, not only were we able to
+understand Euler's theorem, but we can also put together our own formula to
+calculate modular inverses.
+
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th><td>If `a` and `m` are coprime then<br><code>a^-1^ = a^&phi;(m)-1^ mod m</code></td></tr>
+</tbody>
+</table>
+</center>
+
+---
+
+If you've made it this far, I hope you've found this as cool as I do.
+If you understand this math, first, give yourself a pat on the back, especially
+if it's your first time seeing this content.
+Just because content is new doesn't mean it has to be difficult or scary.
+If you're feeling super confident, try using your newfound knowledge to break
+encryption and calculate your friends keys in lab.
+
+
 
 

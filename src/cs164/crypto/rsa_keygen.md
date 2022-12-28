@@ -14,7 +14,7 @@ Some links you may find helpful in this section
 The [RSA Key Generation Worksheet](https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html)
 does most of this for you.
 The math relies on a lot of properties of prime numbers in modular arithmetic.
-The previous section (that I haven't written yet) covers it more.
+The [previous section](crypto/math.html) covers it quite a bit more.
 You can also read through my notes from when I took
 [CS-303: Algorithmic Number Theory & Cryptography](../ref/cs303.pdf)
 CS-303 was a lot of work, but I really enjoyed the class.
@@ -22,23 +22,35 @@ When you actually got the chance to sit down and play with the material, the way
 the numbers just worked was really cool.
 
 
-#### 1. Select `p` and `q`
+### 1. Select `p` and `q`
 
 `p` and `q` must be two random prime numbers.
 The larger the number, the more secure.
 Think about how long it would take to check the primeness of a number.
 
-#### 2. Compute `n`
+### 2. Compute `n`
 
-`n = pq`
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody><tr><th></th><td>`n = pq`</td></tr></tbody>
+</table>
+</center>
 
 Since `p` and `q` are both prime, `n` only has four factors: `{1, p, q, n}`.
 Even though `n` will be made public, it's still very difficult to calculate the
 prime factorization of `n`.
 
-#### 3. Compute <code>&phi;(n)</code>
+### 3. Compute <code>&phi;(n)</code>
 
-<code>&phi;(n) = (p - 1)(q - 1)</code>
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody><tr><th></th><td><code>&phi;(n) = (p - 1)(q - 1)</code></td></tr></tbody>
+</table>
+</center>
 
 It may be tempting to just accept this new seemingly random formula without
 question.
@@ -92,7 +104,7 @@ get:
 </table>
 </center>
 
-#### Choose `e` and `d`
+### 4. Choose `e` and `d`
 
 `e` will be our public key and `d` will be our private key.
 
@@ -109,36 +121,8 @@ To do this, we use the following formula:
 </table>
 </center>
 
-Whoa!
-That's a lot of strange new notation!
-This form of equation is used primarily in modular arithmetic.
-Even though it's a new notation, it's actually a concept we've seen before.
-If you look back at the
-[Base-2 section](numbers/baseTwo.html#introducing-modulo)
-where I first introduced modulo, we used the notation `x % m = r`.
-To translate this to the notation we see above, we just shuffle variables around
-a bit and change some symbols
-
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th><td><code>x % m = r</code></td></tr>
-<tr><th></th><td><code>x &equiv; r mod m</code></td></tr>
-</tbody>
-</table>
-</center>
-
-We've already seen things like `7 % 2 = 1`.
-This would translate to <code>7 &equiv; 1 mod 2</code>.
-Going the other way around, <code>ed &equiv; 1 mod &phi;(n)</code> would
-translate to <code>ed % &phi;(n) = 1</code>.
-
-I'm not going to cover the actual generation of `d` based on this formula.
-I don't think it's worth explaining all of modular arithmetic and inverses to
-understand this one part.
-
+The [previous section](crypto/math.html) goes much more in depth into this new
+notation for modulo and how to calculate a modular inverse.
 The [RSA Key Generation Worksheet](https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html)
 you use in lab generates possible `K` candidates which you choose to be factored
 into `e` and `d`.

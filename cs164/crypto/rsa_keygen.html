@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Introduction to Computer Science</title>
-	<base href="/home/charlie/Documents/charlieroses/cs164/">
+	<base href="/cs164/">
 	<link rel="stylesheet" href="structure.css">
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="tables.css">
@@ -113,10 +113,7 @@
 		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
 		<a href="crypto/math.html"><b>10.1 :</b> RSA Math Background</a>
 		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
-		<a href="crypto/rsa_keygen.html#modular-arithmetic">&nbsp;<b>&#8227;</b>&nbsp;Modular Arithmetic</a>
-		<a href="crypto/rsa_keygen.html#prime-numbers">&nbsp;<b>&#8227;</b>&nbsp;Prime Numbers</a>
-		<a href="crypto/rsa_keygen.html#phi">&nbsp;<b>&#8227;</b>&nbsp;Phi</a>
-		<a href="crypto/rsap.html"><b>10.3 :</b> RSA Encryption</a>
+		<a href="crypto/rsah.html"><b>10.3 :</b> RSA Encryption</a>
 	</div>
 </div>
 <div id="main">
@@ -127,7 +124,7 @@
 			<a href="crypto/math.html">Previous Section</a> : RSA Math Background : 10.1
 		</div>
 		<div class="next">
-			10.3 : RSA Encryption : <a href="crypto/rsap.html">Next Section</a>
+			10.3 : RSA Encryption : <a href="crypto/rsag.html">Next Section</a>
 		</div>
 		</div>
 		<br>
@@ -150,7 +147,7 @@
 	</div>
 	<hr>
 	<div class="content">
-<p>The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a> does most of this for you. The math relies on a lot of properties of prime numbers in modular arithmetic. The <a href="crypto/math.html">previous section</a> covers it a bit more. You can also read through my notes from when I took <a href="../ref/cs303.pdf">CS-303: Algorithmic Number Theory &amp; Cryptography</a> CS-303 was a lot of work, but I really enjoyed the class. When you actually got the chance to sit down and play with the material, the way the numbers just worked was really cool.</p>
+<p>The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a> does most of this for you. The math relies on a lot of properties of prime numbers in modular arithmetic. The <a href="crypto/math.html">previous section</a> covers it quite a bit more. You can also read through my notes from when I took <a href="../ref/cs303.pdf">CS-303: Algorithmic Number Theory &amp; Cryptography</a> CS-303 was a lot of work, but I really enjoyed the class. When you actually got the chance to sit down and play with the material, the way the numbers just worked was really cool.</p>
 <h3 id="select-p-and-q">1. Select <code>p</code> and <code>q</code></h3>
 <p><code>p</code> and <code>q</code> must be two random prime numbers. The larger the number, the more secure. Think about how long it would take to check the primeness of a number.</p>
 <h3 id="compute-n">2. Compute <code>n</code></h3>
@@ -319,41 +316,7 @@ Substitution
 </tbody>
 </table>
 </center>
-<p>Whoa! That's a lot of strange new notation! This form of equation is used primarily in modular arithmetic. Even though it's a new notation, it's actually a concept we've seen before. If you look back at the <a href="numbers/baseTwo.html#introducing-modulo">Base-2 section</a> where I first introduced modulo, we used the notation <code>x % m = r</code>. To translate this to the notation we see above, we just shuffle variables around a bit and change some symbols</p>
-<center>
-<table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>
-</th>
-<td>
-<code>x % m = r</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>x ≡ r mod m</code>
-</td>
-</tr>
-</tbody>
-</table>
-</center>
-<p>We've already seen things like <code>7 % 2 = 1</code>. This would translate to <code>7 ≡ 1 mod 2</code>. Going the other way around, <code>ed ≡ 1 mod φ(n)</code> would translate to <code>ed % φ(n) = 1</code>.</p>
-<p>I'm not going to cover the actual generation of <code>d</code> based on this formula. I don't think it's worth explaining all of modular arithmetic and inverses to understand this one part.</p>
-<p>The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a> you use in lab generates possible <code>K</code> candidates which you choose to be factored into <code>e</code> and <code>d</code>. <code>K = (p - 1)(q - 1)i + 1</code> where <code>i</code> is a random number. This is a possible approach because the numbers we are using on the worksheet are very small. In practice, it's much harder to generate the factors of a large number.</p>
+<p>The <a href="crypto/math.html">previous section</a> goes much more in depth into this new notation for modulo and how to calculate a modular inverse. The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a> you use in lab generates possible <code>K</code> candidates which you choose to be factored into <code>e</code> and <code>d</code>. <code>K = (p - 1)(q - 1)i + 1</code> where <code>i</code> is a random number. This is a possible approach because the numbers we are using on the worksheet are very small. In practice, it's much harder to generate the factors of a large number.</p>
 <p>At first glance, the math for key generation appears to be very complicated and overwhelming, but if we look at it closely, even the unfamiliar math is much easier than it looks.</p>
 	</div>
 	<hr>
@@ -370,7 +333,7 @@ Substitution
 			<a href="crypto/math.html">Previous Section</a> : RSA Math Background : 10.1
 		</div>
 		<div class="next">
-			10.3 : RSA Encryption : <a href="crypto/rsap.html">Next Section</a>
+			10.3 : RSA Encryption : <a href="crypto/rsag.html">Next Section</a>
 		</div>
 		</div>
 		<br>
