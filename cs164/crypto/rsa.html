@@ -113,12 +113,12 @@
 		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
 		<a href="crypto/math.html"><b>10.1 :</b> RSA Math Background</a>
 		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
-		<a href="crypto/rsag.html"><b>10.3 :</b> RSA Encryption</a>
-		<a href="crypto/rsag.html#how-it-works">&nbsp;<b>&#8227;</b>&nbsp;How it Works</a>
-		<a href="crypto/rsag.html#scenario">&nbsp;<b>&#8227;</b>&nbsp;Scenario</a>
-		<a href="crypto/rsag.html#signatures">&nbsp;<b>&#8227;</b>&nbsp;Signatures</a>
-		<a href="crypto/rsag.html#certificates">&nbsp;<b>&#8227;</b>&nbsp;Certificates</a>
-		<a href="crypto/rsag.html#practice">&nbsp;<b>&#8227;</b>&nbsp;Practice</a>
+		<a href="crypto/rsar.html"><b>10.3 :</b> RSA Encryption</a>
+		<a href="crypto/rsar.html#how-it-works">&nbsp;<b>&#8227;</b>&nbsp;How it Works</a>
+		<a href="crypto/rsar.html#scenario">&nbsp;<b>&#8227;</b>&nbsp;Scenario</a>
+		<a href="crypto/rsar.html#signatures">&nbsp;<b>&#8227;</b>&nbsp;Signatures</a>
+		<a href="crypto/rsar.html#certificates">&nbsp;<b>&#8227;</b>&nbsp;Certificates</a>
+		<a href="crypto/rsar.html#practice">&nbsp;<b>&#8227;</b>&nbsp;Practice</a>
 	</div>
 </div>
 <div id="main">
@@ -435,24 +435,24 @@ Simplify
 </center>
 <p>For the remainder of this scenario, I'm intentionally leaving out <code>n</code> for simplicity's sake.</p>
 <center>
-<img src="crypto/rainbow/rsa_setup.png">
+<img src="crypto/green/rsa_setup.png">
 </center>
 <p>Above, I use the &quot;speech bubble&quot; to show that we've announced our public keys (<code>e<sub>C</sub></code> and <code>e<sub>B</sub></code>) to the world. If someone would like to know our public keys, they just have to stand close enough to hear it. I don't have to see them for them to know my public key. They don't have to see me to know my public key.</p>
 <p>I use the &quot;thought cloud&quot; to show that our private keys (<code>d<sub>C</sub></code> and <code>d<sub>B</sub></code>) are secret. No one can hear my thoughts, thus, no one can know my private key.</p>
 <p>To clear up some confusion, I am the figure on the left with the colorful hair. Dr. Stuart is the figure on the right. You can tell since he is wearing glasses (I have 20/20 vision) and clearly does not have a hair care regimen.</p>
 <p>Dr. Stuart has recently met with a student (S) about their assignment. He decides that the student should get a 90% on their assignment and would like to send me a message to update the gradebook. Knowing that our messages are public, how should he send this message so that only I can read it?</p>
 <center>
-<img src="crypto/rainbow/rsa_msg.png">
+<img src="crypto/green/rsa_msg.png">
 </center>
 <p>We know we have to encrypt the message in some way. To use our encryption function, we need a message <code>m</code> and a key <code>k</code>. We already know what <code>m</code> is. What key should Dr. Stuart use to encrypt his message with? Before we think about what key he <em>should</em> use, let's look at what keys he <em>can</em> use.</p>
 <center>
-<img src="crypto/rainbow/rsa_blsknow.png">
+<img src="crypto/green/rsa_blsknow.png">
 </center>
 <p>Dr. Stuart knows his public and private keys <code>(e<sub>B</sub>, d<sub>B</sub>)</code>, his message (that he hasn't sent yet) <code>m</code>, and my public key <code>e<sub>C</sub></code>. Dr. Stuart doesn't know what I'm thinking (and I'm sure he doesn't want to either), so he does not know my private key <code>d<sub>C</sub></code>.</p>
 <p>This means he has three keys he can encrypt his message with: <code>e<sub>B</sub></code>, <code>d<sub>B</sub></code>, and <code>e<sub>C</sub></code>. Which should he use?</p>
 <p>To figure this out, he should then think about what I know.</p>
 <center>
-<img src="crypto/rainbow/rsa_charlieknow.png">
+<img src="crypto/green/rsa_charlieknow.png">
 </center>
 <p>I know my public and private keys <code>(e<sub>C</sub>, d<sub>C</sub>)</code> and his public key <code>e<sub>B</sub></code>. Again, I don't know what Dr. Stuart is thinking (nor do I want to) so I don't know what message <code>m</code> he is trying to send and I don't know his private key <code>d<sub>B</sub></code>.</p>
 <p>This means I have three keys I can decrypt with: <code>e<sub>C</sub></code>, <code>d<sub>C</sub></code>, and <code>e<sub>B</sub></code>. Again, we have three keys. How does this narrow down our options?</p>
@@ -520,7 +520,7 @@ Simplify
 <p>This leaves him with two options. He can encrypt his message with his private key, meaning I would decrypt with his public key. Or, he can encrypt with my public key, meaning I would decrypt with my private key. Both of these options will work, but which <em>should</em> he use if he wants to send me a message that only I can read?</p>
 <p>He should use <span class="hide">my public</span> key to encrypt the message.</p>
 <center>
-<img src="crypto/rainbow/rsa_msgsent.png">
+<img src="crypto/green/rsa_msgsent.png">
 </center>
 <p>Dr. Stuart sends <code>E(m, e<sub>C</sub>)</code>. Anyone can read this encrypted message, but that doesn't matter. Since only I know my private key, only I can compute <code>D(E(m, e<sub>C</sub>), d<sub>C</sub>)</code> to decrypt the message.</p>
 <p>If he had used his private key <code>d<sub>B</sub></code> to encrypt the message, I could have decrypted it with his public key <code>e<sub>B</sub></code>. Unlike my private key, <em>everyone</em> knows Dr. Stuart's public key meaning that <em>everyone</em> can decrypt his message. This is not the best option for him to send me a secret message.</p>
@@ -532,7 +532,7 @@ Simplify
 <p>After their meeting with Dr. Stuart, student S was very angry. Despite not following the instructions on the lab, they felt they deserved a 100 on their assignment, not a 90. Dr. Stuart was so unreasonable, he might as well have failed them for the class! Does Dr. Stuart not realize that those 10 points on their lab would drop their final grade by 0.38%?!?! This is absurd!</p>
 <p>The student, outraged by facing the consequences of not reading the instructions, decides to take matters into their own hands. They know Dr. Stuart is planning on sending me a message about their grade. They also know that in order for this message to stay private, Dr. Stuart needs to use my public key to encrypt the message. This student generates their own RSA keys and sends me a message pretending to be Dr. Stuart. They write their own message, <code>m<sub>S</sub> = &quot;Give S a 100&quot;</code>, encrypt it, and send it to me.</p>
 <center>
-<img src="crypto/rainbow/rsasig_setup.png">
+<img src="crypto/green/rsasig_setup.png">
 </center>
 <p>I check my mailbox and I see I've got two encrypted messages, <code>E<sub>1</sub></code> and <code>E<sub>2</sub></code>. I decrypt both of them with my private key.</p>
 <center>
@@ -659,7 +659,7 @@ H(Joe) = J
 <p>However, this is a very bad hash function. If I have a student in the class named &quot;Alex&quot;, then we have a collision. Both <code>H(Alice) = A</code> and <code>H(Alex) = A</code>. Even though this is a bad hash function, if a student were to come up to me and say <code>H(<em>me</em>) = A</code>, I would have no way of knowing if their name was Alex or Alice.</p>
 <p>Let's go back to our scenario. Dr. Stuart and I mutually decide upon a hash function to use to sign our messages. We can't use <code>H(m) = First letter of their first name</code> because our messages aren't about names. The hash function must have some connection to the message. Instead, we decide to use <code>H(m) = length of the message</code>.</p>
 <center>
-<img src="crypto/rainbow/rsasig_hashsetup.png">
+<img src="crypto/green/rsasig_hashsetup.png">
 </center>
 <p>Dr. Stuart is going to compute the hash of his message. He then needs to send me this message in such a way that tells me which grade he wants to give the student. How should he send me this message? Let's again look at who knows what, now with our angry student included.</p>
 <center>
@@ -761,7 +761,7 @@ Charlie can <br> decrypt with
 <p>Dr. Stuart <em>could</em> use my public key for me to decrypt with my private key again, but the student also can use my public key. I wouldn't be able to tell them apart.</p>
 <p>For the signature, Dr. Stuart will encrypt the hashed message with his private key. I will then decrypt it with his public key.</p>
 <center>
-<img src="crypto/rainbow/rsasig_hashsent.png">
+<img src="crypto/green/rsasig_hashsent.png">
 </center>
 <p>Now you may think, &quot;Wait, then the student will also be able to read the hashed message. That's illegal!&quot; To which I say, you're right! However, you need to remember that Dr. Stuart is encrypting the hashed message with his private key, not the actual message. This means all the student will see is <code>11</code> since <code>H(Give S a 90) = 11</code>. This is not enough information for the student (or anyone) to know what grade the student received or which student is being talked about. Dr. Stuart's message could have been about giving Joe a 80 on his assignment since <code>H(Give J a 80) = 11</code>.</p>
 <p>Even though anyone can read the hash, how can I be sure Dr. Stuart sent it? Let's look at the four messages again. Who could have sent them? Who could have read them?</p>
@@ -858,7 +858,7 @@ Charlie <br> Dr. Stuart <br> Student
 </center>
 <p>Now I can read through the four messages I have received: &quot;Give S a 90&quot;, &quot;Give S a 100&quot;, &quot;11&quot;, and &quot;12&quot;. I calculate the hash of each message: 11, 12, 2, and 2. Since I didn't receive a &quot;2&quot; message, I know that &quot;11&quot; and &quot;12&quot; must be the signatures that Dr. Stuart and the student sent. Only Dr. Stuart could have sent me the message &quot;11&quot; (since only he knows his private key). Only the student could have sent me the message &quot;12&quot; (since only they know their private key). Even though anyone could have sent me the message &quot;Give S a 90&quot;, I know it has to be from Dr. Stuart. Only Dr. Stuart knows the message he wanted to send, which means only Dr. Stuart could calculate its hash and send it to me with his private key.</p>
 <center>
-<img src="crypto/rainbow/rsasig_calc.png">
+<img src="crypto/green/rsasig_calc.png">
 </center>
 <p>(I had to abandon my though cloud, the text wouldn't fit, but you get the gist) There's still a lot of text there, a lot of math, and a lot of parentheses. Let's go through it slowly and hopefully it'll be easier to digest.</p>
 <center>
@@ -989,16 +989,16 @@ I verify that the first message from &quot;anyone&quot;<br>came from Dr. Stuart
 <p>To handle this, we introduce a <strong>Certifying Authority</strong> or a <strong>CA</strong>. This is an authority that we both trust to authenticate each others public keys. We'll say our Certifying Authority is Associate Department Head of Undergraduate Affairs for the Computer Science Department, Professor Adelaida Medlock. I chose Professor Medlock for two reasons. 1i) Her job specifically specifically deals with all things &quot;undergraduate&quot; and &quot;computer science&quot;. Since Dr. Stuart is teaching CS-164, an undergraduate CS class and I <del>am</del> was an undergraduate student and teaching assistant, we can trust her authority in certifying our public keys. We can also trust her in authenticating our students' public keys. (Also if you're a freshman taking CS-164, it's always smart to know who your leadership is). 2) The Computer Science Department Head, Professor Jeremy Johnson, has the same haircut as Dr. Stuart and that would be too confusing in my artistic renderings. Also, now, CA can stand for both &quot;Certifying Authority&quot; and &quot;Certifying Adelaida&quot;, but not &quot;Certifying Jeremy&quot;.</p>
 <p>Now that we have a mutually trusted CA, we can get to work. Let's give her a public and private key set <code>(e<sub>A</sub>, d<sub>A</sub>)</code>.</p>
 <center>
-<img src="crypto/rainbow/certificate_setup.png">
+<img src="crypto/green/certificate_setup.png">
 </center>
 <p>I have received two messages from Dr. Stuart. I have his original message about the grade that he encrypted with my public key: <code>E(m<sub>B</sub>, e<sub>C</sub>)</code>. This message is easy to handle, there are no extra steps here. It is decrypted with my private key (<code>d<sub>C</sub></code>). I also have the message that is his signature to verify his original message: <code>E(H(m<sub>B</sub>), d<sub>B</sub>)</code>. This message will be decrypted with Dr. Stuart's public key just as normal. However, I've forgotten what Dr. Stuart's public key is.</p>
 <p>In order to figure out Dr. Stuart's public key, I'm going to contact the CA. I will send her a message asking for his public key. I'll encrypt my message with her public key <code>e<sub>A</sub></code> (this way only she can decrypt with her private key <code>d<sub>A</sub></code>).</p>
 <center>
-<img src="crypto/rainbow/certificate_request.png">
+<img src="crypto/green/certificate_request.png">
 </center>
 <p>The CA is going to respond with two messages. First, she's going to send me a message with Dr. Stuart's public key. This will be encrypted with my public key. Second, she'll send me her signature, verifying the original message.</p>
 <center>
-<img src="crypto/rainbow/certificate_response.png">
+<img src="crypto/green/certificate_response.png">
 </center>
 <p>Now I can successfully decrypt the CA's messages, remember Dr. Stuart's public key, and decrypt his signature.</p>
 <p>While we have already completed the decryption process, let's take a closer look at what the CA has sent me. The CA sent me <code>E(e<sub>B</sub>, e<sub>C</sub>)</code> and <code>E(H(e<sub>B</sub>), d<sub>A</sub>)</code>. You'll notice that the message is Dr. Stuart's public key. Typically we use keys to encrypt messages. We don't normally use keys to encrypt keys. How does this work?</p>
