@@ -7,7 +7,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 469	Yanmega	G	3			7	Midori Harada			1/2/2020
 273	Seedot	G	1	Reverse		9	sui			4/12/2019
 274	Nuzleaf	G	2			10	Ayaka Yoshida			9/17/2019
-275	Shiftry	GD	3	Art	Dual Type / Shiny	11	Kagemaru Himeno			6/15/2019
+275	Shiftry	GD	3	Holo	Dual Type / Shiny	11	Kagemaru Himeno			6/15/2019
 590	Foongus	G	1			12	Yuka Morii			12/28/2019
 591	Amoonguss	G	3			13	Ken Sugimori			6/29/2019
 636	Larvesta	G	1			14	Tomokazu Komiya			9/17/2019
@@ -16,7 +16,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 78	Rapidash	F	2			17	Yukiko Baba			
 390	Chimchar	F	1	Reverse		18	Shibuzoh			7/14/2019
 391	Monferno	F	2			19	Mizue			12/28/2019
-392	Infernape	F	3	Art		20	Naoki Saito			2/16/2020
+392	Infernape	F	3	Holo		20	Naoki Saito			2/16/2020
 667	Litleo	F	1	Reverse		22	Kyoko Umemoto			9/7/2019
 226	Mantine	W	1			27	DemizuPosuka			12/28/2019
 501	Oshawott	W	1			30	sui			
@@ -36,8 +36,8 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 426	Drifblim	P	2			47	Miki Tanaka			
 607	Litwick	P	1			48	Ken Sugimori			7/14/2019
 608	Lampent	P	2			49	miki kudo			7/26/2019
-609	Chandelure	P	3	Art		50	Tomokazu Komiya			
-720	Hoopa	P	3	Art		51	Yoshinobu Saito			8/6/2019
+609	Chandelure	P	3	Holo		50	Tomokazu Komiya			
+720	Hoopa	P	3	Holo		51	Yoshinobu Saito			8/6/2019
 56	Mankey	Fg	1	Reverse		52	Hitoshi Ariga			9/17/2019
 57	Primeape	Fg	3			53	Masakazu Fukuda			7/26/2019
 299	Nosepass	Fg	1			54	You Iribi			
@@ -50,7 +50,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 461	Weavile	D	3			61	kawayoo			9/7/2019
 442	Spiritomb	D	3			62	Ken Sugimori			8/6/2019
 624	Pawniard	D	1			63	Sumiyoshi Kizuki			
-625	Bisharp	DSl	3	Art	Dual Type / Shiny	64	Shin Nagasawa			5/12/2019
+625	Bisharp	DSl	3	Holo	Dual Type / Shiny	64	Shin Nagasawa			5/12/2019
 208	Steelix EX	Sl	5	Full	Full Art	67	Eske Yoshinob			
 410	Shieldon	Sl	2			69	Mizue			9/7/2019
 599	Klink	Sl	1			71	Miki Tanaka			
@@ -58,12 +58,12 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 183	Marill	Fa	1	Reverse		76	Shibuzoh			9/7/2019
 184	Azumarill	FaW	2		Dual Type / Shiny	77	Sanosuke Sakuma			
 707	Klefki	Fa	2			80	Saya Tsuruta			6/29/2019
-716	Xerneas	Fa	3	Art		81	Megumi Mizutani			12/28/2019
+716	Xerneas	Fa	3	Holo		81	Megumi Mizutani			12/28/2019
 716	Xerneas BREAK	Fa	5	Full	Full Art / Break	82	5ban Graphics			6/29/2019
 621	Druddigon	Dr	3	Reverse		83	kawayoo			7/14/2019
 633	Deino	Dr	1			84	Suwama Chiaki			6/29/2019
 634	Zweilous	Dr	2			85	Ken Sugimori			
-635	Hydreigon	Dr	3	Art		86	Hideki Ishikawa			7/14/2019
+635	Hydreigon	Dr	3	Holo		86	Hideki Ishikawa			7/14/2019
 52	Meowth	N	1			88	Masakazu Fukuda			
 53	Persian	N	2			89	Anesaki Dynamic			
 190	Aipom	N	1			90	Naoki Saito			4/12/2019

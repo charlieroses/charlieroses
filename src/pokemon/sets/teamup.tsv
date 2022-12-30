@@ -19,12 +19,13 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 55	Golduck	W	2			27	Masakazu Fukuda			5/12/2019
 120	Staryu	W	1			28	Ken Sugimori			6/15/2019
 129	Magikarp	W	1	Reverse		29	sui			7/20/2019
-144	Articuno	W	3	Art		32	Yusuke Ohmura			8/27/2019
+144	Articuno	W	3	Holo		32	Yusuke Ohmura			8/27/2019
 74	Geodude	El	1		Alolan	34	Yukiko Baba			
 74	Geodude	El	1		Alolan	35	Yuka Morii			10/14/2019
 75	Graveler	El	2	Reverse	Alolan	36	Misa Tsutsui			4/22/2019
 76	Golem	El	3		Alolan	37	kawayoo			12/20/2019
 100	Voltorb	El	1			38	Ken Sugimori			7/5/2019
+145	Zapdos	El	3			40	kawayoo			
 179	Mareep	El	1			41	Akira Komayama			5/12/2019
 180	Flaaffy	El	2	Reverse		42	Shibuzoh.			
 522	Blitzle	El	1	Reverse		44	Akira Komayama			8/27/2019
@@ -63,7 +64,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 630	Mandibuzz	D	3			93	Ayaka Yoshida			8/27/2019
 675	Pangoro	D	3			94	Satoshi Shirai			7/5/2019
 227	Skarmory	Sl	3			98	kirisAki			8/27/2019
-385	Jirachi	Sl	3	Art		99	HYOGONOSUKE			7/5/2019
+385	Jirachi	Sl	3	Holo		99	HYOGONOSUKE			7/5/2019
 597	Ferroseed	Sl	1	Reverse		102	Shigenori Negishi			8/27/2019
 624	Pawniard	Sl	1			104	Masakazu Fukuda			
 625	Bisharp	Sl	3			105	Anesaki Dynamic			7/20/2019
@@ -87,12 +88,14 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 83	Farfetch'd	N	2			127	Shibuzoh.			7/20/2019
 115	Kangaskhan	N	2	Reverse		128	Mizue			4/22/2019
 128	Tauros	N	2			129	kodama			8/27/2019
-249	Lugia	N	3	Reverse / Art		131	Anesaki Dynamic			7/5/2019
+249	Lugia	N	3	Reverse		131	Anesaki Dynamic			7/5/2019
+249	Lugia	N	3	Holo		131	Anesaki Dynamic			7/5/2019
 335	Zangoose	N	3	Reverse		132	Misa Tsutsui			12/20/2019
 T	Brock's Grit	Su	2			135	Naoki Saito			10/14/2019
 T	Buff Padding	I	2			136	Yoshinobu Saito			12/20/2019
 T	Dangerous Drill	I	2			138	Toyste Beach			4/22/2019
 T	Electrocharger	I	2			139	Eske Yoshinob			10/14/2019
+T	Erika's Hospitality	Su	3			140	Sanosuke Sakuma			
 T	Evelyn	Su	2			141	Megumi Mizutani			7/5/2019
 T	Fairy Charm UB	I	2	Reverse		142	Toyste Beach			8/27/2019
 T	Grass Memory	I	2			143	5ban Graphics			8/27/2019

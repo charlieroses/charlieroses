@@ -2,10 +2,11 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 1	Bulbasaur	G	1			001	sowsow			7/28/2022
 2	Ivysaur	G	2			002	zig			8/19/2022
 3	Venusaur	G	3	Holo		003	KEIICHIRO ITO			8/19/2022
+3	Venusaur	G	3	Reverse		003	KEIICHIRO ITO			12/29/2022
 3	Radiant Venusaur	G	5	Reverse		004	Misa Tsutsui			7/28/2022
 167	Spinarak	G	1			006	Yuka Morii			8/19/2022
 168	Ariados	G	2			007	Misa Tsutsui			7/28/2022
-4	Charmander	F	1			008	saino misaki			7/28/2022
+4	Charmander	F	1	Reverse		008	saino misaki			12/29/2022
 5	Charmeleon	F	2			009	Shiburingaru			7/28/2022
 146	Moltres	F	3	Holo		012	Pani Kobayashi			8/19/2022
 146	Moltres	F	3	Reverse		012	Pani Kobayashi			8/19/2022
@@ -15,23 +16,29 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 7	Squirtle	W	1			015	sowsow			7/28/2022
 8	Wartortle	W	2			016	kurumitsu			8/19/2022
 9	Blastoise	W	3	Holo		017	NC Empire			8/19/2022
+9	Radiant Blastoise	W	5	Reverse		018	Masokazu Fukuda			12/29/2022
 79	Slowpoke	W	1			018	N-DESIGN Inc.			8/19/2022
 80	Slowbro	W	2			020	Misa Nakai			7/28/2022
 129	Magikarp	W	1			021	N-DESIGN Inc.			7/28/2022
+130	Gyarados	W	3	Holo		022	Mitsuhiro Arita			12/29/2022
+131	Lapras	W	3	Reverse		023	N-DESIGN Inc.			12/29/2022
 144	Articuno	W	3	Holo		024	Jira Sasumo			7/28/2022
 767	Wimpod	W	1			025	Miki Tanaka			8/19/2022
 25	Pikachu	El	1			027	N-DESIGN Inc.			7/28/2022
 25	Pikachu	El	3	Holo		028	Narumi Sato			8/19/2022
+177	Natu	P	1	Reverse		032	HYOGONOSUKE			12/29/2022
 178	Xatu	P	2	Reverse		033	Hataya			8/19/2022
 337	Lunatone	P	2			034	miki kudo			7/28/2022
+700	Sylveon	P	3	Holo		035	Atsuki Furusawa			12/29/2022
 95	Onix	Fg	1			036	Mitsuhiro Arita			8/19/2022
 246	Larvitar	Fg	1			037	sui			8/19/2022
-247	Pupitar	Fg	2			038	Sumiyoshi Kizuki			7/28/2022
+247	Pupitar	Fg	2	Reverse		038	Sumiyoshi Kizuki			12/29/2022
 338	Solrock	Fg	2			039	Sekio			8/19/2022
 534	Conkeldurr V	Fg	5	Full	Full Art	040	Ayaka Yoshida			7/28/2022
 19	Alolan Rattata	D	1	Reverse		041	KIYOTAKA OSHIYAMA			8/19/2022
 20	Alolan Raticate	D	1			042	Atsuko Nishida			7/28/2022
 248	Tyranitar	D	3	Reverse		043	Nisota Niso			8/19/2022
+248	Tyranitar	D	3	Holo		043	Nisota Niso			12/29/2022
 208	Steelix	Sl	2	Reverse		044	GOSSAN			7/28/2022
 808	Meltan	Sl	1			045	Sumiyoshi Kizuki			7/28/2022
 809	Melmetal	Sl	3	Reverse		046	Shigenori Negishi			7/28/2022
@@ -39,20 +46,24 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 809	Melmetal V	Sl	5	Full	Full Art	047	sodaji			8/19/2022
 149	Dragonite V	Dr	5	Full	Full Art	049	kawayoo			8/19/2022
 149	Dragonite VStar	Dr	5	Full	Full Art	050	PLANETA Tsuji			7/28/2022
-112	Chansey	N	2			051	ryoma uratska			7/28/2022
+112	Chansey	N	2	Reverse		051	ryoma uratska			12/29/2022
+113	Blissey	N	3	Holo		052	Teeziro			12/29/2022
 132	Ditto	N	3	Art		053	Misa Tsutsui			8/19/2022
 133	Eevee	N	1			054	N-DESIGN Inc.			7/28/2022
 143	Snorlax	N	3	Reverse		055	N-DESIGN Inc.			8/19/2022
 190	Aipom	N	1	Reverse		056	Sanosuka Sakuma			7/28/2022
+424	Ambipom	N	1			057	Scav			12/29/2022
+289	Slaking V	N	5	Full	Full Art	058	Saki Hayashiro			12/29/2022
 399	Bidoof	N	1			059	Tomokazu Komiya			8/19/2022
 399	Bidoof	N	1	Reverse	Secret Ditto	059	Tomokazu Komiya			8/19/2022
 400	Bibarel	N	1			060	KIYOTAKA OSHIYAMA			7/28/2022
-519	Pidove	N	1			061	N-DESIGN Inc.			8/19/2022
+519	Pidove	N	1	Reverse		061	N-DESIGN Inc.			12/29/2022
 520	Tranquill	N	1			062	0313			7/28/2022
 521	Unfezant	N	2			063	GIDORA			8/19/2022
 T	Blanche	Su	2	Reverse		064	Anesaki Dynamic			8/19/2022
 T	Candela	Su	2			065	Ryuts Fuse			7/28/2022
 T	Egg Incubator	I	2	Reverse		066	sodaji			8/19/2022
 T	Lure Module	I	2			067	ORBITALLINK Inc.			8/19/2022
+T	PokeStop	S	2	Reverse		068	Studio Bora Inc.			12/29/2022
 T	Rare Candy	I	2			069	Ayaka Yoshida			8/19/2022
 T	Spark	Su	2			070	Naoki Saitou			8/19/2022
