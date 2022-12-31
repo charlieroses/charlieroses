@@ -1,17 +1,52 @@
+/*
+Pink:   #B41F69
+Purple: #E7B636
+
+Dark blue: #265388
+Light blue: #AEBFD6
+Yellow: #FECA04
+*/
+
+body {
+	background-color: #35507C;
+	color: #E9EFF8;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 16pt;
+	margin: 1rem auto;
+}
+
+#main {
+	overflow-x: hidden;
+	margin-left: 35ch;
+	margin-right: 5ch;
+	max-width: 100ch;
+}
+
+#nav {
+	display: block;
+	position: fixed;
+	left: 0;
+	width: 26ch;
+	overflow-y: scroll;
+	height: 100%;
+	z-index: 2;
+	top: 0;
+	padding-left: 2ch;
+	padding-right: 2ch;
+	background-color: #304977;
+	color: #FFFFFF;
+}
+
+
+
 h1, h2, h3 {
-	color: #E7B636;
+	color: #FECA04;
 }
 
 h2, h3 {
 	text-align: center;
 }
 
-body {
-	background-color: #4A433B;
-	font-family: "Comic Sans MS", cursive, sans-serif;
-	margin: 1rem auto;
-	max-width: 100ch;
-}
 
 a {
 	color: #E7B636;
@@ -20,7 +55,19 @@ a {
 
 hr {
 	border: 1px solid;
-	color: #6A635B; 
+	color: #192653;
+}
+
+#nav a.odd {
+	color: #E7B636;
+}
+
+#nav a.even {
+	color: #FFFFFF;
+}
+
+#nav .series:hover {
+	text-decoration: underline;
 }
 
 /* General Table */
@@ -31,38 +78,80 @@ table {
 
 
 td {
-	background-color: #BAB3AB;
-    border-radius: 2px;
-    padding: 5px;
+	background-color: #C3C3C3;
+	color: #000000;
+	border-radius: 2px;
+	padding: 1ch;
+	vertical-align: center;
 }
 
 td a {
-	color: #975606;
+	color: #B92808;
 }
 
 td img {
-      width: 12pt;
+	width: 12pt;
 }
 
 th {
-    background-color: #8A837B;
-    border-radius: 2px;
-    padding: 5px; 
+	background-color: #B92808;
+	color: #EEEEEE;
+	border-radius: 2px;
+	padding: 1ch;
 }
- 
-#menutable img {
-	width: 24pt;
+
+
+.menu td {
+	max-width: 25ch;
+	vertical-align: center;
 }
-#menutable .titlediv {
-	display: block;
-	padding-left: 1ch;
-	vertical-align: middle;
-}
-#menutable .content {
+.menu td a{
 	display: flex;
 	align-items: center;
 	justify-content: left;
 }
+.menu td:hover {
+	background-color: #E5E5E5;
+}
+.menu td:hover a {
+	color: #EC5615;
+}
+.menu img {
+	width: 24pt;
+}
+.menu .titlediv {
+	padding-left: 1ch;
+	vertical-align: middle;
+}
+.menu .nocards {
+	background-color: #909090;
+}
+.menu .nocards a {
+	color: #444444;
+	font-style: italic;
+}
+.menu .nocards:hover {
+	background-color: #909090;
+}
+.menu .nocards:hover a {
+	color: #444444;
+}
+.menu .nocards b {
+	font-weight: normal;
+}
+.menu .complete {
+	background-color: #B92808;
+}
+.menu .complete a {
+	color: #EEEEEE;
+}
+.menu .complete:hover {
+	background-color: #EC5615;
+}
+.menu .complete:hover a {
+	color: #FFFFFF;
+}
+
 
 #set_title_img {
 	display: block;
@@ -75,25 +164,17 @@ th {
 /* All this here is for the set tables formatting */
 
 .artist {
-	text-align: left; 
-}
-
-.complete {
-	background-color: #A76606;
-}
-
-.complete a {
-	color: #DAD3CB;
+	text-align: left;
 }
 
 .Dark {
-    background-color: #033538;
-    text-align: center; 
+	background-color: #033538;
+	text-align: center;
 }
 
 .DarkSteel {
-    background-image: linear-gradient(to right, #033538, #636E77);
-    text-align: center; 
+	background-image: linear-gradient(to right, #033538, #636E77);
+	text-align: center;
 }
 
 
@@ -102,85 +183,99 @@ th {
 }
 
 .dex {
-    text-align: right; 
+	padding: 0.25ch;
+	text-align: center;
 }
 
 .Dragon {
-    background-color: #C6A114;
-    text-align: center; 
+	background-color: #C6A114;
+	text-align: center;
 }
 
 .Electric {
-    background-color: #EEBE01;
-    text-align: center; 
+	background-color: #EEBE01;
+	text-align: center;
 }
 
 .ElectricGrass {
-    background-image: linear-gradient(to right, #EEBE01, #00963F);
-    text-align: center; 
+	background-image: linear-gradient(to right, #EEBE01, #00963F);
+	text-align: center;
 }
 
 .Fairy {
-    background-color: #D01D4F;
-    text-align: center; 
+	background-color: #D01D4F;
+	text-align: center;
 }
 
 .FairyWater {
-    background-image: linear-gradient(to right, #D01D4F, #0295D2);
-    text-align: center; 
+	background-image: linear-gradient(to right, #D01D4F, #0295D2);
+	text-align: center;
 }
 
 .Fire {
-    background-color: #E71416;
-    text-align: center; 
+	background-color: #E71416;
+	text-align: center;
 }
 
 .Fighting {
-    background-color: #B7401E;
-    text-align: center; 
+	background-color: #B7401E;
+	text-align: center;
 }
 
 .Grass {
-    background-color: #00963F;
-    text-align: center; 
+	background-color: #00963F;
+	text-align: center;
 }
 
 .GrassDark {
-    background-image: linear-gradient(to right, #00963F, #033538);
-    text-align: center; 
+	background-image: linear-gradient(to right, #00963F, #033538);
+	text-align: center;
 }
 
 
 .GrassFire {
-    background-image: linear-gradient(to right, #00963F, #E71416);
-    text-align: center; 
+	background-image: linear-gradient(to right, #00963F, #E71416);
+	text-align: center;
 }
 
 
 .holofoil {
-    text-align: left; 
+	text-align: left;
 }
 
 .Item {
-    color: #025FA9; 
+	color: #025FA9;
 }
 
 .name {
-    text-align: left; 
+	text-align: left;
 }
 
-.Normal {
-    background-color: #E2E7EE;
-    text-align: center; 
+.Normal, .DoubleColorless {
+	background-color: #E2E7EE;
+	text-align: center;
 }
 
 .Poison {
-    background-color: #7D52A1;
-    text-align: center; 
+	background-color: #7D52A1;
+	text-align: center;
 }
 
 .rarity {
-    text-align: center; 
+	padding: 0;
+	text-align: center;
+	font-size: 150%;
+}
+.rarity img {
+	height: 1.5ch;
+	width: auto;
+}
+.common {
+	position: relative;
+	top: 0.25ch;
+}
+.superrare {
+	color: #FFFFFF;
 }
 
 .set {
@@ -188,28 +283,38 @@ th {
 }
 
 .setnum {
-    text-align: center; 
+	text-align: center;
 }
 
 .Steel {
-    background-color: #636E77;
-    text-align: center; 
+	background-color: #636E77;
+	text-align: center;
 }
 
 .Stadium {
-    color: #4FAC3F;
+	color: #4FAC3F;
 }
 
 .Supporter {
-    color: #CF4226; 
+	color: #CF4226;
+}
+
+.type {
+	text-align: center;
+	vertical-align: center;
+	padding: 0.5ch; !important
+}
+.type img {
+	height: 2ch;
+	width: auto;
 }
 
 .Water {
-    background-color: #0295D2;
-    text-align: center;
+	background-color: #0295D2;
+	text-align: center;
 }
 
 .xtrainfo {
-    text-align: left; 
+	text-align: left;
 }
 

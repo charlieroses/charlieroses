@@ -1,5 +1,10 @@
 #!/bin/bash
 
+SRC="src/pokemon"
+UTILS="src/utils/pokemon"
+HTML_SRC="pokemon"
+TCG_SRC="${SRC}/cards"
+
 RED="\e[01;31m"
 YELLOW="\e[01;33m"
 GREEN="\e[01;32m"
@@ -19,186 +24,147 @@ do
 	esac
 done
 
-
-SRC="./src/pokemon"
-UTILS="./src/utils/pokemon"
-CSV_SRC="${SRC}"
-TCG_SRC="${SRC}/sets"
-INFO_SRC="${SRC}"
-HTML_SRC="./pokemon"
-
-TCGINFO_SRC="${INFO_SRC}/setsinfo.csv"
-INFO_CONTENT="$(cat ${TCGINFO_SRC})"
-
 TEMPLATE="$(cat "${UTILS}/template.html")"
+NAV="$(tail -n +2 "${SRC}/series.tsv" | awk -f "${UTILS}/nav_links.awk")"
+TEMPLATE="${TEMPLATE/"<!-- NAVIGATION -->"/"${NAV}"}"
+MENUCONTENT=""
 
-MENU_CONTENT="<h3>TCG Sets</h3>\n<table id=\"menutable\">\n<tr>\n"
-TABLE_WIDTH=3
-CURR_TD=1
+function fileid {
+	echo "$1" | tr -dc "[:alnum:]" | tr "[:upper:]" "[:lower:]"
+}
 
-while IFS=',' read -r SET_NAME SET_YEAR SET_TOTAL SET_COUNT SET_NUM SET_CATEGORY SET_COMPLETE SET_SUBSET
+while IFS= read LINE
 do
-	SET_FNAME="$(echo "${SET_NAME}" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')"
-	if [[ -n "${SET_SUBSET}" ]]
+	SRNAME="$(echo "${LINE}" | cut -d$'\t' -f1)"
+	MNTHST="$(echo "${LINE}" | cut -d$'\t' -f2)"
+	YEARST="$(echo "${LINE}" | cut -d$'\t' -f3)"
+	MNTHFN="$(echo "${LINE}" | cut -d$'\t' -f4)"
+	YEARFN="$(echo "${LINE}" | cut -d$'\t' -f5)"
+	PROMOS="$(echo "${LINE}" | cut -d$'\t' -f6)"
+
+	SRFILE="${SRC}/$(fileid "${SRNAME}")_sets.tsv"
+	
+	if [[ ! -f "${SRFILE}" ]]
 	then
-		SUBSET_FNAME="$(echo "${SET_NAME}_${SET_SUBSET}" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')"
-	else
+		echo -e "${RED}ERROR:${CLEAR} ${SRFILE} does not exist"
+		continue
+	fi
+
+
+	MENUCONTENT="${MENUCONTENT}<h2 id=\"$(fileid "${SRNAME}")\">${SRNAME}</h2>\n"
+	MENU_BS=""
+	if [[ -n "$PROMOS" ]]
+	then
+		PROMOLINES="$(awk -F$'\t' "NR>1 && \$8 == \"${PROMOS}\"" "${TCG_SRC}/promo.tsv" )"
+		if [[ "$(echo "${PROMOLINES}" | wc -l)" = "0" ]]
+		then
+			MENU_BS="${SRNAME}\t\t\t\t0\tBlack Star Promos\t"
+		else
+			MENU_BS="${SRNAME}\t\t\t\t\tBlack Star Promos\t"
+			SET_TSV="${TCG_SRC}/promo.tsv"
+			SET_HTML="$(fileid "${SRNAME}")_$(fileid "Black Star Promos").html"
+			
+			if [[ -n "${ALL}" ]] ||
+			   [[ ! -e "${HTML_SRC}/${SET_HTML}" ]] ||
+			   [[ "${HTML_SRC}/${SET_HTML}" -ot "${SET_TSV}" ]]
+			then
+				SET_TABLE="$(echo "${PROMOLINES}" | awk -f "${UTILS}/blackstarpromo_table.awk" "${PROMOS}" )"
+				HTML_CONTENT="<h2>Black Star Promos - ${SRNAME}</h2>\n<br>\n<hr>\n${SET_TABLE}"
+				HTML_PAGE="${TEMPLATE/<!-- CONTENT -->/"${HTML_CONTENT}"}"
+				echo -e "${HTML_PAGE}" > "${HTML_SRC}/${SET_HTML}"
+				echo -e "${GREEN}Built ${SRNAME} Black Star Promos${CLEAR}"
+			fi
+		fi
+	fi
+
+	while IFS= read LINE
+	do
+		SET_NAME="$(echo "${LINE}" | cut -d$'\t' -f1)"
+		SET_YEAR="$(echo "${LINE}" | cut -d$'\t' -f2)"
+		SET_COUNT="$(echo "${LINE}" | cut -d$'\t' -f3)"
+		SET_TOTAL="$(echo "${LINE}" | cut -d$'\t' -f4)"
+		SET_COMPLETE="$(echo "${LINE}" | cut -d$'\t' -f5)"
+		SET_SUBSET="$(echo "${LINE}" | cut -d$'\t' -f6)"
+		SET_SPECIAL="$(echo "${LINE}" | cut -d$'\t' -f7)"
+	
+		SET_FNAME="$(fileid "${SET_NAME}")"
 		SUBSET_FNAME="${SET_FNAME}"
-	fi
+		[[ -n "${SET_SUBSET}" ]] && SUBSET_FNAME="${SET_FNAME}_$(fileid "${SET_SUBSET}")"
+		if [[ "${SET_SUBSET}" = "Base Set" ]]
+		then
+			[[ -n "${MENU_BS}" ]] && MENU_BS="${MENU_BS}\n"
+			MENU_BS="${MENU_BS}${LINE}"
+		fi
 
-	SET_TSV="${TCG_SRC}/${SUBSET_FNAME}.tsv"
-	SET_IMG="images/sets/${SET_FNAME}.png"
-	SET_TITLEIMG="images/sets/${SET_FNAME}title.png"
-	SET_HTML="${SUBSET_FNAME}.html"
+		SET_TSV="${TCG_SRC}/${SUBSET_FNAME}.tsv"
+		SET_IMG="images/seticons/${SET_FNAME}.png"
+		SET_TITLEIMG="images/settitles/${SET_FNAME}.png"
+		SET_HTML="${SUBSET_FNAME}.html"
 
-	if [ "${SET_COMPLETE}" == "True" ]
-	then
-		SET_TDCLASS="complete"
-	else
-		SET_TDCLASS="incomplete"
-	fi
+		if [[ ! -e "${HTML_SRC}/${SET_IMG}" ]]
+		then
+			echo -e "${RED}ERROR:${CLEAR} No Set Img for ${SET_NAME}"
+			continue
+		fi
+		if [[ ! -f "${SET_TSV}" ]]
+		then
+			[[ -n "${WARNING}" ]] && echo -e "${YELLOW}WARNING:${CLEAR} ${SET_TSV} does not exist"
+			continue
+		fi
+		if [[ "$(tail -n +2 "${SET_TSV}" | wc -l)" = "0" ]]
+		then
+			[[ -n "${WARNING}" ]] && echo -e "${YELLOW}WARNING:${CLEAR} ${SET_TSV} has no cards"
+			continue
+		fi
 
-	if [[ -n "${SET_SUBSET}" ]]
-	then
-		TITLESPAN="<div class=\"titlediv\"><b>${SET_NAME}</b><br><i>${SET_SUBSET}</i></div>"
-	else
-		TITLESPAN="<div class=\"titlediv\"><b>${SET_NAME}</b></div>"
-	fi
-	SET_LINK="<td class=\"${SET_TDCLASS}\"><a href=\"${SET_HTML}\"><div class=\"content\"><div class=\"imgdiv\"><img src=\"${SET_IMG}\"></div>${TITLESPAN}</div></a></td>\n"
-	MENU_CONTENT="${MENU_CONTENT}${SET_LINK}"
+		if [[ ! -e "${HTML_SRC}/${SET_TITLEIMG}" ]]
+		then
+			echo -e "${RED}ERROR:${CLEAR} No Set Title Img for ${SET_NAME}"
+			continue
+		fi
 
-	if [ ${CURR_TD} -lt ${TABLE_WIDTH} ]
-	then
-		CURR_TD=$(( CURR_TD + 1 ))
-	else
-		CURR_TD=1
-		MENU_CONTENT="${MENU_CONTENT}\n</tr>\n<tr>"
-	fi
+		ERRORS="$(awk -f "${UTILS}/validate_set.awk" "${SET_TSV}")"
+		EXIT="$?"
+		if [[ "${EXIT}" == 2 ]]
+		then
+			echo -e "${RED}ERROR:${CLEAR} Invalid TSV for ${SET_NAME}"
+			echo "${ERRORS}" | sed 's/^/\t/'
+			continue
+		elif [[ "${EXIT}" == 1 ]] &&
+		     [[ -n "${WARNING}" ]]
+		then
+			echo -e "${YELLOW}WARNING:${CLEAR} Potential Errors in TSV for ${SET_NAME}"
+			echo "${ERRORS}" | sed 's/^/\t/'
+		fi
 
-	ERRORS="$(awk -f "${UTILS}/validate_set.awk" "${SET_TSV}")"
-	EXIT="$?"
-	if [[ "${EXIT}" == 2 ]]
-	then
-		echo -e "${RED}ERROR:${CLEAR} Invalid TSV for ${SET_NAME}"
-		echo "${ERRORS}" | sed 's/^/\t/'
-		continue
-	elif [[ "${EXIT}" == 1 ]] &&
-	     [[ -n "${WARNING}" ]]
-	then
-		echo -e "${YELLOW}WARNING:${CLEAR} Potential Errors in TSV for ${SET_NAME}"
-		echo "${ERRORS}" | sed 's/^/\t/'
-	fi
-
-	if [[ ! -e "${SET_TSV}" ]]
-	then
-		echo -e "${RED}ERROR:${CLEAR} No CSV for ${SET_NAME}"
-		continue
-	elif [[ ! -e "${HTML_SRC}/${SET_IMG}" ]]
-	then
-		echo -e "${RED}ERROR:${CLEAR} No Set Img for ${SET_NAME}"
-		continue
-	elif [[ ! -e "${HTML_SRC}/${SET_TITLEIMG}" ]]
-	then
-		echo -e "${RED}ERROR:${CLEAR} No Set Title Img for ${SET_NAME}"
-		continue
-	fi
-
-	if [[ -z "${ALL}" ]] &&
-	   [[ -e "${HTML_SRC}/${SET_HTML}" ]] &&
-	   [[ "${HTML_SRC}/${SET_HTML}" -nt "${SET_TSV}" ]]
-	then
-		continue
-	fi
-
-	SET_TABLE="$(awk -f "${UTILS}/setTable.awk" "${SET_TSV}" "${SET_COUNT}")"
-
-	HTML_CONTENT="<img src=\"${SET_TITLEIMG}\" id=\"set_title_img\">\n<br>\n<hr>\n"
-	HTML_CONTENT="${HTML_CONTENT}${SET_TABLE}"
-
-	HTML_PAGE=${TEMPLATE}
-	HTML_PAGE="${HTML_PAGE/<!-- CONTENT -->/${HTML_CONTENT}}"
-	echo -e "${HTML_PAGE}" > "${HTML_SRC}/${SET_HTML}"
-
-	echo -e "${GREEN}Built ${SET_NAME}${CLEAR}"
-done < <(tail -n +2 "${TCGINFO_SRC}")
-
-MENU_CONTENT="${MENU_CONTENT}\n</tr>\n</table>\n"
-
-MENU_CONTENT="${MENU_CONTENT}<h3>Other Sets</h3>\n<table>\n<tr>\n"
-
-echo "Starting half decks..."
-
-HD_TABLE=`awk -f ${UTILS}/halfdeckTable.awk ${SRC}/halfdecks.tsv`
-HTML_CONTENT="<h2>Half Decks</h2> ${HD_TABLE}"
-HTML_PAGE=${TEMPLATE}
-HTML_PAGE="${HTML_PAGE/<!-- CONTENT -->/${HTML_CONTENT}}"
-echo "${HTML_PAGE}" > ${HTML_SRC}/halfdecks.html
-echo "  Built HTML file"
-
-MENU_CONTENT="${MENU_CONTENT}<td><a href=\"halfdecks.html\">Half Decks</a></td>"
-echo "  Added to Menu"
-
-echo "Completed half decks"
-
-echo "Starting Black Star Promos"
-
-PROMO_TABLE=`awk -f ${UTILS}/bspromoTable.awk ${SRC}/promo.tsv`
-HTML_CONTENT="<h2>Black Star Promos</h2> ${PROMO_TABLE}"
-HTML_PAGE=${TEMPLATE}
-HTML_PAGE="${HTML_PAGE/<!-- CONTENT -->/${HTML_CONTENT}}"
-echo "${HTML_PAGE}" > ${HTML_SRC}/promo.html
-echo "  Built HTML file"
-
-MENU_CONTENT="${MENU_CONTENT}<td><a href=\"promo.html\"><img src=\"images/general/promo.png\"> Black Star Promo</a></td>"
-echo "  Added to Menu"
-
-echo "Completed Black Star Promos"
-
-echo "Starting Pop Series Promo"
-
-PROMO_TABLE=`awk -f ${UTILS}/poppromoTable.awk ${SRC}/popseriespromo.tsv`
-HTML_CONTENT="<h2>Pop Series Promos</h2> ${PROMO_TABLE}"
-HTML_PAGE=${TEMPLATE}
-HTML_PAGE="${HTML_PAGE/<!-- CONTENT -->/${HTML_CONTENT}}"
-echo "${HTML_PAGE}" > ${HTML_SRC}/popseriespromo.html
-echo "  Built HTML file"
-
-MENU_CONTENT="${MENU_CONTENT}<td><a href=\"popseriespromo.html\">Pop Series Promo</a></td></tr>"
-echo "  Added to Menu"
-
-echo "Completed Pop Series Promo"
-
-echo "Starting Non-English Cards"
-PROMO_TABLE=`awk -f ${UTILS}/setTable.awk ${SRC}/othercards.tsv`
-HTML_CONTENT="<h2>Non-English Cards</h2> ${PROMO_TABLE}"
-HTML_PAGE=${TEMPLATE}
-HTML_PAGE="${HTML_PAGE/<!-- CONTENT -->/${HTML_CONTENT}}"
-echo "${HTML_PAGE}" > ${HTML_SRC}/nonenglish.html
-echo "  Built HTML file"
-
-MENU_CONTENT="${MENU_CONTENT}<td><a href=\"nonenglish.html\">Non-English Cards</a></td>"
-echo "  Added to Menu"
-
-echo "Completed Non-English Cards"
-
-echo "Starting Topps Chrome"
-PROMO_TABLE=`awk -f ${UTILS}/toppsTable.awk ${SRC}/toppschrome.csv`
-HTML_CONTENT="<h2>Topps Chrome</h2> ${PROMO_TABLE}"
-HTML_PAGE=${TEMPLATE}
-HTML_PAGE="${HTML_PAGE/<!-- CONTENT -->/${HTML_CONTENT}}"
-echo "${HTML_PAGE}" > ${HTML_SRC}/toppschrome.html
-echo "  Built HTML file"
-
-MENU_CONTENT="${MENU_CONTENT}<td><a href=\"toppschrome.html\">Topps Chrome</a></td></tr>"
-echo "  Added to Menu"
-
-echo "Completed Topps Chrome"
-
+		if [[ -z "${ALL}" ]] &&
+		   [[ -e "${HTML_SRC}/${SET_HTML}" ]] &&
+		   [[ "${HTML_SRC}/${SET_HTML}" -nt "${SET_TSV}" ]]
+		then
+			continue
+		fi
+	
+		SET_TABLE="$(awk -f "${UTILS}/set_table.awk" "${SET_TSV}" "${SET_COUNT}")"
+	
+		HTML_CONTENT="<img src=\"${SET_TITLEIMG}\" id=\"set_title_img\">\n<br>\n<hr>\n"
+		HTML_CONTENT="${HTML_CONTENT}${SET_TABLE}"
+	
+		HTML_PAGE=${TEMPLATE}
+		HTML_PAGE="${HTML_PAGE/<!-- CONTENT -->/${HTML_CONTENT}}"
+		echo -e "${HTML_PAGE}" > "${HTML_SRC}/${SET_HTML}"
+	
+		echo -e "${GREEN}Built ${SET_NAME}${CLEAR}"
+	done < <(tail -n +2 "${SRFILE}" | sort)
+	
+	[[ -n "${MENU_BS}" ]] && MENUCONTENT="${MENUCONTENT}$(echo -e "${MENU_BS}" | awk -f "${UTILS}/build_menu.awk" "2" )"
+	MENU_EXP="$(tail -n +2 "${SRFILE}" | grep -v "\WBase Set\W" | sort | awk -f "${UTILS}/build_menu.awk" 4 )"
+	MENUCONTENT="${MENUCONTENT}${MENU_EXP}"
+	MENUCONTENT="${MENUCONTENT}<br>\n<hr>\n"
+done < <(tail -n +2 "${SRC}/series.tsv")
 
 
 INDEX="${TEMPLATE}"
-INDEX="${INDEX/<!-- CONTENT -->/${MENU_CONTENT}}"
+INDEX="${INDEX/<!-- CONTENT -->/${MENUCONTENT}}"
 
 echo -e "${INDEX}" > "${HTML_SRC}/index.html"
-
 
