@@ -1,4 +1,4 @@
-# Research Assistant
+# Research Mentor
 
 * Worked alongside and mentored a team of high school educators as part of the
 	REThink program
