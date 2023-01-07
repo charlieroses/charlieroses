@@ -5,12 +5,14 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 165	Ledyba	G	1			004	Naoyo Kimura			6/13/2021
 166	Ledian	G	2			005	Sekio			6/13/2021
 214	Heracross	G	1			006	Hasuno			6/13/2021
+251	Celebi V	G	5	Full	Full Art	007	AKIRA EGAWA			1/6/2023
 459	Snover	G	1	Reverse		009	Naoki Saito			6/13/2021
 460	Abomasnow	G	3			010-198	Akira Komayama			9/29/2022
 585	Deerling	G	1	Reverse		011	Lee HyunJung			6/13/2021
 586	Sawsbuck	G	3			012	Sekio			8/14/2022
 761	Bounsweet	G	1			013	MAHOU			6/13/2021
 762	Steenee	G	2			014	Tomokazu Komiya			7/15/2021
+763	Tsareena	G	3	Reverse		015	Yuu Nishida			1/6/2023
 810	Grookey	G	1			016	kodama			7/15/2021
 811	Thwackey	G	2	Reverse		017	Kouki Saitou			12/27/2022
 812	Rillaboom	G	3	Reverse		018	Hitoshi Ariga			6/13/2021
@@ -63,6 +65,7 @@ Pokedex	Pokemon	Type	Rarity	HoloFoil	Rarity Extra	Set No.	Artist	Damaged	Price	D
 475	Gallade	Fg	3			081	NC Empire			8/7/2021
 562	Yamask	Fg	1		Galarian	082	SATOSHI NAKAI			7/15/2021
 867	Runerigus	Fg	3	Reverse	Galarian	083	KEICHIRO ITO			6/13/2021
+739	Crabrawler	Fg	1			084	Mitsuhiro Arita			1/6/2023
 740	Crabominable	Fg	2			085	Shigenori Negishi			6/13/2021
 744	Rockruff	Fg	1			086	Yuu Nishida			6/13/2021
 745	Lycanroc	Fg	3	Holo		087	Teeziro			7/15/2021
@@ -112,10 +115,10 @@ T	Rugged Helmet	I	2			152	sadaji			8/14/2022
 T	Siebold	Su	2			153	Ken Sugimori			7/15/2021
 T	Scroll of Piercing	I	2		Single Strike	154	5ban Graphics			6/13/2021
 T	Weeding Gloves	I	2			155	Toyste Beach			8/14/2022
-T	Welcomin Lantern	I	2			156	Studio Bora Inc.			9/29/2022
-T	Impact Energy	N	2			157				6/13/2021
-T	Lucky Energy	N	2			158				7/15/2021
-T	Spiral Energy	N	2			159				6/13/2021
+T	Welcoming Lantern	I	2			156	Studio Bora Inc.			9/29/2022
+T	Impact Energy	Sp	2			157				6/13/2021
+T	Lucky Energy	Sp	2			158				7/15/2021
+T	Spiral Energy	Sp	2			159				6/13/2021
 641	Tornadus V	N	5	Full	Full Art / Textured	185	tetsuya koizumi			8/14/2022
 T	Fan of Waves	I	5	Full	Full Art / Textured / Golden	226	sadahi			7/15/2021
 T	Fog Crystal	I	5	Full	Full Art / Textured / Golden	227	sadaji			6/13/2021

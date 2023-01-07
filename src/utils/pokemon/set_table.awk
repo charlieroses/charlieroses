@@ -53,6 +53,17 @@ $1 == 29 || $1 == 32 { # Changing the Nidoran M and F names
 	pkmn_td = "<td class=\"name\">Nidoran " NIDO[$1] " </td>"
 }
 
+$7 ~ /\// ||
+$7 ~ /[A-Za-z]/ {
+	num_td  = "<td class=\"setnum\">" $7 "</td>"
+}
+$7 ~ / / {
+	SET = tolower(substr( $7, index( $7, " " ) ))
+	NUM = substr( $7, 0, index( $7, " " ) )
+	gsub( /[^a-z0-9]/, "", SET )
+	SETIMG = "./images/seticons/" SET ".png"
+	num_td  = "<td class=\"setnum\">" NUM " <img src=\"" SETIMG "\"></td>"
+}
 
 NR > 1 { # Build table
 	print "<tr>" num_td rar_td dex_td pkmn_td type_td holo_td info_td art_td "</tr>"
