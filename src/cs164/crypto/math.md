@@ -14,7 +14,7 @@ Sadly, typically the material that matters the most can't be graded or tested.
 While you won't be tested on any of this math, I highly suggest taking the time
 to read this section.
 It provides a bit of context for the
-[RSA Key Generation](crypto/rsa_keygen.html) and _why_
+[RSA Key Generation](crypto/rsa\_keygen.html) and _why_
 [RSA Encryption](crypto/rsa.html) works.
 
 This section obviously introduces a lot of new mathematical concepts with scary
@@ -48,7 +48,7 @@ I already covered an introduction to modulo in the
 [Base-2 section](numbers/baseTwo.html#intrducing-modulo).
 This little "mini-section" is a dip into modular arithmetic, specifically some
 of the basic points needed to understand parts of the
-[RSA Key Generation](crypto/rsa_keygen.html) and
+[RSA Key Generation](crypto/rsa\_keygen.html) and
 [RSA Encryption](crypto/rsa.html) in general.
 
 In the previous section, we used modulo as an operator that provides us with the
@@ -59,53 +59,29 @@ We used the notation `x % m = r` to show how when `x = 7` and we divide it by
 As we move onto talking about **modular arithmetic**, modulo is more than an
 operator and we need a new notation to reflect this:
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th><td><code>x % m = r</code></td></tr>
-<tr><th></th><td><code>x &equiv; r mod m</code></td></tr>
-</tbody>
-</table>
-</center>
+><
+| ||                       |
+|-||-----------------------|
+| || ``x % m = r``         |
+| || ``x &equiv; r mod m`` |
+><
 
 Going back to the example I used before, `7 % 3 = 1` would be written as
-<code>7 &equiv; 1 mod 3</code>.
+``7 &equiv; 1 mod 3``.
 
 Notice how the equivalence (&equiv;) is used instead of an equals sign (=).
 In modular arithmetic, we create **equivalence classes**.
 This may seem like a big scary word, but it describes a concept we already saw
 earlier when using modulo as just an operator.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th>
-<td>`0 % 3 = 0`</td>
-<td>`1 % 3 = 1`</td>
-<td>`2 % 3 = 2`</td>
-</tr>
-<tr><th></th>
-<td>`3 % 3 = 0`</td>
-<td>`4 % 3 = 1`</td>
-<td>`5 % 3 = 2`</td>
-</tr>
-<tr><th></th>
-<td>`6 % 3 = 0`</td>
-<td>`7 % 3 = 1`</td>
-<td>`8 % 3 = 2`</td>
-</tr>
-<tr><th></th>
-<td><code>{ 0, 3, 6, ... } &equiv; 0 mod 3</code></td>
-<td><code>{ 1, 4, 7, ... } &equiv; 1 mod 3</code></td>
-<td><code>{ 2, 5, 8, ... } &equiv; 2 mod 3</code></td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| ||                                      |                                      |                                      |
+|-||--------------------------------------|--------------------------------------|--------------------------------------|
+| || `0 % 3 = 0`                          | `1 % 3 = 1`                          | `2 % 3 = 2`                          |
+| || `3 % 3 = 0`                          | `4 % 3 = 1`                          | `5 % 3 = 2`                          |
+| || `6 % 3 = 0`                          | `7 % 3 = 1`                          | `8 % 3 = 2`                          |
+| || ``{ 0, 3, 6, ... } &equiv; 0 mod 3`` | ``{ 1, 4, 7, ... } &equiv; 1 mod 3`` | ``{ 2, 5, 8, ... } &equiv; 2 mod 3`` |
+><
 
 When we perform the operation `x % 3`, no matter what `x` is, we can only get
 one of three possible answers: 0, 1, or 2.
@@ -127,17 +103,13 @@ Notice how all the values that produce 1 are multiples of 3 plus 1, with 2
 following the same pattern.
 We can easily translate this into a simple formula:
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th><td><code>x % m = r</code></td></tr>
-<tr><th></th><td><code>x &equiv; r mod m</code></td></tr>
-<tr><th></th><td><code>mi + r = x | i &isinv; &Zopf;</code></td></tr>
-</tbody>
-</table>
-</center>
+><
+| ||                                 |
+|-||---------------------------------|
+| || `x % m = r`                     |
+| || `x &equiv; r mod m`             |
+| || `mi + r = x | i &isinv; &Zopf;` |
+><
 
 Don't get worried if this isn't the exact equation you were thinking of.
 I added a missing piece to the equation, `i`.
@@ -164,16 +136,12 @@ If it's 10pm, in 3 hours it will be 1am, or in modular arithmetic,
 <code>10 + 3 &equiv; 1 mod 12</code>.
 We can also define addition and multiplication in a more formal sense:
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th><td><code>(a + b) mod m = ((a mod m) + (b mod m)) mod m</code></td></tr>
-<tr><th></th><td><code>(ab) mod m = ((a mod m) * (b mod m)) mod m</code></td></tr>
-</tbody>
-</table>
-</center>
+><
+| ||                                                 |
+|-||-------------------------------------------------|
+| || `(a + b) mod m = ((a mod m) + (b mod m)) mod m` |
+| || `(ab) mod m = ((a mod m) * (b mod m)) mod m`    |
+><
 
 Test these out on your own.
 Plug in values for `a`, `b`, and `m` that you can verify by hand.
@@ -209,28 +177,18 @@ coprime with `n`.
 Below, I've used a table to show step by step how <code>&phi;(8)</code> can be
 computed:
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr>
-<th></th>
-<th><code>i &isinv; [1, n]</code></th>
-<th>Factors of `i`</th>
-<th>Shared Factors with `n`</th>
-<th>Coprime with `n`?</th>
-</tr></thead>
-<tbody>
-<tr><th></th><td>`1`</td><td>`1`</td><td>`1`</td><td>yes</td></tr>
-<tr><th></th><td>`2`</td><td>`1, 2`</td><td>`1, 2`</td><td>no</td></tr>
-<tr><th></th><td>`3`</td><td>`1, 3`</td><td>`1`</td><td>yes</td></tr>
-<tr><th></th><td>`4`</td><td>`1, 2, 4`</td><td>`1, 2, 4`</td><td>no</td></tr>
-<tr><th></th><td>`5`</td><td>`1, 5`</td><td>`1`</td><td>yes</td></tr>
-<tr><th></th><td>`6`</td><td>`1, 2, 3, 6`</td><td>`1, 2`</td><td>no</td></tr>
-<tr><th></th><td>`7`</td><td>`1, 7`</td><td>`1`</td><td>yes</td></tr>
-<tr><th></th><td>`8`</td><td>`1, 2, 4, 8`</td><td>`1, 2, 4, 8`</td><td>no</td></tr>
-</tbody>
-</table>
-</center>
+><
+| || `i &isinv; [1, n]` | Factors of `i` | Shared Factors with `n` | Coprime with `n`? |
+|-||--------------------|----------------|-------------------------|-------------------|
+| || `1`                | `1`            | `1, 2`                  | yes               |
+| || `2`                | `1, 2`         | `1`                     | no                |
+| || `3`                | `1, 3`         | `1`                     | yes               |
+| || `4`                | `1, 2, 4`      | `1, 2, 4`               | no                |
+| || `5`                | `1, 5`         | `1`                     | yes               |
+| || `6`                | `1, 2, 3, 6`   | `1, 2`                  | no                |
+| || `7`                | `1, 7`         | `1`                     | yes               |
+| || `8`                | `1, 2, 4, 8`   | `1, 2, 4, 8`            | no                |
+><
 
 As we can see, four numbers between 1 and 8 are coprime with 8, thus
 <code>&phi;(8) = 4</code>.
@@ -240,7 +198,7 @@ Let's look at two easy ones.
 
 1. If `n` is prime, then <code>&phi;(n) = n-1</code>
 2. Given relatively prime numbers `a` and `b`,
-<code>&phi;(ab) = &phi;(a) * &phi;(b)</code>
+<code>&phi;(ab) = &phi;(a) \* &phi;(b)</code>
 
 You may think _"Woah! Niether of these are easy! I have no idea what I'm looking
 at!"_.
@@ -253,25 +211,15 @@ As we know, 5 is a prime number.
 Its only factors are `1` and `5`.
 Let's again use a table, this time to calculate <code>&phi;(5)</code>:
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr>
-<th></th>
-<th><code>i &isinv; [1, n]</code></th>
-<th>Factors of `i`</th>
-<th>Shared Factors with `n`</th>
-<th>Coprime with `n`?</th>
-</tr></thead>
-<tbody>
-<tr><th></th><td>`1`</td><td>`1`</td><td>`1`</td><td>yes</td></tr>
-<tr><th></th><td>`2`</td><td>`1, 2`</td><td>`1`</td><td>yes</td></tr>
-<tr><th></th><td>`3`</td><td>`1, 3`</td><td>`1`</td><td>yes</td></tr>
-<tr><th></th><td>`4`</td><td>`1, 2, 4`</td><td>`1`</td><td>yes</td></tr>
-<tr><th></th><td>`5`</td><td>`1, 5`</td><td>`1, 5`</td><td>no</td></tr>
-</tbody>
-</table>
-</center>
+><
+| || `i &isinv; [1, n]` | Factors of `i` | Shared Factors with `n` | Coprime with `n`? |
+|-||--------------------|----------------|-------------------------|-------------------|
+| || `1`                | `1`            | `1`                     | yes               |
+| || `2`                | `1, 2`         | `1`                     | yes               |
+| || `3`                | `1, 3`         | `1`                     | yes               |
+| || `4`                | `1, 2, 4`      | `1`                     | yes               |
+| || `5`                | `1, 5`         | `1`                     | no                |
+><
 
 As we can see, <code>&phi;(5) = 4</code>.
 This matches the property we're trying to prove where if `n` is prime, then
@@ -284,132 +232,42 @@ If a number is prime, its only factors are 1 and itself.
 Thus, if a number is prime, all numbers less than `n` must be coprime with `n`
 as they cannot share any factors with `n`.
 
-### Given relatively prime numbers `a` and `b`, <code>&phi;(ab) = &phi;(a) * &phi;(b)</code>
+### Given relatively prime numbers `a` and `b`, <code>&phi;(ab) = &phi;(a) \* &phi;(b)</code>
 
 Again, this looks like another super complicated property that can never make
 sense.
 This time, we have multiple values.
 How could we ever make a table for this?
 
-Let's verify that <code>&phi;(20) = &phi;(4) * &phi;(5)</code>.
+Let's verify that <code>&phi;(20) = &phi;(4) \* &phi;(5)</code>.
 Notice that even though 4 isn't prime, it is coprime with 5.
 In this table, I've left out the "Comprime with `n`?" column.
 Instead, I've highlighted the "1"s that indicate a number is coprime with `n`.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr>
-<th></th>
-<th><code>i &isinv; [1, n]</code></th>
-<th>Factors of `i`</th>
-<th>Shared Factors with `4`</th>
-<th>Shared Factors with `5`</th>
-<th>Shared Factors with `20`</th>
-</tr></thead>
-<tbody>
-<tr><th></th><td>`1`</td><td>`1`</td>
-<td><span class="hi">`1`</span></td>
-<td><span class="hi">`1`</span></td>
-<td><span class="hi">`1`</span></td>
-</tr>
-<tr><th></th><td>`2`</td><td>`1, 2`</td>
-<td>`1, 2`</td><td>
-<span class="hi">`1`</span></td>
-<td>`1, 2`</td>
-</tr>
-<tr><th></th><td>`3`</td><td>`1, 3`</td>
-<td><span class="hi">`1`</span></td>
-<td><span class="hi">`1`</span></td>
-<td><span class="hi">`1`</span></td>
-</tr>
-<tr><th></th><td>`4`</td><td>`1, 2, 4`</td>
-<td>`1, 2, 4`</td>
-<td><span class="hi">`1`</span></td>
-<td>`1, 2, 4`</td>
-</tr>
-<tr><th></th><td>`5`</td><td>`1, 5`</td>
-<td></td>
-<td>`1, 5`</td>
-<td>`1, 5`</td>
-</tr>
-<tr><th></th><td>`6`</td><td>`1, 2, 3, 6`</td>
-<td></td>
-<td></td>
-<td>`1, 2`</td>
-</tr>
-<tr><th></th><td>`7`</td><td>`1, 7`</td>
-<td></td>
-<td></td>
-<td><span class="hi">`1`</span></td>
-</tr>
-<tr><th></th><td>`8`</td><td>`1, 2, 4, 8`</td>
-<td></td>
-<td></td>
-<td>`1, 2, 4`</td>
-</tr>
-<tr><th></th><td>`9`</td><td>`1, 3, 9`</td>
-<td></td>
-<td></td>
-<td><span class="hi">`1`</span></td></tr>
-<tr><th></th><td>`10`</td><td>`1, 2, 5, 10`</td>
-<td></td>
-<td></td>
-<td>`1, 2, 5, 10`</td>
-</tr>
-<tr><th></th><td>`11`</td><td>`1, 11`</td>
-<td></td>
-<td></td>
-<td><span class="hi">`1`</span></td>
-</tr>
-<tr><th></th><td>`12`</td><td>`1, 2, 3, 4, 6, 12`</td>
-<td></td>
-<td></td>
-<td>`1, 2, 4`</td>
-</tr>
-<tr><th></th><td>`13`</td><td>`1, 13`</td>
-<td></td>
-<td></td>
-<td><span class="hi">`1`</span></td>
-</tr>
-<tr><th></th><td>`14`</td><td>`1, 2, 7, 14`</td>
-<td></td>
-<td></td>
-<td>`1, 2`</td>
-</tr>
-<tr><th></th><td>`15`</td><td>`1, 3, 5, 15`</td>
-<td></td>
-<td></td>
-<td>`1, 5`</td>
-</tr>
-<tr><th></th><td>`16`</td><td>`1, 2, 4, 8, 16`</td>
-<td></td>
-<td></td>
-<td>`1, 2, 4`</td>
-</tr>
-<tr><th></th><td>`17`</td><td>`1, 17`</td>
-<td></td>
-<td></td>
-<td><span class="hi">`1`</span></td>
-</tr>
-<tr><th></th><td>`18`</td><td>`1, 2, 9, 18`</td>
-<td></td>
-<td></td>
-<td>`1, 2`</td>
-</tr>
-<tr><th></th><td>`19`</td><td>`1, 19`</td>
-<td></td>
-<td></td>
-<td><span class="hi">`1`</span></td>
-</tr>
-<tr><th></th><td>`20`</td><td>`1, 2, 4, 5, 10, 20`</td>
-<td></td>
-<td></td>
-<td>`1, 2, 4, 5, 10, 20`</td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| || `i &isinv; [1, n]` | Factors of `i`       | Shared Factors with `4`     | Shared Factors with `5`     | Shared Factors with `20`    |
+|-||--------------------|----------------------|-----------------------------|-----------------------------|-----------------------------|
+| || `1`                | `1`                  | <span class="hi">`1`</span> | <span class="hi">`1`</span> | <span class="hi">`1`</span> |
+| || `2`                | `1, 2`               | `1, 2`                      | <span class="hi">`1`</span> | `1, 2`                      |
+| || `3`                | `1, 3`               | <span class="hi">`1`</span> | <span class="hi">`1`</span> | <span class="hi">`1`</span> |
+| || `4`                | `1, 2, 4`            | `1, 2, 4`                   | <span class="hi">`1`</span> | `1, 2, 4`                   |
+| || `5`                | `1, 5`               |                             | `1, 5`                      | `1, 5`                      |
+| || `6`                | `1, 2, 3, 6`         |                             |                             | `1, 2`                      |
+| || `7`                | `1, 7`               |                             |                             | <span class="hi">`1`</span> |
+| || `8`                | `1, 2, 4, 8`         |                             |                             | `1, 2, 4, 8`                |
+| || `9`                | `1, 3, 9`            |                             |                             | <span class="hi">`1`</span> |
+| || `10`               | `1, 2, 5, 10`        |                             |                             | `1, 2, 5, 10`               |
+| || `11`               | `1, 11`              |                             |                             | <span class="hi">`1`</span> |
+| || `12`               | `1, 2, 3, 4, 6, 12`  |                             |                             | `1, 2, 4`                   |
+| || `13`               | `1, 13`              |                             |                             | <span class="hi">`1`</span> |
+| || `14`               | `1, 2, 7, 14`        |                             |                             | `1, 2`                      |
+| || `15`               | `1, 3, 5, 15`        |                             |                             | `1, 5`                      |
+| || `16`               | `1, 2, 4, 8, 16`     |                             |                             | `1, 2, 4`                   |
+| || `17`               | `1, 17`              |                             |                             | <span class="hi">`1`</span> |
+| || `18`               | `1, 2, 3, 6, 9, 18`  |                             |                             | `1, 2`                      |
+| || `19`               | `1, 19`              |                             |                             | <span class="hi">`1`</span> |
+| || `20`               | `1, 2, 4, 5, 10, 20` |                             |                             | `1, 2, 4, 5, 10, 20`        |
+><
 
 Based on the highlighted "1"s in the table, we can verify our property.
 
@@ -419,15 +277,15 @@ Based on the highlighted "1"s in the table, we can verify our property.
 <thead><tr><th></th><th></th></tr></thead>
 <tbody>
 <tr><th></th>
-<td><code>&phi;(ab) = &phi;(a) * &phi;(b)</code></td>
+<td><code>&phi;(ab) = &phi;(a) \* &phi;(b)</code></td>
 <td class="left">The original property</td>
 </tr>
 <tr><th></th>
-<td><code>&phi;(20) = &phi;(4) * &phi;(5)</code></td>
+<td><code>&phi;(20) = &phi;(4) \* &phi;(5)</code></td>
 <td class="left">Plug in values</td>
 </tr>
 <tr><th></th>
-<td><code>8 = 2 * 4</code></td>
+<td><code>8 = 2 \* 4</code></td>
 <td class="left">Plug in values from table</td>
 </tr>
 <tr><th></th>
@@ -467,7 +325,7 @@ If `m` is not prime, only <code>&phi;(n)</code> elements have inverses in
 
 Before we move further, let's verify this by plugging in some values:
 
-<center>
+><
 <table>
 <colgroup><col span="1" class="red"></colgroup>
 <thead><tr><th></th><th></th></tr></thead>
@@ -479,16 +337,16 @@ Before we move further, let's verify this by plugging in some values:
 <td colspan='2'><code>m = 5, &Zopf;~5~ = { 0, 1, 2, 3, 4 }</code></td>
 </tr>
 <tr><th></th>
-<td><code>1 * 1 = 1 &equiv; 1 mod 5</code></td>
+<td>`1 * 1 = 1 &equiv; 1 mod 5`</td>
 <td class="left">When `a = 1`, <code>a^-1^ = 1</code></td>
 </tr>
 <tr><th></th>
-<td><code>2 * 3 = 6 &equiv; 1 mod 5</code></td>
+<td>`2 * 3 = 6 &equiv; 1 mod 5`</td>
 <td class="left">When `a = 2`, <code>a^-1^ = 3</code><br>When `a = 3`,
 <code>a^-1^ = 2</code></td>
 </tr>
 <tr><th></th>
-<td><code>4 * 4 = 16 &equiv; 1 mod 5</code></td>
+<td>`4 * 4 = 16 &equiv; 1 mod 5`</td>
 <td class="left">When `a = 4`, <code>a^-1^ = 4</code></td>
 </tr>
 <tr><th></th>
@@ -498,23 +356,23 @@ Before we move further, let's verify this by plugging in some values:
 <td colspan='2'><code>m = 4, &Zopf;~4~ = { 0, 1, 2, 3 }</code></td>
 </tr>
 <tr><th></th>
-<td><code>1 * 1 = 1 &equiv; 1 mod 4</code></td>
+<td>`1 * 1 = 1 &equiv; 1 mod 4`</td>
 <td class="left">When `a = 1`, <code>a^-1^ = 1</code></td>
 </tr>
 <tr><th></th>
-<td><code>2 * 1 = 2 &equiv; 2 mod 4</code>
-<br><code>2 * 2 = 4 &equiv; 0 mod 4</code>
-<br><code>2 * 3 = 6 &equiv; 2 mod 4</code>
+<td>`2 * 1 = 2 &equiv; 2 mod 4`
+<br>`2 * 2 = 4 &equiv; 0 mod 4`
+<br>`2 * 3 = 6 &equiv; 2 mod 4`
 </td>
 <td class="left">When `a = 2`, <code>a^-1^</code> does not exist</td>
 </tr>
 <tr><th></th>
-<td><code>3 * 3 = 9 &equiv; 1 mod 4</code></td>
+<td>`3 * 3 = 9 &equiv; 1 mod 4`</td>
 <td class="left">When `a = 3`, <code>a^-1^ = 3</code></td>
 </tr>
 </tbody>
 </table>
-</center>
+><
 
 As we can see, 5 is prime and all non-zero elements have inverses in
 <code>&Zopf;~5~</code>.
@@ -528,15 +386,11 @@ If only Euler wasn't such a slacker and thought of a theorem to calculate
 modular inverses.
 Oh, wait, he did!
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th>Euler's Theorem</th></tr></thead>
-<tbody>
-<tr><th></th><td>If `a` and `m` are coprime then <code>a^&phi;(m)^ = 1 mod m</code></td></tr>
-</tbody>
-</table>
-</center>
+><
+| || Euler's Theorem                                           |
+|-||-----------------------------------------------------------|
+| || If `a` and `m` are coprime then ``a^&phi;(m)^ = 1 mod m`` |
+><
 
 Well thanks for the theorem buddy, but that doesn't help very much.
 For an inverse, I need to multiply two numbers together to get 1, you only gave
@@ -544,40 +398,20 @@ me one.
 Since Euler couldn't even give us two numbers, we should make sure this theorem
 actually works.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th><td>**When `m` is prime**</td></tr>
-<tr><th></th>
-<td><code>m = 5, &phi;(5) = 4<br>&Zopf;~5~ = { 0, 1, 2, 3, 4 }</code></td></tr>
-</tr>
-<tr><th></th>
-<td><code>1^4^ = 1 &equiv; 1 mod 5</code></td>
-</tr>
-<tr><th></th>
-<td><code>2^4^ = 16 &equiv; 1 mod 5</code></td>
-</tr>
-<tr><th></th>
-<td><code>3^4^ = 81 &equiv; 1 mod 5</code></td>
-</tr>
-<tr><th></th>
-<td><code>4^4^ = 256 &equiv; 1 mod 5</code></td>
-</tr>
-<tr><th></th><td>**When `m` is not prime**</td></tr>
-<tr><th></th>
-<td><code>m = 4, &phi;(4) = 2<br>&Zopf;~4~ = { 0, 1, 2, 3 }</code></td></tr>
-</tr>
-<tr><th></th>
-<td><code>1^2^ = 1 &equiv; 1 mod 4</code></td>
-</tr>
-<tr><th></th>
-<td><code>3^2^ = 9 &equiv; 1 mod 4</code></td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| ||                                                          |
+|-||----------------------------------------------------------|
+| || **When `m` is prime**                                    |
+| || ``m = 5, &phi;(5) = 4<br>&Zopf;~5~ = { 0, 1, 2, 3, 4 }`` |
+| || ``1^4^ = 1 &equiv; 1 mod 5``                             |
+| || ``2^4^ = 16 &equiv; 1 mod 5``                            |
+| || ``3^4^ = 81 &equiv; 1 mod 5``                            |
+| || ``4^4^ = 256 &equiv; 1 mod 5``                           |
+| || **When `m` is not prime**                                |
+| || ``m = 4, &phi;(4) = 2<br>&Zopf;~4~ = { 0, 1, 2, 3 }``    |
+| || ``1^2^ = 1 &equiv; 1 mod 4``                             |
+| || ``3^2^ = 9 &equiv; 1 mod 4``                             |
+><
 
 Turns out Euler wasn't joking.
 His theorem is correct, but how can we use it to calculate inverses?
@@ -600,25 +434,25 @@ It's not as obvious and we need to apply our multiplication rules from above.
 <td><code>m = 5, &phi;(5) = 4<br>&Zopf;~5~ = { 0, 1, 2, 3, 4 }</code></td></tr>
 </tr>
 <tr><th></th>
-<td><code>a = 1, a^-1^ = 1<br>1 * 1^3^ = 1 * 1 &equiv; 1 mod 5</code></td>
+<td><code>a = 1, a^-1^ = 1<br>1 \* 1^3^ = 1 \* 1 &equiv; 1 mod 5</code></td>
 </tr>
 <tr><th></th>
-<td><code>a = 2, a^-1^ = 3<br>2 * 2^3^ &equiv; 1 mod 5
-<br>2 * 8  &equiv; 1 mod 5
+<td><code>a = 2, a^-1^ = 3<br>2 \* 2^3^ &equiv; 1 mod 5
+<br>2 \* 8  &equiv; 1 mod 5
 <br>8 &equiv; 3 mod 5
-<br>2 * 3 = 6 &equiv; 1 mod 5</code></td>
+<br>2 \* 3 = 6 &equiv; 1 mod 5</code></td>
 </tr>
 <tr><th></th>
-<td><code>a = 3, a^-1^ = 2<br>3 * 3^3^ &equiv; 1 mod 5
-<br>3 * 27  &equiv; 1 mod 5
+<td><code>a = 3, a^-1^ = 2<br>3 \* 3^3^ &equiv; 1 mod 5
+<br>3 \* 27  &equiv; 1 mod 5
 <br>27 &equiv; 2 mod 5
-<br>3 * 2 = 6 &equiv; 1 mod 5</code></td>
+<br>3 \* 2 = 6 &equiv; 1 mod 5</code></td>
 </tr>
 <tr><th></th>
-<td><code>a = 4, a^-1^ = 4<br>4 * 4^3^ &equiv; 1 mod 5
-<br>4 * 64  &equiv; 1 mod 5
+<td><code>a = 4, a^-1^ = 4<br>4 \* 4^3^ &equiv; 1 mod 5
+<br>4 \* 64  &equiv; 1 mod 5
 <br>64 &equiv; 4 mod 5
-<br>4 * 4 = 16 &equiv; 1 mod 5</code></td>
+<br>4 \* 4 = 16 &equiv; 1 mod 5</code></td>
 </tr>
 </tbody>
 </table>
@@ -628,15 +462,11 @@ As simple as that, by testing a few small numbers, not only were we able to
 understand Euler's theorem, but we can also put together our own formula to
 calculate modular inverses.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th><td>If `a` and `m` are coprime then<br><code>a^-1^ = a^&phi;(m)-1^ mod m</code></td></tr>
-</tbody>
-</table>
-</center>
+><
+| ||                                                                             |
+|-||-----------------------------------------------------------------------------|
+| || If `a` and `m` are coprime then<br><code>a^-1^ = a^&phi;(m)-1^ mod m</code> |
+><
 
 ---
 

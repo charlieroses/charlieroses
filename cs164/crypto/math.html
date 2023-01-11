@@ -39,9 +39,9 @@
 	<hr>
 	<div class="content">
 		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
-		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
-		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
-		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/base10.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/base2.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/base16.html"><b>1.3 :</b> Base-16</a>
 		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
 	</div>
 	<hr>
@@ -134,27 +134,83 @@
 		<br>
 		<br>
 	</div>
-<!-- ERROR -->
 	<hr>
-	<div class="content">
+<!-- ERROR -->
+		<div class="content">
 		<h1>10.1 : RSA Math Background</h1>
 	</div>
 	<hr>
-	<div class="content">
-<p>I'm going to say a dangerous phrase here, so tread carefully. If you're a freshman in CS-164, you'll most likely never be tested on anything in this section.</p>
-<p>Why is this phrase so dangerous?</p>
-<p>Students are busy. They've got a lot of classes, extra-curriculars, lives, etc. It can be tempting to only do the bare minimum required to get by in a class. This leads to students focusing on the material that will be graded, since it's the material that will have the &quot;greatest impact&quot; on them. Sadly, typically the material that matters the most can't be graded or tested.</p>
-<p>While you won't be tested on any of this math, I highly suggest taking the time to read this section. It provides a bit of context for the <a href="crypto/rsa_keygen.html">RSA Key Generation</a> and <em>why</em> <a href="crypto/rsa.html">RSA Encryption</a> works.</p>
-<p>This section obviously introduces a lot of new mathematical concepts with scary vocab words and fancy Greek letters. The goal of this section isn't to teach you how to generate RSA keys by hand. The goal is to show you how to break down this all down.</p>
-<p>Computer Science is an extremely math heavy field and it's also an incredibly new field. High school computer science curriculum is still being invented. The high school CS curriculum that exists, <em>especially</em> AP CS, mostly covers programming. There's little to no content that covers the mathematical basis for the field. As you progress in future CS courses, you'll be presented with large formulas filled with unfamiliar variables. The goal of this section is to introduce new mathematical concepts and show how to connect them to things we've seeen before and how to break them down into something digestable and applicable.</p>
-<p>While this section won't show up on any CS-164 exam, I urge you to take your time to go through it. Being able to make yourself comfortable with unfamiliar concepts is an important skill.</p>
-	</div>
-	<hr>
-	<div class="content">
+<div class="content">
+<p>
+I'm going to say a dangerous phrase here, so tread carefully.
+If you're a freshman in CS-164, you'll most likely never be tested on anything
+in this section.
+</p>
+<p>
+Why is this phrase so dangerous?
+</p>
+<p>
+Students are busy.
+They've got a lot of classes, extra-curriculars, lives, etc.
+It can be tempting to only do the bare minimum required to get by in a class.
+This leads to students focusing on the material that will be graded, since it's
+the material that will have the "greatest impact" on them.
+Sadly, typically the material that matters the most can't be graded or tested.
+</p>
+<p>
+While you won't be tested on any of this math, I highly suggest taking the time
+to read this section.
+It provides a bit of context for the
+<a href="crypto/rsa_keygen.html">RSA Key Generation</a> and <i>why</i>
+<a href="crypto/rsa.html">RSA Encryption</a> works.
+</p>
+<p>
+This section obviously introduces a lot of new mathematical concepts with scary
+vocab words and fancy Greek letters.
+The goal of this section isn't to teach you how to generate RSA keys by hand.
+The goal is to show you how to break down this all down.
+</p>
+<p>
+Computer Science is an extremely math heavy field and it's also an incredibly
+new field.
+High school computer science curriculum is still being invented.
+The high school CS curriculum that exists, <i>especially</i> AP CS, mostly covers
+programming.
+There's little to no content that covers the mathematical basis for the field.
+As you progress in future CS courses, you'll be presented with large formulas
+filled with unfamiliar variables.
+The goal of this section is to introduce new mathematical concepts and show how
+to connect them to things we've seeen before and how to break them down into
+something digestable and applicable.
+</p>
+<p>
+While this section won't show up on any CS-164 exam, I urge you to take your
+time to go through it.
+Being able to make yourself comfortable with unfamiliar concepts is an important
+skill.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="modular-arithmetic">Modular Arithmetic</h2>
-<p>I already covered an introduction to modulo in the <a href="numbers/baseTwo.html#intrducing-modulo">Base-2 section</a>. This little &quot;mini-section&quot; is a dip into modular arithmetic, specifically some of the basic points needed to understand parts of the <a href="crypto/rsa_keygen.html">RSA Key Generation</a> and <a href="crypto/rsa.html">RSA Encryption</a> in general.</p>
-<p>In the previous section, we used modulo as an operator that provides us with the remainder after division. We used the notation <code>x % m = r</code> to show how when <code>x = 7</code> and we divide it by <code>m = 3</code>, we get the remainder <code>r = 1</code>.</p>
-<p>As we move onto talking about <strong>modular arithmetic</strong>, modulo is more than an operator and we need a new notation to reflect this:</p>
+<p>
+I already covered an introduction to modulo in the
+<a href="numbers/baseTwo.html#intrducing-modulo">Base-2 section</a>.
+This little "mini-section" is a dip into modular arithmetic, specifically some
+of the basic points needed to understand parts of the
+<a href="crypto/rsa_keygen.html">RSA Key Generation</a> and
+<a href="crypto/rsa.html">RSA Encryption</a> in general.
+</p>
+<p>
+In the previous section, we used modulo as an operator that provides us with the
+remainder after division.
+We used the notation <code>x % m = r</code> to show how when <code>x = 7</code> and we divide it by
+<code>m = 3</code>, we get the remainder <code>r = 1</code>.
+</p>
+<p>
+As we move onto talking about <b>modular arithmetic</b>, modulo is more than an
+operator and we need a new notation to reflect this:
+</p>
 <center>
 <table>
 <colgroup>
@@ -162,32 +218,32 @@
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<code>x % m = r</code>
-</td>
+<th></th>
+<td><code>x % m = r</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>x ≡ r mod m</code>
-</td>
+<th></th>
+<td><code>x &equiv; r mod m</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>Going back to the example I used before, <code>7 % 3 = 1</code> would be written as <code>7 ≡ 1 mod 3</code>.</p>
-<p>Notice how the equivalence (≡) is used instead of an equals sign (=). In modular arithmetic, we create <strong>equivalence classes</strong>. This may seem like a big scary word, but it describes a concept we already saw earlier when using modulo as just an operator.</p>
+<p>
+Going back to the example I used before, <code>7 % 3 = 1</code> would be written as
+<code>7 &equiv; 1 mod 3</code>.
+</p>
+<p>
+Notice how the equivalence (&equiv;) is used instead of an equals sign (=).
+In modular arithmetic, we create <b>equivalence classes</b>.
+This may seem like a big scary word, but it describes a concept we already saw
+earlier when using modulo as just an operator.
+</p>
 <center>
 <table>
 <colgroup>
@@ -195,75 +251,63 @@
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<code>0 % 3 = 0</code>
-</td>
-<td>
-<code>1 % 3 = 1</code>
-</td>
-<td>
-<code>2 % 3 = 2</code>
-</td>
+<th></th>
+<td><code>0 % 3 = 0</code></td>
+<td><code>1 % 3 = 1</code></td>
+<td><code>2 % 3 = 2</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>3 % 3 = 0</code>
-</td>
-<td>
-<code>4 % 3 = 1</code>
-</td>
-<td>
-<code>5 % 3 = 2</code>
-</td>
+<th></th>
+<td><code>3 % 3 = 0</code></td>
+<td><code>4 % 3 = 1</code></td>
+<td><code>5 % 3 = 2</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>6 % 3 = 0</code>
-</td>
-<td>
-<code>7 % 3 = 1</code>
-</td>
-<td>
-<code>8 % 3 = 2</code>
-</td>
+<th></th>
+<td><code>6 % 3 = 0</code></td>
+<td><code>7 % 3 = 1</code></td>
+<td><code>8 % 3 = 2</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>{ 0, 3, 6, ... } ≡ 0 mod 3</code>
-</td>
-<td>
-<code>{ 1, 4, 7, ... } ≡ 1 mod 3</code>
-</td>
-<td>
-<code>{ 2, 5, 8, ... } ≡ 2 mod 3</code>
-</td>
+<th></th>
+<td><code>{ 0, 3, 6, ... } &equiv; 0 mod 3</code></td>
+<td><code>{ 1, 4, 7, ... } &equiv; 1 mod 3</code></td>
+<td><code>{ 2, 5, 8, ... } &equiv; 2 mod 3</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>When we perform the operation <code>x % 3</code>, no matter what <code>x</code> is, we can only get one of three possible answers: 0, 1, or 2. We use the equivalent symbol to show that multiple values can produce the same answer.</p>
-<p>As you can see, we already know how to calculate the equivalence class of a value: it's just calculating it's just performing a modulo operation. What if we want to go the opposite direction. Let's say we have an equivalence class and we want to know what values it contains. How would we compute these values?</p>
-<p>If you look at the above table, you may not even need me to tell you the answer here. Notice how all the values that produce 0 are mulitples of 3. Look a little closer. Notice how all the values that produce 1 are multiples of 3 plus 1, with 2 following the same pattern. We can easily translate this into a simple formula:</p>
+<p>
+When we perform the operation <code>x % 3</code>, no matter what <code>x</code> is, we can only get
+one of three possible answers: 0, 1, or 2.
+We use the equivalent symbol to show that multiple values can produce the same
+answer.
+</p>
+<p>
+As you can see, we already know how to calculate the equivalence class of a
+value: it's just calculating it's just performing a modulo operation.
+What if we want to go the opposite direction.
+Let's say we have an equivalence class and we want to know what values it
+contains.
+How would we compute these values?
+</p>
+<p>
+If you look at the above table, you may not even need me to tell you the answer
+here.
+Notice how all the values that produce 0 are mulitples of 3.
+Look a little closer.
+Notice how all the values that produce 1 are multiples of 3 plus 1, with 2
+following the same pattern.
+We can easily translate this into a simple formula:
+</p>
 <center>
 <table>
 <colgroup>
@@ -271,43 +315,56 @@
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<code>x % m = r</code>
-</td>
+<th></th>
+<td><code>x % m = r</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>x ≡ r mod m</code>
-</td>
+<th></th>
+<td><code>x &equiv; r mod m</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>mi + r = x | i ∈ ℤ</code>
-</td>
+<th></th>
+<td><code>mi + r = x</td>
+<td>i &isinv; &Zopf;</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>Don't get worried if this isn't the exact equation you were thinking of. I added a missing piece to the equation, <code>i</code>. There's not really a mathematical symbol that says &quot;any value that's a multiple of <code>m</code>&quot;. Instead, I've introduced <code>i</code> and multiplied it by <code>m</code>. I've put a limit on <code>i</code> and said it must exist in (∈) the set of integers, ℤ. In math, we've got a bunch of these letters that represent different types of numbers. Since <code>i ∈ ℤ = { ..., -2, -1, 0, 1, 2, ... }</code> (the set of integers), when we multiply <code>m</code> by <code>i</code>, we will always produce a multiple of <code>m</code>.</p>
-<p>If you're still struggling with understanding equivalence classes, it's helpful to think of them like a clock.</p>
+<p>
+Don't get worried if this isn't the exact equation you were thinking of.
+I added a missing piece to the equation, <code>i</code>.
+There's not really a mathematical symbol that says "any value that's a multiple
+of <code>m</code>".
+Instead, I've introduced <code>i</code> and multiplied it by <code>m</code>.
+I've put a limit on <code>i</code> and said it must exist in (&isinv;) the set of integers,
+&Zopf;.
+In math, we've got a bunch of these letters that represent different types of
+numbers.
+Since <code>i &isinv; &Zopf; = { ..., -2, -1, 0, 1, 2, ... }</code> (the set of
+integers), when we multiply <code>m</code> by <code>i</code>, we will always produce a multiple of
+<code>m</code>.
+</p>
+<p>
+If you're still struggling with understanding equivalence classes, it's helpful
+to think of them like a clock.
+</p>
+<p>
 <center>
 <img src="crypto/clock.png" style="max-width: 40ch">
 </center>
-<p>This also helps us visualize addition. If it's 10pm, in 3 hours it will be 1am, or in modular arithmetic, <code>10 + 3 ≡ 1 mod 12</code>. We can also define addition and multiplication in a more formal sense:</p>
+</p>
+<p>
+This also helps us visualize addition.
+If it's 10pm, in 3 hours it will be 1am, or in modular arithmetic,
+<code>10 + 3 &equiv; 1 mod 12</code>.
+We can also define addition and multiplication in a more formal sense:
+</p>
 <center>
 <table>
 <colgroup>
@@ -315,44 +372,62 @@
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<code>(a + b) mod m = ((a mod m) + (b mod m)) mod m</code>
-</td>
+<th></th>
+<td><code>(a + b) mod m = ((a mod m) + (b mod m)) mod m</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>(ab) mod m = ((a mod m) * (b mod m)) mod m</code>
-</td>
+<th></th>
+<td><code>(ab) mod m = ((a mod m) * (b mod m)) mod m</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>Test these out on your own. Plug in values for <code>a</code>, <code>b</code>, and <code>m</code> that you can verify by hand. Test out values for <code>a</code> and <code>b</code> that are larger than <code>m</code>, smaller than <code>m</code>, or equal to <code>m</code>.</p>
-	</div>
-	<hr>
-	<div class="content">
+<p>
+Test these out on your own.
+Plug in values for <code>a</code>, <code>b</code>, and <code>m</code> that you can verify by hand.
+Test out values for <code>a</code> and <code>b</code> that are larger than <code>m</code>, smaller than <code>m</code>, or
+equal to <code>m</code>.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="prime-numbers">Prime Numbers</h2>
-<p>You've most likely seen prime numbers before, just not in the context of cryptography, so this section is super short.</p>
-<p>A <strong>prime number</strong> is a number whose only factors are 1 and itself. Prime numbers include 1, 2, 3, 5, 7, 11, 13, etc.</p>
-<p>Two numbers are <strong>coprime</strong> or <strong>relatively prime</strong> if they share no common factors. Prime numbers are all coprime with each other. Numbers that are not prime can be coprime. Niether 8 nor 9 is prime, but they are coprime with each other.</p>
-	</div>
-	<hr>
-	<div class="content">
+<p>
+You've most likely seen prime numbers before, just not in the context of
+cryptography, so this section is super short.
+</p>
+<p>
+A <b>prime number</b> is a number whose only factors are 1 and itself.
+Prime numbers include 1, 2, 3, 5, 7, 11, 13, etc.
+</p>
+<p>
+Two numbers are <b>coprime</b> or <b>relatively prime</b> if they share no common
+factors.
+Prime numbers are all coprime with each other.
+Numbers that are not prime can be coprime.
+Niether 8 nor 9 is prime, but they are coprime with each other.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="phi">Phi</h2>
-<p>Euler, that one mathematician that figured out too many things <del>and probably needed a hobby</del> also figured out φ (phi). This is also called the totient function.</p>
-<p><code>φ(n)</code> is the number of values in the range <code>[1, n]</code> that are coprime with <code>n</code>. Below, I've used a table to show step by step how <code>φ(8)</code> can be computed:</p>
+<p>
+Euler, that one mathematician that figured out too many things <del>and probably
+needed a hobby</del> also figured out &phi; (phi). This is also called the totient
+function.
+</p>
+<p>
+<code>&phi;(n)</code> is the number of values in the range <code>[1, n]</code> that are
+coprime with <code>n</code>.
+Below, I've used a table to show step by step how <code>&phi;(8)</code> can be
+computed:
+</p>
 <center>
 <table>
 <colgroup>
@@ -360,163 +435,102 @@
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-<code>i ∈ [1, n]</code>
-</th>
-<th>
-Factors of <code>i</code>
-</th>
-<th>
-Shared Factors with <code>n</code>
-</th>
-<th>
-Coprime with <code>n</code>?
-</th>
+<th></th>
+<th><code>i &isinv; [1, n]</code></th>
+<th>Factors of <code>i</code></th>
+<th>Shared Factors with <code>n</code></th>
+<th>Coprime with <code>n</code>?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<code>1</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-yes
-</td>
+<th></th>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>1, 2</code></td>
+<td>yes</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>2</code>
-</td>
-<td>
-<code>1, 2</code>
-</td>
-<td>
-<code>1, 2</code>
-</td>
-<td>
-no
-</td>
+<th></th>
+<td><code>2</code></td>
+<td><code>1, 2</code></td>
+<td><code>1</code></td>
+<td>no</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>3</code>
-</td>
-<td>
-<code>1, 3</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-yes
-</td>
+<th></th>
+<td><code>3</code></td>
+<td><code>1, 3</code></td>
+<td><code>1</code></td>
+<td>yes</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>4</code>
-</td>
-<td>
-<code>1, 2, 4</code>
-</td>
-<td>
-<code>1, 2, 4</code>
-</td>
-<td>
-no
-</td>
+<th></th>
+<td><code>4</code></td>
+<td><code>1, 2, 4</code></td>
+<td><code>1, 2, 4</code></td>
+<td>no</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>5</code>
-</td>
-<td>
-<code>1, 5</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-yes
-</td>
+<th></th>
+<td><code>5</code></td>
+<td><code>1, 5</code></td>
+<td><code>1</code></td>
+<td>yes</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>6</code>
-</td>
-<td>
-<code>1, 2, 3, 6</code>
-</td>
-<td>
-<code>1, 2</code>
-</td>
-<td>
-no
-</td>
+<th></th>
+<td><code>6</code></td>
+<td><code>1, 2, 3, 6</code></td>
+<td><code>1, 2</code></td>
+<td>no</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>7</code>
-</td>
-<td>
-<code>1, 7</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-yes
-</td>
+<th></th>
+<td><code>7</code></td>
+<td><code>1, 7</code></td>
+<td><code>1</code></td>
+<td>yes</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>8</code>
-</td>
-<td>
-<code>1, 2, 4, 8</code>
-</td>
-<td>
-<code>1, 2, 4, 8</code>
-</td>
-<td>
-no
-</td>
+<th></th>
+<td><code>8</code></td>
+<td><code>1, 2, 4, 8</code></td>
+<td><code>1, 2, 4, 8</code></td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>As we can see, four numbers between 1 and 8 are coprime with 8, thus <code>φ(8) = 4</code>.</p>
-<p>Phi has some cool properties. Let's look at two easy ones.</p>
-<ol style="list-style-type: decimal">
-<li>If <code>n</code> is prime, then <code>φ(n) = n-1</code></li>
-<li>Given relatively prime numbers <code>a</code> and <code>b</code>, <code>φ(ab) = φ(a) * φ(b)</code></li>
+<p>
+As we can see, four numbers between 1 and 8 are coprime with 8, thus
+<code>&phi;(8) = 4</code>.
+</p>
+<p>
+Phi has some cool properties.
+Let's look at two easy ones.
+</p>
+<ol>
+<li>
+If <code>n</code> is prime, then <code>&phi;(n) = n-1</code>
+</li>
+<li>
+Given relatively prime numbers <code>a</code> and <code>b</code>,
+<code>&phi;(ab) = &phi;(a) * &phi;(b)</code>
+</li>
 </ol>
-<p>You may think <em>&quot;Woah! Niether of these are easy! I have no idea what I'm looking at!&quot;</em>. Even though we don't have much experience with phi, we can still verify these properties the same way we calculated phi.</p>
-<h3 id="if-n-is-prime-then-φn-n-1">If <code>n</code> is prime, then <code>φ(n) = n-1</code></h3>
-<p>As we know, 5 is a prime number. Its only factors are <code>1</code> and <code>5</code>. Let's again use a table, this time to calculate <code>φ(5)</code>:</p>
+<p>
+You may think <i>"Woah! Niether of these are easy! I have no idea what I'm looking
+at!"</i>.
+Even though we don't have much experience with phi, we can still verify these
+properties the same way we calculated phi.
+</p>
+<h3 id="if-n-is-prime-then-codephin--n1code">If <code>n</code> is prime, then <code>&phi;(n) = n-1</code></h3>
+<p>
+As we know, 5 is a prime number.
+Its only factors are <code>1</code> and <code>5</code>.
+Let's again use a table, this time to calculate <code>&phi;(5)</code>:
+</p>
 <center>
 <table>
 <colgroup>
@@ -524,111 +538,78 @@ no
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-<code>i ∈ [1, n]</code>
-</th>
-<th>
-Factors of <code>i</code>
-</th>
-<th>
-Shared Factors with <code>n</code>
-</th>
-<th>
-Coprime with <code>n</code>?
-</th>
+<th></th>
+<th><code>i &isinv; [1, n]</code></th>
+<th>Factors of <code>i</code></th>
+<th>Shared Factors with <code>n</code></th>
+<th>Coprime with <code>n</code>?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<code>1</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-yes
-</td>
+<th></th>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td>yes</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>2</code>
-</td>
-<td>
-<code>1, 2</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-yes
-</td>
+<th></th>
+<td><code>2</code></td>
+<td><code>1, 2</code></td>
+<td><code>1</code></td>
+<td>yes</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>3</code>
-</td>
-<td>
-<code>1, 3</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-yes
-</td>
+<th></th>
+<td><code>3</code></td>
+<td><code>1, 3</code></td>
+<td><code>1</code></td>
+<td>yes</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>4</code>
-</td>
-<td>
-<code>1, 2, 4</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-yes
-</td>
+<th></th>
+<td><code>4</code></td>
+<td><code>1, 2, 4</code></td>
+<td><code>1</code></td>
+<td>yes</td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>5</code>
-</td>
-<td>
-<code>1, 5</code>
-</td>
-<td>
-<code>1, 5</code>
-</td>
-<td>
-no
-</td>
+<th></th>
+<td><code>5</code></td>
+<td><code>1, 5</code></td>
+<td><code>1</code></td>
+<td>no</td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>As we can see, <code>φ(5) = 4</code>. This matches the property we're trying to prove where if <code>n</code> is prime, then <code>φ(n) = n - 1</code>.</p>
-<p>This also makes sense without the table performing the calculation. Phi is calculated based on how many numbers less than <code>n</code> are coprime to <code>n</code>. Two numbers are coprime if the only factor they share is 1. If a number is prime, its only factors are 1 and itself. Thus, if a number is prime, all numbers less than <code>n</code> must be coprime with <code>n</code> as they cannot share any factors with <code>n</code>.</p>
-<h3 id="given-relatively-prime-numbers-a-and-b-φab-φa-φb">Given relatively prime numbers <code>a</code> and <code>b</code>, <code>φ(ab) = φ(a) * φ(b)</code></h3>
-<p>Again, this looks like another super complicated property that can never make sense. This time, we have multiple values. How could we ever make a table for this?</p>
-<p>Let's verify that <code>φ(20) = φ(4) * φ(5)</code>. Notice that even though 4 isn't prime, it is coprime with 5. In this table, I've left out the &quot;Comprime with <code>n</code>?&quot; column. Instead, I've highlighted the &quot;1&quot;s that indicate a number is coprime with <code>n</code>.</p>
+<p>
+As we can see, <code>&phi;(5) = 4</code>.
+This matches the property we're trying to prove where if <code>n</code> is prime, then
+<code>&phi;(n) = n - 1</code>.
+</p>
+<p>
+This also makes sense without the table performing the calculation.
+Phi is calculated based on how many numbers less than <code>n</code> are coprime to <code>n</code>.
+Two numbers are coprime if the only factor they share is 1.
+If a number is prime, its only factors are 1 and itself.
+Thus, if a number is prime, all numbers less than <code>n</code> must be coprime with <code>n</code>
+as they cannot share any factors with <code>n</code>.
+</p>
+<h3 id="given-relatively-prime-numbers-a-and-b-codephiab--phia--phibcode">Given relatively prime numbers <code>a</code> and <code>b</code>, <code>&phi;(ab) = &phi;(a) * &phi;(b)</code></h3>
+<p>
+Again, this looks like another super complicated property that can never make
+sense.
+This time, we have multiple values.
+How could we ever make a table for this?
+</p>
+<p>
+Let's verify that <code>&phi;(20) = &phi;(4) * &phi;(5)</code>.
+Notice that even though 4 isn't prime, it is coprime with 5.
+In this table, I've left out the "Comprime with <code>n</code>?" column.
+Instead, I've highlighted the "1"s that indicate a number is coprime with <code>n</code>.
+</p>
 <center>
 <table>
 <colgroup>
@@ -636,445 +617,305 @@ no
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-<code>i ∈ [1, n]</code>
-</th>
-<th>
-Factors of <code>i</code>
-</th>
-<th>
-Shared Factors with <code>4</code>
-</th>
-<th>
-Shared Factors with <code>5</code>
-</th>
-<th>
-Shared Factors with <code>20</code>
-</th>
+<th></th>
+<th><code>i &isinv; [1, n]</code></th>
+<th>Factors of <code>i</code></th>
+<th>Shared Factors with <code>4</code></th>
+<th>Shared Factors with <code>5</code></th>
+<th>Shared Factors with <code>20</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<code>1</code>
-</td>
-<td>
-<code>1</code>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
+<th></th>
+<td><code>1</code></td>
+<td><code>1</code></td>
+<td><span class="hi"><code>1</code></span></td>
+<td><span class="hi"><code>1</code></span></td>
+<td><span class="hi"><code>1</code></span></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>2</code>
-</td>
-<td>
-<code>1, 2</code>
-</td>
-<td>
-<code>1, 2</code>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
-<td>
-<code>1, 2</code>
-</td>
+<th></th>
+<td><code>2</code></td>
+<td><code>1, 2</code></td>
+<td><code>1, 2</code></td>
+<td><span class="hi"><code>1</code></span></td>
+<td><code>1, 2</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>3</code>
-</td>
-<td>
-<code>1, 3</code>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
+<th></th>
+<td><code>3</code></td>
+<td><code>1, 3</code></td>
+<td><span class="hi"><code>1</code></span></td>
+<td><span class="hi"><code>1</code></span></td>
+<td><span class="hi"><code>1</code></span></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>4</code>
-</td>
-<td>
-<code>1, 2, 4</code>
-</td>
-<td>
-<code>1, 2, 4</code>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
-<td>
-<code>1, 2, 4</code>
-</td>
+<th></th>
+<td><code>4</code></td>
+<td><code>1, 2, 4</code></td>
+<td><code>1, 2, 4</code></td>
+<td><span class="hi"><code>1</code></span></td>
+<td><code>1, 2, 4</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>5</code>
-</td>
-<td>
-<code>1, 5</code>
-</td>
-<td>
-</td>
-<td>
-<code>1, 5</code>
-</td>
-<td>
-<code>1, 5</code>
-</td>
+<th></th>
+<td><code>5</code></td>
+<td><code>1, 5</code></td>
+<td></td>
+<td><code>1, 5</code></td>
+<td><code>1, 5</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>6</code>
-</td>
-<td>
-<code>1, 2, 3, 6</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<code>1, 2</code>
-</td>
+<th></th>
+<td><code>6</code></td>
+<td><code>1, 2, 3, 6</code></td>
+<td></td>
+<td></td>
+<td><code>1, 2</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>7</code>
-</td>
-<td>
-<code>1, 7</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
+<th></th>
+<td><code>7</code></td>
+<td><code>1, 7</code></td>
+<td></td>
+<td></td>
+<td><span class="hi"><code>1</code></span></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>8</code>
-</td>
-<td>
-<code>1, 2, 4, 8</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<code>1, 2, 4</code>
-</td>
+<th></th>
+<td><code>8</code></td>
+<td><code>1, 2, 4, 8</code></td>
+<td></td>
+<td></td>
+<td><code>1, 2, 4, 8</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>9</code>
-</td>
-<td>
-<code>1, 3, 9</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
+<th></th>
+<td><code>9</code></td>
+<td><code>1, 3, 9</code></td>
+<td></td>
+<td></td>
+<td><span class="hi"><code>1</code></span></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>10</code>
-</td>
-<td>
-<code>1, 2, 5, 10</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<code>1, 2, 5, 10</code>
-</td>
+<th></th>
+<td><code>10</code></td>
+<td><code>1, 2, 5, 10</code></td>
+<td></td>
+<td></td>
+<td><code>1, 2, 5, 10</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>11</code>
-</td>
-<td>
-<code>1, 11</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
+<th></th>
+<td><code>11</code></td>
+<td><code>1, 11</code></td>
+<td></td>
+<td></td>
+<td><span class="hi"><code>1</code></span></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>12</code>
-</td>
-<td>
-<code>1, 2, 3, 4, 6, 12</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<code>1, 2, 4</code>
-</td>
+<th></th>
+<td><code>12</code></td>
+<td><code>1, 2, 3, 4, 6, 12</code></td>
+<td></td>
+<td></td>
+<td><code>1, 2, 4</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>13</code>
-</td>
-<td>
-<code>1, 13</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
+<th></th>
+<td><code>13</code></td>
+<td><code>1, 13</code></td>
+<td></td>
+<td></td>
+<td><span class="hi"><code>1</code></span></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>14</code>
-</td>
-<td>
-<code>1, 2, 7, 14</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<code>1, 2</code>
-</td>
+<th></th>
+<td><code>14</code></td>
+<td><code>1, 2, 7, 14</code></td>
+<td></td>
+<td></td>
+<td><code>1, 2</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>15</code>
-</td>
-<td>
-<code>1, 3, 5, 15</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<code>1, 5</code>
-</td>
+<th></th>
+<td><code>15</code></td>
+<td><code>1, 3, 5, 15</code></td>
+<td></td>
+<td></td>
+<td><code>1, 5</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>16</code>
-</td>
-<td>
-<code>1, 2, 4, 8, 16</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<code>1, 2, 4</code>
-</td>
+<th></th>
+<td><code>16</code></td>
+<td><code>1, 2, 4, 8, 16</code></td>
+<td></td>
+<td></td>
+<td><code>1, 2, 4</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>17</code>
-</td>
-<td>
-<code>1, 17</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
+<th></th>
+<td><code>17</code></td>
+<td><code>1, 17</code></td>
+<td></td>
+<td></td>
+<td><span class="hi"><code>1</code></span></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>18</code>
-</td>
-<td>
-<code>1, 2, 9, 18</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<code>1, 2</code>
-</td>
+<th></th>
+<td><code>18</code></td>
+<td><code>1, 2, 3, 6, 9, 18</code></td>
+<td></td>
+<td></td>
+<td><code>1, 2</code></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>19</code>
-</td>
-<td>
-<code>1, 19</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<span class="hi"><code>1</code></span>
-</td>
+<th></th>
+<td><code>19</code></td>
+<td><code>1, 19</code></td>
+<td></td>
+<td></td>
+<td><span class="hi"><code>1</code></span></td>
 </tr>
 <tr>
-<th>
-</th>
-<td>
-<code>20</code>
-</td>
-<td>
-<code>1, 2, 4, 5, 10, 20</code>
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-<code>1, 2, 4, 5, 10, 20</code>
-</td>
+<th></th>
+<td><code>20</code></td>
+<td><code>1, 2, 4, 5, 10, 20</code></td>
+<td></td>
+<td></td>
+<td><code>1, 2, 4, 5, 10, 20</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>Based on the highlighted &quot;1&quot;s in the table, we can verify our property.</p>
+<p>
+Based on the highlighted "1"s in the table, we can verify our property.
+</p>
+<p>
 <center>
 <table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-</th>
-</tr>
-</thead>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
 <tbody>
-<tr>
-<th>
-</th>
-<td>
-<code>φ(ab) = φ(a) * φ(b)</code>
-</td>
-<td class="left">
-The original property
-</td>
+<tr><th></th>
+<td><code>&phi;(ab) = &phi;(a) * &phi;(b)</code></td>
+<td class="left">The original property</td>
 </tr>
-<tr>
-<th>
-</th>
-<td>
-<code>φ(20) = φ(4) * φ(5)</code>
-</td>
-<td class="left">
-Plug in values
-</td>
+<tr><th></th>
+<td><code>&phi;(20) = &phi;(4) * &phi;(5)</code></td>
+<td class="left">Plug in values</td>
 </tr>
-<tr>
-<th>
-</th>
-<td>
-<code>8 = 2 * 4</code>
-</td>
-<td class="left">
-Plug in values from table
-</td>
+<tr><th></th>
+<td><code>8 = 2 * 4</code></td>
+<td class="left">Plug in values from table</td>
 </tr>
-<tr>
-<th>
-</th>
-<td>
-<code>8 = 8</code>
-</td>
-<td class="left">
-Verified!
-</td>
+<tr><th></th>
+<td><code>8 = 8</code></td>
+<td class="left">Verified!</td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>Pretty nifty huh. Even though we're using Greek letters we've never seen before and properties we've never seen before in math we've never seen before, we can still work through problems to prove and verify things in ways we understand.</p>
-	</div>
-	<hr>
-	<div class="content">
+</p>
+<p>
+Pretty nifty huh.
+Even though we're using Greek letters we've never seen before and properties
+we've never seen before in math we've never seen before, we can still work
+through problems to prove and verify things in ways we understand.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="modular-inverses">Modular Inverses</h2>
-<p>It appears as though we just covered two very different concepts. We learned about modular arithmetic and equivalence classes, then we learned about prime numbers and this new φ function. Let's tie these concepts together.</p>
-<p>A <strong>modular inverse</strong> is also called a <strong>multiplicative inverse</strong>. In the domain of <code>ℤ<sub>m</sub></code> (the set of integers <code>[0, m)</code>), <code>a</code> and <code>b</code> are inverses if <code>ab ≡ 1 mod m</code>. We can also write the inverse of <code>a</code> as <code>a<sup>-1</sup></code>.</p>
-<p>It is important to note that it is not guaranteed for <code>a</code> to have an inverse in <code>ℤ<sub>m</sub></code>. Only if <code>a</code> and <code>m</code> are coprime, <code>a</code> has an inverse in <code>ℤ<sub>m</sub></code>. This means if <code>m</code> is prime, then <code>a<sup>-1</sup></code> exists for all <code>a &gt; 0</code>. If <code>m</code> is not prime, only <code>φ(n)</code> elements have inverses in <code>ℤ<sub>m</sub></code>.</p>
-<p>Before we move further, let's verify this by plugging in some values:</p>
+<p>
+It appears as though we just covered two very different concepts.
+We learned about modular arithmetic and equivalence classes, then we learned
+about prime numbers and this new &phi; function.
+Let's tie these concepts together.
+</p>
+<p>
+A <b>modular inverse</b> is also called a <b>multiplicative inverse</b>.
+In the domain of <code>&Zopf;<sub>m</sub></code> (the set of integers <code>[0, m)</code>), <code>a</code> and
+<code>b</code> are inverses if <code>ab &equiv; 1 mod m</code>.
+We can also write the inverse of <code>a</code> as <code>a<sup>-1</sup></code>.
+</p>
+<p>
+It is important to note that it is not guaranteed for <code>a</code> to have an inverse in
+<code>&Zopf;<sub>m</sub></code>.
+Only if <code>a</code> and <code>m</code> are coprime, <code>a</code> has an inverse in <code>&Zopf;<sub>m</sub></code>.
+This means if <code>m</code> is prime, then <code>a<sup>-1</sup></code> exists for all
+<code>a > 0</code>.
+If <code>m</code> is not prime, only <code>&phi;(n)</code> elements have inverses in
+<code>&Zopf;<sub>m</sub></code>.
+</p>
+<p>
+Before we move further, let's verify this by plugging in some values:
+</p>
+<center>
+<p>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th>
+<td colspan='2'><b>When <code>m</code> is prime</b></td>
+</tr>
+<tr><th></th>
+<td colspan='2'><code>m = 5, &Zopf;<sub>5</sub> = { 0, 1, 2, 3, 4 }</code></td>
+</tr>
+<tr><th></th>
+<td><code>1 * 1 = 1 &equiv; 1 mod 5</code></td>
+<td class="left">When <code>a = 1</code>, <code>a<sup>-1</sup> = 1</code></td>
+</tr>
+<tr><th></th>
+<td><code>2 * 3 = 6 &equiv; 1 mod 5</code></td>
+<td class="left">When <code>a = 2</code>, <code>a<sup>-1</sup> = 3</code><br>When <code>a = 3</code>,
+<code>a<sup>-1</sup> = 2</code></td>
+</tr>
+<tr><th></th>
+<td><code>4 * 4 = 16 &equiv; 1 mod 5</code></td>
+<td class="left">When <code>a = 4</code>, <code>a<sup>-1</sup> = 4</code></td>
+</tr>
+<tr><th></th>
+<td colspan='2'><b>When <code>m</code> is not prime</b></td>
+</tr>
+<tr><th></th>
+<td colspan='2'><code>m = 4, &Zopf;<sub>4</sub> = { 0, 1, 2, 3 }</code></td>
+</tr>
+<tr><th></th>
+<td><code>1 * 1 = 1 &equiv; 1 mod 4</code></td>
+<td class="left">When <code>a = 1</code>, <code>a<sup>-1</sup> = 1</code></td>
+</tr>
+<tr><th></th>
+<td><code>2 * 1 = 2 &equiv; 2 mod 4</code>
+<br><code>2 * 2 = 4 &equiv; 0 mod 4</code>
+<br><code>2 * 3 = 6 &equiv; 2 mod 4</code>
+</td>
+<td class="left">When <code>a = 2</code>, <code>a<sup>-1</sup></code> does not exist</td>
+</tr>
+<tr><th></th>
+<td><code>3 * 3 = 9 &equiv; 1 mod 4</code></td>
+<td class="left">When <code>a = 3</code>, <code>a<sup>-1</sup> = 3</code></td>
+</tr>
+</tbody>
+</table>
+</p>
+</center>
+<p>
+As we can see, 5 is prime and all non-zero elements have inverses in
+<code>&Zopf;<sub>5</sub></code>.
+Meanwhile, 4 is not prime, so only the number of elements that are coprime with
+4 have inverses in <code>&Zopf;<sub>4</sub></code>.
+</p>
+<p>
+In order to calculate a modular inverse, you <i>could</i> do what I did and test
+every single value in the domain, however, this gets pretty time consuming when
+we get to larger numbers.
+If only Euler wasn't such a slacker and thought of a theorem to calculate
+modular inverses.
+Oh, wait, he did!
+</p>
 <center>
 <table>
 <colgroup>
@@ -1082,106 +923,25 @@ Verified!
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th>Euler's Theorem</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td colspan="2">
-<strong>When <code>m</code> is prime</strong>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td colspan="2">
-<code>m = 5, ℤ<sub>5</sub> = { 0, 1, 2, 3, 4 }</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>1 * 1 = 1 ≡ 1 mod 5</code>
-</td>
-<td class="left">
-When <code>a = 1</code>, <code>a<sup>-1</sup> = 1</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>2 * 3 = 6 ≡ 1 mod 5</code>
-</td>
-<td class="left">
-When <code>a = 2</code>, <code>a<sup>-1</sup> = 3</code><br>When <code>a = 3</code>, <code>a<sup>-1</sup> = 2</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>4 * 4 = 16 ≡ 1 mod 5</code>
-</td>
-<td class="left">
-When <code>a = 4</code>, <code>a<sup>-1</sup> = 4</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td colspan="2">
-<strong>When <code>m</code> is not prime</strong>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td colspan="2">
-<code>m = 4, ℤ<sub>4</sub> = { 0, 1, 2, 3 }</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>1 * 1 = 1 ≡ 1 mod 4</code>
-</td>
-<td class="left">
-When <code>a = 1</code>, <code>a<sup>-1</sup> = 1</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>2 * 1 = 2 ≡ 2 mod 4</code> <br><code>2 * 2 = 4 ≡ 0 mod 4</code> <br><code>2 * 3 = 6 ≡ 2 mod 4</code>
-</td>
-<td class="left">
-When <code>a = 2</code>, <code>a<sup>-1</sup></code> does not exist
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>3 * 3 = 9 ≡ 1 mod 4</code>
-</td>
-<td class="left">
-When <code>a = 3</code>, <code>a<sup>-1</sup> = 3</code>
-</td>
+<th></th>
+<td>If <code>a</code> and <code>m</code> are coprime then <code>a<sup>&phi;(m)</sup> = 1 mod m</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>As we can see, 5 is prime and all non-zero elements have inverses in <code>ℤ<sub>5</sub></code>. Meanwhile, 4 is not prime, so only the number of elements that are coprime with 4 have inverses in <code>ℤ<sub>4</sub></code>.</p>
-<p>In order to calculate a modular inverse, you <em>could</em> do what I did and test every single value in the domain, however, this gets pretty time consuming when we get to larger numbers. If only Euler wasn't such a slacker and thought of a theorem to calculate modular inverses. Oh, wait, he did!</p>
+<p>
+Well thanks for the theorem buddy, but that doesn't help very much.
+For an inverse, I need to multiply two numbers together to get 1, you only gave
+me one.
+Since Euler couldn't even give us two numbers, we should make sure this theorem
+actually works.
+</p>
 <center>
 <table>
 <colgroup>
@@ -1189,25 +949,108 @@ When <code>a = 3</code>, <code>a<sup>-1</sup> = 3</code>
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-Euler's Theorem
-</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-If <code>a</code> and <code>m</code> are coprime then <code>a<sup>φ(m)</sup> = 1 mod m</code>
-</td>
+<th></th>
+<td><b>When <code>m</code> is prime</b></td>
+</tr>
+<tr>
+<th></th>
+<td><code>m = 5, &phi;(5) = 4<br>&Zopf;<sub>5</sub> = { 0, 1, 2, 3, 4 }</code></td>
+</tr>
+<tr>
+<th></th>
+<td><code>1<sup>4</sup> = 1 &equiv; 1 mod 5</code></td>
+</tr>
+<tr>
+<th></th>
+<td><code>2<sup>4</sup> = 16 &equiv; 1 mod 5</code></td>
+</tr>
+<tr>
+<th></th>
+<td><code>3<sup>4</sup> = 81 &equiv; 1 mod 5</code></td>
+</tr>
+<tr>
+<th></th>
+<td><code>4<sup>4</sup> = 256 &equiv; 1 mod 5</code></td>
+</tr>
+<tr>
+<th></th>
+<td><b>When <code>m</code> is not prime</b></td>
+</tr>
+<tr>
+<th></th>
+<td><code>m = 4, &phi;(4) = 2<br>&Zopf;<sub>4</sub> = { 0, 1, 2, 3 }</code></td>
+</tr>
+<tr>
+<th></th>
+<td><code>1<sup>2</sup> = 1 &equiv; 1 mod 4</code></td>
+</tr>
+<tr>
+<th></th>
+<td><code>3<sup>2</sup> = 9 &equiv; 1 mod 4</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>Well thanks for the theorem buddy, but that doesn't help very much. For an inverse, I need to multiply two numbers together to get 1, you only gave me one. Since Euler couldn't even give us two numbers, we should make sure this theorem actually works.</p>
+<p>
+Turns out Euler wasn't joking.
+His theorem is correct, but how can we use it to calculate inverses?
+</p>
+<p>
+Looking at our cases when <code>m = 4</code>, we see that <code>1<sup>2</sup> &equiv; 1 mod 4</code>
+and <code>3<sup>2</sup> &equiv; 1 mod 4</code>.
+This looks very similar to when I had calculated the inverses.
+We saw that <code>1 <i> 1 &equiv; 1 mod 4</code> and <code>3 </i> 3 &equiv; 1 mod 4</code>.
+It looks like Euler gave us two numbers after all, he just hid them in the exponents.
+</p>
+<p>
+Does this work for our cases when <code>m = 5</code> too?
+It's not as obvious and we need to apply our multiplication rules from above.
+</p>
+<p>
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th>
+<td><code>m = 5, &phi;(5) = 4<br>&Zopf;<sub>5</sub> = { 0, 1, 2, 3, 4 }</code></td></tr>
+</tr>
+<tr><th></th>
+<td><code>a = 1, a<sup>-1</sup> = 1<br>1 * 1<sup>3</sup> = 1 * 1 &equiv; 1 mod 5</code></td>
+</tr>
+<tr><th></th>
+<td><code>a = 2, a<sup>-1</sup> = 3<br>2 * 2<sup>3</sup> &equiv; 1 mod 5
+<br>2 * 8  &equiv; 1 mod 5
+<br>8 &equiv; 3 mod 5
+<br>2 * 3 = 6 &equiv; 1 mod 5</code></td>
+</tr>
+<tr><th></th>
+<td><code>a = 3, a<sup>-1</sup> = 2<br>3 * 3<sup>3</sup> &equiv; 1 mod 5
+<br>3 * 27  &equiv; 1 mod 5
+<br>27 &equiv; 2 mod 5
+<br>3 * 2 = 6 &equiv; 1 mod 5</code></td>
+</tr>
+<tr><th></th>
+<td><code>a = 4, a<sup>-1</sup> = 4<br>4 * 4<sup>3</sup> &equiv; 1 mod 5
+<br>4 * 64  &equiv; 1 mod 5
+<br>64 &equiv; 4 mod 5
+<br>4 * 4 = 16 &equiv; 1 mod 5</code></td>
+</tr>
+</tbody>
+</table>
+</center>
+</p>
+<p>
+As simple as that, by testing a few small numbers, not only were we able to
+understand Euler's theorem, but we can also put together our own formula to
+calculate modular inverses.
+</p>
 <center>
 <table>
 <colgroup>
@@ -1215,174 +1058,30 @@ If <code>a</code> and <code>m</code> are coprime then <code>a<sup>φ(m)</sup> = 
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<strong>When <code>m</code> is prime</strong>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>m = 5, φ(5) = 4<br>ℤ<sub>5</sub> = { 0, 1, 2, 3, 4 }</code>
-</td>
-</tr>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>1<sup>4</sup> = 1 ≡ 1 mod 5</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>2<sup>4</sup> = 16 ≡ 1 mod 5</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>3<sup>4</sup> = 81 ≡ 1 mod 5</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>4<sup>4</sup> = 256 ≡ 1 mod 5</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<strong>When <code>m</code> is not prime</strong>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>m = 4, φ(4) = 2<br>ℤ<sub>4</sub> = { 0, 1, 2, 3 }</code>
-</td>
-</tr>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>1<sup>2</sup> = 1 ≡ 1 mod 4</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>3<sup>2</sup> = 9 ≡ 1 mod 4</code>
-</td>
+<th></th>
+<td>If <code>a</code> and <code>m</code> are coprime then<br><code>a<sup>-1</sup> = a<sup>&phi;(m)-1</sup> mod m</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>Turns out Euler wasn't joking. His theorem is correct, but how can we use it to calculate inverses?</p>
-<p>Looking at our cases when <code>m = 4</code>, we see that <code>1<sup>2</sup> ≡ 1 mod 4</code> and <code>3<sup>2</sup> ≡ 1 mod 4</code>. This looks very similar to when I had calculated the inverses. We saw that <code>1 * 1 ≡ 1 mod 4</code> and <code>3 * 3 ≡ 1 mod 4</code>. It looks like Euler gave us two numbers after all, he just hid them in the exponents.</p>
-<p>Does this work for our cases when <code>m = 5</code> too? It's not as obvious and we need to apply our multiplication rules from above.</p>
-<center>
-<table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>
-</th>
-<td>
-<code>m = 5, φ(5) = 4<br>ℤ<sub>5</sub> = { 0, 1, 2, 3, 4 }</code>
-</td>
-</tr>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>a = 1, a<sup>-1</sup> = 1<br>1 * 1<sup>3</sup> = 1 * 1 ≡ 1 mod 5</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>a = 2, a<sup>-1</sup> = 3<br>2 * 2<sup>3</sup> ≡ 1 mod 5 <br>2 * 8 ≡ 1 mod 5 <br>8 ≡ 3 mod 5 <br>2 * 3 = 6 ≡ 1 mod 5</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>a = 3, a<sup>-1</sup> = 2<br>3 * 3<sup>3</sup> ≡ 1 mod 5 <br>3 * 27 ≡ 1 mod 5 <br>27 ≡ 2 mod 5 <br>3 * 2 = 6 ≡ 1 mod 5</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>a = 4, a<sup>-1</sup> = 4<br>4 * 4<sup>3</sup> ≡ 1 mod 5 <br>4 * 64 ≡ 1 mod 5 <br>64 ≡ 4 mod 5 <br>4 * 4 = 16 ≡ 1 mod 5</code>
-</td>
-</tr>
-</tbody>
-</table>
-</center>
-<p>As simple as that, by testing a few small numbers, not only were we able to understand Euler's theorem, but we can also put together our own formula to calculate modular inverses.</p>
-<center>
-<table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>
-</th>
-<td>
-If <code>a</code> and <code>m</code> are coprime then<br><code>a<sup>-1</sup> = a<sup>φ(m)-1</sup> mod m</code>
-</td>
-</tr>
-</tbody>
-</table>
-</center>
-	</div>
-	<hr>
-	<div class="content">
-<p>If you've made it this far, I hope you've found this as cool as I do. If you understand this math, first, give yourself a pat on the back, especially if it's your first time seeing this content. Just because content is new doesn't mean it has to be difficult or scary. If you're feeling super confident, try using your newfound knowledge to break encryption and calculate your friends keys in lab.</p>
-	</div>
+</div>
+<hr>
+<div class="content">
+<p>
+If you've made it this far, I hope you've found this as cool as I do.
+If you understand this math, first, give yourself a pat on the back, especially
+if it's your first time seeing this content.
+Just because content is new doesn't mean it has to be difficult or scary.
+If you're feeling super confident, try using your newfound knowledge to break
+encryption and calculate your friends keys in lab.
+</p>
+</div>
 	<hr>
 	<div class="content">
 		<center>

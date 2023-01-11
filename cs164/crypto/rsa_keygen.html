@@ -39,9 +39,9 @@
 	<hr>
 	<div class="content">
 		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
-		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
-		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
-		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/base10.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/base2.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/base16.html"><b>1.3 :</b> Base-16</a>
 		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
 	</div>
 	<hr>
@@ -113,7 +113,7 @@
 		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
 		<a href="crypto/math.html"><b>10.1 :</b> RSA Math Background</a>
 		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
-		<a href="crypto/rsag.html"><b>10.3 :</b> RSA Encryption</a>
+		<a href="crypto/rsar.html"><b>10.3 :</b> RSA Encryption</a>
 	</div>
 </div>
 <div id="main">
@@ -124,33 +124,60 @@
 			<a href="crypto/math.html">Previous Section</a> : RSA Math Background : 10.1
 		</div>
 		<div class="next">
-			10.3 : RSA Encryption : <a href="crypto/rsar.html">Next Section</a>
+			10.3 : RSA Encryption : <a href="crypto/rsag.html">Next Section</a>
 		</div>
 		</div>
 		<br>
 		<br>
 	</div>
-<!-- ERROR -->
 	<hr>
-	<div class="content">
+<!-- ERROR -->
+		<div class="content">
 		<h1>10.2 : RSA Key Generation</h1>
 	</div>
 	<hr>
-	<div class="content">
-<p>RSA Encryption was introduced in 1977 by Ron Rivest, Adi Shamir and Leonard Adleman at MIT; hence the name &quot;RSA&quot;. On the lecture slides, it's also called Public Key Encryption (PKE) and PKC (Public Key Cryptography).</p>
-<p>Some links you may find helpful in this section</p>
+<div class="content">
+<p>
+RSA Encryption was introduced in 1977 by Ron Rivest, Adi Shamir and Leonard
+Adleman at MIT; hence the name "RSA".
+On the lecture slides, it's also called Public Key Encryption (PKE) and PKC
+(Public Key Cryptography).
+</p>
+<p>
+Some links you may find helpful in this section
+</p>
 <ul>
-<li><a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a></li>
-<li><a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt_v2.html">RSA Encryption/Decryption Calculator</a></li>
-<li><a href="https://1513041.mediaspace.kaltura.com/media/CS475+Crypto+3/1_st8qnz7g">Dr. Stuart's Public Key Cryptography Lecture</a></li>
+<li>
+<a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a>
+</li>
+<li>
+<a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSA<i>Express</i>EncryptDecrypt<i>v2.html">RSA Encryption/Decryption Calculator</a>
+</li>
+<li>
+<a href="https://1513041.mediaspace.kaltura.com/media/CS475+Crypto+3/1_st8qnz7g">Dr. Stuart's Public Key Cryptography Lecture</a>
+</li>
 </ul>
-	</div>
-	<hr>
-	<div class="content">
-<p>The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a> does most of this for you. The math relies on a lot of properties of prime numbers in modular arithmetic. The <a href="crypto/math.html">previous section</a> covers it quite a bit more. You can also read through my notes from when I took <a href="../ref/cs303.pdf">CS-303: Algorithmic Number Theory &amp; Cryptography</a> CS-303 was a lot of work, but I really enjoyed the class. When you actually got the chance to sit down and play with the material, the way the numbers just worked was really cool.</p>
-<h3 id="select-p-and-q">1. Select <code>p</code> and <code>q</code></h3>
-<p><code>p</code> and <code>q</code> must be two random prime numbers. The larger the number, the more secure. Think about how long it would take to check the primeness of a number.</p>
-<h3 id="compute-n">2. Compute <code>n</code></h3>
+</div>
+<hr>
+<div class="content">
+<p>
+The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a>
+does most of this for you.
+The math relies on a lot of properties of prime numbers in modular arithmetic.
+The <a href="crypto/math.html">previous section</a> covers it quite a bit more.
+You can also read through my notes from when I took
+<a href="../ref/cs303.pdf">CS-303: Algorithmic Number Theory & Cryptography</a>
+CS-303 was a lot of work, but I really enjoyed the class.
+When you actually got the chance to sit down and play with the material, the way
+the numbers just worked was really cool.
+</p>
+<h3 id="1-select-p-and-q">1. Select <code>p</code> and <code>q</code></h3>
+<p>
+<code>p</code> and <code>q</code> must be two random prime numbers.
+The larger the number, the more secure.
+Think about how long it would take to check the primeness of a number.
+</p>
+<h3 id="2-compute-n">2. Compute <code>n</code></h3>
 <center>
 <table>
 <colgroup>
@@ -158,25 +185,24 @@
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<code>n = pq</code>
-</td>
+<th></th>
+<td><code>n = pq</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>Since <code>p</code> and <code>q</code> are both prime, <code>n</code> only has four factors: <code>{1, p, q, n}</code>. Even though <code>n</code> will be made public, it's still very difficult to calculate the prime factorization of <code>n</code>.</p>
-<h3 id="compute-φn">3. Compute <code>φ(n)</code></h3>
+<p>
+Since <code>p</code> and <code>q</code> are both prime, <code>n</code> only has four factors: <code>{1, p, q, n}</code>.
+Even though <code>n</code> will be made public, it's still very difficult to calculate the
+prime factorization of <code>n</code>.
+</p>
+<h3 id="3-compute-codephincode">3. Compute <code>&phi;(n)</code></h3>
 <center>
 <table>
 <colgroup>
@@ -184,31 +210,91 @@
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<code>φ(n) = (p - 1)(q - 1)</code>
-</td>
+<th></th>
+<td><code>&phi;(n) = (p - 1)(q - 1)</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>It may be tempting to just accept this new seemingly random formula without question. I urge you to look a little deeper into where this formula came from.</p>
-<p>If we look back at the <a href="crypto/math.html#phi">the phi function</a>, we see that the <code>φ(n)</code> function calculates how many values less than <code>n</code> are coprime to <code>n</code>. Why are we using subtraction and multiplication here? Why aren't we using a loop to count the number of values?</p>
-<p>In the aforementioned <a href="crypto/math.html#phi">math section</a>, I also showed you the proof for two cool properties that φ has:</p>
-<ol style="list-style-type: decimal">
-<li>If <code>n</code> is prime, <code>&amp;phi(n) = n - 1</code></li>
-<li>If <code>a</code> and <code>b</code> are coprime, then <code>φ(ab) = φ(a) * φ(b)</code></li>
+<p>
+It may be tempting to just accept this new seemingly random formula without
+question.
+I urge you to look a little deeper into where this formula came from.
+</p>
+<p>
+If we look back at the <a href="crypto/math.html#phi">the phi function</a>, we see that
+the <code>&phi;(n)</code> function calculates how many values less than <code>n</code> are
+coprime to <code>n</code>.
+Why are we using subtraction and multiplication here?
+Why aren't we using a loop to count the number of values?
+</p>
+<p>
+In the aforementioned <a href="crypto/math.html#phi">math section</a>, I also showed you
+the proof for two cool properties that &phi; has:
+</p>
+<ol>
+<li>
+If <code>n</code> is prime, <code>&phi(n) = n - 1</code>
+</li>
+<li>
+If <code>a</code> and <code>b</code> are coprime, then <code>&phi;(ab) = &phi;(a) * &phi;(b)</code>
+</li>
 </ol>
-<p>Since we chose <code>p</code> and <code>q</code> to be prime numbers, when we put this all together we get:</p>
+<p>
+Since we chose <code>p</code> and <code>q</code> to be prime numbers, when we put this all together we
+get:
+</p>
+<p>
+<center>
+<table>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th><th></th></tr></thead>
+<tbody>
+<tr><th></th>
+<td><code>n = pq</code></td>
+<td class="left">Definition of <code>n</code></td>
+</tr>
+<tr><th></th>
+<td><code>&phi;(n) = &phi;(pq)</code></td>
+<td class="left">Substitute definition</td>
+</tr>
+<tr><th></th>
+<td><code>&phi;(pq) = &phi;(p) * &phi;(q)</code></td>
+<td class="left">Property of &phi;</td>
+</tr>
+<tr><th></th>
+<td><code>&phi;(p) = p - 1</code></td>
+<td class="left">Property of &phi;</td>
+</tr>
+<tr><th></th>
+<td><code>&phi;(q) = q - 1</code></td>
+<td class="left">Property of &phi;</td>
+</tr>
+<tr><th></th>
+<td><code>&phi;(n) = (p - 1)(q - 1)</code></td>
+<td class="left">Substitution</td>
+</tr>
+</tbody>
+</table>
+</center>
+</p>
+<h3 id="4-choose-e-and-d">4. Choose <code>e</code> and <code>d</code></h3>
+<p>
+<code>e</code> will be our public key and <code>d</code> will be our private key.
+</p>
+<p>
+Choose <code>e</code> such that it is relatively prime to <code>&phi;(n)</code>
+</p>
+<p>
+We then calculate <code>d</code> such that it becomes the inverse of <code>e</code>.
+To do this, we use the following formula:
+</p>
 <center>
 <table>
 <colgroup>
@@ -216,109 +302,35 @@
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<th>
-</th>
-<td>
-<code>n = pq</code>
-</td>
-<td class="left">
-Definition of <code>n</code>
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>φ(n) = φ(pq)</code>
-</td>
-<td class="left">
-Substitute definition
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>φ(pq) = φ(p) * φ(q)</code>
-</td>
-<td class="left">
-Property of φ
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>φ(p) = p - 1</code>
-</td>
-<td class="left">
-Property of φ
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>φ(q) = q - 1</code>
-</td>
-<td class="left">
-Property of φ
-</td>
-</tr>
-<tr>
-<th>
-</th>
-<td>
-<code>φ(n) = (p - 1)(q - 1)</code>
-</td>
-<td class="left">
-Substitution
-</td>
+<th></th>
+<td><code>ed &equiv; 1 mod &phi;(n)</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<h3 id="choose-e-and-d">4. Choose <code>e</code> and <code>d</code></h3>
-<p><code>e</code> will be our public key and <code>d</code> will be our private key.</p>
-<p>Choose <code>e</code> such that it is relatively prime to <code>φ(n)</code></p>
-<p>We then calculate <code>d</code> such that it becomes the inverse of <code>e</code>. To do this, we use the following formula:</p>
-<center>
-<table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>
-</th>
-<td>
-<code>ed ≡ 1 mod φ(n)</code>
-</td>
-</tr>
-</tbody>
-</table>
-</center>
-<p>The <a href="crypto/math.html">previous section</a> goes much more in depth into this new notation for modulo and how to calculate a modular inverse. The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a> you use in lab generates possible <code>K</code> candidates which you choose to be factored into <code>e</code> and <code>d</code>. <code>K = (p - 1)(q - 1)i + 1</code> where <code>i</code> is a random number. This is a possible approach because the numbers we are using on the worksheet are very small. In practice, it's much harder to generate the factors of a large number.</p>
-<p>At first glance, the math for key generation appears to be very complicated and overwhelming, but if we look at it closely, even the unfamiliar math is much easier than it looks.</p>
-	</div>
+<p>
+The <a href="crypto/math.html">previous section</a> goes much more in depth into this new
+notation for modulo and how to calculate a modular inverse.
+The <a href="https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html">RSA Key Generation Worksheet</a>
+you use in lab generates possible <code>K</code> candidates which you choose to be factored
+into <code>e</code> and <code>d</code>.
+<code>K = (p - 1)(q - 1)i + 1</code> where <code>i</code> is a random number.
+This is a possible approach because the numbers we are using on the worksheet
+are very small.
+In practice, it's much harder to generate the factors of a large number.
+</p>
+<p>
+At first glance, the math for key generation appears to be very complicated and
+overwhelming, but if we look at it closely, even the unfamiliar math is much
+easier than it looks.
+</p>
+</div>
 	<hr>
 	<div class="content">
 		<center>
@@ -333,7 +345,7 @@ Substitution
 			<a href="crypto/math.html">Previous Section</a> : RSA Math Background : 10.1
 		</div>
 		<div class="next">
-			10.3 : RSA Encryption : <a href="crypto/rsar.html">Next Section</a>
+			10.3 : RSA Encryption : <a href="crypto/rsag.html">Next Section</a>
 		</div>
 		</div>
 		<br>

@@ -18,45 +18,14 @@ If the MSB is 1, the number is negative.
 From there, the following bits are calculated the same way that any binary
 number is calulated.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead>
-<tr>
-<th></th>
-<th>Byte</th>
-<th>Sign</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td><code>00110101~2~</code></td>
-<td>Positive</td>
-<td><code>+53~10~</code></td>
-</tr>
-<tr>
-<td></td>
-<td><code>10110101~2~</code></td>
-<td>Negative</td>
-<td><code>-53~10~</code></td>
-</tr>
-<tr>
-<td></td>
-<td><code>00010000~2~</code></td>
-<td>Positive</td>
-<td><code>+16~10~</code></td>
-</tr>
-<tr>
-<td></td>
-<td><code>10011101~2~</code></td>
-<td>Negative</td>
-<td><code>-29~10~</code></td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| || Byte            | Sign     | Value       |
+|-||-----------------|----------|-------------|
+| || ``00110101~2~`` | Positive | ``+53~10~`` |
+| || ``10110101~2~`` | Negative | ``-53~10~`` |
+| || ``00010000~2~`` | Positive | ``+16~10~`` |
+| || ``10011101~2~`` | Negative | ``-29~10~`` |
+><
 
 Let's look further at the sign magnitude notation.
 In a sign magnitude representation of an 8-bit binary number, we have the
@@ -109,29 +78,13 @@ The 1's become 0's and the 0's become 1's.
 Below is the process for representing -53~10~ as a binary number in one's
 complement representation over 8 bits.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th><th></th></tr></thead>
-<tbody>
-<tr>
-<td></td>
-<td><code>-53~10~</code></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><code>00110101~2~</code></td>
-<td>Convert unsigned value to binary</td>
-</tr>
-<tr>
-<td></td>
-<td><code>11001010~2~</code></td>
-<td>Negate by inverting bits</td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| ||                 |                                  |
+|-||-----------------|----------------------------------|
+| || ``-53~10~``     |                                  |
+| || ``00110101~2~`` | Convert unsigned value to binary |
+| || ``11001010~2~`` | Negate by inverting bits         |
+><
 
 We can now see that <code>-53~10~ = 11001010~2~</code> when using one's
 complement to represent binary numbers over 8 bits.
@@ -208,11 +161,13 @@ represented in two's complement.
 <tr>
 <td></td>
 <td>
-<pre>  11001010
+```
+  11001010
 + 00000001
 ----------
   11001011
-</pre></td>
+```
+</td>
 <td>Add 00000001 (one)</td>
 </tr>
 </tbody>
@@ -236,34 +191,14 @@ and subtraction.
 Bouncing back to -53~10~, we'll see in the past few sections, this value can be
 represented in many different ways in binary:
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th><th></th></tr></thead>
-<tbody>
-<tr>
-<td></td>
-<th>Base-10</th>
-<td><code>-53~10~</code></td>
-</tr>
-<tr>
-<td></td>
-<th>Sign-Magnitude</th>
-<td><code>10110101~2~</code></td>
-</tr>
-<tr>
-<td></td>
-<th>One's Complement</th>
-<td><code>11001010~2~</code></td>
-</tr>
-<tr>
-<td></td>
-<th>Two's Complement</th>
-<td><code>11001011~2~</code></td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| ||                      |                 |
+|-||----------------------|-----------------|
+| || **Base-10**          | ``-53~10~``     |
+| || **Sign-Magnitude**   | ``10110101~2~`` |
+| || **One's Complement** | ``11001010~2~`` |
+| || **Two's Complement** | ``11001011~2~`` |
+><
 
 To add another layer to this, let's look at the value 11001011~2~.
 What would it's base-10 value be in each representation?

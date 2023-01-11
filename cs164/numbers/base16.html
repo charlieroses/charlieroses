@@ -1,19 +1,162 @@
-## Hexadecimal and Base 10
-
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introduction to Computer Science</title>
+	<base href="/cs164/">
+	<link rel="stylesheet" href="structure.css">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="tables.css">
+	<link rel="stylesheet" href="colors.css">
+	<link rel="stylesheet" href="numbers/numbers.css">
+	<script src="numbers/numbers.js"></script>
+</head>
+<body>
+<div id="sidebar">
+	<div class="content">
+	</div>
+	<hr>
+	<div class="content">
+		<a href="introduction.html"><b>Introduction</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="https://charlierose.dev"><b>My Site</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="https://charlierose.dev/ref/"><b>Other Notes and Reference</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="practice.html"><b>When Using This Book</b></a>
+		<a href="practice.html#how-to-do-well-in-this-course">&nbsp;<b>&#8227;</b>&nbsp;How To Do Well In This Course</a>
+		<a href="practice.html#practice-glossary">&nbsp;<b>&#8227;</b>&nbsp;Practice Glossary</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="answers.html"><b>Practice Problem Answers (OLD)</b></a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
+		<a href="numbers/base10.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/base2.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/base16.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/base16.html#hexadecimal-and-base-10">&nbsp;<b>&#8227;</b>&nbsp;Hexadecimal and Base 10</a>
+		<a href="numbers/base16.html#hexadecimal-and-binary">&nbsp;<b>&#8227;</b>&nbsp;Hexadecimal and Binary</a>
+		<a href="numbers/base16.html#color-codes">&nbsp;<b>&#8227;</b>&nbsp;Color Codes</a>
+		<a href="numbers/base16.html#practice">&nbsp;<b>&#8227;</b>&nbsp;Practice</a>
+		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="binary/"><b>Chapter 2 :</b> More on Binary</a>
+		<a href="binary/negativebin.html"><b>2.1 :</b> Negative Numbers</a>
+		<a href="binary/fracBinary.html"><b>2.2 :</b> Fractional Binary</a>
+		<a href="binary/addSubBin.html"><b>2.3 :</b> Addition and Subtration</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="ascii/"><b>Chapter 3 :</b> Character Sets</a>
+		<a href="ascii/ascii.html"><b>3.1 :</b> ASCII</a>
+		<a href="ascii/unicode.html"><b>3.2 :</b> Unicode</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="booleanalgebra/"><b>Chapter 4 :</b> Boolean Algebra</a>
+		<a href="booleanalgebra/boolEng.html"><b>4.1 :</b> An Overview</a>
+		<a href="booleanalgebra/ttIntro.html"><b>4.2 :</b> Basic Operators</a>
+		<a href="booleanalgebra/not.html"><b>4.2.1 :</b> Not</a>
+		<a href="booleanalgebra/or.html"><b>4.2.2 :</b> Or</a>
+		<a href="booleanalgebra/and.html"><b>4.2.3 :</b> And</a>
+		<a href="booleanalgebra/nor.html"><b>4.2.4 :</b> Nor</a>
+		<a href="booleanalgebra/nand.html"><b>4.2.5 :</b> Nand</a>
+		<a href="booleanalgebra/xor.html"><b>4.2.6 :</b> Xor</a>
+		<a href="booleanalgebra/boolExpr.html"><b>4.3 :</b> Complex Expressions</a>
+		<a href="booleanalgebra/halfAdder.html"><b>4.4 :</b> Half Adder</a>
+		<a href="booleanalgebra/fullAdder.html"><b>4.5 :</b> Full Adder</a>
+		<a href="booleanalgebra/alu.html"><b>4.6 :</b> Arithmetic Logic Unit</a>
+		<a href="booleanalgebra/circuit.html"><b>4.7 :</b> Digital Logic Workbench</a>
+		<a href="booleanalgebra/minecraft.html"><b>4.8 :</b> Minecraft</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="cardiac/"><b>Chapter 5 :</b> The CARDIAC</a>
+		<a href="cardiac/hardware.html"><b>5.1 :</b> The Hardware</a>
+		<a href="cardiac/program.html"><b>5.2 :</b> Programming the CARDIAC</a>
+		<a href="cardiac/assMach.html"><b>5.3 :</b> Assembly and Machine Language</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="languages/"><b>Chapter 6 :</b> Languages</a>
+		<a href="languages/langInfo.html"><b>6.1 :</b> Processing Language</a>
+		<a href="languages/markup.html"><b>6.2 :</b> Markup Languages</a>
+		<a href="languages/program.html"><b>6.3 :</b> Programming Languages</a>
+		<a href="languages/tranq.html"><b>6.4 :</b> Tranquility</a>
+		<a href="languages/tranqc.html"><b>6.4.1 :</b> TRANQC (1)</a>
+		<a href="languages/alloc.html"><b>6.4.2 :</b> ALLOC (3)</a>
+		<a href="languages/button.html"><b>6.4.3 :</b> BUTTON (3)</a>
+		<a href="languages/html.html"><b>6.4.4 :</b> HTML (3)</a>
+		<a href="languages/i2s.html"><b>6.4.5 :</b> I2S (3)</a>
+		<a href="languages/img.html"><b>6.4.6 :</b> IMG (3)</a>
+		<a href="languages/label.html"><b>6.4.7 :</b> LABEL(3)</a>
+		<a href="languages/print.html"><b>6.4.8 :</b> PRINT (3)</a>
+		<a href="languages/random.html"><b>6.4.9 :</b> RANDOM (3)</a>
+		<a href="languages/read.html"><b>6.4.10 :</b> READ (3)</a>
+		<a href="languages/table.html"><b>6.4.11 :</b> TABLE (3)</a>
+		<a href="languages/timer.html"><b>6.4.12 :</b> TIMER (3)</a>
+		<a href="languages/state.html"><b>6.5 :</b> State and State Machines</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="graphics/"><b>Chapter 8 :</b> Graphics</a>
+		<a href="graphics/bresenham.html"><b>8.1 :</b> Bresenham's</a>
+	</div>
+	<hr>
+	<div class="content">
+		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
+		<a href="crypto/math.html"><b>10.1 :</b> RSA Math Background</a>
+		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
+		<a href="crypto/rsag.html"><b>10.3 :</b> RSA Encryption</a>
+	</div>
+</div>
+<div id="main">
+	<div class="content">
+		<br>
+		<div class="navigation" id="top">
+		<div class="prev">
+			<a href="numbers/base2.html">Previous Section</a> : Base-2 : 1.2
+		</div>
+		<div class="next">
+			1.4 : HTML Colors : <a href="numbers/colors.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+	<hr>
+<!-- ERROR -->
+		<div class="content">
+		<h1>1.3 : Base-16</h1>
+	</div>
+	<hr>
+<div class="content">
+<h2 id="hexadecimal-and-base-10">Hexadecimal and Base 10</h2>
+<p>
 Now we can move onto base-16, which is more commonly called hexadecimal.
 Converting from is the same process.
 The biggest difference in hexadecimal is how we represent the digits.
-We know that in a number base `B`, each digit is a value between `0` and `B-1`.
+We know that in a number base <code>B</code>, each digit is a value between <code>0</code> and <code>B-1</code>.
 In base-10 we use digits 0-9.
 In binary we use 0 and 1.
-In hexadecimal, `B-1=15`.
+In hexadecimal, <code>B-1=15</code>.
 This proposes a new issue.
 The numbers 10-15 are two digits.
 We can't use two digits as one digit.
 To address this, we use letters as digits.
 A represents 10, B represents 11, etc.
 The table below has the digits and their corresponding values.
-
+</p>
 <center>
 <table>
 <colgroup>
@@ -22,22 +165,22 @@ The table below has the digits and their corresponding values.
 <thead>
 <tr>
 <th></th>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
@@ -82,21 +225,23 @@ The table below has the digits and their corresponding values.
 </tbody>
 </table>
 </center>
-
+<p>
 Now that we know how to represent a hexademical number, it's much easier to see
 how to get the base-10 magnitude of a hexadecimal number.
-Let's consider the hexadecimal number **3F4**
-
+Let's consider the hexadecimal number <b>3F4</b>
+</p>
 <center>
 <table>
 <colgroup>
 <col span="1" class="red">
 </colgroup>
 <thead>
+<tr>
 <th></th>
 <th></th>
 <th></th>
 <th></th>
+</tr>
 </thead>
 <tbody>
 <tr>
@@ -113,9 +258,9 @@ Let's consider the hexadecimal number **3F4**
 </tr>
 <tr>
 <th>Value</th>
-<td>(3 * 16^2^)</td>
-<td>(15 * 16^1^)</td>
-<td>(4 * 16^0^)</td>
+<td>(3 * 16<sup>2</sup>)</td>
+<td>(15 * 16<sup>1</sup>)</td>
+<td>(4 * 16<sup>0</sup>)</td>
 </tr>
 <tr>
 <th></th>
@@ -126,44 +271,45 @@ Let's consider the hexadecimal number **3F4**
 </tbody>
 </table>
 </center>
-
+<p>
 The computation is performed exactly the same as before.
 The Value is equal to the Digit multiplied by the Power meaning that
-**3F4** is equal to **(3 \* 16^2^)** + **(15 \* 16^1^)** + **(4 \* 16^0^)**.
-We multiply 15 by 16^1^ because 15 corresponds to F on the table.
+<b>3F4</b> is equal to <b>(3 * 16<sup>2</sup>)</b> + <b>(15 * 16<sup>1</sup>)</b> + <b>(4 * 16<sup>0</sup>)</b>.
+We multiply 15 by 16<sup>1</sup> because 15 corresponds to F on the table.
 When we add all the values, we find that  768 + 240 + 4 = 1022 showing that
-**3F4~16~** = **1022~10~**.
+<b>3F4<sub>16</sub></b> = <b>1022<sub>10</sub></b>.
 As you can see, only 3 digits in hexadecimal gave us a value that would need 4
 digits in base-10.
-
----
-
-## Hexadecimal and Binary
-
+</p>
+</div>
+<hr>
+<div class="content">
+<h2 id="hexadecimal-and-binary">Hexadecimal and Binary</h2>
+<p>
 We've been covering how to convert numbers in any base to base-10.
 What if we want to convert a hexadecimal number to binary or vice-versa?
 Would we have to convert the number to base-10 and then convert the resulting
 base-10 number?
 For many number bases, perhaps, but we have a bit of an advantage with
 hexadecimal and binary.
-
+</p>
+<p>
 Let's think about the numbers we're dealing with here.
 We have 2, 10, and 16.
 Let's play that one game from Sesame Street,
-[one of these things is not like the others, one of these things is not the same]().
+<a href="">one of these things is not like the others, one of these things is not the same</a>.
 Which number is the odd one out?
 Believe it or not, it's 10.
-16 is a power of 2; <code>2^4^ = 16</code>.
-We can also write this as <code>2^4^ = 16^1^</code>.
+16 is a power of 2; <code>2<sup>4</sup> = 16</code>.
+We can also write this as <code>2<sup>4</sup> = 16<sup>1</sup></code>.
 You may ask, why is this relevant?
 Well if we look at how we build number bases, each digit is an increasing power.
-Since <code>16^1^ = 2^4^</code>, we can say that one hexadecimal digit is
+Since <code>16<sup>1</sup> = 2<sup>4</sup></code>, we can say that one hexadecimal digit is
 equivalent to four binary bits.
 Look at the following table to see which bits correlate to which hexadecimal
 digits.
-_Spoiler Alert: The binary numbers are equal to 0-15._
-
-
+<i>Spoiler Alert: The binary numbers are equal to 0-15.</i>
+</p>
 <center>
 <table>
 <colgroup>
@@ -172,22 +318,22 @@ _Spoiler Alert: The binary numbers are equal to 0-15._
 <thead>
 <tr>
 <th></th>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
@@ -232,12 +378,13 @@ _Spoiler Alert: The binary numbers are equal to 0-15._
 </tbody>
 </table>
 </center>
-
+<p>
 So how can we use this knowledge in practice?
 Let's say we have the number 1111000011110000.
 That's a rather large number that not even I want to do the math for.
 The conversion is a lot easier than you'd expect.
-
+</p>
+<p>
 <center>
 <table>
 <colgroup>
@@ -253,57 +400,61 @@ The conversion is a lot easier than you'd expect.
 <tbody>
 <tr>
 <th></th>
-<td><code>1111000011110000~2~</code></td>
+<td><code>1111000011110000<sub>2</sub></code></td>
 </tr>
 <tr>
 <th></th>
-<td><code>1111~2~ 0000~2~ 1111~2~ 0000~2~</code></td>
+<td><code>1111<sub>2</sub> 0000<sub>2</sub> 1111<sub>2</sub> 0000<sub>2</sub></code></td>
 <td style="text-align: left">Break into groups of four</td>
 </tr>
 <tr>
 <th></th>
-<td><code>F~16~ 0~16~ F~16~ 0~16~</code></td>
+<td><code>F<sub>16</sub> 0<sub>16</sub> F<sub>16</sub> 0<sub>16</sub></code></td>
 <td style="text-align: left">Covert groups of four to base-16</td>
 </tr>
 <tr>
 <th></th>
-<td><code>F0F0~16~</code></td>
+<td><code>F0F0<sub>16</sub></code></td>
 </tr>
 </tbody>
 </table>
 </center>
-
-
+</p>
+<p>
 There! Easy as can be!
 Instead of trying to convert a massive 16 bit number, we just split it into
 multiple 4 bit numbers, convert them individually, then put it back together.
-
+</p>
+<p>
 We can apply this to base-4 too.
-See how <code>2^2^ = 4^1^</code> meaning that two binary digits is equal to one
+See how <code>2<sup>2</sup> = 4<sup>1</sup></code> meaning that two binary digits is equal to one
 base-4 digit.
 This can be further expanded one when we realize that
-<code>2^4^ = 4^2^ = 16^1^</code>.
+<code>2<sup>4</sup> = 4<sup>2</sup> = 16<sup>1</sup></code>.
 We already saw that four binary digits are equivalent to one hexadecimal digit.
 Now we also see that four binary digits are equivalent to two base-4 digits.
 Taking it another step further, we can see that two base-4 digits are
 equivalent to one hexadecimal digit.
 In all these bases, we can use the same split-convert-reconstruct method to
 convert quickly between bases.
-
+</p>
+<p>
 This also works for numbers that aren't powers of two.
-The same process can be done on base-3 and base-9 (<code>3^2^ = 9^1^</code>).
-It would also work for base-7 and base-49 (<code>7^2^ = 49^1^</code>) _(base-49
-would require uppercase and lowercase letters to be used as digits)_.
-
----
-
-## Color Codes
-
+The same process can be done on base-3 and base-9 (<code>3<sup>2</sup> = 9<sup>1</sup></code>).
+It would also work for base-7 and base-49 (<code>7<sup>2</sup> = 49<sup>1</sup></code>) <i>(base-49
+would require uppercase and lowercase letters to be used as digits)</i>.
+</p>
+</div>
+<hr>
+<div class="content">
+<h2 id="color-codes">Color Codes</h2>
+<p>
 A very common use of hexadecimal numbers is to represent colors.
 There are many different ways to define color.
 The way you'll see the most in this class is through RGB values.
 RGB values are primarily represented in base-10 and hexadecimal.
-
+</p>
+<p>
 <center>
 <table>
 <colgroup><col span="1" class="red"></colgroup>
@@ -320,29 +471,36 @@ RGB values are primarily represented in base-10 and hexadecimal.
 </tbody>
 </table>
 </center>
-
+</p>
+<p>
 In RGB, there are the three base colors: red, green, and blue.
 We mix different amounts of these primary colors to make all the other colors.
-To define an amount of a color, we use a value in <code>[0~10~, 255~10~]</code>.
-<code>255~10~</code> may seem like a wierd number to use as the cap, but it's
-not random because <code>[0~10~, 255~10~] = [0~16~, FF~16~]</code>.
-
+To define an amount of a color, we use a value in <code>[0<sub>10</sub>, 255<sub>10</sub>]</code>.
+<code>255<sub>10</sub></code> may seem like a wierd number to use as the cap, but it's
+not random because <code>[0<sub>10</sub>, 255<sub>10</sub>] = [0<sub>16</sub>, FF<sub>16</sub>]</code>.
+</p>
+<p>
 Below is a simple chart showing how the colors mix.
 Obviously there are many more than these 7 colors.
 Take note how the secondary colors are Cyan, Magenta and Yellow: the
 colors your printer uses.
-
-![](numbers/rgbcircles.png){#rgbcircles}
-
+</p>
+<center>
+<p>
+<img src="numbers/rgbcircles.png" alt="rgbcircles" id="rgbcircles">
+</p>
+</center>
+<p>
 Since there are 256 values for each of the three colors (including 0),
-we can make 256\*256\*256 different colors.
+we can make 256*256*256 different colors.
 That's 16,777,216 different colors!
 Obviously there are so many colors to make and I don't have room to display each
 of the over 16 million colors.
 I went through and did the basic ROY G BIV rainbow below.
-The [next section](numbers/colors.html) has a list of all the colors with names
+The <a href="numbers/colors.html">next section</a> has a list of all the colors with names
 recognized by web browsers.
-
+</p>
+<p>
 <center>
 <table>
 <colgroup>
@@ -424,11 +582,13 @@ recognized by web browsers.
 </tbody>
 </table>
 </center>
-
+</p>
+<p>
 Just for fun, I added an RGB Color changer.
 Just enter different values into the boxes to change the color.
 Try and see if you can match the colors from this website.
-
+</p>
+<p>
 <center>
 <table id="rgb-color-box">
 <colgroup>
@@ -463,11 +623,12 @@ Try and see if you can match the colors from this website.
 <button id="colorBoxSub" onclick="changeColor()">Submit</button>
 <p id="colorOutput"></p>
 </center>
-
----
-
-## Practice
-
+</p>
+</div>
+<hr>
+<div class="content">
+<h2 id="practice">Practice</h2>
+<p>
 <center>
 <table id="hexadecimal-to-decimal" class="practice">
 <colgroup><col span="1" class="red"></colgroup>
@@ -577,10 +738,36 @@ be represented in hex?
 </tbody>
 </table>
 </center>
-
+</p>
+<p>
 <script>
 hdreset();
 hbreset();
 hqreset();
 bhreset();
 </script>
+</p>
+</div>
+	<hr>
+	<div class="content">
+		<center>
+		<a href="numbers/base16.html#top">Back To Top</a>
+		</center>
+	</div>
+	<hr>
+	<div class="content">
+		<br>
+		<div class="navigation" id="bottom">
+		<div class="prev">
+			<a href="numbers/base2.html">Previous Section</a> : Base-2 : 1.2
+		</div>
+		<div class="next">
+			1.4 : HTML Colors : <a href="numbers/colors.html">Next Section</a>
+		</div>
+		</div>
+		<br>
+		<br>
+	</div>
+</div>
+</body>
+</html>

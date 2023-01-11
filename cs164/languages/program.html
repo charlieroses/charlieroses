@@ -39,9 +39,9 @@
 	<hr>
 	<div class="content">
 		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
-		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
-		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
-		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/base10.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/base2.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/base16.html"><b>1.3 :</b> Base-16</a>
 		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
 	</div>
 	<hr>
@@ -113,7 +113,7 @@
 		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
 		<a href="crypto/math.html"><b>10.1 :</b> RSA Math Background</a>
 		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
-		<a href="crypto/rsar.html"><b>10.3 :</b> RSA Encryption</a>
+		<a href="crypto/rsap.html"><b>10.3 :</b> RSA Encryption</a>
 	</div>
 </div>
 <div id="main">
@@ -144,40 +144,99 @@
 		</span>
 	</div>
 	<hr>
-	<div class="content">
+		<div class="content">
 		<h1>6.3 : Programming Languages</h1>
 	</div>
 	<hr>
-	<div class="content">
-<p>So there's a million programming languages out there, with a million different concepts and a million different syntaxes. Obviously, I can't go over all of them. I'm gonna go over a few different types of programming approaches, and and more general things that are important in all languages. For a more in depth tutorial on Tranquility, check out the <a href="https://www.cs.drexel.edu/~src322/cs164/labs/tranqtut/tranq.html">tutorial</a> from Lab 6.</p>
-	</div>
-	<hr>
-	<div class="content">
+<div class="content">
+<p>
+So there's a million programming languages out there, with a million
+different concepts and a million different syntaxes. Obviously, I can't
+go over all of them. I'm gonna go over a few different types of
+programming approaches, and and more general things that are important
+in all languages. For a more in depth tutorial on Tranquility, check out
+the <a href="https://www.cs.drexel.edu/<sub>src322/cs164/labs/tranqtut/tranq.html">tutorial</a> from Lab 6.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="program-flow">Program Flow</h2>
-<p>The most important thing to know in program flow, is the progression of code. As with the CARDIAC, the computer follows the code line by line until it is told not to. Typically by a loop or an if statement.</p>
-<p><strong>If statements</strong> tell the computer to run a section of code, if a statment is true. This is seen with the CARDIAC command TAC. The basic idea of an if statement is that only the if or the else runs. Both do not run. The boolean expression cannot be both true and false. Just like with TAC, the program will not jump and do the statement directly following it.</p>
-<pre><code>if ( a boolean statment) {
-sprint(&quot;Do these statments if the boolean expression is true&quot;)
+<p>
+The most important thing to know in program flow, is the progression of
+code. As with the CARDIAC, the computer follows the code line by line
+until it is told not to. Typically by a loop or an if statement.
+</p>
+<p>
+<b>If statements</b> tell the computer to run a section of code, if a
+statment is true. This is seen with the CARDIAC command TAC. The basic
+idea of an if statement is that only the if or the else runs. Both do
+not run. The boolean expression cannot be both true and false. Just like
+with TAC, the program will not jump and do the statement directly
+following it.
+</p>
+<pre>if ( a boolean statment) {
+sprint("Do these statments if the boolean expression is true")
 }
 else {
-sprint(&quot;Do these statments if the boolean expression is false&quot;)
-}</code></pre>
-<p><strong>Loops</strong> are control statements that repeat code. We could rewrite the same code multiple times in a row, but that gets tedious, especially when we want to run code upwards of thousands of times. So we can write a loop that runs code multiple times until a certain condition is met. The syntax in Tranquiliy, the programming language we will use in this class, is as following.</p>
-<pre><code>loop {
+sprint("Do these statments if the boolean expression is false")
+}
+</pre>
+<p>
+<b>Loops</b> are control statements that repeat code. We could rewrite the
+same code multiple times in a row, but that gets tedious, especially
+when we want to run code upwards of thousands of times. So we can write
+a loop that runs code multiple times until a certain condition is met.
+The syntax in Tranquiliy, the programming language we will use in this
+class, is as following.
+</p>
+<pre>loop {
 until ( a boolean statement)
-sprint(&quot;Do these statements until the boolean statement is true&quot;)
-}</code></pre>
-<p><strong>Functions</strong> are blocks that we use to organize our code. We can use these blocks repeatedly without copying and pasting code. Similar to functions in math, we can put values in and get a new value out. The values we put into a function are called the parameters. Just as in functions in math, you can only get one value out of a function. The output value is called the <code>return</code> value and requires a <code>return</code> statement to be outputted. The <code>return</code> statement will end the function and cease it's running whether there are statements after it or not. The Tranquility syntax for functions is as follows.</p>
-<pre><code>fun functionName( optional list of parameters ) {
-sprint(&quot;Perform these statements&quot;)
+sprint("Do these statements until the boolean statement is true")
+}
+</pre>
+<p>
+<b>Functions</b> are blocks that we use to organize our code. We can use
+these blocks repeatedly without copying and pasting code. Similar to
+functions in math, we can put values in and get a new value out. The
+values we put into a function are called the parameters. Just as in
+functions in math, you can only get one value out of a function. The
+output value is called the <code>return</code> value and requires a <code>return</code>
+statement to be outputted. The <code>return</code> statement will end the function
+and cease it's running whether there are statements after it or not. The
+Tranquility syntax for functions is as follows.
+</p>
+<pre>fun functionName( optional list of parameters ) {
+sprint("Perform these statements")
 return value # This is also optional
-}</code></pre>
-<p>Functions are special in that there are two parts. There is the block of code that is the function itself, and then the call to that function. Calling a function will execute the code within the function and, if there's a return statement, will return the value in place of the function. When calling the function, you will provide the values for the parameters. Different languages have different syntax for calling functions. In Tranquility, you use the following.</p>
-<pre><code>functionName( values for parameters )</code></pre>
-<p>Now, sometimes, we want to reference a function without actually calling it. We do this a lot with buttons. We attach functions to buttons to call later, when the button is pressed. The syntax for that in Tranquility would be the following. As you can see, we call the function but without the parentheses and parameters. This allows us to pass a reference to a function without calling it.</p>
-<pre><code>button(&quot;This is a button&quot;, functionName )</code></pre>
-<p>There is a lot more to programming than these few topics. Overall, this is more than enough for this class. All the assignments in this class can be accomplished using the aforementioned topics.</p>
-	</div>
+}
+</pre>
+<p>
+Functions are special in that there are two parts. There is the block of
+code that is the function itself, and then the call to that function.
+Calling a function will execute the code within the function and, if
+there's a return statement, will return the value in place of the
+function. When calling the function, you will provide the values for the
+parameters. Different languages have different syntax for calling
+functions. In Tranquility, you use the following.
+</p>
+<pre>functionName( values for parameters )
+</pre>
+<p>
+Now, sometimes, we want to reference a function without actually calling
+it. We do this a lot with buttons. We attach functions to buttons to
+call later, when the button is pressed. The syntax for that in
+Tranquility would be the following. As you can see, we call the function
+but without the parentheses and parameters. This allows us to pass a
+reference to a function without calling it.
+</p>
+<pre>button("This is a button", functionName )
+</pre>
+<p>
+There is a lot more to programming than these few topics. Overall, this
+is more than enough for this class. All the assignments in this class
+can be accomplished using the aforementioned topics.
+</p>
+</div>
 	<hr>
 	<div class="content">
 		<center>

@@ -21,60 +21,13 @@ full bite)_.
 Let's start with an eight bit number, one byte of information.
 Let's consider a random 8 bit number, **10011101**.
 
-<center>
-<table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</thead>
-<tbody>
-<tr>
-<th>Bit</th>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>1</td>
-</tr>
-<tr>
-<th>Power</th>
-<td>2<sup>7</sup></td>
-<td>2<sup>6</sup></td>
-<td>2<sup>5</sup></td>
-<td>2<sup>4</sup></td>
-<td>2<sup>3</sup></td>
-<td>2<sup>2</sup></td>
-<td>2<sup>1</sup></td>
-<td>2<sup>0</sup></td>
-</tr>
-<tr>
-<th>Value</th>
-<td>128</td>
-<td>0</td>
-<td>0</td>
-<td>16</td>
-<td>8</td>
-<td>4</td>
-<td>0</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</center>
-
+><
+|       ||      |      |      |      |      |      |      |      |
+|-------||------|------|------|------|------|------|------|------|
+| Bit   || 1    | 0    | 0    | 1    | 1    | 1    | 0    | 1    |
+| Power || 2^7^ | 2^6^ | 2^5^ | 2^4^ | 2^3^ | 2^2^ | 2^1^ | 2^0^ |
+| Value || 128  | 0    | 0    | 16   | 8    | 4    | 0    | 1    |
+><
 
 Each bit can hold a 0 or 1.
 Since we're working in base-2, this makes sense because the range of digits is
@@ -118,63 +71,13 @@ When dividing, I chopped off any fractional values.
 This is called **truncating**, or **flooring**, or "rounding to the lower whole
 number".
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr></thead>
-<tbody>
-<tr>
-<th>x</th>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-<td>8</td>
-<td>9</td>
-<td>10</td>
-</tr>
-<tr>
-<th>x / 3</th>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td>2</td>
-<td>2</td>
-<td>2</td>
-<td>3</td>
-<td>3</td>
-</tr>
-<tr>
-<th>x % 3</th>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>0</td>
-<td>1</td>
-<td>2</td>
-<td>0</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+|       ||   |   |   |   |   |   |   |   |   |   |    |
+|-------||---|---|---|---|---|---|---|---|---|---|----|
+| x     || 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| x / 3 || 0 | 0 | 0 | 1 | 1 | 1 | 2 | 2 | 2 | 3 | 3  |
+| x % 3 || 0 | 1 | 2 | 0 | 1 | 2 | 0 | 1 | 2 | 0 | 1  |
+><
 
 There are a lot more really cool things you can do with modular arithmetic
 (the kind of math that uses modulo).
@@ -194,120 +97,59 @@ Again, I'll be dropping all fractional components when dividing.
 The division will give us what value belongs in the 2^7^ place value.
 The modulo will give us what value will be used next.
 
-<center>
+><
 <div class="sidebyside">
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><td></td><td><code>204 / 2^7^</code></td></tr>
-<tr><td></td><td><code>204 / 128</code></td></tr>
-<tr><td></td><td><code>**1**</code></td></tr>
-</tbody>
-</table>
+| ||                |
+|-||----------------|
+| || ``204 / 2^7^`` |
+| || ``204 / 128``  |
+| || ``**1**``      |
 
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><td></td><td><code>204 % 2^7^</code></td></tr>
-<tr><td></td><td><code>204 % 128</code></td></tr>
-<tr><td></td><td><code>**76**</code></td></tr>
-</tbody>
-</table>
+| ||                |
+|-||----------------|
+| || ``204 % 2^7^`` |
+| || ``204 % 128``  |
+| || ``**76**``     |
 </div>
-</center>
+><
 
 The next bit is the 2^6^ (64) place.
 Again, we perform division and a modulo, this time on 76:
 
-<center>
+><
 <div class="sidebyside">
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><td></td><td><code>76 / 2^6^</code></td></tr>
-<tr><td></td><td><code>76 / 64</code></td></tr>
-<tr><td></td><td><code>**1**</code></td></tr>
-</tbody>
-</table>
+| ||               |
+|-||---------------|
+| || ``76 / 2^7^`` |
+| || ``76 / 128``  |
+| || ``**1**``     |
 
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><td></td><td><code>76 % 2^6^</code></td></tr>
-<tr><td></td><td><code>76 % 64</code></td></tr>
-<tr><td></td><td><code>**12**</code></td></tr>
-</tbody>
-</table>
+| ||               |
+|-||---------------|
+| || ``76 % 2^7^`` |
+| || ``76 % 128``  |
+| || ``**12**``    |
 </div>
-</center>
+><
 
 The process continues for each place value.
 I finished it below:
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr>
-<th><code>2^7^</code></th>
-<td><code>204 % 128 = 76</code></td>
-<td></td>
-<td><code>204 / 128 = **1**</code></td>
-</tr>
-<tr>
-<th><code>2^6^</code></th>
-<td><code>76 % 64 = 12</code></td>
-<td></td>
-<td><code>76 / 64 = **1**</code></td>
-</tr>
-<tr>
-<th><code>2^5^</code></th>
-<td><code>12 % 32 = 12</code></td>
-<td></td>
-<td><code>12 / 32 = **0**</code></td>
-</tr>
-<tr>
-<th><code>2^4^</code></th>
-<td><code>12 % 16 = 12</code></td>
-<td></td>
-<td><code>12 / 16 = **0**</code></td>
-</tr>
-<tr>
-<th><code>2^3^</code></th>
-<td><code>12 % 8 = 4</code></td>
-<td></td>
-<td><code>12 / 8 = **1**</code></td>
-</tr>
-<tr>
-<th><code>2^2^</code></th>
-<td><code>4 % 4 = 0</code></td>
-<td></td>
-<td><code>4 / 4 = **1**</code></td>
-</tr>
-<tr>
-<th><code>2^1^</code></th>
-<td><code>0 % 2 = 0</code></td>
-<td></td>
-<td><code>0 / 2 = **0**</code></td>
-</tr>
-<tr>
-<th><code>2^0^</code></th>
-<td><code>0 % 1 = 0</code></td>
-<td></td>
-<td><code>0 / 1 = **0**</code></td>
-</tr>
-</tbody>
-</table>
-</center>
-
+><
+|      ||                     |                       |
+|------||---------------------|-----------------------|
+| 2^7^ || ``204 % 128 = 76``  | ``204 / 128 = **1**`` |
+| 2^6^ || ``76 % 64 = 12``    | ``76 / 64 = **1**``   |
+| 2^5^ || ``12 % 32 = 12``    | ``12 / 32 = **0**``   |
+| 2^4^ || ``12 % 16 = 12``    | ``12 / 16 = **0**``   |
+| 2^3^ || ``12 % 8 = 4``      | ``12 / 8 = **1**``    |
+| 2^2^ || ``4 % 4 = 0``       | ``4 / 4 = **1**``     |
+| 2^1^ || ``0 % 2 = 0``       | ``0 / 2 = **0**``     |
+| 2^0^ || ``0 % 1 = 0``       | ``0 / 1 = **0**``     |
+><
 
 When we put each bit in its respective place value, we see that
-<code>204~10~ = 11001100~2~</code>
+``204~10~ = 11001100~2~``
 
 Though, how can we be sure we got the right answer?
 We could Google it and see what the internet tells us, but that's not a good
@@ -320,60 +162,13 @@ rely on yourself.
 So how do we check our work?
 Do the same thing in reverse!
 
-
-<center>
-<table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</thead>
-<tbody>
-<tr>
-<th>Bit</th>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-</tr>
-<tr>
-<th>Power</th>
-<td>2<sup>7</sup></td>
-<td>2<sup>6</sup></td>
-<td>2<sup>5</sup></td>
-<td>2<sup>4</sup></td>
-<td>2<sup>3</sup></td>
-<td>2<sup>2</sup></td>
-<td>2<sup>1</sup></td>
-<td>2<sup>0</sup></td>
-</tr>
-<tr>
-<th>Value</th>
-<td>128</td>
-<td>64</td>
-<td>0</td>
-<td>0</td>
-<td>8</td>
-<td>4</td>
-<td>0</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+|       ||      |      |      |      |      |      |      |      |
+|-------||------|------|------|------|------|------|------|------|
+| Bit   || 1    | 1    | 0    | 0    | 1    | 1    | 0    | 0    |
+| Power || 2^7^ | 2^6^ | 2^5^ | 2^4^ | 2^3^ | 2^2^ | 2^1^ | 2^0^ |
+| Value || 128  | 64   | 0    | 0    | 8    | 4    | 0    | 0    |
+><
 
 Here we are!
 `128 + 64 + 0 + 0 + 8 + 4 + 0 + 0 = 204` which means we did our math correctly!
@@ -393,27 +188,19 @@ As always, I'll be dropping all fractional components when dividing.
 This time around, the modulo will give us what value belongs in the 2^i-1^ place
 value and the division will give us what value to use next.
 
-<center>
+><
 <div class="sidebyside">
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><td></td><td><code>204 / 2</code></td></tr>
-<tr><td></td><td><code>**102**</code></td></tr>
-</tbody>
-</table>
+| ||             |
+|-||-------------|
+| || ``204 / 2`` |
+| || ``**102**`` |
 
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><td></td><td><code>204 % 2</code></td></tr>
-<tr><td></td><td><code>**0**</code></td></tr>
-</tbody>
-</table>
+| ||             |
+|-||-------------|
+| || ``204 % 2`` |
+| || ``**0**``   |
 </div>
-</center>
+><
 
 To keep track of how many divisions we've performed, I'm going to create an
 iteration variable named `i`.
@@ -423,27 +210,19 @@ Based on the modulo done in the first step, the bit in the
 <code>2^i-1^ = 2^1-1^ = 2^0^</code> place value is 0.
 In our next step, we're going to use the result of our division, 102.
 
-<center>
+><
 <div class="sidebyside">
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><td></td><td><code>102 / 2</code></td></tr>
-<tr><td></td><td><code>**51**</code></td></tr>
-</tbody>
-</table>
+| ||             |
+|-||-------------|
+| || ``102 / 2`` |
+| || ``**51**``  |
 
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><td></td><td><code>102 % 2</code></td></tr>
-<tr><td></td><td><code>**0**</code></td></tr>
-</tbody>
-</table>
+| ||             |
+|-||-------------|
+| || ``102 % 2`` |
+| || ``**0**``   |
 </div>
-</center>
+><
 
 Our second iteration (`i=2`) gave us the bit for the
 <code>2^i-1^ = 2^2-1^ = 2^1^</code> place value.
@@ -451,62 +230,18 @@ It's 0 again.
 Just as before, rinse and repeat.
 I finished the conversion below.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr>
-<th><code>i = 1</code></th>
-<td><code>204 / 2 = 102</code></td>
-<td></td>
-<td><code>204 % 2 = **0**</code></td>
-</tr>
-<tr>
-<th><code>i = 2</code></th>
-<td><code>102 / 2 = 51</code></td>
-<td></td>
-<td><code>102 % 2 = **0**</code></td>
-</tr>
-<tr>
-<th><code>i = 3</code></th>
-<td><code>51 / 2 = 25</code></td>
-<td></td>
-<td><code>51 % 2 = **1**</code></td>
-</tr>
-<tr>
-<th><code>i = 4</code></th>
-<td><code>25 / 2 = 12</code></td>
-<td></td>
-<td><code>25 % 2 = **1**</code></td>
-</tr>
-<tr>
-<th><code>i = 5</code></th>
-<td><code>12 / 2 = 6</code></td>
-<td></td>
-<td><code>12 % 2 = **0**</code></td>
-</tr>
-<tr>
-<th><code>i = 6</code></th>
-<td><code>6 / 2 = 3</code></td>
-<td></td>
-<td><code>6 % 2 = **0**</code></td>
-</tr>
-<tr>
-<th><code>i = 7</code></th>
-<td><code>3 / 2 = 1</code></td>
-<td></td>
-<td><code>3 % 2 = **1**</code></td>
-</tr>
-<tr>
-<th><code>i = 8</code></th>
-<td><code>1 / 2 = 0</code></td>
-<td></td>
-<td><code>1 % 2 = **1**</code></td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+|         ||                 |                     |
+|---------||-----------------|---------------------|
+| `i = 1` || `204 / 2 = 102` | ``204 % 2 = **0**`` |
+| `i = 2` || `102 / 2 = 51`  | ``102 % 2 = **0**`` |
+| `i = 3` || `51 / 2 = 25`   | ``51 % 2 = **1**``  |
+| `i = 4` || `25 / 2 = 12`   | ``25 % 2 = **1**``  |
+| `i = 5` || `12 / 2 = 6`    | ``12 % 2 = **0**``  |
+| `i = 6` || `6 / 2 = 3`     | ``6 % 2 = **0**``   |
+| `i = 7` || `3 / 2 = 1`     | ``3 % 2 = **1**``   |
+| `i = 8` || `1 / 2 = 0`     | ``1 % 2 = **1**``   |
+><
 
 Just as before, if we put each bit in it's respective 2^i-1^ place, we get
 <code>204~10~ = 11001100~2~</code>.

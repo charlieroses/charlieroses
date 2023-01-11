@@ -4,11 +4,7 @@ SRC="src/cs164"
 UTILS="src/utils/cs164"
 CURRSEC="0"
 
-echo -e "\t<div class=\"content\">"
-echo -e "\t\t<p>"
-cat "${SRC}/practice.md" | sed "s/^/\t\t/"
-echo -e "\t\t</p>"
-echo -e "\t</div>"
+"${UTILS}/mdtohtml.awk" "${SRC}/practice.md"
 echo -e "\t<hr>"
 echo -e "\t<div class=\"content\">"
 echo -e "\t\t<h2 id=\"practice-glossary\">Practice Glossary</h2>"
@@ -34,4 +30,3 @@ done
 
 echo -e "\t<br>"
 echo -e "\t</div>"
-echo -e "\t<div class=\"content\">"

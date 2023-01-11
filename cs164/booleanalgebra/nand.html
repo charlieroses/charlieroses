@@ -44,9 +44,9 @@
 	<hr>
 	<div class="content">
 		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
-		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
-		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
-		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/base10.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/base2.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/base16.html"><b>1.3 :</b> Base-16</a>
 		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
 	</div>
 	<hr>
@@ -118,7 +118,7 @@
 		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
 		<a href="crypto/math.html"><b>10.1 :</b> RSA Math Background</a>
 		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
-		<a href="crypto/rsap.html"><b>10.3 :</b> RSA Encryption</a>
+		<a href="crypto/rsag.html"><b>10.3 :</b> RSA Encryption</a>
 	</div>
 </div>
 <div id="main">
@@ -149,128 +149,119 @@
 		</span>
 	</div>
 	<hr>
-	<div class="content">
+		<div class="content">
 		<h1>4.2.5 : Nand</h1>
 	</div>
 	<hr>
-	<div class="content">
-<p>Just as OR had NOR, AND has NAND. NAND is the combination of NOT and AND. This means the truth table is just the AND truth table with the results inverted. NAND is true as long as both the values are not true. Fun Fact: NOR and NAND are considered the universal gates, as using a combination of these two can create any gate.</p>
+<div class="content">
+<p>
+Just as OR had NOR, AND has NAND. NAND is the combination of NOT and
+AND. This means the truth table is just the AND truth table with the
+results inverted. NAND is true as long as both the values are not true.
+Fun Fact: NOR and NAND are considered the universal gates, as using a
+combination of these two can create any gate.
+</p>
+<p>
 <center>
-<code> Notation: x NAND y </code>
+<code>
+Notation: x NAND y 
+</code>
 <div class="container">
 <table>
 <tr>
-<th id="b2t">
-<b>x</b>
-</th>
-<th id="b2t">
-<b>y</b>
-</th>
-<th id="b2t">
-<b>x NAND y</b>
-</th>
+<th id="b2t"><b>x</b></th>
+<th id="b2t"><b>y</b></th>
+<th id="b2t"><b>x NAND y</b></th>
 </tr>
 <tr>
-<td id="b2t">
-0
-</td>
-<td id="b2t">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
+<td id="b2t">0</td>
+<td id="b2t">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
 </tr>
 <tr>
-<td id="b2t">
-0
-</td>
-<td id="b2t">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
+<td id="b2t">0</td>
+<td id="b2t">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
 </tr>
 <tr>
-<td id="b2t">
-1
-</td>
-<td id="b2t">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
+<td id="b2t">1</td>
+<td id="b2t">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
 </tr>
 <tr>
-<td id="b2t">
-1
-</td>
-<td id="b2t">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
+<td id="b2t">1</td>
+<td id="b2t">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
 </tr>
 </table>
 <div class="container2">
 <img src="booleanalgebra/imgs/nand.png" style="width: 312px; height: 127px">
 <div class="simcir">
-<p>{ &quot;width&quot;:312, &quot;height&quot;:108, &quot;showToolbox&quot;:false, &quot;devices&quot;:[ {&quot;type&quot;:&quot;DC&quot;,&quot;id&quot;:&quot;dev0&quot;,&quot;x&quot;:52,&quot;y&quot;:36,&quot;label&quot;:&quot;DC&quot;}, {&quot;type&quot;:&quot;NAND&quot;,&quot;id&quot;:&quot;dev1&quot;,&quot;x&quot;:164,&quot;y&quot;:36,&quot;label&quot;:&quot;NAND&quot;}, {&quot;type&quot;:&quot;LED&quot;,&quot;id&quot;:&quot;dev2&quot;,&quot;x&quot;:220,&quot;y&quot;:36,&quot;label&quot;:&quot;LED&quot;}, {&quot;type&quot;:&quot;Toggle&quot;,&quot;id&quot;:&quot;dev3&quot;,&quot;x&quot;:108,&quot;y&quot;:12,&quot;label&quot;:&quot;X&quot;}, {&quot;type&quot;:&quot;Toggle&quot;,&quot;id&quot;:&quot;dev4&quot;,&quot;x&quot;:108,&quot;y&quot;:60,&quot;label&quot;:&quot;Y&quot;}], &quot;connectors&quot;:[ {&quot;from&quot;:&quot;dev1.in0&quot;,&quot;to&quot;:&quot;dev3.out0&quot;}, {&quot;from&quot;:&quot;dev1.in1&quot;,&quot;to&quot;:&quot;dev4.out0&quot;}, {&quot;from&quot;:&quot;dev2.in0&quot;,&quot;to&quot;:&quot;dev1.out0&quot;}, {&quot;from&quot;:&quot;dev3.in0&quot;,&quot;to&quot;:&quot;dev0.out0&quot;}, {&quot;from&quot;:&quot;dev4.in0&quot;,&quot;to&quot;:&quot;dev0.out0&quot;}] }</p>
+{
+"width":312,
+"height":108,
+"showToolbox":false,
+"devices":[
+{"type":"DC","id":"dev0","x":52,"y":36,"label":"DC"},
+{"type":"NAND","id":"dev1","x":164,"y":36,"label":"NAND"},
+{"type":"LED","id":"dev2","x":220,"y":36,"label":"LED"},
+{"type":"Toggle","id":"dev3","x":108,"y":12,"label":"X"},
+{"type":"Toggle","id":"dev4","x":108,"y":60,"label":"Y"}
+],
+"connectors":[
+{"from":"dev1.in0","to":"dev3.out0"},
+{"from":"dev1.in1","to":"dev4.out0"},
+{"from":"dev2.in0","to":"dev1.out0"},
+{"from":"dev3.in0","to":"dev0.out0"},
+{"from":"dev4.in0","to":"dev0.out0"}
+]
+}
 </div>
 </div>
 </div>
 </center>
-<p>NAND is much like NOR, as mathematically, there isn't an exact equivalent. However, just like NOR, NAND is a universal gate.</p>
-<div class="figure">
-<img src="booleanalgebra/imgs/nandvenn.png" />
-
+</p>
+<p>
+NAND is much like NOR, as mathematically, there isn't an exact
+equivalent. However, just like NOR, NAND is a universal gate.
+</p>
+<p>
+<img src="booleanalgebra/imgs/nandvenn.png">
+</p>
 </div>
-	</div>
-	<hr>
-	<div class="content">
+<hr>
+<div class="content">
 <h2 id="a-universal-gate">A Universal Gate</h2>
-<p>Just like NOR, NAND is a universal gate. All gates can be made with NAND. We can create a NOT gate by putting the same input twice into a NAND. This means we can do NOT NAND which is AND. Finally we can apply DeMorgan's law to get OR. We'll talk more about DeMorgan's law in the <a href="booleanalgebra/boolExpr.html">Complex Expressions</a> page.</p>
+<p>
+Just like NOR, NAND is a universal gate. All gates can be made with
+NAND. We can create a NOT gate by putting the same input twice into a
+NAND. This means we can do NOT NAND which is AND. Finally we can apply
+DeMorgan's law to get OR. We'll talk more about DeMorgan's law in the
+<a href="booleanalgebra/boolExpr.html">Complex Expressions</a> page.
+</p>
+<p>
 <center>
 <div class="container">
 <img src="booleanalgebra/imgs/notnand.png">
 <table>
 <tr>
-<th id="b2t">
-<b>x</b>
-</th>
-<th id="b2t">
-<b>x NAND x</b>
-</th>
-<th id="b2t">
-<b>NOT x</b>
-</th>
+<th id="b2t"><b>x</b></th>
+<th id="b2t"><b>x NAND x</b></th>
+<th id="b2t"><b>NOT x</b></th>
 </tr>
 <tr>
-<td id="b2t">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
+<td id="b2t">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
 </tr>
 <tr>
-<td id="b2t">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
+<td id="b2t">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
 </tr>
 </table>
+</p>
+<p>
 </div>
 </center>
 <center>
@@ -278,74 +269,34 @@
 <img src="booleanalgebra/imgs/ornand.png">
 <table>
 <tr>
-<th id="b2t">
-<b>x</b>
-</th>
-<th id="b2t">
-<b>y</b>
-</th>
-<th id="b2t">
-<b>(x NAND x)<br>NAND<br>(y NAND y)</b>
-</th>
-<th id="b2t">
-<b>x OR y</b>
-</th>
+<th id="b2t"><b>x</b></th>
+<th id="b2t"><b>y</b></th>
+<th id="b2t"><b>(x NAND x)<br>NAND<br>(y NAND y)</b></th>
+<th id="b2t"><b>x OR y</b></th>
 </tr>
 <tr>
-<td id="b2t">
-0
-</td>
-<td id="b2t">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
+<td id="b2t">0</td>
+<td id="b2t">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
 </tr>
 <tr>
-<td id="b2t">
-0
-</td>
-<td id="b2t">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
+<td id="b2t">0</td>
+<td id="b2t">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
 </tr>
 <tr>
-<td id="b2t">
-1
-</td>
-<td id="b2t">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
+<td id="b2t">1</td>
+<td id="b2t">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
 </tr>
 <tr>
-<td id="b2t">
-1
-</td>
-<td id="b2t">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
+<td id="b2t">1</td>
+<td id="b2t">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
 </tr>
 </table>
 </div>
@@ -355,92 +306,53 @@
 <img src="booleanalgebra/imgs/andnand.png">
 <table>
 <tr>
-<th id="b2t">
-<b>x</b>
-</th>
-<th id="b2t">
-<b>y</b>
-</th>
-<th id="b2t">
-<b>(x NAND y)<br>NAND<br>(x NAND y)</b>
-</th>
-<th id="b2t">
-<b>x AND y</b>
-</th>
+<th id="b2t"><b>x</b></th>
+<th id="b2t"><b>y</b></th>
+<th id="b2t"><b>(x NAND y)<br>NAND<br>(x NAND y)</b></th>
+<th id="b2t"><b>x AND y</b></th>
 </tr>
 <tr>
-<td id="b2t">
-0
-</td>
-<td id="b2t">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
+<td id="b2t">0</td>
+<td id="b2t">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
 </tr>
 <tr>
-<td id="b2t">
-0
-</td>
-<td id="b2t">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
+<td id="b2t">0</td>
+<td id="b2t">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
 </tr>
 <tr>
-<td id="b2t">
-1
-</td>
-<td id="b2t">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-0
-</td>
+<td id="b2t">1</td>
+<td id="b2t">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">0</td>
 </tr>
 <tr>
-<td id="b2t">
-1
-</td>
-<td id="b2t">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
-<td id="b2t" style="background-color: rgb(140,140,140)">
-1
-</td>
+<td id="b2t">1</td>
+<td id="b2t">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
+<td id="b2t" style="background-color: rgb(140,140,140)">1</td>
 </tr>
 </table>
 </div>
 </center>
-	</div>
-	<hr>
-	<div class="content">
-<h2 id="practice-problems">Practice Problems</h2>
-<p>If y is false and x is true, what is (x NAND ¬ y)?</p>
-<textarea id="nandq1">
-</textarea>
-<br>
-<button onclick="nandq1Submit()">
-Submit
-</button>
-<p id="nandq1Out">
 </p>
-	</div>
+</div>
+<hr>
+<div class="content">
+<h2 id="practice-problems">Practice Problems</h2>
+<p>
+If y is false and x is true, what is (x NAND &#172; y)?
+</p>
+<p>
+<textarea id="nandq1"></textarea>
+<br>
+<button onclick="nandq1Submit()">Submit</button>
+<p id="nandq1Out"></p>	
+</p>
+</div>
 	<hr>
 	<div class="content">
 		<center>

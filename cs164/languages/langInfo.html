@@ -39,9 +39,9 @@
 	<hr>
 	<div class="content">
 		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
-		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
-		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
-		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/base10.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/base2.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/base16.html"><b>1.3 :</b> Base-16</a>
 		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
 	</div>
 	<hr>
@@ -113,7 +113,7 @@
 		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
 		<a href="crypto/math.html"><b>10.1 :</b> RSA Math Background</a>
 		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
-		<a href="crypto/rsah.html"><b>10.3 :</b> RSA Encryption</a>
+		<a href="crypto/rsag.html"><b>10.3 :</b> RSA Encryption</a>
 	</div>
 </div>
 <div id="main">
@@ -144,53 +144,120 @@
 		</span>
 	</div>
 	<hr>
-	<div class="content">
+		<div class="content">
 		<h1>6.1 : Processing Language</h1>
 	</div>
 	<hr>
-	<div class="content">
-<p>So let's talk a little bit about languages. What kind of languages are there? Here are a few common types:</p>
+<div class="content">
+<p>
+So let's talk a little bit about languages. What kind of languages are
+there? Here are a few common types:
+</p>
 <ul>
-<li><a href="cardiac/assMach.html">Machine Language</a></li>
-<li><a href="cardiac/assMach.html">Assembly Language</a></li>
-<li>Network Protocols</li>
-<li>Command Languages</li>
-<li><a href="languages/markup.html">Markup Languages</a></li>
-<li><a href="languages/program.html">Programming Languages</a></li>
+<li>
+<a href="cardiac/assMach.html">Machine Language</a>
+</li>
+<li>
+<a href="cardiac/assMach.html">Assembly Language</a>
+</li>
+<li>
+Network Protocols
+</li>
+<li>
+Command Languages
+</li>
+<li>
+<a href="languages/markup.html">Markup Languages</a>
+</li>
+<li>
+<a href="languages/program.html">Programming Languages</a>
+</li>
 </ul>
-<p>So we've already gone over assembly and machine languages (see 5.3), so I'm not gonna redo that. I also am not going to make a separate section for Network Protocols and Command Languages as they aren't that applicable to this course. You've already used markup languages like HTML to build your website. Programming languages are most used to accomplish a task. You'll be using Traquility in this course. These are incredibly basic descriptions for very large categories of languages. Each section goes in more depth as to how each pertains to this course.</p>
-	</div>
-	<hr>
-	<div class="content">
+<p>
+So we've already gone over assembly and machine languages (see 5.3), so
+I'm not gonna redo that. I also am not going to make a separate section
+for Network Protocols and Command Languages as they aren't that
+applicable to this course. You've already used markup languages like
+HTML to build your website. Programming languages are most used to
+accomplish a task. You'll be using Traquility in this course. These are
+incredibly basic descriptions for very large categories of languages.
+Each section goes in more depth as to how each pertains to this course.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="doing-something-with-something">Doing Something With Something</h2>
-<p>Now, that heading is nearly meaningless, but I couldn't really think of a better heading. Programming is the art of doing things. Well, how are you doing things, by writing things. The things that you write and how you write them is determined by the type of language you are using. With markup languages, you tend to write code in a way that allows text to be interpreted in a formatted way. With programming languages, you tend to write more action based code to achieve a goal.</p>
-	</div>
-	<hr>
-	<div class="content">
+<p>
+Now, that heading is nearly meaningless, but I couldn't really think of
+a better heading. Programming is the art of doing things. Well, how are
+you doing things, by writing things. The things that you write and how
+you write them is determined by the type of language you are using. With
+markup languages, you tend to write code in a way that allows text to be
+interpreted in a formatted way. With programming languages, you tend to
+write more action based code to achieve a goal.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="compiling-code">Compiling Code</h2>
-<p>While you may write symbols and text as code, most times, computers cannot read that code. The code needs to compiled into instructions that the computer can best understand. Think about assembly and machine code and the CARDIAC. We write assembly code to put our thoughts and logic for the code on paper. When we input our code into the CARDIAC, we don't type words like ADD or INP, we type the machine code because that's what the CARDIAC understands. The CARDIAC doesn't understand ADD, but it understands 2. The CARDIAC understands that when it recieves a 2 instruction, it should perform a function that adds a value from a variable location to the accumulator. In this scenario, you act as the &quot;compiler&quot; translating the assembly code into machine code.</p>
-<p>A compiler has the following parts:<br />
-<strong>Lexical Analyzer :</strong> With lexical meaning &quot;word&quot; (close enough), it's rather clear the the lexical analyzer, analyzes the words/code you wrote and breaks it into tokens.<br />
-<strong>Parser :</strong> The parser then takes these tokens and identify them. Below, there's a quick section on parse trees. I suggest taking a look.<br />
-<strong>Symbol Table :</strong> This tracks the declaration and use of names. This is what gives you that &quot;Unknown Symbol&quot; error when you mispell your variable names.<br />
-<strong>Intermediate Code Generator :</strong> Now an alternate representation of the code is created.<br />
-<strong>Code Generator :</strong> Creates the code in the target language, the language whatever machine you are using best understands.<br />
-<strong>Optimizer :</strong> Improves the space or CPU usage of the code</p>
-<p>There's also an <strong>interpreter</strong> that processes the language and operations as they are being read. A good example of an interpreted language is Python (see CS-171/CS-172).</p>
-	</div>
-	<hr>
-	<div class="content">
+<p>
+While you may write symbols and text as code, most times, computers
+cannot read that code. The code needs to compiled into instructions that
+the computer can best understand. Think about assembly and machine code
+and the CARDIAC. We write assembly code to put our thoughts and logic
+for the code on paper. When we input our code into the CARDIAC, we don't
+type words like ADD or INP, we type the machine code because that's what
+the CARDIAC understands. The CARDIAC doesn't understand ADD, but it
+understands 2. The CARDIAC understands that when it recieves a 2
+instruction, it should perform a function that adds a value from a
+variable location to the accumulator. In this scenario, you act as the
+"compiler" translating the assembly code into machine code.
+</p>
+<p>
+A compiler has the following parts:\
+<b>Lexical Analyzer :</b> With lexical meaning "word" (close enough), it's
+rather clear the the lexical analyzer, analyzes the words/code you wrote
+and breaks it into tokens.\
+<b>Parser :</b> The parser then takes these tokens and identify them.
+Below, there's a quick section on parse trees. I suggest taking a look.\
+<b>Symbol Table :</b> This tracks the declaration and use of names. This is
+what gives you that "Unknown Symbol" error when you mispell your
+variable names.\
+<b>Intermediate Code Generator :</b> Now an alternate representation of the
+code is created.\
+<b>Code Generator :</b> Creates the code in the target language, the
+language whatever machine you are using best understands.\
+<b>Optimizer :</b> Improves the space or CPU usage of the code
+</p>
+<p>
+There's also an <b>interpreter</b> that processes the language and
+operations as they are being read. A good example of an interpreted
+language is Python (see CS-171/CS-172).
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="parsing-and-parse-trees">Parsing and Parse Trees</h2>
-<p>As mentioned above, parsing is the process of taking tokens and identifying them. We can use a parse tree to describe the behavior of a program. Let's go through and create a parse tree for simple arithmetic operations.</p>
+<p>
+As mentioned above, parsing is the process of taking tokens and
+identifying them. We can use a parse tree to describe the behavior of a
+program. Let's go through and create a parse tree for simple arithmetic
+operations.
+</p>
+<p>
 <div class="container">
-<p><code>var : 4 + (3 * 2 / 7)</code></p>
-<div class="figure">
-<img src="languages/parsetree.png" />
-
+<code>var : 4 + (3 * 2 / 7)</code>
+</p>
+<p>
+<img src="languages/parsetree.png">
 </div>
+</p>
+<p>
+The process is fairly simple. Break down the expression into order of
+operations. The first and smallest order of operations become a the
+subtrees. From there, we build the parse tree upwards and outwards.
+</p>
 </div>
-<p>The process is fairly simple. Break down the expression into order of operations. The first and smallest order of operations become a the subtrees. From there, we build the parse tree upwards and outwards.</p>
-	</div>
 	<hr>
 	<div class="content">
 		<center>

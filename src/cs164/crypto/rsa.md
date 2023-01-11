@@ -5,9 +5,9 @@ On the lecture slides, it's also called Public Key Encryption (PKE) and PKC
 
 Some links you may find helpful in this section
 
-- [RSA Key Generation Worksheet](https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSAWorksheetv4f.html)
-- [RSA Encryption/Decryption Calculator](https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Wi19/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt_v2.html)
-- [Dr. Stuart's Public Key Cryptography Lecture](https://1513041.mediaspace.kaltura.com/media/CS475+Crypto+3/1_st8qnz7g)
+- [RSA Key Generation Worksheet](https://www.cs.drexel.edu/\~jpopyack/Courses/CSP/Wi19/notes/10.1\_Cryptography/RSAWorksheetv4f.html)
+- [RSA Encryption/Decryption Calculator](https://www.cs.drexel.edu/\~jpopyack/Courses/CSP/Wi19/notes/10.1\_Cryptography/RSA_Express_EncryptDecrypt_v2.html)
+- [Dr. Stuart's Public Key Cryptography Lecture](https://1513041.mediaspace.kaltura.com/media/CS475+Crypto+3/1\_st8qnz7g)
 
 ---
 
@@ -15,31 +15,23 @@ Some links you may find helpful in this section
 
 Let's start with a set of generated keys:
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th><td><code>e</code>= A Public Key</td></tr>
-<tr><th></th><td><code>d</code>= A Private Key</td></tr>
-<tr><th></th><td><code>n</code>= Shared Public Modulo</td></tr>
-</tbody>
-</table>
-</center>
+><
+| ||                            |
+|-||----------------------------|
+| || `e` = A Public Key         |
+| || `d` = A Private Key        |
+| || `n` = Shared Public Modulo |
+><
 
 Given that we are using PKC, we use the following encryption and decryption
 functions to encrypt and decrypt our message <code>m</code>.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th><td><code>E(m, k) = m^k^ mod n</code></td></tr>
-<tr><th></th><td><code>D(m, k) = m^k^ mod n</code></td></tr>
-</tbody>
-</table>
-</center>
+><
+| ||                        |
+|-||------------------------|
+| || `E(m, k) = m^k^ mod n` |
+| || `D(m, k) = m^k^ mod n` |
+><
 
 When you look at these functions, you may have some hypothetical confusions.
 
@@ -168,25 +160,22 @@ insecure network.
 
 We start by each generating a set of keys for ourselves.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th><td><code>e~C~</code>= Charlie's Public Key</td></tr>
-<tr><th></th><td><code>d~C~</code>= Charlie's Private Key</td></tr>
-<tr><th></th><td><code>e~B~</code>= Dr. Stuart's Public Key</td></tr>
-<tr><th></th><td><code>d~B~</code>= Dr. Stuart's Private Key</td></tr>
-<tr><th></th><td><code>n</code>= Shared Public Modulo</td></tr>
-</tbody>
-</table>
-</center>
+
+><
+| ||                                   |
+|-||-----------------------------------|
+| || `e~C~` = Charlie's Public Key     |
+| || `d~C~` = Charlie's Private Key    |
+| || `e~B~` = Dr. Stuart's Public Key  |
+| || `d~B~` = Dr. Stuart's Private Key |
+| || `n` = Shared Public Modulo        |
+><
 
 For the remainder of this scenario, I'm intentionally leaving out <code>n</code>
 for simplicity's sake.
 
 <center>
-<img src="crypto/COLORDIR/rsa_setup.png">
+<img src="crypto/COLORDIR/rsa\_setup.png">
 </center>
 
 Above, I use the "speech bubble" to show that we've announced our public keys
@@ -212,7 +201,7 @@ Knowing that our messages are public, how should he send this message so that
 only I can read it?
 
 <center>
-<img src="crypto/COLORDIR/rsa_msg.png">
+<img src="crypto/COLORDIR/rsa\_msg.png">
 </center>
 
 We know we have to encrypt the message in some way.
@@ -224,7 +213,7 @@ Before we think about what key he _should_ use, let's look at what keys he _can_
 use.
 
 <center>
-<img src="crypto/COLORDIR/rsa_blsknow.png">
+<img src="crypto/COLORDIR/rsa\_blsknow.png">
 </center>
 
 Dr. Stuart knows his public and private keys <code>(e~B~, d~B~)</code>, his
@@ -240,7 +229,7 @@ Which should he use?
 To figure this out, he should then think about what I know.
 
 <center>
-<img src="crypto/COLORDIR/rsa_charlieknow.png">
+<img src="crypto/COLORDIR/rsa\_charlieknow.png">
 </center>
 
 I know my public and private keys <code>(e~C~, d~C~)</code> and his public key
@@ -261,35 +250,14 @@ One column has the keys that Dr. Stuart knows.
 One column has the keys that I know.
 The rows are keys that match.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead>
-<tr><th></th>
-<th>**Dr. Stuart can encrypt with**</th>
-<th>**Charlie can decrypt with**</th>
-</tr>
-</thead>
-<tbody>
-<tr><th></th>
-<td><code>e~B~</code></td>
-<td></td>
-</tr>
-<tr><th></th>
-<td><code>d~B~</code></td>
-<td><code>e~B~</code></td>
-</tr>
-<tr><th></th>
-<td><code>e~C~</code></td>
-<td><code>d~C~</code></td>
-</tr>
-<tr><th></th>
-<td></td>
-<td><code>e~C~</code></td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| || **Dr. Stuart can encrypt with** | **Charlie can decrypt with** |
+|-||---------------------------------|------------------------------|
+| || ``e~B~``                        |                              |
+| || ``d~B~``                        | ``e~B~``                     |
+| || ``e~C~``                        | ``d~C~``                     |
+| ||                                 | ``e~C~``                     |
+><
 
 Now we can see, even though Dr. Stuart _could_ encrypt with his public key, I
 would not be able to decrypt his message because I don't know his private key.
@@ -307,7 +275,7 @@ me a message that only I can read?
 He should use <span class="hide">my public</span> key to encrypt the message.
 
 <center>
-<img src="crypto/COLORDIR/rsa_msgsent.png">
+<img src="crypto/COLORDIR/rsa\_msgsent.png">
 </center>
 
 Dr. Stuart sends <code>E(m, e~C~)</code>.
@@ -347,45 +315,23 @@ They write their own message, <code>m~S~ = "Give S a 100"</code>, encrypt it,
 and send it to me.
 
 <center>
-<img src="crypto/COLORDIR/rsasig_setup.png">
+<img src="crypto/COLORDIR/rsasig\_setup.png">
 </center>
 
 I check my mailbox and I see I've got two encrypted messages, <code>E~1~</code>
 and <code>E~2~</code>.
 I decrypt both of them with my private key.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th>
-<td><code>D(E~1~, d~C~)</code></td>
-<td><code>D(E~2~, d~C~)</code></td>
-</tr>
-<tr><th></th>
-<td><code>E~1~^d~C~^</code></td>
-<td><code>E~2~^d~C~^</code></td>
-</tr>
-<tr><th></th>
-<td><code>(m~1~^e~C~^)^d~C~^</code></td>
-<td><code>(m~2~^e~C~^)^d~C~^</code></td>
-</tr>
-<tr><th></th>
-<td><code>m~1~^e~C~d~C~^</code></td>
-<td><code>m~2~^e~C~d~C~^</code></td>
-</tr>
-<tr><th></th>
-<td><code>m~1~</code></td>
-<td><code>m~2~</code></td>
-</tr>
-<tr><th></th>
-<td><code>"Give S a 100"</code></td>
-<td><code>"Give S a 90"</code></td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| ||                        |                        |
+|-||------------------------|------------------------|
+| || ``D(E~1~, d~C~)``      | ``D(E~2~, d~C~)``      |
+| || ``E~1~^d~C~^``         | ``E~2~^d~C~^``         |
+| || ``(m~1~^e~C~^)^d~C~^`` | ``(m~2~^e~C~^)^d~C~^`` |
+| || ``m~1~^e~C~d~C~^``     | ``m~2~^e~C~d~C~^``     |
+| || ``m~1~``               | ``m~2~``               |
+| || ``"Give S a 100"``     | ``"Give S a 90"``      |
+><
 
 Oh no.
 I don't know which message came from Dr. Stuart.
@@ -402,17 +348,13 @@ be used to describe messages.
 Let's say I wanted to create a hash function to create unique identifiers for
 students in my class.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th><td>H(Student) = First letter of their first name</td></tr>
-<tr><th></th><td>H(Alice) = A</td></tr>
-<tr><th></th><td>H(Joe) = J</td></tr>
-</tbody>
-</table>
-</center>
+><
+| ||                                               |
+|-||-----------------------------------------------|
+| || H(Student) = First letter of their first name |
+| || H(Alice) = A                                  |
+| || H(Joe) = J                                    |
+><
 
 As you can see, <code>H(Joe)</code> will always produce <code>J</code>.
 This is a different value from <code>H(Alice)</code> which will always produce
@@ -437,7 +379,7 @@ The hash function must have some connection to the message.
 Instead, we decide to use <code>H(m) = length of the message</code>.
 
 <center>
-<img src="crypto/COLORDIR/rsasig_hashsetup.png">
+<img src="crypto/COLORDIR/rsasig\_hashsetup.png">
 </center>
 
 Dr. Stuart is going to compute the hash of his message.
@@ -446,50 +388,16 @@ he wants to give the student.
 How should he send me this message?
 Let's again look at who knows what, now with our angry student included.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead>
-<tr><th></th>
-<th>Dr. Stuart can <br> encrypt with</th>
-<th>Student can <br> encrypt with</th>
-<th>Charlie can <br> decrypt with</th>
-</tr>
-</thead>
-<tbody>
-<tr><th></th>
-<td><code>e~S~</code></td>
-<td><code>e~S~</code></td>
-<td></td>
-</tr>
-<tr><th></th>
-<td><code>e~B~</code></td>
-<td><code>e~B~</code></td>
-<td></td>
-</tr>
-<tr><th></th>
-<td><code>e~C~</code></td>
-<td><code>e~C~</code></td>
-<td><code>d~C~</code></td>
-</tr>
-<tr><th></th>
-<td><code>d~B~</code></td>
-<td></td>
-<td><code>e~B~</code></td>
-</tr>
-<tr><th></th>
-<td></td>
-<td><code>d~S~</code></td>
-<td><code>e~S~</code></td>
-</tr>
-<tr><th></th>
-<td></td>
-<td></td>
-<td><code>e~C~</code></td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| || Dr. Stuart can <br> **encrypt** with | Student can <br> **encrypt** with | Charlie can <br> **decrypt** with |
+|-||--------------------------------------|-----------------------------------|-----------------------------------|
+| || ``e~S~``                             | ``e~S~``                          |                                   |
+| || ``e~B~``                             | ``e~B~``                          |                                   |
+| || ``e~C~``                             | ``e~C~``                          | ``d~C~``                          |
+| || ``d~B~``                             |                                   | ``e~B~``                          |
+| || ``d~S~``                             | ``d~S~``                          | ``e~B~``                          |
+| ||                                      |                                   | ``e~C~``                          |
+><
 
 Dr. Stuart _could_ use my public key for me to decrypt with my private key
 again, but the student also can use my public key.
@@ -500,7 +408,7 @@ key.
 I will then decrypt it with his public key.
 
 <center>
-<img src="crypto/COLORDIR/rsasig_hashsent.png">
+<img src="crypto/COLORDIR/rsasig\_hashsent.png">
 </center>
 
 Now you may think, "Wait, then the student will also be able to read the hashed
@@ -520,43 +428,14 @@ Let's look at the four messages again.
 Who could have sent them?
 Who could have read them?
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th>
-<th>Message</th>
-<th>Encrypted <br> Message</th>
-<th>Who Can <br> Encrypt?</th>
-<th>Who Can <br> Decrypt?</th>
-</tr></thead>
-<tbody>
-<tr><th></th>
-<td><code>"Give S a 90"</code></td>
-<td><code>E( m~B~, e~C~ )</code></td>
-<td>Charlie <br> Dr. Stuart <br> Student</td>
-<td>Charlie</td>
-</tr>
-<tr><th></th>
-<td><code>"11"</code></td>
-<td><code>E( H(m~B~), d~B~ )</code></td>
-<td>Dr. Stuart</td>
-<td>Charlie <br> Dr. Stuart<br> Student</td>
-</tr>
-<tr><th></th>
-<td><code>"Give S a 100"</code></td>
-<td><code>E( m~S~, e~C~ )</code></td>
-<td>Charlie <br> Dr. Stuart <br> Student</td>
-<td>Charlie</td>
-</tr>
-<tr><th></th>
-<td><code>"12"</code></td>
-<td><code>E( H(m~S~), d~S~ )</code></td>
-<td>Student</td>
-<td>Charlie <br> Dr. Stuart <br> Student</td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| || Message             | Encrypted <br> Message | Who Can <br> Encrypt?                | Who Can <br> Decrypt?               |
+|-||---------------------|------------------------|--------------------------------------|-------------------------------------|
+| || `"Give S a 90"`     | ``E( m~B~, e~C~ )``    | Charlie <br> Dr. Stuart <br> Student | Charlie                             |
+| || `"11"`              | ``E( H(m~B~), d~B~ )`` | Dr. Stuart                           | Charlie <br> Dr. Stuart<br> Student |
+| || `"Give S a 100"`    | ``E( m~S~, e~C~ )``    | Charlie <br> Dr. Stuart <br> Student | Charlie                             |
+| || `"12"`              | ``E( H(m~S~), d~B~ )`` | Student                              | Charlie <br> Dr. Stuart<br> Student |
+><
 
 Now I can read through the four messages I have received: "Give S a 90", "Give
 S a 100", "11", and "12".
@@ -573,7 +452,7 @@ Only Dr. Stuart knows the message he wanted to send, which means only Dr. Stuart
 could calculate its hash and send it to me with his private key.
 
 <center>
-<img src="crypto/COLORDIR/rsasig_calc.png">
+<img src="crypto/COLORDIR/rsasig\_calc.png">
 </center>
 
 (I had to abandon my though cloud, the text wouldn't fit, but you get the gist)
@@ -676,7 +555,7 @@ Now that we have a mutually trusted CA, we can get to work.
 Let's give her a public and private key set <code>(e~A~, d~A~)</code>.
 
 <center>
-<img src="crypto/COLORDIR/certificate_setup.png">
+<img src="crypto/COLORDIR/certificate\_setup.png">
 </center>
 
 I have received two messages from Dr. Stuart.
@@ -693,7 +572,7 @@ I'll encrypt my message with her public key <code>e~A~</code>
 (this way only she can decrypt with her private key <code>d~A~</code>).
 
 <center>
-<img src="crypto/COLORDIR/certificate_request.png">
+<img src="crypto/COLORDIR/certificate\_request.png">
 </center>
 
 The CA is going to respond with two messages.
@@ -702,7 +581,7 @@ This will be encrypted with my public key.
 Second, she'll send me her signature, verifying the original message.
 
 <center>
-<img src="crypto/COLORDIR/certificate_response.png">
+<img src="crypto/COLORDIR/certificate\_response.png">
 </center>
 
 Now I can successfully decrypt the CA's messages, remember Dr. Stuart's public
@@ -755,35 +634,21 @@ Each number would be encrypted separately, then sent as a string.
 Since the modulo operation forces all encrypted messages to be shorter than `N`,
 sending multiple numbers at once allows for messages that are longer than `N`.
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th>
-<td><code>E(m, e~C~) = 049048^e~C~^ mod 180919</code></td>
-</tr>
-<tr><th></th>
-<td><code>E(m, e~C~) = 050057^e~C~^ mod 180919</code></td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| ||                                          |
+|-||------------------------------------------|
+| || ``E(m, e~C~) = 049048^e~C~^ mod 180919`` |
+| || ``E(m, e~C~) = 050057^e~C~^ mod 180919`` |
+><
 
 Another option is to directly encrypt the key; It's already a number, so why do
 extra work?
 
-<center>
-<table>
-<colgroup><col span="1" class="red"></colgroup>
-<thead><tr><th></th><th></th><th></th></tr></thead>
-<tbody>
-<tr><th></th>
-<td><code>E(e~B~, e~C~) = 1029^e~C~^ mod 180919</code></td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+| ||                                           |
+|-||-------------------------------------------|
+| || ``E(e~B~, e~C~) = 1029^e~C~^ mod 180919`` |
+><
 
 Since the CA's job is to send public keys, we can assume that every message we
 get from the CA will either be a public key or the CA's signature.

@@ -39,9 +39,9 @@
 	<hr>
 	<div class="content">
 		<a href="numbers/"><b>Chapter 1 :</b> Number Bases</a>
-		<a href="numbers/baseTen.html"><b>1.1 :</b> Base-10</a>
-		<a href="numbers/baseTwo.html"><b>1.2 :</b> Base-2</a>
-		<a href="numbers/baseSixteen.html"><b>1.3 :</b> Base-16</a>
+		<a href="numbers/base10.html"><b>1.1 :</b> Base-10</a>
+		<a href="numbers/base2.html"><b>1.2 :</b> Base-2</a>
+		<a href="numbers/base16.html"><b>1.3 :</b> Base-16</a>
 		<a href="numbers/colors.html"><b>1.4 :</b> HTML Colors</a>
 	</div>
 	<hr>
@@ -117,7 +117,7 @@
 		<a href="crypto/"><b>Chapter 10 :</b> Cryptography</a>
 		<a href="crypto/math.html"><b>10.1 :</b> RSA Math Background</a>
 		<a href="crypto/rsa_keygen.html"><b>10.2 :</b> RSA Key Generation</a>
-		<a href="crypto/rsah.html"><b>10.3 :</b> RSA Encryption</a>
+		<a href="crypto/rsap.html"><b>10.3 :</b> RSA Encryption</a>
 	</div>
 </div>
 <div id="main">
@@ -134,21 +134,36 @@
 		<br>
 		<br>
 	</div>
-<!-- ERROR -->
 	<hr>
-	<div class="content">
+<!-- ERROR -->
+		<div class="content">
 		<h1>2.1 : Negative Numbers</h1>
 	</div>
 	<hr>
-	<div class="content">
-<p>Since binary only uses 0's and 1's, there are no + and - signs to define a positive and a negative number the way we do with base-10 numbers. Instead, there are multiple different ways to express a negative binary number.</p>
-	</div>
-	<hr>
-	<div class="content">
+<div class="content">
+<p>
+Since binary only uses 0's and 1's, there are no + and - signs to define a
+positive and a negative number the way we do with base-10 numbers.
+Instead, there are multiple different ways to express a negative binary number.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="sign-magnitude">Sign Magnitude</h2>
-<p><strong>Most Significant Bit (MSB):</strong> The leftmost bit in a number. Eg: <strong>1</strong>0011001</p>
-<p><strong>Least Significant Bit (LSB):</strong> The rightmost bit in a number. Eg: 1001100<strong>1</strong></p>
-<p>The MSB is the most important bit when representing a sign magnitude negative number. If the MSB is a 0, the number is positive. If the MSB is 1, the number is negative. From there, the following bits are calculated the same way that any binary number is calulated.</p>
+<p>
+<b>Most Significant Bit (MSB):</b> The leftmost bit in a number. Eg: <b>1</b>0011001
+</p>
+<p>
+<b>Least Significant Bit (LSB):</b> The rightmost bit in a number. Eg: 1001100<b>1</b>
+</p>
+<p>
+The MSB is the most important bit when representing a sign magnitude negative
+number.
+If the MSB is a 0, the number is positive.
+If the MSB is 1, the number is negative.
+From there, the following bits are calculated the same way that any binary
+number is calulated.
+</p>
 <center>
 <table>
 <colgroup>
@@ -156,107 +171,96 @@
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-Byte
-</th>
-<th>
-Sign
-</th>
-<th>
-Value
-</th>
+<th></th>
+<th>Byte</th>
+<th>Sign</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>
-</td>
-<td>
-<code>00110101<sub>2</sub></code>
-</td>
-<td>
-Positive
-</td>
-<td>
-<code>+53<sub>10</sub></code>
-</td>
+<th></th>
+<td><code>00110101<sub>2</sub></code></td>
+<td>Positive</td>
+<td><code>+53<sub>10</sub></code></td>
 </tr>
 <tr>
-<td>
-</td>
-<td>
-<code>10110101<sub>2</sub></code>
-</td>
-<td>
-Negative
-</td>
-<td>
-<code>-53<sub>10</sub></code>
-</td>
+<th></th>
+<td><code>10110101<sub>2</sub></code></td>
+<td>Negative</td>
+<td><code>-53<sub>10</sub></code></td>
 </tr>
 <tr>
-<td>
-</td>
-<td>
-<code>00010000<sub>2</sub></code>
-</td>
-<td>
-Positive
-</td>
-<td>
-<code>+16<sub>10</sub></code>
-</td>
+<th></th>
+<td><code>00010000<sub>2</sub></code></td>
+<td>Positive</td>
+<td><code>+16<sub>10</sub></code></td>
 </tr>
 <tr>
-<td>
-</td>
-<td>
-<code>10011101<sub>2</sub></code>
-</td>
-<td>
-Negative
-</td>
-<td>
-<code>-29<sub>10</sub></code>
-</td>
+<th></th>
+<td><code>10011101<sub>2</sub></code></td>
+<td>Negative</td>
+<td><code>-29<sub>10</sub></code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>Let's look further at the sign magnitude notation. In a sign magnitude representation of an 8-bit binary number, we have the following setup:</p>
+<p>
+Let's look further at the sign magnitude notation.
+In a sign magnitude representation of an 8-bit binary number, we have the
+following setup:
+</p>
+<p>
 <center>
 <table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-</th>
-</tr>
-</thead>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
 <tbody>
-<tr>
-<td>
-</td>
-<td style="padding:1.5ch">
-<code style="font-size:150%">SMMMMMMM</code>
-</td>
+<tr><td></td>
+<td style="padding:1.5ch"><code style="font-size:150%">SMMMMMMM</code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>Above, <code>S</code> represent the MSB, which is used for the sign and <code>M</code> represents a magnitude bit, a bit that is used when calculating the magnitude, or numeric value, of the binary number.</p>
-<p>Let's recall that a bit is the smallest unit of information. If we have an 8 bit number and we're only using 7 of those bits to store a numeric value, it would appear that we're losing one bit of information. In an 8 bit unsigned binary number, we'd have a range of <code>[00000000, 11111111]</code> which is <code>[0, +255]</code> (0 to +255 inclusive). In a 7 bit unsigned binary number, we'd have a range of <code>[0000000, 1111111]</code> which is <code>[0, +127]</code> (0 to +127 inclusive). It appears as though we've completely reduced the range of values that we can represent. This isn't actually the case. The range of sign magnitude over 8 bits is <code>[11111111, 01111111]</code> which is <code>[-127, +127]</code>. As you can see, our range hasn't been reduced, just moved.</p>
-	</div>
-	<hr>
-	<div class="content">
+</p>
+<p>
+Above, <code>S</code> represent the MSB, which is used for the sign and <code>M</code> represents a
+magnitude bit, a bit that is used when calculating the magnitude, or numeric
+value, of the binary number.
+</p>
+<p>
+Let's recall that a bit is the smallest unit of information.
+If we have an 8 bit number and we're only using 7 of those bits to store a
+numeric value, it would appear that we're losing one bit of information.
+In an 8 bit unsigned binary number, we'd have a range of <code>[00000000, 11111111]</code>
+which is <code>[0, +255]</code> (0 to +255 inclusive).
+In a 7 bit unsigned binary number, we'd have a range of <code>[0000000, 1111111]</code>
+which is <code>[0, +127]</code> (0 to +127 inclusive).
+It appears as though we've completely reduced the range of values that we can
+represent.
+This isn't actually the case.
+The range of sign magnitude over 8 bits is <code>[11111111, 01111111]</code> which is
+<code>[-127, +127]</code>.
+As you can see, our range hasn't been reduced, just moved.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="ones-complement">One's Complement</h2>
-<p>One's complement is another way to represent negative numbers in binary. Just as we saw before in sign magnitude, the MSB indicates whether our number is positive or negative. If the MSB is 0, our number is positive and its value is calculated exactly the same as in sign magnitude. For example, 00110101<sub>2</sub> is still +53<sub>10</sub>. The difference is when representing negative numbers. When representing negative numbers, all bits are inverted in order to calculate the value. The 1's become 0's and the 0's become 1's. Below is the process for representing -53<sub>10</sub> as a binary number in one's complement representation over 8 bits.</p>
+<p>
+One's complement is another way to represent negative numbers in binary.
+Just as we saw before in sign magnitude, the MSB indicates whether our number is
+positive or negative.
+If the MSB is 0, our number is positive and its value is calculated exactly the
+same as in sign magnitude.
+For example, 00110101<sub>2</sub> is still +53<sub>10</sub>.
+The difference is when representing negative numbers.
+When representing negative numbers, all bits are inverted in order to calculate
+the value.
+The 1's become 0's and the 0's become 1's.
+Below is the process for representing -53<sub>10</sub> as a binary number in one's
+complement representation over 8 bits.
+</p>
 <center>
 <table>
 <colgroup>
@@ -264,104 +268,110 @@ Negative
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>
-</td>
-<td>
-<code>-53<sub>10</sub></code>
-</td>
-<td>
-</td>
+<th></th>
+<td><code>-53<sub>10</sub></code></td>
+<td></td>
 </tr>
 <tr>
-<td>
-</td>
-<td>
-<code>00110101<sub>2</sub></code>
-</td>
-<td>
-Convert unsigned value to binary
-</td>
+<th></th>
+<td><code>00110101<sub>2</sub></code></td>
+<td>Convert unsigned value to binary</td>
 </tr>
 <tr>
-<td>
-</td>
-<td>
-<code>11001010<sub>2</sub></code>
-</td>
-<td>
-Negate by inverting bits
-</td>
+<th></th>
+<td><code>11001010<sub>2</sub></code></td>
+<td>Negate by inverting bits</td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>We can now see that <code>-53<sub>10</sub> = 11001010<sub>2</sub></code> when using one's complement to represent binary numbers over 8 bits.</p>
-<p>As I mentioned before, like sign-magnitude, the MSB indicates if our value is positive or negative. Unlike, sign-magnitude, the value is calculated differently based on the MSB. We can kinda think about this in two ways. First, depending on the MSB, we change the way we calculate the value. Or, if we look at the above conversion, we see that a positive number's MSB is 0. When we negate a positive number, we invert all the bits. This includes the MSB. By inverting all the bits to negate a number, we also invert the MSB from a 0 to a 1 which further indicates that we have a negative number. One's complement is clever in this way. The MSB tells us whether or not we need to flip the bits to interpret the value. Additionally, when we negate a value, we don't need to consider the MSB because it will be flipped along with all the other bits. The sign of a number doesn't matter when we negate it because it will always produce the opposite value.</p>
-<p>Just as before, the range of an 8-bit binary number changes when we use one's complement. Again, the range of values that can be represented with 8-bit unsigned binary is <code>[00000000, 11111111]</code>. In Base-10, we already know that this is <code>[0, +255]</code>. The range of values that can be represented with 8-bit one's complement is <code>[10000000, 011111111]</code>. Representing this in base-10, we get a range of <code>[-127, +127]</code>.</p>
-	</div>
-	<hr>
-	<div class="content">
+<p>
+We can now see that <code>-53<sub>10</sub> = 11001010<sub>2</sub></code> when using one's
+complement to represent binary numbers over 8 bits.
+</p>
+<p>
+As I mentioned before, like sign-magnitude, the MSB indicates if our value is
+positive or negative.
+Unlike, sign-magnitude, the value is calculated differently based on the MSB.
+We can kinda think about this in two ways.
+First, depending on the MSB, we change the way we calculate the value.
+Or, if we look at the above conversion, we see that a positive number's MSB
+is 0.
+When we negate a positive number, we invert all the bits.
+This includes the MSB.
+By inverting all the bits to negate a number, we also invert the MSB from a 0 to
+a 1 which further indicates that we have a negative number.
+One's complement is clever in this way.
+The MSB tells us whether or not we need to flip the bits to interpret the value.
+Additionally, when we negate a value, we don't need to consider the MSB because
+it will be flipped along with all the other bits.
+The sign of a number doesn't matter when we negate it because it will always
+produce the opposite value.
+</p>
+<p>
+Just as before, the range of an 8-bit binary number changes when we use one's
+complement.
+Again, the range of values that can be represented with 8-bit unsigned binary is
+<code>[00000000, 11111111]</code>.
+In Base-10, we already know that this is <code>[0, +255]</code>.
+The range of values that can be represented with 8-bit one's complement is
+<code>[10000000, 011111111]</code>.
+Representing this in base-10, we get a range of <code>[-127, +127]</code>.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="twos-complement">Two's Complement</h2>
-<p>Two's complement is the way computers actually store negative binary values. The reason is because two's complement is much more accurate when dealing with addition and subtraction. We'll dive into this deeper later. Right now, let's focus on what two's complement actually is.</p>
-<p>Two's complement's name tells us a lot more than you'd think. Two's complement is one's complement plus one. What does this actually mean? To negate a number in one's complement, we inverted all the bits. To negate a number in two's complement, again we'll invert all the bits, but this time, we will add 1 to the inverted value. When we add 1, we add the mathematical value 1. We will not be appending a 1 as a new bit. This will make more sense when we see it in action. Let's take the number -53<sub>10</sub> and represent it as an 8-bit binary number represented in two's complement.</p>
+<p>
+Two's complement is the way computers actually store negative binary values.
+The reason is because two's complement is much more accurate when dealing with
+addition and subtraction.
+We'll dive into this deeper later.
+Right now, let's focus on what two's complement actually is.
+</p>
+<p>
+Two's complement's name tells us a lot more than you'd think.
+Two's complement is one's complement plus one.
+What does this actually mean?
+To negate a number in one's complement, we inverted all the bits.
+To negate a number in two's complement, again we'll invert all the bits, but
+this time, we will add 1 to the inverted value.
+When we add 1, we add the mathematical value 1.
+We will not be appending a 1 as a new bit.
+This will make more sense when we see it in action.
+Let's take the number -53<sub>10</sub> and represent it as an 8-bit binary number
+represented in two's complement.
+</p>
+<p>
 <center>
 <table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-</th>
-<th>
-</th>
-</tr>
-</thead>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th><th></th></tr></thead>
 <tbody>
 <tr>
-<td>
-</td>
-<td>
-<code>-53<sub>10</sub></code>
-</td>
-<td>
-</td>
+<td></td>
+<td><code>-53<sub>10</sub></code></td>
+<td></td>
 </tr>
 <tr>
-<td>
-</td>
-<td>
-<code>00110101<sub>2</sub></code>
-</td>
-<td>
-Convert unsigned value to binary
-</td>
+<td></td>
+<td><code>00110101<sub>2</sub></code></td>
+<td>Convert unsigned value to binary</td>
 </tr>
 <tr>
-<td>
-</td>
-<td>
-<code>11001010</code>
-</td>
-<td>
-Invert bits
-</td>
+<td></td>
+<td><code>11001010</code></td>
+<td>Invert bits</td>
 </tr>
 <tr>
-<td>
-</td>
+<td></td>
 <td>
 <pre>  11001010
 + 00000001
@@ -369,16 +379,32 @@ Invert bits
   11001011
 </pre>
 </td>
-<td>
-Add 00000001 (one)
-</td>
+<td>Add 00000001 (one)</td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>This process shows that when representing negative numbers in two's complement over 8 bits, <code>-53<sub>10</sub> = 11001011<sub>2</sub></code>.</p>
-<p>Before we look more at -53<sub>10</sub>, let's quickly go over the range of numbers that can be represented in 8-bit two's complement binary. As we've already mentioned again and again before, 8-bit unsigned binary numbers as a range of values of <code>[00000000, 11111111]</code> or <code>[0, +255]</code>. In two's complement, our range is now <code>[10000000, 01111111]</code> which is <code>[-128, +127]</code>. This is slightly different than the ranges we've seen in sign-magnitude and one's complement. This slight difference is what allows two's complement to be used for addition and subtraction.</p>
-<p>Bouncing back to -53<sub>10</sub>, we'll see in the past few sections, this value can be represented in many different ways in binary:</p>
+</p>
+<p>
+This process shows that when representing negative numbers in two's complement
+over 8 bits, <code>-53<sub>10</sub> = 11001011<sub>2</sub></code>.
+</p>
+<p>
+Before we look more at -53<sub>10</sub>, let's quickly go over the range of numbers that
+can be represented in 8-bit two's complement binary.
+As we've already mentioned again and again before, 8-bit unsigned binary numbers
+as a range of values of <code>[00000000, 11111111]</code> or <code>[0, +255]</code>.
+In two's complement, our range is now <code>[10000000, 01111111]</code> which is
+<code>[-128, +127]</code>.
+This is slightly different than the ranges we've seen in sign-magnitude and
+one's complement.
+This slight difference is what allows two's complement to be used for addition
+and subtraction.
+</p>
+<p>
+Bouncing back to -53<sub>10</sub>, we'll see in the past few sections, this value can be
+represented in many different ways in binary:
+</p>
 <center>
 <table>
 <colgroup>
@@ -386,337 +412,247 @@ Add 00000001 (one)
 </colgroup>
 <thead>
 <tr>
-<th>
-</th>
-<th>
-</th>
-<th>
-</th>
+<th></th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>
-</td>
-<th>
-Base-10
-</th>
-<td>
-<code>-53<sub>10</sub></code>
-</td>
+<th></th>
+<td><b>Base-10</b></td>
+<td><code>-53<sub>10</sub></code></td>
 </tr>
 <tr>
-<td>
-</td>
-<th>
-Sign-Magnitude
-</th>
-<td>
-<code>10110101<sub>2</sub></code>
-</td>
+<th></th>
+<td><b>Sign-Magnitude</b></td>
+<td><code>10110101<sub>2</sub></code></td>
 </tr>
 <tr>
-<td>
-</td>
-<th>
-One's Complement
-</th>
-<td>
-<code>11001010<sub>2</sub></code>
-</td>
+<th></th>
+<td><b>One's Complement</b></td>
+<td><code>11001010<sub>2</sub></code></td>
 </tr>
 <tr>
-<td>
-</td>
-<th>
-Two's Complement
-</th>
-<td>
-<code>11001011<sub>2</sub></code>
-</td>
+<th></th>
+<td><b>Two's Complement</b></td>
+<td><code>11001011<sub>2</sub></code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>To add another layer to this, let's look at the value 11001011<sub>2</sub>. What would it's base-10 value be in each representation?</p>
+<p>
+To add another layer to this, let's look at the value 11001011<sub>2</sub>.
+What would it's base-10 value be in each representation?
+</p>
+<p>
 <center>
 <table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-</th>
-<th>
-</th>
-</tr>
-</thead>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th><th></th></tr></thead>
 <tbody>
 <tr>
-<td>
-</td>
-<td colspan="2">
-<code>11001011<sub>2</sub></code>
-</td>
+<td></td>
+<td colspan=2><code>11001011<sub>2</sub></code></td>
 </tr>
 <tr>
-<td>
-</td>
-<th>
-Unsigned
-</th>
-<td>
-<code>+203<sub>10</sub></code>
-</td>
+<td></td>
+<th>Unsigned</th>
+<td><code>+203<sub>10</sub></code></td>
 </tr>
 <tr>
-<td>
-</td>
-<th>
-Sign-Magnitude
-</th>
-<td>
-<code>-76<sub>10</sub></code>
-</td>
+<td></td>
+<th>Sign-Magnitude</th>
+<td><code>-76<sub>10</sub></code></td>
 </tr>
 <tr>
-<td>
-</td>
-<th>
-One's Complement
-</th>
-<td>
-<code>-52<sub>10</sub></code>
-</td>
+<td></td>
+<th>One's Complement</th>
+<td><code>-52<sub>10</sub></code></td>
 </tr>
 <tr>
-<td>
-</td>
-<th>
-Two's Complement
-</th>
-<td>
-<code>-53<sub>10</sub></code>
-</td>
+<td></td>
+<th>Two's Complement</th>
+<td><code>-53<sub>10</sub></code></td>
 </tr>
 </tbody>
 </table>
 </center>
-<p>This concept can be extremely confusing the first time you see it because it challenges the way we've been taught numbers our whole lives. In base-10, the only way we represent negative numbers is by appending a &quot;-&quot; to the front of a number; we don't change the digits. This means that in base-10, the sequence of characters &quot;-53&quot; will always correlate the mathematical value of -53. The sequence of characters &quot;-53&quot; will never be used to represent a different mathematical value.</p>
-<p>In binary, since we only have the digits 0 and 1 available to represent everything in computers, we have to get creative. One sequence of 0s and 1s must be able to have multiple meanings. Let's oversimplify the way a computer reads binary. Let's say in order to function, this simple-computer reads a single string of 0s and 1s, one bit at time. The simple-computer reads &quot;1&quot;, then &quot;0&quot;, then &quot;1&quot;. If we were to constrict this sequence to <em>only</em> be the value +5<sub>10</sub>, then the simple-computer would not be able to read the sequence &quot;1&quot;, &quot;0&quot;, &quot;1&quot;, &quot;0&quot; (+10<sub>10</sub>). The interpretation of the sequence 101<sub>2</sub> must be flexible.</p>
-<p>It's very similar to that <a href="https://youtu.be/MELFuY6rSEs">one bit in iCarly</a>:</p>
+</p>
+<p>
+This concept can be extremely confusing the first time you see it because it
+challenges the way we've been taught numbers our whole lives.
+In base-10, the only way we represent negative numbers is by appending a "-" to
+the front of a number; we don't change the digits.
+This means that in base-10, the sequence of characters "-53" will always
+correlate the mathematical value of -53.
+The sequence of characters "-53" will never be used to represent a different
+mathematical value.
+</p>
+<p>
+In binary, since we only have the digits 0 and 1 available to represent
+everything in computers, we have to get creative.
+One sequence of 0s and 1s must be able to have multiple meanings.
+Let's oversimplify the way a computer reads binary.
+Let's say in order to function, this simple-computer reads a single string of 0s
+and 1s, one bit at time.
+The simple-computer reads "1", then "0", then "1".
+If we were to constrict this sequence to <i>only</i> be the value +5<sub>10</sub>, then the
+simple-computer would not be able to read the sequence "1", "0", "1", "0"
+(+10<sub>10</sub>).
+The interpretation of the sequence 101<sub>2</sub> must be flexible.
+</p>
+<p>
+It's very similar to that <a href="https://youtu.be/MELFuY6rSEs">one bit in iCarly</a>:
+</p>
+<p>
 <center>
 <table id="icarly">
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-</th>
-</tr>
-</thead>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th></th></tr></thead>
 <tbody>
-<tr>
-<td>
-</td>
-<td>
-<em>&quot;How long is gonna take?&quot;</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td>
-<em>&quot;3 or 4&quot;</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td>
-<em>&quot;3 or 4 what? Days? Weeks? Months?&quot;</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td>
-<em>&quot;Yeah, maybe 5&quot;</em>
-</td>
-</tr>
-<tr>
-<td>
-</td>
-<td>
-<em>&quot;5 what?&quot;</em>
-</td>
-</tr>
+<tr><td></td><td><i>"How long is gonna take?"</i></td></tr>
+<tr><td></td><td><i>"3 or 4"</i></td></tr>
+<tr><td></td><td><i>"3 or 4 what? Days? Weeks? Months?"</i></td></tr>
+<tr><td></td><td><i>"Yeah, maybe 5"</i></td></tr>
+<tr><td></td><td><i>"5 what?"</i></td></tr>
 </tbody>
 </table>
 </center>
-<p>The point? Since numbers represent everything, numbers mean nothing if there's no context provided.</p>
-	</div>
-	<hr>
-	<div class="content">
+</p>
+<p>
+The point?
+Since numbers represent everything, numbers mean nothing if there's no context
+provided.
+</p>
+</div>
+<hr>
+<div class="content">
 <h2 id="practice">Practice</h2>
-<p>I've got a few different ways to practice understanding negative binary here. Use &quot;Reset&quot; to get new random values. All values will be between 1 and 16 bits. You can also enter your own values in all fields if you want to create your own practice problems. This is painfully simple JavaScript code. It won't work right if you don't use it right. Be an adult, don't put letters in the number boxes.</p>
+<p>
+I've got a few different ways to practice understanding negative binary here.
+Use "Reset" to get new random values.
+All values will be between 1 and 16 bits.
+You can also enter your own values in all fields if you want to create your own
+practice problems.
+This is painfully simple JavaScript code.
+It won't work right if you don't use it right.
+Be an adult, don't put letters in the number boxes.
+</p>
+<p>
 <center>
 <table id="positive-or-negative" class="practice">
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-Positive or Negative
-</th>
-</tr>
-</thead>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th>Positive or Negative</th></tr></thead>
 <tbody>
 <tr>
+<td></td>
 <td>
-</td>
-<td>
-Is the <select id="pnrep"> <option value="un">Unsigned</option> <option value="sm">Sign-Magnitude</option> <option value="oc">One's Complement</option> <option value="tc">Two's Complement</option> </select> binary number
-<textarea id="pnbinary">
-</textarea>
+Is the
+<select id="pnrep">
+<option value="un">Unsigned</option>
+<option value="sm">Sign-Magnitude</option>
+<option value="oc">One's Complement</option>
+<option value="tc">Two's Complement</option>
+</select>
+binary number
+<textarea id="pnbinary"></textarea>
 positive or negative?
 </td>
 </tr>
 <tr>
+<td></td>
 <td>
-</td>
-<td>
-<button id="pnpos" onclick="pncheck(0)">
-Positive
-</button>
-<button id="pnneg" onclick="pncheck(1)">
-Negative
-</button>
-<button onclick="pnreset()">
-Reset
-</button>
+<button id="pnpos" onclick="pncheck(0)">Positive</button>
+<button id="pnneg" onclick="pncheck(1)">Negative</button>
+<button onclick="pnreset()">Reset</button>
 </td>
 </tr>
 <tr>
-<td>
-</td>
-<td id="pnresponse" class="response">
-</td>
+<td></td>
+<td id="pnresponse" class="response"></td>
 </tr>
 </tbody>
 </table>
 <br><br><br>
 <table id="signed-binary-to-decimal" class="practice">
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-Binary to Decimal
-</th>
-</tr>
-</thead>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th>Binary to Decimal</th></tr></thead>
 <tbody>
 <tr>
+<td></td>
 <td>
-</td>
-<td>
-How would the <select id="bdrep"> <option value="un">Unsigned</option> <option value="sm">Sign-Magnitude</option> <option value="oc">One's Complement</option> <option value="tc">Two's Complement</option> </select> binary number
-<textarea id="bdbinary">
-</textarea>
+How would the
+<select id="bdrep">
+<option value="un">Unsigned</option>
+<option value="sm">Sign-Magnitude</option>
+<option value="oc">One's Complement</option>
+<option value="tc">Two's Complement</option>
+</select>
+binary number
+<textarea id="bdbinary"></textarea>
 <br> be represented as a decimal (base 10) number?
 </td>
 </tr>
 <tr>
-<td>
-</td>
+<td></td>
 <td class="inputtd">
-<textarea id="bddec">
-</textarea>
-<button onclick="bdcheck()">
-Check Answer
-</button>
-<button onclick="bdreset()">
-Reset
-</button>
+<textarea id="bddec"></textarea>
+<button onclick="bdcheck()">Check Answer</button>
+<button onclick="bdreset()">Reset</button>
 </td>
 </tr>
 <tr>
-<td>
-</td>
-<td id="bdresponse" class="response">
-</td>
+<td></td>
+<td id="bdresponse" class="response"></td>
 </tr>
 </tbody>
 </table>
 <br><br><br>
 <table id="decimal-to-signed-binary" class="practice">
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th>
-</th>
-<th>
-Decimal to Binary
-</th>
-</tr>
-</thead>
+<colgroup><col span="1" class="red"></colgroup>
+<thead><tr><th></th><th>Decimal to Binary</th></tr></thead>
 <tbody>
 <tr>
-<td>
-</td>
+<td></td>
 <td>
 How would the decimal value
-<textarea id="dbdec">
-</textarea>
+<textarea id="dbdec"></textarea>
 be represented as <br> an
-<textarea id="dbbit">
-</textarea>
-bit <select id="dbrep"> <option value="un">Unsigned</option> <option value="sm">Sign-Magnitude</option> <option value="oc">One's Complement</option> <option value="tc">Two's Complement</option> </select> binary number?
+<textarea id="dbbit"></textarea>
+bit
+<select id="dbrep">
+<option value="un">Unsigned</option>
+<option value="sm">Sign-Magnitude</option>
+<option value="oc">One's Complement</option>
+<option value="tc">Two's Complement</option>
+</select>
+binary number?
 </td>
 <tr>
-<td>
-</td>
+<td></td>
 <td class="inputtd">
-<textarea id="dbbinary">
-</textarea>
-<button onclick="dbcheck()">
-Check Answer
-</button>
-<button onclick="dbreset()">
-Reset
-</button>
+<textarea id="dbbinary"></textarea>
+<button onclick="dbcheck()">Check Answer</button>
+<button onclick="dbreset()">Reset</button>
 </td>
 </tr>
 <tr>
-<td>
-</td>
-<td id="dbresponse" class="response">
-</td>
+<td></td>
+<td id="dbresponse" class="response"></td>
 </tr>
 </tbody>
 </table>
 </center>
+</p>
+<p>
 <script>
 pnreset();
 bdreset();
 dbreset();
 </script>
-	</div>
+</p>
+</div>
 	<hr>
 	<div class="content">
 		<center>

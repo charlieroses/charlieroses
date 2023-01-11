@@ -97,8 +97,7 @@ do
 		LINKS="${LINKS}$(cat "${UTILS}/${DIR}_links.txt")"
 	fi
 
-	CONTENT="$(pandoc -p "${INFILE}")"
-	CONTENT="$(echo "${CONTENT}" | sed "s#<hr />#\t</div>\n\t<hr>\n\t<div class=\"content\">#g")"
+	CONTENT="$("${UTILS}/mdtohtml.awk" "${INFILE}")"
 	if [[ "${SEC}" != "0" ]]
 	then
 		TITLE="${SEC} : ${TITLE}"
@@ -107,7 +106,7 @@ do
 		then
 			TITLE="Chapter ${TITLE}"
 		fi
-		CONTENT="\t\t<h1>${TITLE}</h1>\n\t</div>\n\t<hr>\n\t<div class=\"content\">\n${CONTENT}"
+		CONTENT="\t\t<div class=\"content\">\n\t\t<h1>${TITLE}</h1>\n\t</div>\n\t<hr>\n${CONTENT}"
 	fi
 
 	if [[ "${FILE}" = "index" ]]
@@ -149,7 +148,7 @@ then
 
 	SIDEBAR="$("${UTILS}/generate_sidebar")"
 	CONTENT="$("${UTILS}/build_practiceglossary")"
-	CONTENT="\t\t<h1>How To Use This Book</h1>\n\t</div>\n\t<hr>\n${CONTENT}"
+	CONTENT="\t<div class=\"content\">\n\t\t<h1>How To Use This Book</h1>\n\t</div>\n\t<hr>\n${CONTENT}"
 
 	HTML="${TEMPLATE}"
 

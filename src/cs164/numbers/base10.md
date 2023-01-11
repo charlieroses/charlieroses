@@ -11,47 +11,14 @@ Consider the number **314**.
 This is a basic 3 digit number that will be rather easy to dissect.
 To break down this number, I've set up the following table:
 
-<center>
-<table>
-<colgroup>
-<col span="1" class="red">
-</colgroup>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>Digit</th>
-<td>3</td>
-<td>1</td>
-<td>4</td>
-</tr>
-<tr>
-<th>Power</th>
-<td>10<sup>2</sup></td>
-<td>10<sup>1</sup></td>
-<td>10<sup>0</sup></td>
-</tr>
-<tr>
-<th>Value</th>
-<td>(3 * 10^2^)</td>
-<td>(1 * 10^1^)</td>
-<td>(4 * 10^0^)</td>
-</tr>
-<tr>
-<th></th>
-<td>300</td>
-<td>10</td>
-<td>4</td>
-</tr>
-</tbody>
-</table>
-</center>
+><
+|       ||              |              |              |
+|:-----:||:------------:|:------------:|:------------:|
+| Digit || 3            | 1            | 4            |
+| Power || 10^2^        | 10^1^        | 10^0^        |
+| Value || (3 \* 10^2^) | (1 \* 10^1^) | (4 \* 10^0^) |
+|       || 300          | 10           | 4            |
+><
 
 We've got three columns, one for each place value.
 We've got three rows,
@@ -66,7 +33,7 @@ We've got three rows,
 	Going from right to left, we start with a power of 0 and increase by 1 with
 	each place.
 	The base is then raised to that power.
-- **Value**: Digit * Power
+- **Value**: Digit \* Power
 
 So the number **314** dissected is equal to **300** + **10** + **4**.
 This is equal to **(3 x 10^2^)** + **(1 x 10^1^)** + **(4 x 10^0^)**.
@@ -76,9 +43,8 @@ This form will allow us to understand every number system.
 
 ## Generalizing
 
-Given a base `B` and an `n` digit number
-<code>w=w<sub>n-1</sub>...w<sub>0</sub></code>
-where <code>w<sub>i</sub> &isinv; [0,B-1] &forall; i &isinv; [0, n)</code>,
+Given a base `B` and an `n` digit number ``w=w~n-1~ ... w~0~``
+where ``w~i~ &isinv; [0,B-1] &forall; i &isinv; [0, n)``,
 The base-10 value of the number can be computed with:
 
 <center>
@@ -141,12 +107,12 @@ Let's go over the givens:
 
 Let's break down the math language in `w` separately:
 
-- <code>w=w<sub>n-1</sub>...w<sub>0</sub></code> tells us that `w` has to have a
+- ``w=w~n-1~...w~0~`` tells us that `w` has to have a
 	certain form, and we are going to give "names" to the parts of that form.
 	This form isolates each digit of `w` and gives it a subscript starting with
 	`n-1` and going to `0`.
 	- In the 314 example, `n=3` which tells us
-		<code>w=w<sub>2</sub>w<sub>1</sub>w<sub>0</sub></code>.
+		``w=w~2~w~1~w~0~``.
 		Knowing that `w=314`, we now also know that
 		<code>w<sub>2</sub>=3</code>, <code>w<sub>1</sub>=1</code>, and
 		<code>w<sub>0</sub>=4</code>.
