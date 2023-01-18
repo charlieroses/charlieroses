@@ -115,8 +115,7 @@ do
 		
 		[[ -n "${OTHER}" ]] && CONTENT="${CONTENT}<p><em>${OTHER}</em></p>\n"
 
-		DESC="$(tail -n +2 "${SRC}/${DIR_LC}/${ID}.md" | pandoc -p )"
-		DESC="$(./src/utils/mdtohtml "${DESC}")"
+		DESC="$(tail -n +2 "${SRC}/${DIR_LC}/${ID}.md" | "${UTILS}/mdtohtml.awk" )"
 		DESC="${DESC//"<a"/"<a class=\"${CARRAY[$i]}\""}"
 		CONTENT="${CONTENT}${DESC}\n"
 

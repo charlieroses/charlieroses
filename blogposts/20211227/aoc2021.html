@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/x-icon" href="../../favicon.ico">
   <link rel="stylesheet" type="text/css" href="../../styles.css">
+  <link rel="stylesheet" type="text/css" href="../../sourcecode.css">
   <link rel="stylesheet" type="text/css" href="aoc.css">
 
   <title>CharlieRose.dev</title>
@@ -31,326 +32,213 @@
 
   <section>
 	<h1 id="advent-of-code-2021">Advent of Code 2021</h1>
-<p>I mentioned in my <a href="../20211201/aocd1.html">day 1 post</a> that I didn't know how long I'd last in Advent of Code this year. I want to continue getting better at C and not rely on Python for the harder problems like I did in past years. Sadly, I've got a lot going on at the moment, so I'm not gonna try and convince myself that I have a chance of finishing. I'm gonna try anyway, see how far I get and progressively add to this post. Then on December 25th, no matter where I'm at, I'll post it.</p>
-<p>Flash forward a few weeks: I stopped writing about days on Day 4. Then I stopped doing problems at midnight on Day 8. I've had time to go back and do Day 9 and 10. I've been beyond busy with finishing final grades, graduate school applications, and also taking my break from classes. I honestly forgot about this post I had started until I went to start a new one. Overall, I think I did a lot better this year compared to past years. I wish I had more time to finish more days, but I did a lot better in C than I did in Python in past years. I also started building a library in C for Advent of Code. I want to keep filling this in with data structure and algorithm implementations. I'm not sure how much time I'll have in the future to work on this though.</p>
-<p><a href="https://github.com/charlieroses/AdventOfCode/">[GitHub Repo]</a></p>
-<h3 id="day-2" class="ag">Day 2</h3>
-<p>I don't know if these problems are easier than years past or if I've gotten more competent. The navigation problem is a classic one. I probably could've shaved at least a minute off my time if I had multiplied the depth and horizontal distance from the start. I also forgot that <code>scanf</code> doesn't include spaces when it grabs strings, which led to a slight bug I needed to fix. Either way, I continue to do quite a bit better than years past.</p>
+<p>
+I mentioned in my
+<a href="../20211201/aocd1.html">day 1 post</a>
+that I didn't know how long I'd last in Advent of Code this year. I want to
+continue getting better at C and not rely on Python for the harder problems like
+I did in past years. Sadly, I've got a lot going on at the moment, so I'm not
+gonna try and convince myself that I have a chance of finishing. I'm gonna try
+anyway, see how far I get and progressively add to this post. Then on December
+25th, no matter where I'm at, I'll post it.
+</p>
+<p>
+Flash forward a few weeks: I stopped writing about days on Day 4. Then I stopped
+doing problems at midnight on Day 8. I've had time to go back and do Day 9 and 10.
+I've been beyond busy with finishing final grades, graduate school applications,
+and also taking my break from classes. I honestly forgot about
+this post I had started until I went to start a new one. Overall, I think I did
+a lot better this year compared to past years. I wish I had more time to finish
+more days, but I did a lot better in C than I did in Python in past years. I
+also started building a library in C for Advent of Code. I want to keep filling
+this in with data structure and algorithm implementations. I'm not sure how much
+time I'll have in the future to work on this though.
+</p>
+<p>
+<a href="https://github.com/charlieroses/AdventOfCode/">[GitHub Repo]</a>
+</p>
+<h3 class="ag" id="day-2-">Day 2 </h3>
+<p>
+I don't know if these problems are easier than years past or if I've gotten more
+competent. The navigation problem is a classic one. I probably could've shaved
+at least a minute off my time if I had multiplied the depth and horizontal
+distance from the start. I also forgot that <code>scanf</code> doesn't include spaces when
+it grabs strings, which led to a slight bug I needed to fix. Either way, I
+continue to do quite a bit better than years past.
+</p>
+<center>
+<p>
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th>Year</th>
-<th align="right"><span class="as">Part 1 Time</span></th>
-<th align="right"><span class="as">Rank</span></th>
-<th align="right"><span class="ay">Part 2 Time</span></th>
-<th align="right"><span class="ay">Rank</span></th>
+<th class="as">Part 1 Time</th><th class="as">Rank</th>
+<th class="ay">Part 2 Time</th><th class="ay">Rank</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2021</td>
-<td align="right">00:08:59</td>
-<td align="right">6279</td>
-<td align="right">0</td>
-<td align="right">00:11:14 47839</td>
-</tr>
-<tr class="even">
-<td>2020</td>
-<td align="right">00:13:47</td>
-<td align="right">3198</td>
-<td align="right">0</td>
-<td align="right">00:24:23 3722</td>
-</tr>
-<tr class="odd">
-<td>2019</td>
-<td align="right">&gt;24h</td>
-<td align="right">43950</td>
-<td align="right">0</td>
-<td align="right">&gt;24h 39831</td>
-</tr>
-</tbody>
+<tr><td>2021</td><td>00:08:59</td><td>6279</td><td>00:11:14</td><td>47839</td></tr>
+<tr><td>2020</td><td>00:13:47</td><td>3198</td><td>00:24:23</td><td>3722</td></tr>
+<tr><td>2019</td><td>&gt;24h</td><td>43950</td><td>&gt;24h</td><td>39831</td></tr>
 </table>
-<h3 id="day-3" class="ag">Day 3</h3>
-<p>I misread this problem SO MANY times. Spent too long debugging, realizing I had misread the problem again, then restarting debugging. I also, in my speed code writing frenzy, proceeded to forget everything I knew about binary, so that was fun.</p>
-<p>I did do better than last year in part 1, which I'm happy about. Part 2 is a different story. I made the classic rookie mistake of not storing the input to reference in part 2. I'll get better tomorrow.</p>
-<p>If I do get through tomorrow, I will have completed an equal amount of Advent of Code problems in C and Python. Then in two days, I'll be able to say I've technically done the majority of Advent of Code in C.</p>
+</p>
+</center>
+<h3 class="ag" id="day-3-">Day 3 </h3>
+<p>
+I misread this problem SO MANY times. Spent too long debugging, realizing I had
+misread the problem again, then restarting debugging. I also, in my speed code
+writing frenzy, proceeded to forget everything I knew about binary, so that was
+fun.
+</p>
+<p>
+I did do better than last year in part 1, which I'm happy about. Part 2 is a
+different story. I made the classic rookie mistake of not storing the input to
+reference in part 2. I'll get better tomorrow.
+</p>
+<p>
+If I do get through tomorrow, I will have completed an equal amount of
+Advent of Code problems in C and Python. Then in two days, I'll be able to say
+I've technically done the majority of Advent of Code in C.
+</p>
+<center>
+<p>
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th>Year</th>
-<th align="right"><span class="as">Part 1 Time</span></th>
-<th align="right"><span class="as">Rank</span></th>
-<th align="right"><span class="ay">Part 2 Time</span></th>
-<th align="right"><span class="ay">Rank</span></th>
+<th class="as">Part 1 Time</th><th class="as">Rank</th>
+<th class="ay">Part 2 Time</th><th class="ay">Rank</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2021</td>
-<td align="right">00:10:38</td>
-<td align="right">3236</td>
-<td align="right">01:50:03</td>
-<td align="right">11021</td>
-</tr>
-<tr class="even">
-<td>2020</td>
-<td align="right">00:38:07</td>
-<td align="right">7356</td>
-<td align="right">00:44:22</td>
-<td align="right">6449</td>
-</tr>
-<tr class="odd">
-<td>2019</td>
-<td align="right">&gt;24h</td>
-<td align="right">30927</td>
-<td align="right">&gt;24h</td>
-<td align="right">28426</td>
-</tr>
-</tbody>
+<tr><td>2021</td><td>00:10:38</td><td>3236</td><td>01:50:03</td><td>11021</td></tr>
+<tr><td>2020</td><td>00:38:07</td><td>7356</td><td>00:44:22</td><td>6449</td></tr>
+<tr><td>2019</td><td>&gt;24h</td><td>30927</td><td>&gt;24h</td><td>28426</td></tr>
 </table>
-<h3 id="day-4" class="ag">Day 4</h3>
-<p>Today was significantly more relaxing and enjoyable than yesterday. Debugging was more straight forward, I didn't make silly mistakes. There was a BINGO theme. It was a nice confidence boost after yesterday.</p>
-<p>I have officially completed an equal number of challenges in C and Python. It's been really nice to see how much I've improved since I've started.</p>
+</p>
+</center>
+<h3 class="ag" id="day-4-">Day 4 </h3>
+<p>
+Today was significantly more relaxing and enjoyable than yesterday. Debugging
+was more straight forward, I didn't make silly mistakes. There was a BINGO
+theme. It was a nice confidence boost after yesterday.
+</p>
+<p>
+I have officially completed an equal number of challenges in C and Python. It's
+been really nice to see how much I've improved since I've started.
+</p>
+<center>
+<p>
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th>Year</th>
-<th align="right"><span class="as">Part 1 Time</span></th>
-<th align="right"><span class="as">Rank</span></th>
-<th align="right"><span class="ay">Part 2 Time</span></th>
-<th align="right"><span class="ay">Rank</span></th>
+<th class="as">Part 1 Time</th><th class="as">Rank</th>
+<th class="ay">Part 2 Time</th><th class="ay">Rank</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2021</td>
-<td align="right">00:26:06</td>
-<td align="right">2067</td>
-<td align="right">00:53:31</td>
-<td align="right">3829</td>
-</tr>
-<tr class="even">
-<td>2020</td>
-<td align="right">00:15:28</td>
-<td align="right">2933</td>
-<td align="right">00:58:25</td>
-<td align="right">4092</td>
-</tr>
-<tr class="odd">
-<td>2019</td>
-<td align="right">&gt;24h</td>
-<td align="right">29256</td>
-<td align="right">&gt;24h</td>
-<td align="right">29298</td>
-</tr>
-</tbody>
+<tr><td>2021</td><td>00:26:06</td><td>2067</td><td>00:53:31</td><td>3829</td></tr>
+<tr><td>2020</td><td>00:15:28</td><td>2933</td><td>00:58:25</td><td>4092</td></tr>
+<tr><td>2019</td><td>&gt;24h</td><td>29256</td><td>&gt;24h</td><td>29298</td></tr>
 </table>
-<h3 id="day-5" class="ag">Day 5</h3>
+</p>
+</center>
+<h3 class="ag" id="day-5-">Day 5 </h3>
+<center>
+<p>
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th>Year</th>
-<th align="right"><span class="as">Part 1 Time</span></th>
-<th align="right"><span class="as">Rank</span></th>
-<th align="right"><span class="ay">Part 2 Time</span></th>
-<th align="right"><span class="ay">Rank</span></th>
+<th class="as">Part 1 Time</th><th class="as">Rank</th>
+<th class="ay">Part 2 Time</th><th class="ay">Rank</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2021</td>
-<td align="right">00:27:06</td>
-<td align="right">3666</td>
-<td align="right">00:49:05</td>
-<td align="right">4108</td>
-</tr>
-<tr class="even">
-<td>2020</td>
-<td align="right">00:45:35</td>
-<td align="right">7218</td>
-<td align="right">01:13:48</td>
-<td align="right">8011</td>
-</tr>
-<tr class="odd">
-<td>2019</td>
-<td align="right">&gt;24h</td>
-<td align="right">21530</td>
-<td align="right">&gt;24h</td>
-<td align="right">20258</td>
-</tr>
-</tbody>
+<tr><td>2021</td><td>00:27:06</td><td>3666</td><td>00:49:05</td><td>4108</td></tr>
+<tr><td>2020</td><td>00:45:35</td><td>7218</td><td>01:13:48</td><td>8011</td></tr>
+<tr><td>2019</td><td>&gt;24h</td><td>21530</td><td>&gt;24h</td><td>20258</td></tr>
 </table>
-<h3 id="day-6" class="ag">Day 6</h3>
+</p>
+</center>
+<h3 class="ag" id="day-6-">Day 6 </h3>
+<center>
+<p>
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th>Year</th>
-<th align="right"><span class="as">Part 1 Time</span></th>
-<th align="right"><span class="as">Rank</span></th>
-<th align="right"><span class="ay">Part 2 Time</span></th>
-<th align="right"><span class="ay">Rank</span></th>
+<th class="as">Part 1 Time</th><th class="as">Rank</th>
+<th class="ay">Part 2 Time</th><th class="ay">Rank</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2021</td>
-<td align="right">00:13:17</td>
-<td align="right">4503</td>
-<td align="right">00:37:27</td>
-<td align="right">4562</td>
-</tr>
-<tr class="even">
-<td>2020</td>
-<td align="right">00:12:19</td>
-<td align="right">4614</td>
-<td align="right">00:30:55</td>
-<td align="right">5669</td>
-</tr>
-<tr class="odd">
-<td>2019</td>
-<td align="right">&gt;24h</td>
-<td align="right">18943</td>
-<td align="right">&gt;24h</td>
-<td align="right">18260</td>
-</tr>
-</tbody>
+<tr><td>2021</td><td>00:13:17</td><td>4503</td><td>00:37:27</td><td>4562</td></tr>
+<tr><td>2020</td><td>00:12:19</td><td>4614</td><td>00:30:55</td><td>5669</td></tr>
+<tr><td>2019</td><td>&gt;24h</td><td>18943</td><td>&gt;24h</td><td>18260</td></tr>
 </table>
-<h3 id="day-7" class="ag">Day 7</h3>
+</p>
+</center>
+<h3 class="ag" id="day-7-">Day 7 </h3>
+<center>
+<p>
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th>Year</th>
-<th align="right"><span class="as">Part 1 Time</span></th>
-<th align="right"><span class="as">Rank</span></th>
-<th align="right"><span class="ay">Part 2 Time</span></th>
-<th align="right"><span class="ay">Rank</span></th>
+<th class="as">Part 1 Time</th><th class="as">Rank</th>
+<th class="ay">Part 2 Time</th><th class="ay">Rank</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2021</td>
-<td align="right">00:11:49</td>
-<td align="right">5327</td>
-<td align="right">00:17:43</td>
-<td align="right">4466</td>
-</tr>
-<tr class="even">
-<td>2020</td>
-<td align="right">00:55:44</td>
-<td align="right">5019</td>
-<td align="right">01:09:16</td>
-<td align="right">3852</td>
-</tr>
-<tr class="odd">
-<td>2019</td>
-<td align="right">&gt;24h</td>
-<td align="right">13543</td>
-<td align="right">&gt;24h</td>
-<td align="right">19534</td>
-</tr>
-</tbody>
+<tr><td>2021</td><td>00:11:49</td><td>5327</td><td>00:17:43</td><td>4466</td></tr>
+<tr><td>2020</td><td>00:55:44</td><td>5019</td><td>01:09:16</td><td>3852</td></tr>
+<tr><td>2019</td><td>&gt;24h</td><td>13543</td><td>&gt;24h</td><td>19534</td></tr>
 </table>
-<h3 id="day-8" class="ag">Day 8</h3>
-<p>I started doing day 8 at midnight, then I saw part 2 and decided to call it for the night. From what I can tell, day 8 was universally tough for part 2. I have conflicting feelings about my part 2 solutions. I like how I used integers and bits to mimic a set. I'm not proud of how I went about finding each number in the 4bit7seg. This was the last day I even partially finished the day it was released.</p>
+</p>
+</center>
+<h3 class="ag" id="day-8-">Day 8 </h3>
+<p>
+I started doing day 8 at midnight, then I saw part 2 and decided to call it for
+the night.
+From what I can tell, day 8 was universally tough for part 2.
+I have conflicting feelings about my part 2 solutions.
+I like how I used integers and bits to mimic a set.
+I'm not proud of how I went about finding each number in the 4bit7seg.
+This was the last day I even partially finished the day it was released.
+</p>
+<center>
+<p>
 <table>
-<thead>
-<tr class="header">
+<tr>
 <th>Year</th>
-<th align="right"><span class="as">Part 1 Time</span></th>
-<th align="right"><span class="as">Rank</span></th>
-<th align="right"><span class="ay">Part 2 Time</span></th>
-<th align="right"><span class="ay">Rank</span></th>
+<th class="as">Part 1 Time</th><th class="as">Rank</th>
+<th class="ay">Part 2 Time</th><th class="ay">Rank</th>
 </tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2021</td>
-<td align="right">00:23:32</td>
-<td align="right">6663</td>
-<td align="right">&gt;24h</td>
-<td align="right">60394</td>
-</tr>
-<tr class="even">
-<td>2020</td>
-<td align="right">00:17:17</td>
-<td align="right">4627</td>
-<td align="right">&gt;24h</td>
-<td align="right">56412</td>
-</tr>
-<tr class="odd">
-<td>2019</td>
-<td align="right">14:45:31</td>
-<td align="right">12335</td>
-<td align="right">16:11:37</td>
-<td align="right">12089</td>
-</tr>
-</tbody>
+<tr><td>2021</td><td>00:23:32</td><td>6663</td><td>&gt;24h</td><td>60394</td></tr>
+<tr><td>2020</td><td>00:17:17</td><td>4627</td><td>&gt;24h</td><td>56412</td></tr>
+<tr><td>2019</td><td>14:45:31</td><td>12335</td><td>16:11:37</td><td>12089</td></tr>
 </table>
-<h3 id="day-10" class="ag">Day 10</h3>
-<p>Another one of those problems I completed about a week after it was released, so I'm not gonna include statistics.</p>
-<p>I liked this problem. It's a variation of a problem I did in my data structures class. I'm TAing the same class in the winter. When I took the class, I did it in Python. This year, they started moving over to C. This problem took a lot longer than I was expecting since I took the time to write my own stack in C. Other than that, it was a fun straight forward problem.</p>
-<h3 id="language-stats" class="ag">Language Stats</h3>
-<p>This doesn't add up exactly. I can't find my 2018 solutions anywhere, then I also did some days in both languages.</p>
+</p>
+</center>
+<h3 class="ag" id="day-10-">Day 10 </h3>
+<p>
+Another one of those problems I completed about a week after it was released, so
+I'm not gonna include statistics.
+</p>
+<p>
+I liked this problem.
+It's a variation of a problem I did in my data structures class.
+I'm TAing the same class in the winter.
+When I took the class, I did it in Python.
+This year, they started moving over to C.
+This problem took a lot longer than I was expecting since I took the time to
+write my own stack in C.
+Other than that, it was a fun straight forward problem.
+</p>
+<h3 class="ag" id="language-stats-">Language Stats </h3>
+<p>
+This doesn't add up exactly. I can't find my 2018 solutions anywhere, then I
+also did some days in both languages.
+</p>
+<center>
+<p>
 <table>
-<thead>
-<tr class="header">
-<th align="right">Year</th>
-<th align="right">Stars</th>
-<th align="right">C</th>
-<th align="right">Python</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right"><span class="ag">2021</span></td>
-<td align="right"><span class="ay">20★</span></td>
-<td align="right">20</td>
-<td align="right"></td>
-</tr>
-<tr class="even">
-<td align="right"><span class="ag">2020</span></td>
-<td align="right"><span class="ay">31★</span></td>
-<td align="right">26</td>
-<td align="right">7</td>
-</tr>
-<tr class="odd">
-<td align="right"><span class="ag">2019</span></td>
-<td align="right"><span class="ay">27★</span></td>
-<td align="right"></td>
-<td align="right">27</td>
-</tr>
-<tr class="even">
-<td align="right"><span class="ag">2018</span></td>
-<td align="right"><span class="ay">3★</span></td>
-<td align="right"></td>
-<td align="right"></td>
-</tr>
-<tr class="odd">
-<td align="right"><span class="ag">2017</span></td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
-</tr>
-<tr class="even">
-<td align="right"><span class="ag">2016</span></td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
-</tr>
-<tr class="odd">
-<td align="right"><span class="ag">2015</span></td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
-</tr>
-<tr class="even">
-<td align="right">Total</td>
-<td align="right"><span class="ay">81★</span></td>
-<td align="right">46</td>
-<td align="right">34</td>
-</tr>
-</tbody>
+<tr><th>Year</th><th>Stars</th><th>C</th><th>Python</th></tr>
+<tr><td class="ag">2021</td><td class="ay">20★</td><td>20</td><td></td></tr>
+<tr><td class="ag">2020</td><td class="ay">31★</td><td>26</td><td>7</td></tr>
+<tr><td class="ag">2019</td><td class="ay">27★</td><td></td><td>27</td></tr>
+<tr><td class="ag">2018</td><td class="ay">3★</td><td></td><td></td></tr>
+<tr><td class="ag">2017</td><td class="ay"></td><td></td><td></td></tr>
+<tr><td class="ag">2016</td><td class="ay"></td><td></td><td></td></tr>
+<tr><td class="ag">2015</td><td class="ay"></td><td></td><td></td></tr>
+<tr><td>Total</td><td class="ay">81★</td><td>46</td><td>34</td></tr>
 </table>
+</p>
+</center>
 
 <hr>
 

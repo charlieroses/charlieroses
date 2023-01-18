@@ -9,7 +9,7 @@ TEMPLATE="$2"
 OUT_FILE=${IN_FILE#${MD_SRC}}
 OUT_FILE=${OUT_FILE%.md}.html
 
-CONTENT="$(pandoc --preserve-tabs "${IN_FILE}")"
+CONTENT="$("src/utils/mdtohtml.awk" "${IN_FILE}")"
 
 HTMLPAGE=${TEMPLATE}
 HTMLPAGE="${HTMLPAGE/<!-- HEADING -->/ }"

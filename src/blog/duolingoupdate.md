@@ -43,8 +43,8 @@ First, to provide my unsolicited opinions on the update.
 Second, I'm proud of what I've accomplished and I'll take my opportunity to
 brag.
 
-- [Pre-Update Progress](#pre-update-progress)
-- [Post-Update Progress](#post-update-progress)
+- [Pre-Update Progress](#preupdate-progress)
+- [Post-Update Progress](#postupdate-progress)
 - [Opinions](#opinions)
 
 ## Pre-Update Progress

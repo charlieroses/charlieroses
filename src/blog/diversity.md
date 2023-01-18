@@ -33,8 +33,7 @@ people are allowed to come to meetings", which is a good start, but doesn't
 address the individual issues that LGBTQ+ women face. The conversation quickly
 ended and left a sour taste in my mouth.
 
-Flash forward to August of 2020, Drexel CCI posted a [list of 18 
-resources](https://www.drexel.edu/cci/news/2020/August/associations-for-women-in-computing/)
+Flash forward to August of 2020, Drexel CCI posted a [list of 18 resources](https://www.drexel.edu/cci/news/2020/August/associations-for-women-in-computing/)
 for women in computing. I read through the article to find that there was only
 one resource that prioritized LGBTQ+ people. In a moment of frustration, I
 shared the article on my personal Instagram and vented about the lack of
@@ -87,6 +86,8 @@ themselves on the back for doing the bare minimum instead of admitting to their
 mistakes and being willing to learn and grow. I'm excited to plan out a proper
 diversity training. Hopefully I'll be able to get those ideas across. I'll
 probably write another blog post once I plan out and host the training.
+
+---
 
 [^1]: heteronormative (adj) : of, relating to, or based
 on the attitude that heterosexuality is the only normal and natural expression

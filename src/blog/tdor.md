@@ -5,9 +5,9 @@ been wanting to write about (undergraduate thesis/graduate school/workshops/etc)
 but I just haven't had the time to recap. Trans Day of Remembrance is Saturday
 though, and given the year I've had, I needed to get this down before then.
 
-"[_Transgender Day of Remembrance (TDOR) is an annual observance on November 20
-that honors the memory of the transgender people whose lives were lost in acts
-of anti-transgender violence._](https://www.glaad.org/tdor)"
+> "_Transgender Day of Remembrance (TDOR) is an annual observance on November 20
+> that honors the memory of the transgender people whose lives were lost in acts
+> of anti-transgender violence. [-GLAAD](https://www.glaad.org/tdor)_"
 
 The [Human Rights Campaign](https://www.thehrcfoundation.org/)
 recently released their report titled
@@ -60,7 +60,7 @@ when I gave it. I included the edits_):
 > Tomorrow, we continue to fight for the lives we're not remembering, the lives
 > we still have, and the lives we will have. Thank you.
 
-![A group of people in front of two flag poles. The Drexel trans pride flag is flown and prepared to be raised](tdor_group.jpeg)
+!![A group of people in front of two flag poles. The Drexel trans pride flag is flown and prepared to be raised](tdor_group.jpeg)
 
 I want to take a moment to remember some of the lives lost this year. I want to
 take the time to not remember them as statistics, but as people. This list is

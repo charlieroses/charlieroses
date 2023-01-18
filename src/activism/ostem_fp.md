@@ -12,8 +12,8 @@ the
 
 Starting in the Winter of 2018 I spent about six months building our founding
 executive board. Due to Drexel's timeline for student organizations, we were
-unable to become a recognized self governed student organization until Fall of
-2019. We spent our first year operating out of the Center for the Advancement of
+unable to become a recognized self governed student organization until Fall of 2019.
+We spent our first year operating out of the Center for the Advancement of
 STEM Learning and Teaching Excellence (CASTLE), utilizing their resources to
 host three events without recognition.
 

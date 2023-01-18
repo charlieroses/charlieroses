@@ -64,12 +64,18 @@ I'll see how much time I have before classes get the above "bugs" fixed,
 [[Thesis Proposal Slides in Beamer]](../../research/files/proposalT.pdf)
 
 <center>
-![An image of the acme editor <a href="https://commons.wikimedia.org/w/index.php?curid=2069950">From Wikipedia</a> under the <a href="http://opensource.org/licenses/LPL-1.02" title="Lucent Public License">LPL</a>](Acme.png)
+![](Acme.png)
++++
+_An image of the acme editor <a href="https://commons.wikimedia.org/w/index.php?curid=2069950">From Wikipedia</a> under the <a href="http://opensource.org/licenses/LPL-1.02" title="Lucent Public License">LPL</a>_
 
 
-![A slide from the presentation done in Google Slides](before.png)
+![](before.png)
++++
+_A slide from the presentation done in Google Slides_
 
-![The same slide redone with the beamer template](after.png)
+![](after.png)
++++
+_The same slide redone with the beamer template_
 
 </center>
 

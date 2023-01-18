@@ -54,8 +54,8 @@ For the Drexel people who want the man pages on tux, add the following lines to
 your `.bashrc`.
 
 ```bash
-MANPATH="${MANPATH}:/home/bls96/cs164/man"
-export MANPATH
+<span class="va">MANPATH=</span><span class="st">&quot;</span><span class="va">${MANPATH}</span><span class="st">:/home/bls96/cs164/man&quot;</span>
+<span class="bu">export</span> <span class="va">MANPATH</span>
 ```
 
 Make sure to log out and back into tux (or run `source .bashrc`) to refresh

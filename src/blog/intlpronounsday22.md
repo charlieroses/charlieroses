@@ -159,21 +159,21 @@ Friend and Minister of Christ Jesus, George Fox_. Marcus T.C. Gould, 1831,
 [^3]: C. C. Converse, "A New Pronoun." The Critic, Aug. 2, 1884, p. 55
 <http://faculty.las.illinois.edu/debaron/essays/thonconverse.pdf>
 
-[^4]: <https://www.merriam-webster.com/words-at-play/third-person-gender-neutral-pronoun-thon>
+[^4]: [](https://www.merriam-webster.com/words-at-play/third-person-gender-neutral-pronoun-thon)
 
-[^5]: <https://blogs.illinois.edu/view/25/597154>
+[^5]: [](https://blogs.illinois.edu/view/25/597154)
 
-[^6]: <https://www.nytimes.com/1955/10/02/archives/he-she-and-thon.html>
+[^6]: [](https://www.nytimes.com/1955/10/02/archives/he-she-and-thon.html)
 
 [^7]: Sippell, K. A. Solving the Great Pronoun Problem: The Acceptability of the
-Singular "They." UMI, 1993, <https://books.google.com/books?id=xtu8nQEACAAJ>.
+Singular "They." UMI, 1993, [](https://books.google.com/books?id=xtu8nQEACAAJ).
 
 
-<https://www.merriam-webster.com/words-at-play/mx-gender-neutral-title>
+[](https://www.merriam-webster.com/words-at-play/mx-gender-neutral-title)
 
-<https://www.merriam-webster.com/words-at-play/woty2019-top-looked-up-words-they>
+[](https://www.merriam-webster.com/words-at-play/woty2019-top-looked-up-words-they)
 
-<https://public.oed.com/blog/a-brief-history-of-singular-they/>
+[](https://public.oed.com/blog/a-brief-history-of-singular-they/)
 
-<https://languagelog.ldc.upenn.edu/nll/?p=2732>
+[](https://languagelog.ldc.upenn.edu/nll/?p=2732)
 

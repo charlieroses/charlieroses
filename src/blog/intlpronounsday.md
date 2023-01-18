@@ -294,4 +294,4 @@ Given this information, some questions to ponder.
 - Would asking for other people's pronouns hurt you?
 - Is it more uncomfortable to ask for someone's pronouns, or assume and be wrong?
 
-[^1]: <https://public.oed.com/blog/a-brief-history-of-singular-they/>
+[^1]: [](https://public.oed.com/blog/a-brief-history-of-singular-they/)

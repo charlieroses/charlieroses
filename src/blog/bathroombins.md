@@ -3,7 +3,11 @@
 After well over a year of work, on March 4th, 2022, sanitary waste bins were
 installed (pun intended) in every stall in the men's restrooms at CCI.
 
+><
 ![Sanitary Bin in the Men's Stall](bin.png)
++++
+_Sanitary Bin in the Men's Stall_
+><
 
 There's a set of restrooms on each of the three floors CCI covers at 3675 Market
 street. Each men's room has three stalls. In total, nine total waste bins were

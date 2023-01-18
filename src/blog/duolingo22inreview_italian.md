@@ -31,7 +31,7 @@ Fino al 30 di novembre, 2022, io...
 	Giorni</span>. Quando scrivo questo post al 18 di dicembre, ora ho una
 	![](streak.png) <span class="streak">Serie di 528 Giorni</span>.
 	Apparentamente, soltanto <span class="streak">5.8%</span> di studenti sono
-	nella 
+	nella
 	"[Societ&agrave; Duolingo Serie](https://duoplanet.com/duolingo-streak-society/)".
 	_(La mia app non ha questa caratteristica... Ho dovuto Googlelo[^1].
 	Fondamentementale, ho una serie pi&ugrave; di 365 giorni)_
@@ -116,6 +116,8 @@ educazione, pou un esercizio di grammatic&agrave; formale.
 Comunque, sono fiero della mia ossessione di Duolingo. Non mi fermo presto.
 Devo trovare nuovi modi per integare Duolingo. Ho dei libri fisici che posso
 usare. Potrei provare di scrivere pi&ugrave; post in italiano. Vedremo.
+
+---
 
 [^1]: Google is not a word, but I'll pretend it's a verb for the sake of the
 word "Googlelo"

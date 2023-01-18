@@ -1,4 +1,4 @@
-# Tapia Celebration 2021 \[Final Thoughts\]
+# Tapia Celebration 2021 [Final Thoughts]
 
 <h3 class="pr">Navigation</h3>
 

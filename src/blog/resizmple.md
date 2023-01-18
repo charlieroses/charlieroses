@@ -19,15 +19,15 @@ decided to see how viable my joke would be.
 
 [Rio](https://plan9.io/magic/man2html/1/rio)
 is the windowing system for Plan9. It normally does not support wallpapers. It
-typically has a plain gray background (HC#777777#, to be exact). After a quick
+typically has a plain gray background (#777777, to be exact). After a quick
 Google search, I was able to find an implementation for a wallpaper by
 [Devine Lu Linvega](https://wiki.xxiivv.com/site/rio.html).
 After a little fiddling, I was able to create the following image, which I
 emailed over to my research advisor.
 
-<center>
+><
 <img src="Plan9XP.png">
-</center>
+><
 
 This earned me a quick 11pm "Uh huh" email. The next morning I got a second
 response, "Wait, did you actually modify rio to support wallpapers or is that
@@ -166,10 +166,12 @@ options, but I think tiled wallpapers are hideous in every situation, so I gave
 the user can specify how the image is scaled.
 
 The image is not keeping the same dimensions
+
 - `x` and `y` are being scaled independently and have separate `xs` and `ys`
 	scalars
 
 The image is keeping the same dimensions
+
 - The image is being scaled by `xs`
 	- `yn := yo * xs`
 	- `ys := xs`
@@ -182,7 +184,7 @@ The image is keeping the same dimensions
 	- `yn := yo`
 
 In addition to this, going back to my core design principles, I want everything
-done with integer values. So `xs` and ys` must be whole numbers. I need to
+done with integer values. So `xs` and `ys` must be whole numbers. I need to
 independently handle the cases where `xn > xo`, `xo > xn`, `yn > yo`, and
 `yo > yn`. Depending on the orginal size of the image and the size of the
 window, these can be used in a variety of combinations with the above. I refuse
@@ -364,11 +366,11 @@ How much was co increased by?
 
 When was `co` extra increased?
 
-| 11 |    12     |    13     |    14     |
-|----|-----------|-----------|-----------|
-|    | 3 * (2/5) | 2 * (3/5) | 2 * (4/5) |
-|    |           | 4 * (3/5) | 3 * (4/5) |
-|    |           |           | 4 * (4/5) |
+| 11 |     12     |     13     |     14     |
+|----|------------|------------|------------|
+|    | 3 \* (2/5) | 2 \* (3/5) | 2 \* (4/5) |
+|    |            | 4 \* (3/5) | 3 \* (4/5) |
+|    |            |            | 4 \* (4/5) |
 
 | 11 | 12  |  13  |  14  |
 |----|-----|------|------|

@@ -1,9 +1,4 @@
 Workshops and Talks
-Resources,NOTALL
-null O
-null S
-null E
-null L
 
 - [QWER Hacks (01/2022)](events.html#qwerhacks)
 	- [Slides](../blogposts/20220122/qwerhacksslides.pdf)

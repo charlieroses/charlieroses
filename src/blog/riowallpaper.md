@@ -60,24 +60,24 @@ the screen (which also had to be done manually) and can be seen below.
 
 <table>
 <tr><td>
-
 ![No scaling, image centered `-x 0 -y 0`](rio_x0y0.png)
-
++++
+_No scaling, image centered_ `-x 0 -y 0`
 </td></tr>
 <tr><td>
-
 ![Scaled by y component `-x 0 -y 1`](rio_x0y1.png)
-
++++
+_Scaled by y component_ `-x 0 -y 1`
 </td></tr>
 <tr><td>
-
 ![Scaled by x component `-x 1 -y 0`](rio_x1y0.png)
-
++++
+_Scaled by x component_ `-x 1 -y 0`
 </td></tr>
 <tr><td>
-
 ![Scaled by both components `-x 1 - y 1`](rio_x1y1.png)
-
++++
+_Scaled by both components_ `-x 1 - y 1`
 </td></tr>
 </table>
 
@@ -89,15 +89,14 @@ refreshing the wallpaper with a `/dev/wctl` command is a temporary fix.
 
 <table>
 <tr><td>
-
 ![The Bug](rio_bug.png)
-
++++
+_The Bug_
 </td></tr>
 <tr><td>
-
 ![The wallpaper refreshed](rio_refresh.png)
-
-
++++
+_The wallpaper refreshed_
 </td></tr>
 </table>
 

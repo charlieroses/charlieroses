@@ -18,6 +18,7 @@ td {
 	border: 2px dashed var(--text-grey-dk);
 	padding-left: 2ch;
 	padding-right: 2ch;
+	text-align: center;
 }
 
 img {

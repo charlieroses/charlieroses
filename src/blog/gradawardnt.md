@@ -7,8 +7,7 @@ laughing about it.
 The professor I'm doing my operating systems research with is on multiple
 committees. We talk over Slack fairly frequently about both the research I'm
 working along with random happenings. On Monday I asked him a question and he
-asked if I knew about the [Graduate Student Teaching Assistant Excellence
-Award](https://drexel.edu/graduatecollege/research-funding/excellence-awards/ta-excellence/).
+asked if I knew about the [Graduate Student Teaching Assistant Excellence Award](https://drexel.edu/graduatecollege/research-funding/excellence-awards/ta-excellence/).
 Apparently he recently was added to the committee in charge of selecting the
 winner for this award.
 I said I had heard about it, planned to nominate one of my TAs, but forgot. He

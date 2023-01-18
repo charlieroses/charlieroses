@@ -22,22 +22,32 @@ minutes this year. So even if I don't complete more than Day 1, I'm happy.
 
 [GitHub Repo](https://github.com/charlieroses/AdventOfCode)
 
-       Year      Stars   C  Python
------------ ---------- --- -------
-[2021]{.ag}  [2★]{.ay}   2
-[2020]{.ag} [31★]{.ay}  26       7
-[2019]{.ag} [27★]{.ay}          27
-[2018]{.ag}  [3★]{.ay}
-[2017]{.ag}
-[2016]{.ag}
-[2015]{.ag}
-      Total [63★]{.ay}  28      34
+><
+<table>
+<tr><th>Year</th><th>Stars</th><th>C</th><th>Python</th></tr>
+<tr><td class="ag">2021</td><td class="ay">2★</td><td>2</td><td></td></tr>
+<tr><td class="ag">2020</td><td class="ay">31★</td><td>26</td><td>7</td></tr>
+<tr><td class="ag">2019</td><td class="ay">27★</td><td></td><td>27</td></tr>
+<tr><td class="ag">2018</td><td class="ay">3★</td><td></td><td></td></tr>
+<tr><td class="ag">2017</td><td class="ay"></td><td></td><td></td></tr>
+<tr><td class="ag">2016</td><td class="ay"></td><td></td><td></td></tr>
+<tr><td class="ag">2015</td><td class="ay"></td><td></td><td></td></tr>
+<tr><td>Total</td><td class="ay">63★</td><td>28</td><td>34</td></tr>
+</table>
+><
 
 <br>
 
 
-Year  Day   [Part 1 Time]{.as}   [Rank]{.as}   [Score]{.as}    [Part 2 Time]{.ay}   [Rank]{.ay}   [Score]{.ay}
----- ----  -------------------  ------------  -------------   -------------------  ------------  -------------
-2021    1             00:03:29         1775             0              00:06:38         1159             0
-2020    1             01:04:10         6135             0              01:11:38         5832             0
-2019    1                 >24h        63045             0                  >24h        55723             0
+><
+<table>
+<tr>
+<th>Year</th><th>Day</th>
+<th class="as">Part 1 Time</th><th class="as">Rank</th><th class="as">Score</th>
+<th class="ay">Part 2 Time</th><th class="ay">Rank</th><th class="ay">Score</th>
+</tr>
+<tr><td>2021</td><td>1</td><td>00:03:29</td><td>1775</td><td>0</td><td>00:06:38</td><td>1159</td><td>0</td></tr>
+<tr><td>2020</td><td>1</td><td>01:04:10</td><td>6135</td><td>0</td><td>01:11:38</td><td>5832</td><td>0</td></tr>
+<tr><td>2019</td><td>1</td><td>>24h</td><td>63045</td><td>0</td><td>>24h</td><td>55723</td><td>0</td></tr>
+</table>
+><

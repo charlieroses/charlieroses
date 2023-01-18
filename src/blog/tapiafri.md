@@ -1,4 +1,4 @@
-# Tapia Celebration 2021 \[Friday: 9/17\]
+# Tapia Celebration 2021 [Friday: 9/17]
 
 <h3 class="pr">Navigation</h3>
 

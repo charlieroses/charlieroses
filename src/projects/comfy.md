@@ -20,7 +20,7 @@ had my idea for the hackathon.
 The goal behind Comfy was to create a crowd sourced review app focused around
 accessibility. Users would be able to enter a location and provide information
 about the general environment. Our goal was a combination between Yelp and
-<www.doesthedogdie.com>. We included criteria like "smoker friendly",
+[](www.doesthedogdie.com). We included criteria like "smoker friendly",
 "wheelchair accessible", "bright lights", and "loud music". We tried to choose
 common triggers that affect both physical and mental disabilities. When we
 presented these categories, we framed them in an objective "expect this" or

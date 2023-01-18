@@ -19,6 +19,11 @@ then
 	echo "Built blogpost directory"
 fi
 
+FORCE=""
+if [[ -n "$1" ]]
+then
+	FORCE="-f"
+fi
 
 # Build individual blog files first
 
@@ -45,7 +50,7 @@ do
 		continue
 	fi
 
-	[[ "$IN_FILE" -ot "${OUT_FILE}" ]] && continue
+	[[ -z "${FORCE}" ]] && [[ "$IN_FILE" -ot "${OUT_FILE}" ]] && continue
 
 	if [ ! -e "${BLOGDIR}/${DIRDATE}" ]
 	then
@@ -60,10 +65,7 @@ do
 	done
 
 
-	CONTENT="$(pandoc -p "${IN_FILE}")"
-	echo " Coverted to HTML with pandoc"
-	CONTENT="$(${UTILS}/mdtohtml "${CONTENT}")"
-	echo " Adding Charlie customization"
+	CONTENT="$("${UTILS}/mdtohtml.awk" "${IN_FILE}")"
 	CONTENT="${CONTENT}\n\n<hr>\n\n<a href=\"#top\">Back to Top</a>\n"
 
 	# Fixing template links and inserting content
@@ -75,10 +77,8 @@ do
 	# Build HTML page
 	echo -e "${HTMLPAGE}" > "${OUT_FILE}"
 	
+	echo "Built ${OUT_FILE} from ${IN_FILE}"
 	${UTILS}/check_links "${OUT_FILE}"
-
-	echo "  Built ${OUT_FILE} from ${IN_FILE}"
-
 done < <(tail -n +2 "${POSTLIST}")
 
 echo "Built all blog HTML files from Markdown"

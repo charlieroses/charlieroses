@@ -20,7 +20,7 @@ again in graduate school.
 I figured I'd take the time to write about the process, post my slides, and
 explain things the slides don't capture very well.
 
-![Winona, my pitbull, laying on my bed on top of some research papers after deciding she is more important](winona.jpg)
+!![Winona, my pitbull, laying on my bed on top of some research papers after deciding she is more important](winona.jpg)
 
 Plan 9 is an operating system written at Bell Labs in the 1980s. It's been
 coined as "More-Unix-Than-Unix" in how far the phrase "everything is a file"

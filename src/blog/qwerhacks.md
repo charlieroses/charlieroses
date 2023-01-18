@@ -59,7 +59,11 @@ primarily covered logistics from the day of.
 ---
 
 <div id="slide3">
+><
 ![Slide 3: My Background](slide3.png)
++++
+_Slide 3: My Background_
+><
 </div>
 
 I am currently in my senior year at Drexel University. Looking back, I could
@@ -176,7 +180,11 @@ and continued my work in admin.
 ---
 
 <div id="slide4">
+><
 ![Slide 4: A Overview of the Five Categories of Actions I've Defined](slide4.png)
++++
+_Slide 4: A Overview of the Five Categories of Actions I've Defined_
+><
 </div>
 
 In an effort to figure out how I went about this journey through activism, I
@@ -203,7 +211,11 @@ in depth:
 ---
 
 <div id="slide5">
+><
 ![Slide 5: An "Actively Violent" Environment](slide5.png)
++++
+_Slide 5: An "Actively Violent" Environment_
+><
 </div>
 
 An <span class="qg">**Actively Violent**</span> environment is one where it is
@@ -224,7 +236,11 @@ powerful and radical act to form a small loving community.
 ---
 
 <div id="slide6">
+><
 ![Slide 6: A "Passively Discriminatory" Environment](slide6.png)
++++
+_Slide 6: A "Passively Discriminatory" Environment_
+><
 </div>
 
 A <span class="qb">**Passively Discriminatory**</span> environment is a step
@@ -250,7 +266,11 @@ help a hurting community.
 ---
 
 <div id="slide7">
+><
 ![Slide 7: "Reactive Actions"](slide7.png)
++++
+_Slide 7: "Reactive Actions"_
+><
 </div>
 
 Going a step further than acknowledging issues, administration can address
@@ -273,7 +293,11 @@ all over, and this cycle continues. This cycle quickly becomes exhausting.
 ---
 
 <div id="slide8">
+><
 ![Slide 8: "Preventative Actions"](slide8.png)
++++
+_Slide 8: "Preventative Actions"_
+><
 </div>
 
 We can expand on just reacting by taking
@@ -307,7 +331,11 @@ be not to remove a cycle, but create a cycle focused on growth.
 ---
 
 <div id="slide9">
+><
 ![Slide 9: "Strengthening Actions"](slide9.png)
++++
+_Slide 9: "Strengthening Actions"_
+><
 </div>
 
 <span class="qo">**Strengthening Actions**</span> are very similar to
@@ -333,7 +361,11 @@ because we need to, but because we want to.
 ---
 
 <div id="slide10">
+><
 ![Slide 10: Asking "What Now?" and How to Move Forward](slide10.png)
++++
+_Slide 10: Asking "What Now?" and How to Move Forward_
+><
 </div>
 
 Now that we have the vocabulary to describe the situations we're faced with, how
@@ -451,7 +483,11 @@ going to do whatever they can to take away your credibility.
 ---
 
 <div id="slide11">
+><
 ![Slide 11: The Reality of the Situation](slide11.png)
++++
+_Slide 11: The Reality of the Situation_
+><
 </div>
 
 I did want to address the sad truths, but also happy realities of what this work
@@ -512,7 +548,11 @@ constantly under attack, it's truly incredible how far we've come over the past
 ---
 
 <div id="slide12">
+><
 ![Slide 12: How to Survive This Journey](slide12.png)
++++
+_Slide 12: How to Survive This Journey_
+><
 </div>
 
 Finally, how do you get through this? How do you stay motivated when everything

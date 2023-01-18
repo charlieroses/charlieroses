@@ -14,19 +14,40 @@
 	--accent-p-yellow: #DCD3A3;
 	--accent-p-green:  #B2E5BB;
 	--accent-p-blue: #B0B8F4;
-	--accent-p-purple: #E7C4F0;
-	--accent-p-pink: #FFBADB;
+	--accent-p-purple: #D69EFD;
+	--accent-p-pink: #FB89EA;
 }
 
-.space {
+pre.sourcecode {
+	background-color: #1B1B1E;
+	border-radius: 5px;
+	color: #FFFFFF;
+	font-family: "Courier New", Courier, monospace;
+	padding: 1ch;
+	width: 78ch;
+}
+
+/************************************* BASH ***********************************/
+
+.bash .va {
+	color: #B0B8F4;
+}
+
+.bash .st {
+	color: #FB89EA;
+}
+
+.bash .bu {
+	color: #DCD3A3;
+}
+
+/************************************ PSEUDO **********************************/
+
+.psuedo .space, .tab {
 	color: transparent;
 }
 
-.tab {
-	color: transparent;
-}
-
-.and, .or {
+.psuedo .and, .or {
 	font-weight: bold;
 }
 
@@ -35,28 +56,30 @@
 	font-weight: bold;
 }
 
-.for, .rof, .while, .elihw, .do, .to, .done {
+.psuedo .for, .psuedo .rof,
+.psuedo .while, .psuedo .elihw,
+.psuedo .do, .psuedo .to, .psuedo .done {
 	color: var(--accent-p-blue);
 	font-weight: bold;
 }
 
-.fun, .end {
+.psuedo .fun, .psuedo .end {
 	color: var(--accent-p-red);
 	font-weight: bold;
 }
 
-.funname {
+.psuedo .funname {
 	font-style: italic;
 }
 
-.string, .string>* {
+.psuedo .string, .psuedo .string>* {
 	color: var(--accent-p-purple) !important;
 	font-style: normal !important;
 	font-weight: normal !important;
 	text-decoration: none !important;
 }
 
-.comment, .comment>* {
+.psuedo .comment, .psuedo .comment>* {
 	color: var(--accent-p-green) !important;
 	font-style: normal !important;
 	font-weight: normal !important;
