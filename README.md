@@ -14,11 +14,8 @@ Pronouns:
 [they/them](http://pronoun.is/they/.../themselves)
 <br>
 English (Fluent) ◆ Italian (Conversational)
-<br>
-src322 (AT) drexel.edu
 
-[CCI Diversity, Equity, and Inclusion Council Coordinator](https://charlierose.dev/activism/#ccidei_coord)
-  ◆
-[The Coalition of Identity-Based Organizations](https://charlierose.dev/activism/#cibo)
+Currently taking a career break to prioritize rehabilitation after a severe concussion.
+As a result, my website has not been updated in many months.
 
 <https://charlierose.dev>
