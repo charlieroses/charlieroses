@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="pokemon.css" />
+<link rel="stylesheet" type="text/css" href="pokemongo.css" />
+<link rel="stylesheet" type="text/css" href="searchbar.css" />
+<title>Size Calculation</title></head>
+<script type="text/javascript" src="dex.js"></script>
+<script type="text/javascript" src="sizecalc.js"></script>
+<script type="text/javascript" src="search.js"></script>
+<body>
+<header id="top">
+<h1 id="size-calculation" class="">Pokemon Go Evolution Size Calculator</h1>
+<div id="information">
+<p>
+TODO: write something more coherent
+</p>
+<p>
+This is a work in progress.
+Still cleaning some stuff up.
+Just wanted to get this online so I could test it out on a walk.
+</p>
+<p>
+The tool is accurate in that it's gonna get you an accurate range.
+It's not possible to get an exact number.
+The actual height and weight of Pokemon displayed in Pokemon Go are rounded
+meaning a Bulbasaur that weighs 5.18 kg can weigh anywhere between 5.175 kg and
+5.185 kg. Same applies for height and showcase scores.
+</p>
+<p>
+Showcase scores get rounded to the nearest whole number.
+I have noticed in some places, the showcase score for a Pokemon appears to vary.
+I have an XXL Ducklett (8.88kg,0.84m) in a Ducklett showcase that has 1082
+points.
+In the
+<a href="070724DucklettShowcase_Standings.jpg">standings view</a> and in the
+<a href="070724DucklettShowcase_SelectPokemon.jpg">select pokemon view</a>, it shows 1082 points.
+In the
+<a href="070724DucklettShowcase_YourPokemon.jpg">"Your Ducklet" view</a>, it shows 1081 points.
+I think it's just a bug in how the points are displayed.
+I'm assuming that my Ducklett has a score somewhere in the range of 1081.5 and
+1081.9, which is getting rounded up to 1082 for the showcase, but this display
+is chopping off the fractional component instead of rounding it.
+</p>
+<p>
+IVs are only necessary to calculate possible showcase scores.
+Currently, this tool only predicts species specific showcases.
+I <i>might</i> expand it to include other showcases.
+</p>
+<p>
+Massive shoutouts to...
+<ul>
+<li> The <a href="https://pokemondb.net/go/showcases">Pok&eacute;mon GO Showcase calculator</a>
+by the
+<a href="https://pokemondb.net/">Pok&eacute;mon Database</a></li>
+<li><a href="https://pokemongohub.net/post/author/kittypokemonsalot/">kittypokemonsalot</a>
+for their <a href="https://pokemongohub.net/post/research/showcase-scores-xxs-and-xxl-pokemon-and-how-it-works/">article on GO Hub</a>
+that summarizes a whole bunch of Twitter threads (that I can't see without an account) of showcase and size research done by
+<a href="https://twitter.com/bmenrigh_pogo">bmenrigh</a>,
+<a href="https://twitter.com/sellymeKong">sellyme</a>,
+<a href="https://twitter.com/MiniBenoit">minibenoit</a>, and
+<a href="https://twitter.com/LemmoritoSensei">LemmoritoSensei</a>
+</li>
+<li>
+<a href="https://www.reddit.com/user/FatalisticFeline-47/">u/FatalisticFeline-47</a>
+for posting their
+<a href="https://docs.google.com/spreadsheets/d/1ZZwlZ2DOYeO0ouUgu-jXn3qmIf8jE4WTa3BhmtVupHc/">spreadsheet for calculating evolution sizes and scores</a>
+on
+<a href="https://www.reddit.com/r/TheSilphRoad/comments/15b0lwv/showcase_points_calculators/">a Reddit thread</a> along with an explanation of where to find some of the data needed to calculate things.
+</li>
+</p>
+</div>
+</header>
+<main id="main">
+
+<div class="input-layout">
+	<label for="pick-pokemon" id="pick-pokemon-label">Select Pok&eacute;mon</label>
+	<div id="autocomplete-wrapper">
+		<div id="announce" class="visually-hidden" aria-live="assertive"></div>
+		<div id="searchfield">
+			<div id="pick-pokemon-combobox">
+				<input id="pick-pokemon" type="text" autocomplete="off" aria-required="true"></input>
+			</div>
+			<div id="pick-pokemon-autocomplete"></div>
+		</div>
+	</div>
+
+	<div class="input-error" id="pick-pokemon-error"></div>
+
+	<label for="input-weight" id="input-weight-label">Weight</label>
+	<input id="input-weight" type="number" min="0" aria-required="true"></input>
+	<div class="input-error" id="input-weight-error"></div>
+
+	<label for="input-height" id="input-height-label">Height</label>
+	<input id="input-height" type="number" min="0" aria-required="true"></input>
+	<div class="input-error" id="input-height-error"></div>
+
+	<legend>Size Marker</legend>
+	<fieldset id="input-size">
+		<label for="input-xxs" id="xxs" class="size-label">
+			<input id="input-xxs" type="radio" name="size-marker" value="xxs" class="size-radio"></input>
+			<div class="marker-name">XXS</div>
+		</label>
+		<label for="input-xs" id="xs" class="size-label">
+			<input id="input-xs" type="radio" name="size-marker" value="xs" class="size-radio"></input>
+			<div class="marker-name">XS</div>
+		</label>
+		<label for="input-m" id="m" class="size-label">
+			<input id="input-m" type="radio" name="size-marker" value="m" checked class="size-radio"></input>
+			<div class="marker-name">Average Size<br>(No Marker)</div>
+		</label>
+		<label for="input-xl" id="xl" class="size-label">
+			<input id="input-xl" type="radio" name="size-marker" value="xl" class="size-radio"></input>
+			<div class="marker-name">XL</div>
+		</label>
+		<label for="input-xxl" id="xxl" class="size-label">
+			<input id="input-xxl" type="radio" name="size-marker" value="xxl" class="size-radio"></input>
+			<div class="marker-name">XXL</div>
+		</label>
+	</fieldset>
+	<div class="input-error" id="input-size-error"></div>
+
+	<div id="input-ivs">
+	<div id="atk">
+		<label for="input-atk" id="input-atk-label">Attack</label>
+		<input id="input-atk" type="number" min="0" max="15" step="1"></input>
+	</div>
+	<div id="def">
+		<label for="input-def" id="input-def-label">Defense</label>
+		<input id="input-def" type="number" min="0" max="15" step="1"></input>
+	</div>
+	<div id="hp">
+		<label for="input-hp" id="input-hp-label">HP</label>
+		<input id="input-hp" type="number" min="0" max="15" step="1"></input>
+	</div>
+	</div>
+	<div class="input-error" id="input-ivs-error"></div>
+</div>
+
+<button id="generate" onclick="generate()">Predict Evolution Size</button>
+
+
+<hr>
+
+<output id="pokemon-info"></output>
+
+
+
+</main>
+<script>
+init();
+</script>
+
+</body>
+</html>

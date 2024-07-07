@@ -1,0 +1,49 @@
+#autocomplete-wrapper {
+	position: relative;
+}
+
+#pick-pokemon-combobox {
+	display: inline-block;
+}
+
+#pick-pokemon-autocomplete {
+	position: absolute;
+	border: 1px solid #999999;
+	background: #FFFFFF;
+	color: #000000;
+	width: 31rem;
+	display: none;
+}
+
+#res {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	max-height: 18rem;
+	overflow-y: scroll;
+}
+
+#res li:hover,
+#res li.highlight {
+	background: #110D3B;
+	color: #FFF;
+}
+
+.autocomplete-suggestion {
+	margin: 0;
+	padding: .5rem;
+	font-size: 1.35rem;
+	white-space: nowrap;
+	overflow: hidden;
+	cursor: default;
+}
+
+.autocomplete-selected {
+	background: #f0f0f0;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px);
+}
+
