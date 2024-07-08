@@ -11,7 +11,7 @@
 	border: 1px solid #999999;
 	background: #FFFFFF;
 	color: #000000;
-	width: 31rem;
+	box-sizing: border-box;
 	display: none;
 }
 

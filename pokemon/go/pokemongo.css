@@ -90,7 +90,7 @@ legend,
 	justify-self: center;
 }
 #pick-pokemon {
-	width: 30rem;
+	box-sizing: border-box;
 }
 #input-height,
 #input-weight {
@@ -124,7 +124,11 @@ input[aria-invalid=true] {
 	background-color: #be796f;
 }
 
-
+.input-error {
+	font-weight: bold;
+	font-style: italic;
+	color: #f8b0b0;
+}
 label, legend {
 	color: var(--pkmn-yellow);
 	font-weight: bold;
@@ -141,24 +145,32 @@ fieldset * {
 	display: inline-block;
 }
 fieldset div {
-	background-color: #FFFFFF;
+	background-color: rgba( 255,255,255,0.7 );
+	color: #333333;
 	border-radius: 1.5rem;
 	padding: 0.75rem;
 	vertical-align: center;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+#xxs div, #xs div, #xl div, #xxl div {
+	font-size: 1.25em;
+	border-radius: 2rem;
+	padding: 1rem;
 }
 .size-radio:checked + div {
-	background-color: var(--pkmn-yellow);
+	background-color: #e0b715;
 	color: #FFFFFF;
 }
 fieldset label * {
 	display: block;
 	margin: 0 auto;
 	text-align: center;
+	pointer-events: auto;
 }
 
 input[type=radio] {
-	height: 1.5rem;
-	width: 1.5rem;
+	position: fixed;
+	opacity: 0;
 }
 
 button {
@@ -183,6 +195,7 @@ button {
 	justify-content: space-evenly;
 	align-items: flex-start;
 }
+
 .pokemon-card {
 	display: inline-block;
 	margin: 0.5em;
@@ -194,6 +207,11 @@ button {
 	box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
 	padding-bottom: 0.25rem;
 }
+.pokemon-card.has-showcase {
+	width: 38rem;
+	max-width: 38rem;
+}
+
 .card-title {
 	background-color: var(--pkmn-red);
 	color: rgba( 255, 255, 255, 0.9 );
@@ -210,6 +228,11 @@ button {
 	font-size: 0.75em;
 	font-weight: normal;
 }
+.card-columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 0 1em 1em 1em;
+}
 .pokemon-card img {
 	width: 65%;
 	max-width: 65%;
@@ -221,16 +244,27 @@ button {
 	display: inline-block;
 	margin: 0 0.5em;
 }
-.card-row-header {
+.card-row-range {
+	font-weight: bold;
+}
+.card-row-header,
+.card-row-subheader {
 	color: var(--pkmn-red);
 	text-align: center;
-	margin-bottom: 0.1rem;
-	margin-top: 0.4rem;
+	margin-bottom: 0.25em;
+	margin-top: 1em;
+	line-height: 1em;
 }
-.error-msg {
+.card-row-header.showcase-header {
+	font-size: 0.9em;
+}
+.error-msg,
+.showcase-msg {
 	font-style: italic;
 	font-size: 0.75em;
+	line-height: 1em;
 }
+
 
 .unavailable .card-title {
 	background-color: #666666;

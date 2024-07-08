@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="searchbar.css" />
 <title>Size Calculation</title></head>
 <script type="text/javascript" src="dex.js"></script>
+<script type="text/javascript" src="showcase.js"></script>
 <script type="text/javascript" src="sizecalc.js"></script>
 <script type="text/javascript" src="search.js"></script>
 <body>
@@ -28,7 +29,15 @@ The tool is accurate in that it's gonna get you an accurate range.
 It's not possible to get an exact number.
 The actual height and weight of Pokemon displayed in Pokemon Go are rounded
 meaning a Bulbasaur that weighs 5.18 kg can weigh anywhere between 5.175 kg and
-5.185 kg. Same applies for height and showcase scores.
+5.185 kg. The same applies for height.
+This also means that the precision of the tool increases with the size of the
+Pokemon.
+For a Pokemon like Joltik with an average height of 0.1m, a 0.005m margin of
+error is 5% of its height.
+An XXS Joltik can be as small as 0.049m, making the margin of error 10% of its
+height.
+On the flipside, an XXL Wailmer weighing in at 289.01kg will get a very precise
+Wailord prediction.
 </p>
 <p>
 Showcase scores get rounded to the nearest whole number.
@@ -47,8 +56,13 @@ is chopping off the fractional component instead of rounding it.
 </p>
 <p>
 IVs are only necessary to calculate possible showcase scores.
-Currently, this tool only predicts species specific showcases.
-I <i>might</i> expand it to include other showcases.
+It is not possible to accurately predict future performance in any showcase
+other than species specific.
+The type specific showcases appear to use a different baseline each iteration as
+seen by the Flying Type showcases for the 5/11/24 Flock Together Research Day
+and 6/3/24 Stadium Sights events.
+The values for previous showcases are included just to give a general idea of
+what to expect.
 </p>
 <p>
 Massive shoutouts to...
@@ -72,6 +86,7 @@ on
 <a href="https://www.reddit.com/r/TheSilphRoad/comments/15b0lwv/showcase_points_calculators/">a Reddit thread</a> along with an explanation of where to find some of the data needed to calculate things.
 </li>
 </p>
+
 </div>
 </header>
 <main id="main">
@@ -90,12 +105,12 @@ on
 
 	<div class="input-error" id="pick-pokemon-error"></div>
 
-	<label for="input-weight" id="input-weight-label">Weight</label>
-	<input id="input-weight" type="number" min="0" aria-required="true"></input>
+	<label for="input-weight" id="input-weight-label">Weight (kg)</label>
+	<input id="input-weight" type="number" min="0" step="0.1" aria-required="true"></input>
 	<div class="input-error" id="input-weight-error"></div>
 
-	<label for="input-height" id="input-height-label">Height</label>
-	<input id="input-height" type="number" min="0" aria-required="true"></input>
+	<label for="input-height" id="input-height-label">Height (m)</label>
+	<input id="input-height" type="number" min="0" step="0.1" aria-required="true"></input>
 	<div class="input-error" id="input-height-error"></div>
 
 	<legend>Size Marker</legend>
@@ -110,7 +125,7 @@ on
 		</label>
 		<label for="input-m" id="m" class="size-label">
 			<input id="input-m" type="radio" name="size-marker" value="m" checked class="size-radio"></input>
-			<div class="marker-name">Average Size<br>(No Marker)</div>
+			<div class="marker-name">Average<br><span style="font-weight:normal">(No Marker)</span></div>
 		</label>
 		<label for="input-xl" id="xl" class="size-label">
 			<input id="input-xl" type="radio" name="size-marker" value="xl" class="size-radio"></input>
