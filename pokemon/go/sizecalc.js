@@ -350,7 +350,7 @@ function pokemonCard( pcalc ) {
 	card.appendChild( cardRow() );
 	card.lastChild.classList.add( "pokemon-img" );
 	card.lastChild.appendChild( document.createElement( "img" ) );
-	card.lastChild.lastChild.src = "../assets/dex/" + pokemonImgSrc( pkmn );
+	card.lastChild.lastChild.src = "dex/" + pokemonImgSrc( pkmn );
 	card.lastChild.lastChild.alt = pkmn["name"];
 	if( pkmn["special-char"] )
 		card.lastChild.lastChild.alt = pkmn["name"];
