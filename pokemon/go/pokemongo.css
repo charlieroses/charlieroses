@@ -222,16 +222,19 @@ button {
 	border-bottom-style: solid;
 	border-bottom-width: 0.75rem;
 	vertical-align: center;
-	padding: 0.5rem;
+	font-size: 1.25em;
+	padding: 0.5em;
 }
 .card-title .form {
-	font-size: 0.75em;
+	font-size: 0.65em;
 	font-weight: normal;
+	line-height: 0.8em;
 }
 .card-columns {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	margin: 0 1em 1em 1em;
+	gap: 0.5em;
 }
 .pokemon-card img {
 	width: 65%;
@@ -254,11 +257,12 @@ button {
 	margin-bottom: 0.25em;
 	margin-top: 1em;
 	line-height: 1em;
+	font-size: 1em;
 }
 .card-row-header.showcase-header {
 	font-size: 0.9em;
 }
-.error-msg,
+.card-row-error,
 .showcase-msg {
 	font-style: italic;
 	font-size: 0.75em;
@@ -274,6 +278,6 @@ button {
 	filter: grayscale( 100% );
 }
 .unavailable .card-row-header {
-	color: #888888;
+	color: #5E5E5E;
 }
 

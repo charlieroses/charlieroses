@@ -317,7 +317,10 @@ function pokemonCard( pcalc ) {
 	card = document.createElement( "div" );
 	card.classList.add( "pokemon-card" );
 
-	card.appendChild( document.createElement( "h3" ) );
+	if( ! pkmn["available"] )
+		card.classList.add( "unavailable" );
+
+	card.appendChild( document.createElement( "h2" ) );
 	card.lastChild.classList.add( "card-title" );
 	card.lastChild.classList.add( "pkmn-name" );
 	name = pkmn["name"];
@@ -344,18 +347,16 @@ function pokemonCard( pcalc ) {
 		cardp.lastChild.appendChild( card );
 	}
 
-	if( ! pkmn["available"] ) {
-		card.classList.add( "unavailable" );
-		card.appendChild( cardRowError( "Not yet added to game" ));
-	}
-
 	card.appendChild( cardRow() );
 	card.lastChild.classList.add( "pokemon-img" );
 	card.lastChild.appendChild( document.createElement( "img" ) );
-	card.lastChild.lastChild.src = "./dex/" + pokemonImgSrc( pkmn );
+	card.lastChild.lastChild.src = "../assets/dex/" + pokemonImgSrc( pkmn );
 	card.lastChild.lastChild.alt = pkmn["name"];
 	if( pkmn["special-char"] )
 		card.lastChild.lastChild.alt = pkmn["name"];
+
+	if( ! pkmn["available"] )
+		card.appendChild( cardRowError( "Not yet added to game" ));
 
 	card.appendChild( cardRowHeader("Average Size") );
 
@@ -388,6 +389,7 @@ function pokemonCard( pcalc ) {
 		card.appendChild( cardRowRange( pcalc["wt-d"], "kg" ) );
 		card.appendChild( cardRowRange( pcalc["ht-d"], "m" ) );
 	}
+
 
 	if( !pcalc["sc?"] )
 		return card;
@@ -423,7 +425,7 @@ function pokemonCard( pcalc ) {
 function cardRowHeader( text, cl="" ) {
 	var		elem;
 
-	elem = document.createElement( "h4" );
+	elem = document.createElement( "h3" );
 	elem.classList.add( "card-row-header" );
 	elem.appendChild( document.createTextNode( text ) );
 	if( cl )
