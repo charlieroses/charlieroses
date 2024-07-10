@@ -138,20 +138,24 @@ on
 	</fieldset>
 	<div class="input-error" id="input-size-error"></div>
 
-	<div id="input-ivs">
-	<div id="atk">
-		<label for="input-atk" id="input-atk-label">Attack</label>
-		<input id="input-atk" type="number" min="0" max="15" step="1"></input>
+	<label for="input-atk" id="input-atk-label">Attack</label>
+	<div class="input-ivs" id="atk">
+		<input id="input-atk" type="number" min="0" max="15" step="1" onchange="updateIVImg(0)"></input>
+		<img class="iv-img" id="atk-img" src="../go/iv/00.svg" alt="" />
 	</div>
-	<div id="def">
-		<label for="input-def" id="input-def-label">Defense</label>
-		<input id="input-def" type="number" min="0" max="15" step="1"></input>
+
+	<label for="input-def" id="input-def-label">Defense</label>
+	<div class="input-ivs" id="def">
+		<input id="input-def" type="number" min="0" max="15" step="1" onchange="updateIVImg(1)"></input>
+		<img class="iv-img" id="def-img" src="../go/iv/00.svg" alt="" />
 	</div>
-	<div id="hp">
-		<label for="input-hp" id="input-hp-label">HP</label>
-		<input id="input-hp" type="number" min="0" max="15" step="1"></input>
+
+	<label for="input-hp" id="input-hp-label">HP</label>
+	<div class="input-ivs" id="hp">
+		<input id="input-hp" type="number" min="0" max="15" step="1" onchange="updateIVImg(2)"></input>
+		<img class="iv-img" id="hp-img" src="../go/iv/00.svg" alt="" />
 	</div>
-	</div>
+
 	<div class="input-error" id="input-ivs-error"></div>
 </div>
 

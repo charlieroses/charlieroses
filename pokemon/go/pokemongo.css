@@ -77,15 +77,11 @@ polygon.background	{ fill: #eeeeee; }
 	align-items: center;
 }
 
-legend,
-#pick-pokemon-label,
-#input-height-label,
-#input-weight-label {
+legend, label {
 	justify-self: right;
 }
 .input-error,
-#input-size,
-#input-ivs {
+#input-size {
 	grid-column: span 2;
 	justify-self: center;
 }
@@ -100,16 +96,25 @@ legend,
 #input-def,
 #input-hp {
 	width: 5rem;
+	display: inline-block;
+	vertical-align: middle;
 }
 
-#input-ivs * {
+
+.input-ivs {
+	justify-self: left;
+	vertical-align: middle;
+}
+
+.input-ivs img {
 	display: inline-block;
+	height: 2rem;
+	width: auto;
+	vertical-align: middle;
+	filter: drop-shadow( 0px 0px 12px rgba(0,0,0,0.2) );
+	margin-left: 2rem;
 }
-#atk *, #def *, #hp * {
-	display: block;
-	text-align: center;
-	margin: 0 auto;
-}
+
 
 input[type=text],
 input[type=number] {

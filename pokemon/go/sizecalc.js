@@ -526,6 +526,27 @@ function errorfield( fid, errmsg ) {
 	}
 }
 
+function updateIVImg( f ) {
+	var		fields = [ "atk", "def", "hp" ];
+	var		val, img;
+
+	val = document.getElementById( "input-" + fields[f] ).value;
+	
+	if( ! val )
+		img = "00";
+	else if( parseInt(val) != parseFloat(val) )
+		img = "00";
+	else if( 0 < val && val <= 9 )
+		img = "0" + val.toString();
+	else if( 10 <= val && val <= 15 )
+		img = val.toString();
+	else
+		img = "00";
+
+	document.getElementById( fields[f] + "-img" ).src = "iv/" + img + ".svg";
+}
+
+
 function resetOutput( ) {
 	var		removechildren = [
 		"pokemon-info",
