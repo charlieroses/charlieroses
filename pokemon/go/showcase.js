@@ -87,5 +87,11 @@ var		baseline = {
 			"event": "Spelunker's Cove",
 			"date": "6/15/24",
 			"baseline-dex": "364" // Sealeo
+		}],
+	"Necrozma": [
+		{
+			"event": "GO Fest 2024",
+			"date": "7/13/24",
+			"baseline-dex": "800"
 		}]
 };

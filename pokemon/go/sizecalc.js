@@ -246,6 +246,11 @@ function calcShowcaseScores( pcalc ) {
 
 	pcalc["sc"][0]["pt"] = calcShowcasePoints( dex[pcalc["dex"]], pcalc );
 
+	if( pcalc["dex"].startsWith("800") ) {
+		pcalc["sc"].push( { "name": "Necrozma", "i": 0 } );
+		pcalc["sc"][pcalc["sc"].length-1]["pt"] = calcShowcasePoints( dex["800"], pcalc );
+	}
+
 	for( t = 0; t < pkmn["type"].length; t++ ) {
 		if( baseline[pkmn["type"][t]] == "NA" ) {
 			pcalc["sc"].push( { "name": pkmn["type"][t], "na": true } );
@@ -411,6 +416,8 @@ function pokemonCard( pcalc ) {
 	for( p = 0; p < pcalc["sc"].length; p++ ) {
 		if( pcalc["sc"][p]["name"] == "Species" )
 			card.appendChild( cardRowHeader( name + " Showcase", "showcase-header" ) );
+		else if( pcalc["sc"][p]["name"] == "Necrozma" )
+			card.appendChild( cardRowHeader( "Necrozma Showcase", "showcase-header" ) );
 		else if( pcalc["sc"][p]["name"] == "Great-Buddy" )
 			card.appendChild( cardRowHeader( "Great Buddy Showcase", "showcase-header" ) );
 		else
