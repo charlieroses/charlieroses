@@ -98,6 +98,7 @@ legend, label {
 	width: 5rem;
 	display: inline-block;
 	vertical-align: middle;
+	margin-right: 2rem;
 }
 
 
@@ -112,7 +113,6 @@ legend, label {
 	width: auto;
 	vertical-align: middle;
 	filter: drop-shadow( 0px 0px 12px rgba(0,0,0,0.2) );
-	margin-left: 2rem;
 }
 
 

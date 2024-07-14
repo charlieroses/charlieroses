@@ -1,5 +1,15 @@
 function init() {
 	initselect();
+
+	document.getElementById("pick-pokemon").value = "";
+	document.getElementById( "input-weight" ).value = "";
+	document.getElementById( "input-height" ).value = "";
+	document.getElementById( "input-atk" ).value = "";
+	document.getElementById( "input-def" ).value = "";
+	document.getElementById( "input-hp" ).value = "";
+	document.getElementById( "atk-img" ).src = "iv/00.svg";
+	document.getElementById( "def-img" ).src = "iv/00.svg";
+	document.getElementById( "hp-img" ).src = "iv/00.svg";
 }
 
 function validateInput( ) {
