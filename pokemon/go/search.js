@@ -49,7 +49,7 @@ function doSearch( event ) {
 	}
 
 	if( query.length >= 1 ) {
-		results = Object.keys(dex).filter(pkmn => dex[pkmn]["name"].startsWith(query));
+		results = Object.keys(dex).filter(pkmn => dex[pkmn]["name"].startsWith(query) && dex[pkmn]["size-calc-ignore"] == false );
 		if( results.length >= 1 ) {
 			document.getElementById("res") && document.getElementById("res").remove();
 			removeAnnouncement();

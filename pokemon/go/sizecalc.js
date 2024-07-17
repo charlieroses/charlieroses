@@ -37,6 +37,11 @@ function validateInput( ) {
 		return 0;
 	}
 
+	if( pkmn["size-calc-ignore"] ) {
+		errorfield( "pick-pokemon", "Invalid Selection" );
+		return 0;
+	}
+
 	if( ! wtinp ) {
 		errorfield( "input-weight", "Weight must be a number" );
 		return 0;
@@ -137,7 +142,6 @@ function validateInput( ) {
 			pcalc["ht"][1] = pkmn["xxl-upper-bound"];
 	}
 
-	console.log( ivs[0]["val"] )
 	if( (!ivs[0]["val"]) && (!ivs[1]["val"]) && (!ivs[2]["val"]) ) {
 		// everyones empty no issues, points just wont be calculated
 		return pcalc;
@@ -225,15 +229,21 @@ function getEvolutions( pkmn ) {
 	if( ! pkmn["evolves-into"] )
 		return evo;
 
-	for( e = 0; e < pkmn["evolves-into"].length; e++ )
+	for( e = 0; e < pkmn["evolves-into"].length; e++ ) {
+		if( dex[pkmn["evolves-into"][e]]["size-calc-ignore"] )
+			continue;
 		evo.push( initpcalc(pkmn["evolves-into"][e]) );
+	}
 
 	for( s = 0; s < evo.length; s++ ) {
 		epkmn = dex[evo[s]["dex"]];
 		if( ! epkmn["evolves-into"] )
 			continue;
-		for( e = 0; e < epkmn["evolves-into"].length; e++ )
+		for( e = 0; e < epkmn["evolves-into"].length; e++ ) {
+			if( dex[epkmn["evolves-into"][e]]["size-calc-ignore"] )
+				continue;
 			evo.push( initpcalc( epkmn["evolves-into"][e] ) );
+		}
 	}
 
 	return evo;
@@ -244,12 +254,7 @@ function calcShowcaseScores( pcalc ) {
 	var		b, t, pkmn;
 	pkmn = dex[pcalc["dex"]];
 
-	pcalc["sc"][0]["pt"] = calcShowcasePoints( dex[pcalc["dex"]], pcalc );
-
-	if( pcalc["dex"].startsWith("800") ) {
-		pcalc["sc"].push( { "name": "Necrozma", "i": 0 } );
-		pcalc["sc"][pcalc["sc"].length-1]["pt"] = calcShowcasePoints( dex["800"], pcalc );
-	}
+	pcalc["sc"][0]["pt"] = calcShowcasePoints( dex[pcalc["sc"][0]["bl"]], pcalc );
 
 	for( t = 0; t < pkmn["type"].length; t++ ) {
 		if( baseline[pkmn["type"][t]] == "NA" ) {
@@ -351,6 +356,8 @@ function pokemonCard( pcalc ) {
 	else {
 		card.lastChild.appendChild( document.createTextNode( name ) );
 	}
+	card.appendChild( document.createElement( "div" ) );
+	card.lastChild.classList.add( "card-dot" );
 
 	if( pcalc["sc?"] ) {
 		card.classList.add( "has-showcase" );
@@ -384,6 +391,7 @@ function pokemonCard( pcalc ) {
 	elem.classList.add( "avg-height" );
 	elem.appendChild(document.createTextNode(pkmn["height-avg"] + "m"));
 	card.lastChild.appendChild( elem );
+	card.appendChild( cardRowSpacer() );
 
 
 	if( pcalc["ht-i"] ) {
@@ -414,26 +422,25 @@ function pokemonCard( pcalc ) {
 	card.classList.add( "card-column" );
 	cardp.lastChild.appendChild( card );
 	for( p = 0; p < pcalc["sc"].length; p++ ) {
-		if( pcalc["sc"][p]["name"] == "Species" )
-			card.appendChild( cardRowHeader( name + " Showcase", "showcase-header" ) );
-		else if( pcalc["sc"][p]["name"] == "Necrozma" )
-			card.appendChild( cardRowHeader( "Necrozma Showcase", "showcase-header" ) );
+		if( p )
+			card.appendChild( cardRowSpacer() );
+
+		if( p == 0 )
+			card.appendChild( cardRowHeader( pcalc["sc"][p]["name"] + " Showcase", "showcase-header" ) );
 		else if( pcalc["sc"][p]["name"] == "Great-Buddy" )
 			card.appendChild( cardRowHeader( "Great Buddy Showcase", "showcase-header" ) );
 		else
 			card.appendChild( cardRowHeader( pcalc["sc"][p]["name"] + " Type Showcase", "showcase-header" ) );
-
 		if( pcalc["sc"][p]["na"] ) {
 			card.appendChild( cardRowText( "No " + pcalc["sc"][p]["name"] + " Type Showcases have occured yet", "showcase-msg" ) );
 			continue;
 		}
 
 		card.appendChild( cardRowRange( pcalc["sc"][p]["pt"], "pts" ) );
-		if( pcalc["sc"][p]["name"] != "Species" ) {
+		if( p ) {
 			b = baseline[pcalc["sc"][p]["name"]][pcalc["sc"][p]["i"]];
 			card.appendChild( cardRowText( "Based on " + b["date"] + " " + b["event"] + " event", "showcase-msg" ) );
 		}
-
 	}
 
 	return cardp;
@@ -499,6 +506,15 @@ function cardRowError( text ) {
 	return row;
 }
 
+function cardRowSpacer( ) {
+	var		row;
+
+	row = document.createElement( "br" );
+	row.classList.add( "card-row-spacer" );
+
+	return row;
+}
+
 function cardRow( ) {
 	var		row;
 
@@ -512,7 +528,7 @@ function pokemonImgSrc( pkmn ) {
 	var		dir, img;
 
 	dir = pkmn["dex-num"].toString();
-	img = pkmn["dex-index"].replace( "-", "_" );
+	img = pkmn["dex-index"];
 
 	while( dir.length < 4 )
 		dir = "0" + dir;
@@ -563,7 +579,6 @@ function updateIVImg( f ) {
 	document.getElementById( fields[f] + "-img" ).src = "iv/" + img + ".svg";
 }
 
-
 function resetOutput( ) {
 	var		removechildren = [
 		"pokemon-info",
@@ -606,9 +621,17 @@ function initpcalc( d ) {
 		"sc?": false,
 		"iv-i": [ 0, 0, 0 ],
 		"sc": [
-			{ "name": "Species", "pt": [ 0, 0 ] }
+			{ "name": "Species", "bl": d, "pt": [ 0, 0 ] }
 		]
 	};
+
+	if( d.includes("-") ) {
+		if( dex[d.split("-")[0]] )
+			pcalc["sc"][0]["bl"] = d.split("-")[0];
+		else if( dex[d.split("-")[0]+"-0"] )
+			pcalc["sc"][0]["bl"] = d.split("-")[0] + "-0";
+	}
+	pcalc["sc"][0]["name"] = dex[pcalc["sc"][0]["bl"]]["name"];
 
 	return pcalc;
 }
