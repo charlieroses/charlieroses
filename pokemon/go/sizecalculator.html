@@ -3,21 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="base.css" />
-<link rel="stylesheet" type="text/css" href="pokemon.css" />
-<link rel="stylesheet" type="text/css" href="pokemongo.css" />
-<link rel="stylesheet" type="text/css" href="searchbar.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/styles/base.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/styles/pokemon.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/styles/sizecalc.css" />
+<link rel="stylesheet" type="text/css" href="../../assets/styles/searchbar.css" />
 <title>Size Calculation</title></head>
-<script type="text/javascript" src="dex.js"></script>
-<script type="text/javascript" src="showcase.js"></script>
-<script type="text/javascript" src="sizecalc.js"></script>
-<script type="text/javascript" src="search.js"></script>
+<script type="text/javascript" src="../../assets/data/dex.js"></script>
+<script type="text/javascript" src="../../assets/data/showcase.js"></script>
+<script type="text/javascript" src="../../assets/js/sizecalc.js"></script>
+<script type="text/javascript" src="../../assets/js/search.js"></script>
 <body>
 <header id="top">
 <h1 id="size-calculation" class="">Pokemon Go Evolution Size Calculator</h1>
+<div class="pokeball-divider">
+	<img alt="" src="../../assets/icons/pokeball.svg" />
+	<img alt="" src="../../assets/icons/pokeball.svg" />
+	<img alt="" src="../../assets/icons/pokeball.svg" />
+</div>
+</header>
+<main id="main">
 <div id="information">
+<h2 id="disclaimer">How it Works</h2>
 <p>
-<a href="#main">Jump to Calculator</a>
+<a href="#calculator">Jump to Calculator</a>
 </p>
 <p>
 This is a work in progress.
@@ -40,21 +48,6 @@ On the flipside, an XXL Wailmer weighing in at 289.01kg will get a very precise
 Wailord prediction.
 </p>
 <p>
-Showcase scores get rounded to the nearest whole number.
-I have noticed in some places, the showcase score for a Pokemon appears to vary.
-I have an XXL Ducklett (8.88kg,0.84m) in a Ducklett showcase that has 1082
-points.
-In the
-<a href="070724DucklettShowcase_Standings.jpg">standings view</a> and in the
-<a href="070724DucklettShowcase_SelectPokemon.jpg">select pokemon view</a>, it shows 1082 points.
-In the
-<a href="070724DucklettShowcase_YourPokemon.jpg">"Your Ducklet" view</a>, it shows 1081 points.
-I think it's just a bug in how the points are displayed.
-I'm assuming that my Ducklett has a score somewhere in the range of 1081.5 and
-1081.9, which is getting rounded up to 1082 for the showcase, but this display
-is chopping off the fractional component instead of rounding it.
-</p>
-<p>
 IVs are only necessary to calculate possible showcase scores.
 It is not possible to accurately predict future performance in any showcase
 other than species specific.
@@ -63,6 +56,7 @@ seen by the Flying Type showcases for the 5/11/24 Flock Together Research Day
 and 6/3/24 Stadium Sights events.
 The values for previous showcases are included just to give a general idea of
 what to expect.
+Showcase scores are also gonna get rounded to the nearest whole number.
 </p>
 <p>
 Massive shoutouts to...
@@ -83,14 +77,19 @@ that summarizes a whole bunch of Twitter threads (that I can't see without an ac
 for posting their
 <a href="https://docs.google.com/spreadsheets/d/1ZZwlZ2DOYeO0ouUgu-jXn3qmIf8jE4WTa3BhmtVupHc/">spreadsheet for calculating evolution sizes and scores</a>
 on
-<a href="https://www.reddit.com/r/TheSilphRoad/comments/15b0lwv/showcase_points_calculators/">a Reddit thread</a> along with an explanation of where to find some of the data needed to calculate things.
+<a href="https://www.reddit.com/r/TheSilphRoad/comments/15b0lwv/showcase_points_calculators/">a Reddit thread</a>, their explanation of where to find some of the data needed to
+calculate things, and so many Reddit posts explaining type showcases.
 </li>
 </p>
-
 </div>
-</header>
-<main id="main">
+<div class="pokeball-divider">
+	<img alt="" src="../../assets/icons/pokeball.svg" />
+	<img alt="" src="../../assets/icons/pokeball.svg" />
+	<img alt="" src="../../assets/icons/pokeball.svg" />
+</div>
 
+<div id="inputs">
+<h2 id="calculator">Calculator</h2>
 <div class="input-layout">
 	<label for="pick-pokemon" id="pick-pokemon-label">Select Pok&eacute;mon</label>
 	<div id="autocomplete-wrapper">
@@ -141,37 +140,30 @@ on
 	<label for="input-atk" id="input-atk-label">Attack</label>
 	<div class="input-ivs" id="atk">
 		<input id="input-atk" type="number" min="0" max="15" step="1" onchange="updateIVImg(0)"></input>
-		<img class="iv-img" id="atk-img" src="../go/iv/00.svg" alt="" />
+		<img class="iv-img" id="atk-img" src="../../assets/icons/iv/00.svg" alt="" />
 	</div>
 
 	<label for="input-def" id="input-def-label">Defense</label>
 	<div class="input-ivs" id="def">
 		<input id="input-def" type="number" min="0" max="15" step="1" onchange="updateIVImg(1)"></input>
-		<img class="iv-img" id="def-img" src="../go/iv/00.svg" alt="" />
+		<img class="iv-img" id="def-img" src="../../assets/icons/iv/00.svg" alt="" />
 	</div>
 
 	<label for="input-hp" id="input-hp-label">HP</label>
 	<div class="input-ivs" id="hp">
 		<input id="input-hp" type="number" min="0" max="15" step="1" onchange="updateIVImg(2)"></input>
-		<img class="iv-img" id="hp-img" src="../go/iv/00.svg" alt="" />
+		<img class="iv-img" id="hp-img" src="../../assets/icons/iv/00.svg" alt="" />
 	</div>
-
 	<div class="input-error" id="input-ivs-error"></div>
 </div>
 
 <button id="generate" onclick="generate()">Predict Evolution Size</button>
-
-
-<hr>
+</div>
 
 <output id="pokemon-info"></output>
-
-
-
 </main>
 <script>
 init();
 </script>
-
 </body>
 </html>

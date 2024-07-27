@@ -1,0 +1,133 @@
+#type-nav {
+	display: grid;
+	grid-template-columns: repeat( auto-fill, minmax( 18rem, 1fr ));
+	grid-gap: 1rem;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 1rem;
+}
+
+.type-div {
+	background-color: #C3C3C3;
+	color: #000000;
+	width: 18rem;
+	border-radius: 5rem 1rem 1rem 5rem;
+	padding: 0;
+	vertical-align: center;
+}
+
+.type-div a {
+	color: #B92808;
+	padding: 1ch;
+}
+
+.type-div:hover, .type-div:focus {
+	background-color: #AAAAAA;
+}
+
+.type-link {
+	display: block;
+	padding: 1rem;
+}
+.type-icon {
+	height: 3em;
+	width: auto;
+	padding: 0.25em;
+	display: inline-block;
+	vertical-align: middle;
+}
+.type-name {
+	padding: 0.25em;
+	display: inline-block;
+	vertical-align: middle;
+}
+.type-ital {
+	font-weight: bold;
+}
+.type-engl {
+	margin-top: 0;
+}
+
+.power {
+	display: inline-block;
+	vertical-align: middle;
+}
+.chargebars {
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 12rem;
+	max-height: 1.5em;
+}
+
+polygon.acciaio		{ fill: var(--acciaio); }
+polygon.acqua		{ fill: var(--acqua); }
+polygon.buio		{ fill: var(--buio); }
+polygon.coleottero	{ fill: var(--coleottero); }
+polygon.drago		{ fill: var(--drago); }
+polygon.elettro		{ fill: var(--elettro); }
+polygon.erba		{ fill: var(--erba); }
+polygon.foletto		{ fill: var(--foletto); }
+polygon.fuoco		{ fill: var(--fuoco); }
+polygon.ghiaccio	{ fill: var(--ghiaccio); }
+polygon.lotta		{ fill: var(--lotta); }
+polygon.normale		{ fill: var(--normale); }
+polygon.psico		{ fill: var(--psico); }
+polygon.roccia		{ fill: var(--roccia); }
+polygon.spettro		{ fill: var(--spettro); }
+polygon.terra		{ fill: var(--terra); }
+polygon.veleno		{ fill: var(--veleno); }
+polygon.volante		{ fill: var(--volante); }
+polygon.background	{ fill: #eeeeee; }
+
+table {
+	border-collapse: collapse;
+}
+th {
+	border-bottom-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 0.7rem;
+	vertical-align: center;
+}
+tr:first-child th:first-child {
+	border-radius: 2rem 0 0 0;
+}
+tr:first-child th:last-child {
+	border-radius: 0 2rem 0 0;
+}
+tr:last-child td:first-child {
+	border-radius: 0 0 0 2rem;
+}
+tr:last-child td:last-child {
+	border-radius: 0 0 2rem 0;
+}
+th, td {
+	padding: 1rem;
+}
+.col-italian {
+	max-width: 16rem;
+}
+.col-english {
+	max-width: 16rem;
+}
+
+table.fast th.col-gyms {
+	font-size: 0.5em;
+	line-height: 1.5em;
+}
+table.fast th.col-trainer {
+	font-size: 0.4em;
+	line-height: 1.5em;
+	padding: 0.5rem;
+}
+table.fast .col-gyms,
+table.fast .col-trainer {
+	width: 1.5em;
+	max-width: 1.5em;
+}
+
+table.charged .col-gyms,
+table.charged .col-trainer {
+	width: 16rem;
+	max-width: 16rem;
+}
+

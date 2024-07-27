@@ -1,0 +1,124 @@
+:root {
+	--pkmn-red: #B92808;
+	--pkmn-bright-red: #EC5615;
+	--pkmn-blue: #35507C;
+	--pkmn-yellow: #FECA04;
+
+	--filter-pkmn-yellow: invert(84%) sepia(35%) saturate(2854%) hue-rotate(357deg) brightness(101%) contrast(99%);
+
+	--acciaio: #5a90a9;
+	--acqua: #5395de;
+	--buio: #4a4858;
+	--coleottero: #99c631;
+	--drago: #0763ad;
+	--elettro: #f5d13e;
+	--erba: #63bd52;
+	--foletto: #ef8dde;
+	--fuoco: #ff9c52;
+	--ghiaccio: #71cec2;
+	--lotta: #e24653;
+	--normale: #9399a5;
+	--psico: #f86e76;
+	--roccia: #c6bd8c;
+	--spettro: #526bae;
+	--terra: #d87846;
+	--veleno: #a567c7;
+	--volante: #88adde;
+}
+
+body {
+	background-color: var(--pkmn-blue);
+	color: #E9EFF8;
+	font-family: Verdana, sans-serif;
+	font-size: 1.5rem;
+	margin: 1rem auto;
+	max-width: 80rem;
+}
+
+h1, h2, h3 {
+	color: var(--pkmn-yellow);
+	text-align: center;
+}
+
+hr {
+	border: 1px solid;
+	color: #192653;
+}
+
+a {
+	color: #FECA04;
+}
+
+div.back-to-top {
+	text-align: center;
+}
+
+.pokeball-divider {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.pokeball-divider * {
+	display: inline-block;
+	width: 1em;
+	filter: var(--filter-pkmn-yellow);
+	opacity: 50%;
+}
+
+table {
+	margin: 1rem auto;
+}
+
+th {
+	background-color: var(--pkmn-red);
+	color: rgba( 255,255,255,0.9 );
+}
+
+td {
+	background-color: #C3C3C3;
+	color: #000000;
+}
+
+table tr:nth-child(even) td {
+	background-color: #A0A0A0;
+}
+
+/*
+
+td {
+	background-color: #C3C3C3;
+	color: #000000;
+	border-radius: 2px;
+	padding: 1rem;
+	vertical-align: center;
+}
+
+td.link a {
+	color: #B92808;
+	padding: 1ch;
+}
+
+td.link {
+	padding: 0;
+}
+
+td.link:hover,
+td.link:focus {
+	background-color: #AAAAAA;
+}
+
+td img {
+	width: 12pt;
+}
+
+th {
+	background-color: var(--pkmn-red);
+	color: rgba( 255,255,255,0.9 );
+	border-radius: 2px;
+	padding: 1ch;
+}
+
+*/
+

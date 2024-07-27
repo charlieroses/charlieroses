@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
+	<style>
+		.on		{ fill: #FFFFFF; stroke: none; }
+		.off	{ fill: #000000; stroke: none; }
+	</style>
+	<mask id="the-mask">
+		<circle class="on"  cx="0" cy="0" r="50" />
+		<circle class="off" cx="0" cy="0" r="20" />
+		<rect   class="off" x="-50" y="-6" height="12" width="100" />
+		<circle class="on"  cx="0" cy="0" r="12" />
+	</mask>
+	<circle fill="currentColor" cx="0" cy="0" r="50" mask="url(#the-mask)"/>
+</svg>

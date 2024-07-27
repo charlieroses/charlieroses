@@ -1,0 +1,118 @@
+
+/*********************** SET TABLES **********************/
+
+td.set-num {
+	text-align: center;
+	vertical-align: center;
+}
+td.set-num * {
+	display: inline-block;
+}
+
+td.name {
+	text-align: left;
+	vertical-align: center;
+}
+td.name * {
+	display: inline-block;
+}
+
+td.rarity {
+	text-align: center;
+	vertical-align: center;
+}
+td.rarity img {
+	height: 1.5em;
+	width: auto;
+}
+
+td.type {
+	text-align: center;
+	vertical-align: center;
+}
+
+td.type img {
+	filter: drop-shadow( 0px 0px 8px #FFFFFF ) drop-shadow( 0 0 2px #FFFFFF) ;
+	width: 30px;
+}
+
+td.Dark		{  background: radial-gradient( circle at center, #2b6c7e 20px, #183c3f ); }
+td.Steel	{  background: radial-gradient( circle at center, #89a0ab 20px, #5a6b6b ); }
+td.Dragon	{  background: radial-gradient( circle at center, #dcc226 20px, #978628 ); }
+td.Electric	{  background: radial-gradient( circle at center, #fed512 20px, #fcae19 ); }
+td.Fairy	{  background: radial-gradient( circle at center, #e7548d 20px, #a5185a ); }
+td.Grass	{  background: radial-gradient( circle at center, #28ab47 20px, #008341 ); }
+td.Water	{  background: radial-gradient( circle at center, #07abe6 20px, #067bbe ); }
+td.Fire		{  background: radial-gradient( circle at center, #e74530 20px, #c81835 ); }
+td.Fighting	{  background: radial-gradient( circle at center, #c97b2f 20px, #783917 ); }
+td.Poison	{  background: radial-gradient( circle at center, #a05691 20px, #6c4d7d ); }
+td.Normal	{  background: radial-gradient( circle at center, #8d8f87 20px, #67634f ); }
+td.SingleStrike	{ background: radial-gradient( circle at center, #6d3744 20px, #382223 ); }
+td.RapidStrike	{ background: radial-gradient( circle at center, #508aae 20px, #1d425c ); }
+
+td.DarkSteel {
+	background:
+		radial-gradient( circle at 100%, transparent, 90%, #183c3f ),
+		radial-gradient( circle at 0%, transparent, 90%, #5a6b6b ),
+		linear-gradient( to right, #2b6c7e, #89a0ab );
+}
+td.ElectricGrass {
+	background:
+		radial-gradient( circle at 100%, transparent, 90%, #fcae19 ),
+		radial-gradient( circle at 0%, transparent, 90%, #008341 ),
+		linear-gradient( to right, #fed512, #28ab47 );
+}
+td.FairyWater {
+	background:
+		radial-gradient( circle at 0%, transparent, 90%, #067bbe ),
+		radial-gradient( circle at 100%, transparent, 90%, #a5185a ),
+		linear-gradient( to right, #e7548d, #07abe6 );
+}
+td.GrassFire {
+	background:
+		radial-gradient( circle at 0%, transparent, 90%, #c81835 ),
+		radial-gradient( circle at 100%, transparent, 90%, #008341 ),
+		linear-gradient( to right, #28ab47, #e74530 );
+}
+td.GrassDark {
+	background:
+		radial-gradient( circle at 0%, transparent, 90%, #183c3f ),
+		radial-gradient( circle at 100%, transparent, 90%, #008341 ),
+		linear-gradient( to right, #28ab47, #2b6c7e);
+}
+td.DoubleColorless	{
+	background: linear-gradient( to top, #8d8f87 50%, transparent),
+	linear-gradient( to right, #8d8f87, 2%, #c6764f, 20%, #f4d64a, 35%, #8888ab, 50%, #e3865a, 65%, #c4cc56, 80%, #d991a1, 95%, #8d8f87);
+}
+
+td.Rainbow {
+	background:
+		radial-gradient( circle at 50% 50%, transparent, 85%, rgb( 0 0 0 / 30% ) ),
+		conic-gradient( #00a5d9, #006b4d, #97c145, #f3dc10, #e59341, #b01a48, #974782, #405294, #00a5d9 );
+}
+
+td.trainertext {
+	font-weight: bold;
+	font-style: italic;
+	text-shadow:
+		-1px -1px 0 #FFFFFF,
+		-1px  1px 0 #FFFFFF,
+		 1px -1px 0 #FFFFFF,
+		 1px  1px 0 #FFFFFF;
+}
+
+td.Item {
+	color: #025FA9;
+}
+
+td.Supporter {
+	color: #CF4226;
+}
+
+td.Stadium {
+	color: #4FAC3F;
+}
+
+td.Tool {
+	color: #6e55a4;
+}

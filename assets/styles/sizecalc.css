@@ -1,0 +1,263 @@
+#inputs {
+	display: block;
+	background-color: rgba( 255,255,255, 0.1 );
+	border-radius: 3rem;
+	padding: 1rem;
+	margin: 1em;
+}
+
+#inputs h2 {
+	margin: 1rem auto 2rem auto;
+}
+#inputs button{
+	margin: 1.5rem auto 1rem auto;
+}
+
+.input-layout {
+	margin: 0 auto;
+	width: 80%;
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 33% 66%;
+	gap: 1rem;
+	align-items: center;
+}
+
+legend, label {
+	justify-self: right;
+}
+.input-error,
+#input-size {
+	grid-column: span 2;
+	justify-self: center;
+}
+#pick-pokemon {
+	box-sizing: border-box;
+}
+#input-height,
+#input-weight {
+	width: 10rem;
+}
+#input-atk,
+#input-def,
+#input-hp {
+	width: 5rem;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 2rem;
+}
+
+.input-ivs {
+	justify-self: left;
+	vertical-align: middle;
+}
+
+.input-ivs img {
+	display: inline-block;
+	height: 2rem;
+	width: auto;
+	vertical-align: middle;
+	filter: drop-shadow( 0px 0px 12px rgba(0,0,0,0.2) );
+}
+
+
+
+input[type=text],
+input[type=number] {
+	background-color: rgba( 255,255,255,0.7 );
+	padding: 0.5rem;
+	border-color: transparent;
+	border-radius: 0.75rem;
+	font-size: 1.5rem;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+
+input[aria-invalid=true] {
+	background-color: #be796f;
+}
+
+.input-error {
+	font-weight: bold;
+	font-style: italic;
+	color: #f8b0b0;
+}
+label, legend {
+	color: var(--pkmn-yellow);
+	font-weight: bold;
+}
+
+fieldset {
+	border: none;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+fieldset * {
+	display: inline-block;
+}
+fieldset div {
+	background-color: rgba( 255,255,255,0.7 );
+	color: #333333;
+	border-radius: 1.5rem;
+	padding: 0.75rem;
+	vertical-align: center;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+#xxs div, #xs div, #xl div, #xxl div {
+	font-size: 1.25em;
+	border-radius: 2rem;
+	padding: 1rem;
+}
+.size-radio:checked + div {
+	background-color: #e0b715;
+	color: #FFFFFF;
+}
+.size-radio:focus + div,
+.size-radio:hover + div {
+	background-color: #e9f0fc;
+}
+.size-radio:checked:focus + div,
+.size-radio:checked:hover + div {
+	background-color: #f0c725;
+}
+fieldset label * {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	pointer-events: auto;
+}
+
+input[type=radio] {
+	position: fixed;
+	opacity: 0;
+}
+
+button {
+	display: block;
+	margin: 0 auto;
+	padding: 0.75em;
+	background-color: var(--pkmn-red);
+	border: none;
+	border-radius: 0.5em;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+	text-align: center;
+	color: rgba( 255, 255, 255, 0.9 );
+	font-size: 1.5rem;;
+	font-weight: bold;
+}
+
+button:focus,
+button:hover {
+	background-color: var(--pkmn-bright-red);
+}
+
+
+#pokemon-info {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: flex-start;
+}
+
+.pokemon-card {
+	display: inline-block;
+	margin: 0.5em;
+	color: #000000;
+	width: 24rem;
+	max-width: 24rem;
+	background-color: #D5D5D5;
+	border-radius: 1rem;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+	padding-bottom: 0.25rem;
+}
+.pokemon-card.has-showcase {
+	width: 38rem;
+	max-width: 38rem;
+}
+
+.card-title {
+	background-color: var(--pkmn-red);
+	color: rgba( 255, 255, 255, 0.9 );
+	text-align: center;
+	border-radius: 1rem 1rem 0 0;
+	margin: 0;
+	border-bottom-color: #000000;
+	border-bottom-style: solid;
+	border-bottom-width: 0.7rem;
+	vertical-align: center;
+	font-size: 1.25em;
+	padding: 0.5em;
+}
+.card-dot {
+	position: relative;
+	top: -1.1rem;
+	left: calc(50% - 0.75rem);
+	background-color: #000000;
+	border-radius: 50%;
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.card-title .form {
+	font-size: 0.65em;
+	font-weight: normal;
+	line-height: 0.8em;
+}
+.card-columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: 0 1em 1em 1em;
+	gap: 0.5em;
+}
+.pokemon-card img {
+	width: 65%;
+	max-width: 65%;
+}
+.card-row {
+	text-align: center;
+}
+.card-row * {
+	display: inline-block;
+	margin: 0 0.5em;
+}
+.card-row-spacer {
+	height: 0.75em;
+}
+.card-row-range {
+	font-weight: bold;
+}
+.card-row-header,
+.card-row-subheader {
+	color: var(--pkmn-red);
+	text-align: center;
+	margin-bottom: 0.25em;
+	margin-top: 0;
+	line-height: 1em;
+	font-size: 1em;
+}
+.card-row-header.showcase-header {
+	font-size: 0.9em;
+}
+.card-row-error,
+.showcase-msg {
+	font-style: italic;
+	font-size: 0.75em;
+	line-height: 1em;
+}
+
+
+.unavailable .card-title {
+	background-color: #666666;
+	border-bottom-color: #444444;
+}
+.unavailable .card-dot {
+	background-color: #444444;
+}
+.unavailable img {
+	filter: grayscale( 100% );
+}
+.unavailable .card-row-header {
+	color: #5E5E5E;
+}
+
