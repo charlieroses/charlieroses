@@ -182,8 +182,7 @@ function createOption( dexind ) {
 	item.classList.add("autocomplete-suggestion");
 	id = "suggestion-" + dexind;
 	item.setAttribute("id", id);
-	itemText = document.createTextNode(dex[dexind]["name"]);
-	item.appendChild(itemText);
+	item.innerHTML = dex[dexind]["name"];
 
 	return item;
 }

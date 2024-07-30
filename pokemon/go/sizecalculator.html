@@ -7,11 +7,12 @@
 <link rel="stylesheet" type="text/css" href="../../assets/styles/pokemon.css" />
 <link rel="stylesheet" type="text/css" href="../../assets/styles/sizecalc.css" />
 <link rel="stylesheet" type="text/css" href="../../assets/styles/searchbar.css" />
-<title>Size Calculation</title></head>
+<title>Size Calculation</title>
 <script type="text/javascript" src="../../assets/data/dex.js"></script>
 <script type="text/javascript" src="../../assets/data/showcase.js"></script>
 <script type="text/javascript" src="../../assets/js/sizecalc.js"></script>
 <script type="text/javascript" src="../../assets/js/search.js"></script>
+</head>
 <body>
 <header id="top">
 <h1 id="size-calculation" class="">Pokemon Go Evolution Size Calculator</h1>
@@ -28,9 +29,10 @@
 <a href="#calculator">Jump to Calculator</a>
 </p>
 <p>
-This is a work in progress.
-Still cleaning some stuff up.
-Just wanted to get this online so I could test it out on a walk.
+This will probably be a forever work in progress.
+I made this primarily for myself but then it got a little out of hand.
+I haven't found any bugs yet, but I also haven't really tested this out on a
+large enough scale to find any. Best of luck.
 </p>
 <p>
 The tool is accurate in that it's gonna get you an accurate range.
@@ -60,27 +62,30 @@ Showcase scores are also gonna get rounded to the nearest whole number.
 </p>
 <p>
 Massive shoutouts to...
+</p>
 <ul>
-<li> The <a href="https://pokemondb.net/go/showcases">Pok&eacute;mon GO Showcase calculator</a>
-by the
-<a href="https://pokemondb.net/">Pok&eacute;mon Database</a></li>
-<li><a href="https://pokemongohub.net/post/author/kittypokemonsalot/">kittypokemonsalot</a>
-for their <a href="https://pokemongohub.net/post/research/showcase-scores-xxs-and-xxl-pokemon-and-how-it-works/">article on GO Hub</a>
-that summarizes a whole bunch of Twitter threads (that I can't see without an account) of showcase and size research done by
-<a href="https://twitter.com/bmenrigh_pogo">bmenrigh</a>,
-<a href="https://twitter.com/sellymeKong">sellyme</a>,
-<a href="https://twitter.com/MiniBenoit">minibenoit</a>, and
-<a href="https://twitter.com/LemmoritoSensei">LemmoritoSensei</a>
-</li>
 <li>
 <a href="https://www.reddit.com/user/FatalisticFeline-47/">u/FatalisticFeline-47</a>
 for posting their
 <a href="https://docs.google.com/spreadsheets/d/1ZZwlZ2DOYeO0ouUgu-jXn3qmIf8jE4WTa3BhmtVupHc/">spreadsheet for calculating evolution sizes and scores</a>
 on
 <a href="https://www.reddit.com/r/TheSilphRoad/comments/15b0lwv/showcase_points_calculators/">a Reddit thread</a>, their explanation of where to find some of the data needed to
-calculate things, and so many Reddit posts explaining type showcases.
+calculate things, and so many Reddit posts explaining all the differently typed
+showcases and getting the baselines for each.
 </li>
-</p>
+<li> The <a href="https://pokemondb.net/go/showcases">Pok&eacute;mon GO Showcase calculator</a>
+by the
+<a href="https://pokemondb.net/">Pok&eacute;mon Database</a></li>
+<li><a href="https://pokemongohub.net/post/author/kittypokemonsalot/">kittypokemonsalot</a>
+for their <a href="https://pokemongohub.net/post/research/showcase-scores-xxs-and-xxl-pokemon-and-how-it-works/">article on GO Hub</a>
+that summarizes a whole bunch of Twitter threads (that I can't see without an
+account) of showcase and size research done by
+<a href="https://twitter.com/bmenrigh_pogo">bmenrigh</a>,
+<a href="https://twitter.com/sellymeKong">sellyme</a>,
+<a href="https://twitter.com/MiniBenoit">minibenoit</a>, and
+<a href="https://twitter.com/LemmoritoSensei">LemmoritoSensei</a>
+</li>
+</ul>
 </div>
 <div class="pokeball-divider">
 	<img alt="" src="../../assets/icons/pokeball.svg" />
@@ -162,6 +167,11 @@ calculate things, and so many Reddit posts explaining type showcases.
 
 <output id="pokemon-info"></output>
 </main>
+<footer>
+<p>
+Last Updated 2024-07-29: Added Super Buddy and Steel Type showcases
+</p>
+</footer>
 <script>
 init();
 </script>

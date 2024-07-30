@@ -396,8 +396,6 @@ function pokemonCard( pcalc ) {
 	card.lastChild.classList.add( "card-title" );
 	card.lastChild.classList.add( "pkmn-name" );
 	name = pkmn["name"];
-	if( pkmn["special-char"] )
-		name = pkmn["special-char"];
 	if( name.endsWith( ")" ) ) {
 		card.lastChild.appendChild( document.createTextNode( name.split(" (")[0] ) );
 		card.lastChild.appendChild( document.createElement( "br" ) );
@@ -425,9 +423,7 @@ function pokemonCard( pcalc ) {
 	card.lastChild.classList.add( "pokemon-img" );
 	card.lastChild.appendChild( document.createElement( "img" ) );
 	card.lastChild.lastChild.src = "../../assets/images/dex/" + pokemonImgSrc( pkmn );
-	card.lastChild.lastChild.alt = pkmn["name"];
-	if( pkmn["special-char"] )
-		card.lastChild.lastChild.alt = pkmn["name"];
+	card.lastChild.lastChild.alt = pkmn["plain-text"];
 
 	if( ! pkmn["available"] )
 		card.appendChild( cardRowError( "Not yet added to game" ));

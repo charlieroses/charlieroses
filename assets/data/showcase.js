@@ -88,7 +88,12 @@ var		baseline = {
 			"date": "5/1/24",
 			"baseline-dex": "299" // Nosepass
 		}],
-	"Steel": "NA",
+	"Steel": [
+		{
+			"event": "Strength of Steel",
+			"date": "7/30/24",
+			"baseline-dex": "375" // Metang
+		}],
 	"Water": [
 		{
 			"event": "Aquatic Paradise",
