@@ -255,6 +255,7 @@ function fillShowcases( pcalc ) {
 	var		b, t;
 	var		pkmn;
 	pkmn = dex[pcalc["dex"]];
+	
 
 	// Showcase 0 is the species specific
 	if( pcalc["dex"].includes("-") ) {
@@ -465,6 +466,8 @@ function pokemonCard( pcalc ) {
 	if( !pcalc["sc?"] )
 		return card;
 
+	if( pkmn["plain-text"].startsWith("Mega") || pkmn["plain-text"].startsWith("Primal") )
+		card.appendChild( cardRowError( "Note: Mega-evolved Pokemon can be entered in showcases, but their showcase score is based on their unevolved stats." ) );
 
 	card = document.createElement( "div" );
 	card.classList.add( "card-column" );
