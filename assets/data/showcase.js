@@ -83,7 +83,6 @@ var		baseline = {
 			"baseline-dex": "65" // Alakazam
 		}],
 	"Rock": [
-	{
 		{
 			"event": "Adventure Week",
 			"date": "8/4/24",
