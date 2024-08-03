@@ -69,7 +69,7 @@ function validateInput( ) {
 			break;
 		}
 	}
-
+/*
 	// TODO pumpkaboo/gourgeist
 	if( pkmn["xxs-lower-bound"] <= pcalc["ht-i"] &&
 	    pcalc["ht-i"] < pkmn["xs-lower-bound"] ) {
@@ -113,7 +113,7 @@ function validateInput( ) {
 		}
 
 	}
-
+*/
 	pcalc["wt"][0] = pcalc["wt-i"] - 0.005;
 	pcalc["wt"][1] = pcalc["wt-i"] + 0.005;
 	pcalc["ht"][0] = pcalc["ht-i"] - 0.005;
@@ -163,6 +163,9 @@ function validateInput( ) {
 
 	if( ! pcalc["sc?"] )
 		errorfield( "input-ivs-error", "Showcase points will not be calculated" );
+	
+	for( i = 0; i < ivs.length; i++ )
+		updateIVImg( i );
 
 	return pcalc;
 }
@@ -351,115 +354,102 @@ function calcShowcasePoints( bpkmn, pcalc ) {
 
 function calcNewSizes( pc0, pc1 ) {
 	var		pkmn0, pkmn1;
-	var		xxr;
+	var		hs = [], ws = [];
+	var		xxr, xxp;
 	var		i;
 
 	pkmn0 = dex[pc0["dex"]];
 	pkmn1 = dex[pc1["dex"]];
 
 	xxr = (pkmn1["xx-class"] - 1.5) / (pkmn0["xx-class"] - 1.5);
-	for( i = 0; i < 2; i++ ) {
-		pc1["ht"][i] = pc0["ht"][i] / pkmn0["height-avg"];
-		pc1["wt"][i] = pc0["wt"][i] / pkmn0["weight-avg"];
-	}
-
-	if( pc0["sz-i"] == "xxl" ) {
-		pc1["wt"][0] -= pc1["ht"][1];
-		pc1["wt"][1] -= pc1["ht"][0];
-		pc1["ht"][0] = 1.5 + (( pc1["ht"][0] - 1.5 ) * xxr );
-		pc1["ht"][1] = 1.5 + (( pc1["ht"][1] - 1.5 ) * xxr );
-		pc1["wt"][0] += pc1["ht"][1];
-		pc1["wt"][1] += pc1["ht"][0];
-	}
+	xxp = 2;
+	if( pc0["sz-i"] == "xxl" )
+		xxp = 1;
 
 	for( i = 0; i < 2; i++ ) {
-		pc1["ht"][i] *= pkmn1["height-avg"];
-		pc1["wt"][i] *= pkmn1["weight-avg"];
+		hs[i] = pc0["ht"][i] / pkmn0["height-avg"];
+		ws[i] = pc0["wt"][i] / pkmn0["weight-avg"];
+	}
 
+	for( i = 0; i < 2; i++ )
+		ws[i] += 1 - Math.pow( hs[(i+1)%2], xxp );
+
+	if( pc0["sz-i"] == "xxl" )
+		for( i = 0; i < 2; i++ )
+			hs[i] = 1.5 + ( (hs[i] - 1.5) * xxr );
+
+	ws[0] = Math.max( 0.5, ws[0] );
+	ws[1] = Math.min( 1.5, ws[1] );
+
+	for( i = 0; i < 2; i++ )
+		ws[i] += Math.pow(hs[i], xxp) - 1;
+
+	for( i = 0; i < 2; i++ ) {
+		pc1["ht"][i] = hs[i] * pkmn1["height-avg"];
 		pc1["ht-d"][i] = Math.trunc( pc1["ht"][i] * 100 ) / 100;
+		pc1["wt"][i] = ws[i] * pkmn1["weight-avg"];
 		pc1["wt-d"][i] = Math.trunc( pc1["wt"][i] * 100 ) / 100;
 	}
 }
 
 function pokemonCard( pcalc ) {
-	var		card, cardp, elem, err, name;
+	var		card, elem, err, row;
 	var		pkmn, p;
 
 	pkmn = dex[pcalc["dex"]];
 
-	card = document.createElement( "div" );
-	card.classList.add( "pokemon-card" );
+
+	if( pcalc["sc?"] ) {
+		card = pokecard( pkmn["name"], 2 );
+		card.classList.add( "has-showcase" );
+	}
+	else
+		card = pokecard( pkmn["name"] );
 
 	if( ! pkmn["available"] )
 		card.classList.add( "unavailable" );
 
-	card.appendChild( document.createElement( "h2" ) );
-	card.lastChild.classList.add( "card-title" );
-	card.lastChild.classList.add( "pkmn-name" );
-	name = pkmn["name"];
-	if( name.endsWith( ")" ) ) {
-		card.lastChild.appendChild( document.createTextNode( name.split(" (")[0] ) );
-		card.lastChild.appendChild( document.createElement( "br" ) );
-		card.lastChild.appendChild( document.createElement( "span" ) );
-		card.lastChild.lastChild.appendChild( document.createTextNode( name.split(" (")[1].slice(0,-1) ) );
-		card.lastChild.lastChild.classList.add("form");
-	}
-	else {
-		card.lastChild.appendChild( document.createTextNode( name ) );
-	}
-	card.appendChild( document.createElement( "div" ) );
-	card.lastChild.classList.add( "card-dot" );
-
-	if( pcalc["sc?"] ) {
-		card.classList.add( "has-showcase" );
-		card.appendChild( document.createElement( "div" ) );
-		card.lastChild.classList.add( "card-columns" );
-		cardp = card;
-		card = document.createElement( "div" );
-		card.classList.add( "card-column" );
-		cardp.lastChild.appendChild( card );
-	}
-
-	card.appendChild( cardRow() );
-	card.lastChild.classList.add( "pokemon-img" );
-	card.lastChild.appendChild( document.createElement( "img" ) );
-	card.lastChild.lastChild.src = "../../assets/images/dex/" + pokemonImgSrc( pkmn );
-	card.lastChild.lastChild.alt = pkmn["plain-text"];
+	row = appendRow( card, 0, cardRow() );
+	row.classList.add( "pokemon-img" );
+	row.appendChild( document.createElement( "img" ) );
+	row.lastChild.src = "../../assets/images/dex/" + pokemonImgSrc( pkmn );
+	row.lastChild.alt = pkmn["plain-text"];
 
 	if( ! pkmn["available"] )
-		card.appendChild( cardRowError( "Not yet added to game" ));
+		appendRow( card, 0, cardRowError( "Not yet added to game" ));
 
-	card.appendChild( cardRowHeader("Average Size") );
+	appendRow( card, 0, cardRowHeader("Average Size") );
 
-	card.appendChild( cardRow( ) );
+	row = appendRow( card, 0, cardRow( ) );
 	elem = document.createElement( "div" );
 	elem.classList.add( "avg-weight" );
 	elem.appendChild(document.createTextNode(pkmn["weight-avg"] + "kg"));
-	card.lastChild.appendChild( elem );
+	row.appendChild( elem );
 	elem = document.createElement( "div" );
 	elem.classList.add( "avg-height" );
 	elem.appendChild(document.createTextNode(pkmn["height-avg"] + "m"));
-	card.lastChild.appendChild( elem );
-	card.appendChild( cardRowSpacer() );
+	row.appendChild( elem );
+
+	appendRow( card, 0, cardRowSpacer() );
 
 
 	if( pcalc["ht-i"] ) {
-		card.appendChild( cardRowHeader("Input Size") );
+		appendRow( card, 0, cardRowHeader("Input Size") );
 
-		card.appendChild( cardRow( ) );
+		row = appendRow( card, 0, cardRow( ) );
 		elem = document.createElement( "div" );
 		elem.classList.add( "inp-weight" );
 		elem.appendChild(document.createTextNode(pcalc["wt-i"] + "kg"));
-		card.lastChild.appendChild( elem );
+		row.appendChild( elem );
 		elem = document.createElement( "div" );
 		elem.classList.add( "inp-height" );
 		elem.appendChild(document.createTextNode(pcalc["ht-i"] + "m"));
-		card.lastChild.appendChild( elem );
+		row.appendChild( elem );
 	}
 	else {
-		card.appendChild( cardRowHeader("Size Range") );
-		card.appendChild( cardRowRange( pcalc["wt-d"], "kg" ) );
-		card.appendChild( cardRowRange( pcalc["ht-d"], "m" ) );
+		appendRow( card, 0, cardRowHeader("Size Range") );
+		appendRow( card, 0, cardRowRange( pcalc["wt-d"], "kg" ) );
+		appendRow( card, 0, cardRowRange( pcalc["ht-d"], "m" ) );
 	}
 
 
@@ -467,118 +457,25 @@ function pokemonCard( pcalc ) {
 		return card;
 
 	if( pkmn["plain-text"].startsWith("Mega") || pkmn["plain-text"].startsWith("Primal") )
-		card.appendChild( cardRowError( "Note: Mega-evolved Pokemon can be entered in showcases, but their showcase score is based on their unevolved stats." ) );
+		appendRow( card, 0, cardRowError( "Note: Mega-evolved Pokemon can be entered in showcases, but their showcase score is based on their unevolved stats." ) );
 
-	card = document.createElement( "div" );
-	card.classList.add( "card-column" );
-	cardp.lastChild.appendChild( card );
 	for( p = 0; p < pcalc["sc"].length; p++ ) {
 		if( p )
-			card.appendChild( cardRowSpacer() );
+			appendRow( card, 1, cardRowSpacer() );
 
-		card.appendChild( cardRowHeader( pcalc["sc"][p]["name"] + " Showcase", "showcase-header" ) );
+		appendRow( card, 1, cardRowHeader( pcalc["sc"][p]["name"] + " Showcase", "showcase-header" ) );
 		if( pcalc["sc"][p]["na"] ) {
-			card.appendChild( cardRowText( "No " + pcalc["sc"][p]["name"] + " Showcases have occured yet", "showcase-msg" ) );
+			appendRow( card, 1, cardRowText( "No " + pcalc["sc"][p]["name"] + " Showcases have occured yet", "showcase-msg" ) );
 			continue;
 		}
 
-		card.appendChild( cardRowRange( pcalc["sc"][p]["pt"], "pts" ) );
+		appendRow( card, 1, cardRowRange( pcalc["sc"][p]["pt"], "pts" ) );
 		if( p ) {
-			card.appendChild( cardRowText( "Based on " + pcalc["sc"][p]["date"] + " " + pcalc["sc"][p]["event"] + " event", "showcase-msg" ) );
+			appendRow( card, 1, cardRowText( "Based on " + pcalc["sc"][p]["date"] + " " + pcalc["sc"][p]["event"] + " event", "showcase-msg" ) );
 		}
 	}
 
-	return cardp;
-}
-
-function cardRowHeader( text, cl="" ) {
-	var		elem;
-
-	elem = document.createElement( "h3" );
-	elem.classList.add( "card-row-header" );
-	elem.appendChild( document.createTextNode( text ) );
-	if( cl )
-		elem.classList.add( cl );
-
-	return elem;
-}
-
-function cardRowSubHeader( text, cl="" ) {
-	var elem;
-
-	elem = document.createElement( "h5" );
-	elem.classList.add( "card-row-subheader" );
-	elem.appendChild( document.createTextNode( text ) );
-	if( cl )
-		elem.classList.add( cl );
-
-	return elem;
-}
-
-function cardRowRange( vals, unit ) {
-	var		row;
-
-	row = document.createElement( "div" );
-	row.classList.add( "card-row" );
-	row.classList.add( "card-row-range" );
-	row.appendChild( document.createTextNode(vals[0]) );
-	row.appendChild( document.createTextNode(unit) );
-	row.appendChild( document.createTextNode(" - ") );
-	row.appendChild( document.createTextNode(vals[1]) );
-	row.appendChild( document.createTextNode(unit) );
-
-	return row;
-}
-
-function cardRowText( text, cl="" ) {
-	var		row;
-
-	row = document.createElement( "div" );
-	row.classList.add( "card-row" );
-	row.appendChild( document.createTextNode(text) );
-	if( cl )
-		row.classList.add( cl );
-
-	return row;
-}
-
-function cardRowError( text ) {
-	var		row;
-
-	row = cardRowText( text );
-	row.classList.add( "card-row-error" );
-
-	return row;
-}
-
-function cardRowSpacer( ) {
-	var		row;
-
-	row = document.createElement( "br" );
-	row.classList.add( "card-row-spacer" );
-
-	return row;
-}
-
-function cardRow( ) {
-	var		row;
-
-	row = document.createElement( "div" );
-	row.classList.add( "card-row" );
-
-	return row;
-}
-
-function pokemonImgSrc( pkmn ) {
-	var		dir, img;
-
-	dir = pkmn["dex-num"].toString();
-	img = pkmn["dex-index"];
-
-	while( dir.length < 4 )
-		dir = "0" + dir;
-
-	return dir + "/" + img + ".png";
+	return card;
 }
 
 function errorfield( fid, errmsg ) {
