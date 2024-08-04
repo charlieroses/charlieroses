@@ -122,10 +122,14 @@ function validateInput( ) {
 	if( pcalc["sz-i"] == "xxs" ) {
 		if( pcalc["ht"][0] < pkmn["xxs-lower-bound"] )
 			pcalc["ht"][0] = pkmn["xxs-lower-bound"];
+		if( pcalc["ht"][1] > pkmn["xs-lower-bound"] )
+			pcalc["ht"][1] = pkmn["xs-lower-bound"];
 	}
 	else if( pcalc["sz-i"] == "xs" ) {
 		if( pcalc["ht"][0] < pkmn["xs-lower-bound"] )
 			pcalc["ht"][0] = pkmn["xs-lower-bound"];
+		if( pcalc["ht"][1] > pkmn["m-lower-bound"] )
+			pcalc["ht"][1] = pkmn["m-lower-bound"];
 	}
 	else if( pcalc["sz-i"] == "m" ) {
 		if( pcalc["ht"][0] < pkmn["m-lower-bound"] )
@@ -134,10 +138,14 @@ function validateInput( ) {
 			pcalc["ht"][1] = pkmn["m-upper-bound"];
 	}
 	else if( pcalc["sz-i"] == "xl" ) {
+		if( pcalc["ht"][0] < pkmn["m-upper-bound"] )
+			pcalc["ht"][0] = pkmn["m-upper-bound"];
 		if( pcalc["ht"][1] > pkmn["xl-upper-bound"] )
 			pcalc["ht"][1] = pkmn["xl-upper-bound"];
 	}
 	else if( pcalc["sz-i"] == "xxl" ) {
+		if( pcalc["ht"][0] < pkmn["xl-upper-bound"] )
+			pcalc["ht"][0] = pkmn["xl-upper-bound"];
 		if( pcalc["ht"][1] > pkmn["xxl-upper-bound"] )
 			pcalc["ht"][1] = pkmn["xxl-upper-bound"];
 	}
@@ -452,7 +460,6 @@ function pokemonCard( pcalc ) {
 		appendRow( card, 0, cardRowRange( pcalc["ht-d"], "m" ) );
 	}
 
-
 	if( !pcalc["sc?"] )
 		return card;
 
@@ -569,4 +576,5 @@ function initpcalc( d ) {
 
 	return pcalc;
 }
+
 
