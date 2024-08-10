@@ -18,7 +18,12 @@ var		baseline = {
 			"date": "4/17/24",
 			"baseline-dex": "402" // Kricketune
 		}],
-	"Dark": "NA",
+	"Dark": [
+{
+"event": "Adventure Week: Taken Over",
+"date": "8/10/24",
+"baseline-dex": "20-1" // Alolan Raticate
+}],
 	"Dragon": [
 		{
 			"event": "Lunar New Year: Dragons Unleashed",
