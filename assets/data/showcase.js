@@ -47,7 +47,12 @@ var		baseline = {
 			"event": "Rivals Week 2024",
 			"date": "5/4/24",
 			"baseline-dex": "297" // Hariyama
-		}],
+		},
+{
+"event": "2024 Pokemon World Championship Celebration",
+"date": "8/19/24",
+"baseline-dex": "783" // Hakamo-o
+}],
 	"Fire": [
 		{
 			"event": "Scorching Steps",
