@@ -54,6 +54,11 @@ var		baseline = {
 "baseline-dex": "783" // Hakamo-o
 }],
 	"Fire": [
+{
+"event": "Triumph Together: Valor Global Challenge",
+"date": "8/24/24",
+"baseline-dex": "146" // Moltres
+},
 		{
 			"event": "Scorching Steps",
 			"date": "6/21/24",
