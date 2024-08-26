@@ -19,11 +19,11 @@ var		baseline = {
 			"baseline-dex": "402" // Kricketune
 		}],
 	"Dark": [
-{
-"event": "Adventure Week: Taken Over",
-"date": "8/10/24",
-"baseline-dex": "20-1" // Alolan Raticate
-}],
+		{
+			"event": "Adventure Week: Taken Over",
+			"date": "8/10/24",
+			"baseline-dex": "20-1" // Alolan Raticate
+		}],
 	"Dragon": [
 		{
 			"event": "Lunar New Year: Dragons Unleashed",
@@ -31,6 +31,11 @@ var		baseline = {
 			"baseline-dex": "384" // Rayquaza
 		}],
 	"Electric": [
+		{
+			"event": "Triumph Together: Instinct Global Challenge",
+			"date": "8/26/24",
+			"baseline-dex": "145" // Zapdos
+		},
 		{
 			"event": "Charged-Up Research Day",
 			"date": "3/3/24",
@@ -44,21 +49,21 @@ var		baseline = {
 		}],
 	"Fighting": [
 		{
+			"event": "2024 Pokemon World Championship Celebration",
+			"date": "8/19/24",
+			"baseline-dex": "783" // Hakamo-o
+		},
+		{
 			"event": "Rivals Week 2024",
 			"date": "5/4/24",
 			"baseline-dex": "297" // Hariyama
-		},
-{
-"event": "2024 Pokemon World Championship Celebration",
-"date": "8/19/24",
-"baseline-dex": "783" // Hakamo-o
-}],
+		}],
 	"Fire": [
-{
-"event": "Triumph Together: Valor Global Challenge",
-"date": "8/24/24",
-"baseline-dex": "146" // Moltres
-},
+		{
+			"event": "Triumph Together: Valor Global Challenge",
+			"date": "8/24/24",
+			"baseline-dex": "146" // Moltres
+		},
 		{
 			"event": "Scorching Steps",
 			"date": "6/21/24",
@@ -66,14 +71,14 @@ var		baseline = {
 		}],
 	"Flying": [
 		{
-			"event": "Flock Together Research Day",
-			"date": "5/11/24",
-			"baseline-dex": "18" // Pidgeot
-		},
-		{
 			"event": "Stadium Sights",
 			"date": "6/3/24",
 			"baseline-dex": "178" // Xatu
+		},
+		{
+			"event": "Flock Together Research Day",
+			"date": "5/11/24",
+			"baseline-dex": "18" // Pidgeot
 		}],
 	"Ghost": "NA",
 	"Grass": [
