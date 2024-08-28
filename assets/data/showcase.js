@@ -93,7 +93,12 @@ var		baseline = {
 			"date": "4/24/24",
 			"baseline-dex": "450" // Hippowdon
 		}],
-	"Ice": "NA",
+	"Ice": [
+		{
+			"event": "Triumph Together: Mystic Global Challenge",
+			"date": "8/28/24",
+			"baseline-dex": "144" // Articuno
+		}],
 	"Normal": "NA",
 	"Poison": "NA",
 	"Psychic": [
