@@ -1,0 +1,7 @@
+{
+	"icons": [
+		{ "src": "/pokemon/icon-192.png", "type": "image/png", "sizes": "192x192" },
+		{ "src": "/pokemon/icon-mask.png", "type": "image/png", "sizes": "192x192", purpose: "maskable" },
+		{ "src": "/pokemon/icon-512.png", "type": "image/png", "sizes": "512x512" }
+	]
+}
