@@ -69,6 +69,28 @@ function validateInput( ) {
 			break;
 		}
 	}
+
+	if( pkmn["name"].startsWith( "Pumpkaboo" ) || pkmn["name"].startsWith( "Gourgeist" ) ) {
+		if( select.includes( "Small" ) )
+			pcalc["sz-i"] = "xs";
+		else if( select.includes( "Average" ) )
+			pcalc["sz-i"] = "m";
+		else if( select.includes( "Large" ) )
+			pcalc["sz-i"] = "xl";
+		else if( select.includes( "Super" ) )
+			pcalc["sz-i"] = "xxl";
+
+		if( ! document.getElementById( "input-" + pcalc["sz-i"] ).checked ) {
+			document.getElementById( "input-" + pcalc["sz-i"] ).checked = true;
+			if( pcalc["sz-i"] == "m" )
+				errorfield( "input-size", pkmn["name"] + " can only be Average. Selection Updated" );
+			else
+				errorfield( "input-size", pkmn["name"] + " can only be " + pcalc["sz-i"].toUpperCase() + ". Selection Updated" );
+		}
+	}
+
+
+
 /*
 	// TODO pumpkaboo/gourgeist
 	if( pkmn["xxs-lower-bound"] <= pcalc["ht-i"] &&
@@ -362,42 +384,114 @@ function calcShowcasePoints( bpkmn, pcalc ) {
 
 function calcNewSizes( pc0, pc1 ) {
 	var		pkmn0, pkmn1;
-	var		hs = [], ws = [];
-	var		xxr, xxp;
-	var		i;
+	var		hf0 = [], hf1 = [], wf = [];
+	var		i, o, xxp;
 
 	pkmn0 = dex[pc0["dex"]];
 	pkmn1 = dex[pc1["dex"]];
 
-	xxr = (pkmn1["xx-class"] - 1.5) / (pkmn0["xx-class"] - 1.5);
-	xxp = 2;
-	if( pc0["sz-i"] == "xxl" )
-		xxp = 1;
-
-	for( i = 0; i < 2; i++ ) {
-		hs[i] = pc0["ht"][i] / pkmn0["height-avg"];
-		ws[i] = pc0["wt"][i] / pkmn0["weight-avg"];
+	if( pkmn0["name"].startsWith( "Pumpkaboo" ) ) {
+		pumpkaboo( pc0, pc1 );
+		return;
 	}
 
-	for( i = 0; i < 2; i++ )
-		ws[i] += 1 - Math.pow( hs[(i+1)%2], xxp );
-
-	if( pc0["sz-i"] == "xxl" )
-		for( i = 0; i < 2; i++ )
-			hs[i] = 1.5 + ( (hs[i] - 1.5) * xxr );
-
-	ws[0] = Math.max( 0.5, ws[0] );
-	ws[1] = Math.min( 1.5, ws[1] );
-
-	for( i = 0; i < 2; i++ )
-		ws[i] += Math.pow(hs[i], xxp) - 1;
+	xxp = 1;
+	if( pc0["sz-i"] != "xxl" )
+		xxp += 1;
 
 	for( i = 0; i < 2; i++ ) {
-		pc1["ht"][i] = hs[i] * pkmn1["height-avg"];
-		pc1["ht-d"][i] = Math.trunc( pc1["ht"][i] * 100 ) / 100;
-		pc1["wt"][i] = ws[i] * pkmn1["weight-avg"];
-		pc1["wt-d"][i] = Math.trunc( pc1["wt"][i] * 100 ) / 100;
+		hf0[i] = pc0["ht"][i] / pkmn0["height-avg"];
+		if(( pc0["sz-i"] == "xxl" ) && ( pkmn0["xx-class"] != pkmn1["xx-class"] ))
+			hf1[i] = 1.5 + ((hf0[i] - 1.5) * ((pkmn1["xx-class"] - 1.5) / (pkmn0["xx-class"] - 1.5)));
+		else
+			hf1[i] = hf0[i];
+
+		pc1["ht"][i] = hf1[i] * pkmn1["height-avg"];
+		pc1["ht-d"][i] = roundTo( pc1["ht"][i], 2 );
 	}
+
+	for( i = 0; i < 2; i++ ) {
+		o = (i + 1) % 2;
+
+		wf[i] = pc0["wt"][i] / pkmn0["weight-avg"];
+		wf[i] -= Math.pow( hf0[o], xxp );
+		wf[i] += Math.pow( hf1[o], xxp );
+
+		pc1["wt"][i] = wf[i] * pkmn1["weight-avg"];
+		pc1["wt-d"][i] = roundTo( pc1["wt"][i], 2 );
+	}
+
+	if( pc1["ht"][0] > pc1["ht"][1] ) {
+		i = pc1["ht"][0];
+		pc1["ht"][0] = pc1["ht"][1];
+		pc1["ht"][1] = i;
+	}
+	if( pc1["wt"][0] > pc1["wt"][1] ) {
+		i = pc1["wt"][0];
+		pc1["wt"][0] = pc1["wt"][1];
+		pc1["wt"][1] = i;
+	}
+
+}
+
+function pumpkaboo( pc, gc ) {
+	var		pkmn, gkmn;
+	var		hfp = [], hfg = [], wf = [];
+	var		pl, pu, gl, gu, i, o, xxp;
+
+	pkmn = dex[pc["dex"]];
+	gkmn = dex[gc["dex"]];
+
+	pl = pkmn["xxs-lower-bound"];
+	pu = pkmn["xxl-upper-bound"];
+	gl = gkmn["xxs-lower-bound"];
+	gu = gkmn["xxl-upper-bound"];
+
+	xxp = 1;
+	if( pc["sz-i"] != "xxl" )
+		xxp += 1;
+
+	for( i = 0; i < 2; i++ ) {
+		hfp[i] = pc["ht"][i] / pkmn["height-avg"];
+
+		gc["ht"][i] = gl + ((gu - gl) * ((pc["ht"][i] - pl) / (pu - pl)));
+		gc["ht-d"][i] = roundTo( gc["ht"][i], 2 );
+
+		hfg[i] = gc["ht"][i] / gkmn["height-avg"];
+	}
+	
+
+	for( i = 0; i < 2; i++ ) {
+		o = (i + 1) % 2;
+
+		wf[i] = pc["wt"][i] / pkmn["weight-avg"];
+		wf[i] -= Math.pow( hfp[o], xxp );
+		wf[i] += Math.pow( hfg[o], xxp );
+
+		gc["wt"][i] = wf[i] * gkmn["weight-avg"];
+		gc["wt-d"][i] = roundTo( gc["wt"][i], 2 );
+	}
+
+	if( gc["ht"][0] > gc["ht"][1] ) {
+		i = gc["ht"][0];
+		gc["ht"][0] = gc["ht"][1];
+		gc["ht"][1] = i;
+	}
+	if( gc["wt"][0] > gc["wt"][1] ) {
+		i = gc["wt"][0];
+		gc["wt"][0] = gc["wt"][1];
+		gc["wt"][1] = i;
+	}
+}
+
+function roundTo( num, p ) {
+	var		i, t;
+
+	t = 1;
+	for( i = 0; i < p; i++ )
+		t *= 10;
+
+	return Math.round( num * t ) / t;
 }
 
 function pokemonCard( pcalc ) {
