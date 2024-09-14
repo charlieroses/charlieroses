@@ -66,7 +66,7 @@ polygon.coleottero	{ fill: var(--coleottero); }
 polygon.drago		{ fill: var(--drago); }
 polygon.elettro		{ fill: var(--elettro); }
 polygon.erba		{ fill: var(--erba); }
-polygon.foletto		{ fill: var(--foletto); }
+polygon.folletto	{ fill: var(--folletto); }
 polygon.fuoco		{ fill: var(--fuoco); }
 polygon.ghiaccio	{ fill: var(--ghiaccio); }
 polygon.lotta		{ fill: var(--lotta); }
@@ -108,6 +108,19 @@ th, td {
 }
 .col-english {
 	max-width: 16rem;
+}
+.col-type {
+	max-width: 5rem;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0;
+}
+th.col-type {
+	padding: 1rem;
+}
+.col-type img {
+	max-width: 2.5rem;
+	margin: 0.5rem;
 }
 
 table.fast th.col-gyms {
