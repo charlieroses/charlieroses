@@ -1,7 +1,10 @@
 #type-nav {
-	display: grid;
-	grid-template-columns: repeat( auto-fill, minmax( 18rem, 1fr ));
-	grid-gap: 1rem;
+	display: flex;
+	justify-content: center;
+	align-content: flex-start;
+	flex-wrap: wrap;
+	gap: 2rem;
+
 	max-width: 100%;
 	margin: 0 auto;
 	padding: 1rem;
@@ -17,12 +20,18 @@
 }
 
 .type-div a {
-	color: #B92808;
+	color: var( --pkmn-red );
 	padding: 1ch;
 }
 
 .type-div:hover, .type-div:focus {
-	background-color: #AAAAAA;
+	background-color: #EEEEEE;
+}
+.type-div a:hover, .type-div a:focus {
+	color: var( --pkmn-bright-red );
+}
+.type-div a:hover img, .type-div a:focus img {
+	filter: opacity( 80% );
 }
 
 .type-link {
@@ -113,14 +122,12 @@ th, td {
 	max-width: 5rem;
 	vertical-align: middle;
 	text-align: center;
-	padding: 0;
-}
-th.col-type {
-	padding: 1rem;
 }
 .col-type img {
+	display: block;
 	max-width: 2.5rem;
-	margin: 0.5rem;
+	margin: auto;
+	border: 2px;
 }
 
 table.fast th.col-gyms {

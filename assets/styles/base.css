@@ -2,11 +2,16 @@ body {
 	margin: 1rem auto;
 	max-width: 80rem;
 	line-height: 1.5em;
+	padding: 1rem;
 }
 
 p {
 	margin-bottom: 1.125em;
 	margin-top: 1.125em;
+}
+
+div.centered {
+	text-align: center;
 }
 
 th.col-left,
@@ -32,4 +37,8 @@ td.col-right {
 	position: absolute;
 	white-space: nowrap;
 	width: 1px;
+}
+
+summary {
+	cursor: pointer;
 }
