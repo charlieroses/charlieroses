@@ -7,9 +7,9 @@ function init() {
 	document.getElementById( "input-atk" ).value = "";
 	document.getElementById( "input-def" ).value = "";
 	document.getElementById( "input-hp" ).value = "";
-	document.getElementById( "atk-img" ).src = "../../assets/icons/iv/00.svg";
-	document.getElementById( "def-img" ).src = "../../assets/icons/iv/00.svg";
-	document.getElementById( "hp-img" ).src = "../../assets/icons/iv/00.svg";
+	document.getElementById( "atk-img" ).src = "/assets/icons/iv/00.svg";
+	document.getElementById( "def-img" ).src = "/assets/icons/iv/00.svg";
+	document.getElementById( "hp-img" ).src = "/assets/icons/iv/00.svg";
 }
 
 function validateInput( ) {
@@ -306,8 +306,16 @@ function fillShowcases( pcalc ) {
 			continue;
 		}
 		for( b = 0; b < baseline[pkmn["type"][t]].length; b++ ) {
-			pcalc["sc"].push( baseline[pkmn["type"][t]][b] );
+			pcalc["sc"].push( {} );
 			pcalc["sc"][pcalc["sc"].length-1]["name"] = pkmn["type"][t] + " Type";
+			if( baseline[pkmn["type"][t]][b]["date"] )
+				pcalc["sc"][pcalc["sc"].length-1]["date"] = baseline[pkmn["type"][t]][b]["date"];
+			if( baseline[pkmn["type"][t]][b]["event"] )
+				pcalc["sc"][pcalc["sc"].length-1]["event"] = baseline[pkmn["type"][t]][b]["event"];
+			if( baseline[pkmn["type"][t]][b]["baseline-dex"] == "self" )
+				pcalc["sc"][pcalc["sc"].length-1]["baseline-dex"] = pcalc["sc"][0]["baseline-dex"];
+			else
+				pcalc["sc"][pcalc["sc"].length-1]["baseline-dex"] = baseline[pkmn["type"][t]][b]["baseline-dex"];
 		}
 	}
 
@@ -315,6 +323,14 @@ function fillShowcases( pcalc ) {
 	for( b = 0; b < baseline["All"].length; b++ ) {
 		pcalc["sc"].push( baseline["All"][b] );
 		pcalc["sc"][pcalc["sc"].length-1]["name"] = baseline["All"][b]["name"];
+		if( baseline["All"][b]["date"] )
+			pcalc["sc"][pcalc["sc"].length-1]["date"] = baseline["All"][b]["date"];
+		if( baseline["All"][b]["event"] )
+			pcalc["sc"][pcalc["sc"].length-1]["event"] = baseline["All"][b]["event"];
+		if( baseline["All"][b]["baseline-dex"] == "self" )
+			pcalc["sc"][pcalc["sc"].length-1]["baseline-dex"] = pcalc["sc"][0]["baseline-dex"];
+		else
+			pcalc["sc"][pcalc["sc"].length-1]["baseline-dex"] = baseline["All"][b]["baseline-dex"];
 	}
 
 
@@ -495,7 +511,7 @@ function roundTo( num, p ) {
 }
 
 function pokemonCard( pcalc ) {
-	var		card, elem, err, row;
+	var		card, elem, div, err, row;
 	var		pkmn, p;
 
 	pkmn = dex[pcalc["dex"]];
@@ -514,7 +530,7 @@ function pokemonCard( pcalc ) {
 	row = appendRow( card, 0, cardRow() );
 	row.classList.add( "pokemon-img" );
 	row.appendChild( document.createElement( "img" ) );
-	row.lastChild.src = "../../assets/images/dex/" + pokemonImgSrc( pkmn );
+	row.lastChild.src = "/assets/images/dex/" + pokemonImgSrc( pkmn );
 	row.lastChild.alt = pkmn["plain-text"];
 
 	if( ! pkmn["available"] )
@@ -563,7 +579,6 @@ function pokemonCard( pcalc ) {
 		elem.appendChild(document.createTextNode(pkmn["height-avg"] + "m"));
 		row.appendChild( elem );
 	}
-
 	appendRow( card, 0, cardRowSpacer() );
 
 
@@ -604,7 +619,10 @@ function pokemonCard( pcalc ) {
 
 		appendRow( card, 1, cardRowRange( pcalc["sc"][p]["pt"], "pts" ) );
 		if( p ) {
-			appendRow( card, 1, cardRowText( "Based on " + pcalc["sc"][p]["date"] + " " + pcalc["sc"][p]["event"] + " event", "showcase-msg" ) );
+			if( pcalc["sc"][p]["event"] )
+				appendRow( card, 1, cardRowText( "Based on " + pcalc["sc"][p]["date"] + " " + pcalc["sc"][p]["event"] + " event", "showcase-msg" ) );
+			else
+				appendRow( card, 1, cardRowText( "Based on " + pcalc["sc"][p]["date"] + " showcases", "showcase-msg" ) );
 		}
 	}
 
@@ -651,7 +669,7 @@ function updateIVImg( f ) {
 	else
 		img = "00";
 
-	document.getElementById( fields[f] + "-img" ).src = "../../assets/icons/iv/" + img + ".svg";
+	document.getElementById( fields[f] + "-img" ).src = "/assets/icons/iv/" + img + ".svg";
 }
 
 function resetOutput( ) {
