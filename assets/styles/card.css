@@ -102,3 +102,15 @@
 	color: #5E5E5E;
 }
 
+.card-row-pg-size .card-row-header {
+	font-size: 0.75em;
+	line-height: 1em;
+}
+
+.pg-weight, .pg-height {
+	display: inline-block;
+	width: 40%;
+}
+.pg-weight *, .pg-height * {
+	display: block;
+}

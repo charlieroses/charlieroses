@@ -520,17 +520,49 @@ function pokemonCard( pcalc ) {
 	if( ! pkmn["available"] )
 		appendRow( card, 0, cardRowError( "Not yet added to game" ));
 
-	appendRow( card, 0, cardRowHeader("Average Size") );
+	if( pkmn["dex-num"] == 710 || pkmn["dex-num"] == 711 ) {
+		p = pkmn["dex-index"].split("-");
+		if( p.length == 1 )
+			p = "2";
+		else
+			p = p[1];
 
-	row = appendRow( card, 0, cardRow( ) );
-	elem = document.createElement( "div" );
-	elem.classList.add( "avg-weight" );
-	elem.appendChild(document.createTextNode(pkmn["weight-avg"] + "kg"));
-	row.appendChild( elem );
-	elem = document.createElement( "div" );
-	elem.classList.add( "avg-height" );
-	elem.appendChild(document.createTextNode(pkmn["height-avg"] + "m"));
-	row.appendChild( elem );
+		row = appendRow( card, 0, cardRow( ) );
+		row.classList.add( "card-row-pg-size" )
+
+		div = document.createElement( "div" );
+		div.classList.add( "pg-weight" );
+		div.appendChild( cardRowHeader( "Average Weight" ) );
+		elem = document.createElement( "div" );
+		elem.classList.add( "avg-weight" );
+		elem.appendChild(document.createTextNode(pkmn["weight-avg"] + "kg"));
+		div.appendChild( elem );
+		row.appendChild( div );
+
+		div = document.createElement( "div" );
+		div.classList.add( "pg-height" );
+		if( p == "4" )
+			div.appendChild( cardRowHeader( "Maximum Height" ) );
+		else
+			div.appendChild( cardRowHeader( "Minimum Height" ) );
+		elem = document.createElement( "div" );
+		elem.classList.add( "avg-height" );
+		elem.appendChild(document.createTextNode(pkmn["height-avg"] + "m"));
+		div.appendChild( elem );
+		row.appendChild( div );
+	}
+	else {
+		appendRow( card, 0, cardRowHeader("Average Size") );
+		row = appendRow( card, 0, cardRow( ) );
+		elem = document.createElement( "div" );
+		elem.classList.add( "avg-weight" );
+		elem.appendChild(document.createTextNode(pkmn["weight-avg"] + "kg"));
+		row.appendChild( elem );
+		elem = document.createElement( "div" );
+		elem.classList.add( "avg-height" );
+		elem.appendChild(document.createTextNode(pkmn["height-avg"] + "m"));
+		row.appendChild( elem );
+	}
 
 	appendRow( card, 0, cardRowSpacer() );
 
