@@ -32,12 +32,20 @@ var		baseline = {
 			"baseline-dex": "125" // Electabuzz
 		}],
 	"Fairy": [
+{
+			"date": "10/2/24",
+			"baseline-dex": "self"
+		},
 		{
 			"event": "Dazzling Dream",
 			"date": "1/13/24",
 			"baseline-dex": "716" // Xerneas
 		}],
 	"Fighting": [
+{
+			"date": "10/2/24",
+			"baseline-dex": "self"
+		},
 		{
 			"event": "Rivals Week 2024",
 			"date": "5/4/24",
