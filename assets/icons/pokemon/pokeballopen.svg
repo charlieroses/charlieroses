@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-50 -50 100 100">
+	<style>
+		.off	{ fill: #000000; stroke: none; }
+		.o10	{ fill: #1A1A1A; stroke: none; }
+		.o20	{ fill: #333333; stroke: none; }
+		.o30	{ fill: #4E4E4E; stroke: none; }
+		.o40	{ fill: #666666; stroke: none; }
+		.o50	{ fill: #808080; stroke: none; }
+		.o60	{ fill: #9A9A9A; stroke: none; }
+		.o70	{ fill: #B3B3B3; stroke: none; }
+		.o80	{ fill: #CECECE; stroke: none; }
+		.o90	{ fill: #D6D6D6; stroke: none; }
+		.on		{ fill: #FFFFFF; stroke: none; }
+	</style>
+	<mask id="the-mask">
+		<circle class="on"  cx="0" cy="0" r="50" />
+		<circle class="o20" cx="0" cy="0" r="44" />
+		<rect   class="on"  x="-46" y="-12" height="24" width="92" />
+		<circle class="on"  cx="0" cy="0" r="26" />
+		<rect   class="off" x="-50" y="-6"  height="12" width="100" />
+		<circle class="off" cx="0" cy="0" r="20" />
+	</mask>
+	<circle fill="currentColor" cx="0" cy="0" r="50" mask="url(#the-mask)"/>
+</svg>

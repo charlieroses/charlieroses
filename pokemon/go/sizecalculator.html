@@ -1,181 +1,95 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="../../assets/styles/base.css" />
-<link rel="stylesheet" type="text/css" href="../../assets/styles/pokemon.css" />
-<link rel="stylesheet" type="text/css" href="../../assets/styles/sizecalc.css" />
-<link rel="stylesheet" type="text/css" href="../../assets/styles/searchbar.css" />
-<link rel="stylesheet" type="text/css" href="../../assets/styles/card.css" />
-<title>Size Calculation</title>
-<script type="text/javascript" src="../../assets/data/dex.js"></script>
-<script type="text/javascript" src="../../assets/data/showcase.js"></script>
-<script type="text/javascript" src="../../assets/js/sizecalc.js"></script>
-<script type="text/javascript" src="../../assets/js/search.js"></script>
-<script type="text/javascript" src="../../assets/js/card.js"></script>
-</head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/pokemon/favicon.ico" type="image/icon" sizes="any" />
+<link rel="icon" href="/pokemon/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/pokemon/apple-touch-icon.png" />
+<link rel="manifest" href="/pokemon/manifest.webmanifest" />
+<link rel="stylesheet" href="/assets/styles/base.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/base.css" type="text/css" />
+<meta name="theme-color" content="#35507C" />
+<title>Evolution Showcase Calculator</title>
+<link rel="stylesheet" href="/assets/styles/accessible-autocomplete.min.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/card.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/sizecalc.css" type="text/css" />
+<script type="text/javascript" src="/assets/data/pokemon/dex.js">
+</script><script type="text/javascript" src="/assets/data/pokemon/showcase.js">
+</script><script type="text/javascript" src="/assets/js/accessible-autocomplete.min.js">
+</script><script type="text/javascript" src="/assets/js/pokemon/sizecalc.js">
+</script><script type="text/javascript" src="/assets/js/pokemon/card.js">
+</script><script type="text/javascript" src="/assets/js/svg.js">
+</script></head>
 <body>
 <header id="top">
-<h1 id="size-calculation" class="">Pokemon Go Evolution Size Calculator</h1>
+<h1 id="evolution-showcase-calculator">Evolution Showcase Calculator</h1>
 <div class="pokeball-divider">
-	<img alt="" src="../../assets/icons/pokeball.svg" />
-	<img alt="" src="../../assets/icons/pokeball.svg" />
-	<img alt="" src="../../assets/icons/pokeball.svg" />
-</div>
+<img alt="" src="/assets/icons/pokemon/pokeball.svg" /><img alt="" src="/assets/icons/pokemon/pokeball.svg" /><img alt="" src="/assets/icons/pokemon/pokeball.svg" /></div>
 </header>
 <main id="main">
-<div id="information">
-<h2 id="disclaimer">How it Works</h2>
 <p>
-<a href="#calculator">Jump to Calculator</a>
-</p>
+This calculator will predict the showcase performance for a Pokemon and its evolutions in Pokemon Go. IVs are optional and can be entered for a more accurate showcase range.</p>
+<div><div id="inputs"> <h2 id="calculator">Calculator </h2><div class="input-layout"> 	<label for="pick-pokemon">Select Pok&eacute;mon 	</label><div id="pick-pokemon-container">  	</div><div class="input-error" id="pick-pokemon-error">  	</div><label for="input-weight" id="input-weight-label">Weight (kg) 	</label><input id="input-weight" type="number" min="0" step="0.1" aria-required="true"> 	</input><div class="input-error" id="input-weight-error">  	</div><label for="input-height" id="input-height-label">Height (m) 	</label><input id="input-height" type="number" min="0" step="0.1" aria-required="true"> 	</input><div class="input-error" id="input-height-error">  	</div><legend for="input-size">Size Marker 	</legend><fieldset id="input-size"> 		<label for="input-xxs" id="xxs" class="size-label"> 			<input id="input-xxs" type="radio" name="size-marker" value="xxs" class="size-radio"> 			</input><div class="marker-name">XXS 		 		</div></label><label for="input-xs" id="xs" class="size-label"> 			<input id="input-xs" type="radio" name="size-marker" value="xs" class="size-radio"> 			</input><div class="marker-name">XS 		 		</div></label><label for="input-m" id="m" class="size-label"> 			<input id="input-m" type="radio" name="size-marker" value="m" checked="checked" class="size-radio"> 			</input><div class="marker-name">Average<br /><span style="font-weight:normal">(No Marker) 		 		</span></div></label><label for="input-xl" id="xl" class="size-label"> 			<input id="input-xl" type="radio" name="size-marker" value="xl" class="size-radio"> 			</input><div class="marker-name">XL 		 		</div></label><label for="input-xxl" id="xxl" class="size-label"> 			<input id="input-xxl" type="radio" name="size-marker" value="xxl" class="size-radio"> 			</input><div class="marker-name">XXL 		 	 	</div></label></fieldset><div class="input-error" id="input-size-error">  	</div><label for="input-atk" id="input-atk-label">Attack 	</label><div class="input-ivs" id="atk"> 		<input id="input-atk" type="number" min="0" max="15" step="1" onchange="updateIVImg(0)"> 		</input><img class="iv-img" id="atk-img" src="/assets/icons/iv/00.svg" alt="" /> 	  	</div><label for="input-def" id="input-def-label">Defense 	</label><div class="input-ivs" id="def"> 		<input id="input-def" type="number" min="0" max="15" step="1" onchange="updateIVImg(1)"> 		</input><img class="iv-img" id="def-img" src="/assets/icons/iv/00.svg" alt="" /> 	  	</div><label for="input-hp" id="input-hp-label">HP 	</label><div class="input-ivs" id="hp"> 		<input id="input-hp" type="number" min="0" max="15" step="1" onchange="updateIVImg(2)"> 		</input><img class="iv-img" id="hp-img" src="/assets/icons/iv/00.svg" alt="" /> 	 	</div><div class="input-error" id="input-ivs-error">   </div></div><button id="generate" onclick="generate()">Predict Evolution Size   </button></div><div class="pokeball-divider"> 	<img alt="" src="/assets/icons/pokemon/pokeball.svg" /> 	<img alt="" src="/assets/icons/pokemon/pokeball.svg" /> 	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />   </div><output id="pokemon-info">  </output><script>init();</script><div class="pokeball-divider">
+<img alt="" src="/assets/icons/pokemon/pokeball.svg" /><img alt="" src="/assets/icons/pokemon/pokeball.svg" /><img alt="" src="/assets/icons/pokemon/pokeball.svg" /></div>
+<details>
+<summary>
+<img alt="" src="/assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="more-information">More Information</h2>
+</summary>
 <p>
-This will probably be a forever work in progress.
-I made this primarily for myself but then it got a little out of hand.
-I haven't found any bugs yet, but I also haven't really tested this out on a
-large enough scale to find any. Best of luck.
-</p>
+I made this tool for personal use and figured I'd share. If there are bugs, it's either because I haven't found it yet, or if I have, it doesn't bother me enough to fix it. If you find a bug before I do and think it's worth being fixed, shoot me an email at <a href="mailto:sizecalc@charlierose.dev">sizecalc@charlierose.dev</a> and I'll get to it if/when I can. I'm an independent developer working on independent projects in an effort to recover from a severe brain injury. I have no affiliation with Niantic or the Pokemon Company. I don't get paid to maintain this tool. If you think I should and want to support my recovery, send me a <a href="https://ko-fi.com/charlierosesdev">Ko-fi</a>.</p>
+<h3 id="prediction-ranges">Prediction Ranges</h3>
 <p>
-The tool is accurate in that it's gonna get you an accurate range.
-It's not possible to get an exact number.
-The actual height and weight of Pokemon displayed in Pokemon Go are rounded
-meaning a Bulbasaur that weighs 5.18 kg can weigh anywhere between 5.175 kg and
-5.185 kg. The same applies for height.
-This also means that the precision of the tool increases with the size of the
-Pokemon.
-For a Pokemon like Joltik with an average height of 0.1m, a 0.005m margin of
-error is 5% of its height.
-An XXS Joltik can be as small as 0.049m, making the margin of error 10% of its
-height.
-On the flipside, an XXL Wailmer weighing in at 289.01kg will get a very precise
-Wailord prediction.
-</p>
+It's not possible to get a single exact prediction. The actual height and weight of Pokemon are rounded when they're displayed. A Bulbasaur that appears to weigh 5.18 kg will have an exact weight between 5.175 kg and 5.185 kg. The same applies for height. Showcase scores are also rounded for display purposes. They are rounded to the nearest whole number.</p>
 <p>
-IVs are only necessary to calculate possible showcase scores.
-It is not possible to accurately predict future performance in any showcase
-other than species specific.
-The type specific showcases appear to use a different baseline each iteration as
-seen by the Flying Type showcases for the 5/11/24 Flock Together Research Day
-and 6/3/24 Stadium Sights events.
-The values for previous showcases are included just to give a general idea of
-what to expect.
-Showcase scores are also gonna get rounded to the nearest whole number.
-</p>
+This also means that the precision of the tool increases with the size of the Pokemon. A larger Pokemon will give a tighter range. For a Pokemon like Joltik with an average height of 0.1m, a 0.005m margin of error is 5% of its height. An XXS Joltik can be as small as 0.049m, making the margin of error 10% of its height. On the flipside, an XXL Wailmer weighing in at 289.01kg will get a very precise Wailord prediction.</p>
+<h3 id="outliers">Outliers</h3>
 <p>
-Massive shoutouts to...
-</p>
+For the most part, height and weight is calculated consistently for each species of Pokemon. I've already accounted for a few deliberate exceptions, like Pumpkaboo and Gourgeist or the different forms of a species. But in a game where millions of people catch hundreds of Pokemon that come in over 1000 different species and another 300+ forms, there's bound to be some pretty wierd outliers. We've already had a (now patched) bug that led to some <a href="https://old.reddit.com/r/TheSilphRoad/comments/1cje4q9/heaviest_pokemon_record/">10,000+ kg Zoroark</a>.</p>
+<p>
+That being said, there's only so much input validation that I can do. If you're getting a wierd output, double check and make sure you're not giving a wierd input.</p>
+<h3 id="future-showcases">Future Showcases</h3>
+<p>
+For the species specific showcases, this tool should accurately predict future performance as long as Niantic doesn't change things up.</p>
+<p>
+For other showcases such as the Buddy showcases or type specific showcases, as of right it's not possible to predict future performance. These showcases tend to use different baselines, sometimes even for showcases of the same type. The values provided predict performance in previous showcases to give a general idea of what to expect in the future. I do my best to update for ongoing showcases as quickly as possible.</p>
+<h3 id="special-thanks">Special Thanks</h3>
 <ul>
-<li>
-<a href="https://www.reddit.com/user/FatalisticFeline-47/">u/FatalisticFeline-47</a>
-for posting their
-<a href="https://docs.google.com/spreadsheets/d/1ZZwlZ2DOYeO0ouUgu-jXn3qmIf8jE4WTa3BhmtVupHc/">spreadsheet for calculating evolution sizes and scores</a>
-on
-<a href="https://www.reddit.com/r/TheSilphRoad/comments/15b0lwv/showcase_points_calculators/">a Reddit thread</a>, their explanation of where to find some of the data needed to
-calculate things, and so many Reddit posts explaining all the differently typed
-showcases and getting the baselines for each.
-</li>
-<li> The <a href="https://pokemondb.net/go/showcases">Pok&eacute;mon GO Showcase calculator</a>
-by the
-<a href="https://pokemondb.net/">Pok&eacute;mon Database</a></li>
-<li><a href="https://pokemongohub.net/post/author/kittypokemonsalot/">kittypokemonsalot</a>
-for their <a href="https://pokemongohub.net/post/research/showcase-scores-xxs-and-xxl-pokemon-and-how-it-works/">article on GO Hub</a>
-that summarizes a whole bunch of Twitter threads (that I can't see without an
-account) of showcase and size research done by
-<a href="https://twitter.com/bmenrigh_pogo">bmenrigh</a>,
-<a href="https://twitter.com/sellymeKong">sellyme</a>,
-<a href="https://twitter.com/MiniBenoit">minibenoit</a>, and
-<a href="https://twitter.com/LemmoritoSensei">LemmoritoSensei</a>
-</li>
+<li><a href="https://www.reddit.com/user/FatalisticFeline-47/">u/FatalisticFeline-47</a> for their posts and comments on Reddit about <a href="https://www.reddit.com/r/TheSilphRoad/comments/1c61z57/comment/l00kbsv/">height and weight calculations</a>, <a href="https://www.reddit.com/r/TheSilphRoad/comments/15b0lwv/showcase_points_calculators/">reading the game master</a>, their <a href="https://www.reddit.com/r/TheSilphRoad/comments/1aqd5lh/how_the_great_buddy_showcases_work/">analyses of type specific showcases</a> and their <a href="https://docs.google.com/spreadsheets/d/1ZZwlZ2DOYeO0ouUgu-jXn3qmIf8jE4WTa3BhmtVupHc/">spreadsheet for calculating evolution sizes and scores</a></li>
+<li>The <a href="https://pokemondb.net/go/showcases">Pok&eacute;mon GO Showcase calculator</a> by the <a href="https://pokemondb.net/">Pok&eacute;mon Database</a></li>
+<li><a href="https://pokemongohub.net/post/author/kittypokemonsalot/">kittypokemonsalot</a> for their <a href="https://pokemongohub.net/post/research/showcase-scores-xxs-and-xxl-pokemon-and-how-it-works/">article on GO Hub</a> that summarizes a whole bunch of Twitter threads (that I can't see without an account) of showcase and size research done by <a href="https://twitter.com/bmenrigh_pogo">bmenrigh</a>, <a href="https://twitter.com/sellymeKong">sellyme</a>, <a href="https://twitter.com/MiniBenoit">minibenoit</a>, <a href="https://twitter.com/LemmoritoSensei">LemmoritoSensei</a> (who are all also deserving of many thanks)</li>
 </ul>
-</div>
-<div class="pokeball-divider">
-	<img alt="" src="../../assets/icons/pokeball.svg" />
-	<img alt="" src="../../assets/icons/pokeball.svg" />
-	<img alt="" src="../../assets/icons/pokeball.svg" />
-</div>
-
-<div id="inputs">
-<h2 id="calculator">Calculator</h2>
-<div class="input-layout">
-	<label for="pick-pokemon" id="pick-pokemon-label">Select Pok&eacute;mon</label>
-	<div id="autocomplete-wrapper">
-		<div id="announce" class="visually-hidden" aria-live="assertive"></div>
-		<div id="searchfield">
-			<div id="pick-pokemon-combobox">
-				<input id="pick-pokemon" type="text" autocomplete="off" aria-required="true"></input>
-			</div>
-			<div id="pick-pokemon-autocomplete"></div>
-		</div>
-	</div>
-
-	<div class="input-error" id="pick-pokemon-error"></div>
-
-	<label for="input-weight" id="input-weight-label">Weight (kg)</label>
-	<input id="input-weight" type="number" min="0" step="0.1" aria-required="true"></input>
-	<div class="input-error" id="input-weight-error"></div>
-
-	<label for="input-height" id="input-height-label">Height (m)</label>
-	<input id="input-height" type="number" min="0" step="0.1" aria-required="true"></input>
-	<div class="input-error" id="input-height-error"></div>
-
-	<legend>Size Marker</legend>
-	<fieldset id="input-size">
-		<label for="input-xxs" id="xxs" class="size-label">
-			<input id="input-xxs" type="radio" name="size-marker" value="xxs" class="size-radio"></input>
-			<div class="marker-name">XXS</div>
-		</label>
-		<label for="input-xs" id="xs" class="size-label">
-			<input id="input-xs" type="radio" name="size-marker" value="xs" class="size-radio"></input>
-			<div class="marker-name">XS</div>
-		</label>
-		<label for="input-m" id="m" class="size-label">
-			<input id="input-m" type="radio" name="size-marker" value="m" checked class="size-radio"></input>
-			<div class="marker-name">Average<br><span style="font-weight:normal">(No Marker)</span></div>
-		</label>
-		<label for="input-xl" id="xl" class="size-label">
-			<input id="input-xl" type="radio" name="size-marker" value="xl" class="size-radio"></input>
-			<div class="marker-name">XL</div>
-		</label>
-		<label for="input-xxl" id="xxl" class="size-label">
-			<input id="input-xxl" type="radio" name="size-marker" value="xxl" class="size-radio"></input>
-			<div class="marker-name">XXL</div>
-		</label>
-	</fieldset>
-	<div class="input-error" id="input-size-error"></div>
-
-	<label for="input-atk" id="input-atk-label">Attack</label>
-	<div class="input-ivs" id="atk">
-		<input id="input-atk" type="number" min="0" max="15" step="1" onchange="updateIVImg(0)"></input>
-		<img class="iv-img" id="atk-img" src="../../assets/icons/iv/00.svg" alt="" />
-	</div>
-
-	<label for="input-def" id="input-def-label">Defense</label>
-	<div class="input-ivs" id="def">
-		<input id="input-def" type="number" min="0" max="15" step="1" onchange="updateIVImg(1)"></input>
-		<img class="iv-img" id="def-img" src="../../assets/icons/iv/00.svg" alt="" />
-	</div>
-
-	<label for="input-hp" id="input-hp-label">HP</label>
-	<div class="input-ivs" id="hp">
-		<input id="input-hp" type="number" min="0" max="15" step="1" onchange="updateIVImg(2)"></input>
-		<img class="iv-img" id="hp-img" src="../../assets/icons/iv/00.svg" alt="" />
-	</div>
-	<div class="input-error" id="input-ivs-error"></div>
-</div>
-
-<button id="generate" onclick="generate()">Predict Evolution Size</button>
-</div>
-
-<output id="pokemon-info"></output>
-</main>
-<footer>
+<div class="back-to-top">
+<a href="#top">Back to top</a></div>
+</details>
+<details>
+<summary>
+<img alt="" src="/assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="quick-share">Quick Share</h2>
+</summary>
 <p>
-Last Updated 2024-09-18: Updated Hatenna, Hattrem, and Hatterene availability
-</p>
+Scan the QR code below to share this tool</p>
+<img alt="QR Code to this site" src="/assets/images/pokemon/sizecalcqr.png" id="qr-code" /></details>
+</main>
+<footer id="bottom">
+<details>
+<summary>
+<img alt="" src="/assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="updates">Updates</h2>
+<div class="latest">
+(Last Updated 2024-09-30)</div>
+</summary>
+<ul class="prev-updates">
+<li class="update"><span class="date">2024-09-30</span><span class="description">Added new Fairy/Fighting type showcases. IVs no longer necessary for showcase predictions. Massive interface facelift</span></li>
+<li class="update"><span class="date">2024-09-18</span><span class="description">Updated Hatenna, Hattrem, and Hatterene availability</span></li>
+<li class="update"><span class="date">2024-09-16</span><span class="description">Added new Normal type showcases that use the Pokemon's species scoring scale</span></li>
+<li class="update"><span class="date">2024-09-10</span><span class="description">Pumpkaboo and Gourgeist are back and working</span></li>
+<li class="update"><span class="date">2024-09-09</span><span class="description">Removed Pumpkaboo and Gourgeist temporarily. Their sizes are calculated differently</span></li>
+<li class="update"><span class="date">2024-08-03</span><span class="description">Added Adventure Week Rock Type Showcase and fixed slight weight calc bug</span></li>
+<li class="update"><span class="date">2024-07-30</span><span class="description">Removed Mega Evolutions since they don't function like regular evolutions</span></li>
+<li class="update"><span class="date">2024-07-29</span><span class="description">Added Super Buddy and Steel Type showcases</span></li>
+</ul>
+<div class="back-to-top">
+<a href="#top">Back to top</a></div>
+</details>
 </footer>
-<script>
-init();
-</script>
 </body>
 </html>

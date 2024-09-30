@@ -1,13 +1,99 @@
-footer {
+#output-placeholder {
 	font-style: italic;
+	color: var( --pkmn-yellow );
+	opacity: 0.8;
+	margin: 3rem auto;
+}
+
+
+details {
+	background-color: var( --pkmn-lt-blue-90 );
+	border-radius: 1rem;
+	padding: 1rem 2rem;
+	margin: 1em;
+}
+summary {
+	margin-left: -1rem;
+	margin-right: -1rem;
+	border-radius: 1rem;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	gap: 0.5em;
+	justify-content: start;
+	align-content: flex-start;
+	align-items: center;
+}
+summary::-webkit-details-marker {
+ display: none;
+}
+summary > .pokeball-marker {
+	display: inline-block;
+	width: 1em;
+	content: url( "../../icons/pokemon/pokeball.svg" );
+	filter: var(--filter-pkmn-yellow);
+	opacity: 0.8;
+}
+details[open] > summary > .pokeball-marker {
+	content: url( "../../icons/pokemon/pokeballopen.svg" );
+}
+summary h2 {
+	font-size: 1.25em;
+	margin: 0;
+}
+details h3 {
+	font-size: 1em;
+}
+
+.latest {
+	color: var( --pkmn-lt-blue-20 );
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+.prev-updates {
+	list-style-type: none;
+	padding: 0;
+	margin: 1rem;
+	background-color: var( --pkmn-lt-blue-40 );
+	border-radius: 1rem;
+}
+.update {
+	font-size: 0.85em;
+	padding: 0.5em 1em;
+	display: grid;
+	grid-template-columns: 7em 1fr;
+	column-gap: 0.5em;
+	align-items: start;
+}
+.update:nth-child(even) {
+	background-color: var( --pkmn-lt-blue-50 );
+}
+.update:last-child {
+	border-radius: 0 0 1rem 1rem;
+}
+.update .date {
+	color: var( --pkmn-dk-blue-60 );
+}
+.update .description {
+	text-wrap: wrap;
+	color: black;
+}
+
+#qr-code {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	max-width: 400px;
 }
 
 #inputs {
 	display: block;
-	background-color: rgba( 255,255,255, 0.1 );
+	background-color: var( --pkmn-lt-blue-90 );
 	border-radius: 3rem;
 	padding: 1rem;
-	margin: 1em;
+	margin: 1rem;
 }
 
 #inputs h2 {
@@ -29,6 +115,7 @@ footer {
 
 legend, label {
 	justify-self: right;
+	text-align: right;
 }
 .input-error,
 #input-size {
@@ -36,7 +123,7 @@ legend, label {
 	justify-self: center;
 }
 #pick-pokemon {
-	box-sizing: border-box;
+	height: 3rem;
 }
 #input-height,
 #input-weight {
@@ -47,20 +134,22 @@ legend, label {
 #input-hp {
 	width: 5rem;
 	display: inline-block;
-	vertical-align: middle;
-	margin-right: 2rem;
 }
 
 .input-ivs {
 	justify-self: left;
-	vertical-align: middle;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: center;
+	gap: 0.5em;
 }
 
 .input-ivs img {
 	display: inline-block;
-	height: 2rem;
-	width: auto;
-	vertical-align: middle;
+	max-height: 1em;
 	filter: drop-shadow( 0px 0px 12px rgba(0,0,0,0.2) );
 }
 
@@ -68,12 +157,19 @@ legend, label {
 
 input[type=text],
 input[type=number] {
-	background-color: rgba( 255,255,255,0.7 );
+	background-color: var( --pkmn-lt-blue-30 );
 	padding: 0.5rem;
 	border-color: transparent;
 	border-radius: 0.75rem;
 	font-size: 1.5rem;
 	box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+
+input[type=text]:focus,
+input[type=number]:focus {
+	box-shadow: inset 0 0 0 2px;
+	outline: 3px solid var(--pkmn-yellow );
+	outline-offset: 0;
 }
 
 input[aria-invalid=true] {
@@ -101,7 +197,7 @@ fieldset * {
 	display: inline-block;
 }
 fieldset div {
-	background-color: rgba( 255,255,255,0.7 );
+	background-color: var( --pkmn-lt-blue-30 );
 	color: #333333;
 	border-radius: 1.5rem;
 	padding: 0.75rem;
@@ -163,6 +259,7 @@ button:hover {
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-items: flex-start;
+	margin: 1rem;
 }
 
 svg path {
@@ -173,6 +270,7 @@ svg path {
 svg text {
 	text-anchor: middle;
 	dominant-baseline: middle;
+	font-size: 10px;
 }
 
 .stroke-red		{ stroke: var( --pkmn-red ); }

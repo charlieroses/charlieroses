@@ -1,12 +1,30 @@
 :root {
 	--pkmn-red: #B92808;
 	--pkmn-bright-red: #EC5615;
+	--pkmn-dk-blue-10: #05080c;
+	--pkmn-dk-blue-20: #0b1019;
+	--pkmn-dk-blue-30: #101825;
+	--pkmn-dk-blue-40: #152031;
+	--pkmn-dk-blue-50: #1a283e;
+	--pkmn-dk-blue-60: #20304b;
+	--pkmn-dk-blue-70: #253857;
+	--pkmn-dk-blue-80: #2a4063;
+	--pkmn-dk-blue-90: #30486f;
 	--pkmn-blue: #35507C;
-	--pkmn-dk-blue: #304977;
+	--pkmn-lt-blue-90: #4a6289;
+	--pkmn-lt-blue-80: #5d7396;
+	--pkmn-lt-blue-70: #7285a4;
+	--pkmn-lt-blue-60: #8696b1;
+	--pkmn-lt-blue-50: #9aa8be;
+	--pkmn-lt-blue-40: #aeb9ca;
+	--pkmn-lt-blue-30: #c3cbd8;
+	--pkmn-lt-blue-20: #d7dce5;
+	--pkmn-lt-blue-10: #ebeef2;
 	--pkmn-yellow: #FECA04;
 	--pkmn-lt-gray: #C3C3C3;
 	--pkmn-dk-gray: #A0A0A0;
 	--pkmn-white-red: #F8EAE6;
+	--pkmn-white-blue: #C9D0DC;
 
 	--filter-pkmn-yellow: invert(84%) sepia(35%) saturate(2854%) hue-rotate(357deg) brightness(101%) contrast(99%);
 
@@ -17,7 +35,7 @@
 	--drago: #0763ad;
 	--elettro: #f5d13e;
 	--erba: #63bd52;
-	--foletto: #ef8dde;
+	--folletto: #ef8dde;
 	--fuoco: #ff9c52;
 	--ghiaccio: #71cec2;
 	--lotta: #e24653;
@@ -88,41 +106,4 @@ td {
 table tr:nth-child(even) td {
 	background-color: #A0A0A0;
 }
-
-/*
-
-td {
-	background-color: #C3C3C3;
-	color: #000000;
-	border-radius: 2px;
-	padding: 1rem;
-	vertical-align: center;
-}
-
-td.link a {
-	color: #B92808;
-	padding: 1ch;
-}
-
-td.link {
-	padding: 0;
-}
-
-td.link:hover,
-td.link:focus {
-	background-color: #AAAAAA;
-}
-
-td img {
-	width: 12pt;
-}
-
-th {
-	background-color: var(--pkmn-red);
-	color: rgba( 255,255,255,0.9 );
-	border-radius: 2px;
-	padding: 1ch;
-}
-
-*/
 

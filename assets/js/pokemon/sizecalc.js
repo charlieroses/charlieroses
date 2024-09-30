@@ -1,7 +1,21 @@
 function init() {
-	initselect();
+	var		ph, d;
+	var		select, options;
 
-	document.getElementById("pick-pokemon").value = "";
+	select = document.getElementById('pick-pokemon-container');
+	options = [];
+	for( d in dex ) {
+		if( dex[d]["size-calc-ignore"] == false )
+			options.push( dex[d]["name"] );
+	}
+	accessibleAutocomplete({
+		element: select,
+		id: 'pick-pokemon',
+		source: options,
+		displayMenu: 'overlay'
+	});
+
+
 	document.getElementById( "input-weight" ).value = "";
 	document.getElementById( "input-height" ).value = "";
 	document.getElementById( "input-atk" ).value = "";
@@ -10,6 +24,11 @@ function init() {
 	document.getElementById( "atk-img" ).src = "/assets/icons/iv/00.svg";
 	document.getElementById( "def-img" ).src = "/assets/icons/iv/00.svg";
 	document.getElementById( "hp-img" ).src = "/assets/icons/iv/00.svg";
+
+	ph = document.createElement( "div" );
+	ph.id = "output-placeholder";
+	ph.appendChild( document.createTextNode( "Waiting for input..." ) );
+	document.getElementById("pokemon-info").appendChild( ph );
 }
 
 function validateInput( ) {
@@ -174,25 +193,30 @@ function validateInput( ) {
 
 	if( (!ivs[0]["val"]) && (!ivs[1]["val"]) && (!ivs[2]["val"]) ) {
 		// everyones empty no issues, points just wont be calculated
+		for( i = 0; i < ivs.length; i++ )
+			pcalc["iv-i"][i] = 0;
 		return pcalc;
 	}
 
 	// Now everyone has got something
-	pcalc["sc?"] = true;
+	pcalc["iv"] = true;
 	for( i = 0; i < ivs.length; i++ ) {
 		if( ! ivs[i]["val"] ||
 		    parseInt(ivs[i]["val"]) != parseFloat(ivs[i]["val"]) ||
 		    parseInt(ivs[i]["val"]) < 0 || 15 < parseInt(ivs[i]["val"]) ) {
 			errorfield( "input-" + ivs[i]["id"], "" );
 			errorfield( "input-ivs-error", ivs[i]["name"] + " must be a whole number between 0 and 15" );
-			pcalc["sc?"] = false;
+			pcalc["iv"] = false;
 		}
 		else
 			pcalc["iv-i"][i] = parseInt( ivs[i]["val"] );
 	}
 
-	if( ! pcalc["sc?"] )
-		errorfield( "input-ivs-error", "Showcase points will not be calculated" );
+	if( ! pcalc["iv"] ) {
+		for( i = 0; i < ivs.length; i++ )
+			pcalc["iv-i"][i] = 0;
+		errorfield( "input-ivs-error", "IVs will be ignored in showcase predictions" );
+	}
 	
 	for( i = 0; i < ivs.length; i++ )
 		updateIVImg( i );
@@ -211,9 +235,7 @@ function generate( ) {
 	if( ! pc0 )
 		return;
 
-	if( pc0["sc?"] )
-		fillShowcases( pc0 );
-		//calcShowcaseScores( pc0 );
+	fillShowcases( pc0 );
 
 	output = document.getElementById("pokemon-info");
 
@@ -241,13 +263,11 @@ function generate( ) {
 			continue;
 		}
 		pc1["sz-i"] = pc0["sz-i"];
-		pc1["sc?"] = pc0["sc?"];
+		pc1["iv"] = pc0["iv"];
 		for( i = 0; i < 3; i++ )
 			pc1["iv-i"][i] = pc0["iv-i"][i];
 		calcNewSizes( pc0, pc1 );
-		if( pc1["sc?"] )
-			fillShowcases( pc1 );
-			//calcShowcaseScores( pc1 );
+		fillShowcases( pc1 );
 		output.appendChild( pokemonCard( pc1 ) );
 	}
 
@@ -342,32 +362,6 @@ function fillShowcases( pcalc ) {
 	}
 }
 
-function calcShowcaseScores( pcalc ) {
-	var		b, t, pkmn;
-	pkmn = dex[pcalc["dex"]];
-
-	pcalc["sc"][0]["pt"] = calcShowcasePoints( dex[pcalc["sc"][0]["bl"]], pcalc );
-
-	for( t = 0; t < pkmn["type"].length; t++ ) {
-		if( baseline[pkmn["type"][t]] == "NA" ) {
-			pcalc["sc"].push( { "name": pkmn["type"][t], "na": true } );
-			continue;
-		}
-		for( b = 0; b < baseline[pkmn["type"][t]].length; b++ ) {
-			pcalc["sc"].push( { "name": pkmn["type"][t], "i": b } );
-			pcalc["sc"][pcalc["sc"].length-1]["pt"] = calcShowcasePoints( dex[baseline[pkmn["type"][t]][b]["baseline-dex"]], pcalc );
-		}
-	}
-
-	for( b = 0; b < baseline["Great-Buddy"].length; b++ ) {
-		pcalc["sc"].push( { "name": "Great-Buddy", "i": b } );
-		pcalc["sc"][pcalc["sc"].length-1]["pt"] = calcShowcasePoints( dex[baseline["Great-Buddy"][b]["baseline-dex"]], pcalc );
-	}
-	for( b = 0; b < baseline["Super-Buddy"].length; b++ ) {
-		pcalc["sc"].push( { "name": "Super-Buddy", "i": b } );
-		pcalc["sc"][pcalc["sc"].length-1]["pt"] = calcShowcasePoints( dex[baseline["Super-Buddy"][b]["baseline-dex"]], pcalc );
-	}
-}
 
 function calcShowcasePoints( bpkmn, pcalc ) {
 	var		i, j;
@@ -394,6 +388,9 @@ function calcShowcasePoints( bpkmn, pcalc ) {
 		ret[0] = ret[1];
 		ret[1] = i;
 	}
+
+	if( pcalc["iv"] == false )
+		ret[1] += 50;
 
 	return ret;
 }
@@ -517,12 +514,8 @@ function pokemonCard( pcalc ) {
 	pkmn = dex[pcalc["dex"]];
 
 
-	if( pcalc["sc?"] ) {
-		card = pokecard( pkmn["name"], 2 );
-		card.classList.add( "has-showcase" );
-	}
-	else
-		card = pokecard( pkmn["name"] );
+	card = pokecard( pkmn["name"], 2 );
+	card.classList.add( "has-showcase" );
 
 	if( ! pkmn["available"] )
 		card.classList.add( "unavailable" );
@@ -600,9 +593,6 @@ function pokemonCard( pcalc ) {
 		appendRow( card, 0, cardRowRange( pcalc["wt-d"], "kg" ) );
 		appendRow( card, 0, cardRowRange( pcalc["ht-d"], "m" ) );
 	}
-
-	if( !pcalc["sc?"] )
-		return card;
 
 	if( pkmn["plain-text"].startsWith("Mega") || pkmn["plain-text"].startsWith("Primal") )
 		appendRow( card, 0, cardRowError( "Note: Mega-evolved Pokemon can be entered in showcases, but their showcase score is based on their unevolved stats." ) );
@@ -711,7 +701,7 @@ function initpcalc( d ) {
 		"wt-d": [ 0.0, 0.0 ],
 		"ht": [ 0.0, 0.0 ],
 		"wt": [ 0.0, 0.0 ],
-		"sc?": false,
+		"iv": false,
 		"iv-i": [ 0, 0, 0 ],
 		"sc": [
 			{ "name": "Species", "baseline-dex": d, "pt": [ 0, 0 ] }

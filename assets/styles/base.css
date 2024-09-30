@@ -39,6 +39,10 @@ td.col-right {
 	width: 1px;
 }
 
-summary {
+details summary {
 	cursor: pointer;
+}
+
+details summary > * {
+	display: inline;
 }

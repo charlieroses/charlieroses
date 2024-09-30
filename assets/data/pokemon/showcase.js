@@ -32,7 +32,7 @@ var		baseline = {
 			"baseline-dex": "125" // Electabuzz
 		}],
 	"Fairy": [
-{
+		{
 			"date": "10/2/24",
 			"baseline-dex": "self"
 		},
@@ -42,7 +42,7 @@ var		baseline = {
 			"baseline-dex": "716" // Xerneas
 		}],
 	"Fighting": [
-{
+		{
 			"date": "10/2/24",
 			"baseline-dex": "self"
 		},
