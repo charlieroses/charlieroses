@@ -68,7 +68,12 @@ var		baseline = {
 			"date": "6/3/24",
 			"baseline-dex": "178" // Xatu
 		}],
-	"Ghost": "NA",
+	"Ghost": [
+		{
+			"event": "Halloween: Part 1",
+			"date": "10/21/24",
+			"baseline-dex": "self"
+		}],
 	"Grass": [
 		{
 			"event": "Verdant Wonders",
