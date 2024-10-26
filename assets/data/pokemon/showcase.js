@@ -56,6 +56,11 @@ var		baseline = {
 			"event": "Scorching Steps",
 			"date": "6/21/24",
 			"baseline-dex": "126" // Magmar
+		},
+{
+			"event": "GO Bigger",
+			"date": "10/26/24",
+			"baseline-dex": "6" // Charizard
 		}],
 	"Flying": [
 		{
@@ -79,6 +84,11 @@ var		baseline = {
 			"event": "Verdant Wonders",
 			"date": "3/23/24",
 			"baseline-dex": "192" // Sunflora
+		},
+{
+			"event": "GO Bigger",
+			"date": "10/26/24",
+			"baseline-dex": "3" // Venusaur
 		}],
 	"Ground": [
 		{
@@ -126,5 +136,10 @@ var		baseline = {
 			"event": "Spelunker's Cove",
 			"date": "6/15/24",
 			"baseline-dex": "364" // Sealeo
+		},
+{
+			"event": "GO Bigger",
+			"date": "10/26/24",
+			"baseline-dex": "9" // Blastoise
 		}]
 };
