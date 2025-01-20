@@ -121,6 +121,11 @@ var		baseline = {
 			"baseline-dex": "299" // Nosepass
 		}],
 	"Steel": [
+{
+			"event": "Steeled Resolve",
+			"date": "1/20/25",
+			"baseline-dex": "self"
+		},
 		{
 			"event": "Strength of Steel",
 			"date": "7/30/24",
