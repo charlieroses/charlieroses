@@ -1,3 +1,8 @@
+:root {
+	--filter-black: brightness(0) saturate(100%);
+	--filter-white: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7463%) hue-rotate(85deg) brightness(100%) contrast(109%);
+}
+
 body {
 	margin: 1rem auto;
 	max-width: 80rem;
@@ -39,10 +44,43 @@ td.col-right {
 	width: 1px;
 }
 
+#skip-navigation a {
+	position:	absolute;
+	left:	-10000px;
+	top:	auto;
+	width:	1px;
+	height:	1px;
+	overflow:	hidden;
+}
+
+#skip-navigation a:focus {
+	position:	static;
+	width:	auto;
+	height:	auto;
+}
+
+
 details summary {
 	cursor: pointer;
 }
 
 details summary > * {
 	display: inline;
+}
+
+s::before,
+s::after {
+	clip-path: inset(100%);
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+s::before {
+	content: " [striken start] ";
+}
+s::after {
+	content: " [striken end] ";
 }

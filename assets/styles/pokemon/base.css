@@ -20,13 +20,17 @@
 	--pkmn-lt-blue-30: #c3cbd8;
 	--pkmn-lt-blue-20: #d7dce5;
 	--pkmn-lt-blue-10: #ebeef2;
+	--pkmn-dk-yellow-2: #e0c725;
+	--pkmn-dk-yellow-1: #f0c725;
 	--pkmn-yellow: #FECA04;
+
 	--pkmn-lt-gray: #C3C3C3;
 	--pkmn-dk-gray: #A0A0A0;
 	--pkmn-white-red: #F8EAE6;
 	--pkmn-white-blue: #C9D0DC;
 
 	--filter-pkmn-yellow: invert(84%) sepia(35%) saturate(2854%) hue-rotate(357deg) brightness(101%) contrast(99%);
+	--filter-pkmn-red: invert(12%) sepia(95%) saturate(6730%) hue-rotate(29deg) brightness(94%) contrast(94%);
 
 	--acciaio: #5a90a9;
 	--acqua: #5395de;
@@ -46,6 +50,12 @@
 	--terra: #d87846;
 	--veleno: #a567c7;
 	--volante: #88adde;
+	
+	--dynamax: #d84b8a;
+	--gigamax: #9f0f62;
+
+	--filter-dynamax: invert(41%) sepia(93%) saturate(499%) hue-rotate(284deg) brightness(86%) contrast(98%);
+	--filter-gigamax: invert(17%) sepia(65%) saturate(4103%) hue-rotate(309deg) brightness(78%) contrast(102%);
 }
 
 body {
@@ -103,7 +113,201 @@ td {
 	color: #000000;
 }
 
-table tr:nth-child(even) td {
+table tr:nth-child(2n+1) td {
 	background-color: #A0A0A0;
 }
+
+details {
+	background-color: var( --pkmn-lt-blue-90 );
+	border-radius: 1rem;
+	padding: 1rem 2rem;
+	margin: 1em;
+}
+summary {
+	margin-left: -1rem;
+	margin-right: -1rem;
+	border-radius: 1rem;
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	gap: 0.5em;
+	justify-content: start;
+	align-content: flex-start;
+	align-items: center;
+}
+summary::-webkit-details-marker {
+ display: none;
+}
+summary > .pokeball-marker {
+	display: inline-block;
+	width: 1em;
+	content: url( "../../icons/pokemon/pokeball.svg" );
+	filter: var(--filter-pkmn-yellow);
+	opacity: 0.8;
+}
+details[open] > summary > .pokeball-marker {
+	content: url( "../../icons/pokemon/pokeballopen.svg" );
+}
+summary h2 {
+	font-size: 1.25em;
+	margin: 0;
+}
+details h3 {
+	font-size: 1em;
+}
+
+.latest {
+	color: var( --pkmn-lt-blue-20 );
+	font-style: italic;
+	font-size: 0.9em;
+}
+
+.prev-updates {
+	list-style-type: none;
+	padding: 0;
+	margin: 1rem;
+	background-color: var( --pkmn-lt-blue-40 );
+	border-radius: 1rem;
+}
+.update {
+	font-size: 0.85em;
+	padding: 0.5em 1em;
+	display: grid;
+	grid-template-columns: 7em 1fr;
+	column-gap: 0.5em;
+	align-items: start;
+}
+.update:nth-child(even) {
+	background-color: var( --pkmn-lt-blue-50 );
+}
+.update:last-child {
+	border-radius: 0 0 1rem 1rem;
+}
+.update .date {
+	color: var( --pkmn-dk-blue-60 );
+}
+.update .description {
+	text-wrap: wrap;
+	color: black;
+}
+
+#qr-code {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	max-width: 400px;
+}
+
+#inputs {
+	display: block;
+	background-color: var( --pkmn-lt-blue-90 );
+	border-radius: 3rem;
+	padding: 1rem;
+	margin: 1rem;
+}
+
+#inputs h2 {
+	margin: 1rem auto 2rem auto;
+}
+#inputs button{
+	margin: 1.5rem auto 1rem auto;
+}
+
+.input-layout {
+	margin: 0 auto;
+	width: 80%;
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 33% 66%;
+	gap: 1rem;
+	align-items: center;
+}
+
+legend, label {
+	justify-self: right;
+	text-align: right;
+	color: var(--pkmn-yellow);
+	font-weight: bold;
+}
+
+.input-error {
+	grid-column: span 2;
+	justify-self: center;
+	font-weight: bold;
+	font-style: italic;
+	color: #f8b0b0;
+}
+
+input[type=text],
+input[type=number] {
+	background-color: var( --pkmn-lt-blue-30 );
+	padding: 0.5rem;
+	border-color: transparent;
+	border-radius: 0.75rem;
+	font-size: 1.5rem;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+
+input[type=text]:focus,
+input[type=number]:focus {
+	box-shadow: inset 0 0 0 2px;
+	outline: 3px solid var(--pkmn-yellow );
+	outline-offset: 0;
+}
+
+input[aria-invalid=true] {
+	background-color: #be796f;
+}
+
+
+fieldset {
+	border: none;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+fieldset * {
+	display: inline-block;
+}
+fieldset div {
+	background-color: var( --pkmn-lt-blue-30 );
+	color: #333333;
+	border-radius: 1.5rem;
+	padding: 0.75rem;
+	vertical-align: center;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+fieldset label * {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	pointer-events: auto;
+}
+
+input[type=radio] {
+	position: fixed;
+	opacity: 0;
+}
+
+button {
+	display: block;
+	margin: 0 auto;
+	padding: 0.75em;
+	background-color: var(--pkmn-red);
+	border: none;
+	border-radius: 0.5em;
+	box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+	text-align: center;
+	color: rgba( 255, 255, 255, 0.9 );
+	font-size: 1.5rem;;
+	font-weight: bold;
+}
+
+button:focus,
+button:hover {
+	background-color: var(--pkmn-bright-red);
+}
+
 

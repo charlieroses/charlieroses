@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<base href="/home/charlie/Documents/charlieroses-C/" />
+<link rel="icon" href="utils/pokemon/favicon.ico" type="image/icon" sizes="any" />
+<link rel="icon" href="utils/pokemon/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="utils/pokemon/apple-touch-icon.png" />
+<link rel="manifest" href="utils/pokemon/manifest.webmanifest" />
+<link rel="stylesheet" href="assets/styles/base.css" type="text/css" />
+<link rel="stylesheet" href="assets/styles/pokemon/base.css" type="text/css" />
+<link rel="stylesheet" href="assets/styles/pokemon/go.css" type="text/css" />
+<meta name="theme-color" content="#35507C" />
+
+<title>Max Battle Team Builder</title>
+
+<link rel="stylesheet" href="assets/styles/accessible-autocomplete.min.css" type="text/css" />
+<link rel="stylesheet" href="assets/styles/pokemon/card.css" type="text/css" />
+<link rel="stylesheet" href="assets/styles/pokemon/dynacalc.css" type="text/css" />
+
+<script type="text/javascript" src="assets/data/pokemon/dynadex.js"></script>
+<script type="text/javascript" src="assets/data/pokemon/dynamax.js"></script>
+<script type="text/javascript" src="assets/data/pokemon/types.js"></script>
+<script type="text/javascript" src="assets/data/pokemon/moves.js"></script>
+<script type="text/javascript" src="assets/data/pokemon/levels.js"></script>
+<script type="text/javascript" src="assets/js/accessible-autocomplete.min.js"></script>
+<script type="text/javascript" src="assets/js/pokemon/base.js"></script>
+<script type="text/javascript" src="assets/js/pokemon/card.js"></script>
+<script type="text/javascript" src="assets/js/pokemon/dynateam.js"></script>
+</head>
+<body>
+<header id="top">
+<h1 id="evolution-showcase-calculator">Max Battle Team Builder</h1>
+<div class="pokeball-divider">
+	<img alt="" src="assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="assets/icons/pokemon/pokeball.svg" />
+</div>
+</header>
+<main id="main">
+<p>
+Most max battle and raid guides typically only list the top
+counters for each boss.
+For raids, if you don't have any of the good counters, it's
+less an issue because you can rejoin the battle and
+<a href="https://www.dictionary.com/e/slang/zerg-rush/">zerg rush</a> the boss.
+For max battles where you only get 3 pokemon, it can be a bit
+of a problem.
+Strong Dynamax pokemon are also extremely expensive and some
+have extremely limited availability, like Gigantamax Lapras
+who was only available for 3 hours.
+</p>
+<p>
+This guide lists out <em>every</em> available Dynamax Pokemon
+and how they stack up against Gigantamax Kingler so that you can
+build the best team possible based on the Pokemon and resources
+that you have available.
+</p>
+<div class="pokeball-divider">
+	<img alt="" src="assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="assets/icons/pokemon/pokeball.svg" />
+</div>
+
+<div id="skip-navigation"><a href="#boss-pokemon-info">Skip navigation</a></div>
+<nav aria-label="Page Navigation">
+<ul>
+<li><a href="#boss-pokemon-info">Dynamax Zapdos</a></li>
+<li><a href="#attack-pokemon-info">Attackers</a></li>
+<li><a href="#support-pokemon-info">Strong Supporters</a></li>
+<li><a href="#other-pokemon-info">Weak Supporters</a></li>
+<li><a href="#more-information">More Details</a></li>
+</ul>
+</nav>
+
+<output id="boss-pokemon-info"></output>
+<output id="attack-pokemon-info"></output>
+<output id="support-pokemon-info"></output>
+<script>init_basic("99-G");</script>
+<div class="pokeball-divider">
+	<img alt="" src="assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="assets/icons/pokemon/pokeball.svg" />
+</div>
+<details>
+<summary>
+<img alt="" src="assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="more-information">More Information</h2>
+</summary>
+<h3>Fast Moves in the Power Up Phase</h3>
+<p>
+The amount of damage done during the "Power Up" phase is negligible in G-Max Battles.
+</p>
+<p>
+No single attack does enough damage to make a meaningful dent in the bosses HP.
+This means they also don't do enough damage to charge the Max meter by more than the bare minimum.
+Since all moves charge the max meter by the same amount, many quick weak attacks will be better
+than one slow strong attack.
+More attacks = more charge = more dynamaxing = more damage.
+</p>
+<h3>Fast Moves in the Dynamax Phase</h3>
+<p>
+The Max Attack used in the Dynamax phase is based on the type of the
+Pokemon's Fast Move.
+If you have a Gigantamax Pokemon, its first attack in each phase will be it's
+unique G-Max Attack.
+</p>
+<p>
+All Max Moves have the same power level based on their Max level, regardless of the fast move.
+For example, Ember (10 power) and Incinerate (32 power) will both become Max
+Flare during the Dynamax phase.
+Level 1 Max Flare has a power level of 250 either way.
+</p>
+<p>
+It's better to choose Max Attacks based on type effectiveness.
+Against Dynamax Articuno, a Pokemon with Ember (10 power) will do more damage than a Pokemon
+with Mud-Slap (19 power) because Max Flare is supereffective while Max Quake is not very
+effective.
+</p>
+<div class="back-to-top">
+<a href="#top">Back to top</a></div>
+</details>
+<details>
+<summary>
+<img alt="" src="assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="quick-share">Quick Share</h2>
+</summary>
+<p>
+Scan the QR code below to share this tool</p>
+<img alt="QR Code to this site" src="assets/images/pokemon/qr/gmaxkingler.png" id="qr-code" /></details>
+</main>
+<footer id="bottom">
+<details>
+<summary>
+<img alt="" src="assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="updates">Support Me</h2>
+</summary>
+<p>
+I'm a disabled independent developer working on small
+independent projects in an effort to recover from a
+traumatic brain injury.
+I have no affiliation with Niantic or the Pokemon Company.
+I don't get paid to make or maintain tools like this.
+If you think I should get paid and wanna see more, or if
+you just want to support my health and recovery, send me a
+<a href="https://ko-fi.com/charlierosesdev">Ko-fi</a>.
+</p>
+<div class="back-to-top">
+<a href="#top">Back to top</a></div>
+</details>
+</footer>
+</body>
+</html>

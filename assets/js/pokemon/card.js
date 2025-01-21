@@ -32,8 +32,10 @@ function pokecard( title="", cols=1 ) {
 	card.lastChild.classList.add( "card-body" );
 	card.lastChild.classList.add( "card-cols-" + cols.toString() );
 
-	for( c = 0; c < cols; c++ )
+	for( c = 0; c < cols; c++ ) {
 		card.lastChild.appendChild( cardColumn() );
+		card.lastChild.lastChild.classList.add( "card-col-" + c );
+	}
 
 	return card;
 }
@@ -52,6 +54,12 @@ function cardRow( ) {
 
 	row = document.createElement( "div" );
 	row.classList.add( "card-row" );
+
+	return row;
+}
+
+function AppendRow( card, row, c=0 ) {
+	card.childNodes[2].childNodes[c].appendChild( row );
 
 	return row;
 }

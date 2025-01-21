@@ -51,16 +51,8 @@
 	gap: 0.5em;
 }
 
-.pokemon-card img {
-	width: 65%;
-	max-width: 65%;
-}
 .card-row {
 	text-align: center;
-}
-.card-row * {
-	display: inline-block;
-	margin: 0 0.5em;
 }
 .card-row-spacer {
 	height: 0.75em;

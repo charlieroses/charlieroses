@@ -1,0 +1,490 @@
+.back-to-top a { /* TODO Applies to all GO? */
+	text-decoration: none;
+	background-color: var(--pkmn-lt-blue-90);
+	padding: 0.5em 1em;
+	border-radius: 0.25em;
+}
+.back-to-top a:hover,
+.back-to-top a:focus {
+	background-color: var(--pkmn-lt-blue-80);
+}
+
+details .back-to-top a {
+	background-color: var(--pkmn-lt-blue-80);
+}
+details .back-to-top a:hover,
+details .back-to-top a:focus {
+	background-color: var(--pkmn-lt-blue-70);
+}
+
+.back-to-top-row { /* TODO put in card.css */
+	text-align: right;
+}
+.back-to-top-row a {
+	text-decoration: none;
+	color: var( --pkmn-red );
+	background-color: #BFBFBF;
+	border-radius: 0.25em;
+	padding: 0.5em 1em;
+}
+.back-to-top-row a:hover,
+.back-to-top-row a:focus {
+	color: var( --pkmn-bright-red );
+	background-color: #C6C6C6;
+}
+
+nav ul {
+	display: grid;
+	width: 100%;
+	padding: 0;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	gap: 0.75em;
+	justify-content: center;
+	justify-items: stretch;
+	align-items: stretch;
+}
+nav ul li {
+	display: block;
+}
+nav ul li a {
+	display: flex;
+	height: 100%;
+	max-height: 2.5em;
+	line-height: 1.25em;
+	padding: 0.5em;
+	border-radius: 0.5em;
+	background-color: var( --pkmn-lt-blue-80 );
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	font-weight: bold;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+	background-color: var( --pkmn-lt-blue-70 );
+	color: var(--pkmn-yellow);
+}
+
+.weather-radio + div > .weather-name {
+	background-color: transparent;
+	box-shadow: none;
+}
+.weather-radio + div > img {
+	width: 2em;
+	background-color: transparent;
+	box-shadow: none;
+}
+.weather-radio:checked + div {
+	background-color: #e0b715;
+	color: #FFFFFF;
+}
+.weather-radio:checked + div > .weather-name {
+	background-color: transparent;
+	color: #FFFFFF;
+}
+.weather-radio:checked + div > img {
+	background-color: transparent;
+	filter: var(--filter-white);
+}
+.weather-radio:focus + div,
+.weather-radio:hover + div {
+	background-color: #e9f0fc;
+}
+.weather-radio:checked:focus + div,
+.weather-radio:checked:hover + div {
+	background-color: #f0c725;
+}
+
+
+.typeadv-red-drk-drk {
+	background-color: #A62407;
+}
+.typeadv-red-drk {
+	background-color: #B92808;
+}
+.typeadv-red {
+	background-color: #EC5615;
+}
+.typeadv-red-gray {
+	background-color: #BF927E;
+}
+.typeadv-gray {
+	background-color: #999999;
+}
+.typeadv-green-gray {
+	background-color: #78B678;
+}
+.typeadv-green {
+	background-color: #00CC00;
+}
+.typeadv-green-drk {
+	background-color: #159A31;
+}
+.typeadv-green-drk-drk {
+	background-color: #157C31;
+}
+
+.type-details-row {
+	text-align: left;
+}
+.type-details-row * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.weather-icon {
+	margin: 0;
+}
+
+output {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+.battle-tier img {
+	height: 2.5rem;
+	margin: 0.35rem;
+	filter: var(--filter-gigamax);
+	vertical-align: bottom;
+}
+
+.boss-img {
+	width: 75%;
+	max-width: 75%;
+}
+
+.battle-cost {
+	color: var(--gigamax);
+	margin-top: -0.2rem;
+	margin-bottom: 0.5rem;
+}
+.battle-cost * {
+	display: inline-block;
+	vertical-align: middle;
+}
+.battle-cost img {
+	filter: var(--filter-gigamax);
+	height: 1em;
+	margin: 0 0.35em;
+}
+
+.catch-cp-row * {
+	display: inline-block;
+	margin: 0 0.25em;
+}
+.catch-cp-row img {
+	vertical-align: text-top;
+	margin: 0 0.1em;
+}
+.cp-label {
+	font-size: 0.9em;
+}
+.cp-value {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.shiny-icon {
+	height: 1em;
+	margin: 0 0.25em;
+	vertical-align: text-top;
+}
+.shiny-available-message {
+	font-style: italic;
+	font-size: 0.9em;
+}
+.shiny-available-message * {
+	display: inline-block;
+}
+
+.stats-div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	gap: 1em;
+}
+.stats-label {
+	display: inline-block;
+	font-size: 0.8em;
+	margin: 0;
+}
+.stats-value {
+	display: inline-block;
+	font-weight: bold;
+	margin-left: 0.5em;
+}
+
+.attack-row-grid {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 2.5rem 1fr 4rem;
+	grid-template-areas:
+		"type	name	bpwr";
+	align-items: center;
+}
+.boosted-attack-row-grid {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 2.5rem 1fr 7rem 4rem;
+	grid-template-areas:
+		"type	name	apwr	bpwr";
+	align-items: center;
+}
+.attack-type {
+	grid-area: type;
+	justify-self: end;
+	width: 1rem;
+	height: 1rem;
+}
+.attack-name {
+	grid-area: name;
+	justify-self: start;
+	margin-left: 0.25em;
+}
+.stab-icon {
+	display: inline-block;
+	height: 1em;
+	vertical-align: middle;
+	opacity: 0.7;
+}
+.attack-power {
+	justify-self: end;
+	grid-area: apwr;
+	font-size: 0.9em;
+}
+.attack-power s {
+	opacity: 0.7;
+	text-decoration-thickness: 2px;
+	margin: 0 0.25em;
+	vertical-align: middle;
+}
+.boost-power {
+	grid-area: bpwr;
+}
+
+.pokemon-card {
+	width: 65rem;
+	max-width: 65rem;
+}
+#boss-pokemon-info .pokemon-card {
+	width: 55rem;
+	max-width: 55rem;
+}
+
+.pokemon-card details {
+	width: 57rem;
+	background: rgba( 0, 0, 0, 0.1 );
+	text-align: start;
+	padding: 0;
+}
+.pokemon-card summary {
+	width: 96%;
+	margin: 0 auto;
+	padding: 1rem;
+	text-align: start;
+	cursor: pointer;
+	display: grid;
+	grid-template-columns: 2rem 1fr 1fr;
+	grid-template-areas:
+		"pokeball	title	stats";
+	align-items: center;
+}
+.pokemon-card summary:hover,
+.pokemon-card summary:focus {
+	background-color: #C6C6C6;
+}
+.pokemon-card summary .title {
+	grid-area: title;
+	justify-self: start;
+	margin: 0;
+}
+.pokemon-card summary .title * {
+	display: inline-block;
+	vertical-align: middle;
+}
+.pokemon-card summary .title h4 {
+	margin: 0;
+	margin-right: 0.25em;
+}
+.pokemon-card summary .stats-div {
+	grid-area: stats;
+	justify-self: end;
+}
+.pokemon-card summary::-webkit-details-marker {
+	display: none;
+}
+.pokemon-card summary > .pokeball-marker {
+	grid-area: pokeball;
+	justify-self: end;
+	display: inline-block;
+	width: 1em;
+	content: url( "../../icons/pokemon/pokeball.svg" );
+	filter: var(--filter-pkmn-red);
+	opacity: 0.8;
+	margin: 0;
+	padding: 0;
+}
+.pokemon-card details[open] > summary > .pokeball-marker {
+	content: url( "../../icons/pokemon/pokeballopen.svg" );
+}
+
+.da-div-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 1em;
+	margin: 0 1.5rem;
+}
+
+h5 {
+	margin: 0;
+	color: var(--pkmn-red);
+}
+
+.power-up-costs {
+	margin: auto;
+	padding-bottom: 1.5rem;
+}
+.power-up-costs th {
+	padding: 0.25em 0.75em;
+	border-radius: 0.25em;
+	font-size: 0.9em;
+	background-color: #b93e23;
+}
+.power-up-costs td {
+	text-align: center;
+	border-radius: 0.25em;
+	background-color: #ADADAD;
+}
+.power-up-costs .icon {
+	display: inline-block;
+	height: 1em;
+	margin-left: 0.5em;
+	vertical-align: text-top;
+}
+
+
+.card-row-header {
+	margin-top: 0.5em;
+	margin-bottom: 0;
+}
+.card-row-header span {
+	vertical-align: middle;
+}
+.card-row-header .type-icon {
+	vertical-align: middle;
+}
+.pokemon-card h4 {
+	color: black;
+}
+
+.da-div {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	width: 50%;
+}
+.max-cont {
+	width: 100%;
+	margin: 0;
+}
+.defend-grid, .max-grid, .fast-grid {
+	width: 100%;
+	margin: 0.25rem 0;
+	display: grid;
+	align-items: center;
+	gap: 0.5em;
+}
+.defend-grid {
+	grid-template-columns: 2rem auto 6rem;
+	grid-template-areas:
+		"cicon	cname	adv";
+}
+.max-grid {
+	grid-template-columns: 2rem auto 6rem;
+	grid-template-areas:
+		"micon	mname	adv";
+}
+.fast-grid {
+	grid-template-columns: 2rem 2rem auto 6rem;
+	grid-template-areas:
+		"ficon	ficon	fname	eps";
+}
+img.type-icon {
+	display: inline-block;
+	margin: 0.2rem;
+	padding: 0;
+	height: 2rem;
+	width: auto;
+	filter: drop-shadow( 0 0 0.2rem #CCCCCC );
+}
+.charge-icon {
+	grid-area: cicon;
+	justify-self: end;
+}
+.max-icon {
+	grid-area: micon;
+	justify-self: end;
+}
+.fast-icon {
+	grid-area: ficon;
+	justify-self: end;
+	width: 1rem;
+	height: 1rem;
+}
+.charge-attack {
+	grid-area: cname;
+}
+.max-attack {
+	grid-area: mname;
+	font-weight: bold;
+	text-align: start;
+}
+.gmax-attack {
+	color: var(--gigamax);
+}
+.fast-attack {
+	grid-area: fname;
+	text-align: start;
+	font-size: 0.9em;
+}
+.fast-attack img {
+	display: inline-block;
+	height: 1em;
+	vertical-align: text-top;
+	margin-left: 0.5em;
+}
+.typeadv-div {
+	grid-area: adv;
+	display: inline-block;
+	border-radius: 0.25em;
+	margin: 0;
+	padding-left: 0.25em;
+	padding-right: 0.25em;
+	text-align: center;
+	font-weight: bold;
+}
+.sec {
+	grid-area: eps;
+	margin: 0;
+	text-align: center;
+}
+.sec .value {
+	display: inline-block;
+	margin: 0;
+}
+.sec .unit {
+	display: inline-block;
+	font-size: 0.6em;
+	margin-left: 0.5em;
+}
+
+.card-row .weather-icon {
+	height: 1.5rem;
+}

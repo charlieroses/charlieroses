@@ -1,0 +1,28 @@
+<svg version="1.1"
+	viewBox="0 0 342 34"
+	xmlns="http://www.w3.org/2000/svg">
+
+	<circle cx="17" cy="17" r="17" fill="#FFFFFF" />
+	<rect x="17" y="0" width="308" height="34" fill="#FFFFFF" />
+	<circle cx="325" cy="17" r="17" fill="#FFFFFF" />
+
+	<circle cx="17" cy="17" r="11" fill="#cccccc" />
+	<rect x="17" y="6" width="93" height="22" fill="#cccccc" />
+
+	<rect x="116" y="6" width="114" height="22" fill="#cccccc" />
+
+	<rect x="236" y="6" width="89" height="22" fill="#cccccc" />
+	<circle cx="325" cy="17" r="11" fill="#cccccc" />
+
+
+	<circle cx="12" cy="17" r="11" fill="#df8e16" />
+
+
+	<mask id="reveal-one">
+		<circle cx="17" cy="17" r="17" fill="#FFFFFF" />
+		<circle cx="17" cy="17" r="11" fill="#000000" />
+		<rect x="17" y="6" width="20" height="22" fill="#000000" />
+	</mask>
+
+	<circle cx="17" cy="17" r="17" fill="#FFFFFF" mask="url(#reveal-one)"/>
+</svg>
