@@ -98,8 +98,7 @@ function getPkmnImageSrc( di ) {
 	while( dir.length < 4 )
 		dir = "0" + dir;
 
-	// TODO fix after local dev
-	return "assets/images/pokemon/dex/" + dir + "/" + imgdi + ".png";
+	return "/assets/images/pokemon/dex/" + dir + "/" + imgdi + ".png";
 }
 
 function getPkmnDisplayName( di ) {

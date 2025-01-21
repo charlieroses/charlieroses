@@ -556,7 +556,7 @@ function cardRowPkmnBreakdown( dpkmn, gpkmn ) {
 	elem = document.createElement( "img" );
 	sum.appendChild( elem );
 	elem.setAttribute( "class", "pokeball-marker" );
-	elem.setAttribute( "src", "assets/icons/pokemon/pokeball.svg" );
+	elem.setAttribute( "src", "/assets/icons/pokemon/pokeball.svg" );
 	elem.setAttribute( "alt", "" );
 	elem = document.createElement( "div" );
 	sum.appendChild( elem );
