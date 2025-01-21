@@ -6,7 +6,7 @@ function getIcon( name ) {
 	elem = document.createElement( "img" );
 	elem.setAttribute( "class", "icon " + path + "-icon" );
 	elem.setAttribute( "alt", name );
-	elem.setAttribute( "src", "assets/icons/pokemon/go/" + path + ".png" );
+	elem.setAttribute( "src", "/assets/icons/pokemon/go/" + path + ".png" );
 
 	return elem;
 }

@@ -1,3 +1,28 @@
+#how-it-works-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+#how-it-works {
+	margin: 1rem auto;
+}
+#how-it-works .card-row {
+	text-align: left;
+	margin: 0 1em 1em 1em;
+}
+#how-it-works a {
+	color: var( --pkmn-red );
+	font-weight: bold;
+}
+.inline-icon {
+	display: inline;
+	vertical-align: middle;
+	height: 1.1em;
+}
+.inline-icon.gigantamax-icon {
+	filter: var( --filter-gigamax );
+}
+
 .back-to-top a { /* TODO Applies to all GO? */
 	text-decoration: none;
 	background-color: var(--pkmn-lt-blue-90);
@@ -19,6 +44,7 @@ details .back-to-top a:focus {
 
 .back-to-top-row { /* TODO put in card.css */
 	text-align: right;
+	margin-top: 1em;
 }
 .back-to-top-row a {
 	text-decoration: none;
@@ -138,9 +164,9 @@ nav ul li a:focus {
 }
 
 output {
-	display: inline-block;
 	width: 100%;
-	text-align: center;
+	display: flex;
+	justify-content: center;
 }
 
 .battle-tier img {
@@ -267,24 +293,29 @@ output {
 }
 
 .pokemon-card {
-	width: 65rem;
+	width: 100%;
 	max-width: 65rem;
+	margin: 1rem auto;
 }
 #boss-pokemon-info .pokemon-card {
-	width: 55rem;
+	width: 100%;
 	max-width: 55rem;
+	margin: 1rem auto;
 }
 
+.pokemon-card .inline-icon .gigantamax-icon {
+	filter: var(--filter-gigamax );
+}
 .pokemon-card details {
-	width: 57rem;
+	width: 100%;
 	background: rgba( 0, 0, 0, 0.1 );
 	text-align: start;
+	margin: 0.5em 0;
 	padding: 0;
 }
 .pokemon-card summary {
-	width: 96%;
-	margin: 0 auto;
-	padding: 1rem;
+	margin: 0;
+	padding: 0.5em 1em;
 	text-align: start;
 	cursor: pointer;
 	display: grid;
@@ -309,6 +340,10 @@ output {
 .pokemon-card summary .title h4 {
 	margin: 0;
 	margin-right: 0.25em;
+}
+.pokemon-card summary .gigantamax-icon {
+	height: 1.5em;
+	filter: var(--filter-gigamax);
 }
 .pokemon-card summary .stats-div {
 	grid-area: stats;

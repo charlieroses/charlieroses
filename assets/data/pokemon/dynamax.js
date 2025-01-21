@@ -84,7 +84,7 @@ function isGigamax( di ) {
 }
 
 function getMaxBossMoveset( di ) {
-	if( isGigamax(di) )
+	if( isGigamax(di) || getPkmnField(di,"max-battle-tier") == 5 )
 		return getPkmnMoveset( di, "charged", "all" );
 	else
 		return getPkmnMoveset( di, "charged", "standard" );

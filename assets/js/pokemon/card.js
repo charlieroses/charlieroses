@@ -32,9 +32,11 @@ function pokecard( title="", cols=1 ) {
 	card.lastChild.classList.add( "card-body" );
 	card.lastChild.classList.add( "card-cols-" + cols.toString() );
 
-	for( c = 0; c < cols; c++ ) {
-		card.lastChild.appendChild( cardColumn() );
-		card.lastChild.lastChild.classList.add( "card-col-" + c );
+	if( cols > 1 ) {
+		for( c = 0; c < cols; c++ ) {
+			card.lastChild.appendChild( cardColumn() );
+			card.lastChild.lastChild.classList.add( "card-col-" + c );
+		}
 	}
 
 	return card;
@@ -59,8 +61,10 @@ function cardRow( ) {
 }
 
 function AppendRow( card, row, c=0 ) {
-	card.childNodes[2].childNodes[c].appendChild( row );
-
+	if( card.childNodes[2].classList.contains( "card-cols-1" ) )
+		card.childNodes[2].appendChild( row );
+	else
+		card.childNodes[2].childNodes[c].appendChild( row );
 	return row;
 }
 

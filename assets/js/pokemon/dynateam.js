@@ -6,26 +6,35 @@ const	hardcode = {
 		"wdef": [ "870", "94", "818" ]
 	},
 	"145": {
-		"satk": [ "376" ],
-		"watk": [ "6", "849", "99", "815", "530", "68" ],
-		"sdef": [ "131", "615", "9", "832", "820" ],
-		"wdef": [ "870", "94", "818" ]
+		"satk": [ ],
+		"watk": [ "131", "144", "615" ],
+		"sdef": [ "530" ],
+		"wdef": [ "376", "812", "3" ]
 	},
 	"146": {
-		"satk": [ "376" ],
-		"watk": [ "6", "849", "99", "815", "530", "68" ],
-		"sdef": [ "131", "615", "9", "832", "820" ],
-		"wdef": [ "870", "94", "818" ]
+		"satk": [ ],
+		"watk": [ "99", "9", "849", "818", "131", "145", "131" ],
+		"sdef": [ ],
+		"wdef": [ "376", "820", "815", "530", "68", "6" ]
 	},
 	"99-G": {
-		"satk": [ "3", "145", "820" ],
-		"watk": [ "849", "812" ],
-		"sdef": [ "131", "615", "9", "94", "832", "144" ],
-		"wdef": [ "870", "3", "99", "818" ]
+		"satk": [ "3", "812" ],
+		"watk": [ "849", "145", "820" ],
+		"sdef": [ "131", "9", "376", "144", ],
+		"wdef": [ "68", "94", "870", "832" ]
 	}
 };
 
 function init_basic( gpkmni ) {
+	let		spans, s;
+
+	spans = document.getElementsByClassName( "boss-name" );
+	for( s = 0; s < spans.length; s++ ) {
+		if( isGigamax(gpkmni) )
+			spans[s].appendChild( document.createTextNode( getPkmnDisplayName(gpkmni) ) );
+		else
+			spans[s].appendChild( document.createTextNode( "Dynamax " + getPkmnDisplayName(gpkmni) ) );
+	}
 	output_gpkmn( gpkmni );
 
 	output_pkmnlist_HC( gpkmni, "Attackers" );
@@ -459,7 +468,7 @@ function attack_row( move, boost ) {
 
 function output_pkmnlist_HC( gpkmni, title ) {
 	let		out;
-	let		card;
+	let		card, row;
 	let		p;
 	let		all;
 
@@ -473,35 +482,33 @@ function output_pkmnlist_HC( gpkmni, title ) {
 
 	card = pokecard( title );
 	out.appendChild( card );
-	if( title == "Attackers" )
-		AppendRow( card, cardRowText( "These Pokemon have attacks that are supereffective against " + getPkmnField(gpkmni,"name")) );
-	else if( title == "Strong Supporters" )
-		AppendRow( card, cardRowText( "These Pokemon's attacks aren't great against " + getPkmnField(gpkmni,"name") + ". It would be a lot better to use Max Guard and Max Spirit instead") );
-	else
-		AppendRow( card, cardRowText( "This is everyone else. These are Pokemon with extremely weak attacks and defenses and anyone not fully evolved") );
+
 
 	if( title == "Attackers" ) {
-		if( hardcode[gpkmni]["satk"] ) {
-			AppendRow( card, cardRowHeader( "Strong Defense" ) );
-			AppendRow( card, cardRowText( "On top of being strong attackers, these pokemon also have solid defenses and could withstand the Power Up Phase" ) );
+		AppendRow( card, cardRowHeader( "Safe Defense" ) );
+		if( hardcode[gpkmni]["satk"].length ) {
 			for( p = 0; p < hardcode[gpkmni]["satk"].length; p++ )
 				AppendRow( card, cardRowPkmnBreakdown( hardcode[gpkmni]["satk"][p], gpkmni ) );
 		}
+		else
+			AppendRow( card, cardRowText( "There are no Attackers with a safe defense" ) );
+
 		if( hardcode[gpkmni]["watk"] ) {
-			AppendRow( card, cardRowHeader( "Weak Defense" ) );
-			AppendRow( card, cardRowText( "These pokemon do not have good defenses and could get One Hit KO'ed in the Power Up Phase. Don't send them out first." ) );
+			AppendRow( card, cardRowHeader( "Fragile Defense" ) );
 			for( p = 0; p < hardcode[gpkmni]["watk"].length; p++ )
 				AppendRow( card, cardRowPkmnBreakdown( hardcode[gpkmni]["watk"][p], gpkmni ) );
 		}
 	}
 	else if( title == "Strong Supporters" ) {
-		if( hardcode[gpkmni]["sdef"] ) {
-			AppendRow( card, cardRowHeader( "Strong Defense" ) );
+		AppendRow( card, cardRowHeader( "Safe Defense" ) );
+		if( hardcode[gpkmni]["sdef"].length ) {
 			for( p = 0; p < hardcode[gpkmni]["sdef"].length; p++ )
 				AppendRow( card, cardRowPkmnBreakdown( hardcode[gpkmni]["sdef"][p], gpkmni ) );
 		}
+		else
+			AppendRow( card, cardRowText( "There are no Supporters with a safe defense" ) );
 		if( hardcode[gpkmni]["wdef"] ) {
-			AppendRow( card, cardRowHeader( "Weak Defense" ) );
+			AppendRow( card, cardRowHeader( "Fragile Defense" ) );
 			for( p = 0; p < hardcode[gpkmni]["wdef"].length; p++ )
 				AppendRow( card, cardRowPkmnBreakdown( hardcode[gpkmni]["wdef"][p], gpkmni ) );
 		}
@@ -547,10 +554,8 @@ function cardRowPkmnBreakdown( dpkmn, gpkmn ) {
 	let		row, det, sum, elem;
 	let		field, i;
 
-	row = cardRow();
 
 	det = document.createElement( "details" );
-	row.appendChild( det );
 	sum = document.createElement( "summary" );
 	det.appendChild( sum );
 	elem = document.createElement( "img" );
@@ -566,6 +571,12 @@ function cardRowPkmnBreakdown( dpkmn, gpkmn ) {
 	field = getPkmnField( dpkmn, "type" );
 	for( i = 0; i < field.length; i++ )
 		elem.appendChild( getTypeImg(field[i]) );
+	if( isGigamax( dpkmn+"-G" ) && getTypeAdvantage(getMoveField(dpkmn+"-G","type"),getPkmnField(gpkmn,"type")) > 1 &&
+	  ( (isGigamax(gpkmn) &&  willBeAvailable(getAvailability(gpkmn),dpkmn+"-G")) ||
+	     willBeAvailable(getAvailability(gpkmn,"dynamax"),dpkmn+"-G") ) ) {
+		elem.appendChild( getIcon( "Gigantamax" ) );
+		elem.lastChild.setAttribute( "alt", "Supereffective G-Max Attack available" );
+	}
 	sum.appendChild( stats_div(dpkmn) );
 
 	det.appendChild( document.createElement( "div" ) )
@@ -600,7 +611,7 @@ function cardRowPkmnBreakdown( dpkmn, gpkmn ) {
 
 	det.appendChild( powerUpCostTable(getPkmnField(dpkmn,"dynamax-class")) );
 
-	return row;
+	return det;
 }
 
 function powerUpCostTable( clss ) {
