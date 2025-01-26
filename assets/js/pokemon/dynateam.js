@@ -13,7 +13,7 @@ const	hardcode = {
 	},
 	"146": {
 		"satk": [ ],
-		"watk": [ "99", "849", "94", "9", "818", "131", "145", "131" ],
+		"watk": [ "99", "849", "94", "9", "818", "145", "131" ],
 		"sdef": [ ],
 		"wdef": [ "376", "820", "815", "530", "68", "6" ]
 	},
@@ -571,11 +571,11 @@ function cardRowPkmnBreakdown( dpkmn, gpkmn ) {
 	field = getPkmnField( dpkmn, "type" );
 	for( i = 0; i < field.length; i++ )
 		elem.appendChild( getTypeImg(field[i]) );
-	if( isGigamax( dpkmn+"-G" ) && getTypeAdvantage(getMoveField(dpkmn+"-G","type"),getPkmnField(gpkmn,"type")) > 1 &&
+	if( isGigamax( dpkmn+"-G" ) && getTypeAdvantage(getMoveField(dpkmn+"-G","type"),getPkmnField(gpkmn,"type")) >= 1 &&
 	  ( (isGigamax(gpkmn) &&  willBeAvailable(getAvailability(gpkmn),dpkmn+"-G")) ||
 	     willBeAvailable(getAvailability(gpkmn,"dynamax"),dpkmn+"-G") ) ) {
 		elem.appendChild( getIcon( "Gigantamax" ) );
-		elem.lastChild.setAttribute( "alt", "Supereffective G-Max Attack available" );
+		elem.lastChild.setAttribute( "alt", "Effective G-Max Attack available" );
 	}
 	sum.appendChild( stats_div(dpkmn) );
 
