@@ -311,7 +311,7 @@ function output_gpkmn( di ) {
 	row.lastChild.appendChild( document.createTextNode( "Catch CP" ) );
 	row.appendChild( document.createElement( "div" ) );
 	row.lastChild.classList.add( "cp-value" );
-	row.lastChild.appendChild( document.createTextNode( pkmnCP(di,20,[0,0,0]) + " - " + pkmnCP(di,20,[15,15,15]) ) );
+	row.lastChild.appendChild( document.createTextNode( pkmnCP(di,20,[10,10,10]) + " - " + pkmnCP(di,20,[15,15,15]) ) );
 
 	row = AppendRow( card, cardRow(), 0 );
 	row.classList.add( "catch-cp-row" );
@@ -323,7 +323,7 @@ function output_gpkmn( di ) {
 	row.lastChild.appendChild( document.createTextNode("Boosted") );
 	row.appendChild( document.createElement( "div" ) );
 	row.lastChild.classList.add( "cp-value" );
-	row.lastChild.appendChild( document.createTextNode( pkmnCP(di,25,[0,0,0]) + " - " + pkmnCP(di,25,[15,15,15]) ) );
+	row.lastChild.appendChild( document.createTextNode( pkmnCP(di,25,[10,10,10]) + " - " + pkmnCP(di,25,[15,15,15]) ) );
 
 	if(( isGigamax(di) && willBeAvailable( getAvailability(di), di, "shiny" ) ) ||
 	   ( willBeAvailable( getAvailability(di,"dynamax"),di,"shiny")) ) {
