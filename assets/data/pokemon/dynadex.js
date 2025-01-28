@@ -37511,7 +37511,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				"CHRG_FLY_BRAVEBIRD",
-				"CHRG_FLY_DRILLPECK"
+				"CHRG_FLY_SKYATTACK"
 			],
 			"height-avg": 0.2,
 			"weight-avg": 1.8,
@@ -37546,7 +37546,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				"CHRG_FLY_BRAVEBIRD",
-				"CHRG_FLY_DRILLPECK"
+				"CHRG_FLY_SKYATTACK"
 			],
 			"height-avg": 0.8,
 			"weight-avg": 16,
@@ -37580,7 +37580,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				"CHRG_FLY_BRAVEBIRD",
-				"CHRG_FLY_DRILLPECK"
+				"CHRG_FLY_SKYATTACK"
 			],
 			"special-charged-moves": [
 				"CHRG_STE_IRONHEAD"
@@ -37605,6 +37605,7 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
+				"in-game": false
 			}
 		},
 		"824": {
@@ -41433,7 +41434,8 @@ const	dbpokemon = {
 			"dex-index": "919",
 			"name": "Nymble",
 			"availability": {
-				"in-game": "2023-09-10"
+				"in-game": "2023-09-10",
+				"shiny": "2025-02-05"
 			},
 			"category": "Grasshopper",
 			"type": [ "Bug" ],
@@ -41468,7 +41470,8 @@ const	dbpokemon = {
 			"dex-index": "920",
 			"name": "Lokix",
 			"availability": {
-				"in-game": "2023-09-10"
+				"in-game": "2023-09-10",
+				"shiny": "2025-02-05"
 			},
 			"category": "Grasshopper",
 			"type": [ "Bug", "Dark" ],
