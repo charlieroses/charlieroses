@@ -34,31 +34,6 @@
 	background-color: var(--pkmn-lt-blue-80);
 }
 
-details .back-to-top a {
-	background-color: var(--pkmn-lt-blue-80);
-}
-details .back-to-top a:hover,
-details .back-to-top a:focus {
-	background-color: var(--pkmn-lt-blue-70);
-}
-
-.back-to-top-row { /* TODO put in card.css */
-	text-align: right;
-	margin-top: 1em;
-}
-.back-to-top-row a {
-	text-decoration: none;
-	color: var( --pkmn-red );
-	background-color: #BFBFBF;
-	border-radius: 0.25em;
-	padding: 0.5em 1em;
-}
-.back-to-top-row a:hover,
-.back-to-top-row a:focus {
-	color: var( --pkmn-bright-red );
-	background-color: #C6C6C6;
-}
-
 nav ul {
 	display: grid;
 	width: 100%;
@@ -302,105 +277,51 @@ output {
 	max-width: 55rem;
 	margin: 1rem auto;
 }
-
+#boss-pokemon-info .card-col-1 {
+	width: 100%;
+}
 .pokemon-card .inline-icon .gigantamax-icon {
 	filter: var(--filter-gigamax );
 }
-.pokemon-card details {
+
+
+.pokemon-card .pkmn-details {
 	width: 100%;
 	background: rgba( 0, 0, 0, 0.1 );
-	text-align: start;
 	margin: 0.5em 0;
-	padding: 0;
+
 }
-.pokemon-card summary {
-	margin: 0;
-	padding: 0.5em 1em;
-	text-align: start;
-	cursor: pointer;
-	display: grid;
-	grid-template-columns: 2rem 1fr 1fr;
-	grid-template-areas:
-		"pokeball	title	stats";
-	align-items: center;
+.pokemon-card .pokeball-marker {
+	filter: var(--filter-pkmn-red);
+	opacity: 0.8;
 }
 .pokemon-card summary:hover,
 .pokemon-card summary:focus {
 	background-color: #C6C6C6;
 }
-.pokemon-card summary .title {
-	grid-area: title;
-	justify-self: start;
-	margin: 0;
+.pokemon-card .pkmn-summary {
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
 }
-.pokemon-card summary .title * {
+.pokemon-card .pkmn-summary .title {
+	flex-grow: 1;
+}
+.pokemon-card .pkmn-summary .title * {
 	display: inline-block;
 	vertical-align: middle;
 }
-.pokemon-card summary .title h4 {
+.pokemon-card .pkmn-summary .title h4 {
 	margin: 0;
 	margin-right: 0.25em;
 }
-.pokemon-card summary .gigantamax-icon {
+.pokemon-card .pkmn-summary .gigantamax-icon {
 	height: 1.5em;
 	filter: var(--filter-gigamax);
 }
-.pokemon-card summary .stats-div {
-	grid-area: stats;
-	justify-self: end;
-}
-.pokemon-card summary::-webkit-details-marker {
-	display: none;
-}
-.pokemon-card summary > .pokeball-marker {
-	grid-area: pokeball;
-	justify-self: end;
-	display: inline-block;
-	width: 1em;
-	content: url( "../../icons/pokemon/pokeball.svg" );
-	filter: var(--filter-pkmn-red);
-	opacity: 0.8;
-	margin: 0;
-	padding: 0;
-}
-.pokemon-card details[open] > summary > .pokeball-marker {
-	content: url( "../../icons/pokemon/pokeballopen.svg" );
-}
 
-.da-div-container {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: flex-start;
-	gap: 1em;
-	margin: 0 1.5rem;
-}
-
-h5 {
-	margin: 0;
-	color: var(--pkmn-red);
-}
-
-.power-up-costs {
-	margin: auto;
-	padding-bottom: 1.5rem;
-}
-.power-up-costs th {
-	padding: 0.25em 0.75em;
-	border-radius: 0.25em;
-	font-size: 0.9em;
-	background-color: #b93e23;
-}
-.power-up-costs td {
-	text-align: center;
-	border-radius: 0.25em;
-	background-color: #ADADAD;
-}
-.power-up-costs .icon {
-	display: inline-block;
-	height: 1em;
-	margin-left: 0.5em;
-	vertical-align: text-top;
+.card-row .weather-icon {
+	height: 1.5rem;
 }
 
 
@@ -418,12 +339,21 @@ h5 {
 	color: black;
 }
 
+h5 {
+	margin: 0;
+	color: var(--pkmn-red);
+}
+.da-div-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	gap: 1em;
+	margin: 0 1.5rem;
+}
 .da-div {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	width: 50%;
 }
 .max-cont {
 	width: 100%;
@@ -520,6 +450,27 @@ img.type-icon {
 	margin-left: 0.5em;
 }
 
-.card-row .weather-icon {
-	height: 1.5rem;
+
+.power-up-costs {
+	margin: auto;
+	padding-bottom: 1.5rem;
 }
+.power-up-costs th {
+	padding: 0.25em 0.75em;
+	border-radius: 0.25em;
+	font-size: 0.9em;
+	background-color: #b93e23;
+}
+.power-up-costs td {
+	text-align: center;
+	border-radius: 0.25em;
+	background-color: #ADADAD;
+}
+.power-up-costs .icon {
+	display: inline-block;
+	height: 1em;
+	margin-left: 0.5em;
+	vertical-align: text-top;
+}
+
+

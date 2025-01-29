@@ -117,26 +117,27 @@ table tr:nth-child(2n+1) td {
 	background-color: #A0A0A0;
 }
 
+
 details {
 	background-color: var( --pkmn-lt-blue-90 );
 	border-radius: 1rem;
-	padding: 1rem 2rem;
 	margin: 1em;
+	padding: 0;
+	text-align: start;
 }
 summary {
-	margin-left: -1rem;
-	margin-right: -1rem;
-	border-radius: 1rem;
+	cursor: pointer;
 	list-style: none;
-	display: flex;
-	flex-direction: row;
-	gap: 0.5em;
-	justify-content: start;
-	align-content: flex-start;
+	border-radius: 1rem;
+	margin: 0;
+	padding: 0.5em 1em;
+	text-align: start;
+	display: grid;
+	grid-template-columns: 2rem auto;
 	align-items: center;
 }
 summary::-webkit-details-marker {
- display: none;
+	display: none;
 }
 summary > .pokeball-marker {
 	display: inline-block;
@@ -151,9 +152,25 @@ details[open] > summary > .pokeball-marker {
 summary h2 {
 	font-size: 1.25em;
 	margin: 0;
+	text-align: start;
 }
 details h3 {
 	font-size: 1em;
+}
+details p {
+	margin-left: 2rem;
+	margin-right: 2rem;
+}
+details .back-to-top {
+	padding-top: 0.5rem;
+	padding-bottom: 1.5rem;
+}
+details .back-to-top a {
+	background-color: var(--pkmn-lt-blue-80);
+}
+details .back-to-top a:hover,
+details .back-to-top a:focus {
+	background-color: var(--pkmn-lt-blue-70);
 }
 
 .latest {

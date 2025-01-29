@@ -551,20 +551,12 @@ function cardRowBackToTop() { // TODO this should got in card.js
 }
 
 function cardRowPkmnBreakdown( dpkmn, gpkmn ) {
-	let		row, det, sum, elem;
+	let		row, det, elem;
 	let		field, i;
 
+	det = pkmnDetailsSummary();
 
-	det = document.createElement( "details" );
-	sum = document.createElement( "summary" );
-	det.appendChild( sum );
-	elem = document.createElement( "img" );
-	sum.appendChild( elem );
-	elem.setAttribute( "class", "pokeball-marker" );
-	elem.setAttribute( "src", "/assets/icons/pokemon/pokeball.svg" );
-	elem.setAttribute( "alt", "" );
 	elem = document.createElement( "div" );
-	sum.appendChild( elem );
 	elem.setAttribute( "class", "title" );
 	elem.appendChild( document.createElement( "h4" ) ); // h4 level good
 	elem.lastChild.appendChild( document.createTextNode( getPkmnField(dpkmn,"name") ) );
@@ -577,7 +569,9 @@ function cardRowPkmnBreakdown( dpkmn, gpkmn ) {
 		elem.appendChild( getIcon( "Gigantamax" ) );
 		elem.lastChild.setAttribute( "alt", "Effective G-Max Attack available" );
 	}
-	sum.appendChild( stats_div(dpkmn) );
+
+	appendToPkmnSummary( det, elem );
+	appendToPkmnSummary( det, stats_div(dpkmn) );
 
 	det.appendChild( document.createElement( "div" ) )
 	det.lastChild.setAttribute( "class", "da-div-container" );

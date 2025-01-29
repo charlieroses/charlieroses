@@ -3,8 +3,8 @@ function getAvailableDynaPkmn( date ) {
 	let		p;
 	
 	for( p = 0; p < dbpokemon.dynadex.length; p++ ) {
-		if( willBeAvailable( date, dbpokemon.dynadex[p], "dynamax" ) ||
-		    willBeAvailable( date, dbpokemon.dynadex[p]+"-G" ) )
+//		if( willBeAvailable( date, dbpokemon.dynadex[p], "dynamax" ) ||
+//		    willBeAvailable( date, dbpokemon.dynadex[p]+"-G" ) )
 			ret.push( dbpokemon.dynadex[p] );
 	}
 
@@ -132,6 +132,10 @@ function getMaxBossCPM( tier ) {
 	return dbdynamax["battles"][tier]["cpm"];
 }
 
+function getMaxBossHP( tier ) {
+	return dbdynamax["battles"][tier]["hp"];
+}
+
 function getPowerUpCost( clss, level ) {
 	let		ret = {};
 
@@ -144,12 +148,36 @@ function getPowerUpCost( clss, level ) {
 
 const dbdynamax= {
 	"battles": {
-		1: { "cost": 200, "cpm": 0.15 },
-		2: { "cost": 400, "cpm": 0.2968 }, // TODO This is an educated guess
-		3: { "cost": 400, "cpm": 0.5 },
-		4: { "cost": 800, "cpm": 0 },
-		5: { "cost": 800, "cpm": 0.79030001 }, // I guessed right!!!
-		6: { "cost": 800, "cpm": 0.85 }
+		1: {
+			"cost": 200,
+			"cpm": 0.15,
+			"hp": 1700
+		},
+		2: {
+			"cost": 400,
+			"cpm": 0.2968, // TODO This is an educated guess
+			"hp": 0
+		},
+		3: {
+			"cost": 400,
+			"cpm": 0.5,
+			"hp": 10000
+		},
+		4: {
+			"cost": 800,
+			"cpm": 0,
+			"hp": 0
+		},
+		5: {
+			"cost": 800,
+			"cpm": 0.79030001, // I guessed right!!!
+			"hp": 15000
+		},
+		6: {
+			"cost": 800,
+			"cpm": 0.85,
+			"hp": 0
+		}
 	},
 	"moves": {
 		"cost": {
