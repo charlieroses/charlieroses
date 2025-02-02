@@ -115,6 +115,13 @@ function getPkmnDisplayName( di ) {
 	return name;
 }
 
+function getPkmnMaxBattleTier( di ) {
+	if( isGigamax(di) )
+		return 6;
+	else
+		return getPkmnField( di, "max-battle-tier" );
+}
+
 function getPkmnWeatherBoost( di ) {
 	let		type, t, wb;
 
@@ -24425,7 +24432,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game": "2019-09-16",
 				"shiny": "2020-07-03",
-				"shadow": "2023-02-01"
+				"shadow": "2023-02-01",
+				"dynamax": "2025-02-17"
 			},
 			"category": "Tiny Pigeon",
 			"type": [ "Normal", "Flying" ],
@@ -24434,6 +24442,7 @@ const	dbpokemon = {
 			"base-attack": 98,
 			"base-defense": 80,
 			"dynamax-class": 1,
+			"max-battle-tier": 1, // TODO Pidove Max Battle Tier prediction
 			"fast-moves": [
 				"FAST_NOR_QUICKATTACK",
 				"FAST_FLY_AIRSLASH"
@@ -24462,7 +24471,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game": "2019-09-16",
 				"shiny": "2020-07-03",
-				"shadow": "2023-02-01"
+				"shadow": "2023-02-01",
+				"dynamax": "2025-02-17"
 			},
 			"category": "Wild Pigeon",
 			"type": [ "Normal", "Flying" ],
@@ -24500,7 +24510,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game": "2019-09-16",
 				"shiny": "2020-07-03",
-				"shadow": "2023-02-01"
+				"shadow": "2023-02-01",
+				"dynamax": "2025-02-17"
 			},
 			"variants": [ "Male", "Female" ],
 			"category": "Proud",
@@ -25760,7 +25771,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game": "2020-01-24",
 				"shiny": "2021-07-06",
-				"shadow": "2024-03-27"
+				"shadow": "2024-03-27",
+				"dynamax": "2025-02-24"
 			},
 			"category": "Zen Charm",
 			"type": [ "Fire" ],
@@ -25769,6 +25781,7 @@ const	dbpokemon = {
 			"base-attack": 153,
 			"base-defense": 86,
 			"dynamax-class": 2,
+			"max-battle-tier": 2, // TODO Darumaka Max Battle Tier guess
 			"fast-moves": [
 				"FAST_NOR_TACKLE",
 				"FAST_FIR_FIREFANG"
@@ -25835,7 +25848,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game": "2020-01-24",
 				"shiny": "2021-07-06",
-				"shadow": "2024-03-27"
+				"shadow": "2024-03-27",
+				"dynamax": "2025-02-24"
 			},
 			"category": "Blazing Pokémon",
 			"type": [ "Fire" ],
