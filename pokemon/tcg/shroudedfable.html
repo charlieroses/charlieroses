@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/pokemon/favicon.ico" type="image/icon" sizes="any" />
+<link rel="icon" href="/pokemon/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/pokemon/apple-touch-icon.png" />
+<link rel="manifest" href="/pokemon/manifest.webmanifest" />
+<link rel="stylesheet" href="/assets/styles/base.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/base.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/tcg.css" type="text/css" />
+<meta name="theme-color" content="#35507C" />
+<title>Shrouded Fable</title>
+</head>
+<body>
+<div id="sidebar">
+<h1 id="tcg-collection">TCG Collection</h1>
+<a href="/pokemon/"><img alt="Home" src="/assets/images/pokemon/crstcg.png" /></a><h2 id="for-pokemon-go">For Pokemon Go</h2>
+<div class="link-group">
+<a class="sidebar-link" href="/pokemon/go/sizecalculator.html"><div class="sidebar-link-text">
+Showcase Calculator</div>
+</a><a class="sidebar-link" href="/pokemon/go/italianglossary.html"><div class="sidebar-link-text">
+Italian Translations</div>
+</a></div>
+<hr>
+<div class="link-group">
+<a class="sidebar-link" href="/pokemon/tcg/series.html"><div class="sidebar-link-text">
+By Series</div>
+</a><a class="sidebar-link" href="/pokemon/tcg/expansions.html"><div class="sidebar-link-text">
+By Expansion Title</div>
+</a></div>
+<hr>
+<h2 id="main-series">Main Series</h2>
+<div class="link-group">
+</div>
+<h2 id="set-completion">Set Completion</h2>
+<div id="completion-key">
+<div class="set-link empty-set">
+<img alt="" class="set-link-icon" src="/assets/icons/pokemon/tcg/sets/hiddenfates.png" /><div class="set-link-text">
+<div class="set-link-title">
+No Cards</div>
+</div>
+<div class="set-link-markers">
+<svg version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Empty Set" class="set-marker marker-empty-set"><path d="M 1.5,10 A 8.5 8.5 0 0 0 18.5,10 A 8.5 8.5 0 0 0 1.5 10 Z M 4.5,10 A 5.5 5.5 0 0 1 15.5 10 A 5.5 5.5 0 0 1 4.5 10 Z" fill="currentColor" /><path d="M 16,2 L 18,4 L 4,18 L 2,16 Z" fill="currentColor" /></svg></div>
+</div>
+<div class="set-link">
+<img alt="" class="set-link-icon" src="/assets/icons/pokemon/tcg/sets/hiddenfates.png" /><div class="set-link-text">
+<div class="set-link-title">
+In Progress</div>
+</div>
+<div class="set-link-markers">
+</div>
+</div>
+<div class="set-link complete-set">
+<img alt="" class="set-link-icon" src="/assets/icons/pokemon/tcg/sets/hiddenfates.png" /><div class="set-link-text">
+<div class="set-link-title">
+Completed</div>
+</div>
+<div class="set-link-markers">
+<svg version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Complete Set" class="set-marker marker-complete-set"><path d="M 2,2 L 18,2 L 18,18 L 2,18 Z M 5,5 L 5,15 L 15,15 L 15,5 Z" fill="currentColor" /></svg></div>
+</div>
+</div>
+<h2 id="expansion-types">Expansion Types</h2>
+<div id="expansion-key">
+<div class="set-link">
+<img alt="" class="set-link-icon" src="/assets/icons/pokemon/tcg/sets/hiddenfates.png" /><div class="set-link-text">
+<div class="set-link-title">
+Regular Expansion</div>
+</div>
+<div class="set-link-markers">
+</div>
+</div>
+<div class="set-link">
+<img alt="" class="set-link-icon" src="/assets/icons/pokemon/tcg/sets/hiddenfates.png" /><div class="set-link-text">
+<div class="set-link-title">
+Special Expansion</div>
+</div>
+<div class="set-link-markers">
+<svg version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Special Expansion" class="set-marker marker-special-expansion"><polygon points="10,0 12.938,5.954 19.511,6.909 14.755,11.545 15.877,18.090 10,15 4.122,18.090 5.245,11.545 0.489,6.909 7.061,5.954" stroke="none" fill="currentColor" /></svg></div>
+</div>
+<div class="set-link">
+<img alt="" class="set-link-icon" src="/assets/icons/pokemon/tcg/sets/hiddenfates.png" /><div class="set-link-text">
+<div class="set-link-title">
+Expansion</div>
+<div class="set-link-subtitle">
+with a Subset</div>
+</div>
+<div class="set-link-markers">
+<svg version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sub Set" class="set-marker marker-sub-set"><path d="M 19,4 v 3 h -12 A 3 3 0 0 0 7,13 h 12 v 3 h -12 A 6 6 0 0 1 7,4 Z" fill="currentColor" /></svg></div>
+</div>
+<div class="set-link">
+<img alt="" class="set-link-icon" src="/assets/icons/pokemon/tcg/sets/hiddenfates.png" /><div class="set-link-text">
+<div class="set-link-title">
+Parallel Set</div>
+<div class="set-link-subtitle">
+of an Expansion</div>
+</div>
+<div class="set-link-markers">
+<svg version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parallel Set" class="set-marker marker-parallel-set"><rect x="3" y="0" width="4" height="20" fill="currentColor" /><rect x="13" y="0" width="4" height="20" fill="currentColor" /></svg></div>
+</div>
+</div>
+</div>
+<div id="content">
+<main id="main">
+<table>
+<thead>
+<tr>
+<th class="col-center">Set Number</th>
+<th class="col-center">Dex</th>
+<th class="col-center">Name</th>
+<th class="col-center">Type</th>
+<th class="col-center">Rarity</th>
+<th class="col-center">Finish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="set-num">001/64</td>
+<td class="col-left">595</td>
+<td class="name"><div class="name-text">
+Joltik</div>
+</td>
+<td class="type Grass"><img alt="Grass" src="/assets/icons/pokemon/tcg/types/grass.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">002/64</td>
+<td class="col-left">596</td>
+<td class="name"><div class="name-text">
+Galvantula</div>
+</td>
+<td class="type Grass"><img alt="Grass" src="/assets/icons/pokemon/tcg/types/grass.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">003/64</td>
+<td class="col-left">772</td>
+<td class="name"><div class="name-text">
+Rowlet</div>
+</td>
+<td class="type Grass"><img alt="Grass" src="/assets/icons/pokemon/tcg/types/grass.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">004/64</td>
+<td class="col-left">723</td>
+<td class="name"><div class="name-text">
+Dartrix</div>
+</td>
+<td class="type Grass"><img alt="Grass" src="/assets/icons/pokemon/tcg/types/grass.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">005/64</td>
+<td class="col-left">724</td>
+<td class="name"><div class="name-text">
+Decidueye</div>
+</td>
+<td class="type Grass"><img alt="Grass" src="/assets/icons/pokemon/tcg/types/grass.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">006/64</td>
+<td class="col-left">787</td>
+<td class="name"><div class="name-text">
+Tapu Bulu</div>
+</td>
+<td class="type Grass"><img alt="Grass" src="/assets/icons/pokemon/tcg/types/grass.png" /></td>
+<td class="rarity"><img alt="Rare" src="/assets/icons/pokemon/tcg/rarity/R.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">007/64</td>
+<td class="col-left">228</td>
+<td class="name"><div class="name-text">
+Houndour</div>
+</td>
+<td class="type Fire"><img alt="Fire" src="/assets/icons/pokemon/tcg/types/fire.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">009/64</td>
+<td class="col-left">994</td>
+<td class="name"><div class="name-text">
+Iron Moth</div>
+</td>
+<td class="type Fire"><img alt="Fire" src="/assets/icons/pokemon/tcg/types/fire.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">010/64</td>
+<td class="col-left">116</td>
+<td class="name"><div class="name-text">
+Horsea</div>
+</td>
+<td class="type Water"><img alt="Water" src="/assets/icons/pokemon/tcg/types/water.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">011/64</td>
+<td class="col-left">117</td>
+<td class="name"><div class="name-text">
+Seadra</div>
+</td>
+<td class="type Water"><img alt="Water" src="/assets/icons/pokemon/tcg/types/water.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">013/64</td>
+<td class="col-left">215</td>
+<td class="name"><div class="name-text">
+Sneasel</div>
+</td>
+<td class="type Water"><img alt="Water" src="/assets/icons/pokemon/tcg/types/water.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">014/64</td>
+<td class="col-left">461</td>
+<td class="name"><div class="name-text">
+Weavile</div>
+</td>
+<td class="type Water"><img alt="Water" src="/assets/icons/pokemon/tcg/types/water.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">016/64</td>
+<td class="col-left">96</td>
+<td class="name"><div class="name-text">
+Drowzee</div>
+</td>
+<td class="type Psychic"><img alt="Psychic" src="/assets/icons/pokemon/tcg/types/psychic.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">017/64</td>
+<td class="col-left">97</td>
+<td class="name"><div class="name-text">
+Hypno</div>
+</td>
+<td class="type Psychic"><img alt="Psychic" src="/assets/icons/pokemon/tcg/types/psychic.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">018/64</td>
+<td class="col-left">355</td>
+<td class="name"><div class="name-text">
+Duskull</div>
+</td>
+<td class="type Psychic"><img alt="Psychic" src="/assets/icons/pokemon/tcg/types/psychic.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">019/64</td>
+<td class="col-left">356</td>
+<td class="name"><div class="name-text">
+Dusclops</div>
+</td>
+<td class="type Psychic"><img alt="Psychic" src="/assets/icons/pokemon/tcg/types/psychic.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">020/64</td>
+<td class="col-left">477</td>
+<td class="name"><div class="name-text">
+Dusknoir</div>
+</td>
+<td class="type Psychic"><img alt="Psychic" src="/assets/icons/pokemon/tcg/types/psychic.png" /></td>
+<td class="rarity"><img alt="Rare" src="/assets/icons/pokemon/tcg/rarity/R.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">021/64</td>
+<td class="col-left">448</td>
+<td class="name"><div class="name-text">
+Cresselia</div>
+</td>
+<td class="type Psychic"><img alt="Psychic" src="/assets/icons/pokemon/tcg/types/psychic.png" /></td>
+<td class="rarity"><img alt="Rare" src="/assets/icons/pokemon/tcg/rarity/R.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">021/64</td>
+<td class="col-left">448</td>
+<td class="name"><div class="name-text">
+Cresselia</div>
+</td>
+<td class="type Psychic"><img alt="Psychic" src="/assets/icons/pokemon/tcg/types/psychic.png" /></td>
+<td class="rarity"><img alt="Rare" src="/assets/icons/pokemon/tcg/rarity/R.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">022/64</td>
+<td class="col-left">700</td>
+<td class="name"><div class="name-text">
+Sylveon</div>
+</td>
+<td class="type Psychic"><img alt="Psychic" src="/assets/icons/pokemon/tcg/types/psychic.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">023/64</td>
+<td class="col-left">453</td>
+<td class="name"><div class="name-text">
+Croagunk</div>
+</td>
+<td class="type Fighting"><img alt="Fighting" src="/assets/icons/pokemon/tcg/types/fighting.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">024/64</td>
+<td class="col-left">454</td>
+<td class="name"><div class="name-text">
+Toxicroak</div>
+</td>
+<td class="type Fighting"><img alt="Fighting" src="/assets/icons/pokemon/tcg/types/fighting.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">025/64</td>
+<td class="col-left">901</td>
+<td class="name"><div class="name-text">
+Bloodmoon Ursaluna</div>
+</td>
+<td class="type Fighting"><img alt="Fighting" src="/assets/icons/pokemon/tcg/types/fighting.png" /></td>
+<td class="rarity"><img alt="Rare" src="/assets/icons/pokemon/tcg/rarity/R.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">025/64</td>
+<td class="col-left">901</td>
+<td class="name"><div class="name-text">
+Bloodmoon Ursaluna</div>
+</td>
+<td class="type Fighting"><img alt="Fighting" src="/assets/icons/pokemon/tcg/types/fighting.png" /></td>
+<td class="rarity"><img alt="Rare" src="/assets/icons/pokemon/tcg/rarity/R.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">026/64</td>
+<td class="col-left">988</td>
+<td class="name"><div class="name-text">
+Slither Wing</div>
+</td>
+<td class="type Fighting"><img alt="Fighting" src="/assets/icons/pokemon/tcg/types/fighting.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">027/64</td>
+<td class="col-left">41</td>
+<td class="name"><div class="name-text">
+Zubat</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">029/64</td>
+<td class="col-left">169</td>
+<td class="name"><div class="name-text">
+Crobat</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">030/64</td>
+<td class="col-left">359</td>
+<td class="name"><div class="name-text">
+Absol</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">031/64</td>
+<td class="col-left">570</td>
+<td class="name"><div class="name-text">
+Zorua</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">032/64</td>
+<td class="col-left">571</td>
+<td class="name"><div class="name-text">
+Zoroark</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Rare" src="/assets/icons/pokemon/tcg/rarity/R.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">032/64</td>
+<td class="col-left">571</td>
+<td class="name"><div class="name-text">
+Zoroark</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Rare" src="/assets/icons/pokemon/tcg/rarity/R.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">033/64</td>
+<td class="col-left">686</td>
+<td class="name"><div class="name-text">
+Inkay</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">034/64</td>
+<td class="col-left">687</td>
+<td class="name"><div class="name-text">
+Malamar</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">035/64</td>
+<td class="col-left">717</td>
+<td class="name"><div class="name-text">
+Yveltal</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">037/64</td>
+<td class="col-left">1015</td>
+<td class="name"><div class="name-text">
+Munkidori</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Double Rare" src="/assets/icons/pokemon/tcg/rarity/BS2.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">039/64</td>
+<td class="col-left">1025</td>
+<td class="name"><div class="name-text">
+Pecharunt</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Double Rare" src="/assets/icons/pokemon/tcg/rarity/BS2.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">040/64</td>
+<td class="col-left">649</td>
+<td class="name"><div class="name-text">
+Genesect</div>
+</td>
+<td class="type Steel"><img alt="Steel" src="/assets/icons/pokemon/tcg/types/steel.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">041/64</td>
+<td class="col-left">878</td>
+<td class="name"><div class="name-text">
+Cufant</div>
+</td>
+<td class="type Steel"><img alt="Steel" src="/assets/icons/pokemon/tcg/types/steel.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">042/64</td>
+<td class="col-left">879</td>
+<td class="name"><div class="name-text">
+Copperajah</div>
+</td>
+<td class="type Steel"><img alt="Steel" src="/assets/icons/pokemon/tcg/types/steel.png" /></td>
+<td class="rarity"><img alt="Rare" src="/assets/icons/pokemon/tcg/rarity/R.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">043/64</td>
+<td class="col-left">965</td>
+<td class="name"><div class="name-text">
+Varoom</div>
+</td>
+<td class="type Steel"><img alt="Steel" src="/assets/icons/pokemon/tcg/types/steel.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">044/64</td>
+<td class="col-left">610</td>
+<td class="name"><div class="name-text">
+Axew</div>
+</td>
+<td class="type Dragon"><img alt="Dragon" src="/assets/icons/pokemon/tcg/types/dragon.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">045/64</td>
+<td class="col-left">611</td>
+<td class="name"><div class="name-text">
+Frazure</div>
+</td>
+<td class="type Dragon"><img alt="Dragon" src="/assets/icons/pokemon/tcg/types/dragon.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">046/64</td>
+<td class="col-left">612</td>
+<td class="name"><div class="name-text">
+Haxorus</div>
+</td>
+<td class="type Dragon"><img alt="Dragon" src="/assets/icons/pokemon/tcg/types/dragon.png" /></td>
+<td class="rarity"><img alt="Rare" src="/assets/icons/pokemon/tcg/rarity/R.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">047/64</td>
+<td class="col-left">646</td>
+<td class="name"><div class="name-text">
+Kyurem</div>
+</td>
+<td class="type Dragon"><img alt="Dragon" src="/assets/icons/pokemon/tcg/types/dragon.png" /></td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">048/64</td>
+<td class="col-left">52</td>
+<td class="name"><div class="name-text">
+Meowth</div>
+</td>
+<td class="type Normal"><img alt="Normal" src="/assets/icons/pokemon/tcg/types/normal.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">050/64</td>
+<td class="col-left">133</td>
+<td class="name"><div class="name-text">
+Eevee</div>
+</td>
+<td class="type Normal"><img alt="Normal" src="/assets/icons/pokemon/tcg/types/normal.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">051/64</td>
+<td class="col-left">676</td>
+<td class="name"><div class="name-text">
+Furfrou</div>
+</td>
+<td class="type Normal"><img alt="Normal" src="/assets/icons/pokemon/tcg/types/normal.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">052/64</td>
+<td class="col-left">759</td>
+<td class="name"><div class="name-text">
+Stufful</div>
+</td>
+<td class="type Normal"><img alt="Normal" src="/assets/icons/pokemon/tcg/types/normal.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">053/64</td>
+<td class="col-left">760</td>
+<td class="name"><div class="name-text">
+Bewear</div>
+</td>
+<td class="type Normal"><img alt="Normal" src="/assets/icons/pokemon/tcg/types/normal.png" /></td>
+<td class="rarity"><img alt="Common" src="/assets/icons/pokemon/tcg/rarity/C.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">054/64</td>
+<td class="name" colspan="2"><div class="name-text">
+Academy at Night</div>
+</td>
+<td class="type Stadium trainertext">Stadium</td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">055/64</td>
+<td class="name" colspan="2"><div class="name-text">
+Binding Mochi</div>
+</td>
+<td class="type Tool trainertext">Pok&eacute;mon Tool</td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">056/64</td>
+<td class="name" colspan="2"><div class="name-text">
+Cassiopeia</div>
+</td>
+<td class="type Supporter trainertext">Supporter</td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">057/64</td>
+<td class="name" colspan="2"><div class="name-text">
+Colress's Tenacity</div>
+</td>
+<td class="type Supporter trainertext">Supporter</td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">059/64</td>
+<td class="name" colspan="2"><div class="name-text">
+Janine's Secret Art</div>
+</td>
+<td class="type Supporter trainertext">Supporter</td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">060/64</td>
+<td class="name" colspan="2"><div class="name-text">
+Neutralization Zone</div>
+</td>
+<td class="type Stadium trainertext">Stadium</td>
+<td class="rarity"><img alt="Ace Spec" src="/assets/icons/pokemon/tcg/rarity/PS1.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">061/64</td>
+<td class="name" colspan="2"><div class="name-text">
+Night Stretcher</div>
+</td>
+<td class="type Item trainertext">Item</td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">062/64</td>
+<td class="name" colspan="2"><div class="name-text">
+Pok&eacute; Vital A</div>
+</td>
+<td class="type Item trainertext">Item</td>
+<td class="rarity"><img alt="Ace Spec" src="/assets/icons/pokemon/tcg/rarity/PS1.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">063/64</td>
+<td class="name" colspan="2"><div class="name-text">
+Powerglass</div>
+</td>
+<td class="type Tool trainertext">Pok&eacute;mon Tool</td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">064/64</td>
+<td class="name" colspan="2"><div class="name-text">
+Xerosic's Machinations</div>
+</td>
+<td class="type Supporter trainertext">Supporter</td>
+<td class="rarity"><img alt="Uncommon" src="/assets/icons/pokemon/tcg/rarity/U.png" /></td>
+<td class="holofinish">Reverse</td>
+</tr>
+<tr>
+<td class="set-num">074/64</td>
+<td class="col-left">1014</td>
+<td class="name"><div class="name-text">
+Okidogi</div>
+</td>
+<td class="type Fighting"><img alt="Fighting" src="/assets/icons/pokemon/tcg/types/fighting.png" /></td>
+<td class="rarity"><img alt="Illustration Rare" src="/assets/icons/pokemon/tcg/rarity/GS1.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="night-wanderer">Night Wanderer</h2>
+<table>
+<thead>
+<tr>
+<th class="col-center">Set Number</th>
+<th class="col-center">Dex</th>
+<th class="col-center">Name</th>
+<th class="col-center">Type</th>
+<th class="col-center">Rarity</th>
+<th class="col-center">Finish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="set-num">002/64</td>
+<td class="col-left">596</td>
+<td class="name"><div class="name-text">
+Galvantula</div>
+</td>
+<td class="type Grass"><img alt="Grass" src="/assets/icons/pokemon/tcg/types/grass.png" /></td>
+<td class="rarity"><img alt="Uncommon (Japanese)" src="/assets/icons/pokemon/tcg/rarity/jU.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">003/64</td>
+<td class="col-left">722</td>
+<td class="name"><div class="name-text">
+Rowlet</div>
+</td>
+<td class="type Grass"><img alt="Grass" src="/assets/icons/pokemon/tcg/types/grass.png" /></td>
+<td class="rarity"><img alt="Common (Japanese)" src="/assets/icons/pokemon/tcg/rarity/jC.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">004/64</td>
+<td class="col-left">723</td>
+<td class="name"><div class="name-text">
+Dartrix</div>
+</td>
+<td class="type Grass"><img alt="Grass" src="/assets/icons/pokemon/tcg/types/grass.png" /></td>
+<td class="rarity"><img alt="Common (Japanese)" src="/assets/icons/pokemon/tcg/rarity/jC.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">006/64</td>
+<td class="col-left">787</td>
+<td class="name"><div class="name-text">
+Tapu Bulu</div>
+</td>
+<td class="type Grass"><img alt="Grass" src="/assets/icons/pokemon/tcg/types/grass.png" /></td>
+<td class="rarity"><img alt="Rare (Japanese)" src="/assets/icons/pokemon/tcg/rarity/jR.png" /></td>
+<td class="holofinish">Holo</td>
+</tr>
+<tr>
+<td class="set-num">007/64</td>
+<td class="col-left">228</td>
+<td class="name"><div class="name-text">
+Houndour</div>
+</td>
+<td class="type Fire"><img alt="Fire" src="/assets/icons/pokemon/tcg/types/fire.png" /></td>
+<td class="rarity"><img alt="Common (Japanese)" src="/assets/icons/pokemon/tcg/rarity/jC.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">027/64</td>
+<td class="col-left">41</td>
+<td class="name"><div class="name-text">
+Zubat</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Common (Japanese)" src="/assets/icons/pokemon/tcg/rarity/jC.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">029/64</td>
+<td class="col-left">169</td>
+<td class="name"><div class="name-text">
+Golbat</div>
+</td>
+<td class="type Dark"><img alt="Dark" src="/assets/icons/pokemon/tcg/types/dark.png" /></td>
+<td class="rarity"><img alt="Uncommon (Japanese)" src="/assets/icons/pokemon/tcg/rarity/jU.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">043/64</td>
+<td class="col-left">965</td>
+<td class="name"><div class="name-text">
+Varoom</div>
+</td>
+<td class="type Steel"><img alt="Steel" src="/assets/icons/pokemon/tcg/types/steel.png" /></td>
+<td class="rarity"><img alt="Common (Japanese)" src="/assets/icons/pokemon/tcg/rarity/jC.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">047/64</td>
+<td class="col-left">646</td>
+<td class="name"><div class="name-text">
+Kyurem</div>
+</td>
+<td class="type Dragon"><img alt="Dragon" src="/assets/icons/pokemon/tcg/types/dragon.png" /></td>
+<td class="rarity"><img alt="Uncommon (Japanese)" src="/assets/icons/pokemon/tcg/rarity/jU.png" /></td>
+<td class="holofinish"></td>
+</tr>
+<tr>
+<td class="set-num">050/64</td>
+<td class="col-left">133</td>
+<td class="name"><div class="name-text">
+Eevee</div>
+</td>
+<td class="type Normal"><img alt="Normal" src="/assets/icons/pokemon/tcg/types/normal.png" /></td>
+<td class="rarity"><img alt="Common (Japanese)" src="/assets/icons/pokemon/tcg/rarity/jC.png" /></td>
+<td class="holofinish"></td>
+</tr>
+</tbody>
+</table>
+</main>
+</div>
+</body>
+</html>

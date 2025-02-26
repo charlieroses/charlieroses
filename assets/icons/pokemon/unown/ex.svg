@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -85 60 115">
+
+	<style>
+		.sn		{ stroke: none; }
+		.s5d	{ stroke: currentColor; stroke-width: 5; }
+		.s10d	{ stroke: currentColor; stroke-width: 10; }
+		.fn		{ fill: none; }
+		.fd		{ fill: currentColor; }
+
+		.s10bg	{ stroke: #FFFFFF; stroke-width: 10; }
+		.s20bg	{ stroke: #FFFFFF; stroke-width: 20; }
+		.fbg	{ fill: #FFFFFF; }
+
+		.s10t	{ stroke: #0000FF; stroke-width: 10; opacity: 50%; }
+		.ft		{ fill: #0000FF; opacity: 50%; }
+		.gl		{ stroke: #FF0000; opacity: 50%; stroke-width: 2; }
+	</style>
+
+	<g id="bg">
+
+		<circle class="s10bg fbg" cx="0" cy="0" r="5" />
+		<circle class="s20bg fbg" cx="0" cy="0" r="20" />
+		<path class="s20bg fbg" d="M -15 -5 h 30 A 10 10 0 0 0 -15 -5" />
+
+		<circle class="s10bg fbg" cx="0" cy="-75" r="5" />
+		<path class="s20bg fbg" d="M 0 -75 v 55" />
+	</g>
+
+	<g id="char">
+
+		<circle class="fd" cx="0" cy="0" r="5" />
+		<circle class="s10d fn" cx="0" cy="0" r="20" />
+		<path class="s10d fd" d="M -15 -5 h 30 A 10 10 0 0 0 -15 -5" />
+
+		<circle class="fd" cx="0" cy="-75" r="5" />
+		<path class="s10d fn" d="M 0 -75 v 55" />
+	</g>
+</svg>

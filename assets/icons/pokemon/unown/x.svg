@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+ 	viewBox="-40 -40 80 80">
+
+	<style>
+		.sn		{ stroke: none; }
+		.s5d	{ stroke: currentColor; stroke-width: 5; }
+		.s10d	{ stroke: currentColor; stroke-width: 10; }
+		.fn		{ fill: none; }
+		.fd		{ fill: currentColor; }
+
+		.s10bg	{ stroke: #FFFFFF; stroke-width: 10; }
+		.s20bg	{ stroke: #FFFFFF; stroke-width: 20; }
+		.fbg	{ fill: #FFFFFF; }
+
+		.s10t	{ stroke: #0000FF; stroke-width: 10; opacity: 50%; }
+		.ft		{ fill: #0000FF; opacity: 50%; }
+		.gl		{ stroke: #FF0000; opacity: 50%; stroke-width: 2; }
+	</style>
+
+	<g id="bg">
+
+		<circle class="s20bg fbg" cx="0" cy="0" r="20" />
+
+		<circle class="s10bg fbg" cx="-30" cy="-30" r="5" />
+		<circle class="s10bg fbg" cx="30" cy="-30" r="5" />
+		<circle class="s10bg fbg" cx="-30" cy="30" r="5" />
+		<circle class="s10bg fbg" cx="30" cy="30" r="5" />
+		<path class="s20bg fbg" d="M -30 -30 l 15 15" />
+		<path class="s20bg fbg" d="M 30 -30 l -15 15" />
+		<path class="s20bg fbg" d="M -30 30 l 15 -15" />
+		<path class="s20bg fbg" d="M 30 30 l -15 -15" />
+
+	</g>
+
+	<g id="char">
+
+		<circle class="fd sn" cx="0" cy="0" r="5" />
+		<circle class="s10d fn" cx="0" cy="0" r="20" />
+
+		<circle class="fd sn" cx="-30" cy="-30" r="5" />
+		<circle class="fd sn" cx="30" cy="-30" r="5" />
+		<circle class="fd sn" cx="-30" cy="30" r="5" />
+		<circle class="fd sn" cx="30" cy="30" r="5" />
+		<path class="s10d fn" d="M -30 -30 l 15 15" />
+		<path class="s10d fn" d="M 30 -30 l -15 15" />
+		<path class="s10d fn" d="M -30 30 l 15 -15" />
+		<path class="s10d fn" d="M 30 30 l -15 -15" />
+
+	</g>
+</svg>
