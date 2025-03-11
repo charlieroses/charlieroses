@@ -1,14 +1,25 @@
 function getAvailableDynaPkmn( date ) {
 	let		ret = [];
-	let		p;
-	
-	for( p = 0; p < dbpokemon.dynadex.length; p++ ) {
-//		if( willBeAvailable( date, dbpokemon.dynadex[p], "dynamax" ) ||
-//		    willBeAvailable( date, dbpokemon.dynadex[p]+"-G" ) )
-			ret.push( dbpokemon.dynadex[p] );
+	let		dis, p;
+
+	dis = dbpokemon.order;
+	for( p = 0; p < dis.length; p++ ) {
+		if( dis[p].endsWith("-0") )
+			continue;
+		if( isGigamax(dis[p]) && willBeAvailable(date,dis[p]) )
+			ret.push( dis[p] );
+		else if( willBeAvailable(date,dis[p],"dynamax") )
+			ret.push( dis[p] );
 	}
 
 	return ret;
+}
+
+function getDynaAvailability( di ) {
+	if( isGigamax(di) )
+		return getAvailability( di, "in-game" );
+	else
+		return getAvailability( di, "dynamax" );
 }
 
 function getEvolvedDynaPkmn() {
@@ -80,6 +91,8 @@ function isGigamax( di ) {
 
 	if( ! fd )
 		return false;
+	if( ! fd.type )
+		return false;
 	return fd.type == "Giga";
 }
 
@@ -125,14 +138,20 @@ function getMaxMoveFromFast( move ) {
 }
 
 function getMaxBattleCost( tier ) {
+	if( ! dbdynamax["battles"][tier] )
+		return 0;
 	return dbdynamax["battles"][tier]["cost"];
 }
 
 function getMaxBossCPM( tier ) {
+	if( ! dbdynamax["battles"][tier] )
+		return 0;
 	return dbdynamax["battles"][tier]["cpm"];
 }
 
 function getMaxBossHP( tier ) {
+	if( ! dbdynamax["battles"][tier] )
+		return 0;
 	return dbdynamax["battles"][tier]["hp"];
 }
 

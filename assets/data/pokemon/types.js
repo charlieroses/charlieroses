@@ -21,7 +21,7 @@ function getTypeImg( type, style="" ) {
 		style = style + "/";
 
 	img = document.createElement( "img" );
-	img.setAttribute( "src", "/assets/icons/pokemon/go/types/" + style + getTypeNameItal(type).toLowerCase() + ".png" );
+	img.setAttribute( "src", assetsbase + "icons/pokemon/go/types/" + style + getTypeNameItal(type).toLowerCase() + ".png" );
 	img.setAttribute( "alt", type );
 	img.classList.add( "type-icon" );
 
@@ -54,7 +54,7 @@ function getWeatherImg( weather ) {
 	let		img;
 
 	img = document.createElement( "img" );
-	img.setAttribute( "src", "/assets/icons/pokemon/go/weather/" + weather.toLowerCase().replaceAll(" ","")  + ".png" );
+	img.setAttribute( "src", assetsbase + "icons/pokemon/go/weather/" + weather.toLowerCase().replaceAll(" ","")  + ".png" );
 	img.setAttribute( "alt", weather + " Weather" );
 	img.classList.add( "weather-icon" );
 

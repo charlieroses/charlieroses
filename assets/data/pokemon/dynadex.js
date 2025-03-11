@@ -98,7 +98,7 @@ function getPkmnImageSrc( di ) {
 	while( dir.length < 4 )
 		dir = "0" + dir;
 
-	return "/assets/images/pokemon/dex/" + dir + "/" + imgdi + ".png";
+	return assetsbase + "images/pokemon/dex/" + dir + "/" + imgdi + ".png";
 }
 
 function getPkmnDisplayName( di ) {
@@ -214,6 +214,19 @@ function getPkmnDoubleResistance( di ) {
 	return res;
 }
 
+function getPkmnTypeAdvantage( di ) {
+	let		adv;
+	let		types, i, j;
+	
+	adv = {};
+
+	types = getAllTypes();
+	for( i = 0; i < types.length; i++ )
+		adv[types[i]] = 1;
+
+}
+
+// TODO do I need this or can I have field return something
 function getPkmnEvolvesInto( di ) {
 	let		pkmn;
 	pkmn = getPkmn( di );
@@ -224,8 +237,29 @@ function getPkmnEvolvesInto( di ) {
 	return pkmn["evolves-into"];
 }
 
+function getPkmnAllEvolutions( di ) {
+	let		ret;
+	let		evs, e;
+
+	ret = []
+	evs = getPkmnField( di, "evolves-into" );
+	if( evs == 0 )
+		return ret;
+
+	ret = ret.concat( evs );
+	for( e = 0; e < ret.length; e++ ) {
+		evs = getPkmnAllEvolutions( ret[e] );
+		ret = ret.concat( evs );
+	}
+
+	return ret;
+}
+
 function getPkmnMoveset( di, fc, sea ) {
 	let		set, moves, movesa;
+
+	if( fc == "dynamax" )
+		return getPkmnMaxAttacksMoveset( di, sea );
 
 	if( fc != "fast" && fc != "charged" )
 		return [];
@@ -254,6 +288,10 @@ function getPkmnMoveset( di, fc, sea ) {
 	}
 
 	return movesa;
+}
+
+function getPkmnMaxAttacksMoveset( di, sea ) {
+	return Array.from(new Set(getPkmnMoveset(di,"fast",sea).map((f) => getMaxMoveFromFast(f))));
 }
 
 function checkSTAB( di, move ) {
@@ -485,6 +523,7 @@ const	dbpokemon = {
 				"shiny-shadow": "2022-07-09",
 				"dynamax": "2024-09-10"
 			},
+			"forms": [ "3-M", "3-G" ],
 			"category": "Seed",
 			"type": [ "Grass", "Poison" ],
 			"evolves-from": "2",
@@ -650,6 +689,7 @@ const	dbpokemon = {
 				"shiny-shadow": "2022-07-09",
 				"dynamax": "2024-09-10"
 			},
+			"forms": [ "6-X", "6-Y", "6-G" ],
 			"category": "Flame",
 			"type": [ "Fire", "Flying" ],
 			"evolves-from": "5",
@@ -847,6 +887,7 @@ const	dbpokemon = {
 				"shiny-shadow": "2022-07-09",
 				"dynamax": "2024-09-10"
 			},
+			"forms": [ "9-M", "9-G" ],
 			"category": "Shellfish",
 			"type": [ "Water" ],
 			"evolves-from": "8",
@@ -856,7 +897,8 @@ const	dbpokemon = {
 			"dynamax-class": 1,
 			"fast-moves": [
 				"FAST_WAT_WATERGUN",
-				"FAST_DAR_BITE"
+				"FAST_DAR_BITE",
+				"FAST_ROC_ROLLOUT"
 			],
 			"charged-moves": [
 				"CHRG_WAT_HYDROPUMP",
@@ -926,7 +968,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game": "2016-07-06",
 				"shiny": "2018-11-01",
-				"shadow": "2024-10-08"
+				"shadow": "2024-10-08",
+				"dynamax": "2025-03-24"
 			},
 			"category": "Worm",
 			"type": [ "Bug" ],
@@ -935,6 +978,7 @@ const	dbpokemon = {
 			"base-attack": 55,
 			"base-defense": 55,
 			"dynamax-class": 1,
+			"max-battle-tier": 1, // TODO prediction
 			"fast-moves": [
 				"FAST_BUG_BUGBITE",
 				"FAST_NOR_TACKLE"
@@ -961,7 +1005,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game": "2016-07-06",
 				"shiny": "2018-11-01",
-				"shadow": "2024-10-08"
+				"shadow": "2024-10-08",
+				"dynamax": "2025-03-24"
 			},
 			"category": "Cocoon",
 			"type": [ "Bug" ],
@@ -997,8 +1042,10 @@ const	dbpokemon = {
 			"availability": {
 				"in-game": "2016-07-06",
 				"shiny": "2018-11-01",
-				"shadow": "2024-10-08"
+				"shadow": "2024-10-08",
+				"dynamax": "2025-03-24"
 			},
+			"forms": [ "12-G" ],
 			"category": "Butterfly",
 			"type": [ "Bug", "Flying" ],
 			"evolves-from": "11",
@@ -1037,7 +1084,7 @@ const	dbpokemon = {
 				"base": "12",
 				"type": "Giga"
 			},
-			"available": {
+			"availability": {
 				"in-game": false
 			}
 		},
@@ -1120,6 +1167,7 @@ const	dbpokemon = {
 				"shiny": "2020-06-20",
 				"shadow": "2019-10-17"
 			},
+			"forms": [ "15-M" ],
 			"category": "Poison Bee",
 			"type": [ "Bug", "Poison" ],
 			"evolves-from": "14",
@@ -1267,6 +1315,7 @@ const	dbpokemon = {
 				"shiny": "2019-02-27",
 				"shadow": "2024-03-27"
 			},
+			"forms": [ "18-M" ],
 			"category": "Bird",
 			"type": [ "Normal", "Flying" ],
 			"evolves-from": "17",
@@ -1340,6 +1389,7 @@ const	dbpokemon = {
 				"shiny": "2019-02-27",
 				"shadow": "2019-07-22"
 			},
+			"forms": [ "19-A" ],
 			"category": "Mouse",
 			"type": [ "Normal" ],
 			"evolves-into": [ "20" ],
@@ -1418,6 +1468,7 @@ const	dbpokemon = {
 				"shiny": "2019-02-27",
 				"shadow": "2019-07-22"
 			},
+			"forms": [ "20-A" ],
 			"category": "Mouse",
 			"type": [ "Normal" ],
 			"evolves-from": "19",
@@ -1655,6 +1706,7 @@ const	dbpokemon = {
 				"in-game": "2016-07-06",
 				"shiny": "2017-08-09"
 			},
+			"forms": [ "25-G" ],
 			"category": "Mouse",
 			"type": [ "Electric" ],
 			"evolves-from": "172",
@@ -1698,7 +1750,7 @@ const	dbpokemon = {
 				"base": "25",
 				"type": "Giga"
 			},
-			"available": {
+			"availability": {
 				"in-game": false
 			}
 		},
@@ -1709,6 +1761,7 @@ const	dbpokemon = {
 				"in-game": "2016-07-06",
 				"shiny": "2017-08-09"
 			},
+			"forms": [ "26-A" ],
 			"category": "Mouse",
 			"type": [ "Electric" ],
 			"evolves-from": "25",
@@ -1795,6 +1848,7 @@ const	dbpokemon = {
 				"shiny": "2018-12-06",
 				"shadow": "2019-11-07"
 			},
+			"forms": [ "27-A" ],
 			"category": "Mouse",
 			"type": [ "Ground" ],
 			"evolves-into": [ "28" ],
@@ -1877,6 +1931,7 @@ const	dbpokemon = {
 				"shiny": "2018-12-06",
 				"shadow": "2019-11-07"
 			},
+			"forms": [ "28-A" ],
 			"category": "Mouse",
 			"type": [ "Ground" ],
 			"evolves-from": "27",
@@ -2290,6 +2345,7 @@ const	dbpokemon = {
 				"shiny": "2020-10-09",
 				"shadow": "2020-02-03"
 			},
+			"forms": [ "37-A" ],
 			"category": "Fox",
 			"type": [ "Fire" ],
 			"evolves-into": [ "38" ],
@@ -2370,6 +2426,7 @@ const	dbpokemon = {
 				"shiny": "2020-10-09",
 				"shadow": "2020-02-03"
 			},
+			"forms": [ "38-A" ],
 			"category": "Fox",
 			"type": [ "Fire" ],
 			"evolves-from": "37",
@@ -2863,7 +2920,8 @@ const	dbpokemon = {
 			"dynamax-class": 2,
 			"fast-moves": [
 				"FAST_BUG_INFESTATION",
-				"FAST_PSY_CONFUSION"
+				"FAST_PSY_CONFUSION",
+				"FAST_PSY_PSYWAVE"
 			],
 			"special-fast-moves": [
 				"FAST_BUG_BUGBITE"
@@ -2895,6 +2953,7 @@ const	dbpokemon = {
 				"shiny": "2019-04-29",
 				"shadow": "2020-10-12"
 			},
+			"forms": [ "50-A" ],
 			"category": "Mole",
 			"type": [ "Ground" ],
 			"evolves-into": [ "51" ],
@@ -2975,6 +3034,7 @@ const	dbpokemon = {
 				"shiny": "2019-04-29",
 				"shadow": "2020-10-12"
 			},
+			"forms": [ "51-A" ],
 			"category": "Mole",
 			"type": [ "Ground" ],
 			"evolves-from": "50",
@@ -3056,6 +3116,7 @@ const	dbpokemon = {
 				"shadow": "2019-11-05",
 				"shiny-shadow": "2019-11-07"
 			},
+			"forms": [ "52-A", "52-Ga", "52-Gi" ],
 			"category": "Scratch Cat",
 			"type": [ "Normal" ],
 			"evolves-into": [ "53" ],
@@ -3178,6 +3239,7 @@ const	dbpokemon = {
 				"shadow": "2019-11-05",
 				"shiny-shadow": "2019-11-07"
 			},
+			"forms": [ "53-A" ],
 			"category": "Classy Cat",
 			"type": [ "Normal" ],
 			"evolves-from": "52",
@@ -3423,6 +3485,7 @@ const	dbpokemon = {
 				"shadow": "2019-09-05",
 				"shiny-shadow": "2020-10-12"
 			},
+			"forms": [ "58-H" ],
 			"category": "Puppy",
 			"type": [ "Fire" ],
 			"evolves-into": [ "59" ],
@@ -3501,6 +3564,7 @@ const	dbpokemon = {
 				"shadow": "2019-09-05",
 				"shiny-shadow": "2020-10-12"
 			},
+			"forms": [ "59-H" ],
 			"category": "Legendary",
 			"type": [ "Fire" ],
 			"evolves-from": "58",
@@ -3571,7 +3635,7 @@ const	dbpokemon = {
 			"height-avg": 2,
 			"weight-avg": 168,
 			"size-data": {
-				"class": 1.75,
+				"class": 175,
 				"ht-std-dev": 0.25,
 				"wt-std-dev": 21,
 				"xxs": [ 0.98, 1 ],
@@ -3792,6 +3856,7 @@ const	dbpokemon = {
 				"shiny": "2020-04-25",
 				"shadow": "2019-09-05"
 			},
+			"forms": [ "65-M" ],
 			"category": "Psi",
 			"type": [ "Psychic" ],
 			"evolves-from": "64",
@@ -3952,6 +4017,7 @@ const	dbpokemon = {
 				"shiny-shadow": "2022-11-14",
 				"dynamax": "2024-12-03"
 			},
+			"forms": [ "68-G" ],
 			"category": "Superpower",
 			"type": [ "Fighting" ],
 			"evolves-from": "67",
@@ -3998,6 +4064,7 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
+				"in-game": false
 			}
 		},
 		"69": {
@@ -4210,6 +4277,7 @@ const	dbpokemon = {
 				"shadow": "2022-07-09",
 				"shiny-shadow": "2023-06-21"
 			},
+			"forms": [ "74-A" ],
 			"category": "Rock",
 			"type": [ "Rock", "Ground" ],
 			"evolves-into": [ "75" ],
@@ -4289,6 +4357,7 @@ const	dbpokemon = {
 				"shadow": "2022-07-09",
 				"shiny-shadow": "2023-06-21"
 			},
+			"forms": [ "75-A" ],
 			"category": "Rock",
 			"type": [ "Rock", "Ground" ],
 			"evolves-from": "74",
@@ -4374,6 +4443,7 @@ const	dbpokemon = {
 				"shadow": "2022-07-09",
 				"shiny-shadow": "2023-06-21"
 			},
+			"forms": [ "76-A" ],
 			"category": "Megaton",
 			"type": [ "Rock", "Ground" ],
 			"evolves-from": "75",
@@ -4456,6 +4526,7 @@ const	dbpokemon = {
 				"in-game": "2016-07-06",
 				"shiny": "2018-11-05"
 			},
+			"forms": [ "77-G" ],
 			"category": "Fire Horse",
 			"type": [ "Fire" ],
 			"evolves-into": [ "78" ],
@@ -4536,6 +4607,7 @@ const	dbpokemon = {
 				"in-game": "2016-07-06",
 				"shiny": "2018-11-05"
 			},
+			"forms": [ "78-G" ],
 			"category": "Fire Horse",
 			"type": [ "Fire" ],
 			"evolves-from": "77",
@@ -4629,6 +4701,7 @@ const	dbpokemon = {
 				"shiny": "2020-11-17",
 				"shadow": "2020-10-12"
 			},
+			"forms": [ "79-G" ],
 			"category": "Dopey",
 			"type": [ "Water", "Psychic" ],
 			"evolves-into": [ "80", "199" ],
@@ -4706,6 +4779,7 @@ const	dbpokemon = {
 				"shiny": "2020-11-17",
 				"shadow": "2020-10-12"
 			},
+			"forms": [ "80-M", "80-G" ],
 			"category": "Hermit Crab",
 			"type": [ "Water", "Psychic" ],
 			"evolves-from": "79",
@@ -4901,6 +4975,7 @@ const	dbpokemon = {
 				"in-game": "2016-07-06",
 				"shiny": "2019-09-09"
 			},
+			"forms": [ "83-G" ],
 			"category": "Wild Duck",
 			"type": [ "Normal", "Flying" ],
 			"evolves-into": [ "865" ],
@@ -5146,6 +5221,7 @@ const	dbpokemon = {
 				"shadow": "2019-08-01",
 				"shiny-shadow": "2020-07-10"
 			},
+			"forms": [ "88-A" ],
 			"category": "Sludge",
 			"type": [ "Poison" ],
 			"evolves-into": [ "89" ],
@@ -5228,6 +5304,7 @@ const	dbpokemon = {
 				"shadow": "2019-08-01",
 				"shiny-shadow": "2020-07-10"
 			},
+			"forms": [ "89-A" ],
 			"category": "Sludge",
 			"type": [ "Poison" ],
 			"evolves-from": "88",
@@ -5487,6 +5564,7 @@ const	dbpokemon = {
 				"shadow": "2023-10-26",
 				"dynamax": "2024-10-22"
 			},
+			"forms": [ "94-M", "94-G" ],
 			"category": "Shadow",
 			"type": [ "Ghost", "Poison" ],
 			"evolves-from": "93",
@@ -5739,6 +5817,7 @@ const	dbpokemon = {
 				"shiny": "2018-10-01",
 				"dynamax": "2024-12-09"
 			},
+			"forms": [ "99-G" ],
 			"category": "Pincer",
 			"type": [ "Water" ],
 			"evolves-from": "98",
@@ -5792,6 +5871,7 @@ const	dbpokemon = {
 				"shiny": "2020-05-08",
 				"shadow": "2022-01-24"
 			},
+			"forms": [ "100-H" ],
 			"category": "Ball",
 			"type": [ "Electric" ],
 			"evolves-into": [ "101" ],
@@ -5872,6 +5952,7 @@ const	dbpokemon = {
 				"shiny": "2020-05-08",
 				"shadow": "2022-01-24"
 			},
+			"forms": [ "101-H" ],
 			"category": "Ball",
 			"type": [ "Electric" ],
 			"evolves-from": "100",
@@ -5992,6 +6073,7 @@ const	dbpokemon = {
 				"shadow": "2020-02-03",
 				"shiny-shadow": "2022-04-03"
 			},
+			"forms": [ "103-A" ],
 			"category": "Coconut",
 			"type": [ "Grass", "Psychic" ],
 			"evolves-from": "102",
@@ -6115,6 +6197,7 @@ const	dbpokemon = {
 				"shadow": "2019-08-01",
 				"shiny-shadow": "2022-04-03"
 			},
+			"forms": [ "105-A" ],
 			"category": "Bone Keeper",
 			"type": [ "Ground" ],
 			"evolves-from": "104",
@@ -6363,6 +6446,7 @@ const	dbpokemon = {
 				"shadow": "2020-06-10",
 				"shiny-shadow": "2020-07-10"
 			},
+			"forms": [ "110-G" ],
 			"category": "Poison Gas",
 			"type": [ "Poison" ],
 			"evolves-from": "109",
@@ -6372,7 +6456,8 @@ const	dbpokemon = {
 			"dynamax-class": 2,
 			"fast-moves": [
 				"FAST_NOR_TACKLE",
-				"FAST_BUG_INFESTATION"
+				"FAST_BUG_INFESTATION",
+				"FAST_ROC_ROLLOUT"
 			],
 			"unobtainable-fast-moves": [
 				"FAST_POI_ACID"
@@ -6523,7 +6608,8 @@ const	dbpokemon = {
 			"name": "Chansey",
 			"availability": {
 				"in-game": "2016-07-06",
-				"shiny": "2020-02-14"
+				"shiny": "2020-02-14",
+				"dynamax": "2025-03-17"
 			},
 			"category": "Egg",
 			"type": [ "Normal" ],
@@ -6533,6 +6619,7 @@ const	dbpokemon = {
 			"base-attack": 60,
 			"base-defense": 128,
 			"dynamax-class": 3,
+			"max-battle-tier": 2, // TODO prediction
 			"fast-moves": [
 				"FAST_NOR_POUND",
 				"FAST_PSY_ZENHEADBUTT"
@@ -6605,6 +6692,7 @@ const	dbpokemon = {
 				"in-game": "2016-07-06",
 				"shiny": "2019-09-09"
 			},
+			"forms": [ "115-M" ],
 			"category": "Parent",
 			"type": [ "Normal" ],
 			"base-stamina": 233,
@@ -6917,6 +7005,7 @@ const	dbpokemon = {
 				"in-game": "2016-07-06",
 				"shiny": "2022-12-01"
 			},
+			"forms": [ "122-G" ],
 			"category": "Barrier",
 			"type": [ "Psychic", "Fairy" ],
 			"evolves-from": "439",
@@ -7163,6 +7252,7 @@ const	dbpokemon = {
 				"shadow": "2020-02-03",
 				"shiny-shadow": "2020-02-03"
 			},
+			"forms": [ "127-M" ],
 			"category": "Stag Beetle",
 			"type": [ "Bug" ],
 			"base-stamina": 163,
@@ -7269,13 +7359,13 @@ const	dbpokemon = {
 				"region": "Paldean"
 			},
 			"availability": {
+				"in-game": false
 			}
 		},
 		"128-C": {
 			"dex-index": "128-C",
 			"form-data": {
 				"base": "128-P",
-				"type": "idk",
 				"form": "Combat Breed",
 				"form-ital": "Varieta Combattiva",
 				"form-ital-display": "Variet\`a Combattiva" // TODO a accent
@@ -7286,7 +7376,6 @@ const	dbpokemon = {
 			"dex-index": "128-B",
 			"form-data": {
 				"base": "128-P",
-				"type": "idk",
 				"form": "Blaze Breed",
 				"form-ital": "Varieta Infuocata",
 				"form-ital-display": "Variet\`a Infuocata" // TODO a accent
@@ -7297,7 +7386,6 @@ const	dbpokemon = {
 			"dex-index": "128-A",
 			"form-data": {
 				"base": "128-P",
-				"type": "idk",
 				"form": "Aqua Breed",
 				"form-ital": "Varieta Acquatica",
 				"form-ital-display": "Variet\`a Acquatica" // TODO a accent
@@ -7346,6 +7434,7 @@ const	dbpokemon = {
 				"shiny": "2017-03-22",
 				"shadow": "2019-08-01"
 			},
+			"forms": [ "130-M" ],
 			"category": "Atrocious",
 			"type": [ "Water", "Flying" ],
 			"evolves-from": "129",
@@ -7418,9 +7507,11 @@ const	dbpokemon = {
 			"name": "Lapras",
 			"availability": {
 				"in-game": "2016-07-06",
-				"shiny": "20xx-xx-xx",
-				"shadow": "20xx-xx-xx"
+				"shiny": "2019-04-20",
+				"shadow": "2019-10-17",
+				"shiny-shadow": "2020-07-10"
 			},
+			"forms": [ "131-G" ],
 			"category": "Transport",
 			"type": [ "Water", "Ice" ],
 			"base-stamina": 277,
@@ -7429,16 +7520,18 @@ const	dbpokemon = {
 			"dynamax-class": 3,
 			"fast-moves": [
 				"FAST_ICE_FROSTBREATH",
-				"FAST_WAT_WATERGUN",
+				"FAST_PSY_PSYWAVE",
+				"FAST_WAT_WATERGUN"
 			],
 			"special-fast-moves": [
 				"FAST_ICE_ICESHARD"
 			],
 			"charged-moves": [
 				"CHRG_ICE_BLIZZARD",
+				"CHRG_NOR_SKULLBASH",
 				"CHRG_WAT_HYDROPUMP",
-				"CHRG_WAT_SURF",
-				"CHRG_NOR_SKULLBASH"
+				"CHRG_WAT_SPARKLINGARIA",
+				"CHRG_WAT_SURF"
 			],
 			"special-charged-moves": [
 				"CHRG_DRA_DRAGONPULSE",
@@ -7516,6 +7609,7 @@ const	dbpokemon = {
 				"in-game": "2016-07-06",
 				"shiny": "2018-08-11"
 			},
+			"forms": [ "133-G" ],
 			"category": "Evolution",
 			"type": [ "Normal" ],
 			"evolves-into": [ "134", "135", "136", "196", "197", "470", "471", "700" ],
@@ -7553,6 +7647,9 @@ const	dbpokemon = {
 			"form-data": {
 				"base": "133",
 				"type": "Giga"
+			},
+			"availability": {
+				"in-game": false
 			}
 		},
 		"134": {
@@ -7893,6 +7990,7 @@ const	dbpokemon = {
 				"shadow": "2020-10-12",
 				"shiny-shadow": "2021-02-02"
 			},
+			"forms": [ "142-M" ],
 			"category": "Fossil",
 			"type": [ "Rock", "Flying" ],
 			"base-stamina": 190,
@@ -7960,6 +8058,7 @@ const	dbpokemon = {
 				"shiny": "2021-02-20",
 				"shadow": "2019-07-22"
 			},
+			"forms": [ "143-G" ],
 			"category": "Sleeping",
 			"type": [ "Normal" ],
 			"evolves-from": "446",
@@ -8001,6 +8100,9 @@ const	dbpokemon = {
 			"form-data": {
 				"base": "143",
 				"type": "Giga"
+			},
+			"availability": {
+				"in-game": false
 			}
 		},
 		"144": {
@@ -8013,8 +8115,10 @@ const	dbpokemon = {
 				"shiny-shadow": "2023-06-10",
 				"dynamax": "2025-01-20"
 			},
+			"forms": [ "144-G" ],
 			"category": "Freeze",
 			"type": [ "Ice", "Flying" ],
+			"legendary": true,
 			"base-stamina": 207,
 			"base-attack": 192,
 			"base-defense": 236,
@@ -8098,8 +8202,10 @@ const	dbpokemon = {
 				"shiny-shadow": "2023-09-02",
 				"dynamax": "2025-01-27"
 			},
+			"forms": [ "145-G" ],
 			"category": "Electric",
 			"type": [ "Electric", "Flying" ],
+			"legendary": true,
 			"base-stamina": 207,
 			"base-attack": 253,
 			"base-defense": 185,
@@ -8181,8 +8287,10 @@ const	dbpokemon = {
 				"shiny-shadow": "2023-10-01",
 				"dynamax": "2025-02-03"
 			},
+			"forms": [ "146-G" ],
 			"category": "Flame",
 			"type": [ "Fire", "Flying" ],
+			"legendary": true,
 			"base-stamina": 207,
 			"base-attack": 251,
 			"base-defense": 181,
@@ -8387,8 +8495,10 @@ const	dbpokemon = {
 				"shadow": "2020-06-26",
 				"shiny-shadow": "2023-05-27"
 			},
+			"forms": [ "150-A", "150-X", "150-Y" ],
 			"category": "Genetic",
 			"type": [ "Psychic" ],
+			"legendary": true,
 			"base-stamina": 214,
 			"base-attack": 300,
 			"base-defense": 182,
@@ -8422,7 +8532,7 @@ const	dbpokemon = {
 				"xxl": [ 3, 3.5 ]
 			}
 		},
-		"150-A": { // TODO check stats
+		"150-A": {
 			"dex-index": "150-A",
 			"name": "Armored Mewtwo",
 			"form-data": {
@@ -8435,7 +8545,7 @@ const	dbpokemon = {
 			"base-attack": 182,
 			"base-defense": 278,
 			"fast-moves": [
-				"FAST_PSY_PSYCHOCUT",
+				"FAST_PSY_CONFUSION",
 				"FAST_STE_IRONTAIL"
 			],
 			"charged-moves": [
@@ -8485,6 +8595,7 @@ const	dbpokemon = {
 			},
 			"category": "New Species",
 			"type": [ "Psychic" ],
+			"mythical": true,
 			"base-stamina": 225,
 			"base-attack": 210,
 			"base-defense": 210,
@@ -8746,6 +8857,7 @@ const	dbpokemon = {
 				"shiny": "2018-11-10",
 				"shadow": "2022-01-24"
 			},
+			"forms": [ "157-H" ],
 			"category": "Volcano",
 			"type": [ "Fire" ],
 			"evolves-from": "156",
@@ -8995,9 +9107,11 @@ const	dbpokemon = {
 				"FAST_DAR_SUCKERPUNCH"
 			],
 			"charged-moves": [
+				"CHRG_GRA_TRAILBLAZE",
 				"CHRG_GRO_DIG",
 				"CHRG_FIG_BRICKBREAK",
-				"CHRG_NOR_HYPERBEAM"
+				"CHRG_NOR_HYPERBEAM",
+				"CHRG_NOR_SWIFT"
 			],
 			"height-avg": 1.8,
 			"weight-avg": 32.5,
@@ -9531,7 +9645,8 @@ const	dbpokemon = {
 				"CHRG_ROC_ANCIENTPOWER",
 				"CHRG_FAI_DAZZLINGGLEAM",
 				"CHRG_FLY_AERIALACE",
-				"CHRG_FAI_DRAININGKISS"
+				"CHRG_FAI_DRAININGKISS",
+				"CHRG_PSY_PSYSHOCK"
 			],
 			"height-avg": 0.61,
 			"weight-avg": 3.2,
@@ -9707,6 +9822,7 @@ const	dbpokemon = {
 			},
 			"category": "Light",
 			"type": [ "Electric" ],
+			"forms": [ "181-M" ],
 			"evolves-from": "180",
 			"base-stamina": 207,
 			"base-attack": 211,
@@ -10237,6 +10353,8 @@ const	dbpokemon = {
 			},
 			"category": "Water Fish",
 			"type": [ "Water", "Ground" ],
+			"forms": [ "194-P" ],
+			"evolves-into": [ "195" ],
 			"base-stamina": 146,
 			"base-attack": 75,
 			"base-defense": 66,
@@ -10272,10 +10390,12 @@ const	dbpokemon = {
 				"region": "Paldean"
 			},
 			"availability": {
-				"in-game": "2023-11-05"
+				"in-game": "2023-11-05",
+				"shiny": "2023-11-05"
 			},
 			"category": "Poison Fish",
 			"type": [ "Poison", "Ground" ],
+			"evolves-into": [ "980" ],
 			"base-stamina": 146,
 			"base-attack": 75,
 			"base-defense": 66,
@@ -10312,6 +10432,7 @@ const	dbpokemon = {
 			},
 			"category": "Water Fish",
 			"type": [ "Water", "Ground" ],
+			"evolves-from": "194",
 			"base-stamina": 216,
 			"base-attack": 152,
 			"base-defense": 143,
@@ -10471,6 +10592,7 @@ const	dbpokemon = {
 			},
 			"category": "Royal",
 			"type": [ "Water", "Psychic" ],
+			"forms": [ "199-G" ],
 			"evolves-from": "79",
 			"base-stamina": 216,
 			"base-attack": 177,
@@ -10865,6 +10987,7 @@ const	dbpokemon = {
 			},
 			"category": "Iron Snake",
 			"type": [ "Steel", "Ground" ],
+			"forms": [ "208-M" ],
 			"evolves-from": "95",
 			"base-stamina": 181,
 			"base-attack": 148,
@@ -11005,6 +11128,7 @@ const	dbpokemon = {
 				"in-game": "2017-02-16",
 				"shiny": "2024-02-16"
 			},
+			"forms": [ "211-H" ],
 			"category": "Balloon",
 			"type": [ "Water", "Poison" ],
 			"base-stamina": 163,
@@ -11087,6 +11211,7 @@ const	dbpokemon = {
 			},
 			"category": "Pincer",
 			"type": [ "Bug", "Steel" ],
+			"forms": [ "212-M" ],
 			"evolves-from": "123",
 			"base-stamina": 172,
 			"base-attack": 236,
@@ -11188,6 +11313,7 @@ const	dbpokemon = {
 			},
 			"category": "Single Horn",
 			"type": [ "Bug", "Fighting" ],
+			"forms": [ "214-M" ],
 			"base-stamina": 190,
 			"base-attack": 234,
 			"base-defense": 179,
@@ -11254,6 +11380,7 @@ const	dbpokemon = {
 			},
 			"category": "Sharp Claw",
 			"type": [ "Dark", "Ice" ],
+			"forms": [ "215-H" ],
 			"evolves-into": [ "461" ],
 			"base-stamina": 146,
 			"base-attack": 189,
@@ -11536,6 +11663,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				"CHRG_ICE_AVALANCHE",
+				"CHRG_ICE_ICICLESPEAR",
 				"CHRG_GRO_BULLDOZE",
 				"CHRG_ROC_STONEEDGE",
 				"CHRG_GRO_HIGHHORSEPOWER"
@@ -11562,6 +11690,7 @@ const	dbpokemon = {
 			},
 			"category": "Coral",
 			"type": [ "Water", "Rock" ],
+			"forms": [ "222-G" ],
 			"evolves-into": [ "864" ],
 			"base-stamina": 146,
 			"base-attack": 118,
@@ -11864,6 +11993,7 @@ const	dbpokemon = {
 			},
 			"category": "Dark",
 			"type": [ "Dark", "Fire" ],
+			"forms": [ "229-M" ],
 			"evolves-from": "228",
 			"base-stamina": 181,
 			"base-attack": 224,
@@ -12375,7 +12505,8 @@ const	dbpokemon = {
 			"name": "Blissey",
 			"availability": {
 				"in-game": "2017-02-16",
-				"shiny": "2020-02-14"
+				"shiny": "2020-02-14",
+				"dynamax": "2025-03-17"
 			},
 			"category": "Happiness",
 			"type": [ "Normal" ],
@@ -12416,14 +12547,17 @@ const	dbpokemon = {
 				"in-game": "2017-08-31",
 				"shiny": "2019-06-29",
 				"shadow": "2020-02-01",
-				"shiny-shadow": "2024-03-02"
+				"shiny-shadow": "2024-03-02",
+				"dynamax": "2025-03-15"
 			},
 			"category": "Thunder",
 			"type": [ "Electric" ],
+			"legendary": true,
 			"base-stamina": 207,
 			"base-attack": 241,
 			"base-defense": 195,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				"FAST_ELE_THUNDERSHOCK",
 				"FAST_ELE_VOLTSWITCH"
@@ -12457,11 +12591,13 @@ const	dbpokemon = {
 				"shiny-shadow": "2024-04-06"
 			},
 			"category": "Volcano",
+			"legendary": true,
 			"type": [ "Fire" ],
 			"base-stamina": 251,
 			"base-attack": 235,
 			"base-defense": 171,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				"FAST_FIR_FIRESPIN",
 				"FAST_FIR_FIREFANG"
@@ -12497,11 +12633,13 @@ const	dbpokemon = {
 				"shiny-shadow": "2024-05-04"
 			},
 			"category": "Aurora",
+			"legendary": true,
 			"type": [ "Water" ],
 			"base-stamina": 225,
 			"base-attack": 180,
 			"base-defense": 235,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				"FAST_PSY_EXTRASENSORY",
 				"FAST_DAR_SNARL",
@@ -12615,6 +12753,7 @@ const	dbpokemon = {
 			},
 			"category": "Armor",
 			"type": [ "Rock", "Dark" ],
+			"forms": [ "248-M" ],
 			"evolves-from": "247",
 			"base-stamina": 225,
 			"base-attack": 251,
@@ -12684,7 +12823,9 @@ const	dbpokemon = {
 				"shiny-shadow": "2023-10-28"
 			},
 			"category": "Diving",
+			"legendary": true,
 			"type": [ "Psychic", "Flying" ],
+			"forms": [ "249-A" ],
 			"base-stamina": 235,
 			"base-attack": 193,
 			"base-defense": 310,
@@ -12742,7 +12883,9 @@ const	dbpokemon = {
 				"shiny-shadow": "2024-01-27"
 			},
 			"category": "Rainbow",
+			"legendary": true,
 			"type": [ "Fire", "Flying" ],
+			"forms": [ "250-A" ],
 			"base-stamina": 214,
 			"base-attack": 239,
 			"base-defense": 244,
@@ -12804,6 +12947,7 @@ const	dbpokemon = {
 				"shiny": "2020-12-14"
 			},
 			"category": "Time Travel",
+			"mythical": true,
 			"type": [ "Psychic", "Grass" ],
 			"base-stamina": 225,
 			"base-attack": 210,
@@ -12921,6 +13065,7 @@ const	dbpokemon = {
 			},
 			"category": "Forest",
 			"type": [ "Grass" ],
+			"forms": [ "254-M" ],
 			"evolves-from": "253",
 			"base-stamina": 172,
 			"base-attack": 223,
@@ -13067,6 +13212,7 @@ const	dbpokemon = {
 			},
 			"category": "Blaze",
 			"type": [ "Fire", "Fighting" ],
+			"forms": [ "257-M" ],
 			"evolves-from": "256",
 			"base-stamina": 190,
 			"base-attack": 240,
@@ -13212,6 +13358,7 @@ const	dbpokemon = {
 			},
 			"category": "Mud Fish",
 			"type": [ "Water", "Ground" ],
+			"forms": [ "260-M" ],
 			"evolves-from": "259",
 			"base-stamina": 225,
 			"base-attack": 208,
@@ -13223,6 +13370,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				"CHRG_GRO_EARTHQUAKE",
+				"CHRG_POI_SLUDGE",
 				"CHRG_POI_SLUDGEWAVE",
 				"CHRG_WAT_SURF",
 				"CHRG_WAT_MUDDYWATER"
@@ -13325,6 +13473,7 @@ const	dbpokemon = {
 			"dynamax-class": 1,
 			"fast-moves": [
 				"FAST_DAR_BITE",
+				"FAST_DAR_SUCKERPUNCH",
 				"FAST_FIR_FIREFANG",
 				"FAST_ELE_THUNDERFANG",
 				"FAST_ICE_ICEFANG"
@@ -13356,6 +13505,7 @@ const	dbpokemon = {
 			},
 			"category": "Tiny Raccoon",
 			"type": [ "Normal" ],
+			"forms": [ "263-M" ],
 			"evolves-into": [ "264" ],
 			"base-stamina": 116,
 			"base-attack": 58,
@@ -13435,6 +13585,7 @@ const	dbpokemon = {
 			},
 			"category": "Rushing",
 			"type": [ "Normal" ],
+			"forms": [ "264-M" ],
 			"evolves-from": "263",
 			"base-stamina": 186,
 			"base-attack": 142,
@@ -13446,9 +13597,11 @@ const	dbpokemon = {
 				"FAST_GRO_SANDATTACK"
 			],
 			"charged-moves": [
-				"CHRG_GRO_DIG",
+				"CHRG_ELE_THUNDER",
 				"CHRG_GRA_GRASSKNOT",
-				"CHRG_ELE_THUNDER"
+				"CHRG_GRA_TRAILBLAZE",
+				"CHRG_GRO_DIG",
+				"CHRG_NOR_SWIFT"
 			],
 			"height-avg": 0.5,
 			"weight-avg": 32.5,
@@ -14154,6 +14307,7 @@ const	dbpokemon = {
 			},
 			"category": "Embrace",
 			"type": [ "Psychic", "Fairy" ],
+			"forms": [ "282-M" ],
 			"evolves-from": "281",
 			"base-stamina": 169,
 			"base-attack": 237,
@@ -14924,6 +15078,7 @@ const	dbpokemon = {
 			},
 			"category": "Darkness",
 			"type": [ "Dark", "Ghost" ],
+			"forms": [ "302-M" ],
 			"base-stamina": 137,
 			"base-attack": 141,
 			"base-defense": 136,
@@ -14933,9 +15088,10 @@ const	dbpokemon = {
 				"FAST_DAR_FEINTATTACK"
 			],
 			"charged-moves": [
-				"CHRG_ROC_POWERGEM",
 				"CHRG_DAR_FOULPLAY",
-				"CHRG_GHO_SHADOWSNEAK"
+				"CHRG_FAI_DAZZLINGGLEAM",
+				"CHRG_GHO_SHADOWSNEAK",
+				"CHRG_ROC_POWERGEM"
 			],
 			"height-avg": 0.51,
 			"weight-avg": 11,
@@ -14989,6 +15145,7 @@ const	dbpokemon = {
 			},
 			"category": "Deceiver",
 			"type": [ "Steel", "Fairy" ],
+			"forms": [ "303-M" ],
 			"base-stamina": 137,
 			"base-attack": 155,
 			"base-defense": 141,
@@ -15131,6 +15288,7 @@ const	dbpokemon = {
 			},
 			"category": "Iron Armor",
 			"type": [ "Steel", "Rock" ],
+			"forms": [ "306-M" ],
 			"evolves-from": "305",
 			"base-stamina": 172,
 			"base-attack": 198,
@@ -15232,6 +15390,7 @@ const	dbpokemon = {
 				"in-game": "2017-12-08",
 				"shiny": "2018-05-01"
 			},
+			"forms": [ "308-M" ],
 			"category": "Meditate",
 			"type": [ "Fighting", "Psychic" ],
 			"evolves-from": "307",
@@ -15325,6 +15484,7 @@ const	dbpokemon = {
 			},
 			"category": "Discharge",
 			"type": [ "Electric" ],
+			"forms": [ "310-M" ],
 			"evolves-from": "309",
 			"base-stamina": 172,
 			"base-attack": 215,
@@ -15618,6 +15778,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				"CHRG_POI_GUNKSHOT",
+				"CHRG_POI_SLUDGE",
 				"CHRG_POI_SLUDGEBOMB",
 				"CHRG_ICE_ICEBEAM",
 				"CHRG_POI_ACIDSPRAY"
@@ -15684,6 +15845,7 @@ const	dbpokemon = {
 			},
 			"category": "Brutal",
 			"type": [ "Water", "Dark" ],
+			"forms": [ "319-M" ],
 			"evolves-from": "318",
 			"base-stamina": 172,
 			"base-attack": 243,
@@ -15740,6 +15902,7 @@ const	dbpokemon = {
 			"base-defense": 68,
 			"dynamax-class": 1,
 			"fast-moves": [
+				"FAST_ROC_ROLLOUT",
 				"FAST_WAT_SPLASH",
 				"FAST_WAT_WATERGUN"
 			],
@@ -15779,13 +15942,14 @@ const	dbpokemon = {
 			"dynamax-class": 1,
 			"fast-moves": [
 				"FAST_PSY_ZENHEADBUTT",
+				"FAST_ROC_ROLLOUT",
 				"FAST_WAT_WATERGUN"
 			],
 			"charged-moves": [
-				"CHRG_WAT_SURF",
 				"CHRG_ICE_BLIZZARD",
 				"CHRG_NOR_HYPERBEAM",
-				"CHRG_WAT_SCALD"
+				"CHRG_WAT_SCALD",
+				"CHRG_WAT_SURF"
 			],
 			"height-avg": 14.5,
 			"weight-avg": 398,
@@ -15846,6 +16010,7 @@ const	dbpokemon = {
 			},
 			"category": "Eruption",
 			"type": [ "Fire", "Ground" ],
+			"forms": [ "323-M" ],
 			"evolves-from": "322",
 			"base-stamina": 172,
 			"base-attack": 194,
@@ -15977,12 +16142,14 @@ const	dbpokemon = {
 			"dynamax-class": 1,
 			"fast-moves": [
 				"FAST_ELE_CHARGEBEAM",
-				"FAST_PSY_EXTRASENSORY"
+				"FAST_PSY_EXTRASENSORY",
+				"FAST_PSY_PSYWAVE"
 			],
 			"charged-moves": [
-				"CHRG_PSY_PSYCHIC",
+				"CHRG_FIG_DYNAMICPUNCH",
 				"CHRG_GHO_SHADOWBALL",
-				"CHRG_PSY_MIRRORCOAT"
+				"CHRG_PSY_MIRRORCOAT",
+				"CHRG_PSY_PSYCHIC"
 			],
 			"height-avg": 0.89,
 			"weight-avg": 71.5,
@@ -16283,6 +16450,7 @@ const	dbpokemon = {
 			},
 			"category": "Humming",
 			"type": [ "Dragon", "Flying" ],
+			"forms": [ "334-M" ],
 			"evolves-from": "333",
 			"base-stamina": 181,
 			"base-attack": 141,
@@ -16779,6 +16947,7 @@ const	dbpokemon = {
 				"CHRG_GRA_GRASSKNOT",
 				"CHRG_GRO_BULLDOZE",
 				"CHRG_ROC_STONEEDGE",
+				"CHRG_ROC_ROCKTOMB",
 				"CHRG_ROC_ROCKSLIDE"
 			],
 			"height-avg": 1.5,
@@ -16982,7 +17151,6 @@ const	dbpokemon = {
 			"dex-index": "351-U",
 			"form-data": {
 				"base": "351",
-				"type": "idk yet",
 				"form": "Sunny Form",
 				"form-ital": "Forma Sole"
 			},
@@ -17001,7 +17169,6 @@ const	dbpokemon = {
 			"dex-index": "351-R",
 			"form-data": {
 				"base": "351",
-				"type": "idk yet",
 				"form": "Rainy Form",
 				"form-ital": "Forma Pioggia"
 			},
@@ -17020,7 +17187,6 @@ const	dbpokemon = {
 			"dex-index": "351-N",
 			"form-data": {
 				"base": "351",
-				"type": "idk yet",
 				"form": "Snowy Form",
 				"form-ital": "Forma Nuvola di Neve"
 			},
@@ -17120,6 +17286,7 @@ const	dbpokemon = {
 			},
 			"category": "Marionette",
 			"type": [ "Ghost" ],
+			"forms": [ "354-M" ],
 			"evolves-from": "353",
 			"base-stamina": 162,
 			"base-attack": 218,
@@ -17333,6 +17500,7 @@ const	dbpokemon = {
 			},
 			"category": "Disaster",
 			"type": [ "Dark" ],
+			"forms": [ "359-M" ],
 			"base-stamina": 163,
 			"base-attack": 246,
 			"base-defense": 120,
@@ -17467,6 +17635,7 @@ const	dbpokemon = {
 			},
 			"category": "Face",
 			"type": [ "Ice" ],
+			"forms": [ "362-M" ],
 			"evolves-from": "361",
 			"base-stamina": 190,
 			"base-attack": 162,
@@ -17474,12 +17643,13 @@ const	dbpokemon = {
 			"dynamax-class": 2,
 			"fast-moves": [
 				"FAST_ICE_ICESHARD",
-				"FAST_ICE_FROSTBREATH"
+				"FAST_ICE_FROSTBREATH",
+				"FAST_ROC_ROLLOUT",
 			],
 			"charged-moves": [
 				"CHRG_ICE_AVALANCHE",
-				"CHRG_STE_GYROBALL",
-				"CHRG_GHO_SHADOWBALL"
+				"CHRG_GHO_SHADOWBALL",
+				"CHRG_STE_GYROBALL"
 			],
 			"height-avg": 1.5,
 			"weight-avg": 256.5,
@@ -17903,6 +18073,7 @@ const	dbpokemon = {
 			},
 			"category": "Dragon",
 			"type": [ "Dragon", "Flying" ],
+			"forms": [ "373-M" ],
 			"evolves-from": "372",
 			"base-stamina": 216,
 			"base-attack": 277,
@@ -18050,6 +18221,7 @@ const	dbpokemon = {
 			},
 			"category": "Iron Leg",
 			"type": [ "Steel", "Psychic" ],
+			"forms": [ "376-M" ],
 			"evolves-from": "375",
 			"base-stamina": 190,
 			"base-attack": 257,
@@ -18103,6 +18275,7 @@ const	dbpokemon = {
 				"shiny-shadow": "2024-12-03"
 			},
 			"category": "Rock Peak",
+			"legendary": true,
 			"type": [ "Rock" ],
 			"base-stamina": 190,
 			"base-attack": 179,
@@ -18144,6 +18317,7 @@ const	dbpokemon = {
 				"shiny-shadow": "2024-12-03"
 			},
 			"category": "Iceberg",
+			"legendary": true,
 			"type": [ "Ice" ],
 			"base-stamina": 190,
 			"base-attack": 179,
@@ -18185,6 +18359,7 @@ const	dbpokemon = {
 				"shiny-shadow": "2024-12-03"
 			},
 			"category": "Iron",
+			"legendary": true,
 			"type": [ "Steel" ],
 			"base-stamina": 190,
 			"base-attack": 143,
@@ -18225,7 +18400,9 @@ const	dbpokemon = {
 				"shadow": "2022-04-03"
 			},
 			"category": "Eon",
+			"legendary": true,
 			"type": [ "Dragon", "Psychic" ],
+			"forms": [ "380-M" ],
 			"base-stamina": 190,
 			"base-attack": 228,
 			"base-defense": 246,
@@ -18290,7 +18467,9 @@ const	dbpokemon = {
 				"shadow": "2022-07-09"
 			},
 			"category": "Eon",
+			"legendary": true,
 			"type": [ "Dragon", "Psychic" ],
+			"forms": [ "381-M" ],
 			"base-stamina": 190,
 			"base-attack": 268,
 			"base-defense": 212,
@@ -18354,7 +18533,9 @@ const	dbpokemon = {
 				"shadow": "2024-01-27"
 			},
 			"category": "Sea Basin",
+			"legendary": true,
 			"type": [ "Water" ],
+			"forms": [ "382-P" ],
 			"base-stamina": 205,
 			"base-attack": 270,
 			"base-defense": 228,
@@ -18419,7 +18600,9 @@ const	dbpokemon = {
 				"shadow": "2024-03-27"
 			},
 			"category": "Continent",
+			"legendary": true,
 			"type": [ "Ground" ],
+			"forms": [ "383-P" ],
 			"base-stamina": 205,
 			"base-attack": 270,
 			"base-defense": 228,
@@ -18485,7 +18668,9 @@ const	dbpokemon = {
 				"shiny": "2019-06-31"
 			},
 			"category": "Sky High",
+			"legendary": true,
 			"type": [ "Dragon", "Flying" ],
+			"forms": [ "384-M" ],
 			"base-stamina": 213,
 			"base-attack": 284,
 			"base-defense": 170,
@@ -18552,6 +18737,7 @@ const	dbpokemon = {
 				"shadow": false
 			},
 			"category": "Wish",
+			"mythical": true,
 			"type": [ "Steel", "Psychic" ],
 			"base-stamina": 225,
 			"base-attack": 210,
@@ -18589,7 +18775,9 @@ const	dbpokemon = {
 				"shiny": "2020-08-07"
 			},
 			"category": "DNA",
+			"mythical": true,
 			"type": [ "Psychic" ],
+			"forms": [ "386-A", "386-D", "386-S" ],
 			"base-stamina": 137,
 			"base-attack": 345,
 			"base-defense": 115,
@@ -18620,7 +18808,6 @@ const	dbpokemon = {
 			"dex-index": "386-A",
 			"form-data": {
 				"base": "386",
-				"type": "fuck if i know",
 				"form": "Attack Forme",
 				"form-ital": "Forma Attacco"
 			},
@@ -18645,7 +18832,6 @@ const	dbpokemon = {
 			"dex-index": "386-D",
 			"form-data": {
 				"base": "386",
-				"type": "fuck if i know",
 				"form": "Defense Forme",
 				"form-ital": "Forma Difesa"
 			},
@@ -18670,7 +18856,6 @@ const	dbpokemon = {
 			"dex-index": "386-S",
 			"form-data": {
 				"base": "386",
-				"type": "fuck if i know",
 				"form": "Speed Forme",
 				"form-ital": "Forma Velocita",
 				"form-ital-display": "Forma Velocit\`a" // "todo" Accented a
@@ -19477,6 +19662,7 @@ const	dbpokemon = {
 			"dynamax-class": 2,
 			"fast-moves": [
 				"FAST_POI_POISONJAB",
+				"FAST_POI_POISONSTING",
 				"FAST_GRA_RAZORLEAF",
 				"FAST_GRA_MAGICALLEAF"
 			],
@@ -19664,6 +19850,7 @@ const	dbpokemon = {
 			"category": "Bagworm",
 			"type": [ "Bug" ],
 			"evolves-into": [ "413-0", "414" ],
+			"forms": [ "412-P", "412-S", "412-T" ],
 			"base-stamina": 120,
 			"base-attack": 53,
 			"base-defense": 83,
@@ -19692,7 +19879,6 @@ const	dbpokemon = {
 			"dex-index": "412-P",
 			"form-data": {
 				"base": "412-0",
-				"type": "idk",
 				"form": "Plant Cloak",
 				"form-ital": "Manto Pianta"
 			},
@@ -19702,7 +19888,6 @@ const	dbpokemon = {
 			"dex-index": "412-S",
 			"form-data": {
 				"base": "412-0",
-				"type": "idk",
 				"form": "Sandy Cloak",
 				"form-ital": "Manto Sabbia"
 			},
@@ -19712,7 +19897,6 @@ const	dbpokemon = {
 			"dex-index": "412-T",
 			"form-data": {
 				"base": "412-0",
-				"type": "idk",
 				"form": "Trash Cloak",
 				"form-ital": "Manto Scarti"
 			},
@@ -19727,6 +19911,7 @@ const	dbpokemon = {
 			},
 			"category": "Bagworm",
 			"evolves-from": "412-0",
+			"forms": [ "413-P", "413-S", "413-T" ],
 			"dynamax-class": 1,
 			"height-avg": 0.5,
 			"weight-avg": 6.5,
@@ -19745,7 +19930,6 @@ const	dbpokemon = {
 			"dex-index": "413-P",
 			"form-data": {
 				"base": "413-0",
-				"type": "idk",
 				"form": "Plant Cloak",
 				"form-ital": "Manto Pianta"
 			},
@@ -19768,7 +19952,6 @@ const	dbpokemon = {
 			"dex-index": "413-S",
 			"form-data": {
 				"base": "413-0",
-				"type": "idk",
 				"form": "Sandy Cloak",
 				"form-ital": "Manto Sabbia"
 			},
@@ -19791,7 +19974,6 @@ const	dbpokemon = {
 			"dex-index": "413-T",
 			"form-data": {
 				"base": "413-0",
-				"type": "idk",
 				"form": "Trash Cloak",
 				"form-ital": "Manto Scarti"
 			},
@@ -19856,6 +20038,7 @@ const	dbpokemon = {
 			},
 			"category": "Tiny Bee",
 			"type": [ "Bug", "Flying" ],
+			"forms": [ "415-M", "415-F" ],
 			"base-stamina": 102,
 			"base-attack": 59,
 			"base-defense": 83,
@@ -20107,6 +20290,7 @@ const	dbpokemon = {
 			"category": "Sea Slug",
 			"type": [ "Water" ],
 			"evolves-into": [ "423-0" ],
+			"forms": [ "422-E", "422-W" ],
 			"base-stamina": 183,
 			"base-attack": 103,
 			"base-defense": 105,
@@ -20137,7 +20321,6 @@ const	dbpokemon = {
 			"dex-index": "422-E",
 			"form-data": {
 				"base": "422-0",
-				"type": "idk",
 				"form": "Eastern Sea",
 				"form-ital": "Mare Est"
 			},
@@ -20147,7 +20330,6 @@ const	dbpokemon = {
 			"dex-index": "422-W",
 			"form-data": {
 				"base": "422-0",
-				"type": "idk",
 				"form": "Western Sea",
 				"form-ital": "Mare Ovest"
 			},
@@ -20162,6 +20344,7 @@ const	dbpokemon = {
 			},
 			"category": "Sea Slug",
 			"type": [ "Water", "Ground" ],
+			"forms": [ "423-E", "423-W" ],
 			"evolves-from": "422-0",
 			"base-stamina": 244,
 			"base-attack": 169,
@@ -20196,7 +20379,6 @@ const	dbpokemon = {
 			"dex-index": "423-E",
 			"form-data": {
 				"base": "423-0",
-				"type": "idk",
 				"form": "Eastern Sea",
 				"form-ital": "Mare Est"
 			},
@@ -20206,7 +20388,6 @@ const	dbpokemon = {
 			"dex-index": "423-W",
 			"form-data": {
 				"base": "423-0",
-				"type": "idk",
 				"form": "Western Sea",
 				"form-ital": "Mare Ovest"
 			},
@@ -20369,6 +20550,7 @@ const	dbpokemon = {
 			},
 			"category": "Rabbit",
 			"type": [ "Normal" ],
+			"forms": [ "428-M" ],
 			"evolves-from": "427",
 			"base-stamina": 163,
 			"base-attack": 156,
@@ -21027,6 +21209,7 @@ const	dbpokemon = {
 			},
 			"category": "Mach",
 			"type": [ "Dragon", "Ground" ],
+			"forms": [ "445-M" ],
 			"evolves-from": "444",
 			"base-stamina": 239,
 			"base-attack": 261,
@@ -21157,6 +21340,7 @@ const	dbpokemon = {
 			},
 			"category": "Aura",
 			"type": [ "Fighting", "Steel" ],
+			"forms": [ "448-M" ],
 			"evolves-from": "447",
 			"base-stamina": 172,
 			"base-attack": 236,
@@ -21643,6 +21827,7 @@ const	dbpokemon = {
 			},
 			"category": "Frost Tree",
 			"type": [ "Grass", "Ice" ],
+			"forms": [ "460-M" ],
 			"evolves-from": "459",
 			"base-stamina": 207,
 			"base-attack": 178,
@@ -22009,7 +22194,8 @@ const	dbpokemon = {
 				"CHRG_ROC_ANCIENTPOWER",
 				"CHRG_FAI_DAZZLINGGLEAM",
 				"CHRG_FLY_AERIALACE",
-				"CHRG_FIR_FLAMETHROWER"
+				"CHRG_FIR_FLAMETHROWER",
+				"CHRG_PSY_PSYSHOCK"
 			],
 			"special-charged-moves": [
 				"CHRG_FIG_AURASPHERE"
@@ -22205,6 +22391,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				"CHRG_ICE_AVALANCHE",
+				"CHRG_ICE_ICICLESPEAR",
 				"CHRG_GRO_BULLDOZE",
 				"CHRG_ROC_STONEEDGE",
 				"CHRG_GRO_HIGHHORSEPOWER"
@@ -22278,6 +22465,7 @@ const	dbpokemon = {
 			},
 			"category": "Blade",
 			"type": [ "Psychic", "Fighting" ],
+			"forms": [ "475-M" ],
 			"evolves-from": "281",
 			"base-stamina": 169,
 			"base-attack": 237,
@@ -22386,6 +22574,7 @@ const	dbpokemon = {
 				"FAST_GHO_ASTONISH"
 			],
 			"charged-moves": [
+				"CHRG_FIG_DYNAMICPUNCH",
 				"CHRG_GHO_OMINOUSWIND",
 				"CHRG_PSY_PSYCHIC",
 				"CHRG_DAR_DARKPULSE",
@@ -22456,6 +22645,7 @@ const	dbpokemon = {
 			},
 			"category": "Plasma",
 			"type": [ "Electric", "Ghost" ],
+			"forms": [ "479-H", "479-W", "479-M", "479-V", "479-G" ],
 			"base-stamina": 137,
 			"base-attack": 185,
 			"base-defense": 159,
@@ -22488,7 +22678,6 @@ const	dbpokemon = {
 			"name-ital": "Rotom Calore",
 			"form-data": {
 				"base": "479",
-				"type": "huh",
 				"form": "Heat"
 			},
 			"availability": {
@@ -22510,7 +22699,6 @@ const	dbpokemon = {
 			"name-ital": "Rotom Lavaggio",
 			"form-data": {
 				"base": "479",
-				"type": "huh",
 				"form": "Wash"
 			},
 			"availability": {
@@ -22526,13 +22714,12 @@ const	dbpokemon = {
 				"CHRG_ELE_THUNDER"
 			]
 		},
-		"479-R": {
-			"dex-index": "479-R",
+		"479-G": {
+			"dex-index": "479-G",
 			"name": "Frost Rotom",
 			"name-ital": "Rotom Gelo",
 			"form-data": {
 				"base": "479",
-				"type": "huh",
 				"form": "Frost"
 			},
 			"availability": {
@@ -22549,13 +22736,12 @@ const	dbpokemon = {
 				"CHRG_ELE_THUNDER"
 			]
 		},
-		"479-A": {
-			"dex-index": "479-A",
+		"479-V": {
+			"dex-index": "479-V",
 			"name": "Fan Rotom",
 			"name-ital": "Rotom Vortice",
 			"form-data": {
 				"base": "479",
-				"type": "huh",
 				"form": "Fan"
 			},
 			"availability": {
@@ -22581,7 +22767,6 @@ const	dbpokemon = {
 			"name-ital": "Rotom Taglio",
 			"form-data": {
 				"base": "479",
-				"type": "huh",
 				"form": "Mow"
 			},
 			"availability": {
@@ -22606,6 +22791,7 @@ const	dbpokemon = {
 				"shiny": "2021-09-14"
 			},
 			"category": "Knowledge",
+			"legendary": true,
 			"type": [ "Psychic" ],
 			"base-stamina": 181,
 			"base-attack": 156,
@@ -22641,6 +22827,8 @@ const	dbpokemon = {
 				"shiny": "2021-09-14"
 			},
 			"category": "Emotion",
+			"legendary": true,
+			"legendary": true,
 			"type": [ "Psychic" ],
 			"base-stamina": 190,
 			"base-attack": 212,
@@ -22676,6 +22864,7 @@ const	dbpokemon = {
 				"shiny": "2021-09-14"
 			},
 			"category": "Willpower",
+			"legendary": true,
 			"type": [ "Psychic" ],
 			"base-stamina": 181,
 			"base-attack": 270,
@@ -22711,7 +22900,9 @@ const	dbpokemon = {
 				"shiny": "2021-07-23"
 			},
 			"category": "Temporal",
+			"legendary": true,
 			"type": [ "Steel", "Dragon" ],
+			"forms": [ "483-O" ],
 			"base-stamina": 205,
 			"base-attack": 275,
 			"base-defense": 211,
@@ -22742,7 +22933,6 @@ const	dbpokemon = {
 			"dex-index": "483-O",
 			"form-data": {
 				"base": "483",
-				"type": "huh",
 				"form": "Origin Forme",
 				"form-ital": "Forma Originale"
 			},
@@ -22788,7 +22978,9 @@ const	dbpokemon = {
 				"shadow": "2025-01-15"
 			},
 			"category": "Spatial",
+			"legendary": true,
 			"type": [ "Water", "Dragon" ],
+			"forms": [ "484-O" ],
 			"base-stamina": 189,
 			"base-attack": 280,
 			"base-defense": 215,
@@ -22820,7 +23012,6 @@ const	dbpokemon = {
 			"dex-index": "484-O",
 			"form-data": {
 				"base": "484",
-				"type": "huh",
 				"form": "Origin Forme",
 				"form-ital": "Forma Originale"
 			},
@@ -22867,6 +23058,7 @@ const	dbpokemon = {
 				"shadow": "2024-10-08"
 			},
 			"category": "Lava Dome",
+			"legendary": true,
 			"type": [ "Fire", "Steel" ],
 			"base-stamina": 209,
 			"base-attack": 251,
@@ -22908,6 +23100,7 @@ const	dbpokemon = {
 				"shadow": "2023-10-26"
 			},
 			"category": "Colossal",
+			"legendary": true,
 			"type": [ "Normal" ],
 			"base-stamina": 221,
 			"base-attack": 287,
@@ -22939,18 +23132,19 @@ const	dbpokemon = {
 			"dex-index": "487-0",
 			"name": "Giratina",
 			"category": "Renegade",
+			"legendary": true,
 			"type": [ "Ghost", "Dragon" ],
+			"forms": [ "487-A", "487-O" ],
 			"dynamax-class": 4,
 			"special-charged-moves": [
 				"CHRG_GHO_SHADOWFORCE"
 			],
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "487-A"
 		},
 		"487-A": {
 			"dex-index": "487-A",
 			"form-data": {
 				"base": "487-0",
-				"type": "idk",
 				"form": "Altered Form",
 				"form-ital": "Forma Alterata"
 			},
@@ -22987,7 +23181,6 @@ const	dbpokemon = {
 			"dex-index": "487-O",
 			"form-data": {
 				"base": "487-0",
-				"type": "huh",
 				"form": "Origin Forme",
 				"form-ital": "Forma Originale"
 			},
@@ -23029,6 +23222,7 @@ const	dbpokemon = {
 				"shadow": "2024-08-08"
 			},
 			"category": "Lunar",
+			"legendary": true,
 			"type": [ "Psychic" ],
 			"base-stamina": 260,
 			"base-attack": 152,
@@ -23066,6 +23260,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Sea Drifter",
+			"mythical": true,
 			"type": [ "Water" ],
 			"base-stamina": 190,
 			"base-attack": 162,
@@ -23100,6 +23295,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Seafaring",
+			"mythical": true,
 			"type": [ "Water" ],
 			"base-stamina": 225,
 			"base-attack": 210,
@@ -23135,6 +23331,7 @@ const	dbpokemon = {
 				"shiny": "2020-03-06"
 			},
 			"category": "Pitch-Black",
+			"mythical": true,
 			"type": [ "Dark" ],
 			"base-stamina": 172,
 			"base-attack": 285,
@@ -23169,19 +23366,20 @@ const	dbpokemon = {
 			"dex-index": "492-0",
 			"name": "Shaymin",
 			"category": "Gratitude",
+			"mythical": true,
+			"forms": [ "492-L", "492-S" ],
 			"charged-moves": [
 				"CHRG_GRA_ENERGYBALL",
 				"CHRG_GRA_GRASSKNOT",
 				"CHRG_GRA_SOLARBEAM",
 				"CHRG_GRA_SEEDFLARE"
 			],
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "492-L"
 		},
 		"492-L": {
 			"dex-index": "492-L",
 			"form-data": {
 				"base": "492-0",
-				"type": "idk",
 				"form": "Land Forme",
 				"form-ital": "Forma Terra",
 			},
@@ -23215,7 +23413,6 @@ const	dbpokemon = {
 			"dex-index": "492-S",
 			"form-data": {
 				"base": "492-0",
-				"type": "idk",
 				"form": "Sky Forme",
 				"form-ital": "Forma Cielo"
 			},
@@ -23248,12 +23445,20 @@ const	dbpokemon = {
 		},
 		"493": {
 			"dex-index": "493",
-			"name": "Arceus",
+			"name": "Arceus", // TODO Legendary or Mythical?
 			"availability": {
 				"in-game": false
 			},
 			"category": "Alpha",
 			"type": [ "Normal" ],
+			"forms": [
+				"493-BUG", "493-DAR", "493-DRA",
+				"493-ELE", "493-FAI", "493-FIG",
+				"493-FIR", "493-FLY", "493-GHO",
+				"493-GRA", "493-GRO", "493-ICE",
+				"493-POI", "493-PSY", "493-ROC",
+				"493-STE", "493-WAT"
+			],
 			"base-stamina": 237,
 			"base-attack": 238,
 			"base-defense": 238,
@@ -23284,7 +23489,6 @@ const	dbpokemon = {
 			"dex-index": "493-BUG",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Insect Plate",
 				"form-ital": "Lastrabaco"
 			},
@@ -23294,7 +23498,6 @@ const	dbpokemon = {
 			"dex-index": "493-DAR",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Dread Plate",
 				"form-ital": "Lastratimore"
 			},
@@ -23304,7 +23507,6 @@ const	dbpokemon = {
 			"dex-index": "493-DRA",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Draco Plate",
 				"form-ital": "Lastradrakon"
 			},
@@ -23314,7 +23516,6 @@ const	dbpokemon = {
 			"dex-index": "493-ELE",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Zap Plate",
 				"form-ital": "Lastrasaetta"
 			},
@@ -23324,7 +23525,6 @@ const	dbpokemon = {
 			"dex-index": "493-FAI",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Pixie Plate",
 				"form-ital": "Lastraspiritello"
 			},
@@ -23334,7 +23534,6 @@ const	dbpokemon = {
 			"dex-index": "493-FIG",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Fist Plate",
 				"form-ital": "Lastrapugno"
 			},
@@ -23344,7 +23543,6 @@ const	dbpokemon = {
 			"dex-index": "493-FIR",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Flame Plate",
 				"form-ital": "Lastrarogo"
 			},
@@ -23354,7 +23552,6 @@ const	dbpokemon = {
 			"dex-index": "493-FLY",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Sky Plate",
 				"form-ital": "Lastracielo"
 			},
@@ -23364,7 +23561,6 @@ const	dbpokemon = {
 			"dex-index": "493-GHO",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Spooky Plate",
 				"form-ital": "Lastratetra"
 			},
@@ -23374,7 +23570,6 @@ const	dbpokemon = {
 			"dex-index": "493-GRA",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Meadow Plate",
 				"form-ital": "Lastraprato"
 			},
@@ -23384,7 +23579,6 @@ const	dbpokemon = {
 			"dex-index": "493-GRO",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Earth Plate",
 				"form-ital": "Lastrageo"
 			},
@@ -23394,7 +23588,6 @@ const	dbpokemon = {
 			"dex-index": "493-ICE",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Icicle Plate",
 				"form-ital": "Lastragelo"
 			},
@@ -23404,7 +23597,6 @@ const	dbpokemon = {
 			"dex-index": "493-POI",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Toxic Plate",
 				"form-ital": "Lastrafiele"
 			},
@@ -23414,7 +23606,6 @@ const	dbpokemon = {
 			"dex-index": "493-PSY",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Mind Plate",
 				"form-ital": "Lastramente"
 			},
@@ -23424,7 +23615,6 @@ const	dbpokemon = {
 			"dex-index": "493-ROC",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Stone Plate",
 				"form-ital": "Lastrapietra"
 			},
@@ -23434,7 +23624,6 @@ const	dbpokemon = {
 			"dex-index": "493-STE",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Iron Plate",
 				"form-ital": "Lastraferro"
 			},
@@ -23444,7 +23633,6 @@ const	dbpokemon = {
 			"dex-index": "493-WAT",
 			"form-data": {
 				"base": "493",
-				"type": "type change",
 				"form": "Splash Plate",
 				"form-ital": "Lastraidro"
 			},
@@ -23457,6 +23645,7 @@ const	dbpokemon = {
 				"in-game": "2020-07-26"
 			},
 			"category": "Victory",
+			"mythical": true,
 			"type": [ "Psychic", "Fire" ],
 			"base-stamina": 225,
 			"base-attack": 210,
@@ -23803,6 +23992,7 @@ const	dbpokemon = {
 			},
 			"category": "Formidable",
 			"type": [ "Water" ],
+			"forms": [ "503-H" ],
 			"evolves-from": "502",
 			"base-stamina": 216,
 			"base-attack": 212,
@@ -24442,7 +24632,7 @@ const	dbpokemon = {
 			"base-attack": 98,
 			"base-defense": 80,
 			"dynamax-class": 1,
-			"max-battle-tier": 1, // TODO Pidove Max Battle Tier prediction
+			"max-battle-tier": 1,
 			"fast-moves": [
 				"FAST_NOR_QUICKATTACK",
 				"FAST_FLY_AIRSLASH"
@@ -24890,8 +25080,13 @@ const	dbpokemon = {
 		"531": {
 			"dex-index": "531",
 			"name": "Audino",
+			"availability": {
+				"in-game": "2020-02-14",
+				"shiny": "2021-07-17"
+			},
 			"category": "Hearing",
 			"type": [ "Normal" ],
+			"forms": [ "531-M" ],
 			"base-stamina": 230,
 			"base-attack": 114,
 			"base-defense": 163,
@@ -25574,6 +25769,7 @@ const	dbpokemon = {
 			},
 			"category": "Flowering",
 			"type": [ "Grass" ],
+			"forms": [ "549-H" ],
 			"evolves-from": "548",
 			"base-stamina": 172,
 			"base-attack": 214,
@@ -25624,6 +25820,7 @@ const	dbpokemon = {
 			},
 			"variants": [ "Blue Striped", "Red Striped" ],
 			"variants-ital": [ "Lineablu", "Linearossa" ],
+			"forms": [ "550-W" ],
 			"category": "Hostile",
 			"type": [ "Water" ],
 			"base-stamina": 172,
@@ -25644,7 +25841,6 @@ const	dbpokemon = {
 			"dex-index": "550-W",
 			"form-data": {
 				"base": "550",
-				"type": "idk",
 				"form": "White Striped Form",
 				"form-ital": "Forma Lineabianca"
 			},
@@ -25776,6 +25972,7 @@ const	dbpokemon = {
 			},
 			"category": "Zen Charm",
 			"type": [ "Fire" ],
+			"forms": [ "554-G" ],
 			"evolves-into": [ "555" ],
 			"base-stamina": 172,
 			"base-attack": 153,
@@ -25853,6 +26050,7 @@ const	dbpokemon = {
 			},
 			"category": "Blazing Pokémon",
 			"type": [ "Fire" ],
+			"forms": [ "555-Z", "555-G" ],
 			"evolves-from": "554",
 			"base-stamina": 233,
 			"base-attack": 263,
@@ -25886,7 +26084,6 @@ const	dbpokemon = {
 			"dex-index": "555-Z",
 			"form-data": {
 				"base": "555",
-				"type": "battle?",
 				"form": "Zen Mode",
 				"form-ital": "Stato Zen"
 			},
@@ -25912,6 +26109,7 @@ const	dbpokemon = {
 			},
 			"category": "Zen Charm",
 			"type": [ "Ice" ],
+			"forms": [ "555-GZ" ],
 			"evolves-from": "554-G",
 			"fast-moves": [
 				"FAST_NOR_TACKLE",
@@ -25942,7 +26140,6 @@ const	dbpokemon = {
 			"name-ital": "Galarian Darmanitan (Stato Zen)",
 			"form-data": {
 				"base": "555",
-				"type": "battle?",
 				"form": "Zen Mode",
 				"form-ital": "Stato Zen"
 			},
@@ -26183,6 +26380,7 @@ const	dbpokemon = {
 			},
 			"category": "Spirit",
 			"type": [ "Ghost" ],
+			"forms": [ "562-G" ],
 			"evolves-into": [ "563" ],
 			"base-stamina": 116,
 			"base-attack": 95,
@@ -26490,6 +26688,9 @@ const	dbpokemon = {
 			"form-data": {
 				"base": "569",
 				"type": "Giga"
+			},
+			"availability": {
+				"in-game": false
 			}
 		},
 		"570": {
@@ -26501,6 +26702,7 @@ const	dbpokemon = {
 			},
 			"category": "Tricky Fox",
 			"type": [ "Dark" ],
+			"forms": [ "570-H" ],
 			"evolves-into": [ "571" ],
 			"base-stamina": 120,
 			"base-attack": 153,
@@ -26552,6 +26754,7 @@ const	dbpokemon = {
 			},
 			"category": "Illusion Fox",
 			"type": [ "Dark" ],
+			"forms": [ "571-H" ],
 			"evolves-from": "570",
 			"base-stamina": 155,
 			"base-attack": 250,
@@ -26873,9 +27076,10 @@ const	dbpokemon = {
 				"FAST_PSY_ZENHEADBUTT"
 			],
 			"charged-moves": [
-				"CHRG_PSY_FUTURESIGHT",
+				"CHRG_ELE_THUNDER",
 				"CHRG_GHO_SHADOWBALL",
-				"CHRG_ELE_THUNDER"
+				"CHRG_PSY_FUTURESIGHT",
+				"CHRG_PSY_PSYSHOCK"
 			],
 			"height-avg": 1,
 			"weight-avg": 20.1,
@@ -27079,6 +27283,7 @@ const	dbpokemon = {
 			"name": "Deerling",
 			"category": "Season",
 			"type": [ "Normal", "Grass" ],
+			"forms": [ "585-A", "585-P", "585-U", "585-W" ],
 			"evolves-into": [ "586-0" ],
 			"base-stamina": 155,
 			"base-attack": 115,
@@ -27111,7 +27316,6 @@ const	dbpokemon = {
 			"dex-index": "585-A",
 			"form-data": {
 				"base": "585-0",
-				"type": "idk",
 				"form": "Autumn",
 				"form-ital": "Autunno"
 			},
@@ -27125,7 +27329,6 @@ const	dbpokemon = {
 			"dex-index": "585-P",
 			"form-data": {
 				"base": "585-0",
-				"type": "idk",
 				"form": "Spring",
 				"form-ital": "Primavera"
 			},
@@ -27138,7 +27341,6 @@ const	dbpokemon = {
 			"dex-index": "585-U",
 			"form-data": {
 				"base": "585-0",
-				"type": "idk",
 				"form": "Summer",
 				"form-ital": "Estate"
 			},
@@ -27152,7 +27354,6 @@ const	dbpokemon = {
 			"dex-index": "585-W",
 			"form-data": {
 				"base": "585-0",
-				"type": "idk",
 				"form": "Winter",
 				"form-ital": "Inverno"
 			},
@@ -27167,6 +27368,7 @@ const	dbpokemon = {
 			"name": "Sawsbuck",
 			"category": "Season",
 			"type": [ "Normal", "Grass" ],
+			"forms": [ "586-A", "586-P", "586-U", "586-W" ],
 			"evolves-from": "585-0",
 			"base-stamina": 190,
 			"base-attack": 198,
@@ -27200,7 +27402,6 @@ const	dbpokemon = {
 			"dex-index": "586-A",
 			"form-data": {
 				"base": "586-0",
-				"type": "idk",
 				"form": "Autumn",
 				"form-ital": "Autunno"
 			},
@@ -27214,7 +27415,6 @@ const	dbpokemon = {
 			"dex-index": "586-P",
 			"form-data": {
 				"base": "586-0",
-				"type": "idk",
 				"form": "Spring",
 				"form-ital": "Primavera"
 			},
@@ -27227,7 +27427,6 @@ const	dbpokemon = {
 			"dex-index": "586-U",
 			"form-data": {
 				"base": "586-0",
-				"type": "idk",
 				"form": "Summer",
 				"form-ital": "Estate"
 			},
@@ -27241,7 +27440,6 @@ const	dbpokemon = {
 			"dex-index": "586-W",
 			"form-data": {
 				"base": "586-0",
-				"type": "idk",
 				"form": "Winter",
 				"form-ital": "Inverno"
 			},
@@ -27350,6 +27548,9 @@ const	dbpokemon = {
 				"CHRG_GRO_DRILLRUN",
 				"CHRG_FLY_AERIALACE"
 			],
+			"special-charged-moves": [
+				"CHRG_WAT_RAZORSHELL"
+			],
 			"height-avg": 1,
 			"weight-avg": 33,
 			"size-data": {
@@ -27442,6 +27643,7 @@ const	dbpokemon = {
 			"name": "Frillish",
 			"category": "Floating",
 			"type": [ "Water", "Ghost" ],
+			"forms": [ "592-B", "592-P" ],
 			"evolves-into": [ "593-0" ],
 			"base-stamina": 146,
 			"base-attack": 115,
@@ -27498,6 +27700,7 @@ const	dbpokemon = {
 			"name": "Jellicent",
 			"category": "Floating",
 			"type": [ "Water", "Ghost" ],
+			"forms": [ "593-B", "593-P" ],
 			"evolves-from": "592-0",
 			"base-stamina": 225,
 			"base-attack": 159,
@@ -28440,6 +28643,9 @@ const	dbpokemon = {
 				"CHRG_BUG_SIGNALBEAM",
 				"CHRG_FIG_FOCUSBLAST"
 			],
+			"special-charged-moves": [
+				"CHRG_GRA_ENERGYBALL"
+			],
 			"height-avg": 0.8,
 			"weight-avg": 25.3,
 			"size-data": {
@@ -28462,6 +28668,7 @@ const	dbpokemon = {
 			},
 			"category": "Trap",
 			"type": [ "Ground", "Electric" ],
+			"forms": [ "618-G" ],
 			"base-stamina": 240,
 			"base-attack": 144,
 			"base-defense": 171,
@@ -28869,6 +29076,7 @@ const	dbpokemon = {
 			},
 			"category": "Valiant",
 			"type": [ "Normal", "Flying" ],
+			"forms": [ "628-H" ],
 			"evolves-from": "627",
 			"base-stamina": 225,
 			"base-attack": 232,
@@ -29275,6 +29483,7 @@ const	dbpokemon = {
 				"shiny": "2020-03-20"
 			},
 			"category": "Iron Will",
+			"legendary": true,
 			"type": [ "Steel", "Fighting" ],
 			"base-stamina": 209,
 			"base-attack": 192,
@@ -29314,6 +29523,7 @@ const	dbpokemon = {
 				"shiny": "2020-05-19"
 			},
 			"category": "Cavern",
+			"legendary": true,
 			"type": [ "Rock", "Fighting" ],
 			"base-stamina": 209,
 			"base-attack": 260,
@@ -29353,6 +29563,7 @@ const	dbpokemon = {
 				"shiny": "2020-05-12"
 			},
 			"category": "Grassland",
+			"legendary": true,
 			"type": [ "Grass", "Fighting" ],
 			"base-stamina": 209,
 			"base-attack": 192,
@@ -29388,15 +29599,16 @@ const	dbpokemon = {
 			"dex-index": "641-0",
 			"name": "Tornadus",
 			"category": "Cyclone",
+			"legendary": true,
 			"type": [ "Flying" ],
+			"forms": [ "641-I", "641-T" ],
 			"dynamax-class": 4,
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "641-I"
 		},
 		"641-I": {
 			"dex-index": "641-I",
 			"form-data": {
 				"base": "641-0",
-				"type": "idk",
 				"form": "Incarnate Forme",
 				"form-ital": "Forma Incarnazione"
 			},
@@ -29434,7 +29646,6 @@ const	dbpokemon = {
 			"dex-index": "641-T",
 			"form-data": {
 				"base": "641-0",
-				"type": "idk",
 				"form": "Therian Forme",
 				"form-ital": "Forma Totem"
 			},
@@ -29475,15 +29686,16 @@ const	dbpokemon = {
 			"dex-index": "642-0",
 			"name": "Thundurus",
 			"category": "Bolt Strike",
+			"legendary": true,
 			"type": [ "Electric", "Flying" ],
+			"forms": [ "642-I", "642-T" ],
 			"dynamax-class": 4,
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "642-I"
 		},
 		"642-I": {
 			"dex-index": "642-I",
 			"form-data": {
 				"base": "642-0",
-				"type": "idk",
 				"form": "Incarnate Forme",
 				"form-ital": "Forma Incarnazione"
 			},
@@ -29522,7 +29734,6 @@ const	dbpokemon = {
 			},
 			"form-data": {
 				"base": "642-0",
-				"type": "idk",
 				"form": "Therian Forme",
 				"form-ital": "Forma Totem"
 			},
@@ -29563,6 +29774,7 @@ const	dbpokemon = {
 				"shiny": "2021-12-01"
 			},
 			"category": "Vast White",
+			"legendary": true,
 			"type": [ "Dragon", "Fire" ],
 			"base-stamina": 205,
 			"base-attack": 275,
@@ -29602,6 +29814,7 @@ const	dbpokemon = {
 				"shiny": "2021-12-01"
 			},
 			"category": "Deep Black",
+			"legendary": true,
 			"type": [ "Dragon", "Electric" ],
 			"base-stamina": 205,
 			"base-attack": 275,
@@ -29637,16 +29850,17 @@ const	dbpokemon = {
 			"dex-index": "645-0",
 			"name": "Landorus",
 			"category": "Abundance",
+			"legendary": true,
 			"type": [ "Ground", "Flying" ],
+			"forms": [ "645-I", "645-T" ],
 			"dynamax-class": 4,
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "645-I"
 		},
 		"645-I": {
 			"dex-index": "645-I",
 			"name": "Landorus (Incarnate Forme)",
 			"form-data": {
 				"base": "645-0",
-				"type": "idk",
 				"form": "Incarnate Forme",
 				"form-ital": "Forma Incarnazione"
 			},
@@ -29685,7 +29899,6 @@ const	dbpokemon = {
 			"name": "Landorus (Therian Forme)",
 			"form-data": {
 				"base": "645-0",
-				"type": "idk",
 				"form": "Therian Forme",
 				"form-ital": "Forma Totem"
 			},
@@ -29730,7 +29943,9 @@ const	dbpokemon = {
 				"shiny": "2021-12-16"
 			},
 			"category": "Boundary",
+			"legendary": true,
 			"type": [ "Dragon", "Ice" ],
+			"forms": [ "646-B", "646-W" ],
 			"base-stamina": 245,
 			"base-attack": 246,
 			"base-defense": 170,
@@ -29769,7 +29984,7 @@ const	dbpokemon = {
 				"type": "Fusion"
 			},
 			"availability": {
-				"in-game": false,
+				"in-game": "2025-02-21",
 				"shiny": "2025-02-21"
 			},
 			"base-stamina": 245,
@@ -29796,7 +30011,7 @@ const	dbpokemon = {
 				"type": "Fusion"
 			},
 			"availability": {
-				"in-game": false,
+				"in-game": "2025-02-21",
 				"shiny": "2025-02-21"
 			},
 			"base-stamina": 245,
@@ -29823,6 +30038,7 @@ const	dbpokemon = {
 			},
 			"variants": [ "Ordinary", "Resolute" ], // TODO Resolute avail
 			"category": "Colt",
+			"mythical": true,
 			"type": [ "Water", "Fighting" ],
 			"base-stamina": 209,
 			"base-attack": 260,
@@ -29853,6 +30069,8 @@ const	dbpokemon = {
 			"dex-index": "648-0",
 			"name": "Meloetta",
 			"category": "Melody",
+			"mythical": true,
+			"forms": [ "648-A", "648-P" ],
 			"dynamax-class": 4,
 			"fast-moves": [
 				"FAST_NOR_QUICKATTACK",
@@ -29875,7 +30093,6 @@ const	dbpokemon = {
 			"dex-index": "648-A",
 			"form-data": {
 				"base": "648",
-				"type": "idk",
 				"form": "Aria Forme",
 				"form-ital": "Forma Canto"
 			},
@@ -29897,7 +30114,6 @@ const	dbpokemon = {
 			"dex-index": "648-P",
 			"form-data": {
 				"base": "648",
-				"type": "idk",
 				"form": "Pirouette Forme",
 				"form-ital": "Forma Danza"
 			},
@@ -29923,7 +30139,9 @@ const	dbpokemon = {
 				"shiny": "2020-08-14"
 			},
 			"category": "Paleozoic",
+			"mythical": true,
 			"type": [ "Bug", "Steel" ],
+			"forms": [ "649-B", "649-C", "649-D", "649-S" ],
 			"base-stamina": 174,
 			"base-attack": 252,
 			"base-defense": 199,
@@ -29957,7 +30175,6 @@ const	dbpokemon = {
 			"dex-index": "649-B",
 			"form-data": {
 				"base": "649",
-				"type": "move change",
 				"form": "Burn Drive",
 				"form-ital": "Piromodulo"
 			},
@@ -29978,7 +30195,6 @@ const	dbpokemon = {
 			"dex-index": "649-C",
 			"form-data": {
 				"base": "649",
-				"type": "move change",
 				"form": "Chill Drive",
 				"form-ital": "Gelomodulo"
 			},
@@ -29999,7 +30215,6 @@ const	dbpokemon = {
 			"dex-index": "649-D",
 			"form-data": {
 				"base": "649",
-				"type": "move change",
 				"form": "Douse Drive",
 				"form-ital": "Idromodulo"
 			},
@@ -30020,7 +30235,6 @@ const	dbpokemon = {
 			"dex-index": "649-S",
 			"form-data": {
 				"base": "649",
-				"type": "move change",
 				"form": "Shock Drive",
 				"form-ital": "Voltmodulo"
 			},
@@ -30349,6 +30563,7 @@ const	dbpokemon = {
 			},
 			"category": "Ninja",
 			"type": [ "Water", "Dark" ],
+			"forms": [ "658-A" ],
 			"evolves-from": "657",
 			"base-stamina": 176,
 			"base-attack": 223,
@@ -30385,10 +30600,10 @@ const	dbpokemon = {
 			"dex-index": "658-A",
 			"name": "Ash-Greninja",
 			"form-data": {
-				"base": "658",
-				"type": "idk"
+				"base": "658"
 			},
 			"availability": {
+				"in-game": false
 			}
 		},
 		"659": {
@@ -30589,7 +30804,8 @@ const	dbpokemon = {
 			"dex-index": "664",
 			"name": "Scatterbug",
 			"availability": {
-				"in-game": "2022-12-15"
+				"in-game": "2022-12-15",
+				"shiny": "2025-02-18"
 			},
 			"category": "Scatterdust",
 			"type": [ "Bug" ],
@@ -30622,7 +30838,8 @@ const	dbpokemon = {
 			"dex-index": "665",
 			"name": "Spewpa",
 			"availability": {
-				"in-game": "2022-12-15"
+				"in-game": "2022-12-15",
+				"shiny": "2025-02-18"
 			},
 			"category": "Scatterdust",
 			"type": [ "Bug" ],
@@ -30655,7 +30872,8 @@ const	dbpokemon = {
 			"dex-index": "666",
 			"name": "Vivillon",
 			"availability": {
-				"in-game": "2022-12-15"
+				"in-game": "2022-12-15",
+				"shiny": "2025-02-18"
 			},
 			"variants": [
 				"Archipelago", "Continental", "Elegant", "Fancy",
@@ -30775,6 +30993,7 @@ const	dbpokemon = {
 			"name-display": "Flab&eacute;b&eacute;",
 			"category": "Single Bloom",
 			"type": [ "Fairy" ],
+			"forms": [ "669-B", "669-O", "669-R", "669-W", "669-Y" ],
 			"evolves-into": [ "670-0" ],
 			"base-stamina": 127,
 			"base-attack": 108,
@@ -30806,7 +31025,6 @@ const	dbpokemon = {
 			"dex-index": "669-B",
 			"form-data": {
 				"base": "669-0",
-				"type": "fuck if I know",
 				"form": "Blue Flower",
 				"form-ital": "Fiore Blu"
 			},
@@ -30816,7 +31034,6 @@ const	dbpokemon = {
 			"dex-index": "669-O",
 			"form-data": {
 				"base": "669-0",
-				"type": "fuck if I know",
 				"form": "Orange Flower",
 				"form-ital": "Fiore Arancione"
 			},
@@ -30826,7 +31043,6 @@ const	dbpokemon = {
 			"dex-index": "669-R",
 			"form-data": {
 				"base": "669-0",
-				"type": "fuck if I know",
 				"form": "Red Flower",
 				"form-ital": "Fiore Rosso"
 			},
@@ -30836,7 +31052,6 @@ const	dbpokemon = {
 			"dex-index": "669-W",
 			"form-data": {
 				"base": "669-0",
-				"type": "fuck if I know",
 				"form": "White Flower",
 				"form-ital": "Fiore Bianco"
 			},
@@ -30846,7 +31061,6 @@ const	dbpokemon = {
 			"dex-index": "669-Y",
 			"form-data": {
 				"base": "669-0",
-				"type": "fuck if I know",
 				"form": "Yellow Flower",
 				"form-ital": "Fiore Giallo"
 			},
@@ -30861,6 +31075,7 @@ const	dbpokemon = {
 			},
 			"category": "Single Bloom",
 			"type": [ "Fairy" ],
+			"forms": [ "670-B", "670-O", "670-R", "670-W", "670-Y" ],
 			"evolves-from": "669-0",
 			"evolves-into": [ "671-0" ],
 			"base-stamina": 144,
@@ -30893,7 +31108,6 @@ const	dbpokemon = {
 			"dex-index": "670-B",
 			"form-data": {
 				"base": "670-0",
-				"type": "fuck if I know",
 				"form": "Blue Flower",
 				"form-ital": "Fiore Blu"
 			},
@@ -30904,7 +31118,6 @@ const	dbpokemon = {
 			"dex-index": "670-O",
 			"form-data": {
 				"base": "670-0",
-				"type": "fuck if I know",
 				"form": "Orange Flower",
 				"form-ital": "Fiore Arancione"
 			},
@@ -30915,7 +31128,6 @@ const	dbpokemon = {
 			"dex-index": "670-R",
 			"form-data": {
 				"base": "670-0",
-				"type": "fuck if I know",
 				"form": "Red Flower",
 				"form-ital": "Fiore Rosso"
 			},
@@ -30926,7 +31138,6 @@ const	dbpokemon = {
 			"dex-index": "670-W",
 			"form-data": {
 				"base": "670-0",
-				"type": "fuck if I know",
 				"form": "White Flower",
 				"form-ital": "Fiore Bianco"
 			},
@@ -30937,7 +31148,6 @@ const	dbpokemon = {
 			"dex-index": "670-Y",
 			"form-data": {
 				"base": "670-0",
-				"type": "fuck if I know",
 				"form": "Yellow Flower",
 				"form-ital": "Fiore Giallo"
 			},
@@ -30953,6 +31163,7 @@ const	dbpokemon = {
 			},
 			"category": "Garden",
 			"type": [ "Fairy" ],
+			"forms": [ "671-B", "671-O", "671-R", "671-W", "671-Y" ],
 			"evolves-from": "670-0",
 			"base-stamina": 186,
 			"base-attack": 212,
@@ -30965,8 +31176,9 @@ const	dbpokemon = {
 				"FAST_FAI_FAIRYWIND"
 			],
 			"charged-moves": [
-				"CHRG_FAI_MOONBLAST",
 				"CHRG_GRA_PETALBLIZZARD",
+				"CHRG_GRA_TRAILBLAZE",
+				"CHRG_FAI_MOONBLAST",
 				"CHRG_PSY_PSYCHIC",
 				"CHRG_FAI_DISARMINGVOICE"
 			],
@@ -30987,7 +31199,6 @@ const	dbpokemon = {
 			"dex-index": "671-B",
 			"form-data": {
 				"base": "670-0",
-				"type": "fuck if I know",
 				"form": "Blue Flower",
 				"form-ital": "Fiore Blu"
 			},
@@ -30997,7 +31208,6 @@ const	dbpokemon = {
 			"dex-index": "671-O",
 			"form-data": {
 				"base": "670-0",
-				"type": "fuck if I know",
 				"form": "Orange Flower",
 				"form-ital": "Fiore Arancione"
 			},
@@ -31007,7 +31217,6 @@ const	dbpokemon = {
 			"dex-index": "671-R",
 			"form-data": {
 				"base": "670-0",
-				"type": "fuck if I know",
 				"form": "Red Flower",
 				"form-ital": "Fiore Rosso"
 			},
@@ -31017,7 +31226,6 @@ const	dbpokemon = {
 			"dex-index": "671-W",
 			"form-data": {
 				"base": "670-0",
-				"type": "fuck if I know",
 				"form": "White Flower",
 				"form-ital": "Fiore Bianco"
 			},
@@ -31027,7 +31235,6 @@ const	dbpokemon = {
 			"dex-index": "671-Y",
 			"form-data": {
 				"base": "670-0",
-				"type": "fuck if I know",
 				"form": "Yellow Flower",
 				"form-ital": "Fiore Giallo"
 			},
@@ -31271,6 +31478,7 @@ const	dbpokemon = {
 			},
 			"category": "Constraint",
 			"type": [ "Psychic" ],
+			"forms": [ "678-M", "678-F" ],
 			"base-stamina": 179,
 			"base-attack": 166,
 			"base-defense": 167,
@@ -31394,6 +31602,7 @@ const	dbpokemon = {
 			},
 			"category": "Royal Sword",
 			"type": [ "Steel", "Ghost" ],
+			"forms": [ "681-S", "681-B" ],
 			"evolves-from": "680",
 			"dynamax-class": 3,
 			"fast-moves": [
@@ -31422,7 +31631,7 @@ const	dbpokemon = {
 			"dex-index": "681-S",
 			"form-data": {
 				"base": "681-0",
-				"type": "battle?",
+				"type": "Battle",
 				"form": "Shield Forme",
 				"form-ital": "Forma Scudo"
 			}
@@ -31431,7 +31640,7 @@ const	dbpokemon = {
 			"dex-index": "681-B",
 			"form-data": {
 				"base": "681-0",
-				"type": "battle?",
+				"type": "Battle",
 				"form": "Blade Forme",
 				"form-ital": "Forma Spada"
 			}
@@ -31789,7 +31998,8 @@ const	dbpokemon = {
 				"CHRG_WAT_HYDROPUMP",
 				"CHRG_WAT_AQUATAIL",
 				"CHRG_DRA_OUTRAGE",
-				"CHRG_POI_GUNKSHOT"
+				"CHRG_POI_GUNKSHOT",
+				"CHRG_POI_SLUDGEBOMB"
 			],
 			"height-avg": 1.8,
 			"weight-avg": 81.5,
@@ -32292,6 +32502,7 @@ const	dbpokemon = {
 			},
 			"category": "Soft Tissue",
 			"type": [ "Dragon" ],
+			"forms": [ "705-H" ],
 			"evolves-from": "704",
 			"evolves-into": [ "706" ],
 			"base-stamina": 169,
@@ -32341,6 +32552,7 @@ const	dbpokemon = {
 			},
 			"category": "Dragon",
 			"type": [ "Dragon" ],
+			"forms": [ "706-H" ],
 			"evolves-from": "705",
 			"base-stamina": 207,
 			"base-attack": 220,
@@ -32501,6 +32713,7 @@ const	dbpokemon = {
 			"category": "Pumpkin",
 			"type": [ "Ghost", "Grass" ],
 			"image": "710",
+			"forms": [ "710-S", "710-A", "710-L", "710-X" ],
 			"evolves-into": [ "711-0" ],
 			"dynamax-class": 3,
 			"fast-moves": [
@@ -32518,7 +32731,7 @@ const	dbpokemon = {
 			"dex-index": "710-S",
 			"form-data": {
 				"base": "710-0",
-				"type": "pumpkins",
+				"type": "Pumpkins",
 				"form": "Small Size",
 				"form-ital": "Mini"
 			},
@@ -32543,7 +32756,7 @@ const	dbpokemon = {
 			"dex-index": "710-A",
 			"form-data": {
 				"base": "710-0",
-				"type": "pumpkins",
+				"type": "Pumpkins",
 				"form": "Average Size",
 				"form-ital": "Normale"
 			},
@@ -32568,7 +32781,7 @@ const	dbpokemon = {
 			"dex-index": "710-L",
 			"form-data": {
 				"base": "710-0",
-				"type": "pumpkins",
+				"type": "Pumpkins",
 				"form": "Large Size",
 				"form-ital": "Grande"
 			},
@@ -32593,7 +32806,7 @@ const	dbpokemon = {
 			"dex-index": "710-X",
 			"form-data": {
 				"base": "710-0",
-				"type": "pumpkins",
+				"type": "Pumpkins",
 				"form": "Super Size",
 				"form-ital": "Maxi"
 			},
@@ -32624,6 +32837,7 @@ const	dbpokemon = {
 			"category": "Pumpkin",
 			"type": [ "Ghost", "Grass" ],
 			"image": "711",
+			"forms": [ "711-S", "711-A", "711-L", "711-X" ],
 			"evolves-from": "710-0",
 			"dynamax-class": 3,
 			"fast-moves": [
@@ -32643,7 +32857,7 @@ const	dbpokemon = {
 			"dex-index": "711-S",
 			"form-data": {
 				"base": "711-0",
-				"type": "pumpkins",
+				"type": "Pumpkins",
 				"form": "Small Size",
 				"form-ital": "Mini"
 			},
@@ -32668,7 +32882,7 @@ const	dbpokemon = {
 			"dex-index": "711-A",
 			"form-data": {
 				"base": "711-0",
-				"type": "pumpkins",
+				"type": "Pumpkins",
 				"form": "Average Size",
 				"form-ital": "Normale"
 			},
@@ -32693,7 +32907,7 @@ const	dbpokemon = {
 			"dex-index": "711-L",
 			"form-data": {
 				"base": "711-0",
-				"type": "pumpkins",
+				"type": "Pumpkins",
 				"form": "Large Size",
 				"form-ital": "Grande"
 			},
@@ -32718,7 +32932,7 @@ const	dbpokemon = {
 			"dex-index": "711-X",
 			"form-data": {
 				"base": "710-0",
-				"type": "pumpkins",
+				"type": "Pumpkins",
 				"form": "Super Size",
 				"form-ital": "Maxi"
 			},
@@ -32784,6 +32998,7 @@ const	dbpokemon = {
 			},
 			"category": "Iceberg",
 			"type": [ "Ice" ],
+			"forms": [ "713-H" ],
 			"evolves-from": "712",
 			"base-stamina": 216,
 			"base-attack": 196,
@@ -32928,6 +33143,7 @@ const	dbpokemon = {
 				"shiny": "2022-10-08"
 			},
 			"category": "Life",
+			"legendary": true,
 			"type": [ "Fairy" ],
 			"base-stamina": 246,
 			"base-attack": 250,
@@ -32968,6 +33184,7 @@ const	dbpokemon = {
 				"shiny": "2022-09-27"
 			},
 			"category": "Destruction",
+			"legendary": true,
 			"type": [ "Dark", "Flying" ],
 			"base-stamina": 246,
 			"base-attack": 250,
@@ -33003,17 +33220,15 @@ const	dbpokemon = {
 		},
 		"718-0": {
 			"dex-index": "718-0",
-			"name": "Zygarde (50% Forme)",
+			"name": "Zygarde",
 			"availability": {
 				"in-game": "2023-07-20"
 			},
+			"image": "718-L",
+			"legendary": true,
 			"category": "Order",
 			"type": [ "Dragon", "Ground" ],
-			"evolves-into": [ "718-2" ],
-			"evolve-from": "718-1",
-			"base-stamina": 239,
-			"base-attack": 203,
-			"base-defense": 232,
+			"forms": [ "718-L", "718-X", "718-C" ],
 			"dynamax-class": 4,
 			"fast-moves": [
 				"FAST_DRA_DRAGONTAIL",
@@ -33027,44 +33242,15 @@ const	dbpokemon = {
 				"CHRG_NOR_HYPERBEAM",
 				"CHRG_GRO_BULLDOZE"
 			],
-			"height-avg": 5,
-			"weight-avg": 305,
-			"size-data": {
-				"class": 1.55,
-				"ht-std-dev": 0.625,
-				"wt-std-dev": 38.125,
-				"xxs": [ 2.45, 2.5 ],
-				"xs": [ 2.5, 3.75 ],
-				"m": [ 3.75, 6.25 ],
-				"xl": [ 6.25, 7.5 ],
-				"xxl": [ 7.5, 7.75 ]
-			}
+			"showcase-baseline": "718-X"
 		},
-		"718-1": {
-			"dex-index": "718-1",
+		"718-X": {
+			"dex-index": "718-X",
 			"name": "Zygarde (10% Forme)",
-			"availability": {
-				"in-game": "2023-07-20"
-			},
-			"category": "Order",
-			"type": [ "Dragon", "Ground" ],
-			"evolves-into": [ "718-0" ],
+			"evolves-into": [ "718-L" ],
 			"base-stamina": 144,
 			"base-attack": 205,
 			"base-defense": 173,
-			"dynamax-class": 4,
-			"fast-moves": [
-				"FAST_DRA_DRAGONTAIL",
-				"FAST_DAR_BITE",
-				"FAST_PSY_ZENHEADBUTT"
-			],
-			"charged-moves": [
-				"CHRG_DRA_OUTRAGE",
-				"CHRG_GRO_EARTHQUAKE",
-				"CHRG_DAR_CRUNCH",
-				"CHRG_NOR_HYPERBEAM",
-				"CHRG_GRO_BULLDOZE"
-			],
 			"height-avg": 1.2,
 			"weight-avg": 33.5,
 			"size-data": {
@@ -33078,31 +33264,34 @@ const	dbpokemon = {
 				"xxl": [ 1.8, 1.86 ]
 			}
 		},
-		"718-2": {
-			"dex-index": "718-2",
+		"718-L": {
+			"dex-index": "718-L",
+			"name": "Zygarde (50% Forme)",
+			"evolves-into": [ "718-C" ],
+			"evolve-from": "718-X",
+			"base-stamina": 239,
+			"base-attack": 203,
+			"base-defense": 232,
+			"height-avg": 5,
+			"weight-avg": 305,
+			"size-data": {
+				"class": 1.55,
+				"ht-std-dev": 0.625,
+				"wt-std-dev": 38.125,
+				"xxs": [ 2.45, 2.5 ],
+				"xs": [ 2.5, 3.75 ],
+				"m": [ 3.75, 6.25 ],
+				"xl": [ 6.25, 7.5 ],
+				"xxl": [ 7.5, 7.75 ]
+			}
+		},
+		"718-C": {
+			"dex-index": "718-C",
 			"name": "Zygarde (Complete Forme)",
-			"availability": {
-				"in-game": "2023-07-20"
-			},
-			"category": "Order",
-			"type": [ "Dragon", "Ground" ],
-			"evolves-from": "718-1",
+			"evolves-from": "718-L",
 			"base-stamina": 389,
 			"base-attack": 184,
 			"base-defense": 207,
-			"dynamax-class": 4,
-			"fast-moves": [
-				"FAST_DRA_DRAGONTAIL",
-				"FAST_DAR_BITE",
-				"FAST_PSY_ZENHEADBUTT"
-			],
-			"charged-moves": [
-				"CHRG_DRA_OUTRAGE",
-				"CHRG_GRO_EARTHQUAKE",
-				"CHRG_DAR_CRUNCH",
-				"CHRG_NOR_HYPERBEAM",
-				"CHRG_GRO_BULLDOZE"
-			],
 			"height-avg": 4.5,
 			"weight-avg": 610,
 			"size-data": {
@@ -33124,7 +33313,9 @@ const	dbpokemon = {
 				"shadow": false
 			},
 			"category": "Jewel",
+			"mythical": true,
 			"type": [ "Rock", "Fairy" ],
+			"forms": [ "719-M" ],
 			"base-stamina": 137,
 			"base-attack": 190,
 			"base-defense": 285,
@@ -33179,12 +33370,14 @@ const	dbpokemon = {
 		"720-0": {
 			"dex-index": "720-0",
 			"name": "Hoopa",
+			"mythical": true,
+			"forms": [ "720-C", "720-U" ],
 			"dynamax-class": 4,
 			"fast-moves": [
 				"FAST_PSY_CONFUSION",
 				"FAST_GHO_ASTONISH"
 			],
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "720-C"
 		},
 		"720-C": {
 			"dex-index": "720-C",
@@ -33192,7 +33385,7 @@ const	dbpokemon = {
 			"name": "Hoopa Vincolato",
 			"form-data": {
 				"base": "720-0",
-				"type": "idk"
+				"interchangable": true
 			},
 			"availability": {
 				"in-game": "2021-09-05"
@@ -33226,7 +33419,7 @@ const	dbpokemon = {
 			"name-ital": "Hoopa Libero",
 			"form-data": {
 				"base": "720-0",
-				"type": "idk"
+				"interchangable": true
 			},
 			"availability": {
 				"in-game": "2021-11-26"
@@ -33258,9 +33451,10 @@ const	dbpokemon = {
 			"dex-index": "721",
 			"name": "Volcanion",
 			"availability": {
-				"in-game": false
+				"in-game": "2025-05-29"
 			},
 			"category": "Steam",
+			"mythical": true,
 			"type": [ "Fire", "Water" ],
 			"base-stamina": 190,
 			"base-attack": 252,
@@ -33375,6 +33569,7 @@ const	dbpokemon = {
 			},
 			"category": "Arrow Quill",
 			"type": [ "Grass", "Ghost" ],
+			"forms": [ "724-H" ],
 			"evolves-from": "723",
 			"base-stamina": 186,
 			"base-attack": 210,
@@ -34058,6 +34253,7 @@ const	dbpokemon = {
 				"shiny": "2024-02-13"
 			},
 			"category": "Dancing",
+			"forms": [ "741-F", "741-E", "741-P", "741-G" ],
 			"base-stamina": 181,
 			"base-attack": 196,
 			"base-defense": 145,
@@ -34088,7 +34284,6 @@ const	dbpokemon = {
 			"dex-index": "741-F",
 			"form-data": {
 				"base": "741-0",
-				"type": "type change",
 				"form": "Baile Style",
 				"form-ital": "Stile Flamenco"
 			},
@@ -34098,7 +34293,6 @@ const	dbpokemon = {
 			"dex-index": "741-E",
 			"form-data": {
 				"base": "741-0",
-				"type": "type change",
 				"form": "Pom-Pom Style",
 				"form-ital": "Stile Cheerdance"
 			},
@@ -34108,7 +34302,6 @@ const	dbpokemon = {
 			"dex-index": "741-P",
 			"form-data": {
 				"base": "741-0",
-				"type": "type change",
 				"form": "Pa'u Style",
 				"form-ital": "Stile Hula"
 			},
@@ -34118,7 +34311,6 @@ const	dbpokemon = {
 			"dex-index": "741-G",
 			"form-data": {
 				"base": "741-0",
-				"type": "type change",
 				"form": "Sensu Style",
 				"form-ital": "Stile Buyo",
 				"form-ital-display": "Stile Buyo" // TODO
@@ -34175,13 +34367,14 @@ const	dbpokemon = {
 			"base-defense": 146,
 			"dynamax-class": 1,
 			"fast-moves": [
+				"FAST_FAI_CHARM",
 				"FAST_FAI_FAIRYWIND",
 				"FAST_BUG_STRUGGLEBUG"
 			],
 			"charged-moves": [
 				"CHRG_FAI_DAZZLINGGLEAM",
-				"CHRG_BUG_BUGBUZZ",
-				"CHRG_FAI_DRAININGKISS"
+				"CHRG_FAI_DRAININGKISS",
+				"CHRG_BUG_BUGBUZZ"
 			],
 			"height-avg": 0.2,
 			"weight-avg": 0.5,
@@ -34238,8 +34431,7 @@ const	dbpokemon = {
 			"dex-index": "744-S",
 			"name": "Own Tempo Rockruff",
 			"form-data": {
-				"base": "744",
-				"type": "evolution difference"
+				"base": "744"
 			},
 			"availability": {
 				"in-game": "2024-01-06",
@@ -34253,15 +34445,15 @@ const	dbpokemon = {
 			"name": "Lycanroc",
 			"category": "Wolf",
 			"type": [ "Rock" ],
+			"forms": [ "745-D", "745-N", "745-S" ],
 			"evolves-from": "744",
 			"dynamax-class": 2,
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "745-D"
 		},
 		"745-D": {
 			"dex-index": "745-D",
 			"form-data": {
 				"base": "745-0",
-				"type": "evolution difference",
 				"form": "Midday Form",
 				"form-ital": "Forma Giorno"
 			},
@@ -34299,7 +34491,6 @@ const	dbpokemon = {
 			"dex-index": "745-N",
 			"form-data": {
 				"base": "745-0",
-				"type": "evolution difference",
 				"form": "Midnight Form",
 				"form-ital": "Forma Notte"
 			},
@@ -34338,7 +34529,6 @@ const	dbpokemon = {
 			"dex-index": "745-S",
 			"form-data": {
 				"base": "745-0",
-				"type": "evolution difference",
 				"form": "Dusk Form",
 				"form-ital": "Forma Crepuscolo"
 			},
@@ -34382,6 +34572,7 @@ const	dbpokemon = {
 			},
 			"category": "Small Fry",
 			"type": [ "Water" ],
+			"forms": [ "746-O", "746-S" ],
 			"dynamax-class": 3,
 			"fast-moves": [
 				"FAST_WAT_WATERGUN",
@@ -34393,13 +34584,12 @@ const	dbpokemon = {
 				"CHRG_WAT_SURF",
 				"CHRG_WAT_AQUATAIL"
 			],
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "746-O"
 		},
 		"746-O": {
 			"dex-index": "746-O",
 			"form-data": {
 				"base": "746-0",
-				"type": "battle",
 				"form": "Solo Form",
 				"form-ital": "Forma Individuale"
 			},
@@ -34423,7 +34613,6 @@ const	dbpokemon = {
 			"dex-index": "746-S",
 			"form-data": {
 				"base": "746-0",
-				"type": "battle",
 				"form": "School Form",
 				"form-ital": "Forma Banca"
 			},
@@ -34815,6 +35004,7 @@ const	dbpokemon = {
 			},
 			"category": "Toxic Lizard",
 			"type": [ "Poison", "Fire" ],
+			"forms": [ "757-M", "757-F" ],
 			"base-stamina": 134,
 			"base-attack": 136,
 			"base-defense": 80,
@@ -35361,6 +35551,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Synthetic",
+			"legendary": true,
 			"type": [ "Normal" ],
 			"evolves-into": [ "773" ],
 			"base-stamina": 216,
@@ -35396,7 +35587,16 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Synthetic",
+			"legendary": true,
 			"type": [ "Normal" ],
+			"forms": [
+				"773-BUG", "773-DAR", "773-DRA",
+				"773-ELE", "773-FAI", "773-FIG",
+				"773-FIR", "773-FLY", "773-GHO",
+				"773-GRA", "773-GRO", "773-ICE",
+				"773-POI", "773-PSY", "773-ROC",
+				"773-STE", "773-WAT"
+			],
 			"evolves-from": "772",
 			"base-stamina": 216,
 			"base-attack": 198,
@@ -35430,7 +35630,6 @@ const	dbpokemon = {
 			"dex-index": "773-BUG",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Bug Memory",
 				"form-ital": "ROM Coleottero"
 			},
@@ -35440,7 +35639,6 @@ const	dbpokemon = {
 			"dex-index": "773-DAR",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Dark Memory",
 				"form-ital": "ROM Buio"
 			},
@@ -35450,7 +35648,6 @@ const	dbpokemon = {
 			"dex-index": "773-DRA",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Dragon Memory",
 				"form-ital": "ROM Drago"
 			},
@@ -35460,7 +35657,6 @@ const	dbpokemon = {
 			"dex-index": "773-ELE",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Electric Memory",
 				"form-ital": "ROM Elettro"
 			},
@@ -35470,7 +35666,6 @@ const	dbpokemon = {
 			"dex-index": "773-FAI",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Fairy Memory",
 				"form-ital": "ROM Folletto"
 			},
@@ -35480,7 +35675,6 @@ const	dbpokemon = {
 			"dex-index": "773-FIG",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Fighting Memory",
 				"form-ital": "ROM Lotta"
 			},
@@ -35490,7 +35684,6 @@ const	dbpokemon = {
 			"dex-index": "773-FIR",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Fire Memory",
 				"form-ital": "ROM Fuoco"
 			},
@@ -35500,7 +35693,6 @@ const	dbpokemon = {
 			"dex-index": "773-FLY",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Flying Memory",
 				"form-ital": "ROM Volante"
 			},
@@ -35510,7 +35702,6 @@ const	dbpokemon = {
 			"dex-index": "773-GHO",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Ghost Memory",
 				"form-ital": "ROM Spettro"
 			},
@@ -35520,7 +35711,6 @@ const	dbpokemon = {
 			"dex-index": "773-GRA",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Grass Memory",
 				"form-ital": "ROM Erba"
 			},
@@ -35530,7 +35720,6 @@ const	dbpokemon = {
 			"dex-index": "773-GRO",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Ground Memory",
 				"form-ital": "ROM Terra"
 			},
@@ -35540,7 +35729,6 @@ const	dbpokemon = {
 			"dex-index": "773-ICE",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Ice Memory",
 				"form-ital": "ROM Ghiaccio"
 			},
@@ -35550,7 +35738,6 @@ const	dbpokemon = {
 			"dex-index": "773-POI",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Poison Memory",
 				"form-ital": "ROM Veleno"
 			},
@@ -35560,7 +35747,6 @@ const	dbpokemon = {
 			"dex-index": "773-PSY",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Psychic Memory",
 				"form-ital": "ROM Psico"
 			},
@@ -35570,7 +35756,6 @@ const	dbpokemon = {
 			"dex-index": "773-ROC",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Rock Memory",
 				"form-ital": "ROM Roccia"
 			},
@@ -35580,7 +35765,6 @@ const	dbpokemon = {
 			"dex-index": "773-STE",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Steel Memory",
 				"form-ital": "ROM Acciaio"
 			},
@@ -35590,7 +35774,6 @@ const	dbpokemon = {
 			"dex-index": "773-WAT",
 			"form-data": {
 				"base": "773",
-				"type": "type change",
 				"form": "Water Memory",
 				"form-ital": "ROM Acqua"
 			},
@@ -35605,6 +35788,7 @@ const	dbpokemon = {
 			"category": "Meteor",
 			"type": [ "Rock", "Flying" ],
 			"image": "774-M",
+			"forms": [ "774-M", "774-C" ],
 			"dynamax-class": 2,
 			"fast-moves": [
 				"FAST_ROC_ROLLOUT",
@@ -35615,13 +35799,12 @@ const	dbpokemon = {
 				"CHRG_ROC_ANCIENTPOWER",
 				"CHRG_FLY_ACROBATICS"
 			],
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "774-C"
 		},
 		"774-M": {
 			"dex-index": "774-M",
 			"form-data": {
 				"base": "774-0",
-				"type": "idk",
 				"form": "Meteor Form",
 				"form-ital": "Forma Meteora"
 			},
@@ -35645,7 +35828,6 @@ const	dbpokemon = {
 			"dex-index": "774-C",
 			"form-data": {
 				"base": "774-0",
-				"type": "idk",
 				"form": "Core Form",
 				"form-ital": "Forma Nucleo"
 			},
@@ -35794,6 +35976,7 @@ const	dbpokemon = {
 			},
 			"category": "Disguise",
 			"type": [ "Ghost", "Fairy" ],
+			"forms": [ "778-B" ],
 			"base-stamina": 146,
 			"base-attack": 177,
 			"base-defense": 199,
@@ -35824,17 +36007,18 @@ const	dbpokemon = {
 			"dex-index": "778-B",
 			"name": "Mimikyu (Busted Form)",
 			"form-data": {
-				"base": "778",
-				"type": "idk"
+				"base": "778"
 			},
 			"availability": {
+				"in-game": false
 			}
 		},
 		"779": {
 			"dex-index": "779",
 			"name": "Bruxish",
 			"availability": {
-				"in-game": "2023-03-08"
+				"in-game": "2023-03-08",
+				"shiny": "2025-03-15"
 			},
 			"category": "Gnash Teeth",
 			"type": [ "Water", "Psychic" ],
@@ -35849,6 +36033,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				"CHRG_PSY_PSYCHICFANGS",
+				"CHRG_PSY_PSYSHOCK",
 				"CHRG_WAT_AQUATAIL",
 				"CHRG_DAR_CRUNCH"
 			],
@@ -35885,7 +36070,8 @@ const	dbpokemon = {
 			"charged-moves": [
 				"CHRG_DRA_OUTRAGE",
 				"CHRG_DRA_DRAGONPULSE",
-				"CHRG_FLY_FLY"
+				"CHRG_FLY_FLY",
+				"CHRG_NOR_SWIFT"
 			],
 			"height-avg": 3,
 			"weight-avg": 185,
@@ -35904,7 +36090,7 @@ const	dbpokemon = {
 			"dex-index": "781",
 			"name": "Dhelmise",
 			"availability": {
-				"in-game": false
+				"in-game": "2025-02-11"
 			},
 			"category": "Sea Creeper",
 			"type": [ "Ghost", "Grass" ],
@@ -36053,6 +36239,7 @@ const	dbpokemon = {
 				"shiny": "2023-01-25"
 			},
 			"category": "Land Spirit",
+			"legendary": true,
 			"type": [ "Electric", "Fairy" ],
 			"base-stamina": 172,
 			"base-attack": 250,
@@ -36092,6 +36279,7 @@ const	dbpokemon = {
 				"shiny": "2023-02-08"
 			},
 			"category": "Land Spirit",
+			"legendary": true,
 			"type": [ "Psychic", "Fairy" ],
 			"base-stamina": 172,
 			"base-attack": 259,
@@ -36132,6 +36320,7 @@ const	dbpokemon = {
 				"shiny": "2023-04-17"
 			},
 			"category": "Land Spirit",
+			"legendary": true,
 			"type": [ "Grass", "Fairy" ],
 			"base-stamina": 172,
 			"base-attack": 249,
@@ -36171,6 +36360,7 @@ const	dbpokemon = {
 				"shiny": "2023-05-09"
 			},
 			"category": "Land Spirit",
+			"legendary": true,
 			"type": [ "Water", "Fairy" ],
 			"base-stamina": 172,
 			"base-attack": 189,
@@ -36209,6 +36399,7 @@ const	dbpokemon = {
 				"in-game": "2022-09-01"
 			},
 			"category": "Nebula",
+			"legendary": true,
 			"type": [ "Psychic" ],
 			"evolves-into": [ "790" ],
 			"base-stamina": 125,
@@ -36241,6 +36432,7 @@ const	dbpokemon = {
 				"in-game": "2022-10-05"
 			},
 			"category": "Protostar",
+			"legendary": true,
 			"type": [ "Psychic" ],
 			"evolves-from": "789",
 			"evolves-into": [ "791", "792" ],
@@ -36274,6 +36466,7 @@ const	dbpokemon = {
 				"in-game": "2022-11-23"
 			},
 			"category": "Sunne",
+			"legendary": true,
 			"type": [ "Psychic", "Steel" ],
 			"evolves-from": "790",
 			"base-stamina": 264,
@@ -36310,6 +36503,7 @@ const	dbpokemon = {
 				"in-game": "2022-11-23"
 			},
 			"category": "Moone",
+			"legendary": true,
 			"type": [ "Psychic", "Ghost" ],
 			"evolves-from": "790",
 			"base-stamina": 264,
@@ -36600,8 +36794,10 @@ const	dbpokemon = {
 				"shiny": "2024-05-30"
 			},
 			"category": "Prism",
+			"legendary": true,
 			"type": [ "Psychic" ],
-			"evolves-into": [ "800-3" ],
+			"forms": [ "800-S", "800-L" ],
+			"evolves-into": [ "800-U" ],
 			"base-stamina": 219,
 			"base-attack": 251,
 			"base-defense": 195,
@@ -36636,7 +36832,7 @@ const	dbpokemon = {
 			"name-ital": "Necrozma Criniera del Vespro",
 			"form-data": {
 				"base": "800",
-				"type": "fusion"
+				"type": "Fusion"
 			},
 			"availability": {
 				"in-game": "2024-05-30",
@@ -36679,7 +36875,7 @@ const	dbpokemon = {
 			"name-ital": "Necrozma Ali dell'Aurora",
 			"form-data": {
 				"base": "800",
-				"type": "fusion"
+				"type": "Fusion"
 			},
 			"availability": {
 				"in-game": "2024-05-30",
@@ -36721,7 +36917,7 @@ const	dbpokemon = {
 			"name": "Ultra Necrozma",
 			"form-data": {
 				"base": "800",
-				"type": "not sure on this one"
+				"type": "not sure on this one" // TODO
 			},
 			"availability": {
 				"in-game": false
@@ -36759,6 +36955,7 @@ const	dbpokemon = {
 			},
 			"variants": [ "", "Original Color" ],
 			"variants-ital": [ "", "Colore Antico" ],
+			"mythical": true,
 			"category": "Artificial",
 			"type": [ "Steel", "Fairy" ],
 			"base-stamina": 190,
@@ -36792,6 +36989,7 @@ const	dbpokemon = {
 				"shadow": false
 			},
 			"category": "Gloomdweller",
+			"mythical": true,
 			"type": [ "Fighting", "Ghost" ],
 			"base-stamina": 207,
 			"base-attack": 265,
@@ -36969,6 +37167,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Thunderclap",
+			"mythical": true,
 			"type": [ "Electric" ],
 			"base-stamina": 204,
 			"base-attack": 252,
@@ -37004,6 +37203,7 @@ const	dbpokemon = {
 				"shiny": "2019-02-05"
 			},
 			"category": "Hex Nut",
+			"mythical": true,
 			"type": [ "Steel" ],
 			"evolves-into": [ "809" ],
 			"base-stamina": 130,
@@ -37038,7 +37238,9 @@ const	dbpokemon = {
 				"shiny": "2019-02-05"
 			},
 			"category": "Hex Nut",
+			"mythical": true,
 			"type": [ "Steel" ],
+			"forms": [ "809-G" ],
 			"evolves-from": "808",
 			"base-stamina": 264,
 			"base-attack": 226,
@@ -37075,6 +37277,9 @@ const	dbpokemon = {
 			"form-data": {
 				"base": "809",
 				"type": "Giga"
+			},
+			"availability": {
+				"in-game": false
 			}
 		},
 		"810": {
@@ -37158,6 +37363,7 @@ const	dbpokemon = {
 			},
 			"category": "Drummer",
 			"type": [ "Grass" ],
+			"forms": [ "812-G" ],
 			"evolves-from": "811",
 			"base-stamina": 225,
 			"base-attack": 239,
@@ -37275,6 +37481,7 @@ const	dbpokemon = {
 			},
 			"category": "Striker",
 			"type": [ "Fire" ],
+			"forms": [ "815-G" ],
 			"evolves-from": "814",
 			"base-stamina": 190,
 			"base-attack": 238,
@@ -37392,6 +37599,7 @@ const	dbpokemon = {
 			},
 			"category": "Secret Agent",
 			"type": [ "Water" ],
+			"forms": [ "818-G" ],
 			"evolves-from": "817",
 			"base-stamina": 172,
 			"base-attack": 262,
@@ -37583,6 +37791,7 @@ const	dbpokemon = {
 			},
 			"category": "Raven",
 			"type": [ "Flying", "Steel" ],
+			"forms": [ "823-G" ],
 			"evolves-from": "822",
 			"base-stamina": 221,
 			"base-attack": 163,
@@ -37697,6 +37906,7 @@ const	dbpokemon = {
 			},
 			"category": "Seven Spot",
 			"type": [ "Bug", "Psychic" ],
+			"forms": [ "826-G" ],
 			"evolves-from": "825",
 			"base-stamina": 155,
 			"base-attack": 156,
@@ -37734,7 +37944,7 @@ const	dbpokemon = {
 			"dex-index": "827",
 			"name": "Nickit",
 			"availability": {
-				"in-game": false
+				"in-game": "2025-03-19"
 			},
 			"category": "Fox",
 			"type": [ "Dark" ],
@@ -37768,7 +37978,7 @@ const	dbpokemon = {
 			"dex-index": "828",
 			"name": "Thievul",
 			"availability": {
-				"in-game": false
+				"in-game": "2025-03-19"
 			},
 			"category": "Fox",
 			"type": [ "Dark" ],
@@ -37984,6 +38194,7 @@ const	dbpokemon = {
 			},
 			"category": "Bite",
 			"type": [ "Water", "Rock" ],
+			"forms": [ "834-G" ],
 			"evolves-from": "833",
 			"base-stamina": 207,
 			"base-attack": 213,
@@ -38164,6 +38375,7 @@ const	dbpokemon = {
 			},
 			"category": "Coal",
 			"type": [ "Rock", "Fire" ],
+			"forms": [ "839-G" ],
 			"evolves-from": "838",
 			"base-stamina": 242,
 			"base-attack": 146,
@@ -38238,6 +38450,7 @@ const	dbpokemon = {
 			},
 			"category": "Apple Wing",
 			"type": [ "Grass", "Dragon" ],
+			"forms": [ "841-G" ],
 			"evolves-from": "840",
 			"base-stamina": 172,
 			"base-attack": 214,
@@ -38281,6 +38494,7 @@ const	dbpokemon = {
 			},
 			"category": "Apple Nectar",
 			"type": [ "Grass", "Dragon" ],
+			"forms": [ "842-G" ],
 			"evolves-from": "840",
 			"base-stamina": 242,
 			"base-attack": 178,
@@ -38359,6 +38573,7 @@ const	dbpokemon = {
 			},
 			"category": "Sand Snake",
 			"type": [ "Ground" ],
+			"forms": [ "844-G" ],
 			"evolves-from": "843",
 			"base-stamina": 176,
 			"base-attack": 202,
@@ -38542,6 +38757,7 @@ const	dbpokemon = {
 			},
 			"variants": [ "Low-key", "Amped" ],
 			"variants-ital": [ "Basso", "Melodia" ],
+			"forms": [ "849-G" ],
 			"category": "Punk",
 			"type": [ "Electric", "Poison" ],
 			"evolves-from": "848",
@@ -38636,6 +38852,7 @@ const	dbpokemon = {
 			},
 			"category": "Radiator",
 			"type": [ "Fire", "Bug" ],
+			"forms": [ "851-G" ],
 			"evolves-from": "850",
 			"base-stamina": 225,
 			"base-attack": 220,
@@ -38750,6 +38967,7 @@ const	dbpokemon = {
 			"category": "Black Tea",
 			"type": [ "Ghost" ],
 			"image": "854",
+			"forms": [ "854-A", "854-P" ],
 			"evolves-into": [ "855-0" ],
 			"base-stamina": 120,
 			"base-attack": 134,
@@ -38781,7 +38999,6 @@ const	dbpokemon = {
 			"dex-index": "854-A",
 			"from-data": {
 				"base": "854-0",
-				"type": "evolution difference",
 				"form": "Antique Form",
 				"form-ital": "Forma Autentica"
 			},
@@ -38791,7 +39008,6 @@ const	dbpokemon = {
 			"dex-index": "854-P",
 			"from-data": {
 				"base": "854-0",
-				"type": "evolution difference",
 				"form": "Phony Form",
 				"form-ital": "Forma Contrafatta"
 			},
@@ -38806,6 +39022,7 @@ const	dbpokemon = {
 			"category": "Black Tea",
 			"type": [ "Ghost" ],
 			"image": "855",
+			"forms": [ "855-A", "855-P" ],
 			"evolves-from": "854-0",
 			"base-stamina": 155,
 			"base-attack": 248,
@@ -38838,7 +39055,6 @@ const	dbpokemon = {
 			"dex-index": "855-A",
 			"from-data": {
 				"base": "855-0",
-				"type": "evolution difference",
 				"form": "Antique Form",
 				"form-ital": "Forma Autentica"
 			},
@@ -38848,7 +39064,6 @@ const	dbpokemon = {
 			"dex-index": "855-P",
 			"from-data": {
 				"base": "855-0",
-				"type": "evolution difference",
 				"form": "Phony Form",
 				"form-ital": "Forma Contrafatta"
 			},
@@ -38924,6 +39139,7 @@ const	dbpokemon = {
 			"name": "Hatterene",
 			"category": "Silent",
 			"type": [ "Psychic", "Fairy" ],
+			"forms": [ "858-G" ],
 			"evolves-from": "857",
 			"base-stamina": 149,
 			"base-attack": 237,
@@ -39041,6 +39257,7 @@ const	dbpokemon = {
 			},
 			"category": "Bulk Up",
 			"type": [ "Dark", "Fairy" ],
+			"forms": [ "861-G" ],
 			"evolves-from": "860",
 			"base-stamina": 216,
 			"base-attack": 227,
@@ -39128,7 +39345,7 @@ const	dbpokemon = {
 			},
 			"category": "Viking",
 			"type": [ "Steel" ],
-			"evolves-from": "52-2",
+			"evolves-from": "52-Ga",
 			"base-stamina": 172,
 			"base-attack": 195,
 			"base-defense": 162,
@@ -39166,7 +39383,7 @@ const	dbpokemon = {
 			},
 			"category": "Coral",
 			"type": [ "Ghost" ],
-			"evolves-from": "222",
+			"evolves-from": "222-G",
 			"base-stamina": 155,
 			"base-attack": 253,
 			"base-defense": 182,
@@ -39347,6 +39564,7 @@ const	dbpokemon = {
 			},
 			"category": "Cream",
 			"type": [ "Fairy" ],
+			"forms": [ "868-G" ],
 			"evolves-from": "868",
 			"base-stamina": 163,
 			"base-attack": 203,
@@ -39564,6 +39782,7 @@ const	dbpokemon = {
 			},
 			"category": "Penguin",
 			"type": [ "Ice" ],
+			"forms": [ "875-I", "875-N" ],
 			"dynamax-class": 3,
 			"fast-moves": [
 				"FAST_ICE_POWDERSNOW"
@@ -39590,7 +39809,6 @@ const	dbpokemon = {
 			"dex-index": "875-I",
 			"form-data": {
 				"base": "875-0",
-				"type": "battle",
 				"form": "Ice Face",
 				"form-ital": "Gelofaccia",
 			},
@@ -39602,7 +39820,6 @@ const	dbpokemon = {
 			"dex-index": "875-N",
 			"form-data": {
 				"base": "875-0",
-				"type": "battle",
 				"form": "Noice Face",
 				"form-ital": "Liquefaccia"
 			},
@@ -39618,6 +39835,7 @@ const	dbpokemon = {
 			},
 			"category": "Emotion",
 			"type": [ "Psychic", "Normal" ],
+			"forms": [ "876-M", "876-F" ],
 			"base-stamina": 155,
 			"base-attack": 208,
 			"base-defense": 166,
@@ -39678,6 +39896,7 @@ const	dbpokemon = {
 			},
 			"category": "Two-Sided",
 			"type": [ "Electric", "Dark" ],
+			"forms": [ "877-F", "877-H" ],
 			"base-stamina": 151,
 			"base-attack": 192,
 			"base-defense": 121,
@@ -39704,7 +39923,7 @@ const	dbpokemon = {
 			"dex-index": "877-F",
 			"form-data": {
 				"base": "877-0",
-				"type": "battle",
+				"type": "Battle",
 				"form": "Full Belly Mode",
 				"form-ital": "Motivo Panciapiena"
 			},
@@ -39719,7 +39938,7 @@ const	dbpokemon = {
 			"dex-index": "877-H",
 			"form-data": {
 				"base": "877-0",
-				"type": "battle",
+				"type": "Battle",
 				"form": "Hangry Mode",
 				"form-ital": "Motivo Panciavuota"
 			},
@@ -39773,6 +39992,7 @@ const	dbpokemon = {
 			},
 			"category": "Copperderm",
 			"type": [ "Steel" ],
+			"forms": [ "879-G" ],
 			"evolves-from": "878",
 			"base-stamina": 263,
 			"base-attack": 226,
@@ -39952,6 +40172,7 @@ const	dbpokemon = {
 			},
 			"category": "Alloy",
 			"type": [ "Steel", "Dragon" ],
+			"forms": [ "884-G" ],
 			"evolves-into": [ "1018" ],
 			"base-stamina": 172,
 			"base-attack": 239,
@@ -40095,6 +40316,8 @@ const	dbpokemon = {
 			"dex-index": "888-0",
 			"name": "Zacian",
 			"category": "Warrior",
+			"legendary": true,
+			"forms": [ "888-H", "888-C" ],
 			"dynamax-class": 4,
 			"fast-moves": [
 				"FAST_STE_METALCLAW",
@@ -40125,7 +40348,6 @@ const	dbpokemon = {
 			"dex-index": "888-H",
 			"form-data": {
 				"base": "888-0",
-				"type": "idk",
 				"form": "Hero of Many Battles",
 				"form-ital": "Eroe di Mille Lotte"
 			},
@@ -40158,6 +40380,8 @@ const	dbpokemon = {
 			"dex-index": "889-0",
 			"name": "Zamazenta",
 			"category": "Warrior",
+			"legendary": true,
+			"forms": [ "889-H", "889-C" ],
 			"dynamax-class": 4,
 			"fast-moves": [
 				"FAST_STE_METALCLAW",
@@ -40224,7 +40448,9 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Gigantic",
+			"legendary": true,
 			"type": [ "Poison", "Dragon" ],
+			"forms": [ "890-G" ],
 			"base-stamina": 268,
 			"base-attack": 278,
 			"base-defense": 192,
@@ -40272,9 +40498,11 @@ const	dbpokemon = {
 			"dex-index": "891",
 			"name": "Kubfu",
 			"availability": {
-				"in-game": false
+				"in-game": "2025-03-05",
+				"dynamax": "2025-03-05"
 			},
 			"category": "Wushu",
+			"legendary": true,
 			"type": [ "Fighting" ],
 			"evolves-into": [ "892-S", "892-R" ],
 			"base-stamina": 155,
@@ -40307,10 +40535,13 @@ const	dbpokemon = {
 			"dex-index": "892-0",
 			"name": "Urshifu",
 			"availability": {
-				"in-game": false
+				"in-game": "2025-03-05",
+				"dynamax": "2025-03-05"
 			},
 			"category": "Wushu",
+			"legendary": true,
 			"type": [ "Fighting", "Dark" ],
+			"forms": [ "891-S", "891-R", "891-SG", "891-RG" ],
 			"evolves-from": "891",
 			"base-stamina": 225,
 			"base-attack": 254,
@@ -40353,8 +40584,11 @@ const	dbpokemon = {
 		"892-SG": {
 			"dex-index": "892-SG",
 			"form-data": {
-				"base": "892",
+				"base": "892-S",
 				"type": "Giga"
+			},
+			"availability": {
+				"in-game": false
 			},
 			"height-avg": 29
 		},
@@ -40380,9 +40614,12 @@ const	dbpokemon = {
 			]
 		},
 		"892-RG": {
-			"dex-index": "892-G",
+			"dex-index": "892-RG",
+			"availability": {
+				"in-game": false
+			},
 			"form-data": {
-				"base": "892",
+				"base": "892-R",
 				"type": "Giga"
 			},
 			"height-avg": 26,
@@ -40401,6 +40638,7 @@ const	dbpokemon = {
 				"in-game": "2021-10-01"
 			},
 			"category": "Rogue Monkey",
+			"mythical": true,
 			"type": [ "Dark", "Grass" ],
 			"base-stamina": 233,
 			"base-attack": 242,
@@ -40436,6 +40674,7 @@ const	dbpokemon = {
 				"shiny": "2024-11-27"
 			},
 			"category": "Electron",
+			"legendary": true,
 			"type": [ "Electric" ],
 			"base-stamina": 190,
 			"base-attack": 250,
@@ -40472,6 +40711,7 @@ const	dbpokemon = {
 				"shiny": "2024-11-27"
 			},
 			"category": "Dragon Orb",
+			"legendary": true,
 			"type": [ "Dragon" ],
 			"base-stamina": 400,
 			"base-attack": 202,
@@ -40506,6 +40746,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Wild Horse",
+			"legendary": true,
 			"type": [ "Ice" ],
 			"base-stamina": 225,
 			"base-attack": 246,
@@ -40540,6 +40781,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Swift Horse",
+			"legendary": true,
 			"type": [ "Ghost" ],
 			"base-stamina": 205,
 			"base-attack": 273,
@@ -40574,7 +40816,9 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "King",
+			"legendary": true,
 			"type": [ "Psychic", "Grass" ],
+			"forms": [ "898-I", "898-S" ],
 			"base-stamina": 225,
 			"base-attack": 162,
 			"base-defense": 162,
@@ -40755,6 +40999,7 @@ const	dbpokemon = {
 			},
 			"category": "Peat",
 			"type": [ "Ground", "Normal" ],
+			"forms": [ "901-B" ],
 			"evolves-from": "217",
 			"base-stamina": 277,
 			"base-attack": 243,
@@ -40900,7 +41145,9 @@ const	dbpokemon = {
 			"dex-index": "905-0",
 			"name": "Enamorus",
 			"category": "Love-Hate",
+			"legendary": true,
 			"type": [ "Fairy", "Flying" ],
+			"forms": [ "905-I", "905-T" ],
 			"dynamax-class": 4,
 			"fast-moves": [
 				"FAST_GHO_ASTONISH",
@@ -41073,7 +41320,8 @@ const	dbpokemon = {
 			"dex-index": "909",
 			"name": "Fuecoco",
 			"availability": {
-				"in-game": "2023-09-05"
+				"in-game": "2023-09-05",
+				"shiny": "2025-03-08"
 			},
 			"category": "Fire Croc",
 			"type": [ "Fire" ],
@@ -41108,7 +41356,8 @@ const	dbpokemon = {
 			"dex-index": "910",
 			"name": "Crocalor",
 			"availability": {
-				"in-game": "2023-09-05"
+				"in-game": "2023-09-05",
+				"shiny": "2025-03-08"
 			},
 			"category": "Fire Croc",
 			"type": [ "Fire" ],
@@ -41124,6 +41373,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				"CHRG_FIR_FLAMETHROWER",
+				"CHRG_FIR_TORCHSONG",
 				"CHRG_FAI_DISARMINGVOICE",
 				"CHRG_DAR_CRUNCH"
 			],
@@ -41144,7 +41394,8 @@ const	dbpokemon = {
 			"dex-index": "911",
 			"name": "Skeledirge",
 			"availability": {
-				"in-game": "2023-09-05"
+				"in-game": "2023-09-05",
+				"shiny": "2025-03-08"
 			},
 			"category": "Singer",
 			"type": [ "Fire", "Ghost" ],
@@ -41162,6 +41413,9 @@ const	dbpokemon = {
 				"CHRG_FAI_DISARMINGVOICE",
 				"CHRG_DAR_CRUNCH",
 				"CHRG_GHO_SHADOWBALL"
+			],
+			"special-charged-moves": [
+				"CHRG_FIR_BLASTBURN"
 			],
 			"height-avg": 1.6,
 			"weight-avg": 326.5,
@@ -41328,6 +41582,7 @@ const	dbpokemon = {
 			},
 			"category": "Hog",
 			"type": [ "Normal" ],
+			"forms": [ "916-M", "916-F" ],
 			"dynamax-class": 1,
 			"fast-moves": [
 				"FAST_NOR_TACKLE",
@@ -41636,7 +41891,7 @@ const	dbpokemon = {
 			},
 			"category": "Couple",
 			"type": [ "Normal" ],
-			"evolves-into": [ "925-1", "925-2" ],
+			"evolves-into": [ "925-F", "925-T" ],
 			"base-stamina": 137,
 			"base-attack": 98,
 			"base-defense": 90,
@@ -41672,6 +41927,7 @@ const	dbpokemon = {
 			},
 			"category": "Family",
 			"type": [ "Normal" ],
+			"forms": [ "925-F", "925-T" ],
 			"evolves-from": "924",
 			"base-stamina": 179,
 			"base-attack": 159,
@@ -41687,7 +41943,7 @@ const	dbpokemon = {
 				"CHRG_FAI_PLAYROUGH",
 				"CHRG_DAR_CRUNCH"
 			],
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "925-F"
 		},
 		"925-F": {
 			"dex-index": "925-F",
@@ -42219,6 +42475,7 @@ const	dbpokemon = {
 			"base-defense": 165,
 			"dynamax-class": 2,
 			"fast-moves": [
+				"FAST_DAR_SUCKERPUNCH",
 				"FAST_ELE_THUNDERSHOCK",
 				"FAST_WAT_WATERGUN"
 			],
@@ -43027,13 +43284,15 @@ const	dbpokemon = {
 			"base-defense": 172,
 			"dynamax-class": 3,
 			"fast-moves": [
+				"FAST_DAR_SUCKERPUNCH",
 				"FAST_FLY_WINGATTACK",
 				"FAST_ROC_ROCKTHROW"
 			],
 			"charged-moves": [
 				"CHRG_DAR_PAYBACK",
 				"CHRG_FLY_AERIALACE",
-				"CHRG_FLY_FLY"
+				"CHRG_FLY_FLY",
+				"CHRG_ROC_ROCKTOMB",
 			],
 			"height-avg": 1.5,
 			"weight-avg": 42.9,
@@ -43090,6 +43349,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"type": [ "Water" ],
+			"forms": [ "964-Z", "964-H" ],
 			"evolves-from": "963",
 			"dynamax-class": 3,
 			"fast-moves": [
@@ -43104,7 +43364,7 @@ const	dbpokemon = {
 				"CHRG_FIG_DRAINPUNCH",
 				"CHRG_FLY_ACROBATICS"
 			],
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "964-Z"
 		},
 		"964-Z": {
 			"dex-index": "964-Z",
@@ -43701,6 +43961,7 @@ const	dbpokemon = {
 			},
 			"category": "Spiny Fish",
 			"type": [ "Poison", "Ground" ],
+			"evolves-from": "194-P",
 			"base-stamina": 277,
 			"base-attack": 127,
 			"base-defense": 151,
@@ -43777,6 +44038,7 @@ const	dbpokemon = {
 			},
 			"category": "Land Snake",
 			"type": [ "Normal" ],
+			"forms": [ "982-D", "982-T" ],
 			"base-stamina": 268,
 			"base-attack": 188,
 			"base-defense": 150,
@@ -43791,7 +44053,7 @@ const	dbpokemon = {
 				"CHRG_ROC_ROCKSLIDE",
 				"CHRG_GRO_DRILLRUN"
 			],
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "982-D"
 		},
 		"982-D": {
 			"dex-index": "982-D",
@@ -44357,6 +44619,7 @@ const	dbpokemon = {
 			"dex-index": "999-0",
 			"name": "Gimmighoul",
 			"type": [ "Ghost" ],
+			"forms": [ "999-R", "999-C" ],
 			"evolves-into": [ "1000" ],
 			"base-stamina": 128,
 			"base-attack": 140,
@@ -44368,7 +44631,7 @@ const	dbpokemon = {
 			"charged-moves": [
 				"CHRG_GHO_SHADOWBALL"
 			],
-			"showcase-baseline": "" // TODO
+			"showcase-baseline": "999-R"
 		},
 		"999-R": {
 			"dex-index": "999-R",
@@ -44452,6 +44715,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Ruinous",
+			"legendary": true,
 			"type": [ "Dark", "Grass" ],
 			"base-stamina": 198,
 			"base-attack": 186,
@@ -44486,6 +44750,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Ruinous",
+			"legendary": true,
 			"type": [ "Dark", "Ice" ],
 			"base-stamina": 190,
 			"base-attack": 261,
@@ -44520,6 +44785,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Ruinous",
+			"legendary": true,
 			"type": [ "Dark", "Ground" ],
 			"base-stamina": 321,
 			"base-attack": 194,
@@ -44554,6 +44820,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Ruinous",
+			"legendary": true,
 			"type": [ "Dark", "Fire" ],
 			"base-stamina": 146,
 			"base-attack": 269,
@@ -44650,6 +44917,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Paradox",
+			"legendary": true,
 			"type": [ "Fighting", "Dragon" ],
 			"base-stamina": 205,
 			"base-attack": 263,
@@ -44685,6 +44953,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Paradox",
+			"legendary": true,
 			"type": [ "Electric", "Dragon" ],
 			"base-stamina": 205,
 			"base-attack": 263,
@@ -44779,6 +45048,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Retainer",
+			"legendary": true,
 			"type": [ "Poison", "Fighting" ],
 			"height-avg": 1.8,
 			"weight-avg": 92.0
@@ -44790,6 +45060,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Retainer",
+			"legendary": true,
 			"type": [ "Poison", "Psychic" ],
 			"height-avg": 1.0,
 			"weight-avg": 12.2
@@ -44801,6 +45072,7 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Retainer",
+			"legendary": true,
 			"type": [ "Poison", "Fairy" ],
 			"height-avg": 1.4,
 			"weight-avg": 30.1
@@ -44812,7 +45084,9 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Mask",
+			"legendary": true,
 			"type": [ "Grass" ],
+			"forms": [ "1017-T", "1017-W", "1017-H", "1017-C" ],
 			"height-avg": 1.2,
 			"weight-avg": 39.8
 		},
@@ -44931,7 +45205,9 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Tera",
+			"legendary": true,
 			"type": [ "Normal" ],
+			"forms": [ "1024-T", "1024-S" ],
 			"height-avg": 0.2,
 			"weight-avg": 6.5
 		},
@@ -44964,55 +45240,10 @@ const	dbpokemon = {
 				"in-game": false
 			},
 			"category": "Subjugation",
+			"mythical": true,
 			"type": [ "Poison", "Ghost" ],
 			"height-avg": 0.3,
 			"weight-avg": 0.3
-		}
-	}
-};
-const entrytemplate = {
-	"dex-index": {
-		"dex-index": "string",
-		"name": "string",
-		"name-display": "string",
-		"name-ital": "string",
-		"name-ital-display": "string",
-		"forms": [ "array of dex indices" ],
-		"form-data": {
-			"base": "dex index",
-			"type": "string",
-			"form": "string",
-			"form-ital": "string"
-		},
-		"variants": [ "array of strings" ],
-		"variants-ital": [ "array of strings" ],
-		"category": "string",
-		"type": [ "array of strings" ],
-		"evolves-into": [ "array of dex index" ],
-		"evolves-from": "dex index",
-		"base-attack": "int",
-		"base-defense": "int",
-		"base-stamina": "int",
-		"dynamax-class": "int [1,4]",
-		"max-battle-tier": "int [1,6]",
-		"fast-moves": [ "array of strings" ],
-		"special-fast-moves": [ "array of strings" ],
-		"unobtainable-fast-moves": [ "array of strings" ],
-		"charged-moves": [ "array of strings" ],
-		"special-charged-moves": [ "array of strings" ],
-		"unobtainable-charged-moves": [ "array of strings" ],
-		"showcase-baseline": "dex-index",
-		"height-avg": "float",
-		"weight-avg": "float",
-		"size-data": {
-			"class": "float",
-			"ht-std-dev": "float",
-			"wt-std-dev": "float",
-			"xxs": [ "float", "float" ],
-			"xs": [ "float", "float" ],
-			"a": [ "float", "float" ],
-			"xl": [ "float", "float" ],
-			"xxl": [ "float", "float" ]
 		}
 	},
 	"order": [
@@ -45242,7 +45473,7 @@ const entrytemplate = {
 		"472", "473", "474",
 		"475", "475-M",
 		"476", "477", "478",
-		"479", "479-H", "479-W", "479-R", "479-A", "479-M",
+		"479", "479-H", "479-W", "479-G", "479-V", "479-M",
 		"480", "481", "482",
 		"483", "483-O", "484", "484-O",
 		"485", "486",
@@ -45360,7 +45591,7 @@ const entrytemplate = {
 		"712", "713", "713-H",
 		"714", "715",
 		"716", "717",
-		"718-0", "718-1", "718-2",
+		"718-0", "718-X", "718-L", "718-C",
 		"719", "719-M",
 		"720-0", "720-C", "720-U",
 		"721",
@@ -45499,4 +45730,51 @@ const entrytemplate = {
 		"1024", "1024-T", "1024-S",
 		"1025"
 	]
+
+};
+const entrytemplate = {
+	"dex-index": {
+		"dex-index": "string",
+		"name": "string",
+		"name-display": "string",
+		"name-ital": "string",
+		"name-ital-display": "string",
+		"forms": [ "array of dex indices" ],
+		"form-data": {
+			"base": "dex index",
+			"type": "string",
+			"form": "string",
+			"form-ital": "string"
+		},
+		"variants": [ "array of strings" ],
+		"variants-ital": [ "array of strings" ],
+		"category": "string",
+		"type": [ "array of strings" ],
+		"evolves-into": [ "array of dex index" ],
+		"evolves-from": "dex index",
+		"base-attack": "int",
+		"base-defense": "int",
+		"base-stamina": "int",
+		"dynamax-class": "int [1,4]",
+		"max-battle-tier": "int [1,6]",
+		"fast-moves": [ "array of strings" ],
+		"special-fast-moves": [ "array of strings" ],
+		"unobtainable-fast-moves": [ "array of strings" ],
+		"charged-moves": [ "array of strings" ],
+		"special-charged-moves": [ "array of strings" ],
+		"unobtainable-charged-moves": [ "array of strings" ],
+		"showcase-baseline": "dex-index",
+		"height-avg": "float",
+		"weight-avg": "float",
+		"size-data": {
+			"class": "float",
+			"ht-std-dev": "float",
+			"wt-std-dev": "float",
+			"xxs": [ "float", "float" ],
+			"xs": [ "float", "float" ],
+			"a": [ "float", "float" ],
+			"xl": [ "float", "float" ],
+			"xxl": [ "float", "float" ]
+		}
+	}
 };

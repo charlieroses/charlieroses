@@ -71,7 +71,7 @@ function getFastMoveEPS( move ) {
 
 const dbmoves = {
 	"fast-moves": {
-		"FAST_BUG_BUGBITE": {
+		"FAST_BUG_BUGBITE": { // TODO Fix me
 			"type": "Bug",
 			"name": "Bug Bite",
 			"name-ital": "Coleomorso",
@@ -82,7 +82,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 3
 		},
-		"FAST_BUG_FURYCUTTER": {
+		"FAST_BUG_FURYCUTTER": { // TODO Fix me
 			"type": "Bug",
 			"name": "Fury Cutter",
 			"name-ital": "Tagliofuria",
@@ -93,7 +93,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 2
 		},
-		"FAST_BUG_HIDDENPOWER": {
+		"FAST_BUG_HIDDENPOWER": { // TODO Fix me
 			"type": "Bug",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -104,7 +104,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_BUG_INFESTATION": {
+		"FAST_BUG_INFESTATION": { // TODO Fix me
 			"type": "Bug",
 			"name": "Infestation",
 			"name-ital": "Assillo",
@@ -115,7 +115,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 6
 		},
-		"FAST_BUG_STRUGGLEBUG": {
+		"FAST_BUG_STRUGGLEBUG": { // TODO Fix me
 			"type": "Bug",
 			"name": "Struggle Bug",
 			"name-ital": "Entomoblocco",
@@ -126,7 +126,7 @@ const dbmoves = {
 			"trainer-energy": 2.67,
 			"trainer-cooldown": 9
 		},
-		"FAST_DAR_BITE": {
+		"FAST_DAR_BITE": { // TODO Fix me
 			"type": "Dark",
 			"name": "Bite",
 			"name-ital": "Morso",
@@ -137,7 +137,7 @@ const dbmoves = {
 			"trainer-energy": 2.00,
 			"trainer-cooldown": 4
 		},
-		"FAST_DAR_FEINTATTACK": {
+		"FAST_DAR_FEINTATTACK": { // TODO Fix me
 			"type": "Dark",
 			"name": "Feint Attack",
 			"name-ital": "Finta",
@@ -148,7 +148,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 6
 		},
-		"FAST_DAR_HIDDENPOWER": {
+		"FAST_DAR_HIDDENPOWER": { // TODO Fix me
 			"type": "Dark",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -159,7 +159,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_DAR_SNARL": {
+		"FAST_DAR_SNARL": { // TODO Fix me
 			"type": "Dark",
 			"name": "Snarl",
 			"name-ital": "Urlorabbia",
@@ -170,7 +170,7 @@ const dbmoves = {
 			"trainer-energy": 4.33,
 			"trainer-cooldown": 5
 		},
-		"FAST_DAR_SUCKERPUNCH": {
+		"FAST_DAR_SUCKERPUNCH": { // TODO Fix me
 			"type": "Dark",
 			"name": "Sucker Punch",
 			"name-ital": "Sbigoattacco",
@@ -181,7 +181,7 @@ const dbmoves = {
 			"trainer-energy": 3.50,
 			"trainer-cooldown": 8
 		},
-		"FAST_DRA_DRAGONBREATH": {
+		"FAST_DRA_DRAGONBREATH": { // TODO Fix me
 			"type": "Dragon",
 			"name": "Dragon Breath",
 			"name-ital": "Dragospiro",
@@ -192,7 +192,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 4
 		},
-		"FAST_DRA_DRAGONTAIL": {
+		"FAST_DRA_DRAGONTAIL": { // TODO Fix me
 			"type": "Dragon",
 			"name": "Dragon Tail",
 			"name-ital": "Codadrago",
@@ -203,7 +203,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 13
 		},
-		"FAST_DRA_HIDDENPOWER": {
+		"FAST_DRA_HIDDENPOWER": { // TODO Fix me
 			"type": "Dragon",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -214,7 +214,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_ELE_CHARGEBEAM": {
+		"FAST_ELE_CHARGEBEAM": { // TODO Fix me
 			"type": "Electric",
 			"name": "Charge Beam",
 			"name-ital": "Raggioscossa",
@@ -225,7 +225,7 @@ const dbmoves = {
 			"trainer-energy": 3.67,
 			"trainer-cooldown": 5
 		},
-		"FAST_ELE_HIDDENPOWER": {
+		"FAST_ELE_HIDDENPOWER": { // TODO Fix me
 			"type": "Electric",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -236,7 +236,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_ELE_SPARK": {
+		"FAST_ELE_SPARK": { // TODO Fix me
 			"type": "Electric",
 			"name": "Spark",
 			"name-ital": "Scintilla",
@@ -247,7 +247,7 @@ const dbmoves = {
 			"trainer-energy": 3.50,
 			"trainer-cooldown": 5
 		},
-		"FAST_ELE_THUNDERFANG": {
+		"FAST_ELE_THUNDERFANG": { // TODO Fix me
 			"type": "Electric",
 			"name": "Thunder Fang",
 			"name-ital": "Fulmindenti",
@@ -258,7 +258,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 8
 		},
-		"FAST_ELE_THUNDERSHOCK": {
+		"FAST_ELE_THUNDERSHOCK": { // TODO Fix me
 			"type": "Electric",
 			"name": "Thunder Shock",
 			"name-ital": "Tuonoshock",
@@ -269,7 +269,7 @@ const dbmoves = {
 			"trainer-energy": 4.50,
 			"trainer-cooldown": 4
 		},
-		"FAST_ELE_VOLTSWITCH": {
+		"FAST_ELE_VOLTSWITCH": { // TODO Fix me
 			"type": "Electric",
 			"name": "Volt Switch",
 			"name-ital": "Invertivolt",
@@ -280,7 +280,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 12
 		},
-		"FAST_FAI_CHARM": {
+		"FAST_FAI_CHARM": { // TODO Fix me
 			"type": "Fairy",
 			"name": "Charm",
 			"name-ital": "Fascino",
@@ -291,7 +291,7 @@ const dbmoves = {
 			"trainer-energy": 2.00,
 			"trainer-cooldown": 15
 		},
-		"FAST_FAI_FAIRYWIND": {
+		"FAST_FAI_FAIRYWIND": { // TODO Fix me
 			"type": "Fairy",
 			"name": "Fairy Wind",
 			"name-ital": "Vento di Fata",
@@ -302,7 +302,7 @@ const dbmoves = {
 			"trainer-energy": 4.50,
 			"trainer-cooldown": 4
 		},
-		"FAST_FAI_GEOMANCY": {
+		"FAST_FAI_GEOMANCY": { // TODO Fix me
 			"type": "Fairy",
 			"name": "Geomancy",
 			"name-ital": "Geocontrollo",
@@ -313,7 +313,7 @@ const dbmoves = {
 			"trainer-energy": 4.33,
 			"trainer-cooldown": 4
 		},
-		"FAST_FIG_COUNTER": {
+		"FAST_FIG_COUNTER": { // TODO Fix me
 			"type": "Fighting",
 			"name": "Counter",
 			"name-ital": "Contrattaco",
@@ -324,7 +324,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 8
 		},
-		"FAST_FIG_DOUBLEKICK": {
+		"FAST_FIG_DOUBLEKICK": { // TODO Fix me
 			"type": "Fighting",
 			"name": "Double Kick",
 			"name-ital": "Doppiocalcio",
@@ -335,7 +335,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 8
 		},
-		"FAST_FIG_FORCEPALM": {
+		"FAST_FIG_FORCEPALM": { // TODO Fix me
 			"type": "Fighting",
 			"name": "Force Palm",
 			"name-ital": "Palmoforza",
@@ -346,7 +346,7 @@ const dbmoves = {
 			"trainer-energy": 3.33,
 			"trainer-cooldown": 13
 		},
-		"FAST_FIG_HIDDENPOWER": {
+		"FAST_FIG_HIDDENPOWER": { // TODO Fix me
 			"type": "Fighting",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -357,7 +357,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_FIG_KARATECHOP": {
+		"FAST_FIG_KARATECHOP": { // TODO Fix me
 			"type": "Fighting",
 			"name": "Karate Chop",
 			"name-ital": "Colpokarate",
@@ -368,7 +368,7 @@ const dbmoves = {
 			"trainer-energy": 4.50,
 			"trainer-cooldown": 5
 		},
-		"FAST_FIG_LOWKICK": {
+		"FAST_FIG_LOWKICK": { // TODO Fix me
 			"type": "Fighting",
 			"name": "Low Kick",
 			"name-ital": "Colpo Basso",
@@ -379,7 +379,7 @@ const dbmoves = {
 			"trainer-energy": 2.50,
 			"trainer-cooldown": 4
 		},
-		"FAST_FIG_ROCKSMASH": {
+		"FAST_FIG_ROCKSMASH": { // TODO Fix me
 			"type": "Fighting",
 			"name": "Rock Smash",
 			"name-ital": "Spaccaroccia",
@@ -390,7 +390,7 @@ const dbmoves = {
 			"trainer-energy": 2.33,
 			"trainer-cooldown": 9
 		},
-		"FAST_FIR_EMBER": {
+		"FAST_FIR_EMBER": { // TODO Fix me
 			"type": "Fire",
 			"name": "Ember",
 			"name-ital": "Braciere",
@@ -401,7 +401,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 7
 		},
-		"FAST_FIR_FIREFANG": {
+		"FAST_FIR_FIREFANG": { // TODO Fix me
 			"type": "Fire",
 			"name": "Fire Fang",
 			"name-ital": "Rogodenti",
@@ -412,7 +412,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 8
 		},
-		"FAST_FIR_FIRESPIN": {
+		"FAST_FIR_FIRESPIN": { // TODO Fix me
 			"type": "Fire",
 			"name": "Fire Spin",
 			"name-ital": "Turbofuoco",
@@ -423,7 +423,7 @@ const dbmoves = {
 			"trainer-energy": 3.33,
 			"trainer-cooldown": 11
 		},
-		"FAST_FIR_HIDDENPOWER": {
+		"FAST_FIR_HIDDENPOWER": { // TODO Fix me
 			"type": "Fire",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -434,7 +434,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_FIR_INCINERATE": {
+		"FAST_FIR_INCINERATE": { // TODO Fix me
 			"type": "Fire",
 			"name": "Incinerate",
 			"name-ital": "Bruciatutto",
@@ -445,7 +445,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 20
 		},
-		"FAST_FLY_AIRSLASH": {
+		"FAST_FLY_AIRSLASH": { // TODO Fix me
 			"type": "Flying",
 			"name": "Air Slash",
 			"name-ital": "Eterlama",
@@ -456,7 +456,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 9
 		},
-		"FAST_FLY_GUST": {
+		"FAST_FLY_GUST": { // TODO Fix me
 			"type": "Flying",
 			"name": "Gust",
 			"name-ital": "Raffica",
@@ -467,7 +467,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 16
 		},
-		"FAST_FLY_HIDDENPOWER": {
+		"FAST_FLY_HIDDENPOWER": { // TODO Fix me
 			"type": "Flying",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -478,7 +478,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_FLY_PECK": {
+		"FAST_FLY_PECK": { // TODO Fix me
 			"type": "Flying",
 			"name": "Peck",
 			"name-ital": "Beccata",
@@ -489,7 +489,7 @@ const dbmoves = {
 			"trainer-energy": 2.50,
 			"trainer-cooldown": 6
 		},
-		"FAST_FLY_WINGATTACK": {
+		"FAST_FLY_WINGATTACK": { // TODO Fix me
 			"type": "Flying",
 			"name": "Wing Attack",
 			"name-ital": "Attaco d'Ala",
@@ -507,9 +507,9 @@ const dbmoves = {
 			"raid-power": 7,
 			"raid-energy": 13,
 			"raid-cooldown": 1.0,
-			"trainer-power": 4.00,
-			"trainer-energy": 3.33,
-			"trainer-cooldown": 12
+			"trainer-power": 12,
+			"trainer-energy": 10,
+			"trainer-cooldown": 2.0
 		},
 		"FAST_GHO_HEX": {
 			"type": "Ghost",
@@ -518,11 +518,11 @@ const dbmoves = {
 			"raid-power": 8,
 			"raid-energy": 13,
 			"raid-cooldown": 1.0,
-			"trainer-power": 2.00,
-			"trainer-energy": 4.00,
-			"trainer-cooldown": 6
+			"trainer-power": 7,
+			"trainer-energy": 13,
+			"trainer-cooldown": 2.0
 		},
-		"FAST_GHO_HIDDENPOWER": {
+		"FAST_GHO_HIDDENPOWER": { // TODO Fix me
 			"type": "Ghost",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -540,9 +540,9 @@ const dbmoves = {
 			"raid-power": 5,
 			"raid-energy": 6,
 			"raid-cooldown": 0.5,
-			"trainer-power": 3.00,
-			"trainer-energy": 3.00,
-			"trainer-cooldown": 3
+			"trainer-power": 3,
+			"trainer-energy": 3,
+			"trainer-cooldown": 1.0
 		},
 		"FAST_GHO_SHADOWCLAW": {
 			"type": "Ghost",
@@ -551,11 +551,11 @@ const dbmoves = {
 			"raid-power": 6,
 			"raid-energy": 4,
 			"raid-cooldown": 0.5,
-			"trainer-power": 3.00,
-			"trainer-energy": 4.00,
-			"trainer-cooldown": 6
+			"trainer-power": 6,
+			"trainer-energy": 8,
+			"trainer-cooldown": 1.0
 		},
-		"FAST_GRA_BULLETSEED": {
+		"FAST_GRA_BULLETSEED": { // TODO Fix me
 			"type": "Grass",
 			"name": "Bullet Seed",
 			"name-ital": "Semitraglia",
@@ -566,7 +566,7 @@ const dbmoves = {
 			"trainer-energy": 4.33,
 			"trainer-cooldown": 5
 		},
-		"FAST_GRA_HIDDENPOWER": {
+		"FAST_GRA_HIDDENPOWER": { // TODO Fix me
 			"type": "Grass",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -577,7 +577,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_GRA_LEAFAGE": {
+		"FAST_GRA_LEAFAGE": { // TODO Fix me
 			"type": "Grass",
 			"name": "Leafage",
 			"name-ital": "Fogliame",
@@ -588,7 +588,7 @@ const dbmoves = {
 			"trainer-energy": 3.50,
 			"trainer-cooldown": 6
 		},
-		"FAST_GRA_MAGICALLEAF": {
+		"FAST_GRA_MAGICALLEAF": { // TODO Fix me
 			"type": "Grass",
 			"name": "Magical Leaf",
 			"name-ital": "Fogliamagica",
@@ -599,7 +599,7 @@ const dbmoves = {
 			"trainer-energy": 3.33,
 			"trainer-cooldown": 10
 		},
-		"FAST_GRA_RAZORLEAF": {
+		"FAST_GRA_RAZORLEAF": { // TODO Fix me
 			"type": "Grass",
 			"name": "Razor Leaf",
 			"name-ital": "Foglielama",
@@ -610,7 +610,7 @@ const dbmoves = {
 			"trainer-energy": 2.00,
 			"trainer-cooldown": 9
 		},
-		"FAST_GRA_VINEWHIP": {
+		"FAST_GRA_VINEWHIP": { // TODO Fix me
 			"type": "Grass",
 			"name": "Vine Whip",
 			"name-ital": "Frustata",
@@ -621,7 +621,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 5
 		},
-		"FAST_GRO_HIDDENPOWER": {
+		"FAST_GRO_HIDDENPOWER": { // TODO Fix me
 			"type": "Ground",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -632,7 +632,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_GRO_MUDSHOT": {
+		"FAST_GRO_MUDSHOT": { // TODO Fix me
 			"type": "Ground",
 			"name": "Mud Shot",
 			"name-ital": "Colpidifango",
@@ -643,7 +643,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 4
 		},
-		"FAST_GRO_MUDSLAP": {
+		"FAST_GRO_MUDSLAP": { // TODO Fix me
 			"type": "Ground",
 			"name": "Mud-Slap",
 			"name-ital": "Fangosberla",
@@ -654,7 +654,7 @@ const dbmoves = {
 			"trainer-energy": 4.67,
 			"trainer-cooldown": 6
 		},
-		"FAST_GRO_SANDATTACK": {
+		"FAST_GRO_SANDATTACK": { // TODO Fix me
 			"type": "Ground",
 			"name": "Sand Attack",
 			"raid-power": 4,
@@ -664,7 +664,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 2
 		},
-		"FAST_ICE_FROSTBREATH": {
+		"FAST_ICE_FROSTBREATH": { // TODO Fix me
 			"type": "Ice",
 			"name": "Frost Breath",
 			"name-ital": "Alitogelido",
@@ -675,7 +675,7 @@ const dbmoves = {
 			"trainer-energy": 2.50,
 			"trainer-cooldown": 7
 		},
-		"FAST_ICE_HIDDENPOWER": {
+		"FAST_ICE_HIDDENPOWER": { // TODO Fix me
 			"type": "Ice",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -686,7 +686,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_ICE_ICEFANG": {
+		"FAST_ICE_ICEFANG": { // TODO Fix me
 			"type": "Ice",
 			"name": "Ice Fang",
 			"name-ital": "Gelodenti",
@@ -697,7 +697,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 8
 		},
-		"FAST_ICE_ICESHARD": {
+		"FAST_ICE_ICESHARD": { // TODO Fix me
 			"type": "Ice",
 			"name": "Ice Shard",
 			"name-ital": "Geloscheggia",
@@ -708,7 +708,7 @@ const dbmoves = {
 			"trainer-energy": 3.33,
 			"trainer-cooldown": 9
 		},
-		"FAST_ICE_POWDERSNOW": {
+		"FAST_ICE_POWDERSNOW": { // TODO Fix me
 			"type": "Ice",
 			"name": "Powder Snow",
 			"name-ital": "Poleneve",
@@ -719,7 +719,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 5
 		},
-		"FAST_NOR_CUT": {
+		"FAST_NOR_CUT": { // TODO Fix me
 			"type": "Normal",
 			"name": "Cut",
 			"name-ital": "Taglio",
@@ -730,7 +730,7 @@ const dbmoves = {
 			"trainer-energy": 2.00,
 			"trainer-cooldown": 3
 		},
-		"FAST_NOR_LOCKON": {
+		"FAST_NOR_LOCKON": { // TODO Fix me
 			"type": "Normal",
 			"name": "Lock-On",
 			"name-ital": "Localizza",
@@ -741,7 +741,7 @@ const dbmoves = {
 			"trainer-energy": 4.67,
 			"trainer-cooldown": 6
 		},
-		"FAST_NOR_PRESENT": {
+		"FAST_NOR_PRESENT": { // TODO Fix me
 			"type": "Normal",
 			"name": "Present",
 			"name-ital": "Regalino",
@@ -752,7 +752,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 3
 		},
-		"FAST_NOR_POUND": {
+		"FAST_NOR_POUND": { // TODO Fix me
 			"type": "Normal",
 			"name": "Pound",
 			"name-ital": "Botta",
@@ -763,7 +763,7 @@ const dbmoves = {
 			"trainer-energy": 2.00,
 			"trainer-cooldown": 4
 		},
-		"FAST_NOR_QUICKATTACK": {
+		"FAST_NOR_QUICKATTACK": { // TODO Fix me
 			"type": "Normal",
 			"name": "Quick Attack",
 			"name-ital": "Attacco Rapido",
@@ -774,7 +774,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 5
 		},
-		"FAST_NOR_SCRATCH": {
+		"FAST_NOR_SCRATCH": { // TODO Fix me
 			"type": "Normal",
 			"name": "Scratch",
 			"name-ital": "Graffio",
@@ -785,7 +785,7 @@ const dbmoves = {
 			"trainer-energy": 2.00,
 			"trainer-cooldown": 4
 		},
-		"FAST_NOR_TACKLE": {
+		"FAST_NOR_TACKLE": { // TODO Fix me
 			"type": "Normal",
 			"name": "Tackle",
 			"name-ital": "Azione",
@@ -796,7 +796,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 3
 		},
-		"FAST_NOR_TAKEDOWN": {
+		"FAST_NOR_TAKEDOWN": { // TODO Fix me
 			"type": "Normal",
 			"name": "Take Down",
 			"name-ital": "Riduttore",
@@ -807,7 +807,7 @@ const dbmoves = {
 			"trainer-energy": 2.67,
 			"trainer-cooldown": 5
 		},
-		"FAST_NOR_TRANSFORM": {
+		"FAST_NOR_TRANSFORM": { // TODO Fix me
 			"type": "Normal",
 			"name": "Transform",
 			"name-ital": "Trasformazione",
@@ -818,7 +818,7 @@ const dbmoves = {
 			"trainer-energy": 0,
 			"trainer-cooldown": 0
 		},
-		"FAST_NOR_YAWN": {
+		"FAST_NOR_YAWN": { // TODO Fix me
 			"type": "Normal",
 			"name": "Yawn",
 			"name-ital": "Sbadiglio",
@@ -829,7 +829,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 0
 		},
-		"FAST_POI_ACID": {
+		"FAST_POI_ACID": { // TODO Fix me
 			"type": "Poison",
 			"name": "Acid",
 			"name-ital": "Acido",
@@ -840,7 +840,7 @@ const dbmoves = {
 			"trainer-energy": 2.50,
 			"trainer-cooldown": 6
 		},
-		"FAST_POI_HIDDENPOWER": {
+		"FAST_POI_HIDDENPOWER": { // TODO Fix me
 			"type": "Poison",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -851,7 +851,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_POI_POISONJAB": {
+		"FAST_POI_POISONJAB": { // TODO Fix me
 			"type": "Poison",
 			"name": "Poison Jab",
 			"name-ital": "Velenopuntura",
@@ -862,7 +862,7 @@ const dbmoves = {
 			"trainer-energy": 3.50,
 			"trainer-cooldown": 7
 		},
-		"FAST_POI_POISONSTING": {
+		"FAST_POI_POISONSTING": { // TODO Fix me
 			"type": "Poison",
 			"name": "Poison Sting",
 			"name-ital": "Velenospina",
@@ -873,7 +873,7 @@ const dbmoves = {
 			"trainer-energy": 4.50,
 			"trainer-cooldown": 4
 		},
-		"FAST_PSY_CONFUSION": {
+		"FAST_PSY_CONFUSION": { // TODO Fix me
 			"type": "Psychic",
 			"name": "Confusion",
 			"name-ital": "Confusione",
@@ -884,7 +884,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 16
 		},
-		"FAST_PSY_EXTRASENSORY": {
+		"FAST_PSY_EXTRASENSORY": { // TODO Fix me
 			"type": "Psychic",
 			"name": "Extrasensory",
 			"name-ital": "Extrasenso",
@@ -895,7 +895,7 @@ const dbmoves = {
 			"trainer-energy": 3.33,
 			"trainer-cooldown": 8
 		},
-		"FAST_PSY_HIDDENPOWER": {
+		"FAST_PSY_HIDDENPOWER": { // TODO Fix me
 			"type": "Psychic",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -906,7 +906,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_PSY_PSYCHOCUT": {
+		"FAST_PSY_PSYCHOCUT": { // TODO Fix me
 			"type": "Psychic",
 			"name": "Psycho Cut",
 			"name-ital": "Psicotaglio",
@@ -917,7 +917,7 @@ const dbmoves = {
 			"trainer-energy": 4.50,
 			"trainer-cooldown": 3
 		},
-		"FAST_PSY_PSYWAVE": {
+		"FAST_PSY_PSYWAVE": { // TODO Fix me
 			"type": "Psychic",
 			"name": "Psywave",
 			"name-ital": "Psiconda",
@@ -928,7 +928,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 3
 		},
-		"FAST_PSY_ZENHEADBUTT": {
+		"FAST_PSY_ZENHEADBUTT": { // TODO Fix me
 			"type": "Psychic",
 			"name": "Zen Headbutt",
 			"name-ital": "Cozzata Zen",
@@ -939,7 +939,7 @@ const dbmoves = {
 			"trainer-energy": 2.00,
 			"trainer-cooldown": 8
 		},
-		"FAST_ROC_HIDDENPOWER": {
+		"FAST_ROC_HIDDENPOWER": { // TODO Fix me
 			"type": "Rock",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -954,23 +954,23 @@ const dbmoves = {
 			"type": "Rock",
 			"name": "Rock Throw",
 			"name-ital": "Sassata",
-			"raid-power": 0,
-			"raid-energy": 0,
-			"raid-cooldown": 0.0,
-			"trainer-power": 4.00,
-			"trainer-energy": 2.50,
-			"trainer-cooldown": 8
+			"raid-power": 13,
+			"raid-energy": 8,
+			"raid-cooldown": 1.0,
+			"trainer-power": 8,
+			"trainer-energy": 5,
+			"trainer-cooldown": 1.0
 		},
 		"FAST_ROC_ROLLOUT": {
 			"type": "Rock",
 			"name": "Rollout",
 			"name-ital": "Rotolamento",
-			"raid-power": 13,
-			"raid-energy": 8,
-			"raid-cooldown": 1.0,
-			"trainer-power": 2.67,
-			"trainer-energy": 4.33,
-			"trainer-cooldown": 8
+			"raid-power": 15,
+			"raid-energy": 18,
+			"raid-cooldown": 1.5,
+			"trainer-power": 7,
+			"trainer-energy": 13,
+			"trainer-cooldown": 2.0
 		},
 		"FAST_ROC_SMACKDOWN": {
 			"type": "Rock",
@@ -979,11 +979,11 @@ const dbmoves = {
 			"raid-power": 13,
 			"raid-energy": 7,
 			"raid-cooldown": 1.0,
-			"trainer-power": 3.67,
-			"trainer-energy": 2.67,
-			"trainer-cooldown": 11
+			"trainer-power": 11,
+			"trainer-energy": 8,
+			"trainer-cooldown": 2.0
 		},
-		"FAST_STE_BULLETPUNCH": {
+		"FAST_STE_BULLETPUNCH": { // TODO Fix me
 			"type": "Steel",
 			"name": "Bullet Punch",
 			"name-ital": "Pugnoscarica",
@@ -994,7 +994,7 @@ const dbmoves = {
 			"trainer-energy": 3.50,
 			"trainer-cooldown": 6
 		},
-		"FAST_STE_HIDDENPOWER": {
+		"FAST_STE_HIDDENPOWER": { // TODO Fix me
 			"type": "Steel",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -1005,7 +1005,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_STE_IRONTAIL": {
+		"FAST_STE_IRONTAIL": { // TODO Fix me
 			"type": "Steel",
 			"name": "Iron Tail",
 			"name-ital": "Codacciaio",
@@ -1016,7 +1016,7 @@ const dbmoves = {
 			"trainer-energy": 2.33,
 			"trainer-cooldown": 10
 		},
-		"FAST_STE_METALCLAW": {
+		"FAST_STE_METALCLAW": { // TODO Fix me
 			"type": "Steel",
 			"name": "Metal Claw",
 			"name-ital": "Ferrartigli",
@@ -1027,7 +1027,7 @@ const dbmoves = {
 			"trainer-energy": 3.50,
 			"trainer-cooldown": 5
 		},
-		"FAST_STE_METALSOUND": {
+		"FAST_STE_METALSOUND": { // TODO Fix me
 			"type": "Steel",
 			"name": "Metal Sound",
 			"name-ital": "Ferrostrido",
@@ -1038,7 +1038,7 @@ const dbmoves = {
 			"trainer-energy": 4.00,
 			"trainer-cooldown": 3
 		},
-		"FAST_STE_STEELWING": {
+		"FAST_STE_STEELWING": { // TODO Fix me
 			"type": "Steel",
 			"name": "Steel Wing",
 			"name-ital": "Alacciaio",
@@ -1049,7 +1049,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 7
 		},
-		"FAST_WAT_BUBBLE": {
+		"FAST_WAT_BUBBLE": { // TODO Fix me
 			"type": "Water",
 			"name": "Bubble",
 			"name-ital": "Bolla",
@@ -1060,7 +1060,7 @@ const dbmoves = {
 			"trainer-energy": 3.67,
 			"trainer-cooldown": 8
 		},
-		"FAST_WAT_HIDDENPOWER": {
+		"FAST_WAT_HIDDENPOWER": { // TODO Fix me
 			"type": "Water",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -1071,7 +1071,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_WAT_SPLASH": {
+		"FAST_WAT_SPLASH": { // TODO Fix me
 			"type": "Water",
 			"name": "Splash",
 			"name-ital": "Splash",
@@ -1082,7 +1082,7 @@ const dbmoves = {
 			"trainer-energy": 3.00,
 			"trainer-cooldown": 0
 		},
-		"FAST_WAT_WATERFALL": {
+		"FAST_WAT_WATERFALL": { // TODO Fix me
 			"type": "Water",
 			"name": "Waterfall",
 			"name-ital": "Cascata",
@@ -1093,7 +1093,7 @@ const dbmoves = {
 			"trainer-energy": 2.67,
 			"trainer-cooldown": 12
 		},
-		"FAST_WAT_WATERGUN": {
+		"FAST_WAT_WATERGUN": { // TODO Fix me
 			"type": "Water",
 			"name": "Water Gun",
 			"name-ital": "Pistolacqua",
@@ -1104,7 +1104,7 @@ const dbmoves = {
 			"trainer-energy": 2.00,
 			"trainer-cooldown": 6
 		},
-		"FAST_WAT_WATERSHURIKEN": {
+		"FAST_WAT_WATERSHURIKEN": { // TODO Fix me
 			"type": "Water",
 			"name": "Water Shuriken",
 			"name-ital": "Acqualame",
@@ -1253,8 +1253,8 @@ const dbmoves = {
 			"raid-power": 70,
 			"raid-energy": 50,
 			"raid-duration": 2.0,
-			"trainer-power": 70,
-			"trainer-energy": 45
+			"trainer-power": 60,
+			"trainer-energy": 40
 		},
 		"CHRG_DAR_NIGHTSLASH": {
 			"type": "Dark",
@@ -1383,8 +1383,8 @@ const dbmoves = {
 			"raid-power": 65,
 			"raid-energy": 33,
 			"raid-duration": 2.5,
-			"trainer-power": 65,
-			"trainer-energy": 45
+			"trainer-power": 55,
+			"trainer-energy": 40
 		},
 		"CHRG_ELE_FUSIONBOLT": {
 			"type": "Electric",
@@ -1493,8 +1493,8 @@ const dbmoves = {
 			"raid-power": 100,
 			"raid-energy": 50,
 			"raid-duration": 3.5,
-			"trainer-power": 110,
-			"trainer-energy": 70
+			"trainer-power": 90,
+			"trainer-energy": 55
 		},
 		"CHRG_FAI_DISARMINGVOICE": {
 			"type": "Fairy",
@@ -1604,7 +1604,7 @@ const dbmoves = {
 			"raid-energy": 50,
 			"raid-duration": 2.5,
 			"trainer-power": 90,
-			"trainer-energy": 50
+			"trainer-energy": 45
 		},
 		"CHRG_FIG_FLYINGPRESS": {
 			"type": "Fighting",
@@ -1856,6 +1856,13 @@ const dbmoves = {
 			"trainer-power": 120,
 			"trainer-energy": 55
 		},
+		"CHRG_FIR_TORCHSONG": {
+			"type": "Fire",
+			"name": "Torch Song",
+			"name-ital": "Canzone Ardente",
+			"raid-power": 100,
+			"trainer-power": 70
+		},
 		"CHRG_FIR_WEATHERBALL": {
 			"type": "Fire",
 			"name": "Weather Ball",
@@ -1884,7 +1891,7 @@ const dbmoves = {
 			"raid-energy": 100,
 			"raid-duration": 2.0,
 			"trainer-power": 110,
-			"trainer-energy": 60
+			"trainer-energy": 55
 		},
 		"CHRG_FLY_AERIALACE": {
 			"type": "Flying",
@@ -1933,8 +1940,8 @@ const dbmoves = {
 			"raid-power": 55,
 			"raid-energy": 50,
 			"raid-duration": 2.5,
-			"trainer-power": 60,
-			"trainer-energy": 55
+			"trainer-power": 45,
+			"trainer-energy": 35
 		},
 		"CHRG_FLY_BRAVEBIRD": {
 			"type": "Flying",
@@ -2043,8 +2050,8 @@ const dbmoves = {
 			"raid-power": 60,
 			"raid-energy": 50,
 			"raid-duration": 2.5,
-			"trainer-power": 80,
-			"trainer-energy": 45
+			"trainer-power": 70,
+			"trainer-energy": 40
 		},
 		"CHRG_GHO_OMINOUSWIND": {
 			"type": "Ghost",
@@ -2150,7 +2157,6 @@ const dbmoves = {
 			"type": "Grass",
 			"name": "Flower Trick",
 			"name-ital": "Prestigiafiore",
-			"available": false,
 			"raid-power": 75,
 			"raid-energy": 33,
 			"raid-duration": 2.7,
@@ -2791,7 +2797,7 @@ const dbmoves = {
 			"raid-power": 50,
 			"raid-energy": 33,
 			"raid-duration": 2.0,
-			"trainer-power": 50,
+			"trainer-power": 70,
 			"trainer-energy": 40
 		},
 		"CHRG_POI_SLUDGEBOMB": {
@@ -2912,7 +2918,7 @@ const dbmoves = {
 			"raid-energy": 33,
 			"raid-duration": 2.5,
 			"trainer-power": 70,
-			"trainer-energy": 45
+			"trainer-energy": 40
 		},
 		"CHRG_PSY_PSYSTRIKE": {
 			"type": "Psychic",
@@ -2981,8 +2987,8 @@ const dbmoves = {
 			"raid-power": 65,
 			"raid-energy": 50,
 			"raid-duration": 3.0,
-			"trainer-power": 70,
-			"trainer-energy": 60
+			"trainer-power": 80,
+			"trainer-energy": 50
 		},
 		"CHRG_ROC_ROCKSLIDE": {
 			"type": "Rock",
@@ -3131,8 +3137,8 @@ const dbmoves = {
 			"raid-power": 45,
 			"raid-energy": 33,
 			"raid-duration": 2.5,
-			"trainer-power": 45,
-			"trainer-energy": 45
+			"trainer-power": 70,
+			"trainer-energy": 40
 		},
 		"CHRG_WAT_AQUATAIL": {
 			"type": "Water",

@@ -97,6 +97,30 @@ nav ul li a:focus {
 	background-color: #f0c725;
 }
 
+.rank-letter-div {
+	display: inline-block;
+	padding: 0.1em 0.25em;
+	border-radius: 0.2em;
+	text-align: center;
+	font-weight: bold;
+}
+
+/*
+.rank-s		{ background-color: #FFFFFF; }
+.rank-a-p	{ background-color: #FFFFFF; }
+.rank-a		{ background-color: #FFFFFF; }
+.rank-a-m	{ background-color: #FFFFFF; }
+.rank-b-p	{ background-color: #FFFFFF; }
+.rank-b		{ background-color: #FFFFFF; }
+.rank-b-m	{ background-color: #FFFFFF; }
+.rank-c-p	{ background-color: #FFFFFF; }
+.rank-c		{ background-color: #FFFFFF; }
+.rank-c-m	{ background-color: #FFFFFF; }
+.rank-d-p	{ background-color: #FFFFFF; }
+.rank-d		{ background-color: #FFFFFF; }
+.rank-d-m	{ background-color: #FFFFFF; }
+.rank-f		{ background-color: #FFFFFF; }
+*/
 
 .typeadv-red-drk-drk {
 	background-color: #A62407;
@@ -200,13 +224,43 @@ output {
 	display: inline-block;
 }
 
-.stats-div {
+.stats-div, .ranks-div {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 	gap: 1em;
+}
+.ranks-cont {
+	display: grid;
+	width: 6rem;
+	grid-template-columns: 3rem auto;
+	align-items: center;
+	justify-items: start;
+}
+.ranks-div .icon,
+.ranks-div .type-icon {
+	height: 2.5rem;
+}
+.ranks-cont .letter {
+	justify-self: center;
+}
+.atk-hl {
+	background-color: rgba( 255, 255, 255, 0.4 );
+	border-radius: 0.2em;
+}
+.grd-hl {
+	background-color: rgba( 255, 255, 255, 0.4 );
+	border-radius: 0.2em;
+}
+.spt-hl {
+	background-color: rgba( 255, 255, 255, 0.4 );
+	border-radius: 0.2em;
+}
+details .stats-div {
+	margin: 0 1.5rem;
+	justify-content: start;
 }
 .stats-label {
 	display: inline-block;
@@ -301,7 +355,7 @@ output {
 }
 .pokemon-card .pkmn-summary {
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	flex-wrap: wrap;
 }
 .pokemon-card .pkmn-summary .title {
@@ -367,12 +421,12 @@ h5 {
 	gap: 0.5em;
 }
 .defend-grid {
-	grid-template-columns: 2rem auto 6rem;
+	grid-template-columns: 2.5rem auto 3.25rem;
 	grid-template-areas:
 		"cicon	cname	adv";
 }
 .max-grid {
-	grid-template-columns: 2rem auto 6rem;
+	grid-template-columns: 2.5rem auto 3.25rem;
 	grid-template-areas:
 		"micon	mname	adv";
 }
@@ -381,7 +435,7 @@ h5 {
 	grid-template-areas:
 		"ficon	ficon	fname	eps";
 }
-img.type-icon {
+img.type-icon, img.maxguard-icon, img.maxspirit-icon {
 	display: inline-block;
 	margin: 0.2rem;
 	padding: 0;
@@ -425,7 +479,7 @@ img.type-icon {
 	vertical-align: text-top;
 	margin-left: 0.5em;
 }
-.typeadv-div {
+.defend-grid .rank, .max-grid .rank {
 	grid-area: adv;
 	display: inline-block;
 	border-radius: 0.25em;

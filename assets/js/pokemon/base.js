@@ -1,3 +1,5 @@
+var		assetsbase = "/assets/";
+
 function getIcon( name ) {
 	let		elem, path;
 
@@ -6,7 +8,7 @@ function getIcon( name ) {
 	elem = document.createElement( "img" );
 	elem.setAttribute( "class", "icon " + path + "-icon" );
 	elem.setAttribute( "alt", name );
-	elem.setAttribute( "src", "/assets/icons/pokemon/go/" + path + ".png" );
+	elem.setAttribute( "src", assetsbase + "icons/pokemon/go/" + path + ".png" );
 
 	return elem;
 }
@@ -22,7 +24,7 @@ function pkmnDetailsSummary() {
 
 	img = document.createElement( "img" );
 	img.setAttribute( "class", "pokeball-marker" );
-	img.setAttribute( "src", "/assets/icons/pokemon/pokeball.svg" );
+	img.setAttribute( "src", assetsbase + "icons/pokemon/pokeball.svg" );
 	img.setAttribute( "alt", "" );
 
 	div = document.createElement( "div" );
