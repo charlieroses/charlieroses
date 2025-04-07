@@ -299,6 +299,7 @@ details .stats-div {
 	grid-area: name;
 	justify-self: start;
 	margin-left: 0.25em;
+	text-align: left;
 }
 .stab-icon {
 	display: inline-block;

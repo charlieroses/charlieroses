@@ -126,9 +126,10 @@ function rankMaxGuard( dpkmn, gpkmn ) {
 	let		i, j, t;
 	let		moves, m;
 	let		atk, def, dmg, hp;
+	let		dpkmni, dpkmnj;
 
-	moves = getPkmnMoveset( gpkmn, "charged", "all" );
-	atk = (getPkmnField( gpkmn, "base-attack" ) + 15) * getMaxBossCPM(getPkmnField(gpkmn,"max-battle-tier"));
+	moves = getMaxBossMoveset( gpkmn );
+	atk = (getPkmnField( gpkmn, "base-attack" ) + 15) * getMaxBossCPM(getMaxBossTier(gpkmn));
 
 	ret.overall = [];
 	ret.overall.push( dpkmn[0] );
@@ -146,27 +147,33 @@ function rankMaxGuard( dpkmn, gpkmn ) {
 
 
 	for( i = 0; i < ret.overall.length; i++ ) {
-		ret[ret.overall[i]] = {};
-		ret[ret.overall[i]]["avg"] = 0;
-		hp = pkmnHP( ret.overall[i], 40, [ 10, 10, 10 ] );
-		ret[ret.overall[i]]["hp"] = hp;
-		def = (getPkmnField( ret.overall[i], "base-defense" ) + 10) * getLevelScalar( 40 );
+		dpkmni = ret.overall[i];
+		ret[dpkmni] = {};
+		ret[dpkmni]["avg"] = 0;
+		hp = pkmnHP( dpkmni, 40, [ 10, 10, 10 ] );
+		ret[dpkmni]["hp"] = hp;
+		def = (getPkmnField( dpkmni, "base-defense" ) + 10) * getLevelScalar( 40 );
 		for( j = 0; j < moves.length; j++ ) {
 			dmg = getMoveField( moves[j], "raid-power" );
 			dmg *= getSTAB( gpkmn, moves[j] );
-			dmg *= getTypeAdvantage( getMoveField(moves[j],"type"), getPkmnField(ret.overall[i],"type") );
+			dmg *= getTypeAdvantage( getMoveField(moves[j],"type"), getPkmnField(dpkmni,"type") );
 			dmg *= ( atk / def );
+			console.log( "atk: " + atk );
+			console.log( "def: " + def );
 			dmg = Math.floor( dmg / 2 ) + 1;
-			ret[ret.overall[i]][moves[j]] = {};
-			ret[ret.overall[i]][moves[j]].hits = Math.ceil( hp / dmg );
-			ret[ret.overall[i]]["avg"] += Math.ceil( hp / dmg );
+			console.log( dpkmni + " " + moves[j] + " " + dmg );
+			ret[dpkmni][moves[j]] = {};
+			ret[dpkmni][moves[j]].hits = Math.ceil( hp / dmg );
+			ret[dpkmni]["avg"] += Math.ceil( hp / dmg );
 		}
-		ret[ret.overall[i]]["avg"] /= moves.length;
+		ret[dpkmni]["avg"] /= moves.length;
 	}
 
 	for( i = 0; i < ret.overall.length; i++ ) {
 		for( j = i+1; j < ret.overall.length; j++ ) {
-			if( ret[ret.overall[i]]["avg"] < ret[ret.overall[j]]["avg"] ) {
+			dpkmni = ret.overall[i];
+			dpkmnj = ret.overall[j];
+			if( ret[dpkmni]["avg"] < ret[dpkmnj]["avg"] ) {
 				t = ret.overall[i];
 				ret.overall[i] = ret.overall[j];
 				ret.overall[j] = t;
@@ -176,7 +183,9 @@ function rankMaxGuard( dpkmn, gpkmn ) {
 	for( m = 0; m < moves.length; m++ ) {
 		for( i = 0; i < ret[moves[m]].length; i++ ) {
 			for( j = i+1; j < ret[moves[m]].length; j++ ) {
-				if( ret[ret[moves[m]][i]][moves[m]].hits < ret[ret[moves[m]][j]][moves[m]].hits ) {
+				dpkmni = ret[moves[m]][i];
+				dpkmnj = ret[moves[m]][j];
+				if( ret[dpkmni][moves[m]].hits < ret[dpkmnj][moves[m]].hits ) {
 					t = ret[moves[m]][i];
 					ret[moves[m]][i] = ret[moves[m]][j];
 					ret[moves[m]][j] = t;
@@ -267,6 +276,8 @@ function new_init( gpkmn ) {
 	let		spans, s;
 
 	date = getDynaAvailability( gpkmn );
+	if( date == "DNU" ) // If a pokemon has been announced, but an exact date hasn't been given, then only use the pokemon available today
+		date = getToday();
 	if( Date.parse(date) < Date.now() )
 		date = getToday();
 	dpkmn = getAvailableDynaPkmn( date );
@@ -357,6 +368,12 @@ function betterBreakdown( dpkmn, atk, grd, spt, hl="" ) {
 
 	elem = dcE( "div" );
 	elem.setAttribute( "class", "title" );
+/*
+	elem.appendChild( dcE("img" ));
+	elem.lastChild.setAttribute( "alt", "" );
+	elem.lastChild.setAttribute( "src", getPkmnSpriteSrc(dpkmn) );
+	elem.lastChild.setAttribute( "class", "pokemon-sprite" );
+*/
 	elem.appendChild( dcE( "h4" ) ); // h4 level good
 	elem.lastChild.appendChild( dcTN( getPkmnField(dpkmn,"name") ) );
 	field = getPkmnField( dpkmn, "type" );

@@ -335,6 +335,17 @@ function output_gpkmn( di ) {
 		row.lastChild.appendChild( document.createTextNode( "Shiny Available" ) );
 	}
 
+	/*
+	row = AppendRow( card, cardRow(), 0 );
+	row.classList.add( "date-available-row" );
+	field = getDynaAvailability(di);
+	if( field == "DNU" )
+		row.appendChild( dcTN( "Announced release without date" ) );
+	else if( Date.parse(field) < Date.now() )
+		row.appendChild( dcTN( "Released " + prettyDate(field) ) );
+	else
+		row.appendChild( dcTN( "Available on " + prettyDate(field) ) );
+*/
 	row = AppendRow( card, cardRow(), 1 );
 	row.appendChild( stats_div(di) );
 

@@ -41,36 +41,16 @@ function getAvailableGigaPkmn() {
 }
 
 function getAllMaxBattles() {
-	let		dpkmn, d;
-	let		gpkmn, g;
-	let		rpkmn, r, rl;
+	let		rpkmn, d, di;
 
 	rpkmn = [];
-	gpkmn = getAvailableGigaPkmn();
-	dpkmn = getAvailableDynaPkmn();
-	dpkmn = dpkmn.filter( d => getPkmnField( d, "max-battle-tier" ) != 0 );
 
-	rl = dpkmn.length + gpkmn.length;
-
-	d = 0;
-	g = 0;
-	for( r = 0; r < rl; r++ ) {
-		if( g == gpkmn.length ) {
-			rpkmn.push( dpkmn[d] );
-			d++;
-		}
-		else if( d == dpkmn.length ) {
-			rpkmn.push( gpkmn[g] );
-			g++;
-		}
-		else if( compareDexOrder(dpkmn[d], gpkmn[g]) < 0 ) {
-			rpkmn.push( dpkmn[d] );
-			d++;
-		}
-		else {
-			rpkmn.push( gpkmn[g] );
-			g++;
-		}
+	for( d = 0; d < dbpokemon.order.length; d++ ) {
+		di = dbpokemon.order[d];
+		if( isGigamax(di) && getAvailability(di) != false )
+			rpkmn.push( di );
+		if( getAvailability(di,"dynamax") != false && getPkmnField(di,"max-battle-tier") > 0 )
+			rpkmn.push( di );
 	}
 
 	return rpkmn;
@@ -97,10 +77,38 @@ function isGigamax( di ) {
 }
 
 function getMaxBossMoveset( di ) {
+	let		ret;
+	let		i, j, k, t;
+
 	if( isGigamax(di) || getPkmnField(di,"max-battle-tier") == 5 )
-		return getPkmnMoveset( di, "charged", "all" );
+		ret = getPkmnMoveset( di, "charged", "all" );
 	else
-		return getPkmnMoveset( di, "charged", "standard" );
+		ret = getPkmnMoveset( di, "charged", "standard" );
+
+	for( i = 0; i < ret.length; i++ ) {
+		for( j = i+1; j < ret.length; j++ ) {
+			if( ret[i] > ret[j] ) {
+				t = ret[i];
+				ret[i] = ret[j];
+				ret[j] = t;
+			}
+		}
+	}
+
+	for( i = 0; i < ret.length; i++ ) {
+		for( j = i+1; j < ret.length; j++ ) {
+			if( ret[i].substring(5,8) != ret[j].substring(5,8) )
+				break;
+			console.log( i + ":" + ret[i] + " " + j + ":" + ret[j] );
+			if( getMoveField(ret[i],"raid-power") < getMoveField(ret[j],"raid-power") ) {
+				t = ret[i];
+				ret[i] = ret[j];
+				ret[j] = t;
+			}
+		}
+	}
+
+	return ret;
 }
 
 function getMaxBossScenarios( di ) {
@@ -141,6 +149,13 @@ function getMaxBattleCost( tier ) {
 	if( ! dbdynamax["battles"][tier] )
 		return 0;
 	return dbdynamax["battles"][tier]["cost"];
+}
+
+function getMaxBossTier( di ) {
+	if( isGigamax( di ) )
+		return 6;
+	else
+		return getPkmnField(di,"max-battle-tier");
 }
 
 function getMaxBossCPM( tier ) {

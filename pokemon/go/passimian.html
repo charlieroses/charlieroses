@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="icon" href="/pokemon/favicon.ico" type="image/icon" sizes="any" />
+<link rel="icon" href="/pokemon/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/pokemon/apple-touch-icon.png" />
+<link rel="manifest" href="/pokemon/manifest.webmanifest" />
+<link rel="stylesheet" href="/assets/styles/base.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/base.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/go.css" type="text/css" />
+<meta name="theme-color" content="#35507C" />
+
+<title>Max Battle Team Builder</title>
+
+<link rel="stylesheet" href="/assets/styles/accessible-autocomplete.min.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/card.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/dynacalc.css" type="text/css" />
+
+<script type="text/javascript" src="/assets/data/pokemon/dynadex.js"></script>
+<script type="text/javascript" src="/assets/data/pokemon/dynamax.js"></script>
+<script type="text/javascript" src="/assets/data/pokemon/types.js"></script>
+<script type="text/javascript" src="/assets/data/pokemon/moves.js"></script>
+<script type="text/javascript" src="/assets/data/pokemon/levels.js"></script>
+<script type="text/javascript" src="/assets/js/accessible-autocomplete.min.js"></script>
+<script type="text/javascript" src="/assets/js/pokemon/base.js"></script>
+<script type="text/javascript" src="/assets/js/pokemon/card.js"></script>
+<script type="text/javascript" src="/assets/js/pokemon/dynateam.js"></script>
+<script type="text/javascript" src="/assets/js/pokemon/raikou.js"></script>
+</head>
+<body>
+<header id="top">
+<h1 id="evolution-showcase-calculator">Max Battle Team Builder</h1>
+<div class="pokeball-divider">
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+</div>
+</header>
+<main id="main">
+<p>
+Most max battle and raid guides typically only list the top
+counters for each boss.
+For raids, if you don't have any of the good counters, it's
+less an issue because you can rejoin the battle and
+<a href="https://www.dictionary.com/e/slang/zerg-rush/">zerg rush</a> the boss.
+For max battles where you only get 3 pokemon, it can be a bit
+of a problem.
+Strong Dynamax pokemon are also extremely expensive and some
+have extremely limited availability, like Gigantamax Lapras
+who was only available for 3 hours.
+</p>
+<p>
+This guide lists out <em>every</em> available Dynamax Pokemon
+and how they stack up against <span class="boss-name"></span> so that you can
+build the best team possible based on the Pokemon and resources
+that you have available.
+</p>
+
+<div id="how-it-works-container">
+<div class="pokemon-card" id="how-it-works">
+<h2 class="card-title pkmn-name">How It Works</h2>
+<div class="card-dot"></div>
+<div class="card-body card-cols-1"><div class="card-column card-col-0">
+	<div class="card-row">
+		<a href="#attack-pokemon-info">Attackers</a> have Max Attacks that are
+		strong against <span class="boss-name"></span>.
+		An attacker with a
+		<img alt="Gigantamax" class="inline-icon gigantamax-icon" src="/assets/icons/pokemon/go/gigantamax.png" />
+		has a Gigantamax form available.
+		Attacker rankings are based on how much damage their strongest Max Attack
+		does.
+		A Pokemon's Dynamax form and Gigantamax form are ranked separately since
+		they have different attacks.
+		Note that G-Max Attacks aren't always more powerful than Max Attacks.
+	</div>
+	<div class="card-row">
+		Pokemon with a high <a href="#guard-pokemon-info">Max Guard</a> rank can
+		take the most hits from <span class="boss-name"></span>'s attacks in the
+		Power Up Phase.
+		In the Dynamax Phase, instead of attacking, use Max Guard to deflect the
+		most attacks from other weaker pokemon.
+		When picking a fast move, pick whichever is the quickest, regardless of
+		effectiveness. Quick not very effective fast attacks charge the Max Meter
+		faster than slow supereffective fast attacks.
+	</div>
+	<div class="card-row">
+		Pokemon with a high <a href="#spirit-pokemon-info">Max Spirit</a> rank
+		have the highest base HP. Their Max Spirit will give more HP back to other
+		pokemon.
+		In the Dynamax Phase, instead of attacking, use Max Spirit to heal yourself
+		and your teammates as much as possible to survive the next Power Up Phase.
+	</div>
+	<div class="card-row">
+		If you can, try to avoid <a href="#other-pokemon-info">everyone else</a>.
+		These Pokemon aren't great at attacking, guarding, or healing.
+		They're listed here anyway 
+	</div>
+	<div class="card-row">
+		Click on a Pokemon for a full breakdown of effectiveness, fast attacks, and
+		Max Move power up costs.
+		A fast attack with a
+		<img alt="TM" class="inline-icon tm-icon" src="/assets/icons/pokemon/go/tm.png" />
+		icon can only be learned with an Elite TM.
+		More info coming soon.
+	</div>
+	<h3 class="card-row-header">Note</h3>
+	<div class="card-row">
+		This is a bit of a work in progress, but I wanted to get this out soon enough
+		that there's enough time to prepare a team.
+		I will be adding in the numbers behind the letter ranks so it's clear why each
+		pokemon got the rank it got and also settings to filter the results, I just
+		haven't had a chance to get to that yet.
+	</div>
+	<div class="card-row">
+		Additionally, Max Battles are still a fairly new and rapidly developing feature.
+		We're always learning more info as bigger (literally) challenges are thrown our
+		way. These rankings are my best educated suggestions based off of so much research
+		done by <a href="https://www.reddit.com/r/TheSilphRoad">r/TheSilphRoad</a>. I'll
+		include more specific references and thanks as I finish filling everything in.
+	</div>
+</div></div>
+</div>
+</div>
+<div class="pokeball-divider">
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+</div>
+
+<output id="boss-pokemon-info"></output>
+<output id="attack-pokemon-info"></output>
+<output id="guard-pokemon-info"></output>
+<output id="spirit-pokemon-info"></output>
+<output id="other-pokemon-info"></output>
+<script>new_init("766");</script> <!-- TODO CHANGE ME -->
+<div class="pokeball-divider">
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+</div>
+<details>
+<summary>
+<img alt="" src="/assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="more-information">More Information</h2>
+</summary>
+<h3>Fast Moves in the Power Up Phase</h3>
+<p>
+The amount of damage done during the "Power Up" phase is negligible in G-Max Battles.
+</p>
+<p>
+No single attack does enough damage to make a meaningful dent in the bosses HP.
+This means they also don't do enough damage to charge the Max meter by more than the bare minimum.
+Since all moves charge the max meter by the same amount, many quick weak attacks will be better
+than one slow strong attack.
+More attacks = more charge = more dynamaxing = more damage.
+</p>
+<h3>Fast Moves in the Dynamax Phase</h3>
+<p>
+The Max Attack used in the Dynamax phase is based on the type of the
+Pokemon's Fast Move.
+If you have a Gigantamax Pokemon, its first attack in each phase will be it's
+unique G-Max Attack.
+</p>
+<p>
+All Max Moves have the same power level based on their Max level, regardless of the fast move.
+For example, Ember (10 power) and Incinerate (32 power) will both become Max
+Flare during the Dynamax phase.
+Level 1 Max Flare has a power level of 250 either way.
+</p>
+<p>
+It's better to choose Max Attacks based on type effectiveness.
+Against Dynamax Articuno, a Pokemon with Ember (10 power) will do more damage than a Pokemon
+with Mud-Slap (19 power) because Max Flare is supereffective while Max Quake is not very
+effective.
+</p>
+<div class="back-to-top">
+<a href="#top">Back to top</a></div>
+</details>
+<details>
+<summary>
+<img alt="" src="/assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="quick-share">Quick Share</h2>
+</summary>
+<p>
+Scan the QR code below to share this tool</p>
+<img alt="QR Code to this site" src="/assets/images/pokemon/qr/passimian.png" id="qr-code" /></details>
+</main>
+<footer id="bottom">
+<details>
+<summary>
+<img alt="" src="/assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="support-me">Support Me</h2>
+</summary>
+<p>
+I'm a disabled independent developer working on small
+independent projects in an effort to recover from a
+traumatic brain injury.
+I have no affiliation with Niantic or the Pokemon Company.
+I don't get paid to make or maintain tools like this.
+If you think I should get paid and wanna see more, or if
+you just want to support my health and recovery, send me a
+<a href="https://ko-fi.com/charlierosesdev">Ko-fi</a>.
+</p>
+<div class="back-to-top">
+<a href="#top">Back to top</a></div>
+</details>
+</footer>
+</body>
+</html>
