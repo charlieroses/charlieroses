@@ -64,6 +64,12 @@ var		baseline = {
 		}],
 	"Fighting": [
 		{
+			"date": "4/8/25",
+			"date-start": "2025-04-07",
+			"date-end": "2025-04-08",
+			"baseline-dex": "self"
+		},
+		{
 			"event": "Legendary Heroes",
 			"date": "10/2/24",
 			"baseline-dex": "self"
