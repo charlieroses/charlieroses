@@ -1,4 +1,4 @@
-var		assetsbase = "assets/";
+var		assetsbase = "/assets/";
 var		months = {
 	"01": "January",
 	"02": "February",
