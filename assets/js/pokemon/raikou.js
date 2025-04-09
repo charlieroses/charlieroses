@@ -321,6 +321,7 @@ function new_init( gpkmn ) {
 	card = pokecard( "Max Guard" );
 	out.appendChild( card );
 	AppendRow( card, cardRowText( "Gigantamax has no affect on Max Guard" ) );
+	AppendRow( card, cardRowText( "Note: The Max Guard rankings for each specific attack got wonky. I'm working on fixing them. Overall rank is still accurate" ) );
 
 	for( d = 0; d < grd.overall.length; d++ ) {
 		di = grd.overall[d];
