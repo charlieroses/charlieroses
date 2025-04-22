@@ -1,3 +1,96 @@
+var GPKMN;
+
+function rankSurvival( dpkmn, gpkmn ) {
+	let		ret = {};
+	let		moves, m;
+	let		atk, def, dmg, hp, grd;
+
+	moves = getMaxBossMoveset( gpkmn );
+	atk = (getPkmnField( gpkmn, "base-attack" ) + 15) * getMaxBossCPM(getMaxBossTier(gpkmn));
+
+	ret.overall = [];
+	ret.overall.push( dpkmn[0] );
+	for( m = 0; m < moves.length; m++ ) {
+		ret[moves[m]] = [];
+		ret[moves[m]].push( dpkmn[0] );
+	}
+	for( i = 1; i < dpkmn.length; i++ ) {
+		if( dpkmn[i] == dpkmn[i-1] + "-G" )
+			continue;
+		ret.overall.push( dpkmn[i] );
+		for( m = 0; m < moves.length; m++ )
+			ret[moves[m]].push( dpkmn[i] );
+	}
+
+
+	for( i = 0; i < ret.overall.length; i++ ) {
+		dpkmni = ret.overall[i];
+		ret[dpkmni] = {};
+		ret[dpkmni]["avg"] = 0;
+		ret[dpkmni]["avg_grd"] = 0;
+		hp = pkmnHP( dpkmni, 40, [ 10, 10, 10 ] );
+		grd = hp + 180;
+		def = (getPkmnField( dpkmni, "base-defense" ) + 10) * getLevelScalar( 40 );
+		ret[dpkmni].hp = hp;
+		ret[dpkmni].def = def;
+		ret[dpkmni].grd = grd;
+		for( j = 0; j < moves.length; j++ ) {
+			dmg = getMoveField( moves[j], "raid-power" );
+			dmg *= getSTAB( gpkmn, moves[j] );
+			dmg *= getTypeAdvantage( getMoveField(moves[j],"type"), getPkmnField(dpkmni,"type") );
+			dmg *= ( atk / def );
+			dmg = Math.floor( dmg / 2 ) + 1;
+			ret[dpkmni][moves[j]] = {};
+			ret[dpkmni][moves[j]].dmg = dmg;
+			ret[dpkmni][moves[j]].hits = Math.ceil( hp / dmg );
+			ret[dpkmni][moves[j]].hitsgrd = Math.ceil( grd / dmg );
+			ret[dpkmni]["avg"] += Math.ceil( hp / dmg );
+			ret[dpkmni]["avg_grd"] += Math.ceil( grd / dmg );
+
+			if( ret[dpkmni][moves[j]].hits < 2 )
+				ret[dpkmni][moves[j]].rank = "F";
+			else if( ret[dpkmni][moves[j]].hits < 2 )
+				ret[dpkmni][moves[j]].rank = "D";
+			else if( ret[dpkmni][moves[j]].hits < 3 )
+				ret[dpkmni][moves[j]].rank = "C";
+			else if( ret[dpkmni][moves[j]].hits < 4 )
+				ret[dpkmni][moves[j]].rank = "B";
+			else if( ret[dpkmni][moves[j]].hits < 5 )
+				ret[dpkmni][moves[j]].rank = "A";
+			else
+				ret[dpkmni][moves[j]].rank = "A+";
+		}
+		ret[dpkmni]["avg"] /= (moves.length * 1.0);
+		ret[dpkmni]["avg_grd"] /= (moves.length * 1.0);
+
+		if( ret[dpkmni]["avg_grd"] < 2 )
+			ret[dpkmni].rank = "F";
+		else if( ret[dpkmni]["avg"] < 2 )
+			ret[dpkmni].rank = "D";
+		else if( ret[dpkmni]["avg"] < 3 )
+			ret[dpkmni].rank = "C";
+		else if( ret[dpkmni]["avg"] < 4 )
+			ret[dpkmni].rank = "B";
+		else if( ret[dpkmni]["avg"] < 5 )
+			ret[dpkmni].rank = "A";
+		else
+			ret[dpkmni].rank = "A+";
+	}
+
+	for( i = 0; i < dpkmn.length; i++ ) {
+		if( ! isGigamax( dpkmn[i] ) )
+			continue;
+		if( ret[dpkmn[i]] )
+			continue;
+		ret[dpkmn[i]] = ret[dpkmn[i].split("-")[0]];
+	}
+
+	console.log( "SURVIVAL" );
+	console.log( ret );
+
+	return ret;
+}
+
 function rankMaxSpirit( dpkmn ) {
 	let		ret = {};
 	let		i, j, t;
@@ -36,6 +129,14 @@ function rankMaxSpirit( dpkmn ) {
 	}
 
 
+	for( i = 0; i < dpkmn.length; i++ ) {
+		if( ! isGigamax( dpkmn[i] ) )
+			continue;
+		if( ret[dpkmn[i]] )
+			continue;
+		ret[dpkmn[i]] = ret[dpkmn[i].split("-")[0]];
+	}
+
 	console.log( "SPIRIT" );
 	console.log( ret );
 
@@ -73,6 +174,7 @@ function rankMaxAttack( dpkmn, gpkmn ) {
 			adv = getTypeAdvantage( getMoveField(field[j],"type"), getPkmnField(gpkmn,"type") );
 			adr = getPkmnField(dpkmn[i],"base-attack") / getPkmnField(gpkmn,"base-defense");
 			ret[dpkmn[i]][field[j]] = {};
+			ret[dpkmn[i]][field[j]].fasts = [];
 			ret[dpkmn[i]][field[j]].pwr = 250*stab*adv*adr;
 			ret.all.push( { dpkmn: dpkmn[i], atk: field[j] } );
 
@@ -115,6 +217,9 @@ function rankMaxAttack( dpkmn, gpkmn ) {
 			ret.best.push( t.dpkmn );
 		ret[t.dpkmn].ordered.push( t.atk );
 	}
+	for( i = 0; i < dpkmn.length; i++ ) {
+		ret[dpkmn[i]].rank = ret[dpkmn[i]][ret[dpkmn[i]].best].rank;
+	}
 
 	console.log( "ATTACK" );
 	console.log( ret );
@@ -150,23 +255,19 @@ function rankMaxGuard( dpkmn, gpkmn ) {
 		dpkmni = ret.overall[i];
 		ret[dpkmni] = {};
 		ret[dpkmni]["avg"] = 0;
-		hp = pkmnHP( dpkmni, 40, [ 10, 10, 10 ] );
-		ret[dpkmni]["hp"] = hp;
+		hp = 180;
 		def = (getPkmnField( dpkmni, "base-defense" ) + 10) * getLevelScalar( 40 );
 		for( j = 0; j < moves.length; j++ ) {
 			dmg = getMoveField( moves[j], "raid-power" );
 			dmg *= getSTAB( gpkmn, moves[j] );
 			dmg *= getTypeAdvantage( getMoveField(moves[j],"type"), getPkmnField(dpkmni,"type") );
 			dmg *= ( atk / def );
-			console.log( "atk: " + atk );
-			console.log( "def: " + def );
 			dmg = Math.floor( dmg / 2 ) + 1;
-			console.log( dpkmni + " " + moves[j] + " " + dmg );
 			ret[dpkmni][moves[j]] = {};
 			ret[dpkmni][moves[j]].hits = Math.ceil( hp / dmg );
 			ret[dpkmni]["avg"] += Math.ceil( hp / dmg );
 		}
-		ret[dpkmni]["avg"] /= moves.length;
+		ret[dpkmni]["avg"] /= (moves.length * 1.0);
 	}
 
 	for( i = 0; i < ret.overall.length; i++ ) {
@@ -220,6 +321,13 @@ function rankMaxGuard( dpkmn, gpkmn ) {
 		}
 	}
 
+	for( i = 0; i < dpkmn.length; i++ ) {
+		if( ! isGigamax( dpkmn[i] ) )
+			continue;
+		if( ret[dpkmn[i]] )
+			continue;
+		ret[dpkmn[i]] = ret[dpkmn[i].split("-")[0]];
+	}
 	console.log( "GUARD" );
 	console.log( ret )
 
@@ -268,7 +376,7 @@ function getToday() {
 }
 
 function new_init( gpkmn ) {
-	let		dpkmn, atk, grd, spt;
+	let		dpkmn, atk, grd, spt, srv;
 	let		atkrs, grdrs, sptrs;
 	let		date;
 	let		out, card;
@@ -285,6 +393,7 @@ function new_init( gpkmn ) {
 	atk = rankMaxAttack( dpkmn, gpkmn );
 	grd = rankMaxGuard( dpkmn, gpkmn );
 	spt = rankMaxSpirit( dpkmn );
+	srv = rankSurvival( dpkmn, gpkmn );
 
 	atkrs = [];
 	grdrs = [];
@@ -298,6 +407,7 @@ function new_init( gpkmn ) {
 			spans[s].appendChild( dcTN( "Dynamax " + getPkmnDisplayName(gpkmn) ) );
 	}
 	output_gpkmn( gpkmn );
+	GPKMN = gpkmn;
 
 
 	out = document.getElementById( "attack-pokemon-info" );
@@ -307,44 +417,48 @@ function new_init( gpkmn ) {
 	for( d = 0; d < atk.best.length; d++ ) {
 		di = atk.best[d];
 		o = atk[di];
-		if( o[o.best].rank.startsWith( "C" ) )
+		if( o[o.best].rank.startsWith( "B" ) )
 			break;
 		if( ! grd[di] )
-			AppendRow( card, betterBreakdown( di, atk[di], grd[di.split("-")[0]], spt[di.split("-")[0]], "atk" ) );
+			AppendRow( card, betterBreakdown( di, srv[di], atk[di], grd[di.split("-")[0]], spt[di.split("-")[0]], "atk" ) );
 		else
-			AppendRow( card, betterBreakdown( di, atk[di], grd[di], spt[di], "atk" ) );
+			AppendRow( card, betterBreakdown( di, srv[di], atk[di], grd[di], spt[di], "atk" ) );
 		atkrs.push( di );
 	}
+	AppendRow( card, cardRowBackToTop() );
 
 
 	out = document.getElementById( "guard-pokemon-info" );
 	card = pokecard( "Max Guard" );
 	out.appendChild( card );
-	AppendRow( card, cardRowText( "Gigantamax has no affect on Max Guard" ) );
-	AppendRow( card, cardRowText( "Note: The Max Guard rankings for each specific attack got wonky. I'm working on fixing them. Overall rank is still accurate" ) );
+	AppendRow( card, cardRowText( "Note: Gigantamax has no affect on Max Guard" ) );
+	card.lastChild.lastChild.classList.add( "card-row-note" );
 
 	for( d = 0; d < grd.overall.length; d++ ) {
 		di = grd.overall[d];
 		o = grd[di];
 		if( o.rank.startsWith( "C" ) )
 			break;
-		AppendRow( card, betterBreakdown( di, atk[di], grd[di], spt[di], "grd" ) );
+		AppendRow( card, betterBreakdown( di, srv[di], atk[di], grd[di], spt[di], "grd" ) );
 		grdrs.push( di );
 	}
+	AppendRow( card, cardRowBackToTop() );
 
 	out = document.getElementById( "spirit-pokemon-info" );
 	card = pokecard( "Max Spirit" );
 	out.appendChild( card );
-	AppendRow( card, cardRowText( "Gigantamax has no affect on Max Spirit" ) );
+	AppendRow( card, cardRowText( "Note: Gigantamax has no affect on Max Spirit" ) );
+	card.lastChild.lastChild.classList.add( "card-row-note" );
 
 	for( d = 0; d < spt.ordered.length; d++ ) {
 		di = spt.ordered[d];
 		o = spt[di];
 		if( o.rank.startsWith( "C" ) )
 			break;
-		AppendRow( card, betterBreakdown( di, atk[di], grd[di], spt[di], "spt" ) );
+		AppendRow( card, betterBreakdown( di, srv[di], atk[di], grd[di], spt[di], "spt" ) );
 		sptrs.push( di );
 	}
+	AppendRow( card, cardRowBackToTop() );
 
 	out = document.getElementById( "other-pokemon-info" );
 	card = pokecard( "Everyone Else" );
@@ -354,46 +468,118 @@ function new_init( gpkmn ) {
 		if( atkrs.includes(dpkmn[d]) || grdrs.includes(dpkmn[d]) || sptrs.includes(dpkmn[d]) )
 			continue;
 		if( ! grd[dpkmn[d]] )
-			AppendRow( card, betterBreakdown( dpkmn[d], atk[dpkmn[d]], grd[dpkmn[d].split("-")[0]], spt[dpkmn[d].split("-")[0]] ) );
+			AppendRow( card, betterBreakdown( dpkmn[d], srv[dpkmn[d].split("-")[0]], atk[dpkmn[d]], grd[dpkmn[d].split("-")[0]], spt[dpkmn[d].split("-")[0]] ) );
 		else
-			AppendRow( card, betterBreakdown( dpkmn[d], atk[dpkmn[d]], grd[dpkmn[d]], spt[dpkmn[d]] ) );
+			AppendRow( card, betterBreakdown( dpkmn[d], srv[dpkmn[d]], atk[dpkmn[d]], grd[dpkmn[d]], spt[dpkmn[d]] ) );
 	}
+
+	AppendRow( card, cardRowBackToTop() );
 
 }
 
-function betterBreakdown( dpkmn, atk, grd, spt, hl="" ) {
-	let		row, det, elem;
-	let		field, i;
+function sortBySpeed( moves ) {
+	let		i, j, t;
+	let		fn;
+
+	if( moves[0].startsWith("CHRG") )
+		fn = "raid-duration";
+	else if( moves[0].startsWith("FAST") )
+		fn = "raid-cooldown";
+	else
+		return moves;
+
+	for( i = 0; i < moves.length; i++ ) {
+		for( j = i+1; j < moves.length; j++ ) {
+			if( getMoveField(moves[i],fn) > getMoveField(moves[j],fn) ) {
+				t = moves[i];
+				moves[i] = moves[j];
+				moves[j] = t;
+			}
+		}
+	}
+
+	return moves;
+}
+
+function betterBreakdown( dpkmn, srv, atk, grd, spt, hl="" ) {
+	let		row, det, elem, params;
+	let		field, i, j;
 
 	det = pkmnDetailsSummary();
 
 	elem = dcE( "div" );
 	elem.setAttribute( "class", "title" );
-/*
-	elem.appendChild( dcE("img" ));
-	elem.lastChild.setAttribute( "alt", "" );
-	elem.lastChild.setAttribute( "src", getPkmnSpriteSrc(dpkmn) );
-	elem.lastChild.setAttribute( "class", "pokemon-sprite" );
-*/
+
+
 	elem.appendChild( dcE( "h4" ) ); // h4 level good
 	elem.lastChild.appendChild( dcTN( getPkmnField(dpkmn,"name") ) );
+	elem.appendChild( getPkmnSprite(dpkmn) );
+	
+	/*
 	field = getPkmnField( dpkmn, "type" );
 	for( i = 0; i < field.length; i++ )
 		elem.appendChild( getTypeImg(field[i]) );
+	*/
 	if( isGigamax( dpkmn ) )
 		elem.appendChild( getIcon( "Gigantamax" ) );
 	appendToPkmnSummary( det, elem );
 
-	elem = ranks_div( atk.best, atk[atk.best].rank, grd.rank, spt.rank );
+	if( hl.length ) {
+		elem = dcE( "div" );
+		elem.setAttribute( "class", "ranks-div" );
+		elem.appendChild( rank_survival( srv.rank ) ); 
+		if( hl == "atk" )
+			elem.appendChild( rank_max_move( atk.best, atk[atk.best].rank ) );
+		else if( hl == "grd" )
+			elem.appendChild( rank_max_move( "Max Guard", grd.rank ) );
+		else if( hl == "spt" )
+			elem.appendChild( rank_max_move( "Max Spirit", spt.rank ) );
+	}
+	else {
+		elem = dcE( "div" );
+		elem.setAttribute( "class", "ranks-div" );
+		elem.appendChild( rank_survival( srv.rank ) ); 
+		elem.appendChild( rank_max_move( atk.best, atk[atk.best].rank ) );
+		elem.appendChild( rank_max_move( "Max Guard", grd.rank ) );
+		elem.appendChild( rank_max_move( "Max Spirit", spt.rank ) );
+	}
 	appendToPkmnSummary( det, elem );
-	if( hl == "atk" )
-		elem.childNodes[0].classList.add( "atk-hl" );
-	else if( hl == "grd" )
-		elem.childNodes[1].classList.add( "grd-hl" );
-	else if( hl == "spt" )
-		elem.childNodes[2].classList.add( "spt-hl" );
 
 	det.appendChild( stats_div(dpkmn) );
+
+	params = {
+		"NAME": getPkmnField( dpkmn, "name" ),
+		"BOSS": getPkmnField( GPKMN, "name" ),
+		"MAX": isGigamax(dpkmn) ? "G-Max" : "Max"
+	};
+
+	det.appendChild( dcE("div") );
+	det.lastChild.setAttribute( "class", "rank-details survival-details" );
+	det.lastChild.appendChild( rank_survival( srv.rank ) );
+	det.lastChild.appendChild( dcE("div") );
+	det.lastChild.lastChild.setAttribute( "class", "rank-explanation" );
+	det.lastChild.lastChild.appendChild( dcTN( getRankText( "srv", srv.rank, params ) ) );
+
+	det.appendChild( dcE("div") );
+	det.lastChild.setAttribute( "class", "rank-details" );
+	det.lastChild.appendChild( rank_max_move( atk.best, atk[atk.best].rank ) );
+	det.lastChild.appendChild( dcE("div") );
+	det.lastChild.lastChild.setAttribute( "class", "rank-explanation" );
+	det.lastChild.lastChild.appendChild( dcTN( getRankText( "atk", atk[atk.best].rank, params) ) );
+
+	det.appendChild( dcE("div") );
+	det.lastChild.setAttribute( "class", "rank-details" );
+	det.lastChild.appendChild( rank_max_move( "Max Guard", grd.rank ) );
+	det.lastChild.appendChild( dcE("div") );
+	det.lastChild.lastChild.setAttribute( "class", "rank-explanation" );
+	det.lastChild.lastChild.appendChild( dcTN( getRankText( "grd", grd.rank, params) ) );
+
+	det.appendChild( dcE("div") );
+	det.lastChild.setAttribute( "class", "rank-details" );
+	det.lastChild.appendChild( rank_max_move( "Max Spirit", spt.rank ) );
+	det.lastChild.appendChild( dcE("div") );
+	det.lastChild.lastChild.setAttribute( "class", "rank-explanation" );
+	det.lastChild.lastChild.appendChild( dcTN( getRankText( "spt", spt.rank, params) ) );
 
 
 	det.appendChild( dcE( "div" ) )
@@ -401,14 +587,20 @@ function betterBreakdown( dpkmn, atk, grd, spt, hl="" ) {
 
 	det.lastChild.appendChild( dcE( "div" ) );
 	det.lastChild.lastChild.setAttribute( "class", "da-div" );
-	elem = dcE( "h5" ); // h5 level good
+	elem = dcE( "div" );
+	elem.setAttribute( "class", "defending-title" );
 	det.lastChild.lastChild.appendChild( elem );
-	elem.appendChild( dcTN("Defending") );
+	elem.appendChild( dcE("h5") ); // h5 level good
+	elem.lastChild.appendChild( dcTN("Defending") );
+	elem.appendChild( rank_survival_icon(srv.rank) );
+	elem.lastChild.setAttribute( "alt", "" );
+	elem.appendChild( getIcon("Max Guard") );
+	elem.lastChild.setAttribute( "alt", "" );
 
 	elem = det.lastChild.lastChild;
 	field = Object.keys(grd).filter( (i) => i.startsWith("CHRG_") );
 	for( i = 0; i < field.length; i++ )
-		elem.appendChild( rankedDefendGrid( dpkmn, grd[field[i]], field[i] ) );
+		elem.appendChild( rankedDefendGrid( dpkmn, srv[field[i]], grd[field[i]], field[i] ) );
 
 	det.lastChild.appendChild( dcE( "div" ) );
 	det.lastChild.lastChild.setAttribute( "class", "da-div" );
@@ -420,74 +612,122 @@ function betterBreakdown( dpkmn, atk, grd, spt, hl="" ) {
 	for( i = 0; i < atk.ordered.length; i++ )
 		elem.appendChild( rankedMaxAttackGrid( dpkmn, atk, atk.ordered[i] ) );
 
+	if( isGigamax(dpkmn) ) {
+		elem = dcE( "h5" ); // h5 level good
+		det.lastChild.lastChild.appendChild( elem );
+		elem.appendChild( dcTN("Charging") );
+		field = sortBySpeed( getPkmnMoveset( dpkmn, "fast", "all" ) );
+		for( i = 0; i < field.length; i++ ) {
+			det.lastChild.lastChild.appendChild( fast_grid(dpkmn,field[i]) );
+			det.lastChild.lastChild.lastChild.setAttribute( "class", "fast-grid charge-fast-grid" );
+		}
+	}
+
 	det.appendChild( powerUpCostTable(getPkmnField(dpkmn,"dynamax-class")) );
 
 	return det;
-
-
-
 }
 
 function ranks_div( move, atk, grd, spt ) {
-	let		div, d;
-	let		atkd, grdd, sptd;
-	let		type, name, dg;
+	let		div;
 
 	div = dcE( "div" );
 	div.setAttribute( "class", "ranks-div" );
 
-	for( d = 0; d < 3; d++ ) {
-		div.appendChild( dcE( "div" ) );
-		div.lastChild.setAttribute( "class", "ranks-cont" );
+	div.appendChild( rank_max_move( move, atk ) );
+	div.appendChild( rank_max_move( "Max Guard", grd ) );
+	div.appendChild( rank_max_move( "Max Spirit", spt ) );
+
+	return div;
+}
+
+function rank_survival( letter ) {
+	let		div;
+
+	div = dcE( "div" );
+	div.setAttribute( "class", "ranks-cont survival-cont" );
+	div.appendChild( rank_survival_icon(letter) );
+	div.appendChild( dcE("div") );
+	div.lastChild.appendChild( rank_letter_div(letter) );
+	div.lastChild.setAttribute( "class", "letter" );
+
+	return div;
+}
+
+function rank_survival_icon( letter ) {
+	let		src, icon;
+
+	src = assetsbase + "icons/pokemon/go/maxmeter/" + letter[0].toLowerCase();
+	if( letter.length > 1 ) {
+		if( letter.endsWith("+") )
+			src += "p";
+		else
+			src += "m";
+	}
+	src += ".png"
+
+	icon = dcE( "img" );
+	icon.setAttribute( "src", src );
+	icon.setAttribute( "alt", "Power Up Phase Strength" );
+	icon.setAttribute( "class", "power-up-icon" );
+
+	return icon;
+}
+
+function rank_max_move( move, letter ) {
+	let		div;
+	let		icon;
+
+	if( move.startsWith("Max ") )
+		icon = getIcon( move );
+	else {
+		if( move.startsWith("DYNA") )
+			icon = getTypeImg(getMoveField(move,"type"),"max");
+		else
+			icon = getTypeImg(getMoveField(move,"type"),"gigamax");
+		icon.setAttribute( "alt", getMoveField(move,"name") );
 	}
 
-	atkd = div.childNodes[0];
-	grdd = div.childNodes[1];
-	sptd = div.childNodes[2];
-
-	type = getMoveField( move, "type" );
-	name = getMoveField( move, "name" );
-	if( move.startsWith("DYNA") )
-		dg = "max";
-	else
-		dg = "gigamax";
-
-	atkd.appendChild( getTypeImg(type,dg) );
-	atkd.lastChild.setAttribute( "alt", name );
-	grdd.appendChild( getIcon("Max Guard") );
-	sptd.appendChild( getIcon("Max Spirit") );
-
-	atkd.appendChild( dcE( "div" ) );
-	atkd.lastChild.appendChild( rank_letter_div( atk ) );
-	atkd.lastChild.setAttribute( "class", "letter" );
-	grdd.appendChild( dcE( "div" ) );
-	grdd.lastChild.appendChild( rank_letter_div( grd ) );
-	grdd.lastChild.setAttribute( "class", "letter" );
-	sptd.appendChild( dcE( "div" ) );
-	sptd.lastChild.appendChild( rank_letter_div( spt ) );
-	sptd.lastChild.setAttribute( "class", "letter" );
+	div = dcE( "div" );
+	div.setAttribute( "class", "ranks-cont" );
+	div.appendChild( icon );
+	div.appendChild( dcE("div") );
+	div.lastChild.appendChild( rank_letter_div(letter) );
+	div.lastChild.setAttribute( "class", "letter" );
 
 	return div;
 }
 
 function rank_letter_div( letter ) {
 	let		div, cls;
+	let		txt;
 
+	txt = "";
 	cls = "rank-";
 	cls += letter.toLowerCase()[0];
 	if( letter.endsWith("-") )
 		cls += "-m";
-	if( letter.endsWith("+") )
+	if( letter.endsWith("+") ) {
 		cls += "-p";
+		txt = letter[0];
+	}
 
 	div = dcE( "div" );
 	div.setAttribute( "class", "rank-letter-div " + cls );
-	div.appendChild( dcTN( letter ) );
+	if( !txt ) {
+		div.appendChild( dcTN( letter ) );
+		return div;
+	}
+
+	div.appendChild( dcTN( txt ) );
+	div.appendChild( dcE("span") );
+	div.lastChild.setAttribute( "class", "plus" );
+	div.lastChild.appendChild( dcTN("+") );
 
 	return div;
 }
 
-function rankedDefendGrid( dpkmn, grd, move ) {
+function rankedDefendGrid( dpkmn, srv, grd, move ) {
 	let		div;
 
 	div = dcE( "div" );
@@ -500,8 +740,21 @@ function rankedDefendGrid( dpkmn, grd, move ) {
 	div.lastChild.appendChild( dcTN( getMoveField(move,"name") ) );
 	div.lastChild.classList.add( "charge-attack" );
 
-	div.appendChild( rank_letter_div(grd.rank) );
+	div.appendChild( dcE( "div" ) );
+	div.lastChild.appendChild( dcE("div") );
+	div.lastChild.lastChild.setAttribute( "class", "sr-only" );
+	div.lastChild.lastChild.appendChild( dcTN("Power Up Phase Survival") );
+	div.lastChild.appendChild( rank_letter_div(srv.rank) );
 	div.lastChild.classList.add( "rank" );
+	div.lastChild.classList.add( "rank-srv" );
+
+	div.appendChild( dcE( "div" ) );
+	div.lastChild.appendChild( dcE("div") );
+	div.lastChild.lastChild.setAttribute( "class", "sr-only" );
+	div.lastChild.lastChild.appendChild( dcTN("Max Guard strength") );
+	div.lastChild.appendChild( rank_letter_div(grd.rank) );
+	div.lastChild.classList.add( "rank" );
+	div.lastChild.classList.add( "rank-grd" );
 
 	return div;
 }
@@ -530,48 +783,48 @@ function rankedMaxAttackGrid( dpkmn, atk, move ) {
 
 	div.appendChild( rank_letter_div( atk[move].rank ) );
 
+	if( isGigamax(dpkmn) )
+		return elem;
+
 	fast = getPkmnMoveset( dpkmn, "fast", "all" );
 	fast = fast.filter( (f) => getMaxMoveFromFast(f) == move );
+	fast = sortBySpeed( fast );
 
-	for( f = 0; f < fast.length; f++ ) {
-		for( g = f+1; g < fast.length; g++ ) {
-			if( getMoveField(fast[f],"raid-cooldown") > getMoveField(fast[g],"raid-cooldown") ) {
-				t = fast[f];
-				fast[f] = fast[g];
-				fast[g] = t;
-			}
-		}
-	}
-
-	for( f = 0; f < fast.length; f++ ) {
-		div = dcE( "div" );
-		div.setAttribute( "class", "fast-grid" );
-		elem.appendChild( div );
-
-		div.appendChild( getTypeImg(getMoveField(fast[f],"type")) );
-		div.lastChild.classList.add( "fast-icon" );
-
-		div.appendChild( dcE( "div" ) );
-		div.lastChild.classList.add( "fast-attack" );
-		div.lastChild.appendChild( dcTN( getMoveField(fast[f],"name" )) );
-
-		if( pkmnNeedsETM( dpkmn, fast[f] ) ) {
-			div.lastChild.appendChild( getIcon("TM") );
-			div.lastChild.lastChild.setAttribute( "alt", "Requires Elite TM" );
-			div.lastChild.lastChild.setAttribute( "title", "Requires Elite TM" );
-		}
-
-		div.appendChild( dcE( "div" ) );
-		div.lastChild.classList.add( "sec" );
-		div.lastChild.appendChild( dcE( "span" ) );
-		div.lastChild.lastChild.classList.add( "value" );
-		div.lastChild.lastChild.appendChild( dcTN( getMoveField(fast[f],"raid-cooldown")) );
-		div.lastChild.appendChild( dcE( "span" ) );
-		div.lastChild.lastChild.classList.add( "unit" );
-		div.lastChild.lastChild.appendChild( dcTN( "SEC" ) );
-	}
+	for( f = 0; f < fast.length; f++ )
+		elem.appendChild( fast_grid(dpkmn,fast[f]) );
 
 	return elem;
+}
+
+function fast_grid( dpkmn, move ) {
+	let		div;
+
+	div = dcE( "div" );
+	div.setAttribute( "class", "fast-grid" );
+
+	div.appendChild( getTypeImg(getMoveField(move,"type")) );
+	div.lastChild.classList.add( "fast-icon" );
+
+	div.appendChild( dcE( "div" ) );
+	div.lastChild.classList.add( "fast-attack" );
+	div.lastChild.appendChild( dcTN( getMoveField(move,"name" )) );
+
+	if(( isGigamax(dpkmn) && pkmnNeedsETM(dpkmn.split("-")[0],move) ) || pkmnNeedsETM(dpkmn,move) ) {
+		div.lastChild.appendChild( getIcon("TM") );
+		div.lastChild.lastChild.setAttribute( "alt", "Requires Elite TM" );
+		div.lastChild.lastChild.setAttribute( "title", "Requires Elite TM" );
+	}
+
+	div.appendChild( dcE( "div" ) );
+	div.lastChild.classList.add( "sec" );
+	div.lastChild.appendChild( dcE( "span" ) );
+	div.lastChild.lastChild.classList.add( "value" );
+	div.lastChild.lastChild.appendChild( dcTN( getMoveField(move,"raid-cooldown")) );
+	div.lastChild.appendChild( dcE( "span" ) );
+	div.lastChild.lastChild.classList.add( "unit" );
+	div.lastChild.lastChild.appendChild( dcTN( "SEC" ) );
+
+	return div;
 }
 
 function dcE( val ) {
@@ -690,6 +943,4 @@ function output_tsv_all( atk, grd, spt ) {
 		out.lastChild.innerHTML += "| " + spt[pkmn]["rank"] + "\t";
 		out.lastChild.innerHTML += getPkmnField( pkmn,"base-stamina" ) + "\n";
 	}
-
-
 }

@@ -180,6 +180,22 @@ function getPowerUpCost( clss, level ) {
 	return ret;
 }
 
+function getRankText( move, letter, params={"NAME":"","BOSS":"", "MAX":""} ) {
+	let		text;
+	let		p;
+
+	if( ! dbdynamax["text"][move][letter] )
+		text = dbdynamax["text"][move][letter[0]];
+	else
+		text = dbdynamax["text"][move][letter];
+
+	for( p in params )
+		text = text.replaceAll( "{" + p + "}", params[p] );
+
+	return text;
+}
+
+
 const dbdynamax= {
 	"battles": {
 		1: {
@@ -237,5 +253,35 @@ const dbdynamax= {
 		"gmax-attack": [ 350, 400, 450 ],
 		"guard": [ 20, 40, 60 ],
 		"spirit": [ 8, 12, 16 ]
+	},
+	"text": {
+		"srv": {
+			"A": "{NAME} is a good choice for your first party slot. In most movesets, {NAME} can survive multiple power up phases without healing or shields.",
+			"B": "In many cases, {NAME} can survive a full power up phase without shields or healing, but it'll take a lot of damage.",
+			"C": "{NAME} may struggle to survive an entire power up phase. Don't put it in your first party slot.",
+			"D": "{NAME} is a One Hit KO. If you use {NAME}, keep it out of the power up phase.",
+			"F": "Even with shields, {NAME} is a One Hit KO. If you use {NAME}, keep it out of the power up phase."
+		},
+		"atk": {
+			"A": "{NAME} has one of the strongest {MAX} Attacks against {BOSS}.",
+			"B": "{NAME}'s {MAX} Attack can do a lot of damage when it's powered up. A Max Mushroom can give {NAME} the boost it needs to be an A tier attacker.",
+			"C": "{NAME}'s {MAX} Attack isn't bad, but there are much better options. A Max Mushroom could help {NAME} in small groups with no other attackers are available.",
+			"D": "{NAME}'s {MAX} Attack will do very little damage during the dynamax phase. If possible, unlock Max Guard or Max Spirit to use instead, or just avoid using {NAME}. A Max Mushroom will not help {NAME}.",
+			"F": "{NAME}'s {MAX} Attack will do very little damage during the dynamax phase. If possible, unlock Max Guard or Max Spirit to use instead, or just avoid using {NAME}. A Max Mushroom will not help {NAME}."
+		},
+		"grd": {
+			"A": "{NAME}'s shields are very strong against {BOSS}'s attacks. They'll survive a lot of attacks and will deflect the most targetted attacks away from your teammates without shields.",
+			"B": "{NAME}'s shields can protect itself against {BOSS}'s attacks, but they aren't strong enough to deflect many targetted attacks away from your teammates without shields.",
+			"C": "{NAME}'s shields can protect against some of {BOSS}'s attacks. They could help your pokemon survive another power up phase after other supporters have fainted.",
+			"D": "{NAME}'s shields are weak to {BOSS}'s attacks. They will not protect your pokemon against any extra attacks. In many cases, they will be taken out in one hit.",
+			"F": "{NAME}'s shields are useless against {BOSS}'s attacks. They will not protect your pokemon against any attacks."
+		},
+		"spt": {
+			"A": "{NAME} will always be the best at healing its teammates. It's a smart choice to level up its Max Spirit",
+			"B": "{NAME} is good at healing many of its teammates.",
+			"C": "{NAME} can be good at healing its teammates, but there are also better options.",
+			"D": "{NAME} is very bad at healing. It's a waste of candy to unlock Max Spirit",
+			"F": "{NAME} is very bad at healing. It's a waste of candy to unlock Max Spirit"
+		}
 	}
 };

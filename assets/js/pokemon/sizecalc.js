@@ -1,12 +1,15 @@
+var		selectkeys = {};
+
 function init() {
-	var		ph, d;
-	var		select, options;
+	let		ph, d;
+	let		select, options;
 
 	select = document.getElementById('pick-pokemon-container');
 	options = [];
 	for( d in dex ) {
 		if( dex[d]["size-calc-ignore"] == false )
 			options.push( dex[d]["name"] );
+		selectkeys[dex[d]["name"]] = d;
 	}
 	accessibleAutocomplete({
 		element: select,
@@ -21,9 +24,9 @@ function init() {
 	document.getElementById( "input-atk" ).value = "";
 	document.getElementById( "input-def" ).value = "";
 	document.getElementById( "input-hp" ).value = "";
-	document.getElementById( "atk-img" ).src = "/assets/icons/iv/00.svg";
-	document.getElementById( "def-img" ).src = "/assets/icons/iv/00.svg";
-	document.getElementById( "hp-img" ).src = "/assets/icons/iv/00.svg";
+	document.getElementById( "atk-img" ).src = getIVBarSrc( 0 );
+	document.getElementById( "def-img" ).src = getIVBarSrc( 0 );
+	document.getElementById( "hp-img" ).src = getIVBarSrc( 0 );
 
 	ph = document.createElement( "div" );
 	ph.id = "output-placeholder";

@@ -38,13 +38,30 @@ function getIcon( name ) {
 	let		elem, path;
 
 	path = name.toLowerCase().replaceAll(" ","");
-
 	elem = document.createElement( "img" );
 	elem.setAttribute( "class", "icon " + path + "-icon" );
 	elem.setAttribute( "alt", name );
-	elem.setAttribute( "src", assetsbase + "icons/pokemon/go/" + path + ".png" );
+	elem.setAttribute( "src", getIconSrc( name ) );
 
 	return elem;
+}
+
+function getIconSrc( name ) { 
+	let		path;
+	path = name.toLowerCase().replaceAll(" ","");
+	return assetsbase + "icons/pokemon/go/" + path + ".png";
+
+}
+
+function getPkmnSprite( dpkmn ) {
+	let		img;
+
+	img = dcE( "img" );
+	img.setAttribute( "alt", getPkmnField(dpkmn,"name") );
+	img.setAttribute( "src", getPkmnSpriteSrc(dpkmn) );
+	img.setAttribute( "class", "sprite" );
+
+	return img;
 }
 
 function getIVBarSrc( n ) {
@@ -87,3 +104,18 @@ function appendToPkmnDetails( det, elem ) {
 }
 
 
+function newPkmn( di, ivs=[0,0,0], l=0, h=0, w=0 ) {
+	let		pkmn;
+
+	pkmn = {
+		"di": di,
+		"atk": ivs[0],
+		"def": ivs[1],
+		"sta": ivs[2],
+		"lvl": l,
+		"ht": h,
+		"wt": w
+	};
+
+	return pkmn;
+}

@@ -14,6 +14,12 @@ function getTypeNameItal( t ) {
 	return type["name-ital"];
 }
 
+function getTypeImgSrc( type, style="" ) {
+	let		img;
+	if( style.length )
+		style = style + "/";
+	return assetsbase + "icons/pokemon/go/types/" + style + getTypeNameItal(type).toLowerCase() + ".png";
+}
 function getTypeImg( type, style="" ) {
 	let		img;
 
@@ -50,6 +56,13 @@ function getTypeWeatherBoost( type ) {
 	return dbtypes[type]["weather-boost"];
 }
 
+function hasTwoWeathers( weather ) {
+	return ( weather == "Clear" || weather == "Sunny" || weather == "Partly Cloudy" );
+}
+
+function getWeatherIconSrc( weather ) {
+	return assetsbase + "icons/pokemon/go/weather/" + weather.toLowerCase().replaceAll(" ","")  + ".png";
+}
 function getWeatherImg( weather ) {
 	let		img;
 
@@ -85,6 +98,29 @@ function getTypeImmunity( type ) {
 	return dbtypes[type].immune;
 }
 
+function getFullTypeAdv( defa, defb="" ) {
+	let		r, t;
+
+	if( defb.length == 0 ) {
+		if( defa.length == 0 )
+			return 0;
+		else if( defa.length == 1 )
+			defa = defa[0];
+		else if( defa.length == 2 ) {
+			defb = defa[1];
+			defa = defa[0];
+		}
+	}
+
+	r = {};
+	for( t = 0; t < dbtypes.advantage.length; t++ )
+		r[dbtypes.advantage[t]] = [];
+	for( t = 0; t < dbtypes.types.length; t++ )
+		r[getTypeAdvantage( dbtypes.types[t], defa, defb )].push( dbtypes.types[t] );
+
+	return r;
+
+}
 function getTypeAdvantage( atk, defa, defb="" ) {
 	let		r;
 

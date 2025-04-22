@@ -443,10 +443,9 @@ function attack_row( move, boost ) {
 
 	pow = getMoveField( move, "raid-power" );
 	applySTAB( "99-G", move, "raid-power" );
+	row.classList.add( "attack-row-grid" );
 	if( boost > pow )
 		row.classList.add( "boosted-attack-row-grid" );
-	else
-		row.classList.add( "attack-row-grid" );
 
 	elem= getTypeImg( getMoveField(move,"type") );
 	elem.classList.add( "attack-type" );

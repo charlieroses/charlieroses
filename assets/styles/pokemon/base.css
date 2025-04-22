@@ -327,4 +327,9 @@ button:hover {
 	background-color: var(--pkmn-bright-red);
 }
 
-
+.sprite {
+	image-rendering: -webkit-optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: pixelated;
+}
