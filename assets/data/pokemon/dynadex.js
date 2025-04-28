@@ -4108,7 +4108,8 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": "DNU"
+				"in-game": "2025-05-25",
+				"shiny": "2025-05-25"
 			}
 		},
 		"69": {
@@ -12715,7 +12716,7 @@ const	dbpokemon = {
 				"shiny": "2019-08-17",
 				"shadow": "2020-06-10",
 				"shiny-shadow": "2024-05-04",
-				"dynamax": "DNU"
+				"dynamax": "2025-05-10"
 			},
 			"category": "Aurora",
 			"legendary": true,
@@ -14599,7 +14600,8 @@ const	dbpokemon = {
 			"name": "Slakoth",
 			"availability": {
 				"in-game": "2017-12-08",
-				"shiny": "2019-06-08"
+				"shiny": "2019-06-08",
+				"shadow": "2025-05-14"
 			},
 			"category": "Slacker",
 			"type": [ "Normal" ],
@@ -14634,7 +14636,8 @@ const	dbpokemon = {
 			"name": "Vigoroth",
 			"availability": {
 				"in-game": "2017-12-08",
-				"shiny": "2019-06-08"
+				"shiny": "2019-06-08",
+				"shadow": "2025-05-14"
 			},
 			"category": "Wild Monkey",
 			"type": [ "Normal" ],
@@ -14672,7 +14675,8 @@ const	dbpokemon = {
 			"name": "Slaking",
 			"availability": {
 				"in-game": "2017-12-08",
-				"shiny": "2019-06-08"
+				"shiny": "2019-06-08",
+				"shadow": "2025-05-14"
 			},
 			"category": "Lazy",
 			"type": [ "Normal" ],
@@ -15163,7 +15167,8 @@ const	dbpokemon = {
 				"in-game": "2017-10-20",
 				"shiny": "2017-10-20",
 				"shadow": "2019-10-17",
-				"shiny-shadow": "2022-11-14"
+				"shiny-shadow": "2022-11-14",
+				"dynamax": "2025-05-19"
 			},
 			"category": "Darkness",
 			"type": [ "Dark", "Ghost" ],
@@ -15172,6 +15177,7 @@ const	dbpokemon = {
 			"base-attack": 141,
 			"base-defense": 136,
 			"dynamax-class": 3,
+			"max-battle-tier": 3, // TODO Confirm?
 			"fast-moves": [
 				"FAST_GHO_SHADOWCLAW",
 				"FAST_DAR_FEINTATTACK"
@@ -23005,7 +23011,8 @@ const	dbpokemon = {
 			"name": "Dialga",
 			"availability": {
 				"in-game": "2019-03-01",
-				"shiny": "2021-07-23"
+				"shiny": "2021-07-23",
+				"shadow": "2025-05-14"
 			},
 			"category": "Temporal",
 			"legendary": true,
@@ -32024,7 +32031,8 @@ const	dbpokemon = {
 			"name": "Inkay",
 			"availability": {
 				"in-game": "2020-09-08",
-				"shiny": "2022-09-03"
+				"shiny": "2022-09-03",
+				"shadow": "2025-05-14"
 			},
 			"category": "Revolving",
 			"type": [ "Dark", "Psychic" ],
@@ -32060,7 +32068,8 @@ const	dbpokemon = {
 			"name": "Malamar",
 			"availability": {
 				"in-game": "2020-09-08",
-				"shiny": "2022-09-03"
+				"shiny": "2022-09-03",
+				"shadow": "2025-05-14"
 			},
 			"category": "Overturning",
 			"type": [ "Dark", "Psychic" ],
@@ -32397,7 +32406,8 @@ const	dbpokemon = {
 			"name": "Tyrunt",
 			"availability": {
 				"in-game": "2022-06-07",
-				"shiny": "2023-07-27"
+				"shiny": "2023-07-27",
+				"shadow": "2025-05-14"
 			},
 			"category": "Royal Heir",
 			"type": [ "Rock", "Dragon" ],
@@ -32433,7 +32443,8 @@ const	dbpokemon = {
 			"name": "Tyrantrum",
 			"availability": {
 				"in-game": "2022-06-07",
-				"shiny": "2023-07-27"
+				"shiny": "2023-07-27",
+				"shadow": "2025-05-14"
 			},
 			"category": "Despot",
 			"type": [ "Rock", "Dragon" ],
@@ -32472,7 +32483,8 @@ const	dbpokemon = {
 			"name": "Amaura",
 			"availability": {
 				"in-game": "2022-06-07",
-				"shiny": "2023-07-27"
+				"shiny": "2023-07-27",
+				"shadow": "2025-05-14"
 			},
 			"category": "Tundra",
 			"type": [ "Rock", "Ice" ],
@@ -32509,7 +32521,8 @@ const	dbpokemon = {
 			"name": "Aurorus",
 			"availability": {
 				"in-game": "2022-06-07",
-				"shiny": "2023-07-27"
+				"shiny": "2023-07-27",
+				"shadow": "2025-05-14"
 			},
 			"category": "Tundra",
 			"type": [ "Rock", "Ice" ],
@@ -38002,7 +38015,8 @@ const	dbpokemon = {
 			"dex-index": "821",
 			"name": "Rookidee",
 			"availability": {
-				"in-game": "2025-01-21"
+				"in-game": "2025-01-21",
+				"dynamax": "2025-05-26"
 			},
 			"category": "Tiny Bird",
 			"type": [ "Flying" ],
@@ -38011,6 +38025,7 @@ const	dbpokemon = {
 			"base-attack": 88,
 			"base-defense": 67,
 			"dynamax-class": 1,
+			"max-battle-tier": 1,
 			"fast-moves": [
 				"FAST_FLY_AIRSLASH",
 				"FAST_FLY_PECK"
@@ -38036,7 +38051,8 @@ const	dbpokemon = {
 			"dex-index": "822",
 			"name": "Corvisquire",
 			"availability": {
-				"in-game": "2025-01-21"
+				"in-game": "2025-01-21",
+				"dynamax": "2025-05-26"
 			},
 			"category": "Raven",
 			"type": [ "Flying" ],
@@ -38071,7 +38087,8 @@ const	dbpokemon = {
 			"dex-index": "823",
 			"name": "Corviknight",
 			"availability": {
-				"in-game": "2025-01-21"
+				"in-game": "2025-01-21",
+				"dynamax": "2025-05-26"
 			},
 			"category": "Raven",
 			"type": [ "Flying", "Steel" ],
@@ -42107,7 +42124,8 @@ const	dbpokemon = {
 			"dex-index": "921",
 			"name": "Pawmi",
 			"availability": {
-				"in-game": "2023-09-10"
+				"in-game": "2023-09-10",
+				"shiny": "2025-05-11"
 			},
 			"category": "Mouse",
 			"type": [ "Electric" ],
@@ -42142,7 +42160,8 @@ const	dbpokemon = {
 			"dex-index": "922",
 			"name": "Pawmo",
 			"availability": {
-				"in-game": "2023-09-10"
+				"in-game": "2023-09-10",
+				"shiny": "2025-05-11"
 			},
 			"category": "Mouse",
 			"type": [ "Electric", "Fighting" ],
@@ -42179,7 +42198,8 @@ const	dbpokemon = {
 			"dex-index": "923",
 			"name": "Pawmot",
 			"availability": {
-				"in-game": "2023-09-10"
+				"in-game": "2023-09-10",
+				"shiny": "2025-05-11"
 			},
 			"category": "Hands-On",
 			"type": [ "Electric", "Fighting" ],
@@ -44442,7 +44462,7 @@ const	dbpokemon = {
 			"dex-index": "983",
 			"name": "Kingambit",
 			"availability": {
-				"in-game": false
+				"in-game": "2025-05-10"
 			},
 			"category": "Big Blade",
 			"type": [ "Dark", "Steel" ],
