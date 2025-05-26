@@ -325,14 +325,20 @@ function output_gpkmn( di ) {
 	row.lastChild.classList.add( "cp-value" );
 	row.lastChild.appendChild( document.createTextNode( pkmnCP(di,25,[10,10,10]) + " - " + pkmnCP(di,25,[15,15,15]) ) );
 
+	row = AppendRow( card, cardRow() );
+	row.classList.add( "shiny-available-message" );
 	if(( isGigamax(di) && willBeAvailable( getAvailability(di), di, "shiny" ) ) ||
 	   ( willBeAvailable( getAvailability(di,"dynamax"),di,"shiny")) ) {
-		row = AppendRow( card, cardRow() );
-		row.classList.add( "shiny-available-message" );
 		row.appendChild( getIcon("Shiny") );
 		row.lastChild.setAttribute( "alt", "" );
 		row.appendChild( document.createElement("div") );
 		row.lastChild.appendChild( document.createTextNode( "Shiny Available" ) );
+	}
+	else {
+		row.appendChild( getIcon("No Shiny") );
+		row.lastChild.setAttribute( "alt", "" );
+		row.appendChild( document.createElement("div") );
+		row.lastChild.appendChild( document.createTextNode( "Shiny Unavailable" ) );
 	}
 
 	/*

@@ -16,6 +16,17 @@ function getPkmnField( di, f ) {
 	}
 	return dbpokemon.entries[di][f];
 }
+function getPkmnFormField( di, f ) {
+	let		fd;
+	if( ! dbpokemon.entries[di] )
+		return 0;
+	if( ! isForm(di) )
+		return 0;
+	fd = getPkmnField( di, "form-data" );
+	if( ! fd[f] )
+		return 0;
+	return fd[f];
+}
 
 function getAvailability( di, field="" ) {
 	let		av;
@@ -86,6 +97,12 @@ function getPkmnImageSrc( di ) {
 
 function getPkmnSpriteSrc( di ) {
 	return getPkmnImageSrc( di ).replace( ".png", "_sprite.png" );
+}
+
+function isForm( di ) {
+	if( ! getPkmnField(di,"form-data") )
+		return false;
+	return true;
 }
 
 function isMega( di ) {
@@ -15177,7 +15194,7 @@ const	dbpokemon = {
 			"base-attack": 141,
 			"base-defense": 136,
 			"dynamax-class": 3,
-			"max-battle-tier": 3, // TODO Confirm?
+			"max-battle-tier": 3, // Confirmed!! I was right!!
 			"fast-moves": [
 				"FAST_GHO_SHADOWCLAW",
 				"FAST_DAR_FEINTATTACK"
@@ -23226,9 +23243,12 @@ const	dbpokemon = {
 				"FAST_WAT_HIDDENPOWER"
 			],
 			"charged-moves": [
-				"CHRG_NOR_GIGAIMPACT",
+				"CHRG_ELE_THUNDER",
 				"CHRG_FIG_FOCUSBLAST",
-				"CHRG_ELE_THUNDER"
+				"CHRG_NOR_GIGAIMPACT"
+			],
+			"special-charged-moves": [
+				"CHRG_NOR_CRUSHGRIP"
 			],
 			"height-avg": 3.7,
 			"weight-avg": 420,
@@ -37656,7 +37676,8 @@ const	dbpokemon = {
 			"name": "Rillaboom",
 			"availability": {
 				"in-game": "2024-09-03",
-				"dynamax": "2024-10-01"
+				"dynamax": "2024-10-01",
+				"shiny": false
 			},
 			"category": "Drummer",
 			"type": [ "Grass" ],
@@ -37695,6 +37716,8 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
+				"in-game": "2025-05-31",
+				"shiny": false
 			}
 		},
 		"813": {
@@ -37774,7 +37797,8 @@ const	dbpokemon = {
 			"name": "Cinderace",
 			"availability": {
 				"in-game": "2024-09-03",
-				"dynamax": "2024-10-01"
+				"dynamax": "2024-10-01",
+				"shiny": false
 			},
 			"category": "Striker",
 			"type": [ "Fire" ],
@@ -37813,6 +37837,8 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
+				"in-game": "2025-06-07",
+				"shiny": false
 			}
 		},
 		"816": {
@@ -37892,7 +37918,8 @@ const	dbpokemon = {
 			"name": "Inteleon",
 			"availability": {
 				"in-game": "2024-09-03",
-				"dynamax": "2024-10-01"
+				"dynamax": "2024-10-01",
+				"shiny": false
 			},
 			"category": "Secret Agent",
 			"type": [ "Water" ],
@@ -37931,6 +37958,8 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
+				"in-game": "2025-06-14",
+				"shiny": false
 			}
 		},
 		"819": {
@@ -39113,6 +39142,7 @@ const	dbpokemon = {
 				"in-game": "2024-11-16",
 				"shiny": "2024-11-16"
 			},
+			"image": "849-G",
 			"height-avg": 24,
 			"size-data": {
 				"xxs": [ 23.833, 23.85 ],
@@ -40706,6 +40736,9 @@ const	dbpokemon = {
 				"shiny": "2025-05-29"
 			},
 			"type": [ "Fairy", "Steel" ],
+			"special-charged-moves": [
+				"CHRG_STE_BEHEMOTHBLADE"
+			],
 			"base-stamina": 192,
 			"base-attack": 332,
 			"base-defense": 240,
@@ -40775,6 +40808,9 @@ const	dbpokemon = {
 				"shiny": "2025-05-29"
 			},
 			"type": [ "Fighting", "Steel" ],
+			"special-charged-moves": [
+				"CHRG_STE_BEHEMOTHBASH"
+			],
 			"base-stamina": 192,
 			"base-attack": 250,
 			"base-defense": 292,
@@ -40874,7 +40910,8 @@ const	dbpokemon = {
 			"dex-index": "892-0",
 			"name": "Urshifu",
 			"availability": {
-				"in-game": false
+				"in-game": "2025-05-21",
+				"dynamax": "2025-05-21"
 			},
 			"category": "Wushu",
 			"legendary": true,
@@ -40903,7 +40940,6 @@ const	dbpokemon = {
 			"dex-index": "892-S",
 			"form-data": {
 				"base": "892-0",
-				"type": "idk",
 				"name": "Single Strike Style",
 				"name-ital": "Stile Singolcolpo"
 			},
@@ -40936,7 +40972,6 @@ const	dbpokemon = {
 			"dex-index": "892-R",
 			"form-data": {
 				"base": "892-0",
-				"type": "idk",
 				"name": "Rapid Strike Style",
 				"name-ital": "Stile Pluricolpo"
 			},
@@ -41023,13 +41058,16 @@ const	dbpokemon = {
 			"dynamax-class": 4,
 			"fast-moves": [
 				"FAST_ELE_THUNDERSHOCK",
-				"FAST_NOR_LOCKON",
-				"FAST_ELE_VOLTSWITCH"
+				"FAST_ELE_VOLTSWITCH",
+				"FAST_NOR_LOCKON"
 			],
 			"charged-moves": [
 				"CHRG_NOR_HYPERBEAM",
 				"CHRG_ELE_THUNDER",
 				"CHRG_ELE_ZAPCANNON"
+			],
+			"special-charged-moves": [
+				"CHRG_ELE_THUNDERCAGE"
 			],
 			"height-avg": 1.2,
 			"weight-avg": 145,
@@ -41061,11 +41099,17 @@ const	dbpokemon = {
 			"fast-moves": [
 				"FAST_DAR_BITE"
 			],
+			"special-fast-moves": [
+				"FAST_DRA_DRAGONBREATH"
+			],
 			"charged-moves": [
-				"CHRG_NOR_HYPERBEAM",
-				"CHRG_DRA_OUTRAGE",
+				"CHRG_DRA_BREAKINGSWIPE",
 				"CHRG_DRA_DRAGONPULSE",
-				"CHRG_DRA_BREAKINGSWIPE"
+				"CHRG_DRA_OUTRAGE",
+				"CHRG_NOR_HYPERBEAM"
+			],
+			"special-charged-moves": [
+				"CHRG_DRA_DRAGONENERGY"
 			],
 			"height-avg": 2.1,
 			"weight-avg": 200,

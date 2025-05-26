@@ -1316,6 +1316,16 @@ const dbmoves = {
 			"trainer-power": 50,
 			"trainer-energy": 35
 		},
+		"CHRG_DRA_DRAGONENERGY": { // TODO fill me in
+			"type": "Dragon",
+			"name": "Dragon Energy",
+			"name-ital": "Dragoenergia",
+			"raid-power": 0,
+			"raid-energy": 0,
+			"raid-duration": 0.0,
+			"trainer-power": 0,
+			"trainer-energy": 0
+		},
 		"CHRG_DRA_DRAGONPULSE": {
 			"type": "Dragon",
 			"name": "Dragon Pulse",
@@ -1435,6 +1445,16 @@ const dbmoves = {
 			"raid-duration": 2.5,
 			"trainer-power": 90,
 			"trainer-energy": 55
+		},
+		"CHRG_ELE_THUNDERCAGE": { // TODO Fill me in
+			"type": "Electric",
+			"name": "Thunder Cage",
+			"name-ital": "Elettrogabbia",
+			"raid-power": 0,
+			"raid-energy": 0,
+			"raid-duration": 0.0,
+			"trainer-power": 0,
+			"trainer-energy": 0
 		},
 		"CHRG_ELE_THUNDERPUNCH": {
 			"type": "Electric",
@@ -2581,6 +2601,16 @@ const dbmoves = {
 			"raid-energy": 0,
 			"raid-duration": 2.0
 		},
+		"CHRG_NOR_CRUSHGRIP": { // TODO fill me in
+			"type": "Normal",
+			"name": "Crush Grip",
+			"name-ital": "Sbriciolmano",
+			"raid-power": 0,
+			"raid-energy": 0,
+			"raid-duration": 0.0,
+			"trainer-power": 0,
+			"trainer-energy": 0
+		},
 		"CHRG_NOR_FRUSTRATION": {
 			"type": "Normal",
 			"name": "Frustration",
@@ -3039,6 +3069,26 @@ const dbmoves = {
 			"raid-duration": 1.5,
 			"trainer-power": 55,
 			"trainer-energy": 35
+		},
+		"CHRG_STE_BEHEMOTHBASH": { // TODO Fill me in
+			"type": "Steel",
+			"name": "Behemoth Bash",
+			"name-ital": "Colpo Maestoso",
+			"raid-power": 0,
+			"raid-energy": 0,
+			"raid-duration": 0.0,
+			"trainer-power": 0,
+			"trainer-energy": 0
+		},
+		"CHRG_STE_BEHEMOTHBLADE": { // TODO Fill me in
+			"type": "Steel",
+			"name": "Behemoth Blade",
+			"name-ital": "Taglio Maestoso",
+			"raid-power": 0,
+			"raid-energy": 0,
+			"raid-duration": 0.0,
+			"trainer-power": 0,
+			"trainer-energy": 0
 		},
 		"CHRG_STE_DOOMDESIRE": {
 			"type": "Steel",

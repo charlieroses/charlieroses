@@ -227,6 +227,7 @@ output {
 	font-size: 1.1em;
 }
 
+.noshiny-icon,
 .shiny-icon {
 	height: 1em;
 	margin: 0 0.25em;
@@ -412,6 +413,12 @@ details .stats-div {
 }
 .pokemon-card .pkmn-summary .title h4 {
 	margin: 0;
+	line-height: 1em;
+}
+.pokemon-card .pkmn-summary .title h4 .form-subname {
+	font-weight: normal;
+	font-style: italic;
+	font-size: 0.9em;
 }
 .pokemon-card .pkmn-summary .sprite {
 	height: 1.75em;

@@ -46,6 +46,13 @@ var		baseline = {
 			"date-start":	"2024-08-10",
 			"date-end":		"2024-08-11",
 			"baseline-dex": "20-A" // Alolan Raticate
+		},
+		{ // DARK
+			"event":	"Final Strike: GO Battle Week",
+			"date":		"5/26/25",
+			"date-start":	"2025-05-26",
+			"date-end":		"2025-05-27",
+			"baseline-dex":	"self"
 		}],
 	"Dragon": [
 		{ // DRAGON
@@ -264,5 +271,12 @@ var		baseline = {
 			"date-start":	"2024-10-26",
 			"date-end":		"2024-10-27",
 			"baseline-dex": "9" // Blastoise
+		},
+		{ // WATER
+			"event":	"Final Strike: GO Battle Week",
+			"date":		"5/26/25",
+			"date-start":	"2025-05-26",
+			"date-end":		"2025-05-27",
+			"baseline-dex":	"self"
 		}]
 };

@@ -91,6 +91,69 @@ function rankSurvival( dpkmn, gpkmn ) {
 	return ret;
 }
 
+var		SPIRIT = {}; // { ORDER: [], ENTRIES: { DI:{data} } }
+function getSpiritDetails( di ) {
+	if( isGigamax(di) )
+		di = getPkmnBaseForm( di );
+	return SPIRIT.ENTRIES[di];
+}
+function getSpiritRank( di ) {
+	let		det;
+	det = getSpiritDetails( di );
+	return det.rank;
+}
+function generateSpiritRankings( dpkmn ) {
+	let		d, di;
+
+	if( SPIRIT.ORDER ) {
+		delete SPIRIT.ORDER;
+		delete SPIRIT.ENTRIES;
+	}
+
+	SPIRIT.ORDER = [];
+	SPIRIT.ENTRIES = {};
+
+	for( d = 0; d < dpkmn.length; d++ ) {
+		di = getPkmnBaseForm( dpkmn[d] );
+		if( SPIRIT.ENTRIES[di] )
+			continue;
+		SPIRIT.ENTRIES[di] = {};
+		SPIRIT.ENTRIES[di].value = getPkmnField( di, "base-stamina" );
+		insertSpirit( di );
+	}
+
+	// TODO spirit ranked, now actually get order information to fill entries
+	for( d = 0; d < SPIRIT.ORDER.length; d++ ) {
+		di = SPIRIT.ORDER[d];
+		console.log( SPIRIT.ENTRIES[di] );
+	}
+}
+// TODO Test Me!!!
+function insertSpirit( di ) {
+	let		s, e, m;
+	let		si, sj;
+
+	si = SPIRIT.ENTRIES[di].value;
+
+	s = 0;
+	e = SPIRIT.ORDER.length;
+	m = ((e - s) / 2) + s;
+
+	while( s != e ) {
+		sj = SPIRIT.ENTRIES[SPIRIT.ORDER[m]].value;
+		if( si == sj )
+			break;
+		else if ( si < sj )
+			e = m;
+		else
+			s = m+1;
+		m = ((e - s) / 2) + s;
+	}
+
+	SPIRIT.ORDER.splice( e, 0, di );
+	return;
+}
+
 function rankMaxSpirit( dpkmn ) {
 	let		ret = {};
 	let		i, j, t;
@@ -461,12 +524,10 @@ function new_init( gpkmn ) {
 	AppendRow( card, cardRowBackToTop() );
 
 	out = document.getElementById( "other-pokemon-info" );
-	card = pokecard( "Everyone Else" );
+	card = pokecard( "All Available Pokemon" );
 	out.appendChild( card );
 
 	for( d = 0; d < dpkmn.length; d++ ) {
-		if( atkrs.includes(dpkmn[d]) || grdrs.includes(dpkmn[d]) || sptrs.includes(dpkmn[d]) )
-			continue;
 		if( ! grd[dpkmn[d]] )
 			AppendRow( card, betterBreakdown( dpkmn[d], srv[dpkmn[d].split("-")[0]], atk[dpkmn[d]], grd[dpkmn[d].split("-")[0]], spt[dpkmn[d].split("-")[0]] ) );
 		else
@@ -510,9 +571,14 @@ function betterBreakdown( dpkmn, srv, atk, grd, spt, hl="" ) {
 	elem = dcE( "div" );
 	elem.setAttribute( "class", "title" );
 
-
 	elem.appendChild( dcE( "h4" ) ); // h4 level good
 	elem.lastChild.appendChild( dcTN( getPkmnField(dpkmn,"name") ) );
+	if( isForm(dpkmn) && ! isGigamax(dpkmn) ) {
+		elem.lastChild.appendChild( dcE("br") );
+		elem.lastChild.appendChild( dcE("span") );
+		elem.lastChild.lastChild.appendChild( dcTN( getPkmnFormField(dpkmn,"name")) );
+		elem.lastChild.lastChild.setAttribute( "class", "form-subname" );
+	}
 	elem.appendChild( getPkmnSprite(dpkmn) );
 	
 	/*
