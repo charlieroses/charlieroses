@@ -678,7 +678,7 @@ function betterBreakdown( dpkmn, srv, atk, grd, spt, hl="" ) {
 	for( i = 0; i < atk.ordered.length; i++ )
 		elem.appendChild( rankedMaxAttackGrid( dpkmn, atk, atk.ordered[i] ) );
 
-	if( isGigamax(dpkmn) ) {
+	if( isGigamax(dpkmn) || crownCheck(dpkmn) ) {
 		elem = dcE( "h5" ); // h5 level good
 		det.lastChild.lastChild.appendChild( elem );
 		elem.appendChild( dcTN("Charging") );
@@ -849,7 +849,7 @@ function rankedMaxAttackGrid( dpkmn, atk, move ) {
 
 	div.appendChild( rank_letter_div( atk[move].rank ) );
 
-	if( isGigamax(dpkmn) )
+	if( isGigamax(dpkmn) || crownCheck(dpkmn) )
 		return elem;
 
 	fast = getPkmnMoveset( dpkmn, "fast", "all" );

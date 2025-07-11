@@ -206,7 +206,7 @@ const dbdynamax= {
 		2: {
 			"cost": 400,
 			"cpm": 0.2968, // TODO This is an educated guess
-			"hp": 0
+			"hp": 5000 // according to pokechespin
 		},
 		3: {
 			"cost": 400,
@@ -216,7 +216,7 @@ const dbdynamax= {
 		4: {
 			"cost": 800,
 			"cpm": 0,
-			"hp": 0
+			"hp": 20000 // according to pokechespin
 		},
 		5: {
 			"cost": 800,

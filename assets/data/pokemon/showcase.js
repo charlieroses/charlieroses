@@ -165,6 +165,13 @@ var		baseline = {
 			"date-start":	"2024-10-21",
 			"date-end":		"2024-10-23",
 			"baseline-dex": "self"
+		},
+		{ // GHOST
+			"event": "Serene Retreat",
+			"date": "6/1/25",
+			"date-start":	"2025-05-31",
+			"date-end":		"2025-06-01",
+			"baseline-dex": "self"
 		}],
 	"Grass": [
 		{ // GRASS

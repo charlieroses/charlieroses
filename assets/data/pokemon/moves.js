@@ -71,16 +71,16 @@ function getFastMoveEPS( move ) {
 
 const dbmoves = {
 	"fast-moves": {
-		"FAST_BUG_BUGBITE": { // TODO Fix me
+		"FAST_BUG_BUGBITE": {
 			"type": "Bug",
 			"name": "Bug Bite",
 			"name-ital": "Coleomorso",
 			"raid-power": 5,
 			"raid-energy": 6,
 			"raid-cooldown": 0.5,
-			"trainer-power": 3.00,
-			"trainer-energy": 3.00,
-			"trainer-cooldown": 0.5
+			"trainer-power": 4,
+			"trainer-energy": 3,
+			"trainer-cooldown": 1
 		},
 		"FAST_BUG_FURYCUTTER": {
 			"type": "Bug",
@@ -89,11 +89,11 @@ const dbmoves = {
 			"raid-power": 4,
 			"raid-energy": 8,
 			"raid-cooldown": 0.5,
-			"trainer-power": 2,
+			"trainer-power": 3,
 			"trainer-energy": 4,
 			"trainer-cooldown": 1
 		},
-		"FAST_BUG_HIDDENPOWER": { // TODO Fix me
+		"FAST_BUG_HIDDENPOWER": {
 			"type": "Bug",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -203,7 +203,7 @@ const dbmoves = {
 			"trainer-energy": 9,
 			"trainer-cooldown": 2
 		},
-		"FAST_DRA_HIDDENPOWER": { // TODO Fix me
+		"FAST_DRA_HIDDENPOWER": {
 			"type": "Dragon",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -225,7 +225,7 @@ const dbmoves = {
 			"trainer-energy": 11,
 			"trainer-cooldown": 2
 		},
-		"FAST_ELE_HIDDENPOWER": { // TODO Fix me
+		"FAST_ELE_HIDDENPOWER": {
 			"type": "Electric",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -346,7 +346,7 @@ const dbmoves = {
 			"trainer-energy": 10,
 			"trainer-cooldown": 2
 		},
-		"FAST_FIG_HIDDENPOWER": { // TODO Fix me
+		"FAST_FIG_HIDDENPOWER": {
 			"type": "Fighting",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -398,7 +398,7 @@ const dbmoves = {
 			"raid-energy": 10,
 			"raid-cooldown": 1.0,
 			"trainer-power": 7,
-			"trainer-energy": 6,
+			"trainer-energy": 7,
 			"trainer-cooldown": 1
 		},
 		"FAST_FIR_FIREFANG": {
@@ -423,7 +423,7 @@ const dbmoves = {
 			"trainer-energy": 10,
 			"trainer-cooldown": 2
 		},
-		"FAST_FIR_HIDDENPOWER": { // TODO Fix me
+		"FAST_FIR_HIDDENPOWER": {
 			"type": "Fire",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -467,7 +467,7 @@ const dbmoves = {
 			"trainer-energy": 12,
 			"trainer-cooldown": 2
 		},
-		"FAST_FLY_HIDDENPOWER": { // TODO Fix me
+		"FAST_FLY_HIDDENPOWER": {
 			"type": "Flying",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -522,7 +522,7 @@ const dbmoves = {
 			"trainer-energy": 13,
 			"trainer-cooldown": 2.0
 		},
-		"FAST_GHO_HIDDENPOWER": { // TODO Fix me
+		"FAST_GHO_HIDDENPOWER": {
 			"type": "Ghost",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -566,7 +566,7 @@ const dbmoves = {
 			"trainer-energy": 13,
 			"trainer-cooldown": 2
 		},
-		"FAST_GRA_HIDDENPOWER": { // TODO Fix me
+		"FAST_GRA_HIDDENPOWER": {
 			"type": "Grass",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -621,7 +621,7 @@ const dbmoves = {
 			"trainer-energy": 8,
 			"trainer-cooldown": 1
 		},
-		"FAST_GRO_HIDDENPOWER": { // TODO Fix me
+		"FAST_GRO_HIDDENPOWER": {
 			"type": "Ground",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -675,7 +675,7 @@ const dbmoves = {
 			"trainer-energy": 5,
 			"trainer-cooldown": 1
 		},
-		"FAST_ICE_HIDDENPOWER": { // TODO Fix me
+		"FAST_ICE_HIDDENPOWER": {
 			"type": "Ice",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -837,10 +837,10 @@ const dbmoves = {
 			"raid-energy": 10,
 			"raid-cooldown": 1.0,
 			"trainer-power": 6,
-			"trainer-energy": 5,
+			"trainer-energy": 8,
 			"trainer-cooldown": 1
 		},
-		"FAST_POI_HIDDENPOWER": { // TODO Fix me
+		"FAST_POI_HIDDENPOWER": {
 			"type": "Poison",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -895,7 +895,7 @@ const dbmoves = {
 			"trainer-energy": 10,
 			"trainer-cooldown": 2
 		},
-		"FAST_PSY_HIDDENPOWER": { // TODO Fix me
+		"FAST_PSY_HIDDENPOWER": {
 			"type": "Psychic",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -939,7 +939,7 @@ const dbmoves = {
 			"trainer-energy": 6,
 			"trainer-cooldown": 2
 		},
-		"FAST_ROC_HIDDENPOWER": { // TODO Fix me
+		"FAST_ROC_HIDDENPOWER": {
 			"type": "Rock",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -990,11 +990,11 @@ const dbmoves = {
 			"raid-power": 10,
 			"raid-energy": 11,
 			"raid-cooldown": 1.0,
-			"trainer-power": 6,
+			"trainer-power": 8,
 			"trainer-energy": 7,
 			"trainer-cooldown": 1
 		},
-		"FAST_STE_HIDDENPOWER": { // TODO Fix me
+		"FAST_STE_HIDDENPOWER": {
 			"type": "Steel",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -1034,7 +1034,7 @@ const dbmoves = {
 			"raid-power": 4,
 			"raid-energy": 6,
 			"raid-cooldown": 0.5,
-			"trainer-power": 3,
+			"trainer-power": 5,
 			"trainer-energy": 8,
 			"trainer-cooldown": 1
 		},
@@ -1060,7 +1060,7 @@ const dbmoves = {
 			"trainer-energy": 3,
 			"trainer-cooldown": 1
 		},
-		"FAST_WAT_HIDDENPOWER": { // TODO Fix me
+		"FAST_WAT_HIDDENPOWER": {
 			"type": "Water",
 			"name": "Hidden Power",
 			"name-ital": "Introforza",
@@ -1296,6 +1296,16 @@ const dbmoves = {
 			"trainer-power": 50,
 			"trainer-energy": 35
 		},
+		"CHRG_DRA_CLANGINGSCALES": {
+			"type": "Dragon",
+			"name": "Clanging Scales",
+			"name-ital": "Clamorsquame",
+			"raid-power": 120,
+			"raid-energy": 100,
+			"raid-duration": 3.3,
+			"trainer-power": 120,
+			"trainer-energy": 45
+		},
 		"CHRG_DRA_DRACOMETEOR": {
 			"type": "Dragon",
 			"name": "Draco Meteor",
@@ -1316,15 +1326,15 @@ const dbmoves = {
 			"trainer-power": 50,
 			"trainer-energy": 35
 		},
-		"CHRG_DRA_DRAGONENERGY": { // TODO fill me in
+		"CHRG_DRA_DRAGONENERGY": {
 			"type": "Dragon",
 			"name": "Dragon Energy",
 			"name-ital": "Dragoenergia",
-			"raid-power": 0,
-			"raid-energy": 0,
-			"raid-duration": 0.0,
-			"trainer-power": 0,
-			"trainer-energy": 0
+			"raid-power": 155,
+			"raid-energy": 50,
+			"raid-duration": 3.3,
+			"trainer-power": 100,
+			"trainer-energy": 45
 		},
 		"CHRG_DRA_DRAGONPULSE": {
 			"type": "Dragon",
@@ -1335,6 +1345,16 @@ const dbmoves = {
 			"raid-duration": 3.5,
 			"trainer-power": 90,
 			"trainer-energy": 60
+		},
+		"CHRG_DRA_DYNAMAXCANNON": { // TODO not in game, check names
+			"type": "Dragon",
+			"name": "Dynamax Cannon",
+			"name-ital": "Dynamax Cannon",
+			"raid-power": 215,
+			"raid-energy": 100,
+			"raid-duration": 1.5,
+			"trainer-power": 80,
+			"trainer-energy": 45
 		},
 		"CHRG_DRA_OUTRAGE": {
 			"type": "Dragon",
@@ -1414,7 +1434,7 @@ const dbmoves = {
 			"raid-energy": 50,
 			"raid-duration": 3.0,
 			"trainer-power": 70,
-			"trainer-energy": 50
+			"trainer-energy": 45
 		},
 		"CHRG_ELE_TECHNOBLAST": {
 			"type": "Electric",
@@ -1446,15 +1466,15 @@ const dbmoves = {
 			"trainer-power": 90,
 			"trainer-energy": 55
 		},
-		"CHRG_ELE_THUNDERCAGE": { // TODO Fill me in
+		"CHRG_ELE_THUNDERCAGE": {
 			"type": "Electric",
 			"name": "Thunder Cage",
 			"name-ital": "Elettrogabbia",
-			"raid-power": 0,
-			"raid-energy": 0,
-			"raid-duration": 0.0,
-			"trainer-power": 0,
-			"trainer-energy": 0
+			"raid-power": 220,
+			"raid-energy": 100,
+			"raid-duration": 3.3,
+			"trainer-power": 60,
+			"trainer-energy": 40
 		},
 		"CHRG_ELE_THUNDERPUNCH": {
 			"type": "Electric",
@@ -2601,15 +2621,15 @@ const dbmoves = {
 			"raid-energy": 0,
 			"raid-duration": 2.0
 		},
-		"CHRG_NOR_CRUSHGRIP": { // TODO fill me in
+		"CHRG_NOR_CRUSHGRIP": {
 			"type": "Normal",
 			"name": "Crush Grip",
 			"name-ital": "Sbriciolmano",
-			"raid-power": 0,
-			"raid-energy": 0,
-			"raid-duration": 0.0,
-			"trainer-power": 0,
-			"trainer-energy": 0
+			"raid-power": 210,
+			"raid-energy": 100,
+			"raid-duration": 1.8,
+			"trainer-power": 110,
+			"trainer-energy": 50
 		},
 		"CHRG_NOR_FRUSTRATION": {
 			"type": "Normal",
@@ -3070,25 +3090,25 @@ const dbmoves = {
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
-		"CHRG_STE_BEHEMOTHBASH": { // TODO Fill me in
+		"CHRG_STE_BEHEMOTHBASH": {
 			"type": "Steel",
 			"name": "Behemoth Bash",
 			"name-ital": "Colpo Maestoso",
-			"raid-power": 0,
-			"raid-energy": 0,
-			"raid-duration": 0.0,
-			"trainer-power": 0,
-			"trainer-energy": 0
+			"raid-power": 125,
+			"raid-energy": 50,
+			"raid-duration": 1.5,
+			"trainer-power": 80,
+			"trainer-energy": 45
 		},
-		"CHRG_STE_BEHEMOTHBLADE": { // TODO Fill me in
+		"CHRG_STE_BEHEMOTHBLADE": {
 			"type": "Steel",
 			"name": "Behemoth Blade",
 			"name-ital": "Taglio Maestoso",
-			"raid-power": 0,
-			"raid-energy": 0,
-			"raid-duration": 0.0,
-			"trainer-power": 0,
-			"trainer-energy": 0
+			"raid-power": 200,
+			"raid-energy": 100,
+			"raid-duration": 3.5,
+			"trainer-power": 100,
+			"trainer-energy": 55
 		},
 		"CHRG_STE_DOOMDESIRE": {
 			"type": "Steel",
@@ -3097,7 +3117,7 @@ const dbmoves = {
 			"raid-power": 65,
 			"raid-energy": 33,
 			"raid-duration": 1.5,
-			"trainer-power": 75,
+			"trainer-power": 80,
 			"trainer-energy": 40
 		},
 		"CHRG_STE_DOUBLEIRONBASH": {
@@ -3107,7 +3127,7 @@ const dbmoves = {
 			"raid-power": 70,
 			"raid-energy": 33,
 			"raid-duration": 2.0,
-			"trainer-power": 50,
+			"trainer-power": 55,
 			"trainer-energy": 35
 		},
 		"CHRG_STE_FLASHCANNON": {
@@ -3372,6 +3392,16 @@ const dbmoves = {
 		}
 	},
 	"dyna-moves": {
+		"DYNA_888-C": {
+			"type": "Steel",
+			"name": "Behemoth Blade",
+			"name-ital": "Taglio Maestoso",
+		},
+		"DYNA_889-C": {
+			"type": "Steel",
+			"name": "Behemoth Bash",
+			"name-ital": "Colpo Maestoso",
+		},
 		"DYNA_BUG": {
 			"type": "Bug",
 			"name": "Max Flutterby",
