@@ -7983,7 +7983,8 @@ const	dbpokemon = {
 				"in-game": "2016-07-06",
 				"shiny": "2018-05-24",
 				"shadow": "2020-02-03",
-				"shiny-shadow": "2020-10-12"
+				"shiny-shadow": "2020-10-12",
+				"dynamax": "2025-08-05"
 			},
 			"category": "Spiral",
 			"type": [ "Rock", "Water" ],
@@ -7992,6 +7993,7 @@ const	dbpokemon = {
 			"base-attack": 155,
 			"base-defense": 153,
 			"dynamax-class": 3,
+			"max-battle-tier": 2, // TODO confirm prediction
 			"fast-moves": [
 				"FAST_WAT_WATERGUN",
 				"FAST_GRO_MUDSHOT"
@@ -26912,7 +26914,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game": "2020-01-10",
 				"shiny": "2021-04-20",
-				"shadow": "2025-01-15"
+				"shadow": "2025-01-15",
+				"dynamax": "2025-08-11"
 			},
 			"category": "Trash Bag",
 			"type": [ "Poison" ],
@@ -26921,6 +26924,7 @@ const	dbpokemon = {
 			"base-attack": 96,
 			"base-defense": 122,
 			"dynamax-class": 2,
+			"max-battle-tier": 2, // TODO confirm prediction
 			"fast-moves": [
 				"FAST_NOR_POUND",
 				"FAST_NOR_TAKEDOWN"
@@ -26949,7 +26953,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game": "2020-01-10",
 				"shiny": "2021-04-20",
-				"shadow": "2025-01-15"
+				"shadow": "2025-01-15",
+				"dynamax": "2025-08-11"
 			},
 			"category": "Trash Heap",
 			"type": [ "Poison" ],
@@ -31901,6 +31906,9 @@ const	dbpokemon = {
 			"category": "Sword",
 			"type": [ "Steel", "Ghost" ],
 			"evolves-into": [ "680" ],
+			"base-stamina": 128,
+			"base-attack": 135,
+			"base-defense": 139,
 			"dynamax-class": 3,
 			"fast-moves": [
 				"FAST_NOR_TACKLE",
@@ -31933,6 +31941,9 @@ const	dbpokemon = {
 			"type": [ "Steel", "Ghost" ],
 			"evolves-from": "679",
 			"evolves-into": [ "681-0" ],
+			"base-stamina": 153,
+			"base-attack": 188,
+			"base-defense": 206,
 			"dynamax-class": 3,
 			"fast-moves": [
 				"FAST_NOR_TACKLE",
@@ -31996,6 +32007,9 @@ const	dbpokemon = {
 				"form": "Shield Forme",
 				"form-ital": "Forma Scudo"
 			},
+			"base-stamina": 155,
+			"base-attack": 97,
+			"base-defense": 272,
 			"size-calc-ignore": true
 		},
 		"681-B": {
@@ -32005,6 +32019,9 @@ const	dbpokemon = {
 				"form": "Blade Forme",
 				"form-ital": "Forma Spada"
 			},
+			"base-stamina": 155,
+			"base-attack": 272,
+			"base-defense": 97,
 			"size-calc-ignore": true
 		},
 		"682": {
@@ -42041,10 +42058,14 @@ const	dbpokemon = {
 				"FAST_FLY_WINGATTACK"
 			],
 			"charged-moves": [
-				"CHRG_WAT_AQUAJET",
+				"CHRG_FIG_CLOSECOMBAT",
 				"CHRG_FLY_AERIALACE",
-				"CHRG_WAT_LIQUIDATION",
-				"CHRG_FIG_CLOSECOMBAT"
+				"CHRG_WAT_AQUAJET",
+				"CHRG_WAT_AQUASTEP",
+				"CHRG_WAT_LIQUIDATION"
+			],
+			"special-charged-moves": [
+				"CHRG_WAT_HYDROCANNON"
 			],
 			"height-avg": 1.8,
 			"weight-avg": 61.9,
