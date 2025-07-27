@@ -64,18 +64,6 @@ function hasGigamax( di ) {
 	return dbpokemon.gigadex.includes( di );
 }
 
-function isGigamax( di ) {
-	let		fd;
-
-	fd = getPkmnField( di, "form-data" );
-
-	if( ! fd )
-		return false;
-	if( ! fd.type )
-		return false;
-	return fd.type == "Giga";
-}
-
 function getMaxBossMoveset( di ) {
 	let		ret;
 	let		i, j, k, t;

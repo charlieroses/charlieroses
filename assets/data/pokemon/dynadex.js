@@ -1,4 +1,7 @@
-// Truncated Pokedex of Dynavailability?
+function getDexOrder() {
+	return dbpokemon.order;
+}
+
 function getPkmn( di ) {
 	if( ! dbpokemon.entries[di] )
 		return 0;
@@ -8,7 +11,7 @@ function getPkmn( di ) {
 function getPkmnField( di, f ) {
 	if( ! dbpokemon.entries[di] )
 		return 0;
-	if( ! dbpokemon.entries[di][f] ) {
+	if( ! dbpokemon.entries[di].hasOwnProperty(f) ) {
 		if( ! dbpokemon.entries[di]["form-data"] )
 			return 0;
 		else
@@ -16,6 +19,7 @@ function getPkmnField( di, f ) {
 	}
 	return dbpokemon.entries[di][f];
 }
+
 function getPkmnFormField( di, f ) {
 	let		fd;
 	if( ! dbpokemon.entries[di] )
@@ -115,6 +119,37 @@ function isMega( di ) {
 	return field["type"] == "Mega";
 }
 
+function isGigamax( di ) {
+	let		fd;
+
+	fd = getPkmnField( di, "form-data" );
+
+	if( ! fd )
+		return false;
+	if( ! fd.type )
+		return false;
+	return fd.type == "Giga";
+}
+
+function skipSizeCalc( di ) {
+	let		szdata;
+
+	if( getPkmnField(di,"size-calc-ignore") )
+		return true;
+	if( isMega(di) )
+		return true;
+	if( isGigamax(di) )
+		return true;
+
+	szdata = getPkmnField( di, "size-data" );
+	if( ! szdata )
+		return true;
+	if( ! szdata["class"] )
+		return true;
+
+	return false;
+}
+
 function getPkmnBaseForm( di ) {
 	let		field;
 	if( ! getPkmnField(di,"form-data" ) )
@@ -123,12 +158,32 @@ function getPkmnBaseForm( di ) {
 	if( ! field["base"] )
 		return di;
 	return field["base"];
-	
 }
 
 // TODO return "Name (form)"
 function getPkmnNameWithForm( di ) {
-	return "";
+	let		r, n, f;
+
+	n = getPkmnField( di, "name" );
+	if( ! isForm(di) )
+		return n;
+	if( isMega(di) ) {
+		if( n.startsWith("Mega ") || n.startsWith("Primal") )
+			return n;
+		return "Mega " + n;
+	}
+	if( isGigamax(di) && di != "890" )
+		return "Gigantamax" + n;
+	if( getPkmnFormField(di,"type") == "Regional" ) {
+		r = getPkmnFormField(di,"region");
+		if( n.startsWith(r) )
+			return n;
+		return r + " " + n;
+	}
+	f = getPkmnFormField( di, "form" );
+	if( f )
+		return n + " (" + f + ")";
+	return n;
 }
 
 function getPkmnDisplayName( di ) {
@@ -140,9 +195,31 @@ function getPkmnDisplayName( di ) {
 	if( ! name )
 		return 0;
 
-	if( isGigamax( di ) )
+	if( isGigamax( di ) && di != "890-G" )
 		return "Gigantamax " + name;
 	return name;
+}
+
+function getPkmnHtRange( di, sz ) {
+	let		szdata;
+
+	szdata = getPkmnField( di, "size-data" );
+	if( ! szdata )
+		return 0;
+	if( ! szdata[sz] )
+		return 0;
+	return szdata[sz];
+}
+
+function getPkmnSizeClass( di ) {
+	let		szdata;
+
+	szdata = getPkmnField( di, "size-data" );
+	if( ! szdata )
+		return 0;
+	if( ! szdata["class"] )
+		return 0;
+	return szdata["class"];
 }
 
 function getPkmnMaxBattleTier( di ) {
@@ -256,15 +333,14 @@ function getPkmnTypeAdvantage( di ) {
 
 }
 
-// TODO do I need this or can I have field return something
-function getPkmnEvolvesInto( di ) {
+function hasEvolutions( di ) {
 	let		pkmn;
 	pkmn = getPkmn( di );
 	if( ! pkmn )
-		return [];
-	if( ! pkmn["evolves-into"] )
-		return [];
-	return pkmn["evolves-into"];
+		return false;
+	if( getPkmnField(di,"evolves-into") )
+		return true;
+	return false;
 }
 
 function getPkmnAllEvolutions( di ) {
@@ -272,6 +348,17 @@ function getPkmnAllEvolutions( di ) {
 	let		evs, e;
 
 	ret = []
+
+	if( isForm(di) && getPkmnFormField(di,"interchangable") ) {
+		evs = getPkmnField( getPkmnBaseForm(di), "forms" );
+		for( e = 0; e < evs.length; e++ ) {
+			if( evs[e] == di )
+				continue;
+			ret.push( evs[e] );
+		}
+	}
+
+
 	evs = getPkmnField( di, "evolves-into" );
 	if( evs == 0 )
 		return ret;
@@ -280,32 +367,6 @@ function getPkmnAllEvolutions( di ) {
 	for( e = 0; e < ret.length; e++ ) {
 		evs = getPkmnAllEvolutions( ret[e] );
 		ret = ret.concat( evs );
-	}
-
-	return ret;
-}
-
-function getPkmnSizeCalcEvolutions( di ) {
-	let		evs, e;
-	let		ret;
-
-	if( di.startsWith( "720" ) ) { // Hoopa
-		evs = getPkmnField( getPkmnBaseForm(di), "forms" );
-		ret = [];
-		for( e = 0; e < evs.length; e++ ) {
-			if( evs[e] == di )
-				continue;
-			ret.push( evs[e] );
-		}
-		return ret;
-	}
-
-	ret = [];
-	evs = getPkmnAllEvolutions( di );
-	for( e = 0; e < evs.length; e++ ) {
-		if( getPkmnField( evs[e], "size-calc-ignore") )
-			continue;
-		ret.push( evs[e] );
 	}
 
 	return ret;
@@ -472,31 +533,6 @@ function pkmnHP( di, lvl, ivs ) {
 }
 
 const	dbpokemon = {
-	"size-calc-blacklist": [ ], // TODO
-	// TODO finish filling in availability
-	//		getAvailability( dexindex, field )
-	//		getDynaDex based on availabiltiy (filter)
-	"dynadex": [
-		"1",	"2",	"3",
-		"4",	"5",	"6",
-		"7",	"8",	"9",
-		"66",	"67",	"68",
-		"92",	"93",	"94",
-		"98",	"99",
-		"131",
-		"144",	"145",	"146",
-		"374",	"375",	"376",
-		"529",	"530",
-		"615",
-		"810",	"811",	"812",
-		"813",	"814",	"815",
-		"816",	"817",	"818",
-		"819",	"820",
-		"831",	"832",
-		"849",
-		"870"
-	],
-	"gigadex": [ "3-G", "6-G", "9-G", "94-G", "99-G", "131-G", "849-G" ],
 	"entries": {
 		"1": {
 			"dex-index": "1",
@@ -1150,7 +1186,8 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game": "2025-08-03",
+				"shiny": "2025-08-03"
 			}
 		},
 		"13": {
@@ -7437,6 +7474,7 @@ const	dbpokemon = {
 		},
 		"128-P": {
 			"dex-index": "128-P",
+			"name": "Paldean Tauros",
 			"form-data": {
 				"base": "128",
 				"type": "Regional",
@@ -16045,7 +16083,7 @@ const	dbpokemon = {
 			"base-attack": 136,
 			"base-defense": 68,
 			"dynamax-class": 1,
-			"max-battle-tier": 2, // TODO Guess
+			"max-battle-tier": 2, // Correct guess!
 			"fast-moves": [
 				"FAST_ROC_ROLLOUT",
 				"FAST_WAT_SPLASH",
@@ -18550,7 +18588,7 @@ const	dbpokemon = {
 				"in-game": "2018-04-02",
 				"shiny": "2019-02-22",
 				"shadow": "2022-04-03",
-				"dynamax": "2025-07-25"
+				"dynamax": "2025-07-26"
 			},
 			"category": "Eon",
 			"legendary": true,
@@ -18619,7 +18657,7 @@ const	dbpokemon = {
 				"in-game": "2018-04-02",
 				"shiny": "2019-04-15",
 				"shadow": "2022-07-09",
-				"dynamax": "2025-07-25"
+				"dynamax": "2025-07-26"
 			},
 			"category": "Eon",
 			"legendary": true,
@@ -26032,6 +26070,16 @@ const	dbpokemon = {
 				"CHRG_GRA_PETALBLIZZARD",
 				"CHRG_GRA_SOLARBEAM"
 			]
+//			"height-avg": 1.2,
+//			"weight-avg": 19.2,
+//			"size-data": { // TODO not in game master
+//				"class": 0,
+//				"xxs":	[ 0.588, 0.6 ],
+//				"xs":	[ 0.6, 0.9 ],
+//				"m":	[ 0.9, 1.5 ],
+//				"xl":	[ 1.5, 1.8 ],
+//				"xxl":	[ 1.8, ]
+//			}
 		},
 		"550-0": {
 			"dex-index": "550-0",
@@ -33386,9 +33434,9 @@ const	dbpokemon = {
 				"CHRG_ROC_ROCKSLIDE",
 				"CHRG_ICE_BLIZZARD",
 				"CHRG_ICE_ICYWIND"
-			],
-			"height-avg": 1.4,
-			"weight-avg": 262.4
+			]
+//			"height-avg": 1.4,
+//			"weight-avg": 262.4
 		},
 		"714": {
 			"dex-index": "714",
@@ -40808,7 +40856,8 @@ const	dbpokemon = {
 			"form-data": {
 				"base": "888-0",
 				"name": "Crowned Sword",
-				"name-ital": "Re delle Spade"
+				"name-ital": "Re delle Spade",
+				"interchangable": true
 			},
 			"availability": {
 				"in-game": "2025-05-29",
@@ -40879,7 +40928,8 @@ const	dbpokemon = {
 			"form-data": {
 				"base": "889-0",
 				"name": "Crowned Shield",
-				"name-ital": "Re degli Scudi"
+				"name-ital": "Re degli Scudi",
+				"interchangable": true
 			},
 			"availability": {
 				"in-game": "2025-05-29",
@@ -43266,7 +43316,7 @@ const	dbpokemon = {
 			"dex-index": "948",
 			"name": "Toedscool",
 			"availability": {
-				"in-game": false
+				"in-game": "2025-07-29"
 			},
 			"category": "Woodear",
 			"type": [ "Ground", "Grass" ],
@@ -43301,7 +43351,7 @@ const	dbpokemon = {
 			"dex-index": "949",
 			"name": "Toedscruel",
 			"availability": {
-				"in-game": false
+				"in-game": "2025-07-29"
 			},
 			"category": "Woodear",
 			"type": [ "Ground", "Grass" ],
@@ -43691,7 +43741,8 @@ const	dbpokemon = {
 			"dex-index": "960",
 			"name": "Wiglett",
 			"availability": {
-				"in-game": "2024-04-22"
+				"in-game": "2024-04-22",
+				"shiny": "2025-07-29"
 			},
 			"category": "Garden Eel",
 			"type": [ "Water" ],
@@ -43726,7 +43777,8 @@ const	dbpokemon = {
 			"dex-index": "961",
 			"name": "Wugtrio",
 			"availability": {
-				"in-game": "2024-04-22"
+				"in-game": "2024-04-22",
+				"shiny": "2025-07-29"
 			},
 			"category": "Garden Eel",
 			"type": [ "Water" ],
@@ -45765,7 +45817,7 @@ const	dbpokemon = {
 		"46", "47",
 		"48", "49",
 		"50", "50-A", "51", "51-A",
-		"52", "52-A", "52-2", "52-G", "53", "53-A",
+		"52", "52-A", "52-Ga", "52-Gi", "53", "53-A",
 		"54", "55",
 		"56", "57",
 		"58", "58-H", "59", "59-H",

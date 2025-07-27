@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="icon" href="/pokemon/favicon.ico" type="image/icon" sizes="any" />
+<link rel="icon" href="/pokemon/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/pokemon/apple-touch-icon.png" />
+<link rel="manifest" href="/pokemon/manifest.webmanifest" />
+<link rel="stylesheet" href="/assets/styles/base.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/base.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/go.css" type="text/css" />
+<meta name="theme-color" content="#35507C" />
+
+<title>Max Battle Guides</title>
+
+<link rel="stylesheet" href="/assets/styles/accessible-autocomplete.min.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/card.css" type="text/css" />
+<link rel="stylesheet" href="/assets/styles/pokemon/dynacalc.css" type="text/css" />
+
+<script type="text/javascript" src="/assets/data/pokemon/dynadex.js"></script>
+<script type="text/javascript" src="/assets/data/pokemon/dynamax.js"></script>
+<script type="text/javascript" src="/assets/data/pokemon/types.js"></script>
+<script type="text/javascript" src="/assets/data/pokemon/moves.js"></script>
+<script type="text/javascript" src="/assets/data/pokemon/levels.js"></script>
+<script type="text/javascript" src="/assets/js/accessible-autocomplete.min.js"></script>
+<script type="text/javascript" src="/assets/js/pokemon/base.js"></script>
+<script type="text/javascript" src="/assets/js/pokemon/card.js"></script>
+<script type="text/javascript" src="/assets/js/pokemon/dynateam.js"></script>
+<script type="text/javascript" src="/assets/js/pokemon/raikou.js"></script>
+</head>
+<body>
+<header id="top">
+<h1 id="evolution-showcase-calculator">Max Battle Team Builder</h1>
+<div class="pokeball-divider">
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+</div>
+</header>
+<main id="main">
+<p>
+Most max battle and raid guides typically only list the top
+counters for each boss.
+For raids, if you don't have any of the good counters, it's
+less an issue because you can rejoin the battle and
+<a href="https://www.dictionary.com/e/slang/zerg-rush/">zerg rush</a> the boss.
+For max battles where you only get 3 pokemon, it can be a bit
+of a problem.
+Strong Dynamax pokemon are also extremely expensive and some
+have extremely limited availability, like Gigantamax Lapras
+who was only available for 3 hours.
+</p>
+<p>
+Each guide lists out <em>every</em> available Dynamax Pokemon
+and how they stack up against each Max Battle boss so that you can
+build the best team possible based on the Pokemon and resources
+that you have available.
+</p>
+
+<div class="pokeball-divider">
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+</div>
+
+<div id="skip-navigation"><a href="#boss-pokemon-info">Skip navigation</a></div>
+<nav aria-label="Page Navigation">
+<ul>
+<li><a href="#three-star-max-battles">3&starf; Max Battles</a></li>
+<li><a href="#four-star-max-battles">4&starf; Max Battles</a></li>
+<li><a href="#five-star-max-battles">5&starf; Legendary Max Battles</a></li>
+<li><a href="#six-star-max-battles">6&starf; G-Max Battles</a></li>
+<li><a href="#more-information">More Information</a></li>
+</ul>
+</nav>
+
+<h2 id="three-star-max-battles">3&starf; Max Battles</h2>
+<output id="three-star-list"></output>
+<div class="pokeball-divider">
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+</div>
+
+<h2 id="four-star-max-battles">4&starf; Max Battles</h2>
+<output id="four-star-list"></output>
+<div class="pokeball-divider">
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+</div>
+
+<h2 id="five-star-max-battles">5&starf; Legendary Max Battles</h2>
+<output id="five-star-list"></output>
+<div class="pokeball-divider">
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+</div>
+
+<h2 id="six-star-max-battles">6&starf; Gigantamax Battles</h2>
+<output id="six-star-list"></output>
+<div class="pokeball-divider">
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+</div>
+
+<script>init_maxbattleindex();</script>
+<div class="pokeball-divider">
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
+</div>
+<details id="more-information">
+<summary>
+<img alt="" src="/assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="quick-share">Quick Share</h2>
+</summary>
+<p>
+Scan the QR code below to share this tool</p>
+<img alt="QR Code to this site" src="/assets/images/pokemon/qr/maxbattleguides.png" id="qr-code" /></details>
+</main>
+<footer id="bottom">
+<details>
+<summary>
+<img alt="" src="/assets/icons/pokemon/pokeball.svg" class="pokeball-marker" /><h2 id="support-me">Support Me</h2>
+</summary>
+<p>
+I'm a disabled independent developer working on small
+independent projects in an effort to recover from a
+traumatic brain injury.
+I have no affiliation with Niantic or the Pokemon Company.
+I don't get paid to make or maintain tools like this.
+If you think I should get paid and wanna see more, or if
+you just want to support my health and recovery, send me a
+<a href="https://ko-fi.com/charlierosesdev">Ko-fi</a>.
+</p>
+<div class="back-to-top">
+<a href="#top">Back to top</a></div>
+</details>
+</footer>
+</body>
+</html>

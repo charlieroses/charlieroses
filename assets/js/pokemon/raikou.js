@@ -452,6 +452,9 @@ function new_init( gpkmn ) {
 	if( Date.parse(date) < Date.now() )
 		date = getToday();
 	dpkmn = getAvailableDynaPkmn( date );
+
+	// TODO need more info on eternatus before including him
+	dpkmn = dpkmn.filter( di => di != "890-G" );
 	
 	atk = rankMaxAttack( dpkmn, gpkmn );
 	grd = rankMaxGuard( dpkmn, gpkmn );

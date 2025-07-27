@@ -1,29 +1,77 @@
-const	hardcode = {
-	"144": {
-		"satk": [ "376" ],
-		"watk": [ "6", "849", "99", "815", "530", "68" ],
-		"sdef": [ "144", "131", "615", "9", "832", "820" ],
-		"wdef": [ "870", "94", "818" ]
-	},
-	"145": {
-		"satk": [ ],
-		"watk": [ "131", "94", "144", "615" ],
-		"sdef": [ "530" ],
-		"wdef": [ "376", "812", "3" ]
-	},
-	"146": {
-		"satk": [ ],
-		"watk": [ "99", "849", "94", "9", "818", "145", "131" ],
-		"sdef": [ ],
-		"wdef": [ "376", "820", "815", "530", "68", "6" ]
-	},
-	"99-G": {
-		"satk": [ "3", "812" ],
-		"watk": [ "849", "145", "820" ],
-		"sdef": [ "131", "9", "376", "144", ],
-		"wdef": [ "68", "94", "870", "832" ]
+function init_maxbattleindex( ) {
+	let		tiers = { 3: "three", 4: "four", 5: "five", 6: "six" };
+	let		maxbattles;
+	let		t, di, tier, out, card;
+	let		div, s, row;
+
+	maxbattles = getAllMaxBattles();
+
+	for( t in tiers ) {
+		tier = maxbattles.filter( di => getPkmnMaxBattleTier(di)==t );
+		out = document.getElementById( tiers[t] + "-star-list" );
+		card = pokecard();
+		out.appendChild( card );
+
+		div = dcE( "div" );
+		div.setAttribute( "class", "tier-icon" );
+		for( s = 0; s < t; s++ ) {
+			if( t == 6 )
+				div.appendChild( getIcon("Gigantamax") );
+			else
+				div.appendChild( getIcon("Dynamax") );
+			div.lastChild.alt = "";
+		}
+		appendToTitle( card, div );
+
+		row = AppendRow( card, cardRow() );
+		row.classList.add( "battle-cost" );
+		row.appendChild( getIcon("Max Particles") );
+		row.lastChild.setAttribute( "alt", "" );
+		row.appendChild( document.createElement("div") );
+		row.lastChild.appendChild( document.createTextNode(getMaxBattleCost(t)+" Max Particles") );
+
+		for( di = 0; di < tier.length; di++ )
+			AppendRow( card, linktoguide(tier[di]) );
+		AppendRow( card, cardRowBackToTop() );
 	}
-};
+}
+
+function linktoguide( di ) {
+	let		link, href, div;
+
+	link = dcE( "a" );
+	href = getPkmnField(di,"name");
+	href = href.toLowerCase();
+	href = href.replaceAll( " ", "" );
+	if( isGigamax(di) && di != "890-G" )
+		href = "gmax" + href;
+	link.setAttribute( "href", href );
+	link.setAttribute( "class", "guide-link-a" );
+
+	div = dcE( "div" );
+	link.appendChild( div );
+	div.setAttribute( "class", "guide-link" );
+	div.appendChild( pokeballMarker() );
+
+	div.appendChild( dcE( "div" ) );
+	div.lastChild.setAttribute( "class", "title" );
+	div.lastChild.appendChild( dcE( "div" ) );
+	div.lastChild.lastChild.setAttribute( "class", "name" );
+	if( isGigamax(di) && di != "890-G" )
+		div.lastChild.lastChild.appendChild( dcTN( "G-Max " + getPkmnField(di,"name") ) );
+	else
+		div.lastChild.lastChild.appendChild( dcTN( getPkmnField(di,"name") ) );
+
+	if( isForm(di) && ! isGigamax(di) ) {
+		div.lastChild.lastChild.appendChild( dcE("br") );
+		div.lastChild.lastChild.appendChild( dcE("span") );
+		div.lastChild.lastChild.lastChild.appendChild( dcTN( getPkmnFormField(di,"name")) );
+		div.lastChild.lastChild.lastChild.setAttribute( "class", "form-subname" );
+	}
+	div.lastChild.appendChild( getPkmnSprite(di) );
+	
+	return link;
+}
 
 function init_basic( gpkmni ) {
 	let		spans, s;

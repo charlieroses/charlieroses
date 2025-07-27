@@ -50,7 +50,29 @@ function getIconSrc( name ) {
 	let		path;
 	path = name.toLowerCase().replaceAll(" ","");
 	return assetsbase + "icons/pokemon/go/" + path + ".png";
+}
 
+function getPokeballIcon( color="yellow" ) {
+	let		img;
+
+	img = dcE( "img" );
+	img.setAttribute( "alt", "" );
+	img.setAttribute( "src", assetsbase + "icons/pokemon/pokeball.svg" );
+	img.setAttribute( "class", "pokeball-" + color );
+
+	return img;
+}
+
+function pokeballdivider( ) {
+	let		div, i;
+
+	div = dcE( "div" );
+	div.setAttribute( "class", "pokeball-divider" );
+
+	for( i = 0; i < 3; i++ )
+		div.appendChild( getPokeballIcon() );
+
+	return div;
 }
 
 function getPkmnSprite( dpkmn ) {
@@ -72,6 +94,17 @@ function getIVBarSrc( n ) {
 	return assetsbase + "icons/pokemon/go/iv/" + src + ".svg";
 }
 
+function pokeballMarker( ) {
+	let		img;
+
+	img = document.createElement( "img" );
+	img.setAttribute( "class", "pokeball-marker" );
+	img.setAttribute( "src", assetsbase + "icons/pokemon/pokeball.svg" );
+	img.setAttribute( "alt", "" );
+
+	return img;
+}
+
 function pkmnDetailsSummary() {
 	let		det, sum, img, div;
 
@@ -80,10 +113,7 @@ function pkmnDetailsSummary() {
 
 	sum = document.createElement( "summary" );
 
-	img = document.createElement( "img" );
-	img.setAttribute( "class", "pokeball-marker" );
-	img.setAttribute( "src", assetsbase + "icons/pokemon/pokeball.svg" );
-	img.setAttribute( "alt", "" );
+	img = pokeballMarker();
 
 	div = document.createElement( "div" );
 	div.setAttribute( "class", "pkmn-summary" );

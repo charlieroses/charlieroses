@@ -31,7 +31,7 @@
 
 	--filter-pkmn-yellow: invert(84%) sepia(35%) saturate(2854%) hue-rotate(357deg) brightness(101%) contrast(99%);
 	--filter-pkmn-red: invert(12%) sepia(95%) saturate(6730%) hue-rotate(29deg) brightness(94%) contrast(94%);
-
+	--filter-white: brightness(0) saturate(100%) invert(100%) sepia(4%) saturate(7443%) hue-rotate(187deg) brightness(103%) contrast(113%);
 	--acciaio: #5a90a9;
 	--acqua: #5395de;
 	--buio: #4a4858;
@@ -125,7 +125,8 @@ details {
 	padding: 0;
 	text-align: start;
 }
-summary {
+summary,
+.guide-link {
 	cursor: pointer;
 	list-style: none;
 	border-radius: 1rem;
@@ -139,7 +140,8 @@ summary {
 summary::-webkit-details-marker {
 	display: none;
 }
-summary > .pokeball-marker {
+summary > .pokeball-marker,
+.guide-link > .pokeball-marker {
 	display: inline-block;
 	width: 1em;
 	content: url( "../../icons/pokemon/pokeball.svg" );

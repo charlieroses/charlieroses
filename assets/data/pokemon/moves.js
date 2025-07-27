@@ -3220,6 +3220,16 @@ const dbmoves = {
 			"trainer-power": 70,
 			"trainer-energy": 40
 		},
+		"CHRG_WAT_AQUASTEP": {
+			"type": "Water",
+			"name": "Aqua Step",
+			"name-ital": "Idroballetto",
+			"raid-power": 55,
+			"raid-energy": 33,
+			"raid-duration": 3.5,
+			"trainer-power": 55,
+			"trainer-energy": 40
+		},
 		"CHRG_WAT_AQUATAIL": {
 			"type": "Water",
 			"name": "Aqua Tail",
@@ -3679,6 +3689,12 @@ const dbmoves = {
 			"type": "Dragon",
 			"name": "G-Max Depletion",
 			"name-ital": "Gigalogoramento"
+		},
+		"890-G": {
+			"dex-index": "890-G",
+			"type": "Dragon",
+			"name": "Dynamax Cannon",
+			"name-ital": "Dynamax Cannon",
 		},
 		"892-G": {
 			"dex-index": "892-G",

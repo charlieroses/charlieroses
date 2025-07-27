@@ -22,7 +22,7 @@ function pokecard( title="", cols=1 ) {
 	}
 	else {
 		card.appendChild( document.createElement( "div" ) );
-		card.lastChild.classList.add( "card-blank-title" );
+		card.lastChild.classList.add( "card-title" );
 	}
 
 	card.appendChild( document.createElement( "div" ) );
@@ -66,6 +66,10 @@ function AppendRow( card, row, c=0 ) {
 	else
 		card.childNodes[2].childNodes[c].appendChild( row );
 	return row;
+}
+
+function appendToTitle( card, elem ) {
+	card.firstChild.appendChild( elem );
 }
 
 function appendRow( card, c, row ) {

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <link rel="icon" href="/pokemon/favicon.ico" type="image/icon" sizes="any" />
 <link rel="icon" href="/pokemon/icon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="/pokemon/apple-touch-icon.png" />
@@ -27,6 +28,7 @@
 <script type="text/javascript" src="/assets/js/pokemon/base.js"></script>
 <script type="text/javascript" src="/assets/js/pokemon/card.js"></script>
 <script type="text/javascript" src="/assets/js/pokemon/dynateam.js"></script>
+<script type="text/javascript" src="/assets/js/pokemon/raikou.js"></script>
 </head>
 <body>
 <header id="top">
@@ -64,30 +66,37 @@ that you have available.
 <div class="card-body card-cols-1"><div class="card-column card-col-0">
 	<div class="card-row">
 		<a href="#attack-pokemon-info">Attackers</a> have Max Attacks that are
-		supereffective against <span class="boss-name"></span>.
+		strong against <span class="boss-name"></span>.
 		An attacker with a
 		<img alt="Gigantamax" class="inline-icon gigantamax-icon" src="/assets/icons/pokemon/go/gigantamax.png" />
-		has a G-Max Attack that is supereffective against <span class="boss-name"></span>.
+		has a Gigantamax form available.
+		Attacker rankings are based on how much damage their strongest Max Attack
+		does.
+		A Pokemon's Dynamax form and Gigantamax form are ranked separately since
+		they have different attacks.
+		Note that G-Max Attacks aren't always more powerful than Max Attacks.
 	</div>
 	<div class="card-row">
-		<a href="#support-pokemon-info">Supporters</a> <em>do not</em> have
-		attacks that are supereffective against <span class="boss-name"></span>.
-		In the Dynamax Phase, instead of attacking, use Max Guard and Max Spirit to
-		heal and protect your team.
+		Pokemon with a high <a href="#guard-pokemon-info">Max Guard</a> rank can
+		take the most hits from <span class="boss-name"></span>'s attacks in the
+		Power Up Phase.
+		In the Dynamax Phase, instead of attacking, use Max Guard to deflect the
+		most attacks from other weaker pokemon.
 		When picking a fast move, pick whichever is the quickest, regardless of
 		effectiveness. Quick not very effective fast attacks charge the Max Meter
 		faster than slow supereffective fast attacks.
 	</div>
 	<div class="card-row">
-		Try to avoid <a href="#other-pokemon-info">Weak Supporters</a>, if you can.
-		These Pokemon are One Hit KO's, even when powered up to Level 40, the highest
-		level that doesn't require XL candy.
+		Pokemon with a high <a href="#spirit-pokemon-info">Max Spirit</a> rank
+		have the highest base HP. Their Max Spirit will give more HP back to other
+		pokemon.
+		In the Dynamax Phase, instead of attacking, use Max Spirit to heal yourself
+		and your teammates as much as possible to survive the next Power Up Phase.
 	</div>
 	<div class="card-row">
-		The Attackers and Supporters are sorted into "Safe" and "Fragile" defenses
-		based on how many hits they can take in the Power Up Phase at Level 40.
-		Fragile Pokemon should not be first in your party. Keep them out of the
-		Power Up Phase if you can.
+		If you can, try to avoid <a href="#other-pokemon-info">everyone else</a>.
+		These Pokemon aren't great at attacking, guarding, or healing.
+		They're listed here anyway 
 	</div>
 	<div class="card-row">
 		Click on a Pokemon for a full breakdown of effectiveness, fast attacks, and
@@ -95,6 +104,22 @@ that you have available.
 		A fast attack with a
 		<img alt="TM" class="inline-icon tm-icon" src="/assets/icons/pokemon/go/tm.png" />
 		icon can only be learned with an Elite TM.
+		More info coming soon.
+	</div>
+	<h3 class="card-row-header">Note</h3>
+	<div class="card-row">
+		This is a bit of a work in progress, but I wanted to get this out soon enough
+		that there's enough time to prepare a team.
+		I will be adding in the numbers behind the letter ranks so it's clear why each
+		pokemon got the rank it got and also settings to filter the results, I just
+		haven't had a chance to get to that yet.
+	</div>
+	<div class="card-row">
+		Additionally, Max Battles are still a fairly new and rapidly developing feature.
+		We're always learning more info as bigger (literally) challenges are thrown our
+		way. These rankings are my best educated suggestions based off of so much research
+		done by <a href="https://www.reddit.com/r/TheSilphRoad">r/TheSilphRoad</a>. I'll
+		include more specific references and thanks as I finish filling everything in.
 	</div>
 </div></div>
 </div>
@@ -105,11 +130,23 @@ that you have available.
 	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
 </div>
 
+<div id="skip-navigation"><a href="#boss-pokemon-info">Skip navigation</a></div>
+<nav aria-label="Page Navigation">
+<ul>
+<li><a href="#attack-pokemon-info">Max Attack</a></li>
+<li><a href="#guard-pokemon-info">Max Guard</a></li>
+<li><a href="#spirit-pokemon-info">Max Spirit</a></li>
+<li><a href="#other-pokemon-info">All Max Pokemon</a></li>
+<li><a href="#more-information">More Information</a></li>
+</ul>
+</nav>
+
 <output id="boss-pokemon-info"></output>
 <output id="attack-pokemon-info"></output>
-<output id="support-pokemon-info"></output>
+<output id="guard-pokemon-info"></output>
+<output id="spirit-pokemon-info"></output>
 <output id="other-pokemon-info"></output>
-<script>init_basic("146");</script>
+<script>new_init("146");</script>
 <div class="pokeball-divider">
 	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
 	<img alt="" src="/assets/icons/pokemon/pokeball.svg" />
