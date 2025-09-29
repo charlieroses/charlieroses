@@ -712,6 +712,11 @@ function powerUpCostTable( clss ) {
 			tbody.lastChild.lastChild.appendChild( document.createTextNode( cost["dust"] ) );
 			tbody.lastChild.lastChild.appendChild( getIcon("Max Particles") );
 		}
+		if( cost["stardust"] ) {
+			tbody.lastChild.appendChild( document.createElement( "div" ) );
+			tbody.lastChild.lastChild.appendChild( document.createTextNode( cost["stardust"] ) );
+			tbody.lastChild.lastChild.appendChild( getIcon("Stardust") );
+		}
 	}
 
 	return tbl;

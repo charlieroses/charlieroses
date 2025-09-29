@@ -163,7 +163,10 @@ function getPowerUpCost( clss, level ) {
 
 	ret["candy"] = dbdynamax["moves"]["cost"][clss]["candy"][level-1];
 	ret["xl"] = dbdynamax["moves"]["cost"][clss]["xl"][level-1];
-	ret["dust"] = dbdynamax["moves"]["cost"]["dust"][level-1];
+	if( clss == "Z" )
+		ret["stardust"] = dbdynamax["moves"]["cost"]["stardust"][level-1];
+	else
+		ret["dust"] = dbdynamax["moves"]["cost"]["dust"][level-1];
 
 	return ret;
 }
@@ -203,7 +206,7 @@ const dbdynamax= {
 		},
 		4: {
 			"cost": 800,
-			"cpm": 0,
+			"cpm": 0.6,
 			"hp": 20000 // according to pokechespin
 		},
 		5: {
@@ -220,27 +223,36 @@ const dbdynamax= {
 	"moves": {
 		"cost": {
 			"dust": [ 400, 600, 800 ],
+			"stardust": [ 25000, 50000, 100000 ],
 			1: {
-				"candy": [ 50, 100, 0 ],
-				"xl": [ 0, 0, 40 ]
+				"candy":	[ 50, 100,  0 ],
+				"xl":		[  0,   0, 40 ]
 			},
 			2: {
-				"candy": [ 60, 110, 0 ],
-				"xl": [ 0, 0, 45 ]
+				"candy":	[ 60, 110,  0 ],
+				"xl":		[  0,   0, 45 ]
 			},
 			3: {
-				"candy": [ 70, 120, 0 ],
-				"xl": [ 0, 0, 50 ]
+				"candy":	[ 70, 120,  0 ],
+				"xl":		[  0,   0, 50 ]
 			},
 			4: {
-				"candy": [ 80, 130, 0 ],
-				"xl": [ 0, 0, 55 ]
+				"candy":	[ 80, 130,  0 ],
+				"xl":		[  0,   0, 55 ]
+			},
+			8: {
+				"candy":	[ 400, 1200, 1200 ],
+				"xl":		[    0,   0,  320 ]
+			},
+			"Z": {
+				"candy":	[ 80, 130,  0 ],
+				"xl":		[  0,   0, 55 ]
 			}
 		},
-		"max-attack": [ 250, 300, 350 ],
-		"gmax-attack": [ 350, 400, 450 ],
-		"guard": [ 20, 40, 60 ],
-		"spirit": [ 8, 12, 16 ]
+		"max-attack":	[ 250, 300, 350, 400 ], // TODO check level 4
+		"gmax-attack":	[ 350, 400, 450, 500 ],
+		"guard":		[  20,  40,  60,  80 ],
+		"spirit":		[   8,  12,  16,  20 ]
 	},
 	"text": {
 		"srv": {

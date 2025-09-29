@@ -3260,6 +3260,16 @@ const dbmoves = {
 			"trainer-power": 25,
 			"trainer-energy": 40
 		},
+		"CHRG_WAT_CHILLINGWATER": { // TODO fill me in
+			"type": "Water",
+			"name": "Chilling Water",
+			"name-ital": "Doccia Fredda",
+			"raid-power": 65,
+			"raid-energy": 40,
+			"raid-duration": 0,
+			"trainer-power": 60,
+			"trainer-energy": 0
+		},
 		"CHRG_WAT_CRABHAMMER": {
 			"type": "Water",
 			"name": "Crabhammer",
