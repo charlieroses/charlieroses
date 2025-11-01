@@ -673,7 +673,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-08-27",
 				"shiny":	"2020-08-27",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 2.4,
 			"weight-avg": 155.5,
@@ -700,7 +700,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-10-26",
 				"shiny":	"2024-10-26",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 24
 		},
@@ -841,7 +841,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-08-27",
 				"shiny":	"2020-08-27",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 186,
 			"base-attack": 273,
@@ -869,7 +869,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-08-27",
 				"shiny":	"2020-08-27",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 186,
 			"base-attack": 319,
@@ -896,7 +896,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-10-26",
 				"shiny":	"2024-10-26",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 28
 		},
@@ -1032,7 +1032,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-08-27",
 				"shiny":	"2020-08-27",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 188,
 			"base-attack": 264,
@@ -1059,7 +1059,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-10-26",
 				"shiny":	"2024-10-26",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 25
 		},
@@ -1311,7 +1311,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-08-27",
 				"shiny":	"2020-08-27",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.4,
 			"weight-avg": 40.5,
@@ -1456,7 +1456,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-09-18",
 				"shiny":	"2020-09-18",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 195,
 			"base-attack": 280,
@@ -1838,7 +1838,7 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			}
 		},
 		"26": {
@@ -3296,7 +3296,7 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			}
 		},
 		"53": {
@@ -5618,7 +5618,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-10-24",
 				"shiny":	"2020-10-24",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.4,
 			"weight-avg": 40.5,
@@ -5645,7 +5645,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-10-31",
 				"shiny":	"2024-10-31",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 20
 		},
@@ -6707,7 +6707,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-04-29",
 				"shiny":	"2019-09-09",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 2.2,
 			"weight-avg": 100,
@@ -7246,7 +7246,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2023-05-11",
 				"shiny":	"2023-05-11",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.7,
 			"weight-avg": 59,
@@ -7462,7 +7462,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2021-02-09",
 				"shiny":	"2021-02-09",
-				"shadow": false
+				"shadow":	false
 			},
 			"type": [ "Water", "Dark" ],
 			"base-stamina": 216,
@@ -7534,7 +7534,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-12-08",
 				"shiny":	"2024-12-08",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 24,
 			"size-data": {
@@ -7582,7 +7582,8 @@ const	dbpokemon = {
 			"name": "Eevee",
 			"availability": {
 				"in-game":	"2016-07-06",
-				"shiny":	"2018-08-11"
+				"shiny":	"2018-08-11",
+				"dynamax":	"2025-11-24"
 			},
 			"forms": [ "133-G" ],
 			"category": "Evolution",
@@ -7622,7 +7623,7 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			}
 		},
 		"134": {
@@ -7630,7 +7631,8 @@ const	dbpokemon = {
 			"name": "Vaporeon",
 			"availability": {
 				"in-game":	"2016-07-06",
-				"shiny":	"2018-08-11"
+				"shiny":	"2018-08-11",
+				"dynamax":	"2025-11-24"
 			},
 			"category": "Bubble Jet",
 			"type": [ "Water" ],
@@ -7668,7 +7670,8 @@ const	dbpokemon = {
 			"name": "Jolteon",
 			"availability": {
 				"in-game":	"2016-07-06",
-				"shiny":	"2018-08-11"
+				"shiny":	"2018-08-11",
+				"dynamax":	"2025-11-24"
 			},
 			"category": "Lightning",
 			"type": [ "Electric" ],
@@ -7706,7 +7709,8 @@ const	dbpokemon = {
 			"name": "Flareon",
 			"availability": {
 				"in-game":	"2016-07-06",
-				"shiny":	"2018-08-11"
+				"shiny":	"2018-08-11",
+				"dynamax":	"2025-11-24"
 			},
 			"category": "Flame",
 			"type": [ "Fire" ],
@@ -7993,7 +7997,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-01-07",
 				"shiny":	"2022-01-07",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 2.1,
 			"weight-avg": 79,
@@ -8518,7 +8522,7 @@ const	dbpokemon = {
 				"type": "Mega"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"type": [ "Psychic", "Fighting" ],
 			"height-avg": 2.3,
@@ -8532,7 +8536,7 @@ const	dbpokemon = {
 				"type": "Mega"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"height-avg": 1.5,
 			"weight-avg": 33.0
@@ -8543,7 +8547,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-03-27",
 				"shiny":	"2021-02-20",
-				"shadow": false
+				"shadow":	false
 			},
 			"category": "New Species",
 			"type": [ "Psychic" ],
@@ -9814,7 +9818,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2021-01-18",
 				"shiny":	"2021-01-18",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 207,
 			"base-attack": 294,
@@ -10411,7 +10415,8 @@ const	dbpokemon = {
 			"name": "Espeon",
 			"availability": {
 				"in-game":	"2017-02-16",
-				"shiny":	"2018-08-11"
+				"shiny":	"2018-08-11",
+				"dynamax":	"2025-11-24"
 			},
 			"category": "Sun",
 			"type": [ "Psychic" ],
@@ -10450,7 +10455,8 @@ const	dbpokemon = {
 			"name": "Umbreon",
 			"availability": {
 				"in-game":	"2017-02-16",
-				"shiny":	"2018-08-11"
+				"shiny":	"2018-08-11",
+				"dynamax":	"2025-11-24"
 			},
 			"category": "Moonlight",
 			"type": [ "Dark" ],
@@ -10964,7 +10970,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2021-12-01",
 				"shiny":	"2019-06-04",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 10.5,
 			"weight-avg": 740,
@@ -11187,7 +11193,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-08-10",
 				"shiny":	"2022-08-10",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 2,
 			"weight-avg": 125,
@@ -11291,7 +11297,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-04-13",
 				"shiny":	"2024-04-13",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.7,
 			"weight-avg": 62.5,
@@ -11970,7 +11976,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-09-29",
 				"shiny":	"2020-09-29",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.9,
 			"weight-avg": 49.5,
@@ -12725,7 +12731,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2023-07-25",
 				"shiny":	"2023-07-25",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 2.5,
 			"weight-avg": 255,
@@ -13035,7 +13041,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-12-03",
 				"shiny":	"2022-12-03",
-				"shadow": false
+				"shadow":	false
 			},
 			"type": [ "Grass", "Dragon" ],
 			"height-avg": 1.9,
@@ -13180,7 +13186,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-12-03",
 				"shiny":	"2022-12-03",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.9,
 			"weight-avg": 52,
@@ -13324,7 +13330,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-12-03",
 				"shiny":	"2022-12-03",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.9,
 			"weight-avg": 102,
@@ -14142,7 +14148,8 @@ const	dbpokemon = {
 				"in-game":	"2017-12-08",
 				"shiny":	"2019-08-03",
 				"shadow":	"2019-08-08",
-				"sh-shiny":	"2024-10-08"
+				"sh-shiny":	"2024-10-08",
+				"dynamax":	"2025-11-10"
 			},
 			"category": "Feeling",
 			"type": [ "Psychic", "Fairy" ],
@@ -14180,7 +14187,8 @@ const	dbpokemon = {
 				"in-game":	"2017-12-08",
 				"shiny":	"2019-08-03",
 				"shadow":	"2019-08-08",
-				"sh-shiny":	"2024-10-08"
+				"sh-shiny":	"2024-10-08",
+				"dynamax":	"2025-11-10"
 			},
 			"category": "Emotion",
 			"type": [ "Psychic", "Fairy" ],
@@ -14222,7 +14230,8 @@ const	dbpokemon = {
 				"in-game":	"2017-12-08",
 				"shiny":	"2019-08-03",
 				"shadow":	"2019-08-08",
-				"sh-shiny":	"2024-10-08"
+				"sh-shiny":	"2024-10-08",
+				"dynamax":	"2025-11-10"
 			},
 			"category": "Embrace",
 			"type": [ "Psychic", "Fairy" ],
@@ -14268,7 +14277,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2023-02-08",
 				"shiny":	"2023-02-08",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 169,
 			"base-attack": 326,
@@ -15036,7 +15045,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2023-06-23",
 				"shiny":	"2023-06-29",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 137,
 			"base-attack": 151,
@@ -15106,7 +15115,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-10-12",
 				"shiny":	"2024-10-12",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 137,
 			"base-attack": 188,
@@ -15253,7 +15262,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-09-16",
 				"shiny":	"2022-09-16",
-				"shadow": false
+				"shadow":	false
 			},
 			"type": [ "Steel" ],
 			"base-stamina": 172,
@@ -15354,7 +15363,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2023-03-08",
 				"shiny":	"2023-03-08",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 155,
 			"base-attack": 205,
@@ -15448,7 +15457,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2021-03-16",
 				"shiny":	"2021-03-16",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 172,
 			"base-attack": 286,
@@ -16446,7 +16455,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2021-05-15",
 				"shiny":	"2021-05-15",
-				"shadow": false
+				"shadow":	false
 			},
 			"type": [ "Dragon", "Fairy" ],
 			"height-avg": 1.5,
@@ -17286,7 +17295,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-10-20",
 				"shiny":	"2022-10-20",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.2,
 			"weight-avg": 13,
@@ -17502,7 +17511,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2021-10-22",
 				"shiny":	"2021-10-22",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.2,
 			"weight-avg": 49,
@@ -17638,7 +17647,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-12-15",
 				"shiny":	"2022-12-15",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 2.1,
 			"weight-avg": 350.2,
@@ -18078,7 +18087,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2023-01-10",
 				"shiny":	"2023-01-10",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.8,
 			"weight-avg": 112.6,
@@ -18414,7 +18423,8 @@ const	dbpokemon = {
 			},
 			"availability": {
 				"in-game":	"2022-05-03",
-				"shadow": false
+				"shiny":	"2022-05-03",
+				"shadow":	false
 			},
 			"base-stamina": 190,
 			"base-attack": 289,
@@ -18481,7 +18491,8 @@ const	dbpokemon = {
 			},
 			"availability": {
 				"in-game":	"2022-05-03",
-				"shadow": false
+				"shiny":	"2022-05-03",
+				"shadow":	false
 			},
 			"base-stamina": 190,
 			"base-attack": 335,
@@ -18547,7 +18558,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2023-02-18",
 				"shiny":	"2023-02-18",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 218,
 			"base-attack": 353,
@@ -18614,7 +18625,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2023-02-18",
 				"shiny":	"2023-02-18",
-				"shadow": false
+				"shadow":	false
 			},
 			"type": [ "Ground", "Fire" ],
 			"base-stamina": 218,
@@ -18681,7 +18692,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2023-08-04",
 				"shiny":	"2023-08-04",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 227,
 			"base-attack": 377,
@@ -18703,7 +18714,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-06-13",
 				"shiny":	"2023-02-18",
-				"shadow": false
+				"shadow":	false
 			},
 			"category": "Wish",
 			"mythical": true,
@@ -20559,7 +20570,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2021-04-04",
 				"shiny":	"2021-04-04",
-				"shadow": false
+				"shadow":	false
 			},
 			"type": [ "Normal", "Fighting" ],
 			"height-avg": 1.3,
@@ -21219,7 +21230,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2023-11-11",
 				"shiny":	"2023-11-11",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-stamina": 239,
 			"base-attack": 339,
@@ -21351,7 +21362,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-07-27",
 				"shiny":	"2024-07-27",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.3,
 			"weight-avg": 57.5,
@@ -21836,7 +21847,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-12-01",
 				"shiny":	"2020-12-02",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 2.7,
 			"weight-avg": 185,
@@ -22213,7 +22224,8 @@ const	dbpokemon = {
 			"name": "Leafeon",
 			"availability": {
 				"in-game":	"2019-05-17",
-				"shiny":	"2019-05-18"
+				"shiny":	"2019-05-18",
+				"dynamax":	"2025-11-24"
 			},
 			"category": "Verdant",
 			"type": [ "Grass" ],
@@ -22251,7 +22263,8 @@ const	dbpokemon = {
 			"name": "Glaceon",
 			"availability": {
 				"in-game":	"2019-05-17",
-				"shiny":	"2019-05-18"
+				"shiny":	"2019-05-18",
+				"dynamax":	"2025-11-24"
 			},
 			"category": "Fresh Snow",
 			"type": [ "Ice" ],
@@ -22410,7 +22423,8 @@ const	dbpokemon = {
 				"in-game":	"2019-02-01",
 				"shiny":	"2019-08-03",
 				"shadow":	"2019-08-08",
-				"sh-shiny":	"2024-10-08"
+				"sh-shiny":	"2024-10-08",
+				"dynamax":	"2025-11-10"
 			},
 			"category": "Blade",
 			"type": [ "Psychic", "Fighting" ],
@@ -22455,7 +22469,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-01-11",
 				"shiny":	"2024-01-11",
-				"shadow": false
+				"shadow":	false
 			},
 			"base-attack": 326,
 			"base-defense": 230,
@@ -22586,7 +22600,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-02-16",
 				"shiny":	"2024-02-16",
-				"shadow": false
+				"shadow":	false
 			},
 			"category": "Plasma",
 			"type": [ "Electric", "Ghost" ],
@@ -22669,7 +22683,7 @@ const	dbpokemon = {
 			},
 			"availability": {
 				"in-game":	"2023-08-04",
-				"shadow": false
+				"shadow":	false
 			},
 			"type": [ "Electric", "Ice" ],
 			"base-stamina": 137,
@@ -22716,7 +22730,7 @@ const	dbpokemon = {
 			},
 			"availability": {
 				"in-game":	"2022-07-01",
-				"shadow": false
+				"shadow":	false
 			},
 			"type": [ "Electric", "Grass" ],
 			"base-stamina": 137,
@@ -23200,7 +23214,7 @@ const	dbpokemon = {
 			"dex-index": "489",
 			"name": "Phione",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Sea Drifter",
 			"mythical": true,
@@ -23235,7 +23249,7 @@ const	dbpokemon = {
 			"dex-index": "490",
 			"name": "Manaphy",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Seafaring",
 			"mythical": true,
@@ -23330,7 +23344,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-06-04",
 				"shiny":	"2024-02-16",
-				"shadow": false
+				"shadow":	false
 			},
 			"type": [ "Grass" ],
 			"base-stamina": 225,
@@ -23364,7 +23378,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2022-07-01",
 				"shiny":	"2024-02-16",
-				"shadow": false
+				"shadow":	false
 			},
 			"type": [ "Grass", "Flying" ],
 			"base-stamina": 225,
@@ -23393,7 +23407,7 @@ const	dbpokemon = {
 			"dex-index": "493",
 			"name": "Arceus", // TODO Legendary or Mythical?
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Alpha",
 			"type": [ "Normal" ],
@@ -26101,7 +26115,7 @@ const	dbpokemon = {
 				"form-ital": "Stato Zen"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"type": [ "Fire", "Psychic" ],
 			"base-stamina": 233,
@@ -26157,7 +26171,7 @@ const	dbpokemon = {
 				"form-ital": "Stato Zen"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Blazing Pokémon",
 			"type": [ "Ice", "Fire" ],
@@ -26392,7 +26406,8 @@ const	dbpokemon = {
 			"name": "Yamask",
 			"availability": {
 				"in-game":	"2019-10-17",
-				"shiny":	"2019-10-17"
+				"shiny":	"2019-10-17",
+				"shadow":	"2025-10-21"
 			},
 			"category": "Spirit",
 			"type": [ "Ghost" ],
@@ -26444,7 +26459,8 @@ const	dbpokemon = {
 			"name": "Cofagrigus",
 			"availability": {
 				"in-game":	"2019-10-17",
-				"shiny":	"2019-10-17"
+				"shiny":	"2019-10-17",
+				"shadow":	"2025-10-21"
 			},
 			"category": "Coffin",
 			"type": [ "Ghost" ],
@@ -26711,7 +26727,8 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": "TBD"
+				"in-game":	"2025-11-01",
+				"shiny":	"2025-11-01"
 			}
 		},
 		"570": {
@@ -30159,7 +30176,7 @@ const	dbpokemon = {
 				"form-ital": "Forma Danza"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"type": [ "Normal", "Fighting" ],
 			"base-stamina": 225,
@@ -30634,7 +30651,7 @@ const	dbpokemon = {
 				"base": "658"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"size-calc-ignore": true
 		},
@@ -31864,7 +31881,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-09-08",
 				"shiny":	"2022-09-03",
-				"shadow":	"2025-05-14"
+				"shadow":	"2025-05-14",
+				"dynamax":	"2025-11-03"
 			},
 			"category": "Revolving",
 			"type": [ "Dark", "Psychic" ],
@@ -31901,7 +31919,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-09-08",
 				"shiny":	"2022-09-03",
-				"shadow":	"2025-05-14"
+				"shadow":	"2025-05-14",
+				"dynamax":	"2025-11-03"
 			},
 			"category": "Overturning",
 			"type": [ "Dark", "Psychic" ],
@@ -32395,7 +32414,9 @@ const	dbpokemon = {
 			"dex-index": "700",
 			"name": "Sylveon",
 			"availability": {
-				"in-game":	"2021-05-25"
+				"in-game":	"2021-05-25",
+				"shiny":	"dddd-dd-dd",
+				"dynamax":	"2025-11-24"
 			},
 			"category": "Intertwining",
 			"type": [ "Fairy" ],
@@ -32710,7 +32731,8 @@ const	dbpokemon = {
 			"name": "Phantump",
 			"availability": {
 				"in-game":	"2021-10-22",
-				"shiny":	"2023-10-19"
+				"shiny":	"2023-10-19",
+				"shadow":	"2025-10-21"
 			},
 			"category": "Stump",
 			"type": [ "Ghost", "Grass" ],
@@ -32746,7 +32768,8 @@ const	dbpokemon = {
 			"name": "Trevenant",
 			"availability": {
 				"in-game":	"2021-10-22",
-				"shiny":	"2023-10-19"
+				"shiny":	"2023-10-19",
+				"shadow":	"2025-10-21"
 			},
 			"category": "Elder Tree",
 			"type": [ "Ghost", "Grass" ],
@@ -33392,7 +33415,7 @@ const	dbpokemon = {
 			"name": "Diancie",
 			"availability": {
 				"in-game":	"2023-08-04",
-				"shadow": false
+				"shadow":	false
 			},
 			"category": "Jewel",
 			"mythical": true,
@@ -33433,7 +33456,7 @@ const	dbpokemon = {
 			},
 			"availability": {
 				"in-game":	"2023-08-04",
-				"shadow": false
+				"shadow":	false
 			},
 			"height-avg": 1.1,
 			"weight-avg": 27.8,
@@ -34660,7 +34683,7 @@ const	dbpokemon = {
 			"dex-index": "746-0",
 			"name": "Wishiwashi",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Small Fry",
 			"type": [ "Water" ],
@@ -35619,7 +35642,7 @@ const	dbpokemon = {
 			"dex-index": "771",
 			"name": "Pyukumuku",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Sea Cucumber",
 			"type": [ "Water" ],
@@ -35650,7 +35673,7 @@ const	dbpokemon = {
 			"dex-index": "772",
 			"name": "Type: Null",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Synthetic",
 			"legendary": true,
@@ -35686,7 +35709,7 @@ const	dbpokemon = {
 			"dex-index": "773",
 			"name": "Silvally",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Synthetic",
 			"legendary": true,
@@ -35903,7 +35926,7 @@ const	dbpokemon = {
 			"dex-index": "774-0",
 			"name": "Minior",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Meteor",
 			"type": [ "Rock", "Flying" ],
@@ -36094,7 +36117,7 @@ const	dbpokemon = {
 			"dex-index": "778",
 			"name": "Mimikyu",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Disguise",
 			"type": [ "Ghost", "Fairy" ],
@@ -36132,7 +36155,7 @@ const	dbpokemon = {
 				"base": "778"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			}
 		},
 		"779": {
@@ -37036,7 +37059,7 @@ const	dbpokemon = {
 				"base": "800"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Prism",
 			"type": [ "Psychic", "Dragon" ],
@@ -37067,7 +37090,7 @@ const	dbpokemon = {
 			"dex-index": "801",
 			"name": "Magearna",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"variants": [ "", "Original Color" ],
 			"variants-ital": [ "", "Colore Antico" ],
@@ -37102,7 +37125,7 @@ const	dbpokemon = {
 			"name": "Marshadow",
 			"availability": {
 				"in-game":	"2024-05-30",
-				"shadow": false
+				"shadow":	false
 			},
 			"category": "Gloomdweller",
 			"mythical": true,
@@ -37282,7 +37305,7 @@ const	dbpokemon = {
 			"dex-index": "807",
 			"name": "Zeraora",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Thunderclap",
 			"mythical": true,
@@ -37395,7 +37418,7 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			}
 		},
 		"810": {
@@ -37476,7 +37499,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-09-03",
 				"dynamax":	"2024-10-01",
-				"shiny": false
+				"shiny":	false
 			},
 			"category": "Drummer",
 			"type": [ "Grass" ],
@@ -37516,7 +37539,7 @@ const	dbpokemon = {
 			},
 			"availability": {
 				"in-game":	"2025-05-31",
-				"shiny": false
+				"shiny":	false
 			}
 		},
 		"813": {
@@ -37597,7 +37620,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-09-03",
 				"dynamax":	"2024-10-01",
-				"shiny": false
+				"shiny":	false
 			},
 			"category": "Striker",
 			"type": [ "Fire" ],
@@ -37637,7 +37660,7 @@ const	dbpokemon = {
 			},
 			"availability": {
 				"in-game":	"2025-06-07",
-				"shiny": false
+				"shiny":	false
 			}
 		},
 		"816": {
@@ -37718,7 +37741,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-09-03",
 				"dynamax":	"2024-10-01",
-				"shiny": false
+				"shiny":	false
 			},
 			"category": "Secret Agent",
 			"type": [ "Water" ],
@@ -37758,7 +37781,7 @@ const	dbpokemon = {
 			},
 			"availability": {
 				"in-game":	"2025-06-14",
-				"shiny": false
+				"shiny":	false
 			}
 		},
 		"819": {
@@ -37959,14 +37982,14 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			}
 		},
 		"824": {
 			"dex-index": "824",
 			"name": "Blipbug",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Larva",
 			"type": [ "Bug" ],
@@ -37998,7 +38021,7 @@ const	dbpokemon = {
 			"dex-index": "825",
 			"name": "Dottler",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Radome",
 			"type": [ "Bug", "Psychic" ],
@@ -38033,7 +38056,7 @@ const	dbpokemon = {
 			"dex-index": "826",
 			"name": "Orbeetle",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Seven Spot",
 			"type": [ "Bug", "Psychic" ],
@@ -38292,7 +38315,7 @@ const	dbpokemon = {
 			"dex-index": "833",
 			"name": "Chewtle",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Snapping",
 			"type": [ "Water" ],
@@ -38326,7 +38349,7 @@ const	dbpokemon = {
 			"dex-index": "834",
 			"name": "Drednaw",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Bite",
 			"type": [ "Water", "Rock" ],
@@ -38441,7 +38464,7 @@ const	dbpokemon = {
 			"dex-index": "837",
 			"name": "Rolycoly",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Coal",
 			"type": [ "Rock" ],
@@ -38475,7 +38498,7 @@ const	dbpokemon = {
 			"dex-index": "838",
 			"name": "Carkol",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Coal",
 			"type": [ "Rock", "Fire" ],
@@ -38511,7 +38534,7 @@ const	dbpokemon = {
 			"dex-index": "839",
 			"name": "Coalossal",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Coal",
 			"type": [ "Rock", "Fire" ],
@@ -38629,7 +38652,7 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			}
 		},
 		"842": {
@@ -38676,14 +38699,14 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			}
 		},
 		"843": {
 			"dex-index": "843",
 			"name": "Silicobra",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Sand Snake",
 			"type": [ "Ground" ],
@@ -38719,7 +38742,7 @@ const	dbpokemon = {
 			"dex-index": "844",
 			"name": "Sandaconda",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Sand Snake",
 			"type": [ "Ground" ],
@@ -38766,7 +38789,7 @@ const	dbpokemon = {
 			"dex-index": "845",
 			"name": "Cramorant",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Gulp",
 			"type": [ "Flying", "Water" ],
@@ -38800,7 +38823,7 @@ const	dbpokemon = {
 			"dex-index": "846",
 			"name": "Arrokuda",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Rush",
 			"type": [ "Water" ],
@@ -38836,7 +38859,7 @@ const	dbpokemon = {
 			"dex-index": "847",
 			"name": "Barraskewda",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Skewer",
 			"type": [ "Water" ],
@@ -39044,14 +39067,14 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			}
 		},
 		"852": {
 			"dex-index": "852",
 			"name": "Clobbopus",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Tantrum",
 			"type": [ "Fighting" ],
@@ -39085,7 +39108,7 @@ const	dbpokemon = {
 			"dex-index": "853",
 			"name": "Grapploct",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Jujitsu",
 			"type": [ "Fighting" ],
@@ -39121,7 +39144,8 @@ const	dbpokemon = {
 			"dex-index": "854-0",
 			"name": "Sinistea",
 			"availability": {
-				"in-game":	"2024-12-03"
+				"in-game":	"2024-12-03",
+				"shiny":	"2025-10-21"
 			},
 			"category": "Black Tea",
 			"type": [ "Ghost" ],
@@ -39179,7 +39203,8 @@ const	dbpokemon = {
 			"dex-index": "855-0",
 			"name": "Polteageist",
 			"availability": {
-				"in-game":	"2024-12-03"
+				"in-game":	"2024-12-03",
+				"shiny":	"2025-10-21"
 			},
 			"category": "Black Tea",
 			"type": [ "Ghost" ],
@@ -39357,7 +39382,7 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			}
 		},
 		"859": {
@@ -39479,7 +39504,8 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-11-07",
+				"shiny":	"2025-11-07"
 			}
 		},
 		"862": {
@@ -39714,7 +39740,7 @@ const	dbpokemon = {
 			"dex-index": "868",
 			"name": "Milcery",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Cream",
 			"type": [ "Fairy" ],
@@ -39747,7 +39773,7 @@ const	dbpokemon = {
 			"dex-index": "869",
 			"name": "Alcremie",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Cream",
 			"type": [ "Fairy" ],
@@ -39830,7 +39856,7 @@ const	dbpokemon = {
 			"dex-index": "871",
 			"name": "Pincurchin",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Sea Urchin",
 			"type": [ "Electric" ],
@@ -39968,7 +39994,7 @@ const	dbpokemon = {
 			"dex-index": "875-0",
 			"name": "Eiscue",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Penguin",
 			"type": [ "Ice" ],
@@ -40153,7 +40179,7 @@ const	dbpokemon = {
 			"dex-index": "878",
 			"name": "Cufant",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Copperderm",
 			"type": [ "Steel" ],
@@ -40188,7 +40214,7 @@ const	dbpokemon = {
 			"dex-index": "879",
 			"name": "Copperajah",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Copperderm",
 			"type": [ "Steel" ],
@@ -40235,7 +40261,7 @@ const	dbpokemon = {
 			"dex-index": "880",
 			"name": "Dracozolt",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Fossil",
 			"type": [ "Electric", "Dragon" ],
@@ -40269,7 +40295,7 @@ const	dbpokemon = {
 			"dex-index": "881",
 			"name": "Arctozolt",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Fossil",
 			"type": [ "Electric", "Ice" ],
@@ -40303,7 +40329,7 @@ const	dbpokemon = {
 			"dex-index": "882",
 			"name": "Dracovish",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Fossil",
 			"type": [ "Water", "Dragon" ],
@@ -40337,7 +40363,7 @@ const	dbpokemon = {
 			"dex-index": "883",
 			"name": "Arctovish",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Fossil",
 			"type": [ "Water", "Ice" ],
@@ -40833,7 +40859,7 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"height-avg": 29
 		},
@@ -40861,7 +40887,7 @@ const	dbpokemon = {
 		"892-RG": {
 			"dex-index": "892-RG",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"form-data": {
 				"base": "892-R",
@@ -40991,7 +41017,7 @@ const	dbpokemon = {
 			"dex-index": "896",
 			"name": "Glastrier",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Wild Horse",
 			"legendary": true,
@@ -41026,7 +41052,7 @@ const	dbpokemon = {
 			"dex-index": "897",
 			"name": "Spectrier",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Swift Horse",
 			"legendary": true,
@@ -41061,7 +41087,7 @@ const	dbpokemon = {
 			"dex-index": "898",
 			"name": "Calyrex",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "King",
 			"legendary": true,
@@ -41294,7 +41320,7 @@ const	dbpokemon = {
 			"dex-index": "902",
 			"name": "Basculegion",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"variants": [ "Male", "Female" ],
 			"category": "Big Fish",
@@ -41442,7 +41468,7 @@ const	dbpokemon = {
 				"form-ital": "Forma Totem"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"base-stamina": 179,
 			"base-attack": 250,
@@ -41884,7 +41910,7 @@ const	dbpokemon = {
 			"dex-index": "917",
 			"name": "Tarountula",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "String Ball",
 			"type": [ "Bug" ],
@@ -41919,7 +41945,7 @@ const	dbpokemon = {
 			"dex-index": "918",
 			"name": "Spidops",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Trap",
 			"type": [ "Bug" ],
@@ -42438,7 +42464,7 @@ const	dbpokemon = {
 			"dex-index": "931",
 			"name": "Squawkabilly",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"variants": [
 				"Blue Plume", "Green Plume",
@@ -42480,7 +42506,7 @@ const	dbpokemon = {
 			"dex-index": "932",
 			"name": "Nacli",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Rock Salt",
 			"type": [ "Rock" ],
@@ -42515,7 +42541,7 @@ const	dbpokemon = {
 			"dex-index": "933",
 			"name": "Naclstack",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Rock Salt",
 			"type": [ "Rock" ],
@@ -42551,7 +42577,7 @@ const	dbpokemon = {
 			"dex-index": "934",
 			"name": "Garganacl",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Rock Salt",
 			"type": [ "Rock" ],
@@ -42764,7 +42790,7 @@ const	dbpokemon = {
 			"dex-index": "940",
 			"name": "Wattrel",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Storm Petrel",
 			"type": [ "Electric", "Flying" ],
@@ -42799,7 +42825,7 @@ const	dbpokemon = {
 			"dex-index": "941",
 			"name": "Kilowattrel",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Frigatebird",
 			"type": [ "Electric", "Flying" ],
@@ -42834,7 +42860,7 @@ const	dbpokemon = {
 			"dex-index": "942",
 			"name": "Maschiff",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Rascal",
 			"type": [ "Dark" ],
@@ -42869,7 +42895,7 @@ const	dbpokemon = {
 			"dex-index": "943",
 			"name": "Mabosstiff",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Boss",
 			"type": [ "Dark" ],
@@ -42974,7 +43000,7 @@ const	dbpokemon = {
 			"dex-index": "946",
 			"name": "Bramblin",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Tumbleweed",
 			"type": [ "Grass", "Ghost" ],
@@ -43009,7 +43035,7 @@ const	dbpokemon = {
 			"dex-index": "947",
 			"name": "Brambleghast",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Tumbleweed",
 			"type": [ "Grass", "Ghost" ],
@@ -43115,7 +43141,7 @@ const	dbpokemon = {
 			"dex-index": "950",
 			"name": "Klawf",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Ambush",
 			"type": [ "Rock" ],
@@ -43149,7 +43175,7 @@ const	dbpokemon = {
 			"dex-index": "951",
 			"name": "Capsakid",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Spicy Pepper",
 			"type": [ "Grass" ],
@@ -43184,7 +43210,7 @@ const	dbpokemon = {
 			"dex-index": "952",
 			"name": "Scovillain",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Spicy Pepper",
 			"type": [ "Grass", "Fire" ],
@@ -43220,7 +43246,7 @@ const	dbpokemon = {
 			"dex-index": "953",
 			"name": "Rellor",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Rolling",
 			"type": [ "Bug" ],
@@ -43255,7 +43281,7 @@ const	dbpokemon = {
 			"dex-index": "954",
 			"name": "Rabsca",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Rolling",
 			"type": [ "Bug", "Psychic" ],
@@ -43291,7 +43317,7 @@ const	dbpokemon = {
 			"dex-index": "955",
 			"name": "Flittle",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Frill",
 			"type": [ "Psychic" ],
@@ -43326,7 +43352,7 @@ const	dbpokemon = {
 			"dex-index": "956",
 			"name": "Espathra",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Ostrich",
 			"type": [ "Psychic" ],
@@ -43578,7 +43604,7 @@ const	dbpokemon = {
 			"dex-index": "963",
 			"name": "Finizen",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Dolphin",
 			"type": [ "Water" ],
@@ -43613,7 +43639,7 @@ const	dbpokemon = {
 			"dex-index": "964-0",
 			"name": "Palafin",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"type": [ "Water" ],
 			"forms": [ "964-Z", "964-H" ],
@@ -43761,7 +43787,7 @@ const	dbpokemon = {
 			"dex-index": "967",
 			"name": "Cyclizar",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Mount",
 			"type": [ "Dragon", "Normal" ],
@@ -43795,7 +43821,7 @@ const	dbpokemon = {
 			"dex-index": "968",
 			"name": "Orthworm",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Earthworm",
 			"type": [ "Steel" ],
@@ -43829,7 +43855,7 @@ const	dbpokemon = {
 			"dex-index": "969",
 			"name": "Glimmet",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Ore",
 			"type": [ "Rock", "Poison" ],
@@ -43864,7 +43890,7 @@ const	dbpokemon = {
 			"dex-index": "970",
 			"name": "Glimmora",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Ore",
 			"type": [ "Rock", "Poison" ],
@@ -43969,7 +43995,7 @@ const	dbpokemon = {
 			"dex-index": "973",
 			"name": "Flamigo",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Synchronize",
 			"type": [ "Flying", "Fighting" ],
@@ -44077,7 +44103,7 @@ const	dbpokemon = {
 			"dex-index": "976",
 			"name": "Veluza",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Jettison",
 			"type": [ "Water", "Psychic" ],
@@ -44264,7 +44290,7 @@ const	dbpokemon = {
 			"dex-index": "981",
 			"name": "Farigiraf",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Long Neck",
 			"type": [ "Normal", "Psychic" ],
@@ -44406,7 +44432,7 @@ const	dbpokemon = {
 			"dex-index": "984",
 			"name": "Great Tusk",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Ground", "Fighting" ],
@@ -44437,7 +44463,7 @@ const	dbpokemon = {
 			"dex-index": "985",
 			"name": "Scream Tail",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Fairy", "Psychic" ],
@@ -44468,7 +44494,7 @@ const	dbpokemon = {
 			"dex-index": "986",
 			"name": "Brute Bonnet",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Grass", "Dark" ],
@@ -44499,7 +44525,7 @@ const	dbpokemon = {
 			"dex-index": "987",
 			"name": "Flutter Mane",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Ghost", "Fairy" ],
@@ -44530,7 +44556,7 @@ const	dbpokemon = {
 			"dex-index": "988",
 			"name": "Slither Wing",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Bug", "Fighting" ],
@@ -44561,7 +44587,7 @@ const	dbpokemon = {
 			"dex-index": "989",
 			"name": "Sandy Shocks",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Electric", "Ground" ],
@@ -44592,7 +44618,7 @@ const	dbpokemon = {
 			"dex-index": "990",
 			"name": "Iron Treads",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Ground", "Steel" ],
@@ -44623,7 +44649,7 @@ const	dbpokemon = {
 			"dex-index": "991",
 			"name": "Iron Bundle",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Ice", "Water" ],
@@ -44654,7 +44680,7 @@ const	dbpokemon = {
 			"dex-index": "992",
 			"name": "Iron Hands",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Fighting", "Electric" ],
@@ -44685,7 +44711,7 @@ const	dbpokemon = {
 			"dex-index": "993",
 			"name": "Iron Jugulis",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Dark", "Flying" ],
@@ -44716,7 +44742,7 @@ const	dbpokemon = {
 			"dex-index": "994",
 			"name": "Iron Moth",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Fire", "Poison" ],
@@ -44747,7 +44773,7 @@ const	dbpokemon = {
 			"dex-index": "995",
 			"name": "Iron Thorns",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Rock", "Electric" ],
@@ -44940,7 +44966,7 @@ const	dbpokemon = {
 				"name-ital": "Forma Scrigno"
 			},
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Coin Chest",
 			"height-avg": 0.3,
@@ -44988,7 +45014,7 @@ const	dbpokemon = {
 			"dex-index": "1001",
 			"name": "Wo-Chien",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Ruinous",
 			"legendary": true,
@@ -45023,7 +45049,7 @@ const	dbpokemon = {
 			"dex-index": "1002",
 			"name": "Chien-Pao",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Ruinous",
 			"legendary": true,
@@ -45058,7 +45084,7 @@ const	dbpokemon = {
 			"dex-index": "1003",
 			"name": "Ting-Lu",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Ruinous",
 			"legendary": true,
@@ -45093,7 +45119,7 @@ const	dbpokemon = {
 			"dex-index": "1004",
 			"name": "Chi-Yu",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Ruinous",
 			"legendary": true,
@@ -45128,7 +45154,7 @@ const	dbpokemon = {
 			"dex-index": "1005",
 			"name": "Roaring Moon",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Dragon", "Dark" ],
@@ -45159,7 +45185,7 @@ const	dbpokemon = {
 			"dex-index": "1006",
 			"name": "Iron Valiant",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Fairy", "Fighting" ],
@@ -45190,7 +45216,7 @@ const	dbpokemon = {
 			"dex-index": "1007",
 			"name": "Koraidon",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"legendary": true,
@@ -45226,7 +45252,7 @@ const	dbpokemon = {
 			"dex-index": "1008",
 			"name": "Miraidon",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"legendary": true,
@@ -45262,7 +45288,7 @@ const	dbpokemon = {
 			"dex-index": "1009",
 			"name": "Walking Wake",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Water", "Dragon" ],
@@ -45276,7 +45302,7 @@ const	dbpokemon = {
 			"dex-index": "1010",
 			"name": "Iron Leaves",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Grass", "Psychic" ],
@@ -45316,7 +45342,7 @@ const	dbpokemon = {
 			"dex-index": "1012",
 			"name": "Poltchageist",
 			"availability": {
-				"in-game": false
+				"in-game":	"2025-10-21"
 			},
 			"category": "Matcha",
 			"type": [ "Grass", "Ghost" ],
@@ -45340,7 +45366,7 @@ const	dbpokemon = {
 			"dex-index": "1013",
 			"name": "Sinistcha",
 			"availability": {
-				"in-game": false
+				"in-game":	"2025-10-21"
 			},
 			"category": "Matcha",
 			"type": [ "Grass", "Ghost" ],
@@ -45364,7 +45390,7 @@ const	dbpokemon = {
 			"dex-index": "1014",
 			"name": "Okidogi",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Retainer",
 			"legendary": true,
@@ -45388,7 +45414,7 @@ const	dbpokemon = {
 			"dex-index": "1015",
 			"name": "Munkidori",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Retainer",
 			"legendary": true,
@@ -45412,7 +45438,7 @@ const	dbpokemon = {
 			"dex-index": "1016",
 			"name": "Fezandipiti",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Retainer",
 			"legendary": true,
@@ -45436,7 +45462,7 @@ const	dbpokemon = {
 			"dex-index": "1017-0",
 			"name": "Ogerpon",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Mask",
 			"legendary": true,
@@ -45503,7 +45529,7 @@ const	dbpokemon = {
 			"dex-index": "1018",
 			"name": "Archaludon",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Alloy",
 			"type": [ "Steel", "Dragon" ],
@@ -45552,7 +45578,7 @@ const	dbpokemon = {
 			"dex-index": "1020",
 			"name": "Gouging Fire",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Fire", "Dragon" ],
@@ -45566,7 +45592,7 @@ const	dbpokemon = {
 			"dex-index": "1021",
 			"name": "Raging Bolt",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Electric", "Dragon" ],
@@ -45580,7 +45606,7 @@ const	dbpokemon = {
 			"dex-index": "1022",
 			"name": "Iron Boulder",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Rock", "Psychic" ],
@@ -45594,7 +45620,7 @@ const	dbpokemon = {
 			"dex-index": "1023",
 			"name": "Iron Crown",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Paradox",
 			"type": [ "Steel", "Psychic" ],
@@ -45608,7 +45634,7 @@ const	dbpokemon = {
 			"dex-index": "1024",
 			"name": "Terapagos",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Tera",
 			"legendary": true,
@@ -45644,7 +45670,7 @@ const	dbpokemon = {
 			"dex-index": "1025",
 			"name": "Pecharunt",
 			"availability": {
-				"in-game": false
+				"in-game":	false
 			},
 			"category": "Subjugation",
 			"mythical": true,
