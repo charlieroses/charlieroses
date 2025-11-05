@@ -1993,6 +1993,16 @@ const dbmoves = {
 			"trainer-power": 45,
 			"trainer-energy": 35
 		},
+		"CHRG_FLY_BEAKBLAST": { // TODO fill me in
+			"type": "Flying",
+			"name": "Beak Blast",
+			"name-ital": "Cannonbecco",
+			"raid-power": 125,
+			"raid-energy": -1,
+			"raid-duration": -1,
+			"trainer-power": 110,
+			"trainer-energy": -1
+		},
 		"CHRG_FLY_BRAVEBIRD": {
 			"type": "Flying",
 			"name": "Brave Bird",
@@ -3260,15 +3270,15 @@ const dbmoves = {
 			"trainer-power": 25,
 			"trainer-energy": 40
 		},
-		"CHRG_WAT_CHILLINGWATER": { // TODO fill me in
+		"CHRG_WAT_CHILLINGWATER": {
 			"type": "Water",
 			"name": "Chilling Water",
 			"name-ital": "Doccia Fredda",
 			"raid-power": 65,
-			"raid-energy": 40,
-			"raid-duration": 0,
+			"raid-energy": 33,
+			"raid-duration": 3.5,
 			"trainer-power": 60,
-			"trainer-energy": 0
+			"trainer-energy": 45
 		},
 		"CHRG_WAT_CRABHAMMER": {
 			"type": "Water",

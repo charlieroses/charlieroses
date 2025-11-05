@@ -7593,6 +7593,7 @@ const	dbpokemon = {
 			"base-attack": 104,
 			"base-defense": 114,
 			"dynamax-class": 3,
+			"max-battle-tier": 2,
 			"fast-moves": [
 				{ "atk": "FAST_NOR_QUICKATTACK" },
 				{ "atk": "FAST_NOR_TACKLE" }
@@ -24906,7 +24907,7 @@ const	dbpokemon = {
 			"base-stamina": 163,
 			"base-attack": 107,
 			"base-defense": 85,
-			"max-battle-tier": 2, // TODO guess
+			"max-battle-tier": 1, // guessed 2 wrong
 			"dynamax-class": 1,
 			"fast-moves": [
 				{ "atk": "FAST_PSY_CONFUSION" },
@@ -31891,6 +31892,7 @@ const	dbpokemon = {
 			"base-attack": 98,
 			"base-defense": 95,
 			"dynamax-class": 2,
+			"max-battle-tier": 1,
 			"fast-moves": [
 				{ "atk": "FAST_FLY_PECK" },
 				{ "atk": "FAST_NOR_TACKLE" },
@@ -32415,7 +32417,7 @@ const	dbpokemon = {
 			"name": "Sylveon",
 			"availability": {
 				"in-game":	"2021-05-25",
-				"shiny":	"dddd-dd-dd",
+				"shiny":	"2021-05-25",
 				"dynamax":	"2025-11-24"
 			},
 			"category": "Intertwining",
@@ -33983,7 +33985,8 @@ const	dbpokemon = {
 			"name": "Pikipek",
 			"availability": {
 				"in-game":	"2022-03-01",
-				"shadow":	"2025-08-11"
+				"shadow":	"2025-08-11",
+				"shiny":	"2025-11-30"
 			},
 			"category": "Woodpecker",
 			"type": [ "Normal", "Flying" ],
@@ -34019,7 +34022,8 @@ const	dbpokemon = {
 			"name": "Trumbeak",
 			"availability": {
 				"in-game":	"2022-03-01",
-				"shadow":	"2025-08-11"
+				"shadow":	"2025-08-11",
+				"shiny":	"2025-11-30"
 			},
 			"category": "Bugle Beak",
 			"type": [ "Normal", "Flying" ],
@@ -34056,7 +34060,8 @@ const	dbpokemon = {
 			"name": "Toucannon",
 			"availability": {
 				"in-game":	"2022-03-01",
-				"shadow":	"2025-08-11"
+				"shadow":	"2025-08-11",
+				"shiny":	"2025-11-30"
 			},
 			"category": "Cannon",
 			"type": [ "Normal", "Flying" ],
@@ -34071,6 +34076,7 @@ const	dbpokemon = {
 				{ "atk": "FAST_GRA_BULLETSEED" }
 			],
 			"charged-moves": [
+				{ "atk": "CHRG_FLY_BEAKBLAST", "etm": true, "start": "2025-11-30" },
 				{ "atk": "CHRG_FLY_DRILLPECK" },
 				{ "atk": "CHRG_ROC_ROCKBLAST" },
 				{ "atk": "CHRG_STE_FLASHCANNON" }
@@ -35282,7 +35288,7 @@ const	dbpokemon = {
 			"base-stamina": 123,
 			"base-attack": 55,
 			"base-defense": 69,
-			"max-battle-tier": 1, // TODO guess
+			"max-battle-tier": 1, // Guessed right!
 			"dynamax-class": 1,
 			"fast-moves": [
 				{ "atk": "FAST_GRA_RAZORLEAF" },
@@ -40115,7 +40121,8 @@ const	dbpokemon = {
 			"dex-index": "877-0",
 			"name": "Morpeko",
 			"availability": {
-				"in-game":	"2024-10-22"
+				"in-game":	"2024-10-22",
+				"shiny":	"2025-11-18"
 			},
 			"category": "Two-Sided",
 			"type": [ "Electric", "Dark" ],
@@ -41910,7 +41917,7 @@ const	dbpokemon = {
 			"dex-index": "917",
 			"name": "Tarountula",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-11-04"
 			},
 			"category": "String Ball",
 			"type": [ "Bug" ],
@@ -41945,7 +41952,7 @@ const	dbpokemon = {
 			"dex-index": "918",
 			"name": "Spidops",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-11-04"
 			},
 			"category": "Trap",
 			"type": [ "Bug" ],
