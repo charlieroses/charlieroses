@@ -12757,7 +12757,8 @@ const	dbpokemon = {
 				"in-game":	"2017-07-22",
 				"shiny":	"2018-03-16",
 				"shadow":	"2021-11-09",
-				"sh-shiny":	"2023-10-28"
+				"sh-shiny":	"2023-10-28",
+				"dynamax":	"2025-11-29"
 			},
 			"category": "Diving",
 			"legendary": true,
@@ -12767,6 +12768,7 @@ const	dbpokemon = {
 			"base-attack": 193,
 			"base-defense": 310,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_PSY_EXTRASENSORY" },
 				{ "atk": "FAST_DRA_DRAGONTAIL" }
@@ -12780,6 +12782,7 @@ const	dbpokemon = {
 			],
 			"height-avg": 5.21,
 			"weight-avg": 216,
+			"max-battle-tier": false,
 			"size-data": {
 				"class": 1.75,
 				"ht-std-dev": 0.65125,
