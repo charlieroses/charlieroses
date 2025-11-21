@@ -12782,7 +12782,6 @@ const	dbpokemon = {
 			],
 			"height-avg": 5.21,
 			"weight-avg": 216,
-			"max-battle-tier": false,
 			"size-data": {
 				"class": 1.75,
 				"ht-std-dev": 0.65125,
@@ -12805,6 +12804,7 @@ const	dbpokemon = {
 				"in-game":	"2022-02-26",
 				"shadow":	"2022-03-26"
 			},
+			"max-battle-tier": false,
 			"charged-moves": [
 				{ "atk": "CHRG_FLY_SKYATTACK" },
 				{ "atk": "CHRG_FLY_FLY" },
