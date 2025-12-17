@@ -1848,7 +1848,7 @@ const	dbpokemon = {
 				"in-game":	"2016-07-06",
 				"shiny":	"2017-08-09"
 			},
-			"forms": [ "26-A" ],
+			"forms": [ "26-A", "26-X", "26-Y" ],
 			"category": "Mouse",
 			"type": [ "Electric" ],
 			"evolves-from": "25",
@@ -1927,6 +1927,30 @@ const	dbpokemon = {
 				"xl":	[ 0.875, 1.05 ],
 				"xxl":	[ 1.05, 1.225 ]
 			}
+		},
+		"26-X": {
+			"name": "Mega Raichu X",
+			"form-data": {
+				"base":	"26",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.2,
+			"weight-avg": 38
+		},
+		"26-Y": {
+			"name": "Mega Raichu Y",
+			"form-data": {
+				"base":	"26",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1,
+			"weight-avg": 26
 		},
 		"27": {
 			"dex-index": "27",
@@ -2383,6 +2407,7 @@ const	dbpokemon = {
 				"in-game":	"2016-07-06",
 				"shiny":	"2019-02-13"
 			},
+			"forms": [ "36-M" ],
 			"category": "Fairy",
 			"type": [ "Fairy" ],
 			"evolves-from": "35",
@@ -2417,6 +2442,18 @@ const	dbpokemon = {
 				"xl":	[ 1.625, 1.95 ],
 				"xxl":	[ 1.95, 2.275 ]
 			}
+		},
+		"36-M": {
+			"form-data": {
+				"base":	"36",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"type": [ "Fairy", "Flying" ],
+			"height-avg": 1.7,
+			"weight-avg": 42.3
 		},
 		"37": {
 			"dex-index": "37",
@@ -4202,6 +4239,7 @@ const	dbpokemon = {
 				"shadow":	"2019-11-07",
 				"sh-shiny":	"2023-10-26"
 			},
+			"forms": [ "71-M" ],
 			"category": "Flycatcher",
 			"type": [ "Grass", "Poison" ],
 			"evolves-from": "70",
@@ -4233,6 +4271,17 @@ const	dbpokemon = {
 				"xl":	[ 2.125, 2.55 ],
 				"xxl":	[ 2.55, 3.4 ]
 			}
+		},
+		"71-M": {
+			"form-data": {
+				"base":	"71",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 4.5,
+			"weight-avg": 125.5
 		},
 		"72": {
 			"dex-index": "72",
@@ -6266,7 +6315,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2021-02-20",
-				"shadow":	"2019-11-07"
+				"shadow":	"2019-11-07",
+				"dynamax":	"2025-12-11"
 			},
 			"category": "Kicking",
 			"type": [ "Fighting" ],
@@ -6275,6 +6325,7 @@ const	dbpokemon = {
 			"base-attack": 224,
 			"base-defense": 181,
 			"dynamax-class": 3,
+			"max-battle-tier": 3,
 			"fast-moves": [
 				{ "atk": "FAST_FIG_LOWKICK" },
 				{ "atk": "FAST_FIG_ROCKSMASH" },
@@ -6307,7 +6358,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2021-02-20",
-				"shadow":	"2019-09-05"
+				"shadow":	"2019-09-05",
+				"dynamax":	"2025-12-11"
 			},
 			"category": "Punching",
 			"type": [ "Fighting" ],
@@ -6316,6 +6368,7 @@ const	dbpokemon = {
 			"base-attack": 193,
 			"base-defense": 197,
 			"dynamax-class": 3,
+			"max-battle-tier": 3,
 			"fast-moves": [
 				{ "atk": "FAST_STE_BULLETPUNCH" },
 				{ "atk": "FAST_FIG_COUNTER" }
@@ -6923,6 +6976,7 @@ const	dbpokemon = {
 				"shiny":	"2020-08-07",
 				"shadow":	"2025-08-11"
 			},
+			"forms": [ "121-M" ],
 			"category": "Mysterious",
 			"type": [ "Water", "Psychic" ],
 			"evolves-from": "120",
@@ -6957,6 +7011,17 @@ const	dbpokemon = {
 				"xxl":	[ 1.65, 1.925 ]
 			},
 			"stardust-bonus": 950
+		},
+		"121-M": {
+			"form-data": {
+				"base":	"121",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 2.3,
+			"weight-avg": 80
 		},
 		"122": {
 			"dex-index": "122",
@@ -8412,6 +8477,7 @@ const	dbpokemon = {
 				"shadow":	"2019-07-22",
 				"sh-shiny":	"2023-10-26"
 			},
+			"forms": [ "149-M" ],
 			"category": "Dragon",
 			"type": [ "Dragon", "Flying" ],
 			"evolves-from": "148",
@@ -8446,6 +8512,17 @@ const	dbpokemon = {
 				"xl":	[ 2.75, 3.3 ],
 				"xxl":	[ 3.3, 3.85 ]
 			}
+		},
+		"149-M": {
+			"form-data": {
+				"base":	"149",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 2.2,
+			"weight-avg": 290
 		},
 		"150": {
 			"dex-index": "150",
@@ -8701,6 +8778,7 @@ const	dbpokemon = {
 				"shadow":	"2022-01-24",
 				"sh-shiny":	"2025-08-11"
 			},
+			"forms": [ "154-M" ],
 			"category": "Herb",
 			"type": [ "Grass" ],
 			"evolves-from": "153",
@@ -8731,6 +8809,18 @@ const	dbpokemon = {
 				"xl":	[ 2.25, 2.7 ],
 				"xxl":	[ 2.7, 2.79 ]
 			}
+		},
+		"154-M": {
+			"form-data": {
+				"base":	"154",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"type": [ "Grass", "Fairy" ],
+			"height-avg": 2.4,
+			"weight-avg": 201
 		},
 		"155": {
 			"dex-index": "155",
@@ -8979,6 +9069,7 @@ const	dbpokemon = {
 				"shadow":	"2022-01-24",
 				"sh-shiny":	"2025-08-11"
 			},
+			"forms": [ "160-M" ],
 			"category": "Big Jaw",
 			"type": [ "Water" ],
 			"evolves-from": "159",
@@ -9011,6 +9102,18 @@ const	dbpokemon = {
 				"xl":	[ 2.8875, 3.465 ],
 				"xxl":	[ 3.465, 3.5805 ]
 			}
+		},
+		"160-M": {
+			"form-data": {
+				"base":	"160",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"type": [ "Water", "Dragon" ],
+			"height-avg": 2.3,
+			"weight-avg": 108.8
 		},
 		"161": {
 			"dex-index": "161",
@@ -11863,6 +11966,7 @@ const	dbpokemon = {
 				"shiny":	"2019-11-01",
 				"shadow":	"2020-10-12"
 			},
+			"forms": [ "227-M" ],
 			"category": "Armor Bird",
 			"type": [ "Steel", "Flying" ],
 			"base-stamina": 163,
@@ -11890,6 +11994,17 @@ const	dbpokemon = {
 				"xl":	[ 2.125, 2.55 ],
 				"xxl":	[ 2.55, 3.4 ]
 			}
+		},
+		"227-M": {
+			"form-data": {
+				"base":	"227",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.7,
+			"weight-avg": 40.4,
 		},
 		"228": {
 			"dex-index": "228",
@@ -15826,14 +15941,14 @@ const	dbpokemon = {
 			"height-avg": 2.5,
 			"weight-avg": 130.3,
 			"size-data": {
-				"class": 0, // TODO fill me in
+				"class": 2,
 				"ht-std-dev": 0.3125,
 				"wt-std-dev": 16.2875,
 				"xxs":	[ 1.225, 1.25 ],
 				"xs":	[ 1.25, 1.875 ],
 				"a":	[ 1.875, 3.125 ],
 				"xl":	[ 3.125, 3.75 ],
-				"xxl":	[ 3.75, 0 ] // TODO fill me in
+				"xxl":	[ 3.75, 5 ]
 			}
 		},
 		"320": {
@@ -16010,14 +16125,14 @@ const	dbpokemon = {
 			"height-avg": 2.5,
 			"weight-avg": 320.5,
 			"size-data": {
-				"class": 0, // TODO fill me in
+				"class": 2,
 				"ht-std-dev": 0.3125,
 				"wt-std-dev": 40.0625,
 				"xxs":	[ 1.225, 1.25 ],
 				"xs":	[ 1.25, 1.875 ],
 				"a":	[ 1.875, 3.125 ],
 				"xl":	[ 3.125, 3.75 ],
-				"xxl":	[ 3.75, 0 ] // TODO fill me in
+				"xxl":	[ 3.75, 5 ]
 			}
 		},
 		"324": {
@@ -17434,6 +17549,7 @@ const	dbpokemon = {
 				"in-game":	"2018-02-09",
 				"shiny":	"2021-07-17"
 			},
+			"forms": [ "358-M" ],
 			"category": "Wind Chime",
 			"type": [ "Psychic" ],
 			"evolves-from": "433",
@@ -17465,6 +17581,18 @@ const	dbpokemon = {
 			},
 			"stardust-bonus": 1000
 		},
+		"358-M": {
+			"form-data": {
+				"base":	"358",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"type": [ "Psychic", "Steel" ],
+			"height-avg": 1.2,
+			"weight-avg": 8
+		},
 		"359": {
 			"dex-index": "359",
 			"name": "Absol",
@@ -17476,7 +17604,7 @@ const	dbpokemon = {
 			},
 			"category": "Disaster",
 			"type": [ "Dark" ],
-			"forms": [ "359-M" ],
+			"forms": [ "359-M", "359-Z" ],
 			"base-stamina": 163,
 			"base-attack": 246,
 			"base-defense": 120,
@@ -17530,6 +17658,19 @@ const	dbpokemon = {
 				"xl":	[ 1.5, 1.8 ],
 				"xxl":	[ 1.8, 1.86 ]
 			}
+		},
+		"359-Z": {
+			"name": "Mega Absol Z",
+			"form-data": {
+				"base":	"359",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"type": [ "Dark", "Ghost" ],
+			"height-avg": 1.2,
+			"weight-avg": 49
 		},
 		"360": {
 			"dex-index": "360",
@@ -17673,7 +17814,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-12-21",
 				"shiny":	"2021-12-31",
-				"shadow":	"2021-02-02"
+				"shadow":	"2021-02-02",
+				"dynamax":	"2025-12-22"
 			},
 			"category": "Clap",
 			"type": [ "Ice", "Water" ],
@@ -17682,6 +17824,7 @@ const	dbpokemon = {
 			"base-attack": 95,
 			"base-defense": 90,
 			"dynamax-class": 2,
+			"max-battle-tier": 1, // TODO guess
 			"fast-moves": [
 				{ "atk": "FAST_WAT_WATERGUN" },
 				{ "atk": "FAST_FIG_ROCKSMASH" }
@@ -17710,7 +17853,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-12-21",
 				"shiny":	"2021-12-31",
-				"shadow":	"2021-02-02"
+				"shadow":	"2021-02-02",
+				"dynamax":	"2025-12-22"
 			},
 			"category": "Ball Roll",
 			"type": [ "Ice", "Water" ],
@@ -17749,7 +17893,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-12-21",
 				"shiny":	"2021-12-31",
-				"shadow":	"2021-02-02"
+				"shadow":	"2021-02-02",
+				"dynamax":	"2025-12-22"
 			},
 			"category": "Ice Break",
 			"type": [ "Ice", "Water" ],
@@ -18245,14 +18390,14 @@ const	dbpokemon = {
 			"height-avg": 2.5,
 			"weight-avg": 942.9,
 			"size-data": {
-				"class": 0, // TODO
+				"class": 2,
 				"ht-std-dev": 0.3125,
 				"wt-std-dev": 117.8625,
 				"xxs":	[ 1.225, 1.25 ],
 				"xs":	[ 1.25, 1.875 ],
 				"a":	[ 1.875, 3.125 ],
 				"xl":	[ 3.125, 3.75 ],
-				"xxl":	[ 3.75, 0 ] // TODO
+				"xxl":	[ 3.75, 5 ]
 			}
 		},
 		"377": {
@@ -19290,6 +19435,7 @@ const	dbpokemon = {
 				"shiny":	"2022-07-17",
 				"shadow":	"2021-05-18"
 			},
+			"forms": [ "398-M" ],
 			"category": "Predator",
 			"type": [ "Normal", "Flying" ],
 			"evolves-from": "397",
@@ -19321,6 +19467,18 @@ const	dbpokemon = {
 				"xl":	[ 1.5, 1.8 ],
 				"xxl":	[ 1.8, 2.1 ]
 			}
+		},
+		"398-M": {
+			"form-data": {
+				"base":	"398",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"type": [ "Fighting", "Flying" ],
+			"height-avg": 1.9,
+			"weight-avg": 50
 		},
 		"399": {
 			"dex-index": "399",
@@ -21193,7 +21351,7 @@ const	dbpokemon = {
 			},
 			"category": "Mach",
 			"type": [ "Dragon", "Ground" ],
-			"forms": [ "445-M" ],
+			"forms": [ "445-M", "445-Z" ],
 			"evolves-from": "444",
 			"base-stamina": 239,
 			"base-attack": 261,
@@ -21239,6 +21397,19 @@ const	dbpokemon = {
 			"base-stamina": 239,
 			"base-attack": 339,
 			"base-defense": 222
+		},
+		"445-Z": {
+			"name": "Mega Garchomp Z",
+			"form-data": {
+				"base":	"445",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"type": [ "Dragon" ],
+			"height-avg": 1.9,
+			"weight-avg": 99
 		},
 		"446": {
 			"dex-index": "446",
@@ -21323,7 +21494,7 @@ const	dbpokemon = {
 			},
 			"category": "Aura",
 			"type": [ "Fighting", "Steel" ],
-			"forms": [ "448-M" ],
+			"forms": [ "448-M", "448-Z" ],
 			"evolves-from": "447",
 			"base-stamina": 172,
 			"base-attack": 236,
@@ -21381,6 +21552,18 @@ const	dbpokemon = {
 				"xl":	[ 1.625, 1.95 ],
 				"xxl":	[ 1.95, 2.275 ]
 			}
+		},
+		"448-Z": {
+			"name": "Mega Lucario Z",
+			"form-data": {
+				"base":	"448",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.3,
+			"weight-avg": 49.4
 		},
 		"449": {
 			"dex-index": "449",
@@ -22568,6 +22751,7 @@ const	dbpokemon = {
 				"shiny":	"2019-01-31",
 				"shadow":	"2024-01-27"
 			},
+			"forms": [ "478-M" ],
 			"category": "Snow Land",
 			"type": [ "Ice", "Ghost" ],
 			"evolves-from": "361",
@@ -22597,6 +22781,17 @@ const	dbpokemon = {
 				"xl":	[ 1.625, 1.95 ],
 				"xxl":	[ 1.95, 2.015 ]
 			}
+		},
+		"478-M": {
+			"form-data": {
+				"base":	"478",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 2.6,
+			"weight-avg": 29.6
 		},
 		"479": {
 			"dex-index": "479",
@@ -23017,6 +23212,7 @@ const	dbpokemon = {
 				"shiny":	"2020-01-07",
 				"shadow":	"2024-10-08"
 			},
+			"forms": [ "485-M" ],
 			"category": "Lava Dome",
 			"legendary": true,
 			"type": [ "Fire", "Steel" ],
@@ -23048,6 +23244,17 @@ const	dbpokemon = {
 				"xl":	[ 2.125, 2.55 ],
 				"xxl":	[ 2.55, 2.635 ]
 			}
+		},
+		"485-M": {
+			"form-data": {
+				"base":	"485",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 2.8,
+			"weight-avg": 570
 		},
 		"486": {
 			"dex-index": "486",
@@ -23293,6 +23500,7 @@ const	dbpokemon = {
 				"shadow":	"2025-11-07",
 				"sh-shiny":	"2025-11-07"
 			},
+			"forms": [ "491-M" ],
 			"category": "Pitch-Black",
 			"mythical": true,
 			"type": [ "Dark" ],
@@ -23322,6 +23530,17 @@ const	dbpokemon = {
 				"xl":	[ 1.875, 2.25 ],
 				"xxl":	[ 2.25, 2.325 ]
 			}
+		},
+		"491-M": {
+			"form-data": {
+				"base":	"491",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 3,
+			"weight-avg": 240
 		},
 		"492-0": {
 			"dex-index": "492-0",
@@ -23853,6 +24072,7 @@ const	dbpokemon = {
 				"shiny":	"2021-07-03",
 				"shadow":	"2025-01-15"
 			},
+			"forms": [ "500-M" ],
 			"category": "Mega Fire Pig",
 			"type": [ "Fire", "Fighting" ],
 			"evolves-from": "499",
@@ -23883,6 +24103,17 @@ const	dbpokemon = {
 				"xl":	[ 2, 2.4 ],
 				"xxl":	[ 2.4, 2.48 ]
 			}
+		},
+		"500-M": {
+			"form-data": {
+				"base":	"500",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.8,
+			"weight-avg": 180.3
 		},
 		"501": {
 			"dex-index": "501",
@@ -25021,6 +25252,7 @@ const	dbpokemon = {
 				"shadow":	"2023-10-26",
 				"dynamax":	"2024-11-15"
 			},
+			"forms": [ "530-M" ],
 			"category": "Subterrene",
 			"type": [ "Ground", "Steel" ],
 			"evolves-from": "529",
@@ -25052,6 +25284,17 @@ const	dbpokemon = {
 				"xl":	[ 0.875, 1.05 ],
 				"xxl":	[ 1.05, 1.225 ]
 			}
+		},
+		"530-M": {
+			"form-data": {
+				"base":	"530",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 0.9,
+			"weight-avg": 60
 		},
 		"531": {
 			"dex-index": "531",
@@ -25599,6 +25842,7 @@ const	dbpokemon = {
 				"shiny":	"2022-08-10",
 				"shadow":	"2024-10-08"
 			},
+			"forms": [ "545-M" ],
 			"category": "Megapede",
 			"type": [ "Bug", "Poison" ],
 			"evolves-from": "544",
@@ -25629,6 +25873,17 @@ const	dbpokemon = {
 				"xl":	[ 3.125, 3.75 ],
 				"xxl":	[ 3.75, 3.875 ]
 			}
+		},
+		"545-M": {
+			"form-data": {
+				"base":	"545",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 3.2,
+			"weight-avg": 230.5
 		},
 		"546": {
 			"dex-index": "546",
@@ -26338,6 +26593,7 @@ const	dbpokemon = {
 				"in-game":	"2020-01-29",
 				"shiny":	"2023-08-11"
 			},
+			"forms": [ "560-M" ],
 			"category": "Hoodlum",
 			"type": [ "Dark", "Fighting" ],
 			"evolves-from": "559",
@@ -26368,6 +26624,17 @@ const	dbpokemon = {
 				"xl":	[ 1.375, 1.65 ],
 				"xxl":	[ 1.65, 1.925 ]
 			}
+		},
+		"560-M": {
+			"form-data": {
+				"base":	"560",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.1,
+			"weight-avg": 31
 		},
 		"561": {
 			"dex-index": "561",
@@ -28199,6 +28466,7 @@ const	dbpokemon = {
 				"in-game":	"2021-03-16",
 				"shiny":	"2024-07-21"
 			},
+			"forms": [ "604-M" ],
 			"category": "EleFish",
 			"type": [ "Electric" ],
 			"evolves-from": "603",
@@ -28230,6 +28498,17 @@ const	dbpokemon = {
 				"xl":	[ 2.625, 3.15 ],
 				"xxl":	[ 3.15, 4.2 ]
 			}
+		},
+		"604-M": {
+			"form-data": {
+				"base":	"604",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 3,
+			"weight-avg": 180
 		},
 		"605": {
 			"dex-index": "605",
@@ -28387,6 +28666,7 @@ const	dbpokemon = {
 				"shiny":	"2022-10-15",
 				"shadow":	"2023-10-26"
 			},
+			"forms": [ "609-M" ],
 			"category": "Luring",
 			"type": [ "Ghost", "Fire" ],
 			"evolves-from": "608",
@@ -28418,6 +28698,17 @@ const	dbpokemon = {
 				"xl":	[ 1.25, 1.5 ],
 				"xxl":	[ 1.5, 2 ]
 			}
+		},
+		"609-M": {
+			"form-data": {
+				"base":	"609",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 2.5,
+			"weight-avg": 69.6
 		},
 		"610": {
 			"dex-index": "610",
@@ -28953,6 +29244,7 @@ const	dbpokemon = {
 				"shiny":	"2023-08-18",
 				"shadow":	"2022-11-14"
 			},
+			"forms": [ "623-M" ],
 			"category": "Automaton",
 			"type": [ "Ground", "Ghost" ],
 			"evolves-from": "622",
@@ -28982,6 +29274,17 @@ const	dbpokemon = {
 				"xl":	[ 3.5, 4.2 ],
 				"xxl":	[ 4.2, 5.6 ]
 			}
+		},
+		"623-M": {
+			"form-data": {
+				"base":	"623",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 4,
+			"weight-avg": 330
 		},
 		"624": {
 			"dex-index": "624",
@@ -30093,12 +30396,9 @@ const	dbpokemon = {
 			]
 		},
 		"647": {
-			"dex-index": "647",
+			"dex-index": "647-0",
 			"name": "Keldeo",
-			"availability": {
-				"in-game":	"2022-12-10"
-			},
-			"variants": [ "Ordinary", "Resolute" ], // TODO Resolute avail
+			"forms": [ "647-O", "647-R" ],
 			"category": "Colt",
 			"mythical": true,
 			"type": [ "Water", "Fighting" ],
@@ -30108,13 +30408,6 @@ const	dbpokemon = {
 			"fast-moves": [
 				{ "atk": "FAST_FIG_LOWKICK" },
 				{ "atk": "FAST_POI_POISONJAB" }
-			],
-			"charged-moves": [
-				{ "atk": "CHRG_BUG_XSCISSOR" },
-				{ "atk": "CHRG_WAT_AQUAJET" },
-				{ "atk": "CHRG_WAT_HYDROPUMP" },
-				{ "atk": "CHRG_FIG_CLOSECOMBAT" },
-				{ "atk": "CHRG_FIG_SACREDSWORD", "etm": true }
 			],
 			"size-data": {
 				"class": 1.55,
@@ -30126,6 +30419,43 @@ const	dbpokemon = {
 				"xl":	[ 1.75, 2.1 ],
 				"xxl":	[ 2.1, 2.17 ]
 			}
+		},
+		"647-O": {
+			"form-data": {
+				"base": "647",
+				"form-name": "Ordinary Forme",
+				"form-ital": "Forma Normale"
+			},
+			"availability": {
+				"in-game":	"2022-12-10",
+				"shiny":	"2025-11-25"
+			},
+			"charged-moves": [
+				{ "atk": "CHRG_BUG_XSCISSOR" },
+				{ "atk": "CHRG_WAT_AQUAJET" },
+				{ "atk": "CHRG_WAT_HYDROPUMP" },
+				{ "atk": "CHRG_FIG_CLOSECOMBAT" },
+				{ "atk": "CHRG_FIG_SACREDSWORD" }
+			],
+		},
+		"647-R": {
+			"form-data": {
+				"base": "647",
+				"form-name": "Resolute Forme",
+				"form-ital": "Forma Risoluta"
+			},
+			"availability": {
+				"in-game":	"2025-12-10",
+				"shiny":	"2025-11-25"
+			},
+			"charged-moves": [
+				{ "atk": "CHRG_BUG_XSCISSOR" },
+				{ "atk": "CHRG_WAT_AQUAJET" },
+				{ "atk": "CHRG_WAT_HYDROPUMP" },
+				{ "atk": "CHRG_FIG_CLOSECOMBAT" },
+				{ "atk": "CHRG_FIG_SACREDSWORD" },
+				{ "atk": "CHRG_FIG_SECRETSWORD" }
+			],
 		},
 		"648-0": {
 			"dex-index": "648-0",
@@ -30388,6 +30718,7 @@ const	dbpokemon = {
 				"in-game":	"2020-12-02",
 				"shiny":	"2023-01-07"
 			},
+			"forms": [ "652-M" ],
 			"category": "Spiny Armor",
 			"type": [ "Grass", "Fighting" ],
 			"evolves-from": "651",
@@ -30420,6 +30751,17 @@ const	dbpokemon = {
 				"xl":	[ 2, 2.4 ],
 				"xxl":	[ 2.4, 2.8 ]
 			}
+		},
+		"652-M": {
+			"form-data": {
+				"base":	"652",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.6,
+			"weight-avg": 90
 		},
 		"653": {
 			"dex-index": "653",
@@ -30501,6 +30843,7 @@ const	dbpokemon = {
 				"in-game":	"2020-12-02",
 				"shiny":	"2023-05-21"
 			},
+			"forms": [ "655-M" ],
 			"category": "Fox",
 			"type": [ "Fire", "Psychic" ],
 			"evolves-from": "654",
@@ -30534,6 +30877,17 @@ const	dbpokemon = {
 				"xl":	[ 1.875, 2.25 ],
 				"xxl":	[ 2.25, 2.625 ]
 			}
+		},
+		"655-M": {
+			"form-data": {
+				"base":	"655",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.5,
+			"weight-avg": 39
 		},
 		"656": {
 			"dex-index": "656",
@@ -30617,7 +30971,7 @@ const	dbpokemon = {
 			},
 			"category": "Ninja",
 			"type": [ "Water", "Dark" ],
-			"forms": [ "658-A" ],
+			"forms": [ "658-A", "658-M" ],
 			"evolves-from": "657",
 			"base-stamina": 176,
 			"base-attack": 223,
@@ -30658,6 +31012,17 @@ const	dbpokemon = {
 				"in-game":	false
 			},
 			"size-calc-ignore": true
+		},
+		"658-M": {
+			"form-data": {
+				"base":	"658",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.5,
+			"weight-avg": 40
 		},
 		"659": {
 			"dex-index": "659",
@@ -31005,6 +31370,7 @@ const	dbpokemon = {
 				"in-game":	"2020-12-02",
 				"shiny":	"2022-02-01"
 			},
+			"forms": [ "668-M" ],
 			"variants": [ "Male", "Female" ],
 			"category": "Royal",
 			"type": [ "Fire", "Normal" ],
@@ -31036,6 +31402,17 @@ const	dbpokemon = {
 				"xl":	[ 1.875, 2.25 ],
 				"xxl":	[ 2.25, 2.325 ]
 			}
+		},
+		"668-M": {
+			"form-data": {
+				"base":	"668",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.5,
+			"weight-avg": 93.3
 		},
 		"669-0": {
 			"dex-index": "669-0",
@@ -31135,7 +31512,7 @@ const	dbpokemon = {
 			},
 			"category": "Single Bloom",
 			"type": [ "Fairy" ],
-			"forms": [ "670-B", "670-O", "670-R", "670-W", "670-Y" ],
+			"forms": [ "670-B", "670-O", "670-R", "670-W", "670-Y", "670-E" ],
 			"evolves-from": "669-0",
 			"evolves-into": [ "671-0" ],
 			"base-stamina": 144,
@@ -31219,6 +31596,27 @@ const	dbpokemon = {
 			"evolves-from": "669-Y",
 			"evolves-into": [ "671-Y" ],
 			"size-calc-ignore": true
+		},
+		"670-E": {
+			"name": "Eternal Flower Floette",
+			"form-data": {
+				"base":	"670-0"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"forms": [ "670-M" ]
+		},
+		"670-M": {
+			"form-data": {
+				"base":	"670-E",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 0.2,
+			"weight-avg": 100.8
 		},
 		"671-0": {
 			"dex-index": "671-0",
@@ -31551,7 +31949,7 @@ const	dbpokemon = {
 			},
 			"category": "Constraint",
 			"type": [ "Psychic" ],
-			"forms": [ "678-M", "678-F" ],
+			"forms": [ "678-M", "678-F", "678-ME" ],
 			"base-stamina": 179,
 			"base-attack": 166,
 			"base-defense": 167,
@@ -31607,11 +32005,23 @@ const	dbpokemon = {
 			],
 			"size-calc-ignore": false
 		},
-		"679": { // TODO Stats
+		"678-ME": {
+			"form-data": {
+				"base":	"678-0",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 0.8,
+			"weight-avg": 10.1
+		},
+		"679": {
 			"dex-index": "679",
 			"name": "Honedge",
 			"availability": {
-				"in-game":	"2025-07-22"
+				"in-game":	"2025-07-22",
+				"shiny":	"2026-02-28"
 			},
 			"category": "Sword",
 			"type": [ "Steel", "Ghost" ],
@@ -31641,11 +32051,12 @@ const	dbpokemon = {
 				"xxl":	[ 1.2, 1.4 ]
 			}
 		},
-		"680": { // TODO Stats
+		"680": {
 			"dex-index": "680",
 			"name": "Doublade",
 			"availability": {
-				"in-game":	"2025-07-22"
+				"in-game":	"2025-07-22",
+				"shiny":	"2026-02-28"
 			},
 			"category": "Sword",
 			"type": [ "Steel", "Ghost" ],
@@ -31676,11 +32087,12 @@ const	dbpokemon = {
 				"xxl":	[ 1.2, 1.4 ]
 			}
 		},
-		"681-0": { // TODO Stats
+		"681-0": {
 			"dex-index": "681-0",
 			"name": "Aegislash",
 			"availability": {
-				"in-game":	"2025-07-22"
+				"in-game":	"2025-07-22",
+				"shiny":	"2026-02-28"
 			},
 			"category": "Royal Sword",
 			"type": [ "Steel", "Ghost" ],
@@ -31927,6 +32339,7 @@ const	dbpokemon = {
 				"shadow":	"2025-05-14",
 				"dynamax":	"2025-11-03"
 			},
+			"forms": [ "687-M" ],
 			"category": "Overturning",
 			"type": [ "Dark", "Psychic" ],
 			"evolves-from": "686",
@@ -31957,6 +32370,17 @@ const	dbpokemon = {
 				"xl":	[ 1.875, 2.25 ],
 				"xxl":	[ 2.25, 3 ]
 			}
+		},
+		"687-M": {
+			"form-data": {
+				"base":	"687",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 2.9,
+			"weight-avg": 69.8
 		},
 		"688": {
 			"dex-index": "688",
@@ -32001,6 +32425,7 @@ const	dbpokemon = {
 				"in-game":	"2021-04-20",
 				"shiny":	"2022-05-12"
 			},
+			"forms": [ "689-M" ],
 			"category": "Collective",
 			"type": [ "Rock", "Water" ],
 			"evolves-from": "688",
@@ -32032,6 +32457,18 @@ const	dbpokemon = {
 				"xl":	[ 1.625, 1.95 ],
 				"xxl":	[ 1.95, 2.015 ]
 			}
+		},
+		"689-M": {
+			"form-data": {
+				"base":	"689",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"type": [ "Rock", "Fighting" ],
+			"height-avg": 2.2,
+			"weight-avg": 100
 		},
 		"690": {
 			"dex-index": "690",
@@ -32077,6 +32514,7 @@ const	dbpokemon = {
 				"in-game":	"2021-04-13",
 				"shiny":	"2023-08-18"
 			},
+			"forms": [ "691-M" ],
 			"category": "Mock Kelp",
 			"type": [ "Poison", "Dragon" ],
 			"evolves-from": "690",
@@ -32108,6 +32546,17 @@ const	dbpokemon = {
 				"xl":	[ 2.25, 2.7 ],
 				"xxl":	[ 2.7, 3.15 ]
 			}
+		},
+		"691-M": {
+			"form-data": {
+				"base":	"691",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 2.1,
+			"weight-avg": 100.3
 		},
 		"692": {
 			"dex-index": "692",
@@ -32458,8 +32907,10 @@ const	dbpokemon = {
 			"dex-index": "701",
 			"name": "Hawlucha",
 			"availability": {
-				"in-game":	"2023-03-01"
+				"in-game":	"2023-03-01",
+				"shiny":	"2026-02-28"
 			},
+			"forms": [ "701-M" ],
 			"category": "Wrestling",
 			"type": [ "Fighting", "Flying" ],
 			"base-stamina": 186,
@@ -32488,6 +32939,17 @@ const	dbpokemon = {
 				"xl":	[ 1, 1.2 ],
 				"xxl":	[ 1.2, 1.4 ]
 			}
+		},
+		"701-M": {
+			"form-data": {
+				"base":	"701",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1,
+			"weight-avg": 25
 		},
 		"702": {
 			"dex-index": "702",
@@ -32700,7 +33162,8 @@ const	dbpokemon = {
 			"dex-index": "707",
 			"name": "Klefki",
 			"availability": {
-				"in-game":	"2020-12-02"
+				"in-game":	"2020-12-02",
+				"shiny":	"2026-02-28"
 			},
 			"category": "Key Ring",
 			"type": [ "Steel", "Fairy" ],
@@ -33397,6 +33860,7 @@ const	dbpokemon = {
 		"718-C": {
 			"dex-index": "718-C",
 			"name": "Zygarde (Complete Forme)",
+			"forms": [ "718-M" ],
 			"evolves-from": "718-L",
 			"base-stamina": 389,
 			"base-attack": 184,
@@ -33415,12 +33879,24 @@ const	dbpokemon = {
 				"xxl":	[ 6.75, 6.975 ]
 			}
 		},
+		"718-M": {
+			"form-data": {
+				"base":	"718-C",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 7.7,
+			"weight-avg": 610
+		},
 		"719": {
 			"dex-index": "719",
 			"name": "Diancie",
 			"availability": {
 				"in-game":	"2023-08-04",
-				"shadow":	false
+				"shadow":	false,
+				"shiny":	"2026-02-28"
 			},
 			"category": "Jewel",
 			"mythical": true,
@@ -34329,6 +34805,7 @@ const	dbpokemon = {
 				"in-game":	"2022-12-06",
 				"shiny":	"2024-06-14"
 			},
+			"forms": [ "740-M" ],
 			"category": "Woolly Crab",
 			"type": [ "Fighting", "Ice" ],
 			"evolves-from": "739",
@@ -34359,6 +34836,17 @@ const	dbpokemon = {
 				"xl":	[ 2.125, 2.55 ],
 				"xxl":	[ 2.55, 2.635 ]
 			}
+		},
+		"740-M": {
+			"form-data": {
+				"base":	"740",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 2.6,
+			"weight-avg": 252.8
 		},
 		"741-0": {
 			"dex-index": "741-0",
@@ -35546,6 +36034,7 @@ const	dbpokemon = {
 				"in-game":	"2022-06-16",
 				"shiny":	"2024-04-04"
 			},
+			"forms": [ "768-M" ],
 			"category": "Hard Scale",
 			"type": [ "Bug", "Water" ],
 			"evolves-from": "767",
@@ -35578,6 +36067,18 @@ const	dbpokemon = {
 				"xl":	[ 2.5, 3 ],
 				"xxl":	[ 3, 3.1 ]
 			}
+		},
+		"768-M": {
+			"form-data": {
+				"base":	"768",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"type": [ "Bug", "Steel" ],
+			"height-avg": 2.3,
+			"weight-avg": 148
 		},
 		"769": {
 			"dex-index": "769",
@@ -36211,6 +36712,7 @@ const	dbpokemon = {
 				"in-game":	"2024-02-05",
 				"shiny":	"2024-02-05"
 			},
+			"forms": [ "780-M" ],
 			"category": "Placid",
 			"type": [ "Normal", "Dragon" ],
 			"base-stamina": 186,
@@ -36239,6 +36741,17 @@ const	dbpokemon = {
 				"xl":	[ 3.75, 4.5 ],
 				"xxl":	[ 4.5, 4.65 ]
 			}
+		},
+		"780-M": {
+			"form-data": {
+				"base":	"780",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 3,
+			"weight-avg": 240.5
 		},
 		"781": {
 			"dex-index": "781",
@@ -37101,6 +37614,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	false
 			},
+			"forms": [ "801-M" ],
 			"variants": [ "", "Original Color" ],
 			"variants-ital": [ "", "Colore Antico" ],
 			"mythical": true,
@@ -37128,6 +37642,17 @@ const	dbpokemon = {
 				"xl":	[ 1.25, 1.5 ],
 				"xxl":	[ 1.5, 1.55 ]
 			}
+		},
+		"801-M": {
+			"form-data": {
+				"base":	"801",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.3,
+			"weight-avg": 248.1
 		},
 		"802": {
 			"dex-index": "802",
@@ -37316,6 +37841,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	false
 			},
+			"forms": [ "807-M" ],
 			"category": "Thunderclap",
 			"mythical": true,
 			"type": [ "Electric" ],
@@ -37344,6 +37870,17 @@ const	dbpokemon = {
 				"xl":	[ 1.875, 2.25 ],
 				"xxl":	[ 2.25, 2.325 ]
 			}
+		},
+		"807-M": {
+			"form-data": {
+				"base":	"807",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.5,
+			"weight-avg": 44.5
 		},
 		"808": {
 			"dex-index": "808",
@@ -37435,6 +37972,7 @@ const	dbpokemon = {
 			"name": "Grookey",
 			"availability": {
 				"in-game":	"2024-09-03",
+				"shiny":	"2026-01-18",
 				"dynamax":	"2024-10-01"
 			},
 			"category": "Chimp",
@@ -37471,6 +38009,7 @@ const	dbpokemon = {
 			"name": "Thwackey",
 			"availability": {
 				"in-game":	"2024-09-03",
+				"shiny":	"2026-01-18",
 				"dynamax":	"2024-10-01"
 			},
 			"category": "Beat",
@@ -37507,8 +38046,8 @@ const	dbpokemon = {
 			"name": "Rillaboom",
 			"availability": {
 				"in-game":	"2024-09-03",
-				"dynamax":	"2024-10-01",
-				"shiny":	false
+				"shiny":	"2026-01-18",
+				"dynamax":	"2024-10-01"
 			},
 			"category": "Drummer",
 			"type": [ "Grass" ],
@@ -37523,8 +38062,10 @@ const	dbpokemon = {
 				{ "atk": "FAST_NOR_SCRATCH" }
 			],
 			"charged-moves": [
-				{ "atk": "CHRG_GRA_GRASSKNOT" },
+				{ "atk": "CHRG_GRA_DRUMBEATING", "start": "2026-01-18" },
 				{ "atk": "CHRG_GRA_ENERGYBALL" },
+				{ "atk": "CHRG_GRA_FRENZYPLANT", "etm": true, "start": "2026-01-18" },
+				{ "atk": "CHRG_GRA_GRASSKNOT" },
 				{ "atk": "CHRG_GRO_EARTHPOWER" }
 			],
 			"height-avg": 2.1,
@@ -38473,7 +39014,7 @@ const	dbpokemon = {
 			"dex-index": "837",
 			"name": "Rolycoly",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-12-24"
 			},
 			"category": "Coal",
 			"type": [ "Rock" ],
@@ -38507,7 +39048,7 @@ const	dbpokemon = {
 			"dex-index": "838",
 			"name": "Carkol",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-12-24"
 			},
 			"category": "Coal",
 			"type": [ "Rock", "Fire" ],
@@ -38543,7 +39084,7 @@ const	dbpokemon = {
 			"dex-index": "839",
 			"name": "Coalossal",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-12-24"
 			},
 			"category": "Coal",
 			"type": [ "Rock", "Fire" ],
@@ -39083,7 +39624,7 @@ const	dbpokemon = {
 			"dex-index": "852",
 			"name": "Clobbopus",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-12-11"
 			},
 			"category": "Tantrum",
 			"type": [ "Fighting" ],
@@ -39117,7 +39658,7 @@ const	dbpokemon = {
 			"dex-index": "853",
 			"name": "Grapploct",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-12-11"
 			},
 			"category": "Jujitsu",
 			"type": [ "Fighting" ],
@@ -39832,6 +40373,7 @@ const	dbpokemon = {
 				"shiny":	"2024-09-08",
 				"dynamax":	"2024-10-01"
 			},
+			"forms": [ "870-M" ],
 			"category": "Formation",
 			"type": [ "Fighting" ],
 			"base-stamina": 163,
@@ -39860,6 +40402,17 @@ const	dbpokemon = {
 				"xl":	[ 3.75, 4.5 ],
 				"xxl":	[ 4.5, 4.65 ]
 			}
+		},
+		"870-M": {
+			"form-data": {
+				"base":	"870",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.6,
+			"weight-avg": 99
 		},
 		"871": {
 			"dex-index": "871",
@@ -42516,7 +43069,7 @@ const	dbpokemon = {
 			"dex-index": "932",
 			"name": "Nacli",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-12-02"
 			},
 			"category": "Rock Salt",
 			"type": [ "Rock" ],
@@ -42551,7 +43104,7 @@ const	dbpokemon = {
 			"dex-index": "933",
 			"name": "Naclstack",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-12-02"
 			},
 			"category": "Rock Salt",
 			"type": [ "Rock" ],
@@ -42587,7 +43140,7 @@ const	dbpokemon = {
 			"dex-index": "934",
 			"name": "Garganacl",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2025-12-02"
 			},
 			"category": "Rock Salt",
 			"type": [ "Rock" ],
@@ -43222,6 +43775,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	false
 			},
+			"forms": [ "952-M" ],
 			"category": "Spicy Pepper",
 			"type": [ "Grass", "Fire" ],
 			"evolves-from": "951",
@@ -43251,6 +43805,17 @@ const	dbpokemon = {
 				"xl":	[ 1.125, 1.35 ],
 				"xxl":	[ 1.35, 1.575 ]
 			}
+		},
+		"952-M": {
+			"form-data": {
+				"base":	"952",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 1.2,
+			"weight-avg": 22
 		},
 		"953": {
 			"dex-index": "953",
@@ -43902,6 +44467,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	false
 			},
+			"forms": [ "970-M" ],
 			"category": "Ore",
 			"type": [ "Rock", "Poison" ],
 			"evolves-from": "969",
@@ -43930,6 +44496,17 @@ const	dbpokemon = {
 				"xl":	[ 1.875, 2.25 ],
 				"xxl":	[ 2.25, 2.625 ]
 			}
+		},
+		"970-M": {
+			"form-data": {
+				"base":	"970",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 2.8,
+			"weight-avg": 77
 		},
 		"971": {
 			"dex-index": "971",
@@ -44186,6 +44763,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2025-07-15"
 			},
+			"forms": [ "978-M" ],
 			"variants": [ "Curly", "Droopy", "Stretchy" ],
 			"variants-ital": [ "Arcuata", "Adagiata", "Tesa" ],
 			"category": "Mimicry",
@@ -44216,6 +44794,17 @@ const	dbpokemon = {
 				"xl":	[ 0.375, 0.45 ],
 				"xxl":	[ 0.45, 0.525 ]
 			}
+		},
+		"978-M": {
+			"form-data": {
+				"base":	"978",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 0.6,
+			"weight-avg": 24
 		},
 		"979": {
 			"dex-index": "979",
@@ -44892,6 +45481,7 @@ const	dbpokemon = {
 				"in-game":	"2023-09-10",
 				"shiny":	"2025-05-29"
 			},
+			"forms": [ "998-M" ],
 			"category": "Ice Dragon",
 			"type": [ "Dragon", "Ice" ],
 			"evolves-from": "997",
@@ -44922,6 +45512,17 @@ const	dbpokemon = {
 				"xl":	[ 2.625, 3.15 ],
 				"xxl":	[ 3.15, 3.675 ]
 			}
+		},
+		"998-M": {
+			"form-data": {
+				"base":	"998",
+				"type":	"Mega"
+			},
+			"availability": {
+				"in-game":	false
+			},
+			"height-avg": 2.1,
+			"weight-avg": 315
 		},
 		"999-0": {
 			"dex-index": "999-0",
@@ -45710,11 +46311,11 @@ const	dbpokemon = {
 		"19", "19-A", "20", "20-A",
 		"21", "22",
 		"23", "24",
-		"25", "25-G", "26", "26-A",
+		"25", "25-G", "26", "26-A", "26-X", "26-Y",
 		"27", "27-A", "28", "28-A",
 		"29", "30", "31",
 		"32", "33", "34",
-		"35", "36",
+		"35", "36", "36-M",
 		"37", "37-A", "38", "38-A",
 		"39", "40",
 		"41", "42",
@@ -45729,7 +46330,7 @@ const	dbpokemon = {
 		"60", "61", "62",
 		"63", "64", "65", "65-M",
 		"66", "67", "68", "68-G",
-		"69", "70", "71",
+		"69", "70", "71", "71-M",
 		"72", "73",
 		"74", "74-A", "75", "75-A", "76", "76-A",
 		"77", "77-G", "78", "78-G",
@@ -45755,7 +46356,7 @@ const	dbpokemon = {
 		"115", "115-M",
 		"116", "117",
 		"118", "119",
-		"120", "121",
+		"120", "121", "121-M",
 		"122", "122-G",
 		"123", "124", "125", "126",
 		"127", "127-M",
@@ -45770,12 +46371,12 @@ const	dbpokemon = {
 		"142", "142-M",
 		"143", "143-G",
 		"144", "144-G", "145", "145-G", "146", "146-G",
-		"147", "148", "149",
+		"147", "148", "149", "149-M",
 		"150", "150-A", "150-X", "150-Y",
 		"151",
-		"152", "153", "154",
+		"152", "153", "154", "154-M",
 		"155", "156", "157", "157-H",
-		"158", "159", "160",
+		"158", "159", "160", "160-M",
 		"161", "162",
 		"163", "164",
 		"165", "166",
@@ -45812,7 +46413,8 @@ const	dbpokemon = {
 		"220", "221",
 		"222", "222-G",
 		"223", "224",
-		"225", "226", "227",
+		"225", "226",
+		"227", "227-M",
 		"228", "229", "229-M",
 		"230",
 		"231", "232",
@@ -45870,8 +46472,8 @@ const	dbpokemon = {
 		"352",
 		"353", "354", "354-M",
 		"355", "356",
-		"357", "358",
-		"359", "359-M",
+		"357", "358", "358-M",
+		"359", "359-M", "359-Z",
 		"360",
 		"361", "362", "362-M",
 		"363", "364", "365",
@@ -45888,7 +46490,7 @@ const	dbpokemon = {
 		"387", "388", "389",
 		"390", "391", "392",
 		"393", "394", "395",
-		"396", "397", "398",
+		"396", "397", "398", "398-M",
 		"399", "400",
 		"401", "402",
 		"403", "404", "405",
@@ -45912,9 +46514,9 @@ const	dbpokemon = {
 		"434", "435",
 		"436", "437",
 		"438", "439", "440", "441", "442",
-		"443", "444", "445", "445-M",
+		"443", "444", "445", "445-M", "445-Z",
 		"446",
-		"447", "448", "448-M",
+		"447", "448", "448-M", "448-Z",
 		"449", "450",
 		"451", "452",
 		"453", "454",
@@ -45926,18 +46528,20 @@ const	dbpokemon = {
 		"470", "471",
 		"472", "473", "474",
 		"475", "475-M",
-		"476", "477", "478",
+		"476", "477", "478", "478-M",
 		"479", "479-H", "479-W", "479-G", "479-V", "479-M",
 		"480", "481", "482",
 		"483", "483-O", "484", "484-O",
-		"485", "486",
+		"485", "485-M",
+		"486",
 		"487-0", "487-A", "487-O",
-		"488", "489", "490", "491",
+		"488", "489", "490",
+		"491", "491-M",
 		"492-0", "492-L", "492-S",
 		"493", "493-BUG", "493-DAR", "493-DRA", "493-ELE", "493-FAI", "493-FIG", "493-FIR", "493-FLY", "493-GHO", "493-GRA", "493-GRO", "493-ICE", "493-POI", "493-PSY", "493-ROC", "493-STE", "493-WAT",
 		"494",
 		"495", "496", "497",
-		"498", "499", "500",
+		"498", "499", "500", "500-M",
 		"501", "502", "503", "503-H",
 		"504", "505",
 		"506", "507", "508",
@@ -45948,13 +46552,13 @@ const	dbpokemon = {
 		"522", "523",
 		"524", "525", "526",
 		"527", "528",
-		"529", "530",
+		"529", "530", "530-M",
 		"531", "531-M",
 		"532", "533", "534",
 		"535", "536", "537",
 		"538", "539",
 		"540", "541", "542",
-		"543", "544", "545",
+		"543", "544", "545", "545-M",
 		"546", "547",
 		"548", "549", "549-H",
 		"550-0", "550-B", "550-R", "550-W",
@@ -45962,7 +46566,7 @@ const	dbpokemon = {
 		"554", "554-G", "555", "555-Z", "555-G", "555-GZ",
 		"556",
 		"557", "558",
-		"559", "560",
+		"559", "560", "560-M",
 		"561",
 		"562", "562-G", "563",
 		"564", "565",
@@ -45985,9 +46589,9 @@ const	dbpokemon = {
 		"595", "596",
 		"597", "598",
 		"599", "600", "601",
-		"602", "603", "604",
+		"602", "603", "604", "604-M",
 		"605", "606",
-		"607", "608", "609",
+		"607", "608", "609", "609-M",
 		"610", "611", "612",
 		"613", "614",
 		"615",
@@ -45995,7 +46599,7 @@ const	dbpokemon = {
 		"618", "618-G",
 		"619", "620",
 		"621",
-		"622", "623",
+		"622", "623", "623-M",
 		"624", "625",
 		"626",
 		"627", "628", "628-H",
@@ -46009,34 +46613,36 @@ const	dbpokemon = {
 		"643", "644",
 		"645-0", "645-I", "645-T",
 		"646", "646-W", "646-B",
-		"647",
+		"647-0", "647-O", "647-R",
 		"648-0", "648-A", "648-P",
 		"649", "649-B", "649-C", "649-D", "649-S",
-		"650", "651", "652",
-		"653", "654", "655",
-		"656", "657", "658", "658-A",
+		"650", "651", "652", "652-M",
+		"653", "654", "655", "655-M",
+		"656", "657", "658", "658-A", "658-M",
 		"659", "660",
 		"661", "662", "663",
 		"664", "665", "666",
-		"667", "668",
+		"667", "668", "668-M",
 		"669-0", "669-B", "669-O", "669-R", "669-W", "669-Y",
-		"670-0", "670-B", "670-O", "670-R", "670-W", "670-Y",
+		"670-0", "670-B", "670-O", "670-R", "670-W", "670-Y", "670-E", "670-M",
 		"671-0", "671-B", "671-O", "671-R", "671-W", "671-Y",
 		"672", "673",
 		"674", "675",
 		"676",
-		"677", "678-0", "678-M", "678-F",
+		"677", "678-0", "678-M", "678-F", "678-ME",
 		"679", "680", "681-0", "681-S", "681-B",
 		"682", "683",
 		"684", "685",
-		"686", "687",
-		"688", "689",
-		"690", "691",
+		"686", "687", "687-M",
+		"688", "689", "689-M",
+		"690", "691", "691-M",
 		"692", "693",
 		"694", "695",
 		"696", "697",
 		"698", "699",
-		"700", "701", "702", "703",
+		"700",
+		"701", "701-M",
+		"702", "703",
 		"704", "705", "705-H", "706", "706-H",
 		"707",
 		"708", "709",
@@ -46045,7 +46651,7 @@ const	dbpokemon = {
 		"712", "713", "713-H",
 		"714", "715",
 		"716", "717",
-		"718-0", "718-X", "718-L", "718-C",
+		"718-0", "718-X", "718-L", "718-C", "718-M",
 		"719", "719-M",
 		"720-0", "720-C", "720-U",
 		"721",
@@ -46055,7 +46661,7 @@ const	dbpokemon = {
 		"731", "732", "733",
 		"734", "735",
 		"736", "737", "738",
-		"739", "740",
+		"739", "740", "740-M",
 		"741-0", "741-F", "741-E", "741-P", "741-G",
 		"742", "743",
 		"744", "744-S", "745-0", "745-D", "745-N", "745-S",
@@ -46069,23 +46675,26 @@ const	dbpokemon = {
 		"759", "760",
 		"761", "762", "763",
 		"764", "765", "766",
-		"767", "768",
+		"767", "768", "768-M",
 		"769", "770",
 		"771",
 		"772", "773", "773-BUG", "773-DAR", "773-DRA", "773-ELE", "773-FAI", "773-FIG", "773-FIR", "773-FLY", "773-GHO", "773-GRA", "773-GRO", "773-ICE", "773-POI", "773-PSY", "773-ROC", "773-STE", "773-WAT",
 		"774-0", "774-M", "774-C",
 		"775", "776", "777",
 		"778", "778-B",
-		"779", "780", "781",
+		"779",
+		"780", "780-M",
+		"781",
 		"782", "783", "784",
 		"785", "786", "787", "788",
 		"789", "790", "791", "792",
 		"793", "794", "795", "796", "797", "798", "799",
 		"800", "800-S", "800-L", "800-U",
-		"801", "802",
+		"801", "801-M",
+		"802",
 		"803", "804",
 		"805", "806",
-		"807",
+		"807", "807-M",
 		"808", "809", "809-G",
 		"810", "811", "812", "812-G",
 		"813", "814", "815", "815-G",
@@ -46111,7 +46720,8 @@ const	dbpokemon = {
 		"859", "860", "861", "861-G",
 		"862", "863", "864", "865", "866", "867",
 		"868", "869", "869-G",
-		"870", "871",
+		"870", "870-M",
+		"871",
 		"872", "873",
 		"874",
 		"875-0", "875-I", "875-N",
@@ -46152,7 +46762,7 @@ const	dbpokemon = {
 		"946", "947",
 		"948", "949",
 		"950",
-		"951", "952",
+		"951", "952", "952-M",
 		"953", "954",
 		"955", "956",
 		"957", "958", "959",
@@ -46160,16 +46770,18 @@ const	dbpokemon = {
 		"962", "963", "964-0", "964-Z", "964-H",
 		"965", "966",
 		"967", "968",
-		"969", "970",
+		"969", "970", "970-M",
 		"971", "972",
 		"973",
 		"974", "975",
-		"976", "977", "978", "979", "980", "981",
+		"976", "977",
+		"978", "978-M",
+		"979", "980", "981",
 		"982-0", "982-D", "982-T",
 		"983",
 		"984", "985", "986", "987", "988", "989",
 		"990", "991", "992", "993", "994", "995",
-		"996", "997", "998",
+		"996", "997", "998", "998-M",
 		"999-0", "999-R", "999-C", "1000",
 		"1001", "1002", "1003", "1004",
 		"1005", "1006",
