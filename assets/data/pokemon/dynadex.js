@@ -25019,7 +25019,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2020-08-14",
-				"shadow":	"2024-10-08"
+				"shadow":	"2024-10-08",
+				"dynamax":	"2026-01-25"
 			},
 			"category": "Mantle",
 			"type": [ "Rock" ],
@@ -25028,6 +25029,7 @@ const	dbpokemon = {
 			"base-attack": 121,
 			"base-defense": 110,
 			"dynamax-class": 2,
+			"max-battle-tier": 1, // TODO Guess
 			"fast-moves": [
 				{ "atk": "FAST_NOR_TACKLE" },
 				{ "atk": "FAST_ROC_SMACKDOWN" }
@@ -25056,7 +25058,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2020-08-14",
-				"shadow":	"2024-10-08"
+				"shadow":	"2024-10-08",
+				"dynamax":	"2026-01-25"
 			},
 			"category": "Ore",
 			"type": [ "Rock" ],
@@ -25094,7 +25097,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2020-08-14",
-				"shadow":	"2024-10-08"
+				"shadow":	"2024-10-08",
+				"dynamax":	"2026-01-25"
 			},
 			"category": "Compressed",
 			"type": [ "Rock" ],
@@ -36710,7 +36714,8 @@ const	dbpokemon = {
 			"name": "Drampa",
 			"availability": {
 				"in-game":	"2024-02-05",
-				"shiny":	"2024-02-05"
+				"shiny":	"2024-02-05",
+				"dynamax":	"2026-01-05"
 			},
 			"forms": [ "780-M" ],
 			"category": "Placid",
@@ -36719,6 +36724,7 @@ const	dbpokemon = {
 			"base-attack": 231,
 			"base-defense": 164,
 			"dynamax-class": 3,
+			"max-battle-tier": 3, // TODO guess
 			"fast-moves": [
 				{ "atk": "FAST_DRA_DRAGONBREATH" },
 				{ "atk": "FAST_PSY_EXTRASENSORY" }
@@ -36757,7 +36763,8 @@ const	dbpokemon = {
 			"dex-index": "781",
 			"name": "Dhelmise",
 			"availability": {
-				"in-game":	"2025-02-11"
+				"in-game":	"2025-02-11",
+				"shiny":	"2026-01-06"
 			},
 			"category": "Sea Creeper",
 			"type": [ "Ghost", "Grass" ],
@@ -43704,7 +43711,7 @@ const	dbpokemon = {
 			"dex-index": "950",
 			"name": "Klawf",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-01-06"
 			},
 			"category": "Ambush",
 			"type": [ "Rock" ],
