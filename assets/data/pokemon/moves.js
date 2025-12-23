@@ -309,7 +309,7 @@ const dbmoves = {
 			"raid-power": 20,
 			"raid-energy": 14,
 			"raid-cooldown": 1.5,
-			"trainer-power": 4,
+			"trainer-power": 8,
 			"trainer-energy": 13,
 			"trainer-cooldown": 2
 		},
@@ -715,7 +715,7 @@ const dbmoves = {
 			"raid-power": 6,
 			"raid-energy": 15,
 			"raid-cooldown": 1.0,
-			"trainer-power": 5,
+			"trainer-power": 6,
 			"trainer-energy": 8,
 			"trainer-cooldown": 1
 		},
@@ -1253,7 +1253,7 @@ const dbmoves = {
 			"raid-power": 70,
 			"raid-energy": 50,
 			"raid-duration": 2.0,
-			"trainer-power": 60,
+			"trainer-power": 65,
 			"trainer-energy": 40
 		},
 		"CHRG_DAR_NIGHTSLASH": {
@@ -1333,7 +1333,7 @@ const dbmoves = {
 			"raid-power": 155,
 			"raid-energy": 50,
 			"raid-duration": 3.3,
-			"trainer-power": 100,
+			"trainer-power": 90,
 			"trainer-energy": 45
 		},
 		"CHRG_DRA_DRAGONPULSE": {
@@ -1346,10 +1346,10 @@ const dbmoves = {
 			"trainer-power": 90,
 			"trainer-energy": 60
 		},
-		"CHRG_DRA_DYNAMAXCANNON": { // TODO not in game, check names
+		"CHRG_DRA_DYNAMAXCANNON": {
 			"type": "Dragon",
 			"name": "Dynamax Cannon",
-			"name-ital": "Dynamax Cannon",
+			"name-ital": "Cannone Dynamax",
 			"raid-power": 215,
 			"raid-energy": 100,
 			"raid-duration": 1.5,
@@ -1384,7 +1384,7 @@ const dbmoves = {
 			"raid-energy": 100,
 			"raid-duration": 2.5,
 			"trainer-power": 95,
-			"trainer-energy": 50
+			"trainer-energy": 55
 		},
 		"CHRG_DRA_TWISTER": {
 			"type": "Dragon",
@@ -1434,7 +1434,7 @@ const dbmoves = {
 			"raid-energy": 50,
 			"raid-duration": 3.0,
 			"trainer-power": 70,
-			"trainer-energy": 45
+			"trainer-energy": 50
 		},
 		"CHRG_ELE_TECHNOBLAST": {
 			"type": "Electric",
@@ -1603,7 +1603,7 @@ const dbmoves = {
 			"raid-power": 40,
 			"raid-energy": 33,
 			"raid-duration": 1.5,
-			"trainer-power": 40,
+			"trainer-power": 50,
 			"trainer-energy": 40
 		},
 		"CHRG_FIG_CLOSECOMBAT": {
@@ -1846,6 +1846,16 @@ const dbmoves = {
 			"trainer-power": 65,
 			"trainer-energy": 40
 		},
+		"CHRG_FIR_MINDBLOWN": { // TODO fill me in
+			"type": "Fire",
+			"name": "Mind Blown",
+			"name-ital": "Sbalorditesta",
+			"raid-power": 130,
+			"raid-energy": -1,
+			"raid-duration": -1,
+			"trainer-power": 90,
+			"trainer-energy": -1
+		},
 		"CHRG_FIR_MYSTICALFIRE": {
 			"type": "Fire",
 			"name": "Mystical Fire",
@@ -1993,15 +2003,15 @@ const dbmoves = {
 			"trainer-power": 45,
 			"trainer-energy": 35
 		},
-		"CHRG_FLY_BEAKBLAST": { // TODO fill me in
+		"CHRG_FLY_BEAKBLAST": {
 			"type": "Flying",
 			"name": "Beak Blast",
 			"name-ital": "Cannonbecco",
 			"raid-power": 125,
-			"raid-energy": -1,
-			"raid-duration": -1,
+			"raid-energy": 50,
+			"raid-duration": 2.5,
 			"trainer-power": 110,
-			"trainer-energy": -1
+			"trainer-energy": 55
 		},
 		"CHRG_FLY_BRAVEBIRD": {
 			"type": "Flying",
@@ -2151,7 +2161,7 @@ const dbmoves = {
 			"raid-energy": 50,
 			"raid-duration": 3.0,
 			"trainer-power": 100,
-			"trainer-energy": 55
+			"trainer-energy": 50
 		},
 		"CHRG_GHO_SHADOWBONE": {
 			"type": "Ghost",
@@ -2190,8 +2200,8 @@ const dbmoves = {
 			"raid-power": 50,
 			"raid-energy": 33,
 			"raid-duration": 3.0,
-			"trainer-power": 50,
-			"trainer-energy": 45
+			"trainer-power": 75,
+			"trainer-energy": 50
 		},
 		"CHRG_GHO_SPIRITSHACKLE": {
 			"type": "Ghost",
@@ -2202,6 +2212,16 @@ const dbmoves = {
 			"raid-duration": 2.5,
 			"trainer-power": 50,
 			"trainer-energy": 40
+		},
+		"CHRG_GRA_DRUMBEATING": { // TODO fill me in
+			"type": "Grass",
+			"name": "Drum Beating",
+			"name-ital": "Tamburattacco",
+			"raid-power": 115,
+			"raid-energy": -1,
+			"raid-duration": -1,
+			"trainer-power": -1,
+			"trainer-energy": 60
 		},
 		"CHRG_GRA_ENERGYBALL": {
 			"type": "Grass",
@@ -2559,7 +2579,7 @@ const dbmoves = {
 			"raid-power": 55,
 			"raid-energy": 33,
 			"raid-duration": 2.0,
-			"trainer-power": 65,
+			"trainer-power": 70,
 			"trainer-energy": 40
 		},
 		"CHRG_ICE_ICYWIND": {
@@ -2790,14 +2810,14 @@ const dbmoves = {
 			"trainer-power": 65,
 			"trainer-energy": 50
 		},
-		"CHRG_NOR_VISEGRIP": {
+		"CHRG_NOR_VICEGRIP": {
 			"type": "Normal",
-			"name": "Vise Grip",
+			"name": "Vice Grip",
 			"name-ital": "Presa",
 			"raid-power": 35,
 			"raid-energy": 33,
 			"raid-duration": 2.0,
-			"trainer-power": 40,
+			"trainer-power": 70,
 			"trainer-energy": 40
 		},
 		"CHRG_NOR_WEATHERBALL": {
@@ -3198,7 +3218,7 @@ const dbmoves = {
 			"raid-energy": 50,
 			"raid-duration": 2.5,
 			"trainer-power": 100,
-			"trainer-energy": 50
+			"trainer-energy": 45
 		},
 		"CHRG_STE_MIRRORSHOT": {
 			"type": "Steel",
