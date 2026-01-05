@@ -79,11 +79,14 @@ function willBeAvailable( date, di, field="" ) {
 
 function getPkmnImageSrc( di ) {
 	let		img, path;
-	let		imgdi, dir;
+	let		imgdi, dir, name;
 
 	dir = di.split("-")[0];
+	name = getPkmnField( dir, "name" );
+	name = name.replaceAll( /[^A-Za-z]/g, "" );
 	while( dir.length < 4 )
 		dir = "0" + dir;
+	dir = dir + "_" + name;
 
 	path = assetsbase + "images/pokemon/dex/" + dir + "/" + di + ".png";
 
@@ -43319,7 +43322,8 @@ const	dbpokemon = {
 			"dex-index": "938",
 			"name": "Tadbulb",
 			"availability": {
-				"in-game":	"2023-11-07"
+				"in-game":	"2023-11-07",
+				"shiny":	"2026-01-13"
 			},
 			"category": "EleTadpole",
 			"type": [ "Electric" ],
@@ -43354,7 +43358,8 @@ const	dbpokemon = {
 			"dex-index": "939",
 			"name": "Bellibolt",
 			"availability": {
-				"in-game":	"2023-11-07"
+				"in-game":	"2023-11-07",
+				"shiny":	"2026-01-13"
 			},
 			"category": "EleFrog",
 			"type": [ "Electric" ],
@@ -43390,7 +43395,7 @@ const	dbpokemon = {
 			"dex-index": "940",
 			"name": "Wattrel",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-01-13"
 			},
 			"category": "Storm Petrel",
 			"type": [ "Electric", "Flying" ],
@@ -43425,7 +43430,7 @@ const	dbpokemon = {
 			"dex-index": "941",
 			"name": "Kilowattrel",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-01-13"
 			},
 			"category": "Frigatebird",
 			"type": [ "Electric", "Flying" ],
@@ -44984,7 +44989,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				{ "atk": "CHRG_GRO_DIG" },
-				{ "atk": "CHRG_GRO_DRILLRUN" }
+				{ "atk": "CHRG_GRO_DRILLRUN" },
 				{ "atk": "CHRG_NOR_BODYSLAM", "start": "2025-12-02" },
 				{ "atk": "CHRG_ROC_ROCKSLIDE" }
 			],
