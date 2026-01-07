@@ -1846,15 +1846,15 @@ const dbmoves = {
 			"trainer-power": 65,
 			"trainer-energy": 40
 		},
-		"CHRG_FIR_MINDBLOWN": { // TODO fill me in
+		"CHRG_FIR_MINDBLOWN": {
 			"type": "Fire",
 			"name": "Mind Blown",
 			"name-ital": "Sbalorditesta",
 			"raid-power": 130,
-			"raid-energy": -1,
-			"raid-duration": -1,
+			"raid-energy": 33,
+			"raid-duration": 4.0,
 			"trainer-power": 90,
-			"trainer-energy": -1
+			"trainer-energy": 35
 		},
 		"CHRG_FIR_MYSTICALFIRE": {
 			"type": "Fire",

@@ -42882,7 +42882,8 @@ const	dbpokemon = {
 			"dex-index": "926",
 			"name": "Fidough",
 			"availability": {
-				"in-game":	"2025-01-03"
+				"in-game":	"2025-01-03",
+				"shiny":	"2026-01-20"
 			},
 			"category": "Puppy",
 			"type": [ "Fairy" ],
@@ -42917,7 +42918,8 @@ const	dbpokemon = {
 			"dex-index": "927",
 			"name": "Dachsbun",
 			"availability": {
-				"in-game":	"2025-01-03"
+				"in-game":	"2025-01-03",
+				"shiny":	"2026-01-20"
 			},
 			"category": "Dog",
 			"type": [ "Fairy" ],
