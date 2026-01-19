@@ -1082,7 +1082,7 @@ const	dbpokemon = {
 			"base-attack": 55,
 			"base-defense": 55,
 			"dynamax-class": 1,
-			"max-battle-tier": 1, // TODO prediction
+			"max-battle-tier": 1, // guessed right
 			"fast-moves": [
 				{ "atk": "FAST_BUG_BUGBITE" },
 				{ "atk": "FAST_NOR_TACKLE" }
@@ -12944,7 +12944,8 @@ const	dbpokemon = {
 				"in-game":	"2017-11-28",
 				"shiny":	"2018-05-19",
 				"shadow":	"2021-06-17",
-				"sh-shiny":	"2024-01-27"
+				"sh-shiny":	"2024-01-27",
+				"dynamax":	"2026-01-31"
 			},
 			"category": "Rainbow",
 			"legendary": true,
@@ -12954,6 +12955,7 @@ const	dbpokemon = {
 			"base-attack": 239,
 			"base-defense": 244,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_PSY_EXTRASENSORY" },
 				{ "atk": "FAST_STE_STEELWING" },
@@ -26785,7 +26787,8 @@ const	dbpokemon = {
 				"a":	[ 1.275, 2.125 ],
 				"xl":	[ 2.125, 2.55 ],
 				"xxl":	[ 2.55, 2.635 ]
-			}
+			},
+			"stardust-bonus": 500
 		},
 		"564": {
 			"dex-index": "564",
@@ -30089,6 +30092,11 @@ const	dbpokemon = {
 				"form": "Incarnate Forme",
 				"form-ital": "Forma Incarnazione"
 			},
+			"availability": {
+				"in-game":	"2020-03-02",
+				"shiny":	"2021-03-11",
+				"shadow":	"2026-01-23"
+			},
 			"base-stamina": 188,
 			"base-attack": 266,
 			"base-defense": 164,
@@ -30668,7 +30676,8 @@ const	dbpokemon = {
 			"name": "Chespin",
 			"availability": {
 				"in-game":	"2020-12-02",
-				"shiny":	"2023-01-07"
+				"shiny":	"2023-01-07",
+				"shadow":	"2026-01-23"
 			},
 			"category": "Spiny Nut",
 			"type": [ "Grass" ],
@@ -30704,7 +30713,8 @@ const	dbpokemon = {
 			"name": "Quilladin",
 			"availability": {
 				"in-game":	"2020-12-02",
-				"shiny":	"2023-01-07"
+				"shiny":	"2023-01-07",
+				"shadow":	"2026-01-23"
 			},
 			"category": "Spiny Armor",
 			"type": [ "Grass" ],
@@ -30741,7 +30751,8 @@ const	dbpokemon = {
 			"name": "Chesnaught",
 			"availability": {
 				"in-game":	"2020-12-02",
-				"shiny":	"2023-01-07"
+				"shiny":	"2023-01-07",
+				"shadow":	"2026-01-23"
 			},
 			"forms": [ "652-M" ],
 			"category": "Spiny Armor",
@@ -30793,7 +30804,8 @@ const	dbpokemon = {
 			"name": "Fennekin",
 			"availability": {
 				"in-game":	"2020-12-02",
-				"shiny":	"2023-05-21"
+				"shiny":	"2023-05-21",
+				"shadow":	"2026-01-23"
 			},
 			"category": "Fox",
 			"type": [ "Fire" ],
@@ -30829,7 +30841,8 @@ const	dbpokemon = {
 			"name": "Braixen",
 			"availability": {
 				"in-game":	"2020-12-02",
-				"shiny":	"2023-05-21"
+				"shiny":	"2023-05-21",
+				"shadow":	"2026-01-23"
 			},
 			"category": "Fox",
 			"type": [ "Fire" ],
@@ -30866,7 +30879,8 @@ const	dbpokemon = {
 			"name": "Delphox",
 			"availability": {
 				"in-game":	"2020-12-02",
-				"shiny":	"2023-05-21"
+				"shiny":	"2023-05-21",
+				"shadow":	"2026-01-23"
 			},
 			"forms": [ "655-M" ],
 			"category": "Fox",
@@ -30919,7 +30933,8 @@ const	dbpokemon = {
 			"name": "Froakie",
 			"availability": {
 				"in-game":	"2020-12-02",
-				"shiny":	"2024-10-22"
+				"shiny":	"2024-10-22",
+				"shadow":	"2026-01-23"
 			},
 			"category": "Bubble Frog",
 			"type": [ "Water" ],
@@ -30955,7 +30970,8 @@ const	dbpokemon = {
 			"name": "Frogadier",
 			"availability": {
 				"in-game":	"2020-12-02",
-				"shiny":	"2024-10-22"
+				"shiny":	"2024-10-22",
+				"shadow":	"2026-01-23"
 			},
 			"category": "Bubble Frog",
 			"type": [ "Water" ],
@@ -30992,7 +31008,8 @@ const	dbpokemon = {
 			"name": "Greninja",
 			"availability": {
 				"in-game":	"2020-12-02",
-				"shiny":	"2024-10-22"
+				"shiny":	"2024-10-22",
+				"shadow":	"2026-01-23"
 			},
 			"category": "Ninja",
 			"type": [ "Water", "Dark" ],
@@ -36749,7 +36766,7 @@ const	dbpokemon = {
 			"base-attack": 231,
 			"base-defense": 164,
 			"dynamax-class": 3,
-			"max-battle-tier": 3, // TODO guess
+			"max-battle-tier": 3, // guessed Right!
 			"fast-moves": [
 				{ "atk": "FAST_DRA_DRAGONBREATH" },
 				{ "atk": "FAST_PSY_EXTRASENSORY" }
@@ -41906,7 +41923,8 @@ const	dbpokemon = {
 				"a":	[ 1.8, 3 ],
 				"xl":	[ 3, 3.6 ],
 				"xxl":	[ 3.6, 3.72 ]
-			}
+			},
+			"stardust-bonus": 900
 		},
 		"901-B": {
 			"dex-index": "901-B",
@@ -41916,6 +41934,7 @@ const	dbpokemon = {
 				"name-ital": "Luna Cremisi"
 			},
 			"availability": {
+				"in-game":	false
 			}
 		},
 		"902": {
@@ -44474,7 +44493,7 @@ const	dbpokemon = {
 			"dex-index": "969",
 			"name": "Glimmet",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-01-27"
 			},
 			"category": "Ore",
 			"type": [ "Rock", "Poison" ],
@@ -44509,7 +44528,7 @@ const	dbpokemon = {
 			"dex-index": "970",
 			"name": "Glimmora",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-01-27"
 			},
 			"forms": [ "970-M" ],
 			"category": "Ore",
