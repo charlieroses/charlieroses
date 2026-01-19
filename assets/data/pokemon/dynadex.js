@@ -82,7 +82,7 @@ function getPkmnImageSrc( di ) {
 	let		imgdi, dir, name;
 
 	dir = di.split("-")[0];
-	name = getPkmnField( dir, "name" );
+	name = getPkmnField( di, "name" );
 	name = name.replaceAll( /[^A-Za-z]/g, "" );
 	while( dir.length < 4 )
 		dir = "0" + dir;
