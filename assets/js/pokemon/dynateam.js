@@ -42,7 +42,7 @@ function linktoguide( di ) {
 	link = dcE( "a" );
 	href = getPkmnField(di,"name");
 	href = href.toLowerCase();
-	href = href.replaceAll( /[^a-z]/, "" );
+	href = href.replaceAll( /[^a-z]/g, "" );
 	if( isGigamax(di) && di != "890-G" )
 		href = "gmax" + href;
 	link.setAttribute( "href", href );
