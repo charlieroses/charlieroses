@@ -3584,8 +3584,8 @@ const dbmoves = {
 			"name": "G-Max Volt Crash",
 			"name-ital": "Gigapikafoglori"
 		},
-		"52-G": {
-			"dex-index": "52-G",
+		"52-Gi": {
+			"dex-index": "52-Gi",
 			"type": "Normal",
 			"name": "G-Max Gold Rush",
 			"name-ital": "Gigamonete"
