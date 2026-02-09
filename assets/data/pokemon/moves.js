@@ -1123,7 +1123,7 @@ const dbmoves = {
 			"name-ital": "Ronzio",
 			"raid-power": 95,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 100,
 			"trainer-energy": 60
 		},
@@ -1133,7 +1133,7 @@ const dbmoves = {
 			"name-ital": "Pungiglione",
 			"raid-power": 45,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 20,
 			"trainer-energy": 35
 		},
@@ -1144,7 +1144,7 @@ const dbmoves = {
 			"available": false,
 			"raid-power": 0,
 			"raid-energy": 0,
-			"raid-duration": 2.5
+			"raid-duration": 2500
 		},
 		"CHRG_BUG_LUNGE": {
 			"type": "Bug",
@@ -1152,7 +1152,7 @@ const dbmoves = {
 			"name-ital": "Assalto",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 60,
 			"trainer-energy": 45
 		},
@@ -1162,7 +1162,7 @@ const dbmoves = {
 			"name-ital": "Megacorno",
 			"raid-power": 105,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 110,
 			"trainer-energy": 55
 		},
@@ -1172,7 +1172,7 @@ const dbmoves = {
 			"name-ital": "Segnoraggio",
 			"raid-power": 75,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 75,
 			"trainer-energy": 55
 		},
@@ -1182,7 +1182,7 @@ const dbmoves = {
 			"name-ital": "Ventargenteo",
 			"raid-power": 65,
 			"raid-energy": 33,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 60,
 			"trainer-energy": 45
 		},
@@ -1192,7 +1192,7 @@ const dbmoves = {
 			"name-ital": "Forbice X",
 			"raid-power": 45,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 65,
 			"trainer-energy": 40
 		},
@@ -1201,8 +1201,8 @@ const dbmoves = {
 			"name": "Aura Wheel",
 			"name-ital": "Ruota d'Aura",
 			"raid-power": 100,
-			"raid-energy": 45,
-			"raid-duration": 2.7,
+			"raid-energy": 50,
+			"raid-duration": 2500,
 			"trainer-power": 100,
 			"trainer-energy": 45
 		},
@@ -1212,7 +1212,7 @@ const dbmoves = {
 			"name-ital": "Vorticolpo",
 			"raid-power": 65,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -1222,7 +1222,7 @@ const dbmoves = {
 			"name-ital": "Sgranocchio",
 			"raid-power": 65,
 			"raid-energy": 33,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 70,
 			"trainer-energy": 45
 		},
@@ -1232,7 +1232,7 @@ const dbmoves = {
 			"name-ital": "Braccioteso",
 			"raid-power": 80,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 120,
 			"trainer-energy": 60
 		},
@@ -1242,7 +1242,7 @@ const dbmoves = {
 			"name-ital": "Neropulsar",
 			"raid-power": 80,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 80,
 			"trainer-energy": 50
 		},
@@ -1252,7 +1252,7 @@ const dbmoves = {
 			"name-ital": "Ripicca",
 			"raid-power": 70,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 65,
 			"trainer-energy": 40
 		},
@@ -1262,7 +1262,7 @@ const dbmoves = {
 			"name-ital": "Nottesferza",
 			"raid-power": 45,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 50,
 			"trainer-energy": 35
 		},
@@ -1272,7 +1272,7 @@ const dbmoves = {
 			"name-ital": "Sbarramento",
 			"raid-power": 20,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 15,
 			"trainer-energy": 40
 		},
@@ -1282,7 +1282,7 @@ const dbmoves = {
 			"name-ital": "Rivincita",
 			"raid-power": 95,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 110,
 			"trainer-energy": 60
 		},
@@ -1292,7 +1292,7 @@ const dbmoves = {
 			"name-ital": "Vastoimpatto",
 			"raid-power": 45,
 			"raid-energy": 33,
-			"raid-duration": 1.0,
+			"raid-duration": 1000,
 			"trainer-power": 50,
 			"trainer-energy": 35
 		},
@@ -1302,7 +1302,7 @@ const dbmoves = {
 			"name-ital": "Clamorsquame",
 			"raid-power": 120,
 			"raid-energy": 100,
-			"raid-duration": 3.3,
+			"raid-duration": 3500,
 			"trainer-power": 120,
 			"trainer-energy": 45
 		},
@@ -1312,7 +1312,7 @@ const dbmoves = {
 			"name-ital": "Dragobolide",
 			"raid-power": 150,
 			"raid-energy": 100,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 150,
 			"trainer-energy": 65
 		},
@@ -1322,7 +1322,7 @@ const dbmoves = {
 			"name-ital": "Dragartigli",
 			"raid-power": 45,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 50,
 			"trainer-energy": 35
 		},
@@ -1332,7 +1332,7 @@ const dbmoves = {
 			"name-ital": "Dragoenergia",
 			"raid-power": 155,
 			"raid-energy": 50,
-			"raid-duration": 3.3,
+			"raid-duration": 3500,
 			"trainer-power": 90,
 			"trainer-energy": 45
 		},
@@ -1342,7 +1342,7 @@ const dbmoves = {
 			"name-ital": "Dragopulsar",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 90,
 			"trainer-energy": 60
 		},
@@ -1352,7 +1352,7 @@ const dbmoves = {
 			"name-ital": "Cannone Dynamax",
 			"raid-power": 215,
 			"raid-energy": 100,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 80,
 			"trainer-energy": 45
 		},
@@ -1362,7 +1362,7 @@ const dbmoves = {
 			"name-ital": "Oltraraggio",
 			"raid-power": 110,
 			"raid-energy": 50,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 110,
 			"trainer-energy": 60
 		},
@@ -1372,7 +1372,7 @@ const dbmoves = {
 			"name-ital": "Fragortempo",
 			"raid-power": 160,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 150,
 			"trainer-energy": 65
 		},
@@ -1382,7 +1382,7 @@ const dbmoves = {
 			"name-ital": "Fendispazio",
 			"raid-power": 160,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 95,
 			"trainer-energy": 55
 		},
@@ -1392,7 +1392,7 @@ const dbmoves = {
 			"name-ital": "Tornado",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 45,
 			"trainer-energy": 45
 		},
@@ -1401,8 +1401,8 @@ const dbmoves = {
 			"name": "Aura Wheel",
 			"name-ital": "Ruota d'Aura",
 			"raid-power": 100,
-			"raid-energy": 45,
-			"raid-duration": 2.7,
+			"raid-energy": 50,
+			"raid-duration": 2500,
 			"trainer-power": 100,
 			"trainer-energy": 45
 		},
@@ -1412,7 +1412,7 @@ const dbmoves = {
 			"name-ital": "Scarica",
 			"raid-power": 65,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 55,
 			"trainer-energy": 40
 		},
@@ -1422,7 +1422,7 @@ const dbmoves = {
 			"name-ital": "Incrotuono",
 			"raid-power": 140,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 90,
 			"trainer-energy": 45
 		},
@@ -1432,7 +1432,7 @@ const dbmoves = {
 			"name-ital": "Caricaparabola",
 			"raid-power": 70,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 70,
 			"trainer-energy": 50
 		},
@@ -1442,7 +1442,7 @@ const dbmoves = {
 			"name-ital": "Tecnobotta",
 			"raid-power": 120,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 120,
 			"trainer-energy": 55
 		},
@@ -1452,7 +1452,7 @@ const dbmoves = {
 			"name-ital": "Tuono",
 			"raid-power": 100,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 100,
 			"trainer-energy": 60
 		},
@@ -1462,7 +1462,7 @@ const dbmoves = {
 			"name-ital": "Fulmine",
 			"raid-power": 80,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 90,
 			"trainer-energy": 55
 		},
@@ -1472,7 +1472,7 @@ const dbmoves = {
 			"name-ital": "Elettrogabbia",
 			"raid-power": 220,
 			"raid-energy": 100,
-			"raid-duration": 3.3,
+			"raid-duration": 3500,
 			"trainer-power": 60,
 			"trainer-energy": 40
 		},
@@ -1482,7 +1482,7 @@ const dbmoves = {
 			"name-ital": "Tuonopugno",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 60,
 			"trainer-energy": 40
 		},
@@ -1492,7 +1492,7 @@ const dbmoves = {
 			"name-ital": "Locomovolt",
 			"raid-power": 90,
 			"raid-energy": 33,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 90,
 			"trainer-energy": 50
 		},
@@ -1502,7 +1502,7 @@ const dbmoves = {
 			"name-ital": "Tempesta Tonante",
 			"raid-power": 150,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 60,
 			"trainer-energy": 45
 		},
@@ -1512,7 +1512,7 @@ const dbmoves = {
 			"name-ital": "Sprizzalampo",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 100,
 			"trainer-energy": 45
 		},
@@ -1522,7 +1522,7 @@ const dbmoves = {
 			"name-ital": "Falcecannone",
 			"raid-power": 140,
 			"raid-energy": 100,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 150,
 			"trainer-energy": 80
 		},
@@ -1532,7 +1532,7 @@ const dbmoves = {
 			"name-ital": "Magibrillo",
 			"raid-power": 100,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 90,
 			"trainer-energy": 55
 		},
@@ -1542,7 +1542,7 @@ const dbmoves = {
 			"name-ital": "Incantavoce",
 			"raid-power": 70,
 			"raid-energy": 33,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 70,
 			"trainer-energy": 45
 		},
@@ -1552,7 +1552,7 @@ const dbmoves = {
 			"name-ital": "Assorbibacio",
 			"raid-power": 60,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 60,
 			"trainer-energy": 55
 		},
@@ -1562,7 +1562,7 @@ const dbmoves = {
 			"name-ital": "Forza Lunare",
 			"raid-power": 130,
 			"raid-energy": 100,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 110,
 			"trainer-energy": 60
 		},
@@ -1572,7 +1572,7 @@ const dbmoves = {
 			"name-ital": "Ira della Natura",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 80,
 			"trainer-energy": 50
 		},
@@ -1582,7 +1582,7 @@ const dbmoves = {
 			"name-ital": "Carineria",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 90,
 			"trainer-energy": 60
 		},
@@ -1592,7 +1592,7 @@ const dbmoves = {
 			"name-ital": "Forzasfera",
 			"raid-power": 100,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 100,
 			"trainer-energy": 55
 		},
@@ -1602,7 +1602,7 @@ const dbmoves = {
 			"name-ital": "Breccia",
 			"raid-power": 40,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 50,
 			"trainer-energy": 40
 		},
@@ -1612,7 +1612,7 @@ const dbmoves = {
 			"name-ital": "Zuffa",
 			"raid-power": 105,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 100,
 			"trainer-energy": 45
 		},
@@ -1622,7 +1622,7 @@ const dbmoves = {
 			"name-ital": "Incrocolpo",
 			"raid-power": 50,
 			"raid-energy": 50,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -1632,7 +1632,7 @@ const dbmoves = {
 			"name-ital": "Assorbipugno",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 20,
 			"trainer-energy": 40
 		},
@@ -1642,7 +1642,7 @@ const dbmoves = {
 			"name-ital": "Dinamipugno",
 			"raid-power": 85,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 90,
 			"trainer-energy": 45
 		},
@@ -1652,7 +1652,7 @@ const dbmoves = {
 			"name-ital": "Schiacciatuffo",
 			"raid-power": 115,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 90,
 			"trainer-energy": 40
 		},
@@ -1662,7 +1662,7 @@ const dbmoves = {
 			"name-ital": "Focalcolpo",
 			"raid-power": 140,
 			"raid-energy": 100,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 150,
 			"trainer-energy": 75
 		},
@@ -1672,7 +1672,7 @@ const dbmoves = {
 			"name-ital": "Calcinvolo",
 			"raid-power": 90,
 			"raid-energy": 100,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 110,
 			"trainer-energy": 55
 		},
@@ -1682,7 +1682,7 @@ const dbmoves = {
 			"name-ital": "Calciobasso",
 			"raid-power": 40,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 40,
 			"trainer-energy": 40
 		},
@@ -1692,7 +1692,7 @@ const dbmoves = {
 			"name-ital": "Crescipugno",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 20,
 			"trainer-energy": 35
 		},
@@ -1702,8 +1702,18 @@ const dbmoves = {
 			"name-ital": "Spadasolenne",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 1.0,
+			"raid-duration": 1000,
 			"trainer-power": 60,
+			"trainer-energy": 35
+		},
+		"CHRG_FIG_SECRETSWORD": {
+			"type": "Fighting",
+			"name": "Secret Sword",
+			"name-ital": "Spadamistica",
+			"raid-power": 120,
+			"raid-energy": 50,
+			"raid-duration": 2000,
+			"trainer-power": 70,
 			"trainer-energy": 35
 		},
 		"CHRG_FIG_SUBMISSION": {
@@ -1712,7 +1722,7 @@ const dbmoves = {
 			"name-ital": "Sottomissione",
 			"raid-power": 55,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 60,
 			"trainer-energy": 50
 		},
@@ -1722,7 +1732,7 @@ const dbmoves = {
 			"name-ital": "Troppoforte",
 			"raid-power": 85,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 85,
 			"trainer-energy": 40
 		},
@@ -1732,7 +1742,7 @@ const dbmoves = {
 			"name-ital": "Colpo di Mano",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2,
+			"raid-duration": 2000,
 			"trainer-power": 70,
 			"trainer-energy": 40
 		},
@@ -1742,7 +1752,7 @@ const dbmoves = {
 			"name-ital": "Incendio",
 			"raid-power": 120,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 110,
 			"trainer-energy": 50
 		},
@@ -1752,7 +1762,7 @@ const dbmoves = {
 			"name-ital": "Calciardente",
 			"raid-power": 40,
 			"raid-energy": 33,
-			"raid-duration": 1.0,
+			"raid-duration": 1000,
 			"trainer-power": 60,
 			"trainer-energy": 40
 		},
@@ -1762,7 +1772,7 @@ const dbmoves = {
 			"name-ital": "Fuocobomba",
 			"raid-power": 140,
 			"raid-energy": 100,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 140,
 			"trainer-energy": 80
 		},
@@ -1772,7 +1782,7 @@ const dbmoves = {
 			"name-ital": "Fuocopugno",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 60,
 			"trainer-energy": 40
 		},
@@ -1782,7 +1792,7 @@ const dbmoves = {
 			"name-ital": "Pirolancio",
 			"raid-power": 70,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 70,
 			"trainer-energy": 55
 		},
@@ -1792,7 +1802,7 @@ const dbmoves = {
 			"name-ital": "Nitrocarica",
 			"raid-power": 70,
 			"raid-energy": 33,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 65,
 			"trainer-energy": 50
 		},
@@ -1802,7 +1812,7 @@ const dbmoves = {
 			"name-ital": "Lanciafiamme",
 			"raid-power": 65,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 90,
 			"trainer-energy": 55
 		},
@@ -1812,7 +1822,7 @@ const dbmoves = {
 			"name-ital": "Ruotafuoco",
 			"raid-power": 55,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 60,
 			"trainer-energy": 55
 		},
@@ -1822,7 +1832,7 @@ const dbmoves = {
 			"name-ital": "Incrofiamma",
 			"raid-power": 140,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 90,
 			"trainer-energy": 45
 		},
@@ -1832,7 +1842,7 @@ const dbmoves = {
 			"name-ital": "Ondacalda",
 			"raid-power": 95,
 			"raid-energy": 100,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 95,
 			"trainer-energy": 75
 		},
@@ -1842,7 +1852,7 @@ const dbmoves = {
 			"name-ital": "Magmaclisma",
 			"raid-power": 75,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 65,
 			"trainer-energy": 40
 		},
@@ -1852,7 +1862,7 @@ const dbmoves = {
 			"name-ital": "Sbalorditesta",
 			"raid-power": 130,
 			"raid-energy": 33,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 90,
 			"trainer-energy": 35
 		},
@@ -1862,7 +1872,7 @@ const dbmoves = {
 			"name-ital": "Magifiamma",
 			"raid-power": 60,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 60,
 			"trainer-energy": 45
 		},
@@ -1872,7 +1882,7 @@ const dbmoves = {
 			"name-ital": "Vampata",
 			"raid-power": 160,
 			"raid-energy": 100,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 130,
 			"trainer-energy": 55
 		},
@@ -1882,7 +1892,7 @@ const dbmoves = {
 			"name-ital": "Magifuoco",
 			"raid-power": 120,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 130,
 			"trainer-energy": 65
 		},
@@ -1892,7 +1902,7 @@ const dbmoves = {
 			"name-ital": "Magifuoco+",
 			"raid-power": 135,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 130,
 			"trainer-energy": 65
 		},
@@ -1902,7 +1912,7 @@ const dbmoves = {
 			"name-ital": "Magifuoco++",
 			"raid-power": 155,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 130,
 			"trainer-energy": 65
 		},
@@ -1912,7 +1922,7 @@ const dbmoves = {
 			"name-ital": "Tecnobotta",
 			"raid-power": 120,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 120,
 			"trainer-energy": 55
 		},
@@ -1929,7 +1939,7 @@ const dbmoves = {
 			"name-ital": "Palla Clima",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -1939,7 +1949,7 @@ const dbmoves = {
 			"name-ital": "Generatore V",
 			"raid-power": 105,
 			"raid-energy": 33,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 95,
 			"trainer-energy": 40
 		},
@@ -1949,7 +1959,7 @@ const dbmoves = {
 			"name-ital": "Acrobazia",
 			"raid-power": 100,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 110,
 			"trainer-energy": 55
 		},
@@ -1959,7 +1969,7 @@ const dbmoves = {
 			"name-ital": "Aeroassalto",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 55,
 			"trainer-energy": 40
 		},
@@ -1969,7 +1979,7 @@ const dbmoves = {
 			"name-ital": "Aerocolpo",
 			"raid-power": 180,
 			"raid-energy": 100,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 170,
 			"trainer-energy": 75
 		},
@@ -1979,7 +1989,7 @@ const dbmoves = {
 			"name-ital": "Aerocolpo+",
 			"raid-power": 200,
 			"raid-energy": 100,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 170,
 			"trainer-energy": 75
 		},
@@ -1989,7 +1999,7 @@ const dbmoves = {
 			"name-ital": "Aerocolpo++",
 			"raid-power": 225,
 			"raid-energy": 100,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 170,
 			"trainer-energy": 75
 		},
@@ -1999,7 +2009,7 @@ const dbmoves = {
 			"name-ital": "Aerasoio",
 			"raid-power": 55,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 45,
 			"trainer-energy": 35
 		},
@@ -2009,7 +2019,7 @@ const dbmoves = {
 			"name-ital": "Cannonbecco",
 			"raid-power": 125,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 110,
 			"trainer-energy": 55
 		},
@@ -2019,7 +2029,7 @@ const dbmoves = {
 			"name-ital": "Baldeali",
 			"raid-power": 130,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 130,
 			"trainer-energy": 55
 		},
@@ -2029,7 +2039,7 @@ const dbmoves = {
 			"name-ital": "Tempesta Boreale",
 			"raid-power": 150,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 60,
 			"trainer-energy": 45
 		},
@@ -2039,7 +2049,7 @@ const dbmoves = {
 			"name-ital": "Ascesa del Drago",
 			"raid-power": 140,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 150,
 			"trainer-energy": 70
 		},
@@ -2049,7 +2059,7 @@ const dbmoves = {
 			"name-ital": "Perforbecco",
 			"raid-power": 70,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 65,
 			"trainer-energy": 40
 		},
@@ -2059,7 +2069,7 @@ const dbmoves = {
 			"name-ital": "Danzadipiume",
 			"raid-power": 35,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 35,
 			"trainer-energy": 50
 		},
@@ -2069,7 +2079,7 @@ const dbmoves = {
 			"name-ital": "Volo",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 80,
 			"trainer-energy": 45
 		},
@@ -2079,7 +2089,7 @@ const dbmoves = {
 			"name-ital": "Tifone",
 			"raid-power": 105,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 110,
 			"trainer-energy": 65
 		},
@@ -2089,7 +2099,7 @@ const dbmoves = {
 			"name-ital": "Ali del Fato",
 			"raid-power": 85,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 85,
 			"trainer-energy": 50
 		},
@@ -2099,7 +2109,7 @@ const dbmoves = {
 			"name-ital": "Aeroattacco",
 			"raid-power": 80,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 85,
 			"trainer-energy": 55
 		},
@@ -2109,7 +2119,7 @@ const dbmoves = {
 			"name-ital": "Raggio d'Ombra",
 			"raid-power": 230,
 			"raid-energy": 100,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 135,
 			"trainer-energy": 65
 		},
@@ -2119,7 +2129,7 @@ const dbmoves = {
 			"name-ital": "Ombra Nottura",
 			"raid-power": 60,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 70,
 			"trainer-energy": 40
 		},
@@ -2129,7 +2139,7 @@ const dbmoves = {
 			"name-ital": "Funestovento",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 45,
 			"trainer-energy": 45
 		},
@@ -2139,7 +2149,7 @@ const dbmoves = {
 			"name-ital": "Poltergeist",
 			"raid-power": 140,
 			"raid-energy": 100,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 150,
 			"trainer-energy": 75
 		},
@@ -2149,7 +2159,7 @@ const dbmoves = {
 			"name-ital": "Pugno Furibondo",
 			"raid-power": 100,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 50,
 			"trainer-energy": 35
 		},
@@ -2159,7 +2169,7 @@ const dbmoves = {
 			"name-ital": "Palla Ombra",
 			"raid-power": 100,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 100,
 			"trainer-energy": 50
 		},
@@ -2169,7 +2179,7 @@ const dbmoves = {
 			"name-ital": "Ostrotetro",
 			"raid-power": 85,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 80,
 			"trainer-energy": 45
 		},
@@ -2179,7 +2189,7 @@ const dbmoves = {
 			"name-ital": "Oscurotuffo",
 			"raid-power": 140,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 120,
 			"trainer-energy": 90
 		},
@@ -2189,7 +2199,7 @@ const dbmoves = {
 			"name-ital": "Pugnodombra",
 			"raid-power": 35,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -2199,7 +2209,7 @@ const dbmoves = {
 			"name-ital": "Furtivombra",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 75,
 			"trainer-energy": 50
 		},
@@ -2209,19 +2219,19 @@ const dbmoves = {
 			"name-ital": "Cucitura d'Ombra",
 			"raid-power": 70,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 50,
 			"trainer-energy": 40
 		},
-		"CHRG_GRA_DRUMBEATING": { // TODO fill me in
+		"CHRG_GRA_DRUMBEATING": {
 			"type": "Grass",
 			"name": "Drum Beating",
 			"name-ital": "Tamburattacco",
 			"raid-power": 115,
-			"raid-energy": -1,
-			"raid-duration": -1,
-			"trainer-power": -1,
-			"trainer-energy": 60
+			"raid-energy": 33,
+			"raid-duration": 4000,
+			"trainer-power": 60,
+			"trainer-energy": 35
 		},
 		"CHRG_GRA_ENERGYBALL": {
 			"type": "Grass",
@@ -2229,7 +2239,7 @@ const dbmoves = {
 			"name-ital": "Energiapalla",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 90,
 			"trainer-energy": 55
 		},
@@ -2239,7 +2249,7 @@ const dbmoves = {
 			"name-ital": "Prestigiafiore",
 			"raid-power": 75,
 			"raid-energy": 33,
-			"raid-duration": 2.7,
+			"raid-duration": 3000,
 			"trainer-power": 30,
 			"trainer-energy": 35
 		},
@@ -2249,7 +2259,7 @@ const dbmoves = {
 			"name-ital": "Radicalbero",
 			"raid-power": 100,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 100,
 			"trainer-energy": 45
 		},
@@ -2259,7 +2269,7 @@ const dbmoves = {
 			"name-ital": "Gigassorbimento",
 			"raid-power": 50,
 			"raid-energy": 100,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 50,
 			"trainer-energy": 80
 		},
@@ -2269,7 +2279,7 @@ const dbmoves = {
 			"name-ital": "Laccioerboso",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 90,
 			"trainer-energy": 50
 		},
@@ -2279,7 +2289,7 @@ const dbmoves = {
 			"name-ital": "Fendifoglia",
 			"raid-power": 70,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 70,
 			"trainer-energy": 35
 		},
@@ -2289,7 +2299,7 @@ const dbmoves = {
 			"name-ital": "Verdebufera",
 			"raid-power": 130,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 130,
 			"trainer-energy": 55
 		},
@@ -2299,7 +2309,7 @@ const dbmoves = {
 			"name-ital": "Vorticerba",
 			"raid-power": 45,
 			"raid-energy": 33,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 45,
 			"trainer-energy": 40
 		},
@@ -2309,7 +2319,7 @@ const dbmoves = {
 			"name-ital": "Megassorbimento",
 			"raid-power": 25,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 25,
 			"trainer-energy": 55
 		},
@@ -2319,7 +2329,7 @@ const dbmoves = {
 			"name-ital": "Fiortempesta",
 			"raid-power": 110,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 110,
 			"trainer-energy": 65
 		},
@@ -2329,7 +2339,7 @@ const dbmoves = {
 			"name-ital": "Vigorcolpo",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 90,
 			"trainer-energy": 50
 		},
@@ -2339,7 +2349,7 @@ const dbmoves = {
 			"name-ital": "Semebomba",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 65,
 			"trainer-energy": 45
 		},
@@ -2349,7 +2359,7 @@ const dbmoves = {
 			"name-ital": "Infuriaseme",
 			"raid-power": 115,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 130,
 			"trainer-energy": 75
 		},
@@ -2359,7 +2369,7 @@ const dbmoves = {
 			"name-ital": "Solaraggio",
 			"raid-power": 180,
 			"raid-energy": 100,
-			"raid-duration": 5.0,
+			"raid-duration": 5000,
 			"trainer-power": 150,
 			"trainer-energy": 80
 		},
@@ -2369,7 +2379,7 @@ const dbmoves = {
 			"name-ital": "Apriprista",
 			"raid-power": 65,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 65,
 			"trainer-energy": 45
 		},
@@ -2379,7 +2389,7 @@ const dbmoves = {
 			"name-ital": "Ossoclava",
 			"raid-power": 40,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -2389,7 +2399,7 @@ const dbmoves = {
 			"name-ital": "Battiterra",
 			"raid-power": 80,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 45,
 			"trainer-energy": 45
 		},
@@ -2399,7 +2409,7 @@ const dbmoves = {
 			"name-ital": "Fossa",
 			"raid-power": 100,
 			"raid-energy": 50,
-			"raid-duration": 4.5,
+			"raid-duration": 4500,
 			"trainer-power": 70,
 			"trainer-energy": 50
 		},
@@ -2409,7 +2419,7 @@ const dbmoves = {
 			"name-ital": "Giravvita",
 			"raid-power": 85,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 80,
 			"trainer-energy": 45
 		},
@@ -2419,7 +2429,7 @@ const dbmoves = {
 			"name-ital": "Geoforza",
 			"raid-power": 100,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 90,
 			"trainer-energy": 55
 		},
@@ -2429,7 +2439,7 @@ const dbmoves = {
 			"name-ital": "Terremoto",
 			"raid-power": 140,
 			"raid-energy": 100,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 110,
 			"trainer-energy": 65
 		},
@@ -2440,7 +2450,7 @@ const dbmoves = {
 			"available": false,
 			"raid-power": 9001,
 			"raid-energy": 25,
-			"raid-duration": 3.0
+			"raid-duration": 3000
 		},
 		"CHRG_GRO_HIGHHORSEPOWER": {
 			"type": "Ground",
@@ -2448,7 +2458,7 @@ const dbmoves = {
 			"name-ital": "Forza Equina",
 			"raid-power": 105,
 			"raid-energy": 100,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 100,
 			"trainer-energy": 60
 		},
@@ -2458,7 +2468,7 @@ const dbmoves = {
 			"name-ital": "Pantanobomba",
 			"raid-power": 60,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 60,
 			"trainer-energy": 40
 		},
@@ -2468,7 +2478,7 @@ const dbmoves = {
 			"name-ital": "Spade Telluriche",
 			"raid-power": 120,
 			"raid-energy": 100,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 130,
 			"trainer-energy": 60
 		},
@@ -2478,7 +2488,7 @@ const dbmoves = {
 			"name-ital": "Tempesta Ardente",
 			"raid-power": 150,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 60,
 			"trainer-energy": 45
 		},
@@ -2488,7 +2498,7 @@ const dbmoves = {
 			"name-ital": "Sabbiotomba",
 			"raid-power": 60,
 			"raid-energy": 33,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 25,
 			"trainer-energy": 40
 		},
@@ -2498,7 +2508,7 @@ const dbmoves = {
 			"name-ital": "Sabbiardente",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 80,
 			"trainer-energy": 50
 		},
@@ -2508,7 +2518,7 @@ const dbmoves = {
 			"name-ital": "Raggiaurora",
 			"raid-power": 80,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 80,
 			"trainer-energy": 60
 		},
@@ -2518,7 +2528,7 @@ const dbmoves = {
 			"name-ital": "Slavina",
 			"raid-power": 85,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 90,
 			"trainer-energy": 45
 		},
@@ -2528,7 +2538,7 @@ const dbmoves = {
 			"name-ital": "Bora",
 			"raid-power": 130,
 			"raid-energy": 100,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 140,
 			"trainer-energy": 75
 		},
@@ -2543,7 +2553,7 @@ const dbmoves = {
 			"name-ital": "Gelamondo",
 			"raid-power": 160,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 60,
 			"trainer-energy": 40
 		},
@@ -2553,7 +2563,7 @@ const dbmoves = {
 			"name-ital": "Geloraggio",
 			"raid-power": 95,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 90,
 			"trainer-energy": 55
 		},
@@ -2568,7 +2578,7 @@ const dbmoves = {
 			"name-ital": "Gelopugno",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 60,
 			"trainer-energy": 40
 		},
@@ -2578,7 +2588,7 @@ const dbmoves = {
 			"name-ital": "Gelolancia",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 70,
 			"trainer-energy": 40
 		},
@@ -2588,7 +2598,7 @@ const dbmoves = {
 			"name-ital": "Ventogelato",
 			"raid-power": 65,
 			"raid-energy": 33,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 60,
 			"trainer-energy": 45
 		},
@@ -2598,7 +2608,7 @@ const dbmoves = {
 			"name-ital": "Tecnobotta",
 			"raid-power": 120,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 120,
 			"trainer-energy": 55
 		},
@@ -2608,7 +2618,7 @@ const dbmoves = {
 			"name-ital": "Triplo Axel",
 			"raid-power": 60,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 60,
 			"trainer-energy": 45
 		},
@@ -2618,7 +2628,7 @@ const dbmoves = {
 			"name-ital": "Palla Clima",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -2628,7 +2638,7 @@ const dbmoves = {
 			"name-ital": "Corposcontro",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 50,
 			"trainer-energy": 35
 		},
@@ -2638,7 +2648,7 @@ const dbmoves = {
 			"name-ital": "Ondaboato",
 			"raid-power": 150,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 150,
 			"trainer-energy": 70
 		},
@@ -2649,7 +2659,7 @@ const dbmoves = {
 			"available": false,
 			"raid-power": 0,
 			"raid-energy": 0,
-			"raid-duration": 2.0
+			"raid-duration": 2000
 		},
 		"CHRG_NOR_CRUSHGRIP": {
 			"type": "Normal",
@@ -2657,7 +2667,7 @@ const dbmoves = {
 			"name-ital": "Sbriciolmano",
 			"raid-power": 210,
 			"raid-energy": 100,
-			"raid-duration": 1.8,
+			"raid-duration": 2000,
 			"trainer-power": 110,
 			"trainer-energy": 50
 		},
@@ -2667,7 +2677,7 @@ const dbmoves = {
 			"name-ital": "Frustrazione",
 			"raid-power": 10,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 10,
 			"trainer-energy": 70
 		},
@@ -2677,7 +2687,7 @@ const dbmoves = {
 			"name-ital": "Gigaimpatto",
 			"raid-power": 200,
 			"raid-energy": 100,
-			"raid-duration": 4.5,
+			"raid-duration": 4500,
 			"trainer-power": 150,
 			"trainer-energy": 80
 		},
@@ -2687,7 +2697,7 @@ const dbmoves = {
 			"name-ital": "Incornata",
 			"raid-power": 45,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 40,
 			"trainer-energy": 35
 		},
@@ -2698,7 +2708,7 @@ const dbmoves = {
 			"available": false,
 			"raid-power": 9000,
 			"raid-energy": 25,
-			"raid-duration": 2.0
+			"raid-duration": 2000
 		},
 		"CHRG_NOR_HYPERBEAM": {
 			"type": "Normal",
@@ -2706,7 +2716,7 @@ const dbmoves = {
 			"name-ital": "Iper Raggio",
 			"raid-power": 150,
 			"raid-energy": 100,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 150,
 			"trainer-energy": 80
 		},
@@ -2716,7 +2726,7 @@ const dbmoves = {
 			"name-ital": "Iperzanna",
 			"raid-power": 80,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 80,
 			"trainer-energy": 50
 		},
@@ -2726,7 +2736,7 @@ const dbmoves = {
 			"name-ital": "Ultimascelta",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 90,
 			"trainer-energy": 55
 		},
@@ -2736,7 +2746,7 @@ const dbmoves = {
 			"name-ital": "Riposo",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 50,
 			"trainer-energy": 35
 		},
@@ -2746,7 +2756,7 @@ const dbmoves = {
 			"name-ital": "Ritorno",
 			"raid-power": 25,
 			"raid-energy": 33,
-			"raid-duration": 0.5,
+			"raid-duration": 500,
 			"trainer-power": 130,
 			"trainer-energy": 70
 		},
@@ -2756,7 +2766,7 @@ const dbmoves = {
 			"name-ital": "Capocciata",
 			"raid-power": 130,
 			"raid-energy": 100,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 130,
 			"trainer-energy": 75
 		},
@@ -2766,7 +2776,7 @@ const dbmoves = {
 			"name-ital": "Pestone",
 			"raid-power": 50,
 			"raid-energy": 50,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 55,
 			"trainer-energy": 40
 		},
@@ -2776,7 +2786,7 @@ const dbmoves = {
 			"name-ital": "Scontro",
 			"raid-power": 35,
 			"raid-energy": 0,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 35,
 			"trainer-energy": 100
 		},
@@ -2786,7 +2796,7 @@ const dbmoves = {
 			"name-ital": "Comete",
 			"raid-power": 65,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -2796,7 +2806,7 @@ const dbmoves = {
 			"name-ital": "Tecnobotta",
 			"raid-power": 120,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 120,
 			"trainer-energy": 55
 		},
@@ -2806,7 +2816,7 @@ const dbmoves = {
 			"name-ital": "Tripletta",
 			"raid-power": 75,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 65,
 			"trainer-energy": 50
 		},
@@ -2816,7 +2826,7 @@ const dbmoves = {
 			"name-ital": "Presa",
 			"raid-power": 35,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 70,
 			"trainer-energy": 40
 		},
@@ -2826,7 +2836,7 @@ const dbmoves = {
 			"name-ital": "Palla Clima",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -2836,7 +2846,7 @@ const dbmoves = {
 			"name-ital": "Avvoglibotta",
 			"raid-power": 25,
 			"raid-energy": 33,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 25,
 			"trainer-energy": 45
 		},
@@ -2846,7 +2856,7 @@ const dbmoves = {
 			"name-ital": "Acidobomba",
 			"raid-power": 20,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 20,
 			"trainer-energy": 45
 		},
@@ -2856,7 +2866,7 @@ const dbmoves = {
 			"name-ital": "Velenocroce",
 			"raid-power": 40,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 50,
 			"trainer-energy": 35
 		},
@@ -2866,7 +2876,7 @@ const dbmoves = {
 			"name-ital": "Sporcolancio",
 			"raid-power": 130,
 			"raid-energy": 100,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 130,
 			"trainer-energy": 75
 		},
@@ -2876,7 +2886,7 @@ const dbmoves = {
 			"name-ital": "Velenodenti",
 			"raid-power": 30,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 45,
 			"trainer-energy": 40
 		},
@@ -2886,7 +2896,7 @@ const dbmoves = {
 			"name-ital": "Fango",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 70,
 			"trainer-energy": 40
 		},
@@ -2896,7 +2906,7 @@ const dbmoves = {
 			"name-ital": "Fangobomba",
 			"raid-power": 85,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 80,
 			"trainer-energy": 50
 		},
@@ -2906,7 +2916,7 @@ const dbmoves = {
 			"name-ital": "Fangonda",
 			"raid-power": 105,
 			"raid-energy": 100,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 110,
 			"trainer-energy": 65
 		},
@@ -2916,7 +2926,7 @@ const dbmoves = {
 			"name-ital": "Divinazione",
 			"raid-power": 115,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 110,
 			"trainer-energy": 65
 		},
@@ -2926,7 +2936,7 @@ const dbmoves = {
 			"name-ital": "Cuorestampo",
 			"raid-power": 40,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 40,
 			"trainer-energy": 40
 		},
@@ -2936,7 +2946,7 @@ const dbmoves = {
 			"name-ital": "Abbagliante",
 			"raid-power": 100,
 			"raid-energy": 100,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 120,
 			"trainer-energy": 60
 		},
@@ -2946,7 +2956,7 @@ const dbmoves = {
 			"name-ital": "Specchiovelo",
 			"raid-power": 60,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 60,
 			"trainer-energy": 55
 		},
@@ -2956,7 +2966,7 @@ const dbmoves = {
 			"name-ital": "Foschisfera",
 			"raid-power": 105,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 120,
 			"trainer-energy": 60
 		},
@@ -2966,7 +2976,7 @@ const dbmoves = {
 			"name-ital": "Psicoraggio",
 			"raid-power": 65,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 70,
 			"trainer-energy": 60
 		},
@@ -2976,7 +2986,7 @@ const dbmoves = {
 			"name-ital": "Psichico",
 			"raid-power": 95,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 75,
 			"trainer-energy": 55
 		},
@@ -2986,7 +2996,7 @@ const dbmoves = {
 			"name-ital": "Psicoslancio",
 			"raid-power": 70,
 			"raid-energy": 50,
-			"raid-duration": 4.0,
+			"raid-duration": 4000,
 			"trainer-power": 70,
 			"trainer-energy": 35
 		},
@@ -2996,7 +3006,7 @@ const dbmoves = {
 			"name-ital": "Psicozanna",
 			"raid-power": 25,
 			"raid-energy": 33,
-			"raid-duration": 1.0,
+			"raid-duration": 1000,
 			"trainer-power": 40,
 			"trainer-energy": 35
 		},
@@ -3006,7 +3016,7 @@ const dbmoves = {
 			"name-ital": "Psicoshock",
 			"raid-power": 60,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 70,
 			"trainer-energy": 40
 		},
@@ -3016,7 +3026,7 @@ const dbmoves = {
 			"name-ital": "Psicobotta",
 			"raid-power": 95,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 90,
 			"trainer-energy": 45
 		},
@@ -3026,7 +3036,7 @@ const dbmoves = {
 			"name-ital": "Sincrumore",
 			"raid-power": 80,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 80,
 			"trainer-energy": 50
 		},
@@ -3036,7 +3046,7 @@ const dbmoves = {
 			"name-ital": "Forzantica",
 			"raid-power": 70,
 			"raid-energy": 33,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 60,
 			"trainer-energy": 45
 		},
@@ -3046,7 +3056,7 @@ const dbmoves = {
 			"name-ital": "Raggiometeora",
 			"raid-power": 140,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 120,
 			"trainer-energy": 60
 		},
@@ -3056,7 +3066,7 @@ const dbmoves = {
 			"name-ital": "Gemmoforza",
 			"raid-power": 80,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 85,
 			"trainer-energy": 50
 		},
@@ -3066,7 +3076,7 @@ const dbmoves = {
 			"name-ital": "Cadutamassi",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 50,
 			"trainer-energy": 40
 		},
@@ -3076,7 +3086,7 @@ const dbmoves = {
 			"name-ital": "Rocciotomba",
 			"raid-power": 65,
 			"raid-energy": 50,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 80,
 			"trainer-energy": 50
 		},
@@ -3086,7 +3096,7 @@ const dbmoves = {
 			"name-ital": "Frana",
 			"raid-power": 75,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 65,
 			"trainer-energy": 45
 		},
@@ -3096,7 +3106,7 @@ const dbmoves = {
 			"name-ital": "Devastomasso",
 			"raid-power": 110,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 110,
 			"trainer-energy": 50
 		},
@@ -3106,7 +3116,7 @@ const dbmoves = {
 			"name-ital": "Pietrataglio",
 			"raid-power": 105,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 100,
 			"trainer-energy": 55
 		},
@@ -3116,7 +3126,7 @@ const dbmoves = {
 			"name-ital": "Palla Clima",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -3126,7 +3136,7 @@ const dbmoves = {
 			"name-ital": "Colpo Maestoso",
 			"raid-power": 125,
 			"raid-energy": 50,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 80,
 			"trainer-energy": 45
 		},
@@ -3136,7 +3146,7 @@ const dbmoves = {
 			"name-ital": "Taglio Maestoso",
 			"raid-power": 200,
 			"raid-energy": 100,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 100,
 			"trainer-energy": 55
 		},
@@ -3146,7 +3156,7 @@ const dbmoves = {
 			"name-ital": "Obblidero",
 			"raid-power": 65,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 80,
 			"trainer-energy": 40
 		},
@@ -3156,7 +3166,7 @@ const dbmoves = {
 			"name-ital": "Pugni Corazzati",
 			"raid-power": 70,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -3166,7 +3176,7 @@ const dbmoves = {
 			"name-ital": "Cannonflash",
 			"raid-power": 100,
 			"raid-energy": 100,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 110,
 			"trainer-energy": 70
 		},
@@ -3176,7 +3186,7 @@ const dbmoves = {
 			"name-ital": "Vortexpalla",
 			"raid-power": 85,
 			"raid-energy": 50,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 80,
 			"trainer-energy": 60
 		},
@@ -3186,7 +3196,7 @@ const dbmoves = {
 			"name-ital": "Pesobomba",
 			"raid-power": 70,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 70,
 			"trainer-energy": 50
 		},
@@ -3196,7 +3206,7 @@ const dbmoves = {
 			"name-ital": "Metaltestata",
 			"raid-power": 60,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 70,
 			"trainer-energy": 50
 		},
@@ -3206,7 +3216,7 @@ const dbmoves = {
 			"name-ital": "Bombagnete",
 			"raid-power": 75,
 			"raid-energy": 33,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 70,
 			"trainer-energy": 45
 		},
@@ -3216,7 +3226,7 @@ const dbmoves = {
 			"name-ital": "Meteorpugno",
 			"raid-power": 100,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 100,
 			"trainer-energy": 45
 		},
@@ -3226,7 +3236,7 @@ const dbmoves = {
 			"name-ital": "Cristalcolpo",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 35,
 			"trainer-energy": 35
 		},
@@ -3236,7 +3246,7 @@ const dbmoves = {
 			"name-ital": "Astrocarica",
 			"raid-power": 230,
 			"raid-energy": 100,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 135,
 			"trainer-energy": 65
 		},
@@ -3246,7 +3256,7 @@ const dbmoves = {
 			"name-ital": "Acquagetto",
 			"raid-power": 45,
 			"raid-energy": 33,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 70,
 			"trainer-energy": 40
 		},
@@ -3256,7 +3266,7 @@ const dbmoves = {
 			"name-ital": "Idroballetto",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 55,
 			"trainer-energy": 40
 		},
@@ -3266,7 +3276,7 @@ const dbmoves = {
 			"name-ital": "Idrondata",
 			"raid-power": 50,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
@@ -3276,7 +3286,7 @@ const dbmoves = {
 			"name-ital": "Acquadisale",
 			"raid-power": 65,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 60,
 			"trainer-energy": 50
 		},
@@ -3286,7 +3296,7 @@ const dbmoves = {
 			"name-ital": "Bollaraggio",
 			"raid-power": 45,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 25,
 			"trainer-energy": 40
 		},
@@ -3296,7 +3306,7 @@ const dbmoves = {
 			"name-ital": "Doccia Fredda",
 			"raid-power": 65,
 			"raid-energy": 33,
-			"raid-duration": 3.5,
+			"raid-duration": 3500,
 			"trainer-power": 60,
 			"trainer-energy": 45
 		},
@@ -3306,7 +3316,7 @@ const dbmoves = {
 			"name-ital": "Martellata",
 			"raid-power": 85,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 85,
 			"trainer-energy": 50
 		},
@@ -3316,7 +3326,7 @@ const dbmoves = {
 			"name-ital": "Idrocannone",
 			"raid-power": 90,
 			"raid-energy": 50,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 80,
 			"trainer-energy": 40
 		},
@@ -3326,7 +3336,7 @@ const dbmoves = {
 			"name-ital": "Idropompa",
 			"raid-power": 90,
 			"raid-energy": 100,
-			"raid-duration": 4.5,
+			"raid-duration": 4500,
 			"trainer-power": 90,
 			"trainer-energy": 80
 		},
@@ -3336,7 +3346,7 @@ const dbmoves = {
 			"name-ital": "Idrobreccia",
 			"raid-power": 70,
 			"raid-energy": 33,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 70,
 			"trainer-energy": 45
 		},
@@ -3346,7 +3356,7 @@ const dbmoves = {
 			"name-ital": "Fanghiglia",
 			"raid-power": 45,
 			"raid-energy": 33,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 35,
 			"trainer-energy": 35
 		},
@@ -3356,7 +3366,7 @@ const dbmoves = {
 			"name-ital": "Octazooka",
 			"raid-power": 55,
 			"raid-energy": 50,
-			"raid-duration": 2.5,
+			"raid-duration": 2500,
 			"trainer-power": 50,
 			"trainer-energy": 50
 		},
@@ -3366,7 +3376,7 @@ const dbmoves = {
 			"name-ital": "Primopulsar",
 			"raid-power": 120,
 			"raid-energy": 100,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 130,
 			"trainer-energy": 60
 		},
@@ -3376,7 +3386,7 @@ const dbmoves = {
 			"name-ital": "Conchilama",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 35,
 			"trainer-energy": 35
 		},
@@ -3386,7 +3396,7 @@ const dbmoves = {
 			"name-ital": "Idrovampata",
 			"raid-power": 50,
 			"raid-energy": 100,
-			"raid-duration": 4.5,
+			"raid-duration": 4500,
 			"trainer-power": 50,
 			"trainer-energy": 80
 		},
@@ -3396,7 +3406,7 @@ const dbmoves = {
 			"name-ital": "Canto Effimero",
 			"raid-power": 85,
 			"raid-energy": 33,
-			"raid-duration": 3.0,
+			"raid-duration": 3000,
 			"trainer-power": 80,
 			"trainer-energy": 45
 		},
@@ -3406,7 +3416,7 @@ const dbmoves = {
 			"name-ital": "Surf",
 			"raid-power": 60,
 			"raid-energy": 50,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 75,
 			"trainer-energy": 45
 		},
@@ -3416,7 +3426,7 @@ const dbmoves = {
 			"name-ital": "Tecnobotta",
 			"raid-power": 120,
 			"raid-energy": 100,
-			"raid-duration": 2.0,
+			"raid-duration": 2000,
 			"trainer-power": 120,
 			"trainer-energy": 55
 		},
@@ -3426,7 +3436,7 @@ const dbmoves = {
 			"name-ital": "Palla Clima",
 			"raid-power": 55,
 			"raid-energy": 33,
-			"raid-duration": 1.5,
+			"raid-duration": 1500,
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
