@@ -1620,6 +1620,7 @@ const	dbpokemon = {
 				{ "atk": "FAST_FLY_GUST", "etm": true }
 			],
 			"charged-moves": [
+				{ "atk": "CHRG_FIR_HEATWAVE", "start": "2026-03-03" },
 				{ "atk": "CHRG_FLY_AERIALACE" },
 				{ "atk": "CHRG_FLY_BRAVEBIRD" },
 				{ "atk": "CHRG_FLY_FEATHERDANCE" },
@@ -1986,7 +1987,8 @@ const	dbpokemon = {
 			"name": "Pikachu",
 			"availability": {
 				"in-game":	"2016-07-06",
-				"shiny":	"2017-08-09"
+				"shiny":	"2017-08-09",
+				"dynamax":	"2026-03-09"
 			},
 			"forms": [ "25-G" ],
 			"category": "Mouse",
@@ -1997,6 +1999,7 @@ const	dbpokemon = {
 			"base-attack": 112,
 			"base-defense": 96,
 			"dynamax-class": 1,
+			"max-battle-tier": 2, // TODO Guess (based on Eevee)
 			"fast-moves": [
 				{ "atk": "FAST_ELE_THUNDERSHOCK" },
 				{ "atk": "FAST_NOR_QUICKATTACK" },
@@ -2039,7 +2042,8 @@ const	dbpokemon = {
 			"name": "Raichu",
 			"availability": {
 				"in-game":	"2016-07-06",
-				"shiny":	"2017-08-09"
+				"shiny":	"2017-08-09",
+				"dynamax":	"2026-03-09"
 			},
 			"forms": [ "26-A", "26-X", "26-Y" ],
 			"category": "Mouse",
@@ -8367,11 +8371,13 @@ const	dbpokemon = {
 				{ "atk": "FAST_ICE_ICESHARD" }
 			],
 			"charged-moves": [
+				{ "atk": "CHRG_ICE_BLIZZARD" },
 				{ "atk": "CHRG_ICE_ICEBEAM" },
 				{ "atk": "CHRG_ICE_ICYWIND" },
-				{ "atk": "CHRG_ICE_BLIZZARD" },
-				{ "atk": "CHRG_ROC_ANCIENTPOWER" },
+				{ "atk": "CHRG_ICE_POWDERSNOW", "start": "2026-03-03" },
+				{ "atk": "CHRG_ICE_POWDERSNOW", "start": "2026-03-03" },
 				{ "atk": "CHRG_ICE_TRIPLEAXEL" },
+				{ "atk": "CHRG_ROC_ANCIENTPOWER" },
 				{ "atk": "CHRG_FLY_HURRICANE", "etm": true }
 			],
 			"height-avg": 1.7,
@@ -8456,6 +8462,7 @@ const	dbpokemon = {
 				{ "atk": "CHRG_ELE_ZAPCANNON" },
 				{ "atk": "CHRG_ELE_THUNDERBOLT" },
 				{ "atk": "CHRG_ELE_THUNDER" },
+				{ "atk": "CHRG_FIR_HEATWAVE", "start": "2026-03-03" },
 				{ "atk": "CHRG_ROC_ANCIENTPOWER" },
 				{ "atk": "CHRG_FLY_DRILLPECK" }
 			],
@@ -8540,8 +8547,9 @@ const	dbpokemon = {
 				{ "atk": "CHRG_FIR_FIREBLAST" },
 				{ "atk": "CHRG_FIR_HEATWAVE" },
 				{ "atk": "CHRG_FIR_OVERHEAT" },
-				{ "atk": "CHRG_ROC_ANCIENTPOWER" },
-				{ "atk": "CHRG_FLY_SKYATTACK", "etm": true }
+				{ "atk": "CHRG_FLY_FLY", "start": "2026-03-03" },
+				{ "atk": "CHRG_FLY_SKYATTACK", "etm": true },
+				{ "atk": "CHRG_ROC_ANCIENTPOWER" }
 			],
 			"height-avg": 2,
 			"weight-avg": 60,
@@ -8727,10 +8735,15 @@ const	dbpokemon = {
 				"type":	"Mega"
 			},
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-02-20",
+				"shiny":	"2026-02-20"
 			},
+			"base-attack": 299,
+			"base-defense": 255,
+			"base-stamina": 209,
 			"height-avg": 2.2,
-			"weight-avg": 290
+			"weight-avg": 290,
+			"mega-energy": 300
 		},
 		"150": {
 			"dex-index": "150",
@@ -9905,11 +9918,12 @@ const	dbpokemon = {
 				{ "atk": "FAST_FAI_FAIRYWIND" }
 			],
 			"charged-moves": [
-				{ "atk": "CHRG_ROC_ANCIENTPOWER" },
 				{ "atk": "CHRG_FAI_DAZZLINGGLEAM" },
-				{ "atk": "CHRG_FLY_AERIALACE" },
 				{ "atk": "CHRG_FAI_DRAININGKISS" },
-				{ "atk": "CHRG_PSY_PSYSHOCK" }
+				{ "atk": "CHRG_FIR_HEATWAVE", "start": "2026-03-03" },
+				{ "atk": "CHRG_FLY_AERIALACE" },
+				{ "atk": "CHRG_PSY_PSYSHOCK" },
+				{ "atk": "CHRG_ROC_ANCIENTPOWER" }
 			],
 			"height-avg": 0.61,
 			"weight-avg": 3.2,
@@ -10278,12 +10292,12 @@ const	dbpokemon = {
 				{ "atk": "FAST_FIG_COUNTER" }
 			],
 			"charged-moves": [
-				{ "atk": "CHRG_ROC_STONEEDGE" },
+				{ "atk": "CHRG_GRA_TRAILBLAZE" },
 				{ "atk": "CHRG_GRO_EARTHQUAKE" },
 				{ "atk": "CHRG_ROC_ROCKSLIDE" },
 				{ "atk": "CHRG_ROC_ROCKTOMB" },
-				{ "atk": "CHRG_ROC_METEORBEAM" },
-				{ "atk": "CHRG_GRA_TRAILBLAZE" }
+				{ "atk": "CHRG_ROC_STONEEDGE" },
+				{ "atk": "CHRG_ROC_METEORBEAM" }
 			],
 			"height-avg": 1.19,
 			"weight-avg": 38,
@@ -11583,11 +11597,13 @@ const	dbpokemon = {
 				{ "atk": "FAST_BUG_STRUGGLEBUG" }
 			],
 			"charged-moves": [
+				{ "atk": "CHRG_BUG_FURYCUTTER", "start": "2026-03-03" },
 				{ "atk": "CHRG_BUG_MEGAHORN" },
 				{ "atk": "CHRG_FIG_CLOSECOMBAT" },
 				{ "atk": "CHRG_FIG_UPPERHAND" },
 				{ "atk": "CHRG_GRO_EARTHQUAKE" },
-				{ "atk": "CHRG_ROC_ROCKBLAST" }
+				{ "atk": "CHRG_ROC_ROCKBLAST" },
+				{ "atk": "CHRG_ROC_ROCKTOMB", "start": "2026-03-03" }
 			],
 			"height-avg": 1.5,
 			"weight-avg": 54,
@@ -16309,10 +16325,12 @@ const	dbpokemon = {
 				{ "atk": "FAST_FIR_INCINERATE" }
 			],
 			"charged-moves": [
-				{ "atk": "CHRG_GRO_EARTHQUAKE" },
 				{ "atk": "CHRG_FIR_OVERHEAT" },
 				{ "atk": "CHRG_GRA_SOLARBEAM" },
-				{ "atk": "CHRG_GRO_EARTHPOWER" }
+				{ "atk": "CHRG_GRO_EARTHQUAKE" },
+				{ "atk": "CHRG_GRO_EARTHPOWER" },
+				{ "atk": "CHRG_GRO_SCORCHINGSANDS", "start": "2026-03-03" },
+				{ "atk": "CHRG_ROC_ROCKTOMB", "start": "2026-03-03" }
 			],
 			"height-avg": 1.91,
 			"weight-avg": 220,
@@ -16604,6 +16622,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				{ "atk": "CHRG_DRA_DRAGONCLAW" },
+				{ "atk": "CHRG_DRA_TWISTER", "start": "2026-03-03" },
 				{ "atk": "CHRG_GRO_EARTHPOWER", "etm": true },
 				{ "atk": "CHRG_GRO_EARTHQUAKE" },
 				{ "atk": "CHRG_GRO_SCORCHINGSANDS" },
@@ -18670,7 +18689,8 @@ const	dbpokemon = {
 				"in-game":	"2018-06-21",
 				"shiny":	"2019-12-01",
 				"shadow":	"2023-03-25",
-				"sh-shiny":	"2024-12-03"
+				"sh-shiny":	"2024-12-03",
+				"dynamax":	"2026-03-23"
 			},
 			"category": "Iceberg",
 			"legendary": true,
@@ -18679,6 +18699,7 @@ const	dbpokemon = {
 			"base-attack": 179,
 			"base-defense": 309,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_ICE_FROSTBREATH" },
 				{ "atk": "FAST_FIG_ROCKSMASH" },
@@ -20295,13 +20316,14 @@ const	dbpokemon = {
 			"base-attack": 141,
 			"base-defense": 180,
 			"fast-moves": [
+				{ "atk": "FAST_BUG_BUGBITE" },
+				{ "atk": "FAST_DAR_SUCKERPUNCH", "start": "2026-03-03" },
 				{ "atk": "FAST_PSY_CONFUSION" },
-				{ "atk": "FAST_BUG_BUGBITE" }
 			],
 			"charged-moves": [
-				{ "atk": "CHRG_PSY_PSYBEAM" },
+				{ "atk": "CHRG_BUG_BUGBUZZ" },
 				{ "atk": "CHRG_GRA_ENERGYBALL" },
-				{ "atk": "CHRG_BUG_BUGBUZZ" }
+				{ "atk": "CHRG_PSY_PSYBEAM" }
 			],
 			"size-calc-ignore": false
 		},
@@ -20318,8 +20340,9 @@ const	dbpokemon = {
 			"base-attack": 141,
 			"base-defense": 180,
 			"fast-moves": [
-				{ "atk": "FAST_PSY_CONFUSION" },
-				{ "atk": "FAST_BUG_BUGBITE" }
+				{ "atk": "FAST_BUG_BUGBITE" },
+				{ "atk": "FAST_DAR_SUCKERPUNCH", "start": "2026-03-03" },
+				{ "atk": "FAST_PSY_CONFUSION" }
 			],
 			"charged-moves": [
 				{ "atk": "CHRG_PSY_PSYBEAM" },
@@ -20341,8 +20364,9 @@ const	dbpokemon = {
 			"base-attack": 127,
 			"base-defense": 175,
 			"fast-moves": [
-				{ "atk": "FAST_PSY_CONFUSION" },
 				{ "atk": "FAST_BUG_BUGBITE" },
+				{ "atk": "FAST_DAR_SUCKERPUNCH", "start": "2026-03-03" },
+				{ "atk": "FAST_PSY_CONFUSION" },
 				{ "atk": "FAST_STE_METALSOUND" }
 			],
 			"charged-moves": [
@@ -21626,6 +21650,7 @@ const	dbpokemon = {
 			"charged-moves": [
 				{ "atk": "CHRG_DRA_BREAKINGSWIPE", "start": "2025-09-02" },
 				{ "atk": "CHRG_DRA_OUTRAGE" },
+				{ "atk": "CHRG_DRA_TWISTER", "start": "2026-03-03" },
 				{ "atk": "CHRG_FIR_FIREBLAST" },
 				{ "atk": "CHRG_GRO_EARTHPOWER", "etm": true },
 				{ "atk": "CHRG_GRO_EARTHQUAKE" },
@@ -22770,6 +22795,7 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				{ "atk": "CHRG_GRO_EARTHQUAKE" },
+				{ "atk": "CHRG_FLY_ACROBATICS", "start": "2026-03-03" },
 				{ "atk": "CHRG_FLY_AERIALACE" },
 				{ "atk": "CHRG_DAR_NIGHTSLASH" },
 				{ "atk": "CHRG_GRO_SANDTOMB" }
@@ -23200,9 +23226,10 @@ const	dbpokemon = {
 			"base-attack": 204,
 			"base-defense": 219,
 			"charged-moves": [
-				{ "atk": "CHRG_GHO_OMINOUSWIND" },
 				{ "atk": "CHRG_ELE_THUNDERBOLT" },
-				{ "atk": "CHRG_ELE_THUNDER" }
+				{ "atk": "CHRG_ELE_THUNDER" },
+				{ "atk": "CHRG_GRA_LEAFSTORM", "start": "2026-03-03" },
+				{ "atk": "CHRG_GHO_OMINOUSWIND" }
 			]
 		},
 		"480": {
@@ -26126,9 +26153,10 @@ const	dbpokemon = {
 			],
 			"charged-moves": [
 				{ "atk": "CHRG_BUG_MEGAHORN" },
+				{ "atk": "CHRG_BUG_XSCISSOR" },
 				{ "atk": "CHRG_POI_SLUDGEBOMB" },
 				{ "atk": "CHRG_STE_GYROBALL" },
-				{ "atk": "CHRG_BUG_XSCISSOR" }
+				{ "atk": "CHRG_WAT_AQUATAIL", "start": "2026-03-03" }
 			],
 			"height-avg": 2.5,
 			"weight-avg": 200.5,
@@ -34380,10 +34408,11 @@ const	dbpokemon = {
 				{ "atk": "FAST_NOR_TAKEDOWN" }
 			],
 			"charged-moves": [
-				{ "atk": "CHRG_WAT_HYDROPUMP" },
 				{ "atk": "CHRG_FIR_OVERHEAT" },
 				{ "atk": "CHRG_GRO_EARTHPOWER" },
-				{ "atk": "CHRG_POI_SLUDGEBOMB" }
+				{ "atk": "CHRG_POI_SLUDGEBOMB" },
+				{ "atk": "CHRG_WAT_HYDROPUMP" },
+				{ "atk": "CHRG_WAT_SCALD", "start": "2026-03-03" }
 			],
 			"height-avg": 1.7,
 			"weight-avg": 195,
@@ -38020,6 +38049,7 @@ const	dbpokemon = {
 			"dynamax-class": 4,
 			"fast-moves": [
 				{ "atk": "FAST_DAR_SUCKERPUNCH" },
+				{ "atk": "FAST_GHO_SHADOWCLAW", "start": "2026-03-03" },
 				{ "atk": "FAST_FIG_COUNTER" },
 				{ "atk": "FAST_POI_POISONJAB" }
 			],
@@ -38448,7 +38478,8 @@ const	dbpokemon = {
 			"name": "Scorbunny",
 			"availability": {
 				"in-game":	"2024-09-03",
-				"dynamax":	"2024-10-01"
+				"dynamax":	"2024-10-01",
+				"shiny":	"2026-03-14"
 			},
 			"category": "Rabbit",
 			"type": [ "Fire" ],
@@ -38484,7 +38515,8 @@ const	dbpokemon = {
 			"name": "Raboot",
 			"availability": {
 				"in-game":	"2024-09-03",
-				"dynamax":	"2024-10-01"
+				"dynamax":	"2024-10-01",
+				"shiny":	"2026-03-14"
 			},
 			"category": "Rabbit",
 			"type": [ "Fire" ],
@@ -38521,7 +38553,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-09-03",
 				"dynamax":	"2024-10-01",
-				"shiny":	false
+				"shiny":	"2026-03-14"
 			},
 			"category": "Striker",
 			"type": [ "Fire" ],
@@ -38536,8 +38568,10 @@ const	dbpokemon = {
 				{ "atk": "FAST_NOR_TACKLE" }
 			],
 			"charged-moves": [
+				{ "atk": "CHRG_FIR_BLASTBURN", "etm": true, "start": "2026-03-14" },
 				{ "atk": "CHRG_FIR_FLAMECHARGE" },
 				{ "atk": "CHRG_FIR_FLAMETHROWER" },
+				{ "atk": "CHRG_FIR_PYROBALL", "start": "2026-03-14" },
 				{ "atk": "CHRG_FIG_FOCUSBLAST" }
 			],
 			"height-avg": 1.4,
@@ -38890,7 +38924,7 @@ const	dbpokemon = {
 			"dex-index": "824",
 			"name": "Blipbug",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-03-17"
 			},
 			"category": "Larva",
 			"type": [ "Bug" ],
@@ -38922,7 +38956,7 @@ const	dbpokemon = {
 			"dex-index": "825",
 			"name": "Dottler",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-03-17"
 			},
 			"category": "Radome",
 			"type": [ "Bug", "Psychic" ],
@@ -38957,7 +38991,7 @@ const	dbpokemon = {
 			"dex-index": "826",
 			"name": "Orbeetle",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-03-17"
 			},
 			"category": "Seven Spot",
 			"type": [ "Bug", "Psychic" ],
@@ -39893,7 +39927,8 @@ const	dbpokemon = {
 			"dex-index": "850",
 			"name": "Sizzlipede",
 			"availability": {
-				"in-game":	"2025-03-26"
+				"in-game":	"2025-03-26",
+				"shiny":	"2026-03-17"
 			},
 			"category": "Radiator",
 			"type": [ "Fire", "Bug" ],
@@ -39928,7 +39963,8 @@ const	dbpokemon = {
 			"dex-index": "851",
 			"name": "Centiskorch",
 			"availability": {
-				"in-game":	"2025-03-26"
+				"in-game":	"2025-03-26",
+				"shiny":	"2026-03-17"
 			},
 			"category": "Radiator",
 			"type": [ "Fire", "Bug" ],
