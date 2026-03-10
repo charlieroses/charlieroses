@@ -375,8 +375,9 @@ const dbmoves = {
 			"raid-power": 5,
 			"raid-energy": 5,
 			"raid-cooldown": 0.5,
-			"trainer-power": 4,
-			"trainer-energy": 5,
+
+			"trainer-power": 5,
+			"trainer-energy": 8,
 			"trainer-cooldown": 1
 		},
 		"FAST_FIG_ROCKSMASH": {
@@ -497,7 +498,7 @@ const dbmoves = {
 			"raid-energy": 11,
 			"raid-cooldown": 1.0,
 			"trainer-power": 5,
-			"trainer-energy": 7,
+			"trainer-energy": 8,
 			"trainer-cooldown": 1
 		},
 		"FAST_GHO_ASTONISH": {
@@ -639,8 +640,8 @@ const dbmoves = {
 			"raid-power": 4,
 			"raid-energy": 6,
 			"raid-cooldown": 0.5,
-			"trainer-power": 4,
-			"trainer-energy": 8,
+			"trainer-power": 3,
+			"trainer-energy": 9,
 			"trainer-cooldown": 1
 		},
 		"FAST_GRO_MUDSLAP": {
@@ -650,7 +651,8 @@ const dbmoves = {
 			"raid-power": 19,
 			"raid-energy": 13,
 			"raid-cooldown": 1.5,
-			"trainer-power": 12,
+
+			"trainer-power": 11,
 			"trainer-energy": 10,
 			"trainer-cooldown": 2
 		},
@@ -913,7 +915,8 @@ const dbmoves = {
 			"raid-power": 4,
 			"raid-energy": 7,
 			"raid-cooldown": 0.5,
-			"trainer-power": 3,
+
+			"trainer-power": 4,
 			"trainer-energy": 9,
 			"trainer-cooldown": 1
 		},
@@ -979,6 +982,7 @@ const dbmoves = {
 			"raid-power": 13,
 			"raid-energy": 7,
 			"raid-cooldown": 1.0,
+
 			"trainer-power": 11,
 			"trainer-energy": 8,
 			"trainer-cooldown": 2.0
@@ -990,7 +994,8 @@ const dbmoves = {
 			"raid-power": 10,
 			"raid-energy": 11,
 			"raid-cooldown": 1.0,
-			"trainer-power": 8,
+
+			"trainer-power": 7,
 			"trainer-energy": 7,
 			"trainer-cooldown": 1
 		},
@@ -1089,8 +1094,8 @@ const dbmoves = {
 			"raid-power": 13,
 			"raid-energy": 7,
 			"raid-cooldown": 1.0,
-			"trainer-power": 12,
-			"trainer-energy": 8,
+			"trainer-power": 11,
+			"trainer-energy": 10,
 			"trainer-cooldown": 2
 		},
 		"FAST_WAT_WATERGUN": {
@@ -1393,8 +1398,9 @@ const dbmoves = {
 			"raid-power": 50,
 			"raid-energy": 33,
 			"raid-duration": 3000,
-			"trainer-power": 45,
-			"trainer-energy": 45
+
+			"trainer-power": 70,
+			"trainer-energy": 40
 		},
 		"CHRG_ELE_AURAWHEEL": {
 			"type": "Electric",
@@ -1494,7 +1500,7 @@ const dbmoves = {
 			"raid-energy": 33,
 			"raid-duration": 3500,
 			"trainer-power": 90,
-			"trainer-energy": 50
+			"trainer-energy": 40
 		},
 		"CHRG_ELE_WILDBOLTSTORM": {
 			"type": "Electric",
@@ -1633,7 +1639,8 @@ const dbmoves = {
 			"raid-power": 50,
 			"raid-energy": 33,
 			"raid-duration": 2500,
-			"trainer-power": 20,
+
+			"trainer-power": 40,
 			"trainer-energy": 40
 		},
 		"CHRG_FIG_DYNAMICPUNCH": {
@@ -1843,8 +1850,9 @@ const dbmoves = {
 			"raid-power": 95,
 			"raid-energy": 100,
 			"raid-duration": 3000,
-			"trainer-power": 95,
-			"trainer-energy": 75
+
+			"trainer-power": 75,
+			"trainer-energy": 45
 		},
 		"CHRG_FIR_MAGMASTORM": {
 			"type": "Fire",
@@ -1885,6 +1893,16 @@ const dbmoves = {
 			"raid-duration": 4000,
 			"trainer-power": 130,
 			"trainer-energy": 55
+		},
+		"CHRG_FIR_PYROBALL": {
+			"type": "Fire",
+			"name": "Pyro Ball",
+			"name-ital": "",
+			"raid-power": 150,
+			"raid-energy": 100,
+			"raid-duration": 2000,
+			"trainer-power": 75,
+			"trainer-energy": 40
 		},
 		"CHRG_FIR_SACREDFIRE": {
 			"type": "Fire",
@@ -2469,8 +2487,9 @@ const dbmoves = {
 			"raid-power": 60,
 			"raid-energy": 33,
 			"raid-duration": 2500,
-			"trainer-power": 60,
-			"trainer-energy": 40
+
+			"trainer-power": 65,
+			"trainer-energy": 45
 		},
 		"CHRG_GRO_PRECIPICEBLADES": {
 			"type": "Ground",
@@ -2499,7 +2518,8 @@ const dbmoves = {
 			"raid-power": 60,
 			"raid-energy": 33,
 			"raid-duration": 4000,
-			"trainer-power": 25,
+
+			"trainer-power": 40,
 			"trainer-energy": 40
 		},
 		"CHRG_GRO_SCORCHINGSANDS": {
@@ -3087,7 +3107,8 @@ const dbmoves = {
 			"raid-power": 65,
 			"raid-energy": 50,
 			"raid-duration": 3000,
-			"trainer-power": 80,
+
+			"trainer-power": 75,
 			"trainer-energy": 50
 		},
 		"CHRG_ROC_ROCKSLIDE": {

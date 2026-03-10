@@ -147,6 +147,7 @@ function checkEvolvesInto( e ) {
 
 function checkAttacks( e, flavor ) {
 	let		fkey, f, a;
+	let		okey, oatk;
 	let		m, md;
 	const	props = new Set([ "atk", "start", "end", "etm", "tm-lock" ]);
 
@@ -157,6 +158,11 @@ function checkAttacks( e, flavor ) {
 			return "Error: " + e + " missing \'" + flavor + "-moves\' field";
 		return;
 	}
+	if( flavor == "charged" )
+		okey = "fast";
+	else
+		okey = "charged";
+	okey = okey + "-moves";
 
 	m = "";
 
@@ -165,8 +171,17 @@ function checkAttacks( e, flavor ) {
 			m += "Error: " + e + " \'" + flavor + "-moves\' index " + a + " Invalid Format: missing \'atk\' field (" + f[a] + ")\n";
 			continue;
 		}
-		if( ! Object.keys(dbmoves[fkey]).includes(f[a].atk) )
-			m += "Error: " + e + " \'" + flavor + "-moves\' index " + a + " \'atk\' (" + f[a].atk + ") not in dbmoves[" + fkey + "]\n";
+		if( ! Object.keys(dbmoves[fkey]).includes(f[a].atk) ) {
+			oatk = f[a].atk.substring(4);
+			if( okey.startsWith("fast") )
+				oatk = "FAST" + oatk;
+			else
+				oatk = "CHRG" + oatk;
+			if( Object.keys(dbmoves[okey]).includes(oatk) )
+				m += "Error: " + e + " \'" + flavor + "-moves\' index " + a + " \'atk\' (" + f[a].atk + ") not in dbmoves[" + fkey + "]. Did you mean " + oatk + "?\n";
+			else
+				m += "Error: " + e + " \'" + flavor + "-moves\' index " + a + " \'atk\' (" + f[a].atk + ") not in dbmoves[" + fkey + "]\n";
+		}
 
 		if( Object.keys(f[a]).includes("start") ) {
 			md = checkDate( f[a].start );
@@ -1528,7 +1543,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2019-02-27",
-				"shadow":	"2024-03-27"
+				"shadow":	"2024-03-27",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Tiny Bird",
 			"type": [ "Normal", "Flying" ],
@@ -1565,7 +1581,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2019-02-27",
-				"shadow":	"2024-03-27"
+				"shadow":	"2024-03-27",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Bird",
 			"type": [ "Normal", "Flying" ],
@@ -1603,7 +1620,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2019-02-27",
-				"shadow":	"2024-03-27"
+				"shadow":	"2024-03-27",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "18-M" ],
 			"category": "Bird",
@@ -1717,7 +1735,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-06-21",
 				"shiny":	"2019-06-28",
-				"shadow":	"2022-04-03"
+				"shadow":	"2022-04-03",
+				"sh-shiny":	"2026-03-03"
 			},
 			"type": [ "Dark", "Normal" ],
 			"evolves-into": [ "20-A" ],
@@ -1796,7 +1815,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-06-21",
 				"shiny":	"2019-06-28",
-				"shadow":	"2022-04-03"
+				"shadow":	"2022-04-03",
+				"sh-shiny":	"2026-03-03"
 			},
 			"type": [ "Dark", "Normal" ],
 			"evolves-from": "19-A",
@@ -1999,7 +2019,7 @@ const	dbpokemon = {
 			"base-attack": 112,
 			"base-defense": 96,
 			"dynamax-class": 1,
-			"max-battle-tier": 2, // TODO Guess (based on Eevee)
+			"max-battle-tier": 1, // Guessed 2 (based on Eevee) wrong :(((
 			"fast-moves": [
 				{ "atk": "FAST_ELE_THUNDERSHOCK" },
 				{ "atk": "FAST_NOR_QUICKATTACK" },
@@ -2034,7 +2054,8 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-03-28",
+				"shiny":	"2026-03-28"
 			}
 		},
 		"26": {
@@ -2155,7 +2176,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2018-12-06",
-				"shadow":	"2019-11-07"
+				"shadow":	"2019-11-07",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "27-A" ],
 			"category": "Mouse",
@@ -2200,7 +2222,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-06-21",
 				"shiny":	"2019-06-28",
-				"shadow":	"2022-04-03"
+				"shadow":	"2022-04-03",
+				"sh-shiny":	"2026-03-03"
 			},
 			"type": [ "Ice", "Steel" ],
 			"evolves-into": [ "28-A" ],
@@ -2236,7 +2259,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2018-12-06",
-				"shadow":	"2019-11-07"
+				"shadow":	"2019-11-07",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "28-A" ],
 			"category": "Mouse",
@@ -2282,7 +2306,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-06-21",
 				"shiny":	"2019-06-28",
-				"shadow":	"2022-04-03"
+				"shadow":	"2022-04-03",
+				"sh-shiny":	"2026-03-03"
 			},
 			"type": [ "Ice", "Steel" ],
 			"evolves-from": "27-A",
@@ -2658,7 +2683,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2020-10-09",
-				"shadow":	"2020-02-03"
+				"shadow":	"2020-02-03",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "37-A" ],
 			"category": "Fox",
@@ -2702,7 +2728,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-06-21",
 				"shiny":	"2019-06-28",
-				"shadow":	"2023-02-01"
+				"shadow":	"2023-02-01",
+				"sh-shiny":	"2026-03-03"
 			},
 			"type": [ "Ice" ],
 			"evolves-into": [ "38-A" ],
@@ -2739,7 +2766,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2020-10-09",
-				"shadow":	"2020-02-03"
+				"shadow":	"2020-02-03",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "38-A" ],
 			"category": "Fox",
@@ -2789,7 +2817,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-06-21",
 				"shiny":	"2019-06-28",
-				"shadow":	"2023-02-01"
+				"shadow":	"2023-02-01",
+				"sh-shiny":	"2026-03-03"
 			},
 			"type": [ "Ice", "Fairy" ],
 			"evolves-from": "37-A",
@@ -2989,7 +3018,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2019-10-03",
-				"shadow":	"2019-09-05"
+				"shadow":	"2019-09-05",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Weed",
 			"type": [ "Grass", "Poison" ],
@@ -3026,7 +3056,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2019-10-03",
-				"shadow":	"2019-09-05"
+				"shadow":	"2019-09-05",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Weed",
 			"type": [ "Grass", "Poison" ],
@@ -3064,7 +3095,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2019-10-03",
-				"shadow":	"2019-09-05"
+				"shadow":	"2019-09-05",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Flower",
 			"type": [ "Grass", "Poison" ],
@@ -3705,7 +3737,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2019-03-05",
-				"shadow":	"2024-10-08"
+				"shadow":	"2024-10-08",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Pig Monkey",
 			"type": [ "Fighting" ],
@@ -3742,7 +3775,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2019-03-05",
-				"shadow":	"2024-10-08"
+				"shadow":	"2024-10-08",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Pig Monkey",
 			"type": [ "Fighting" ],
@@ -5744,7 +5778,8 @@ const	dbpokemon = {
 				"in-game":	"2016-07-06",
 				"shiny":	"2018-11-03",
 				"shadow":	"2023-10-26",
-				"dynamax":	"2024-10-22"
+				"dynamax":	"2024-10-22",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Gas",
 			"type": [ "Ghost", "Poison" ],
@@ -5785,7 +5820,8 @@ const	dbpokemon = {
 				"in-game":	"2016-07-06",
 				"shiny":	"2018-11-03",
 				"shadow":	"2023-10-26",
-				"dynamax":	"2024-10-22"
+				"dynamax":	"2024-10-22",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Gas",
 			"type": [ "Ghost", "Poison" ],
@@ -5827,7 +5863,8 @@ const	dbpokemon = {
 				"in-game":	"2016-07-06",
 				"shiny":	"2018-11-03",
 				"shadow":	"2023-10-26",
-				"dynamax":	"2024-10-22"
+				"dynamax":	"2024-10-22",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "94-M", "94-G" ],
 			"category": "Shadow",
@@ -6125,7 +6162,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2020-05-08",
-				"shadow":	"2022-01-24"
+				"shadow":	"2022-01-24",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "100-H" ],
 			"category": "Ball",
@@ -6204,7 +6242,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2020-05-08",
-				"shadow":	"2022-01-24"
+				"shadow":	"2022-01-24",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "101-H" ],
 			"category": "Ball",
@@ -6525,7 +6564,8 @@ const	dbpokemon = {
 				"in-game":	"2016-07-06",
 				"shiny":	"2021-02-20",
 				"shadow":	"2019-11-07",
-				"dynamax":	"2025-12-11"
+				"dynamax":	"2025-12-11",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Kicking",
 			"type": [ "Fighting" ],
@@ -6568,7 +6608,8 @@ const	dbpokemon = {
 				"in-game":	"2016-07-06",
 				"shiny":	"2021-02-20",
 				"shadow":	"2019-09-05",
-				"dynamax":	"2025-12-11"
+				"dynamax":	"2025-12-11",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Punching",
 			"type": [ "Fighting" ],
@@ -8299,7 +8340,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2016-07-06",
 				"shiny":	"2021-02-20",
-				"shadow":	"2019-07-22"
+				"shadow":	"2019-07-22",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "143-G" ],
 			"category": "Sleeping",
@@ -8368,14 +8410,13 @@ const	dbpokemon = {
 			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_ICE_FROSTBREATH" },
-				{ "atk": "FAST_ICE_ICESHARD" }
+				{ "atk": "FAST_ICE_ICESHARD" },
+				{ "atk": "FAST_ICE_POWDERSNOW", "start": "2026-03-03" }
 			],
 			"charged-moves": [
 				{ "atk": "CHRG_ICE_BLIZZARD" },
 				{ "atk": "CHRG_ICE_ICEBEAM" },
 				{ "atk": "CHRG_ICE_ICYWIND" },
-				{ "atk": "CHRG_ICE_POWDERSNOW", "start": "2026-03-03" },
-				{ "atk": "CHRG_ICE_POWDERSNOW", "start": "2026-03-03" },
 				{ "atk": "CHRG_ICE_TRIPLEAXEL" },
 				{ "atk": "CHRG_ROC_ANCIENTPOWER" },
 				{ "atk": "CHRG_FLY_HURRICANE", "etm": true }
@@ -8743,6 +8784,16 @@ const	dbpokemon = {
 			"base-stamina": 209,
 			"height-avg": 2.2,
 			"weight-avg": 290,
+			"size-data": {
+				"class": 1.75,
+				"ht-std-dev": 0.275,
+				"wt-std-dev": 26.25,
+				"xxs":	[ 1.078, 1.1 ],
+				"xs":	[ 1.1, 1.65 ],
+				"a":	[ 1.65, 2.75 ],
+				"xl":	[ 4.8125, 5.775 ],
+				"xxl":	[ 5.775, 0 ] // TODO fix me when they fix the heights....
+			},
 			"mega-energy": 300
 		},
 		"150": {
@@ -10166,7 +10217,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-02-16",
 				"shiny":	"2019-10-03",
-				"shadow":	"2019-09-05"
+				"shadow":	"2019-09-05",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Flower",
 			"type": [ "Grass" ],
@@ -11323,7 +11375,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-02-16",
 				"shiny":	"2018-08-01",
-				"shadow":	"2021-05-18"
+				"shadow":	"2021-05-18",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Fairy",
 			"type": [ "Fairy" ],
@@ -11360,7 +11413,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-02-16",
 				"shiny":	"2018-08-01",
-				"shadow":	"2021-05-18"
+				"shadow":	"2021-05-18",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Fairy",
 			"type": [ "Fairy" ],
@@ -11398,7 +11452,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-02-16",
 				"shiny":	"2024-02-16",
-				"shadow":	"2025-09-16"
+				"shadow":	"2025-09-16",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "211-H" ],
 			"category": "Balloon",
@@ -11547,7 +11602,8 @@ const	dbpokemon = {
 				"in-game":	"2017-02-16",
 				"shiny":	"2019-04-20",
 				"shadow":	"2020-06-10",
-				"dynamax":	"2025-06-30"
+				"dynamax":	"2025-06-30",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Mold",
 			"type": [ "Bug", "Rock" ],
@@ -11594,10 +11650,10 @@ const	dbpokemon = {
 			"dynamax-class": 2,
 			"fast-moves": [
 				{ "atk": "FAST_FIG_COUNTER" },
+				{ "atk": "FAST_BUG_FURYCUTTER", "start": "2026-03-03" },
 				{ "atk": "FAST_BUG_STRUGGLEBUG" }
 			],
 			"charged-moves": [
-				{ "atk": "CHRG_BUG_FURYCUTTER", "start": "2026-03-03" },
 				{ "atk": "CHRG_BUG_MEGAHORN" },
 				{ "atk": "CHRG_FIG_CLOSECOMBAT" },
 				{ "atk": "CHRG_FIG_UPPERHAND" },
@@ -11887,7 +11943,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-02-16",
 				"shiny":	"2019-02-16",
-				"shadow":	"2021-02-02"
+				"shadow":	"2021-02-02",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Pig",
 			"type": [ "Ice", "Ground" ],
@@ -11924,7 +11981,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-02-16",
 				"shiny":	"2019-02-16",
-				"shadow":	"2021-02-02"
+				"shadow":	"2021-02-02",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Swine",
 			"type": [ "Ice", "Ground" ],
@@ -12599,7 +12657,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-02-16",
 				"shiny":	"2022-02-26",
-				"shadow":	"2023-06-21"
+				"shadow":	"2023-06-21",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Handstand",
 			"type": [ "Fighting" ],
@@ -13706,7 +13765,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-12-08",
 				"shiny":	"2018-02-15",
-				"shadow":	"2021-05-18"
+				"shadow":	"2021-05-18",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Bite",
 			"type": [ "Dark" ],
@@ -13743,7 +13803,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-12-08",
 				"shiny":	"2018-02-15",
-				"shadow":	"2021-05-18"
+				"shadow":	"2021-05-18",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Bite",
 			"type": [ "Dark" ],
@@ -14356,7 +14417,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-02-09",
 				"shiny":	"2019-01-15",
-				"shadow":	"2025-01-15"
+				"shadow":	"2025-01-15",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Tiny Swallow",
 			"type": [ "Normal", "Flying" ],
@@ -14391,7 +14453,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-02-09",
 				"shiny":	"2019-01-15",
-				"shadow":	"2025-01-15"
+				"shadow":	"2025-01-15",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Swallow",
 			"type": [ "Normal", "Flying" ],
@@ -15491,7 +15554,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-01-23",
 				"shiny":	"2018-01-23",
-				"shadow":	"2021-02-02"
+				"shadow":	"2021-02-02",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Iron Armor",
 			"type": [ "Steel", "Rock" ],
@@ -15529,7 +15593,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-01-23",
 				"shiny":	"2018-01-23",
-				"shadow":	"2021-02-02"
+				"shadow":	"2021-02-02",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Iron Armor",
 			"type": [ "Steel", "Rock" ],
@@ -15569,7 +15634,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-01-23",
 				"shiny":	"2018-01-23",
-				"shadow":	"2021-02-02"
+				"shadow":	"2021-02-02",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Iron Armor",
 			"type": [ "Steel", "Rock" ],
@@ -16731,7 +16797,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-02-09",
 				"shiny":	"2018-02-09",
-				"shadow":	"2025-09-16"
+				"shadow":	"2025-09-16",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Cotton Bird",
 			"type": [ "Normal", "Flying" ],
@@ -16768,7 +16835,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-02-09",
 				"shiny":	"2018-02-09",
-				"shadow":	"2025-09-16"
+				"shadow":	"2025-09-16",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Humming",
 			"type": [ "Dragon", "Flying" ],
@@ -17171,7 +17239,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-01-23",
 				"shiny":	"2020-03-27",
-				"shadow":	"2025-09-16"
+				"shadow":	"2025-09-16",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Clay Doll",
 			"type": [ "Ground", "Psychic" ],
@@ -17677,7 +17746,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-10-20",
 				"shiny":	"2017-10-26",
-				"shadow":	"2019-10-17"
+				"shadow":	"2019-10-17",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Requiem",
 			"type": [ "Ghost" ],
@@ -17714,7 +17784,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2017-10-20",
 				"shiny":	"2017-10-26",
-				"shadow":	"2019-10-17"
+				"shadow":	"2019-10-17",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Beckon",
 			"type": [ "Ghost" ],
@@ -18057,7 +18128,8 @@ const	dbpokemon = {
 				"in-game":	"2017-12-21",
 				"shiny":	"2021-12-31",
 				"shadow":	"2021-02-02",
-				"dynamax":	"2025-12-22"
+				"dynamax":	"2025-12-22",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Clap",
 			"type": [ "Ice", "Water" ],
@@ -18096,7 +18168,8 @@ const	dbpokemon = {
 				"in-game":	"2017-12-21",
 				"shiny":	"2021-12-31",
 				"shadow":	"2021-02-02",
-				"dynamax":	"2025-12-22"
+				"dynamax":	"2025-12-22",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Ball Roll",
 			"type": [ "Ice", "Water" ],
@@ -18136,7 +18209,8 @@ const	dbpokemon = {
 				"in-game":	"2017-12-21",
 				"shiny":	"2021-12-31",
 				"shadow":	"2021-02-02",
-				"dynamax":	"2025-12-22"
+				"dynamax":	"2025-12-22",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Ice Break",
 			"type": [ "Ice", "Water" ],
@@ -19879,7 +19953,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-10-16",
 				"shiny":	"2018-10-16",
-				"shadow":	"2022-07-09"
+				"shadow":	"2022-07-09",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Flash",
 			"type": [ "Electric" ],
@@ -19916,7 +19991,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-10-16",
 				"shiny":	"2018-10-16",
-				"shadow":	"2022-07-09"
+				"shadow":	"2022-07-09",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Spark",
 			"type": [ "Electric" ],
@@ -19954,7 +20030,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-10-16",
 				"shiny":	"2018-10-16",
-				"shadow":	"2022-07-09"
+				"shadow":	"2022-07-09",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Gleam Eyes",
 			"type": [ "Electric" ],
@@ -20070,7 +20147,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-02-01",
 				"shiny":	"2021-07-23",
-				"shadow":	"2023-10-26"
+				"shadow":	"2023-10-26",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Head Butt",
 			"type": [ "Rock" ],
@@ -20107,7 +20185,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-02-01",
 				"shiny":	"2021-07-23",
-				"shadow":	"2023-10-26"
+				"shadow":	"2023-10-26",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Head Butt",
 			"type": [ "Rock" ],
@@ -22819,7 +22898,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-02-16",
 				"shiny":	"2019-02-16",
-				"shadow":	"2021-02-02"
+				"shadow":	"2021-02-02",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Twin Tusk",
 			"type": [ "Ice", "Ground" ],
@@ -22998,7 +23078,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2018-11-14",
 				"shiny":	"2018-11-14",
-				"shadow":	"2019-10-17"
+				"shadow":	"2019-10-17",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Gripper",
 			"type": [ "Ghost" ],
@@ -25654,7 +25735,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2020-03-13",
-				"shadow":	"2024-08-08"
+				"shadow":	"2024-08-08",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Muscular",
 			"type": [ "Fighting" ],
@@ -25691,7 +25773,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2020-03-13",
-				"shadow":	"2024-08-08"
+				"shadow":	"2024-08-08",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Muscular",
 			"type": [ "Fighting" ],
@@ -25729,7 +25812,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2020-03-13",
-				"shadow":	"2024-08-08"
+				"shadow":	"2024-08-08",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Muscular",
 			"type": [ "Fighting" ],
@@ -26984,7 +27068,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-10-17",
 				"shiny":	"2019-10-17",
-				"shadow":	"2025-10-21"
+				"shadow":	"2025-10-21",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Spirit",
 			"type": [ "Ghost" ],
@@ -27037,7 +27122,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-10-17",
 				"shiny":	"2019-10-17",
-				"shadow":	"2025-10-21"
+				"shadow":	"2025-10-21",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Coffin",
 			"type": [ "Ghost" ],
@@ -28124,7 +28210,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2022-06-04",
-				"shadow":	"2024-10-08"
+				"shadow":	"2024-10-08",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Clamping",
 			"type": [ "Bug" ],
@@ -28162,7 +28249,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2022-06-04",
-				"shadow":	"2024-10-08"
+				"shadow":	"2024-10-08",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Cavalry",
 			"type": [ "Bug", "Steel" ],
@@ -28444,7 +28532,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2023-08-26",
-				"shadow":	"2023-02-01"
+				"shadow":	"2023-02-01",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Attaching",
 			"type": [ "Bug", "Electric" ],
@@ -28481,7 +28570,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2023-08-26",
-				"shadow":	"2023-02-01"
+				"shadow":	"2023-02-01",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "EleSpider",
 			"type": [ "Bug", "Electric" ],
@@ -28903,7 +28993,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-09-16",
 				"shiny":	"2022-10-15",
-				"shadow":	"2023-10-26"
+				"shadow":	"2023-10-26",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Candle",
 			"type": [ "Ghost", "Fire" ],
@@ -28941,7 +29032,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-09-16",
 				"shiny":	"2022-10-15",
-				"shadow":	"2023-10-26"
+				"shadow":	"2023-10-26",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Lamp",
 			"type": [ "Ghost", "Fire" ],
@@ -28979,7 +29071,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-09-16",
 				"shiny":	"2022-10-15",
-				"shadow":	"2023-10-26"
+				"shadow":	"2023-10-26",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "609-M" ],
 			"category": "Luring",
@@ -29254,7 +29347,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2022-06-04",
-				"shadow":	"2024-10-08"
+				"shadow":	"2024-10-08",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Snail",
 			"type": [ "Bug" ],
@@ -29291,7 +29385,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-01-10",
 				"shiny":	"2022-06-04",
-				"shadow":	"2024-10-08"
+				"shadow":	"2024-10-08",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Shell Out",
 			"type": [ "Bug" ],
@@ -29977,7 +30072,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-09-16",
 				"shiny":	"2020-07-31",
-				"shadow":	"2025-09-16"
+				"shadow":	"2025-09-16",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Irate",
 			"type": [ "Dark", "Dragon" ],
@@ -30014,7 +30110,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-09-16",
 				"shiny":	"2020-07-31",
-				"shadow":	"2025-09-16"
+				"shadow":	"2025-09-16",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Hostile",
 			"type": [ "Dark", "Dragon" ],
@@ -30052,7 +30149,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2019-09-16",
 				"shiny":	"2020-07-31",
-				"shadow":	"2025-09-16"
+				"shadow":	"2025-09-16",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Brutal",
 			"type": [ "Dark", "Dragon" ],
@@ -30965,7 +31063,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-12-02",
 				"shiny":	"2023-01-07",
-				"shadow":	"2026-01-23"
+				"shadow":	"2026-01-23",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Spiny Nut",
 			"type": [ "Grass" ],
@@ -31002,7 +31101,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-12-02",
 				"shiny":	"2023-01-07",
-				"shadow":	"2026-01-23"
+				"shadow":	"2026-01-23",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Spiny Armor",
 			"type": [ "Grass" ],
@@ -31040,7 +31140,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-12-02",
 				"shiny":	"2023-01-07",
-				"shadow":	"2026-01-23"
+				"shadow":	"2026-01-23",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "652-M" ],
 			"category": "Spiny Armor",
@@ -31093,7 +31194,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-12-02",
 				"shiny":	"2023-05-21",
-				"shadow":	"2026-01-23"
+				"shadow":	"2026-01-23",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Fox",
 			"type": [ "Fire" ],
@@ -31130,7 +31232,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-12-02",
 				"shiny":	"2023-05-21",
-				"shadow":	"2026-01-23"
+				"shadow":	"2026-01-23",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Fox",
 			"type": [ "Fire" ],
@@ -31168,7 +31271,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-12-02",
 				"shiny":	"2023-05-21",
-				"shadow":	"2026-01-23"
+				"shadow":	"2026-01-23",
+				"sh-shiny":	"2026-03-03"
 			},
 			"forms": [ "655-M" ],
 			"category": "Fox",
@@ -31222,7 +31326,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-12-02",
 				"shiny":	"2024-10-22",
-				"shadow":	"2026-01-23"
+				"shadow":	"2026-01-23",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Bubble Frog",
 			"type": [ "Water" ],
@@ -31259,7 +31364,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-12-02",
 				"shiny":	"2024-10-22",
-				"shadow":	"2026-01-23"
+				"shadow":	"2026-01-23",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Bubble Frog",
 			"type": [ "Water" ],
@@ -31297,7 +31403,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-12-02",
 				"shiny":	"2024-10-22",
-				"shadow":	"2026-01-23"
+				"shadow":	"2026-01-23",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Ninja",
 			"type": [ "Water", "Dark" ],
@@ -33552,7 +33659,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2021-10-22",
 				"shiny":	"2023-10-19",
-				"shadow":	"2025-10-21"
+				"shadow":	"2025-10-21",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Stump",
 			"type": [ "Ghost", "Grass" ],
@@ -33589,7 +33697,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2021-10-22",
 				"shiny":	"2023-10-19",
-				"shadow":	"2025-10-21"
+				"shadow":	"2025-10-21",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Elder Tree",
 			"type": [ "Ghost", "Grass" ],
@@ -45227,7 +45336,8 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2024-01-19",
 				"shiny":	"2024-01-19",
-				"shadow":	"2024-10-08"
+				"shadow":	"2024-10-08",
+				"sh-shiny":	"2026-03-03"
 			},
 			"category": "Rage Monkey",
 			"type": [ "Fighting", "Ghost" ],
