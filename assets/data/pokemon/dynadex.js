@@ -16591,7 +16591,8 @@ const	dbpokemon = {
 				"in-game":	"2018-01-23",
 				"shiny":	"2019-10-12",
 				"shadow":	"2019-10-17",
-				"sh-shiny":	"2024-03-27"
+				"sh-shiny":	"2024-03-27",
+				"dynamax":	"2026-04-06"
 			},
 			"category": "Ant Pit",
 			"type": [ "Ground" ],
@@ -16600,6 +16601,7 @@ const	dbpokemon = {
 			"base-attack": 162,
 			"base-defense": 78,
 			"dynamax-class": 3,
+			"max-battle-tier": 2, // TODO guess
 			"fast-moves": [
 				{ "atk": "FAST_GRO_MUDSHOT" },
 				{ "atk": "FAST_BUG_STRUGGLEBUG" },
@@ -16631,7 +16633,8 @@ const	dbpokemon = {
 				"in-game":	"2018-01-23",
 				"shiny":	"2019-10-12",
 				"shadow":	"2019-10-17",
-				"sh-shiny":	"2024-03-27"
+				"sh-shiny":	"2024-03-27",
+				"dynamax":	"2026-04-06"
 			},
 			"category": "Vibration",
 			"type": [ "Ground", "Dragon" ],
@@ -16672,7 +16675,8 @@ const	dbpokemon = {
 				"in-game":	"2018-01-23",
 				"shiny":	"2019-10-12",
 				"shadow":	"2019-10-17",
-				"sh-shiny":	"2024-03-27"
+				"sh-shiny":	"2024-03-27",
+				"dynamax":	"2026-04-06"
 			},
 			"category": "Mystic",
 			"type": [ "Ground", "Dragon" ],
@@ -18723,7 +18727,8 @@ const	dbpokemon = {
 				"in-game":	"2018-08-16",
 				"shiny":	"2019-11-01",
 				"shadow":	"2023-06-21",
-				"sh-shiny":	"2024-12-03"
+				"sh-shiny":	"2024-12-03",
+				"dynamax":	"2026-04-20"
 			},
 			"category": "Rock Peak",
 			"legendary": true,
@@ -18732,6 +18737,7 @@ const	dbpokemon = {
 			"base-attack": 179,
 			"base-defense": 309,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_ROC_ROCKTHROW" },
 				{ "atk": "FAST_FIG_ROCKSMASH" },
@@ -18805,7 +18811,8 @@ const	dbpokemon = {
 				"in-game":	"2018-07-19",
 				"shiny":	"2019-11-01",
 				"shadow":	"2023-02-01",
-				"sh-shiny":	"2024-12-03"
+				"sh-shiny":	"2024-12-03",
+				"dynamax":	"2026-06-18"
 			},
 			"category": "Iron",
 			"legendary": true,
@@ -18814,6 +18821,7 @@ const	dbpokemon = {
 			"base-attack": 143,
 			"base-defense": 285,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_STE_METALCLAW" },
 				{ "atk": "FAST_FIG_ROCKSMASH" },
