@@ -16601,7 +16601,7 @@ const	dbpokemon = {
 			"base-attack": 162,
 			"base-defense": 78,
 			"dynamax-class": 3,
-			"max-battle-tier": 2, // TODO guess
+			"max-battle-tier": 1, // guessed 2 wrong :(((
 			"fast-moves": [
 				{ "atk": "FAST_GRO_MUDSHOT" },
 				{ "atk": "FAST_BUG_STRUGGLEBUG" },
@@ -30656,7 +30656,8 @@ const	dbpokemon = {
 			},
 			"availability": {
 				"in-game":	"2020-03-31",
-				"shiny":	"2021-03-01"
+				"shiny":	"2021-03-01",
+				"shadow":	"2026-04-30"
 			},
 			"base-stamina": 205,
 			"base-attack": 261,
@@ -33103,7 +33104,9 @@ const	dbpokemon = {
 			"name": "Helioptile",
 			"availability": {
 				"in-game":	"2022-01-19",
-				"shiny":	"2023-01-27"
+				"shiny":	"2023-01-27",
+				"shadow":	"2026-04-30",
+				"sh-shiny":	"2026-04-30"
 			},
 			"category": "Generator",
 			"type": [ "Electric", "Normal" ],
@@ -33139,7 +33142,9 @@ const	dbpokemon = {
 			"name": "Heliolisk",
 			"availability": {
 				"in-game":	"2022-01-19",
-				"shiny":	"2023-01-27"
+				"shiny":	"2023-01-27",
+				"shadow":	"2026-04-30",
+				"sh-shiny":	"2026-04-30"
 			},
 			"category": "Generator",
 			"type": [ "Electric", "Normal" ],
@@ -35868,7 +35873,9 @@ const	dbpokemon = {
 			"name": "Dewpider",
 			"availability": {
 				"in-game":	"2022-05-12",
-				"shiny":	"2023-08-04"
+				"shiny":	"2023-08-04",
+				"shadow":	"2026-04-30",
+				"sh-shiny":	"2026-04-30"
 			},
 			"category": "Water Bubble",
 			"type": [ "Water", "Bug" ],
@@ -35904,7 +35911,9 @@ const	dbpokemon = {
 			"name": "Araquanid",
 			"availability": {
 				"in-game":	"2022-05-12",
-				"shiny":	"2023-08-04"
+				"shiny":	"2023-08-04",
+				"shadow":	"2026-04-30",
+				"sh-shiny":	"2026-04-30"
 			},
 			"category": "Water Bubble",
 			"type": [ "Water", "Bug" ],
@@ -36018,7 +36027,9 @@ const	dbpokemon = {
 			"name": "Morelull",
 			"availability": {
 				"in-game":	"2022-10-14",
-				"shiny":	"2023-11-07"
+				"shiny":	"2023-11-07",
+				"shadow":	"2026-04-30",
+				"sh-shiny":	"2026-04-30"
 			},
 			"category": "Illuminating",
 			"type": [ "Grass", "Fairy" ],
@@ -36053,7 +36064,9 @@ const	dbpokemon = {
 			"name": "Shiinotic",
 			"availability": {
 				"in-game":	"2022-10-14",
-				"shiny":	"2023-11-07"
+				"shiny":	"2023-11-07",
+				"shadow":	"2026-04-30",
+				"sh-shiny":	"2026-04-30"
 			},
 			"category": "Illuminating",
 			"type": [ "Grass", "Fairy" ],
@@ -36178,7 +36191,9 @@ const	dbpokemon = {
 			"name": "Stufful",
 			"availability": {
 				"in-game":	"2022-04-23",
-				"shiny":	"2022-04-23"
+				"shiny":	"2022-04-23",
+				"shadow":	"2026-04-30",
+				"sh-shiny":	"2026-04-30"
 			},
 			"category": "Flailing",
 			"type": [ "Normal", "Fighting" ],
@@ -36214,7 +36229,9 @@ const	dbpokemon = {
 			"name": "Bewear",
 			"availability": {
 				"in-game":	"2022-04-23",
-				"shiny":	"2022-04-23"
+				"shiny":	"2022-04-23",
+				"shadow":	"2026-04-30",
+				"sh-shiny":	"2026-04-30"
 			},
 			"category": "Strong Arm",
 			"type": [ "Normal", "Fighting" ],
@@ -37117,7 +37134,7 @@ const	dbpokemon = {
 			"dex-index": "778",
 			"name": "Mimikyu",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-04-01"
 			},
 			"category": "Disguise",
 			"type": [ "Ghost", "Fairy" ],
@@ -39758,7 +39775,7 @@ const	dbpokemon = {
 			"dex-index": "843",
 			"name": "Silicobra",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-04-14"
 			},
 			"category": "Sand Snake",
 			"type": [ "Ground" ],
@@ -39794,7 +39811,7 @@ const	dbpokemon = {
 			"dex-index": "844",
 			"name": "Sandaconda",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-04-14"
 			},
 			"category": "Sand Snake",
 			"type": [ "Ground" ],
@@ -44162,7 +44179,8 @@ const	dbpokemon = {
 			"dex-index": "948",
 			"name": "Toedscool",
 			"availability": {
-				"in-game":	"2025-07-29"
+				"in-game":	"2025-07-29",
+				"shiny":	"2026-04-14"
 			},
 			"category": "Woodear",
 			"type": [ "Ground", "Grass" ],
@@ -44197,7 +44215,8 @@ const	dbpokemon = {
 			"dex-index": "949",
 			"name": "Toedscruel",
 			"availability": {
-				"in-game":	"2025-07-29"
+				"in-game":	"2025-07-29",
+				"shiny":	"2026-04-14"
 			},
 			"category": "Woodear",
 			"type": [ "Ground", "Grass" ],
@@ -44492,7 +44511,8 @@ const	dbpokemon = {
 			"dex-index": "957",
 			"name": "Tinkatink",
 			"availability": {
-				"in-game":	"2025-04-16"
+				"in-game":	"2025-04-16",
+				"shiny":	"2025-11-07"
 			},
 			"category": "Metalsmith",
 			"type": [ "Fairy", "Steel" ],
@@ -44527,7 +44547,8 @@ const	dbpokemon = {
 			"dex-index": "958",
 			"name": "Tinkatuff",
 			"availability": {
-				"in-game":	"2025-04-16"
+				"in-game":	"2025-04-16",
+				"shiny":	"2025-11-07"
 			},
 			"category": "Hammer",
 			"type": [ "Fairy", "Steel" ],
@@ -44563,7 +44584,8 @@ const	dbpokemon = {
 			"dex-index": "959",
 			"name": "Tinkaton",
 			"availability": {
-				"in-game":	"2025-04-16"
+				"in-game":	"2025-04-16",
+				"shiny":	"2025-11-07"
 			},
 			"category": "Hammer",
 			"type": [ "Fairy", "Steel" ],
@@ -44580,6 +44602,7 @@ const	dbpokemon = {
 				{ "atk": "CHRG_FAI_PLAYROUGH" },
 				{ "atk": "CHRG_DAR_BRUTALSWING" },
 				{ "atk": "CHRG_STE_FLASHCANNON" },
+				{ "atk": "CHRG_STE_GIGATONHAMMER", "etm": true, "start": "2026-04-11" },
 				{ "atk": "CHRG_STE_HEAVYSLAM" }
 			],
 			"height-avg": 0.7,
@@ -44818,7 +44841,8 @@ const	dbpokemon = {
 			"dex-index": "965",
 			"name": "Varoom",
 			"availability": {
-				"in-game":	"2024-01-27"
+				"in-game":	"2024-01-27",
+				"shiny":	"2026-04-30"
 			},
 			"category": "Single-Cyl",
 			"type": [ "Steel", "Poison" ],
@@ -44925,7 +44949,8 @@ const	dbpokemon = {
 			"dex-index": "968",
 			"name": "Orthworm",
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-04-28",
+				"shiny":	"2026-04-28"
 			},
 			"category": "Earthworm",
 			"type": [ "Steel" ],

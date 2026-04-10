@@ -3201,6 +3201,16 @@ const dbmoves = {
 			"trainer-power": 110,
 			"trainer-energy": 70
 		},
+		"CHRG_STE_GIGATONHAMMER": {
+			"type": "Steel",
+			"name": "Gigaton Hammer",
+			"name-ital": "Granmartello",
+			"raid-power": 300,
+			"raid-energy": 100,
+			"raid-duration": 3000,
+			"trainer-power": 130,
+			"trainer-energy": 60
+		},
 		"CHRG_STE_GYROBALL": {
 			"type": "Steel",
 			"name": "Gyro Ball",
