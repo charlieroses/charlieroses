@@ -287,7 +287,7 @@ const dbmoves = {
 			"raid-power": 20,
 			"raid-energy": 11,
 			"raid-cooldown": 1.5,
-			"trainer-power": 15,
+			"trainer-power": 12,
 			"trainer-energy": 6,
 			"trainer-cooldown": 2
 		},
@@ -465,7 +465,7 @@ const dbmoves = {
 			"raid-energy": 20,
 			"raid-cooldown": 2.0,
 			"trainer-power": 16,
-			"trainer-energy": 12,
+			"trainer-energy": 14,
 			"trainer-cooldown": 2
 		},
 		"FAST_FLY_HIDDENPOWER": {
@@ -1188,7 +1188,7 @@ const dbmoves = {
 			"raid-power": 65,
 			"raid-energy": 33,
 			"raid-duration": 3500,
-			"trainer-power": 60,
+			"trainer-power": 75,
 			"trainer-energy": 45
 		},
 		"CHRG_BUG_XSCISSOR": {
@@ -1360,6 +1360,16 @@ const dbmoves = {
 			"raid-duration": 1500,
 			"trainer-power": 80,
 			"trainer-energy": 45
+		},
+		"CHRG_DRA_GLAIVERUSH": {
+			"type": "Water",
+			"name": "Glaive Rush",
+			"name-ital": "Spadoncarica",
+			"raid-power": 105,
+			"raid-energy": 50,
+			"raid-duration": 2000,
+			"trainer-power": 90,
+			"trainer-energy": 40
 		},
 		"CHRG_DRA_OUTRAGE": {
 			"type": "Dragon",
@@ -2068,8 +2078,8 @@ const dbmoves = {
 			"raid-power": 140,
 			"raid-energy": 50,
 			"raid-duration": 3500,
-			"trainer-power": 150,
-			"trainer-energy": 70
+			"trainer-power": 110,
+			"trainer-energy": 45
 		},
 		"CHRG_FLY_DRILLPECK": {
 			"type": "Flying",
@@ -2109,7 +2119,7 @@ const dbmoves = {
 			"raid-energy": 100,
 			"raid-duration": 2500,
 			"trainer-power": 110,
-			"trainer-energy": 65
+			"trainer-energy": 60
 		},
 		"CHRG_FLY_OBLIVIONWING": {
 			"type": "Flying",
@@ -2258,8 +2268,8 @@ const dbmoves = {
 			"raid-power": 90,
 			"raid-energy": 50,
 			"raid-duration": 4000,
-			"trainer-power": 90,
-			"trainer-energy": 55
+			"trainer-power": 80,
+			"trainer-energy": 45
 		},
 		"CHRG_GRA_FLOWERTRICK": {
 			"type": "Grass",
@@ -2438,8 +2448,8 @@ const dbmoves = {
 			"raid-power": 85,
 			"raid-energy": 50,
 			"raid-duration": 3000,
-			"trainer-power": 80,
-			"trainer-energy": 45
+			"trainer-power": 70,
+			"trainer-energy": 40
 		},
 		"CHRG_GRO_EARTHPOWER": {
 			"type": "Ground",
@@ -2449,7 +2459,7 @@ const dbmoves = {
 			"raid-energy": 50,
 			"raid-duration": 3500,
 			"trainer-power": 90,
-			"trainer-energy": 55
+			"trainer-energy": 50
 		},
 		"CHRG_GRO_EARTHQUAKE": {
 			"type": "Ground",
@@ -2458,7 +2468,7 @@ const dbmoves = {
 			"raid-power": 140,
 			"raid-energy": 100,
 			"raid-duration": 3500,
-			"trainer-power": 110,
+			"trainer-power": 120,
 			"trainer-energy": 65
 		},
 		"CHRG_GRO_FISSURE": {
@@ -2864,6 +2874,16 @@ const dbmoves = {
 			"type": "Normal",
 			"name": "Wrap",
 			"name-ital": "Avvoglibotta",
+			"raid-power": 60,
+			"raid-energy": 33,
+			"raid-duration": 3000,
+			"trainer-power": 70,
+			"trainer-energy": 45
+		},
+		"CHRG_NOR_WRAP_WHAT": {
+			"type": "Normal",
+			"name": "Wrap",
+			"name-ital": "Avvoglibotta",
 			"raid-power": 25,
 			"raid-energy": 33,
 			"raid-duration": 3000,
@@ -3199,7 +3219,7 @@ const dbmoves = {
 			"raid-energy": 100,
 			"raid-duration": 2500,
 			"trainer-power": 110,
-			"trainer-energy": 70
+			"trainer-energy": 65
 		},
 		"CHRG_STE_GIGATONHAMMER": {
 			"type": "Steel",
@@ -3351,6 +3371,16 @@ const dbmoves = {
 			"trainer-power": 85,
 			"trainer-energy": 50
 		},
+		"CHRG_WAT_DIVE": {
+			"type": "Water",
+			"name": "Dive",
+			"name-ital": "", // TODO
+			"raid-power": 70,
+			"raid-energy": 33,
+			"raid-duration": 3300,
+			"trainer-power": 50,
+			"trainer-energy": 40,
+		},
 		"CHRG_WAT_HYDROCANNON": {
 			"type": "Water",
 			"name": "Hydro Cannon",
@@ -3430,6 +3460,16 @@ const dbmoves = {
 			"raid-duration": 4500,
 			"trainer-power": 50,
 			"trainer-energy": 80
+		},
+		"CHRG_WAT_SNIPESHOT": {
+			"type": "Water",
+			"name": "Snipe Shot",
+			"name-ital": "Tiromirato",
+			"raid-power": 100,
+			"raid-energy": 33,
+			"raid-duration": 3500,
+			"trainer-power": 65,
+			"trainer-energy": 35,
 		},
 		"CHRG_WAT_SPARKLINGARIA": {
 			"type": "Water",
