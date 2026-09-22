@@ -111,7 +111,7 @@ const dbmoves = {
 			"raid-power": 9,
 			"raid-energy": 13,
 			"raid-cooldown": 1.0,
-			"trainer-power": 6,
+			"trainer-power": 10,
 			"trainer-energy": 12,
 			"trainer-cooldown": 2
 		},
@@ -133,8 +133,8 @@ const dbmoves = {
 			"raid-power": 6,
 			"raid-energy": 4,
 			"raid-cooldown": 0.5,
-			"trainer-power": 4,
-			"trainer-energy": 2,
+			"trainer-power": 2,
+			"trainer-energy": 4,
 			"trainer-cooldown": 1
 		},
 		"FAST_DAR_FEINTATTACK": {
@@ -221,7 +221,7 @@ const dbmoves = {
 			"raid-power": 7,
 			"raid-energy": 14,
 			"raid-cooldown": 1.0,
-			"trainer-power": 5,
+			"trainer-power": 6,
 			"trainer-energy": 11,
 			"trainer-cooldown": 2
 		},
@@ -375,8 +375,7 @@ const dbmoves = {
 			"raid-power": 5,
 			"raid-energy": 5,
 			"raid-cooldown": 0.5,
-
-			"trainer-power": 5,
+			"trainer-power": 6,
 			"trainer-energy": 8,
 			"trainer-cooldown": 1
 		},
@@ -783,8 +782,8 @@ const dbmoves = {
 			"raid-power": 6,
 			"raid-energy": 4,
 			"raid-cooldown": 0.5,
-			"trainer-power": 4,
-			"trainer-energy": 2,
+			"trainer-power": 3,
+			"trainer-energy": 4,
 			"trainer-cooldown": 1
 		},
 		"FAST_NOR_TACKLE": {
@@ -805,8 +804,8 @@ const dbmoves = {
 			"raid-power": 7,
 			"raid-energy": 8,
 			"raid-cooldown": 1.0,
-			"trainer-power": 5,
-			"trainer-energy": 8,
+			"trainer-power": 14,
+			"trainer-energy": 9,
 			"trainer-cooldown": 2
 		},
 		"FAST_NOR_TRANSFORM": {
@@ -1142,6 +1141,11 @@ const dbmoves = {
 			"trainer-power": 20,
 			"trainer-energy": 35
 		},
+		"CHRG_BUG_FELLSTINGERPLUS": {
+			"type": "Bug",
+			"name": "Fell Stinger+",
+			"name-ital": "Pungiglione+"
+		},
 		"CHRG_BUG_LEECHLIFE": {
 			"type": "Bug",
 			"name": "Leech Life",
@@ -1158,7 +1162,7 @@ const dbmoves = {
 			"raid-power": 55,
 			"raid-energy": 33,
 			"raid-duration": 3000,
-			"trainer-power": 60,
+			"trainer-power": 70,
 			"trainer-energy": 45
 		},
 		"CHRG_BUG_MEGAHORN": {
@@ -1249,7 +1253,12 @@ const dbmoves = {
 			"raid-energy": 50,
 			"raid-duration": 3000,
 			"trainer-power": 80,
-			"trainer-energy": 50
+			"trainer-energy": 45
+		},
+		"CHRG_DAR_DARKPULSEPLUS": {
+			"type": "Dark",
+			"name": "Dark Pulse+",
+			"name-ital": "Neropulsar+"
 		},
 		"CHRG_DAR_FOULPLAY": {
 			"type": "Dark",
@@ -1270,6 +1279,11 @@ const dbmoves = {
 			"raid-duration": 2000,
 			"trainer-power": 50,
 			"trainer-energy": 35
+		},
+		"CHRG_DAR_NIGHTSLASHPLUS": {
+			"type": "Dark",
+			"name": "Night Slash+",
+			"name-ital": "Nottesferza+"
 		},
 		"CHRG_DAR_OBSTRUCT": {
 			"type": "Dark",
@@ -1381,6 +1395,16 @@ const dbmoves = {
 			"trainer-power": 110,
 			"trainer-energy": 60
 		},
+		"CHRG_DRA_OUTRAGEPLUS": {
+			"type": "Dragon",
+			"name": "Outrage+",
+			"name-ital": "Oltraraggio+",
+			"raid-power": 185,
+			"raid-energy": 100,
+			"raid-duration": 4000,
+			"trainer-power": 80,
+			"trainer-energy": 50
+		},
 		"CHRG_DRA_ROAROFTIME": {
 			"type": "Dragon",
 			"name": "Roar of Time",
@@ -1408,9 +1432,13 @@ const dbmoves = {
 			"raid-power": 50,
 			"raid-energy": 33,
 			"raid-duration": 3000,
-
 			"trainer-power": 70,
 			"trainer-energy": 40
+		},
+		"CHRG_DRA_TWISTERPLUS": {
+			"type": "Dragon",
+			"name": "Twister+",
+			"name-ital": "Tornado+"
 		},
 		"CHRG_ELE_AURAWHEEL": {
 			"type": "Electric",
@@ -1431,6 +1459,11 @@ const dbmoves = {
 			"raid-duration": 2500,
 			"trainer-power": 55,
 			"trainer-energy": 40
+		},
+		"CHRG_ELE_DISCHARGEPLUS": {
+			"type": "Electric",
+			"name": "Discharge+",
+			"name-ital": "Scarica+"
 		},
 		"CHRG_ELE_FUSIONBOLT": {
 			"type": "Electric",
@@ -1512,6 +1545,16 @@ const dbmoves = {
 			"trainer-power": 90,
 			"trainer-energy": 40
 		},
+		"CHRG_ELE_VOLTTACKLEPLUS": {
+			"type": "Electric",
+			"name": "Volt Tackle+",
+			"name-ital": "Locomovolt+",
+			"raid-power": 170,
+			"raid-energy": 100,
+			"raid-duration": 3500,
+			"trainer-power": 65,
+			"trainer-energy": 35
+		},
 		"CHRG_ELE_WILDBOLTSTORM": {
 			"type": "Electric",
 			"name": "Wildbolt Storm",
@@ -1542,6 +1585,16 @@ const dbmoves = {
 			"trainer-power": 150,
 			"trainer-energy": 80
 		},
+		"CHRG_ELE_ZAPCANNONPLUS": {
+			"type": "Electric",
+			"name": "Zap Cannon+",
+			"name-ital": "Falcecannone+",
+			"raid-power": 160,
+			"raid-energy": 100,
+			"raid-duration": 3500,
+			"trainer-power": 70,
+			"trainer-energy": 45
+		},
 		"CHRG_FAI_DAZZLINGGLEAM": {
 			"type": "Fairy",
 			"name": "Dazzling Gleam",
@@ -1569,7 +1622,7 @@ const dbmoves = {
 			"raid-power": 60,
 			"raid-energy": 50,
 			"raid-duration": 2500,
-			"trainer-power": 60,
+			"trainer-power": 80,
 			"trainer-energy": 55
 		},
 		"CHRG_FAI_MOONBLAST": {
@@ -1579,8 +1632,13 @@ const dbmoves = {
 			"raid-power": 130,
 			"raid-energy": 100,
 			"raid-duration": 4000,
-			"trainer-power": 110,
-			"trainer-energy": 60
+			"trainer-power": 90,
+			"trainer-energy": 50
+		},
+		"CHRG_FAI_MOONBLASTPLUS": {
+			"type": "Fairy",
+			"name": "Moonblast+",
+			"name-ital": "Forza Lunare+"
 		},
 		"CHRG_FAI_NATURESMADNESS": {
 			"type": "Fairy",
@@ -1622,6 +1680,16 @@ const dbmoves = {
 			"trainer-power": 50,
 			"trainer-energy": 40
 		},
+		"CHRG_FIG_BRICKBREAKPLUS": {
+			"type": "Fighting",
+			"name": "Brick Break+",
+			"name-ital": "Breccia+",
+			"raid-power": 150,
+			"raid-energy": 100,
+			"raid-duration": 1500,
+			"trainer-power": 40,
+			"trainer-energy": 35
+		},
 		"CHRG_FIG_CLOSECOMBAT": {
 			"type": "Fighting",
 			"name": "Close Combat",
@@ -1649,7 +1717,6 @@ const dbmoves = {
 			"raid-power": 50,
 			"raid-energy": 33,
 			"raid-duration": 2500,
-
 			"trainer-power": 40,
 			"trainer-energy": 40
 		},
@@ -1662,6 +1729,16 @@ const dbmoves = {
 			"raid-duration": 2500,
 			"trainer-power": 90,
 			"trainer-energy": 45
+		},
+		"CHRG_FIG_DYNAMICPUNCHPLUS": {
+			"type": "Fighting",
+			"name": "Dynamic Punch+",
+			"name-ital": "Dinamipugno+",
+			"raid-power": 130,
+			"raid-energy": 100,
+			"raid-duration": 2500,
+			"trainer-power": 130,
+			"trainer-energy": 80
 		},
 		"CHRG_FIG_FLYINGPRESS": {
 			"type": "Fighting",
@@ -1723,6 +1800,11 @@ const dbmoves = {
 			"trainer-power": 60,
 			"trainer-energy": 35
 		},
+		"CHRG_FIG_SACREDSWORDPLUS": {
+			"type": "Fighting",
+			"name": "Sacred Sword+",
+			"name-ital": "Spadasolenne+"
+		},
 		"CHRG_FIG_SECRETSWORD": {
 			"type": "Fighting",
 			"name": "Secret Sword",
@@ -1763,6 +1845,11 @@ const dbmoves = {
 			"trainer-power": 70,
 			"trainer-energy": 40
 		},
+		"CHRG_FIG_UPPERHANDPLUS": {
+			"type": "Fighting",
+			"name": "Upper Hand+",
+			"name-ital": "Colpo di Mano+"
+		},
 		"CHRG_FIR_BLASTBURN": {
 			"type": "Fire",
 			"name": "Blast Burn",
@@ -1781,7 +1868,7 @@ const dbmoves = {
 			"raid-energy": 33,
 			"raid-duration": 1000,
 			"trainer-power": 60,
-			"trainer-energy": 40
+			"trainer-energy": 35
 		},
 		"CHRG_FIR_FIREBLAST": {
 			"type": "Fire",
@@ -1893,6 +1980,16 @@ const dbmoves = {
 			"raid-duration": 2000,
 			"trainer-power": 60,
 			"trainer-energy": 45
+		},
+		"CHRG_FIR_MYSTICALFIREPLUS": {
+			"type": "Fire",
+			"name": "Mystical Fire+",
+			"name-ital": "Magifiamma+",
+			"raid-power": 140,
+			"raid-energy": 100,
+			"raid-duration": 2000,
+			"trainer-power": 50,
+			"trainer-energy": 40
 		},
 		"CHRG_FIR_OVERHEAT": {
 			"type": "Fire",
@@ -2038,8 +2135,8 @@ const dbmoves = {
 			"raid-power": 55,
 			"raid-energy": 50,
 			"raid-duration": 2500,
-			"trainer-power": 45,
-			"trainer-energy": 35
+			"trainer-power": 60,
+			"trainer-energy": 40
 		},
 		"CHRG_FLY_BEAKBLAST": {
 			"type": "Flying",
@@ -2060,6 +2157,11 @@ const dbmoves = {
 			"raid-duration": 2000,
 			"trainer-power": 130,
 			"trainer-energy": 55
+		},
+		"CHRG_FLY_BRAVEBIRDPLUS": {
+			"type": "Flying",
+			"name": "Brave Bird+",
+			"name-ital": "Baldeali+"
 		},
 		"CHRG_FLY_BLEAKWINDSTORM": {
 			"type": "Flying",
@@ -2090,6 +2192,16 @@ const dbmoves = {
 			"raid-duration": 2500,
 			"trainer-power": 65,
 			"trainer-energy": 40
+		},
+		"CHRG_FLY_DRILLPECKPLUS": {
+			"type": "Flying",
+			"name": "Drill Peck+",
+			"name-ital": "Perforbecco+",
+			"raid-power": 170,
+			"raid-energy": 100,
+			"raid-duration": 2500,
+			"trainer-power": 60,
+			"trainer-energy": 35
 		},
 		"CHRG_FLY_FEATHERDANCE": {
 			"type": "Flying",
@@ -2171,6 +2283,11 @@ const dbmoves = {
 			"trainer-power": 45,
 			"trainer-energy": 45
 		},
+		"CHRG_GHO_OMINOUSWINDPLUS": {
+			"type": "Ghost",
+			"name": "Ominous Wind+",
+			"name-ital": "Funestovento+",
+		},
 		"CHRG_GHO_POLTERGEIST": {
 			"type": "Ghost",
 			"name": "Poltergeist",
@@ -2188,8 +2305,8 @@ const dbmoves = {
 			"raid-power": 100,
 			"raid-energy": 50,
 			"raid-duration": 3000,
-			"trainer-power": 50,
-			"trainer-energy": 35
+			"trainer-power": 55,
+			"trainer-energy": 40
 		},
 		"CHRG_GHO_SHADOWBALL": {
 			"type": "Ghost",
@@ -2198,7 +2315,7 @@ const dbmoves = {
 			"raid-power": 100,
 			"raid-energy": 50,
 			"raid-duration": 3000,
-			"trainer-power": 100,
+			"trainer-power": 90,
 			"trainer-energy": 50
 		},
 		"CHRG_GHO_SHADOWBONE": {
@@ -2219,7 +2336,7 @@ const dbmoves = {
 			"raid-energy": 100,
 			"raid-duration": 2000,
 			"trainer-power": 120,
-			"trainer-energy": 90
+			"trainer-energy": 65
 		},
 		"CHRG_GHO_SHADOWPUNCH": {
 			"type": "Ghost",
@@ -2381,6 +2498,16 @@ const dbmoves = {
 			"trainer-power": 65,
 			"trainer-energy": 45
 		},
+		"CHRG_GRA_SEEDBOMBPLUS": {
+			"type": "Grass",
+			"name": "Seed Bomb+",
+			"name-ital": "Semebomba+",
+			"raid-power": 150,
+			"raid-energy": 100,
+			"raid-duration": 2000,
+			"trainer-power": 60,
+			"trainer-energy": 40
+		},
 		"CHRG_GRA_SEEDFLARE": {
 			"type": "Grass",
 			"name": "Seed Flare",
@@ -2428,8 +2555,8 @@ const dbmoves = {
 			"raid-power": 80,
 			"raid-energy": 50,
 			"raid-duration": 3500,
-			"trainer-power": 45,
-			"trainer-energy": 45
+			"trainer-power": 80,
+			"trainer-energy": 55
 		},
 		"CHRG_GRO_DIG": {
 			"type": "Ground",
@@ -2453,7 +2580,7 @@ const dbmoves = {
 		},
 		"CHRG_GRO_EARTHPOWER": {
 			"type": "Ground",
-			"name": "Earthpower",
+			"name": "Earth Power",
 			"name-ital": "Geoforza",
 			"raid-power": 100,
 			"raid-energy": 50,
@@ -2488,7 +2615,7 @@ const dbmoves = {
 			"raid-energy": 100,
 			"raid-duration": 1500,
 			"trainer-power": 100,
-			"trainer-energy": 60
+			"trainer-energy": 55
 		},
 		"CHRG_GRO_MUDBOMB": {
 			"type": "Ground",
@@ -2528,9 +2655,8 @@ const dbmoves = {
 			"raid-power": 60,
 			"raid-energy": 33,
 			"raid-duration": 4000,
-
-			"trainer-power": 40,
-			"trainer-energy": 40
+			"trainer-power": 55,
+			"trainer-energy": 45
 		},
 		"CHRG_GRO_SCORCHINGSANDS": {
 			"type": "Ground",
@@ -2597,6 +2723,11 @@ const dbmoves = {
 			"trainer-power": 90,
 			"trainer-energy": 55
 		},
+		"CHRG_ICE_ICEBEAMPLUS": {
+			"type": "Ice",
+			"name": "Ice Beam+",
+			"name-ital": "Geloraggio+"
+		},
 		"CHRG_ICE_ICEBURN": {
 			"type": "Ice",
 			"name": "Ice Burn",
@@ -2662,6 +2793,11 @@ const dbmoves = {
 			"trainer-power": 55,
 			"trainer-energy": 35
 		},
+		"CHRG_ICE_WEATHERBALLPLUS": {
+			"type": "Ice",
+			"name": "Weather Ball+",
+			"name-ital": "Palla Clima+"
+		},
 		"CHRG_NOR_BODYSLAM": {
 			"type": "Normal",
 			"name": "Body Slam",
@@ -2669,8 +2805,8 @@ const dbmoves = {
 			"raid-power": 50,
 			"raid-energy": 33,
 			"raid-duration": 2000,
-			"trainer-power": 50,
-			"trainer-energy": 35
+			"trainer-power": 60,
+			"trainer-energy": 40
 		},
 		"CHRG_NOR_BOOMBURST": {
 			"type": "Normal",
@@ -2900,6 +3036,16 @@ const dbmoves = {
 			"trainer-power": 20,
 			"trainer-energy": 45
 		},
+		"CHRG_POI_ACIDSPRAYPLUS": {
+			"type": "Poison",
+			"name": "Acid Spray+",
+			"name-ital": "Acidobomba+",
+			"raid-power": 160,
+			"raid-energy": 100,
+			"raid-duration": 3000,
+			"trainer-power": 20,
+			"trainer-energy": 40
+		},
 		"CHRG_POI_CROSSPOISON": {
 			"type": "Poison",
 			"name": "Cross Poison",
@@ -2927,7 +3073,7 @@ const dbmoves = {
 			"raid-power": 30,
 			"raid-energy": 33,
 			"raid-duration": 1500,
-			"trainer-power": 45,
+			"trainer-power": 50,
 			"trainer-energy": 40
 		},
 		"CHRG_POI_SLUDGE": {
@@ -2970,6 +3116,16 @@ const dbmoves = {
 			"trainer-power": 110,
 			"trainer-energy": 65
 		},
+		"CHRG_PSY_FUTURESIGHTPLUS": {
+			"type": "Psychic",
+			"name": "Future Sight+",
+			"name-ital": "Divinazione+",
+			"raid-power": 140,
+			"raid-energy": 100,
+			"raid-duration": 2500,
+			"trainer-power": 130,
+			"trainer-energy": 80
+		},
 		"CHRG_PSY_HEARTSTAMP": {
 			"type": "Psychic",
 			"name": "Heart Stamp",
@@ -2997,8 +3153,8 @@ const dbmoves = {
 			"raid-power": 60,
 			"raid-energy": 50,
 			"raid-duration": 2500,
-			"trainer-power": 60,
-			"trainer-energy": 55
+			"trainer-power": 75,
+			"trainer-energy": 45
 		},
 		"CHRG_PSY_MISTBALL": {
 			"type": "Psychic",
@@ -3020,6 +3176,16 @@ const dbmoves = {
 			"trainer-power": 70,
 			"trainer-energy": 60
 		},
+		"CHRG_PSY_PSYBEAMPLUS": {
+			"type": "Psychic",
+			"name": "Psybeam+",
+			"name-ital": "Psicoraggio+",
+			"raid-power": 170,
+			"raid-energy": 100,
+			"raid-duration": 3000,
+			"trainer-power": 60,
+			"trainer-energy": 45
+		},
 		"CHRG_PSY_PSYCHIC": {
 			"type": "Psychic",
 			"name": "Psychic",
@@ -3034,10 +3200,10 @@ const dbmoves = {
 			"type": "Psychic",
 			"name": "Psycho Boost",
 			"name-ital": "Psicoslancio",
-			"raid-power": 70,
-			"raid-energy": 50,
+			"raid-power": 130,
+			"raid-energy": 33,
 			"raid-duration": 4000,
-			"trainer-power": 70,
+			"trainer-power": 85,
 			"trainer-energy": 35
 		},
 		"CHRG_PSY_PSYCHICFANGS": {
@@ -3208,7 +3374,7 @@ const dbmoves = {
 			"raid-power": 70,
 			"raid-energy": 33,
 			"raid-duration": 2000,
-			"trainer-power": 55,
+			"trainer-power": 70,
 			"trainer-energy": 35
 		},
 		"CHRG_STE_FLASHCANNON": {
@@ -3258,7 +3424,7 @@ const dbmoves = {
 			"raid-power": 60,
 			"raid-energy": 50,
 			"raid-duration": 2000,
-			"trainer-power": 70,
+			"trainer-power": 85,
 			"trainer-energy": 50
 		},
 		"CHRG_STE_MAGNETBOMB": {
@@ -3269,7 +3435,7 @@ const dbmoves = {
 			"raid-energy": 33,
 			"raid-duration": 3000,
 			"trainer-power": 70,
-			"trainer-energy": 45
+			"trainer-energy": 40
 		},
 		"CHRG_STE_METEORMASH": {
 			"type": "Steel",
@@ -3338,8 +3504,8 @@ const dbmoves = {
 			"raid-power": 65,
 			"raid-energy": 50,
 			"raid-duration": 2500,
-			"trainer-power": 60,
-			"trainer-energy": 50
+			"trainer-power": 100,
+			"trainer-energy": 60
 		},
 		"CHRG_WAT_BUBBLEBEAM": {
 			"type": "Water",
@@ -3348,8 +3514,8 @@ const dbmoves = {
 			"raid-power": 45,
 			"raid-energy": 33,
 			"raid-duration": 2000,
-			"trainer-power": 25,
-			"trainer-energy": 40
+			"trainer-power": 50,
+			"trainer-energy": 50
 		},
 		"CHRG_WAT_CHILLINGWATER": {
 			"type": "Water",
@@ -3360,6 +3526,11 @@ const dbmoves = {
 			"raid-duration": 3500,
 			"trainer-power": 60,
 			"trainer-energy": 45
+		},
+		"CHRG_WAT_CHILLINGWATERPLUS": {
+			"type": "Water",
+			"name": "Chilling Water+",
+			"name-ital": "Doccia Fredda+"
 		},
 		"CHRG_WAT_CRABHAMMER": {
 			"type": "Water",
@@ -3410,6 +3581,16 @@ const dbmoves = {
 			"raid-duration": 3000,
 			"trainer-power": 70,
 			"trainer-energy": 45
+		},
+		"CHRG_WAT_LIQUIDATIONPLUS": {
+			"type": "Water",
+			"name": "Liquidation+",
+			"name-ital": "Idrobreccia+",
+			"raid-power": 180,
+			"raid-energy": 100,
+			"raid-duration": 3000,
+			"trainer-power": 55,
+			"trainer-energy": 40
 		},
 		"CHRG_WAT_MUDDYWATER": {
 			"type": "Water",
@@ -3490,6 +3671,16 @@ const dbmoves = {
 			"raid-duration": 1500,
 			"trainer-power": 75,
 			"trainer-energy": 45
+		},
+		"CHRG_WAT_SURFPLUS": {
+			"type": "Water",
+			"name": "Surf+",
+			"name-ital": "Surf+",
+			"raid-power": 130,
+			"raid-energy": 100,
+			"raid-duration": 1500,
+			"trainer-power": 55,
+			"trainer-energy": 35
 		},
 		"CHRG_WAT_TECHNOBLAST": {
 			"type": "Water",
