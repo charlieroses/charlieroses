@@ -1522,7 +1522,7 @@ const	dbpokemon = {
 			"availability": {
 				"in-game":	"2020-08-27",
 				"shiny":	"2020-08-27",
-				"mega-4":	false	// TODO
+				"mega-4":	"2026-09-08"
 			},
 			"height-avg": 1.4,
 			"weight-avg": 40.5,
@@ -1531,7 +1531,7 @@ const	dbpokemon = {
 			"base-defense": 148,
 			"charged-moves": [
 				{ "atk": "CHRG_BUG_FELLSTINGER" },
-				{ "atk": "CHRG_BUG_FELLSTINGERPLUS" }
+				{ "atk": "CHRG_BUG_FELLSTINGERPLUS" },
 				{ "atk": "CHRG_BUG_XSCISSOR" },
 				{ "atk": "CHRG_FLY_AERIALACE" },
 				{ "atk": "CHRG_GRO_DRILLRUN", "etm": true },
@@ -4545,7 +4545,7 @@ const	dbpokemon = {
 			"fast-moves": [
 				{ "atk": "FAST_DAR_SUCKERPUNCH", "start": "2026-09-08" },
 				{ "atk": "FAST_GRA_RAZORLEAF" },
-				{ "atk": "FAST_GRA_MAGICALLEAF", "etm": true }
+				{ "atk": "FAST_GRA_MAGICALLEAF", "etm": true },
 				{ "atk": "FAST_POI_ACID" }
 			],
 			"charged-moves": [
@@ -12497,7 +12497,7 @@ const	dbpokemon = {
 			"base-defense": 228,
 			"base-stamina": 163,
 			"charged-moves": [
-				{ "atk": "CHRG_FLY_DRILLPECKPLUS", "start": "2026-08-30" }
+				{ "atk": "CHRG_FLY_DRILLPECKPLUS", "start": "2026-08-30" },
 				{ "atk": "CHRG_FLY_BRAVEBIRD" },
 				{ "atk": "CHRG_FLY_SKYATTACK" },
 				{ "atk": "CHRG_STE_FLASHCANNON" }
