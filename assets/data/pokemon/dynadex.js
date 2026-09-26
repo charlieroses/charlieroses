@@ -23777,6 +23777,7 @@ const	dbpokemon = {
 			"base-attack": 275,
 			"base-defense": 211,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_DRA_DRAGONBREATH" },
 				{ "atk": "FAST_STE_METALCLAW" }
@@ -23855,6 +23856,7 @@ const	dbpokemon = {
 			"base-attack": 280,
 			"base-defense": 215,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_DRA_DRAGONBREATH" },
 				{ "atk": "FAST_DRA_DRAGONTAIL" }
