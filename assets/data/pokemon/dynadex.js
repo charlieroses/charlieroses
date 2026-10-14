@@ -42010,7 +42010,8 @@ const	dbpokemon = {
 				"type": "Giga"
 			},
 			"availability": {
-				"in-game":	false
+				"in-game":	"2026-11-06",
+				"shiny":	"2026-11-06"
 			}
 		},
 		"885": {
