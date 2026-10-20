@@ -324,7 +324,7 @@ const dbtypes = {
 		"hex": "f86d74",
 		"weather-boost": "Windy",
 		"weakness": [ "Dark", "Ghost", "Bug" ],
-		"resistant": [ "Fighting", "Poison" ],
+		"resistant": [ "Fighting", "Psychic" ],
 		"very-not-effective": [ "Dark" ],
 		"not-very-effective": [ "Psychic", "Steel" ],
 		"super-effective": [ "Fighting", "Poison" ]
