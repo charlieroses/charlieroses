@@ -23662,6 +23662,7 @@ const	dbpokemon = {
 			"base-attack": 156,
 			"base-defense": 270,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_PSY_CONFUSION" },
 				{ "atk": "FAST_PSY_EXTRASENSORY" }
@@ -23700,6 +23701,7 @@ const	dbpokemon = {
 			"base-attack": 212,
 			"base-defense": 212,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_PSY_CONFUSION" },
 				{ "atk": "FAST_PSY_EXTRASENSORY" }
@@ -23737,6 +23739,7 @@ const	dbpokemon = {
 			"base-attack": 270,
 			"base-defense": 151,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_PSY_CONFUSION" },
 				{ "atk": "FAST_PSY_EXTRASENSORY" }
