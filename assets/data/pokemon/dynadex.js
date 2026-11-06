@@ -42555,7 +42555,8 @@ const	dbpokemon = {
 			"name": "Regidrago",
 			"availability": {
 				"in-game":	"2023-03-11",
-				"shiny":	"2024-11-27"
+				"shiny":	"2024-11-27",
+				"dynamax":	"2026-11-12"
 			},
 			"category": "Dragon Orb",
 			"legendary": true,
@@ -42564,6 +42565,7 @@ const	dbpokemon = {
 			"base-attack": 202,
 			"base-defense": 101,
 			"dynamax-class": 4,
+			"max-battle-tier": 5,
 			"fast-moves": [
 				{ "atk": "FAST_DAR_BITE" },
 				{ "atk": "FAST_DRA_DRAGONBREATH", "etm": true }
