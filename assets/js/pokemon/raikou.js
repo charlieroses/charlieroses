@@ -1,5 +1,41 @@
 var GPKMN;
 
+
+function minimumLevel( dpkmn, gpkmn, out ) {
+	let		moves, m;
+	let		atk, def, hp, dmg, hits;
+	let		l;
+
+	moves = getMaxBossMoveset( gpkmn );
+	atk = (getPkmnField( gpkmn, "base-attack" ) + 15) * getMaxBossCPM(getMaxBossTier(gpkmn));
+
+	out.innerHTML += getPkmnField( dpkmn, "name" ) + "\n";
+
+	for( m = 0; m < moves.length; m++ ) {
+		for( l = 15; l <= 50; l += 0.5 ) {
+			def = (getPkmnField( dpkmn, "base-defense" ) + 10) * getLevelScalar( l );
+			hp = pkmnHP( dpkmn, l, [ 10, 10, 10 ] );
+			if( dpkmn == "889-C" )
+				hp += 60;
+
+			dmg = getMoveField( moves[m], "raid-power" );
+			dmg *= getSTAB( gpkmn, moves[m] );
+			dmg *= getTypeAdvantage( getMoveField(moves[m],"type"), getPkmnField(dpkmn,"type") );
+			dmg *= ( atk / def );
+			dmg = Math.floor( dmg / 2 ) + 1;
+
+			hits = Math.ceil( hp / dmg );
+
+			if( hits >= 2 )
+				break;
+		}
+		
+		out.innerHTML += "\t" + hits + " hits @ L" + l + " " + getMoveField(moves[m],"name") + "\n";
+		console.log( getPkmnField(dpkmn,"name") + " @ L " + l + " " + getMoveField(moves[m],"name") + " " + hits );
+	}
+
+}
+
 function rankSurvival( dpkmn, gpkmn ) {
 	let		ret = {};
 	let		moves, m;
