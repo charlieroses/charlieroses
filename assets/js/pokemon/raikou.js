@@ -9,7 +9,7 @@ function minimumLevel( dpkmn, gpkmn, out ) {
 	moves = getMaxBossMoveset( gpkmn );
 	atk = (getPkmnField( gpkmn, "base-attack" ) + 15) * getMaxBossCPM(getMaxBossTier(gpkmn));
 
-	out.innerHTML += getPkmnField( dpkmn, "name" ) + "\n";
+	out.innerHTML += getPkmnField( dpkmn, "name" ) + " (" + getPkmnField(gpkmn,"name") + ")\n";
 
 	for( m = 0; m < moves.length; m++ ) {
 		for( l = 15; l <= 50; l += 0.5 ) {

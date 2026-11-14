@@ -1,0 +1,42 @@
+<html>
+<head>
+<script src="assets/data/pokemon/dynadex.js"></script>
+<script src="assets/data/pokemon/dynamax.js"></script>
+<script src="assets/data/pokemon/types.js"></script>
+<script src="assets/data/pokemon/moves.js"></script>
+<script src="assets/data/pokemon/levels.js"></script>
+<script src="assets/js/pokemon/base.js"></script>
+<script src="assets/js/pokemon/dynateam.js"></script>
+<script src="assets/js/pokemon/raikou.js"></script>
+</head>
+<body>
+<pre id="dump"></pre>
+<script>
+//dexCheck();
+var defenders = [ "888-C", "889-C", "379", "895", "381", "380", "530","464", "242", "113", "376"  ];
+// Zacian, Zamazenta, Registeel, Regidrago, Latios, Latias, Excadrill, Rhyperior, Blissey, Chansey, Metagross
+var attackers = [ "483", "484" ];
+var d;
+
+/*
+console.log( "DIALGA" );
+for( d = 0; d < defenders.length; d++ )
+	minimumLevel( defenders[d], "483" );
+
+console.log( "PALKIA" );
+for( d = 0; d < defenders.length; d++ )
+	minimumLevel( defenders[d], "484" );
+*/
+
+var all = getAvailableDynaPkmn( "2026-11-12" );
+
+var out = document.getElementById("dump");
+
+for( d = 0; d < all.length; d++ ) {
+	minimumLevel( all[d], "380", out );
+}
+
+
+</script>
+</body>
+</html>
